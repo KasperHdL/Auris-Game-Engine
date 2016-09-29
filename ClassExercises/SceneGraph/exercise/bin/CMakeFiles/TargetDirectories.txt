@@ -1,0 +1,3 @@
+/home/kaholi/GE/10Lec/exercise/bin/CMakeFiles/edit_cache.dir
+/home/kaholi/GE/10Lec/exercise/bin/CMakeFiles/rebuild_cache.dir
+/home/kaholi/GE/10Lec/exercise/bin/CMakeFiles/Ex5_2_Scenegraph.dir
