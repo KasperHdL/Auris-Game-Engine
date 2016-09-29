@@ -1,8 +1,0 @@
-src/Engine.cpp
-src/Engine.hpp
-src/GameObject.cpp
-src/GameObject.hpp
-src/main.cpp
-src/picojson.h
-src/SceneParser.cpp
-src/SceneParser.hpp
