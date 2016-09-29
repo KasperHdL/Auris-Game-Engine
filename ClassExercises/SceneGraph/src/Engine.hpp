@@ -5,6 +5,8 @@
 #include "glm/glm.hpp"
 #include "GameObject.hpp"
 
+#include "SDL.h"
+
 class Engine {
 public:
     void setup();
@@ -12,6 +14,9 @@ public:
 private:
     void update(float deltaTimeSec);
     std::vector<std::shared_ptr<GameObject>> gameObjects;
+
+    bool _gameRunning = true;
+
 };
 
 
