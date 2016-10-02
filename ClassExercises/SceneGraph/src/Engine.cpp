@@ -15,23 +15,46 @@ using namespace SRE;
 void Engine::setup() {
 
     SimpleRenderEngine* sre = SimpleRenderEngine::instance;
-    sre->getCamera()->lookAt({10,10,10}, {0,0,0}, {0,1,0});
     sre->getCamera()->setPerspectiveProjection(60,640,480,0.1,100);
+    cameraPosition = glm::vec3(10,10,10);
+    cameraSpeed = 1;
 
     // setup test objec
-    Mesh* sharedMesh = Mesh::createQuad();
+    Mesh* plane = Mesh::createQuad();
+    Mesh* cube  = Mesh::createCube();
+    Mesh* sphere = Mesh::createSphere();
+
     Shader* shader = Shader::getUnlit();
 
-    auto testQuad = std::make_shared<GameObject>(sharedMesh, shader);
-    testQuad->rotation = {-89,0,0};
-    gameObjects.push_back(testQuad);
-    
     std::vector<GameObjectDescriptor> scene = SceneParser::parseFile("data/car_house_tree.json");
 
     for(auto& g : scene){
+        std::string meshName = g.meshName;
+        Mesh* mesh;
+
+        if(meshName == "plane")
+            mesh = plane;
+        else if(meshName == "cube")
+            mesh = cube;
+        else if(meshName == "sphere")
+            mesh = sphere;
+
+        auto go = std::make_shared<GameObject>(mesh, shader);
+        go->rotation = glm::vec3(
+                glm::radians(g.rotationEuler.x),
+                glm::radians(g.rotationEuler.y),
+                glm::radians(g.rotationEuler.z)
+                );
+        go->position = g.position;
+        go->scale = g.scale;
+        go->color = g.color;
+
+        if(g.parentId != -1){
+            go->parent = gameObjects[g.parentId].get();
+        }
 
 
-
+        gameObjects.push_back(go);
     }
 }
 
@@ -66,6 +89,25 @@ void Engine::update(float deltaTimeSec) {
                         _gameRunning = false;
                     break;
 
+                case SDLK_w:
+                        cameraPosition.z += cameraSpeed;
+                        break;
+                    case SDLK_s:
+                        cameraPosition.z += -cameraSpeed;
+                        break;
+                    case SDLK_a:
+                        cameraPosition.x += -cameraSpeed;
+                        break;
+                    case SDLK_d:
+                        cameraPosition.x += cameraSpeed;
+                        break; 
+                    case SDLK_q:
+                        cameraPosition.y += -cameraSpeed;
+                        break;
+                    case SDLK_e:
+                        cameraPosition.y += cameraSpeed;
+                        break;
+
                 }
             break;
 
@@ -73,6 +115,7 @@ void Engine::update(float deltaTimeSec) {
 
     }
 
+    SimpleRenderEngine::instance->getCamera()->lookAt(cameraPosition, {0,0,0}, {0,1,0});
 
     // render game object
     for (auto & go : gameObjects){

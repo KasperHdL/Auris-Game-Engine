@@ -17,6 +17,9 @@ private:
 
     bool _gameRunning = true;
 
+    glm::vec3 cameraPosition;
+    float cameraSpeed;
+
 };
 
 
