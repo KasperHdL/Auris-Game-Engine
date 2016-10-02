@@ -21,21 +21,23 @@ GameObject::GameObject(Mesh *mesh, Shader *shader)
 
 void GameObject::draw() {
     shader->setVector("color", color);
-    if(parent == nullptr)
     SimpleRenderEngine::instance->draw(mesh,globalTransform(),shader);
 }
 
 glm::mat4 GameObject::localTransform() {
-    glm::mat4 r = glm::orientate4(rotation);
+    glm::mat4 rx = glm::eulerAngleX((rotation.x));
+    glm::mat4 ry = glm::eulerAngleY((rotation.y));
+    glm::mat4 rz = glm::eulerAngleZ((rotation.z));
+
     glm::mat4 t = glm::translate(glm::mat4(1), position);
     glm::mat4 s = glm::scale(glm::mat4(1), scale);
-    return t * r * s;
+    return t * (rz * ry * rx) * s;
 }
 
 glm::mat4 GameObject::globalTransform() {
     if(parent == nullptr)
         return localTransform();
 
-    return parent->globalTransform();
+    return parent->globalTransform() * localTransform();
 }
 

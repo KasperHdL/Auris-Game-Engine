@@ -24,7 +24,7 @@ void Engine::setup() {
     Mesh* cube  = Mesh::createCube();
     Mesh* sphere = Mesh::createSphere();
 
-    Shader* shader = Shader::getUnlit();
+    Shader* shader = Shader::getStandard();
 
     std::vector<GameObjectDescriptor> scene = SceneParser::parseFile("data/car_house_tree.json");
 
@@ -56,6 +56,11 @@ void Engine::setup() {
 
         gameObjects.push_back(go);
     }
+
+    sre->setLight(0, Light(LightType::Point,{-1, 1,1},{0,0,0},{5,0,0},5,20)); 
+    sre->setLight(1, Light(LightType::Point,{0, 1, -2}, {0,0,0}, {3,3,3},5, 20));
+    sre->setLight(2, Light(LightType::Directional,{0,0,0},{1,1,1},{1,1,1},0,20)); 
+
 }
 
 void Engine::start() {
@@ -78,7 +83,8 @@ void Engine::start() {
 }
 
 void Engine::update(float deltaTimeSec) {
-    SimpleRenderEngine::instance->clearScreen({0,0,1,1});
+    auto sre = SimpleRenderEngine::instance;
+    sre->clearScreen({0,0,1,1});
 
     SDL_Event event;
     while(SDL_PollEvent(&event)){
@@ -115,11 +121,10 @@ void Engine::update(float deltaTimeSec) {
 
     }
 
-    SimpleRenderEngine::instance->getCamera()->lookAt(cameraPosition, {0,0,0}, {0,1,0});
-
+    sre->getCamera()->lookAt(cameraPosition, {0,0,0}, {0,1,0});
     // render game object
     for (auto & go : gameObjects){
         go->draw();
     }
-    SimpleRenderEngine::instance->swapWindow();
+    sre->swapWindow();
 }
