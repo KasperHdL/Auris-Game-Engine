@@ -1,4 +1,7 @@
 bin
 Ex10*
 Scenegraph.*
+Ex11*
+Box2D.*
+*.zip
 .ycm*
