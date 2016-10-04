@@ -1,9 +1,11 @@
 cmake_minimum_required(VERSION 3.6)
 project(Box2DTest)
 
+set(CMAKE_EXPORT_COMPILE_COMMANDS 1)
+set(CMAKE_BUILD_TYPE Debug)
+
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++14")
 set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} "${CMAKE_SOURCE_DIR}/cmake")
-
 
 file(GLOB SOURCE_FILES
         "src/*.hpp"
@@ -11,7 +13,7 @@ file(GLOB SOURCE_FILES
         "src/*.cpp"
         )
 
-add_executable(Box2DTestProgram ${SOURCE_FILES})
+add_executable(Program ${SOURCE_FILES})
 
 find_package(SDL2 REQUIRED)
 include_directories(${SDL2_INCLUDE_DIR})
@@ -68,7 +70,7 @@ ELSE (SRE_FOUND)
     MESSAGE( STATUS "Failed to find Simple Render Engine")
 endif(SRE_FOUND)
 
-target_link_libraries(Box2DTestProgram ${EXTRA_LIBS} ${SDL2_LIBRARY} ${SDL2_IMAGE_LIBRARIES} ${SRE_LIBRARY} ${BOX2D_LIBRARY})
+target_link_libraries(Program ${EXTRA_LIBS} ${SDL2_LIBRARY} ${SDL2_IMAGE_LIBRARIES} ${SRE_LIBRARY} ${BOX2D_LIBRARY})
 
 IF (WIN32)
     SET(SDL2_dll "" CACHE STRING "Where the SDL2.dll can be found")
