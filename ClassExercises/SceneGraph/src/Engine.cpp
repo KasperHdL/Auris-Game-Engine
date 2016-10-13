@@ -14,6 +14,7 @@ using namespace SRE;
 
 void Engine::setup() {
 
+        sre->getCamera()->lookAt({10,10,10}, {0,0,0}, {0,1,0});
     SimpleRenderEngine* sre = SimpleRenderEngine::instance;
     sre->getCamera()->setPerspectiveProjection(60,640,480,0.1,100);
     cameraPosition = glm::vec3(10,10,10);
