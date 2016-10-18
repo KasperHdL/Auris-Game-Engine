@@ -9,6 +9,7 @@
 
 #include <memory>
 #include "GameObject.hpp"
+#include "Scene.hpp"
 
 class Engine{
 public:
@@ -24,7 +25,7 @@ public:
     
 private:
 
-    GameObject* g;
+    Scene* scene;
 
     int width;
     int height;

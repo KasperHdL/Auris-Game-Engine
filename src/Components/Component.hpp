@@ -11,6 +11,7 @@ class Component {
         virtual ~Component(){};
         GameObject* gameObject;
 
+        virtual void update(float dt){}
 
 };
 

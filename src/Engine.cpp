@@ -11,16 +11,19 @@ using namespace glm;
 
 void Engine::startup(){
 
-    g = new GameObject();
+    scene = new Scene();
 
+    shared_ptr<GameObject> g = make_shared<GameObject>(GameObject());
 
     g->transform->localPosition = vec2(width/2, height/2);
 
-    shared_ptr<CSpriteTexture> r = g->addComponent<CSpriteTexture>();
+    
+    auto r = g->addComponentSpriteTexture();
     r->mesh = Mesh::createCube();
     r->color = vec4(1,0,0,1);
     r->texture = Texture::createFromFile("data/cartman.png",false);
 
+    scene->add(g);
 }
 
 void Engine::shutdown(){
@@ -53,7 +56,9 @@ void Engine::run(){
 
         HandleSDLEvents();
 
-        g->getComponent<CSprite>()->draw();
+        scene->update(deltaTimeSec);
+        scene->draw();
+
        
         sre->swapWindow();
         SDL_Delay(16);
