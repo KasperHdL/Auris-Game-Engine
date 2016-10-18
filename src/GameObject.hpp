@@ -22,13 +22,6 @@ public:
     vector<shared_ptr<Component>> components;
 
     GameObject();
-/*
-    void draw();
-    void GameObject::draw() {
-        shader->setVector("color", color);
-        SimpleRenderEngine::instance->draw(mesh, globalTransform(),shader);
-    }
-*/
 
     bool removeComponent(shared_ptr<Component> ptr);
 

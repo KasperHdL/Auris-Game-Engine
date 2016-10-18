@@ -12,31 +12,20 @@ class CTransform : public Component{
     public:
         GameObject* parent;
 
-        vec3 localPosition;
-        vec3 localScale;
-        vec3 localRotation;
+        vec2 localPosition;
+        vec2 localScale;
+        float localRotation;
 
-        glm::mat4 localTransform() {
-            glm::mat4 rx = glm::eulerAngleX((localRotation.x));
-            glm::mat4 ry = glm::eulerAngleY((localRotation.y));
-            glm::mat4 rz = glm::eulerAngleZ((localRotation.z));
-
-            glm::mat4 t = glm::translate(glm::mat4(1), localPosition);
-            glm::mat4 s = glm::scale(glm::mat4(1), localScale);
-
-            return t * (rz * ry * rx) * s;
-        }
-
-        glm::mat4 globalTransform() {
-            if(parent == nullptr)
-                return localTransform();
-
-            return parent->transform->globalTransform() * localTransform();
-        }
+        glm::mat4 localTransform();
+        glm::mat4 globalTransform();
 
     protected:
 
-        CTransform(GameObject *gameObject):Component(gameObject){}
+        CTransform(GameObject *gameObject):Component(gameObject){
+            localRotation = 0;
+            localScale = vec2(10,10);
+
+        }
 
         friend class GameObject;
 

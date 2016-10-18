@@ -6,12 +6,20 @@ using namespace glm;
 #include <iostream>
 
 #include "Components/CTransform.hpp"
+#include "Components/CRender.hpp"
+
+
 void Engine::startup(){
 
-    GameObject* g = new GameObject();
-    shared_ptr<CTransform> t = g->addComponent<CTransform>();
-    t->localPosition.x = 10;
-    std::cout << t->localPosition.x << std::endl;
+    g = new GameObject();
+
+
+    g->transform->localPosition = vec2(width/2, height/2);
+
+    shared_ptr<CRender> r = g->addComponent<CRender>();
+    r->mesh = Mesh::createCube();
+    r->shader = Shader::getUnlitSprite();
+    r->color = vec4(1,1,1,1);
 
 }
 
@@ -29,9 +37,7 @@ void Engine::run(){
     auto sre = SimpleRenderEngine::instance;
 
     sre->getCamera()->setWindowCoordinates();
-    sre->getCamera()->setPerspectiveProjection(60,640,480,0.1,100);
  
-    sre->getCamera()->lookAt({10,10,10}, {0,0,0}, {0,1,0});
     sre->setLight(0, Light(LightType::Point,{-1, 1,1},{0,0,0},{5,0,0},5,20)); 
     sre->setLight(1, Light(LightType::Point,{0, 1, -2}, {0,0,0}, {3,3,3},5, 20));
     sre->setLight(2, Light(LightType::Directional,{0,0,0},{1,1,1},{1,1,1},0,20)); 
@@ -47,6 +53,7 @@ void Engine::run(){
 
         HandleSDLEvents();
 
+        g->getComponent<CRender>()->draw();
        
         sre->swapWindow();
         SDL_Delay(16);

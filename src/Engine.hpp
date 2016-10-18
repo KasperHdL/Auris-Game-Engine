@@ -1,6 +1,8 @@
 #pragma once
 
 #include "SRE/SimpleRenderEngine.hpp"
+#include "SRE/Mesh.hpp"
+#include "SRE/Shader.hpp"
 #include "SDL.h"
 #include "Box2D/Box2D.h"
 
@@ -21,6 +23,7 @@ public:
     
 private:
 
+    GameObject* g;
 
 
     int width;

@@ -24,6 +24,7 @@ int main(int argc, char** argv) {
 
     int width = 640;
     int height = 480;
+
     // Create an application window with the following settings:
     window = SDL_CreateWindow(
             "An SDL2 window",                  // window title
