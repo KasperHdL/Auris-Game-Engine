@@ -6,7 +6,7 @@ using namespace glm;
 #include <iostream>
 
 #include "Components/CTransform.hpp"
-#include "Components/CRender.hpp"
+#include "Components/CSprite.hpp"
 
 
 void Engine::startup(){
@@ -16,10 +16,10 @@ void Engine::startup(){
 
     g->transform->localPosition = vec2(width/2, height/2);
 
-    shared_ptr<CRender> r = g->addComponent<CRender>();
+    shared_ptr<CSpriteTexture> r = g->addComponent<CSpriteTexture>();
     r->mesh = Mesh::createCube();
-    r->shader = Shader::getUnlitSprite();
-    r->color = vec4(1,1,1,1);
+    r->color = vec4(1,0,0,1);
+    r->texture = Texture::createFromFile("data/cartman.png",false);
 
 }
 
@@ -53,7 +53,7 @@ void Engine::run(){
 
         HandleSDLEvents();
 
-        g->getComponent<CRender>()->draw();
+        g->getComponent<CSprite>()->draw();
        
         sre->swapWindow();
         SDL_Delay(16);
