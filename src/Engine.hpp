@@ -3,7 +3,9 @@
 #include "SRE/SimpleRenderEngine.hpp"
 #include "SDL.h"
 #include "Box2D/Box2D.h"
-#include "SceneGraphImporter.hpp"
+
+#include <memory>
+#include "GameObject.hpp"
 
 class Engine{
 public:
@@ -18,6 +20,8 @@ public:
     void HandleSDLEvents();
     
 private:
+
+
 
     int width;
     int height;

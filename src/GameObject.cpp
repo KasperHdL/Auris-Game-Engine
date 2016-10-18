@@ -1,39 +1,21 @@
 #include "GameObject.hpp"
 
-using namespace SRE;
+#include "Components/CTransform.hpp"
 
-GameObject::GameObject(Mesh *mesh, Shader *shader)
-:mesh(mesh), shader(shader)
-{
-    color = {1,1,1,1};
-
-    position = {0,0,0};
-    rotation = {0,0,0};
-    scale = {1,1,1};
-
-    parent = nullptr;
+GameObject::GameObject(){
+    components = vector<shared_ptr<Component>>();
+    components.reserve(8);
+    transform = addComponent<CTransform>();
 }
 
-void GameObject::draw() {
-    shader->setVector("color", color);
-    SimpleRenderEngine::instance->draw(mesh,globalTransform(),shader);
+
+bool GameObject::removeComponent(std::shared_ptr<Component> ptr){
+    for(auto iter = components.begin(); iter != components.end(); iter++){
+        if(*iter == ptr){
+            components.erase(iter);
+            ptr.reset();
+            return true;
+        }
+    }
+    return false;
 }
-
-glm::mat4 GameObject::localTransform() {
-    glm::mat4 rx = glm::eulerAngleX((rotation.x));
-    glm::mat4 ry = glm::eulerAngleY((rotation.y));
-    glm::mat4 rz = glm::eulerAngleZ((rotation.z));
-
-    glm::mat4 t = glm::translate(glm::mat4(1), position);
-    glm::mat4 s = glm::scale(glm::mat4(1), scale);
-
-    return t * (rz * ry * rx) * s;
-}
-
-glm::mat4 GameObject::globalTransform() {
-    if(parent == nullptr)
-        return localTransform();
-
-    return parent->globalTransform() * localTransform();
-}
-

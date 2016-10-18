@@ -1,16 +1,17 @@
 #include "Engine.hpp"
 
 
-
 using namespace SRE;
 using namespace glm;
+#include <iostream>
 
-#include <memory>
-std::vector<std::shared_ptr<GameObject>> gameObjects;
+#include "Components/CTransform.hpp"
 void Engine::startup(){
 
-    SceneGraphImporter scenegraph;
-    gameObjects = scenegraph.import();
+    GameObject* g = new GameObject();
+    shared_ptr<CTransform> t = g->addComponent<CTransform>();
+    t->localPosition.x = 10;
+    std::cout << t->localPosition.x << std::endl;
 
 }
 
@@ -30,7 +31,7 @@ void Engine::run(){
     sre->getCamera()->setWindowCoordinates();
     sre->getCamera()->setPerspectiveProjection(60,640,480,0.1,100);
  
-        sre->getCamera()->lookAt({10,10,10}, {0,0,0}, {0,1,0});
+    sre->getCamera()->lookAt({10,10,10}, {0,0,0}, {0,1,0});
     sre->setLight(0, Light(LightType::Point,{-1, 1,1},{0,0,0},{5,0,0},5,20)); 
     sre->setLight(1, Light(LightType::Point,{0, 1, -2}, {0,0,0}, {3,3,3},5, 20));
     sre->setLight(2, Light(LightType::Directional,{0,0,0},{1,1,1},{1,1,1},0,20)); 
@@ -46,11 +47,7 @@ void Engine::run(){
 
         HandleSDLEvents();
 
-
-        for(auto& g : gameObjects){
-            g->draw();
-        }
-        
+       
         sre->swapWindow();
         SDL_Delay(16);
     }
