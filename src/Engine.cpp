@@ -8,14 +8,16 @@ using namespace glm;
 #include "Components/CTransform.hpp"
 #include "Components/CSprite.hpp"
 #include "Components/CDynamicBody.hpp"
+#include "DebugDraw.hpp"
 
+DebugDraw draw;
 
 void Engine::startup(){
 
     scene = new Scene();
 
     shared_ptr<GameObject> g = make_shared<GameObject>(GameObject());
-    g->transform->localPosition = vec2(width/2, height/2);
+    g->transform->localPosition = vec2(10,10);
     
     auto r = g->addComponentSpriteTexture();
     r->mesh = Mesh::createCube();
@@ -29,7 +31,7 @@ void Engine::startup(){
 
     b2BodyDef bodyDef;
     bodyDef.type = b2_dynamicBody;
-    bodyDef.position.Set(0.0f, 0.0f);
+    bodyDef.position.Set(10.0f,10.0f);
     bodyDef.fixedRotation = true;
 
     b2FixtureDef fixtureDef;
@@ -40,6 +42,9 @@ void Engine::startup(){
     b->init(scene->world, bodyDef, fixtureDef);
 
     scene->add(g);
+
+    scene->world->SetDebugDraw(&draw);
+    draw.SetFlags(b2Draw::e_shapeBit);
 }
 
 void Engine::shutdown(){
@@ -73,7 +78,10 @@ void Engine::run(){
         HandleSDLEvents();
         
         scene->update(deltaTimeSec);
-        scene->draw();
+//        scene->draw();
+
+        scene->world->DrawDebugData();
+        draw.DrawCircle(b2Vec2(5.0f,5.0f), 1.0f, b2Color(1.0f,1.0f,1.0f));
 
        
         sre->swapWindow();
