@@ -29,6 +29,12 @@ public:
     vector<shared_ptr<Component>> components;
 
     GameObject();
+    ~GameObject(){
+        for(auto c : components){
+            removeComponent(c);
+        }
+        components.clear();
+    }
 
     void update(float dt);
     void draw();

@@ -14,3 +14,5 @@ void CSpriteTexture::draw(){
     shader->setTexture("tex", texture);
     SimpleRenderEngine::instance->draw(mesh, gameObject->transform->globalTransform(), shader);
 }
+
+

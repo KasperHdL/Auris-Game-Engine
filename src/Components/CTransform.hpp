@@ -10,7 +10,7 @@ using namespace glm;
 
 class CTransform : public Component{
     public:
-        GameObject* parent;
+        GameObject* parent = nullptr;
 
         vec2 localPosition;
         vec2 localScale;
@@ -18,6 +18,8 @@ class CTransform : public Component{
 
         glm::mat4 localTransform();
         glm::mat4 globalTransform();
+
+        ~CTransform();
 
     protected:
 

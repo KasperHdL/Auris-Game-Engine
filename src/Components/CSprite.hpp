@@ -6,6 +6,7 @@
 #include "SRE/SimpleRenderEngine.hpp"
 #include "SRE/Mesh.hpp"
 #include "SRE/Shader.hpp"
+#include "SRE/Texture.hpp"
 
 using namespace SRE;
 class CSprite : public Component{
@@ -14,6 +15,11 @@ class CSprite : public Component{
         glm::vec4 color;
         
         virtual void draw();
+
+        ~CSprite(){
+            delete mesh;
+            mesh = nullptr;
+        }
 
     protected:
 
@@ -25,6 +31,12 @@ class CSprite : public Component{
 class CSpriteTexture : public CSprite{
     public:
         Texture* texture;
+
+        ~CSpriteTexture(){
+            delete texture;
+            texture = nullptr;
+        }
+
 
         void draw() override;
 

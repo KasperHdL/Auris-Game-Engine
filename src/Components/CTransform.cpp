@@ -17,4 +17,8 @@ glm::mat4 CTransform::globalTransform() {
     return parent->transform->globalTransform() * localTransform();
 }
 
+CTransform::~CTransform(){
+    delete parent;
+    parent = nullptr;
+}
 
