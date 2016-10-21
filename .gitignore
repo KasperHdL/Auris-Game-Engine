@@ -2,6 +2,8 @@ bin
 Ex10*
 Scenegraph.*
 Ex11*
+GoldEngine*
 Box2D.*
 *.zip
 .ycm*
+
