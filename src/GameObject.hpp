@@ -17,6 +17,9 @@ class Component;
 class CTransform;
 class CSprite;
 class CSpriteTexture;
+class CDynamicBody;
+class CFixedBody;
+
 class GameObject{
 public:
 

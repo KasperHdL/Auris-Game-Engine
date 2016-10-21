@@ -2,6 +2,8 @@
 
 #include "Components/CTransform.hpp"
 #include "Components/CSprite.hpp"
+#include "Components/CDynamicBody.hpp"
+#include "Components/CFixedBody.hpp"
 
 GameObject::GameObject(){
     components = vector<shared_ptr<Component>>();

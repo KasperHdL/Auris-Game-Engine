@@ -21,10 +21,9 @@ class CTransform : public Component{
 
     protected:
 
-        CTransform(GameObject *gameObject):Component(gameObject){
+        CTransform(GameObject* gameObject):Component(gameObject){
             localRotation = 0;
             localScale = vec2(10,10);
-
         }
 
         friend class GameObject;

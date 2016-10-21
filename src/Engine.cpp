@@ -7,6 +7,7 @@ using namespace glm;
 
 #include "Components/CTransform.hpp"
 #include "Components/CSprite.hpp"
+#include "Components/CDynamicBody.hpp"
 
 
 void Engine::startup(){
@@ -14,14 +15,29 @@ void Engine::startup(){
     scene = new Scene();
 
     shared_ptr<GameObject> g = make_shared<GameObject>(GameObject());
-
     g->transform->localPosition = vec2(width/2, height/2);
-
     
     auto r = g->addComponentSpriteTexture();
     r->mesh = Mesh::createCube();
     r->color = vec4(1,0,0,1);
     r->texture = Texture::createFromFile("data/cartman.png",false);
+
+    auto b = g->addComponent<CDynamicBody>();
+
+    b2CircleShape shape;
+    shape.m_radius = 0.5f;
+
+    b2BodyDef bodyDef;
+    bodyDef.type = b2_dynamicBody;
+    bodyDef.position.Set(0.0f, 0.0f);
+    bodyDef.fixedRotation = true;
+
+    b2FixtureDef fixtureDef;
+    fixtureDef.shape = &shape;
+    fixtureDef.friction = 1.0f;
+    fixtureDef.density = 20.0f;
+
+    b->init(scene->world, bodyDef, fixtureDef);
 
     scene->add(g);
 }
@@ -55,7 +71,7 @@ void Engine::run(){
         sre->clearScreen(vec4(0.3f,0.3f,0.3f,1));
 
         HandleSDLEvents();
-
+        
         scene->update(deltaTimeSec);
         scene->draw();
 
