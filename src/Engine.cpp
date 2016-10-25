@@ -1,82 +1,26 @@
 #include "Engine.hpp"
+#include "GameObjects/Player.hpp"
 
 
 using namespace SRE;
 using namespace glm;
-#include <iostream>
 
-#include "Components/CTransform.hpp"
-#include "Components/CSprite.hpp"
-#include "Components/CDynamicBody.hpp"
-#include "Components/CFixedBody.hpp"
-#include "DebugDraw.hpp"
-
-DebugDraw draw;
+Player* player;
 
 void Engine::startup(){
 
-    scene = new Scene();
-
-    {
-        shared_ptr<GameObject> g = make_shared<GameObject>(GameObject());
-        g->transform->localPosition = vec2(30,30);
-        g->transform->localScale = vec2(1.0f, 1.0f);
-        
-        auto r = g->addComponentSpriteTexture();
-        r->mesh = Mesh::createCube();
-        r->color = vec4(1,0,0,1);
-        r->texture = Texture::createFromFile("data/cartman.png",false);
-
-        auto b = g->addComponent<CDynamicBody>();
-
-        b2CircleShape shape;
-        shape.m_radius = 1.0f;
-
-        b2BodyDef bodyDef;
-        bodyDef.type = b2_dynamicBody;
-        bodyDef.position.Set(10.0f,30.0f);
-        bodyDef.fixedRotation = true;
-
-        b2FixtureDef fixtureDef;
-        fixtureDef.shape = &shape;
-        fixtureDef.friction = 1.0f;
-        fixtureDef.density = 20.0f;
-
-        b->init(scene->world, bodyDef, fixtureDef);
-
-        scene->add(g);
-    } 
-
-    {
-        shared_ptr<GameObject> g = make_shared<GameObject>(GameObject());
-        g->transform->localPosition = vec2(10,10);
-        g->transform->localScale = vec2(10.0f, 1.0f);
-        g->transform->localRotation = -0.5f;
-        
-        auto r = g->addComponentSprite();
-        r->mesh = Mesh::createCube();
-        r->color = vec4(1,0,0,1);
-
-        auto b = g->addComponent<CFixedBody>();
-
-        b2PolygonShape shape;
-        shape.SetAsBox(10.0f,1.0f, b2Vec2(10.0f,10.0f), -0.5f);
-        b2BodyDef bodyDef;
-
-        b->init(scene->world, bodyDef, &shape);
-
-        scene->add(g);
- 
-    
-    }
-
-    scene->world->SetDebugDraw(&draw);
+    world = new b2World(toB2(glm::vec2(0,-10)));
+    world->SetDebugDraw(&draw);
     draw.SetFlags(b2Draw::e_shapeBit);
+
+    player = new Player(world);
+
 }
 
 void Engine::shutdown(){
-    delete scene;
-    scene = nullptr;
+    delete world;
+    world = nullptr;
+    gameObjects.clear();
 }
 
 
@@ -104,13 +48,13 @@ void Engine::run(){
         sre->clearScreen(vec4(0.3f,0.3f,0.3f,1));
 
         HandleSDLEvents();
+
+        world->Step(deltaTimeSec, VELOCITY_ITERATIONS, POSITION_ITERATIONS);         
+//UPDATE
+        player->update(deltaTimeSec);
+//DRAW
         
-        scene->update(deltaTimeSec);
-//        scene->draw();
-
-        scene->world->DrawDebugData();
-
-       
+        world->DrawDebugData(); 
         sre->swapWindow();
         SDL_Delay(16);
     }

@@ -4,7 +4,7 @@
 #include "Box2D/Box2D.h"
 #include <memory>
 
-class CDynamicBody : public Component{
+class DynamicBody : public Component{
 public:
 
     b2Body* body;
@@ -12,10 +12,7 @@ public:
        body = world->CreateBody(&bodyDef); 
        body->CreateFixture(&fixtureDef);
     }
-
-protected:
  
-    CDynamicBody(GameObject* gameObject):Component(gameObject){}
+    DynamicBody(GameObject* gameObject):Component(gameObject){}
 
-    friend class GameObject;
 };

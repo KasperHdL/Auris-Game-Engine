@@ -11,8 +11,10 @@ file(GLOB SOURCE_FILES
         "src/*.hpp"
         "src/*.h"
         "src/*.cpp"
-        "src/Components/*.cpp"
-        "src/Components/*.hpp"
+        "src/GameObjects/*.cpp"
+        "src/GameObjects/*.hpp"
+        "src/GameObjects/Components/*.cpp"
+        "src/GameObjects/Components/*.hpp"
         )
 
 add_executable(GoldEngine ${SOURCE_FILES})

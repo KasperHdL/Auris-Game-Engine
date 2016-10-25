@@ -8,8 +8,12 @@
 #include "Box2D/Box2D.h"
 
 #include <memory>
-#include "GameObject.hpp"
-#include "Scene.hpp"
+#include "GameObjects/GameObject.hpp"
+#include <iostream>
+
+#include "DebugDraw.hpp"
+
+
 
 class Engine{
 public:
@@ -24,12 +28,26 @@ public:
     void HandleSDLEvents();
     
 private:
+    vector<shared_ptr<GameObject>> gameObjects;
 
-    Scene* scene;
+    DebugDraw draw;
+
+    b2World* world;
+
+    const int VELOCITY_ITERATIONS = 16;
+    const int POSITION_ITERATIONS = 16;
 
     int width;
     int height;
+ 
     int quit;
+
+    inline glm::vec2 toGlm(const b2Vec2 &v) {
+            return glm::vec2(v.x, v.y);
+    }
+    inline b2Vec2 toB2(const glm::vec2 v){
+        return b2Vec2(v.x,v.y);
+    }
 };
 
 

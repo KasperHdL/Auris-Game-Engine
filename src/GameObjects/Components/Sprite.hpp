@@ -1,7 +1,6 @@
 #pragma once
 
 #include "Component.hpp"
-
 #include "glm/glm.hpp"
 #include "SRE/SimpleRenderEngine.hpp"
 #include "SRE/Mesh.hpp"
@@ -9,39 +8,33 @@
 #include "SRE/Texture.hpp"
 
 using namespace SRE;
-class CSprite : public Component{
+class Sprite : public Component{
     public:
         Mesh* mesh;
         glm::vec4 color;
         
         virtual void draw();
 
-        ~CSprite(){
+        ~Sprite(){
             delete mesh;
             mesh = nullptr;
         }
 
-    protected:
-
-        CSprite(GameObject* gameObject):Component(gameObject){}
-        friend class GameObject;
+        Sprite(GameObject* gameObject):Component(gameObject){}
 };
 
 
-class CSpriteTexture : public CSprite{
+class SpriteTexture : public Sprite{
     public:
         Texture* texture;
 
-        ~CSpriteTexture(){
+        ~SpriteTexture(){
             delete texture;
             texture = nullptr;
         }
 
-
         void draw() override;
 
-    protected:
-        CSpriteTexture(GameObject* gameObject):CSprite(gameObject){} 
-        friend class GameObject;
+        SpriteTexture(GameObject* gameObject):Sprite(gameObject){} 
 
 };

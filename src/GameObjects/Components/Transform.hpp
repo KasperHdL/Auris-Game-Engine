@@ -8,7 +8,7 @@
 
 using namespace glm;
 
-class CTransform : public Component{
+class Transform : public Component{
     public:
         GameObject* parent = nullptr;
 
@@ -19,17 +19,10 @@ class CTransform : public Component{
         glm::mat4 localTransform();
         glm::mat4 globalTransform();
 
-        ~CTransform();
+        ~Transform();
 
-    protected:
-
-        CTransform(GameObject* gameObject):Component(gameObject){
+        Transform(GameObject* gameObject):Component(gameObject){
             localRotation = 0;
             localScale = vec2(10,10);
         }
-
-        friend class GameObject;
-
 };
-
-
