@@ -12,6 +12,7 @@ class Sprite : public Component{
     public:
         Mesh* mesh;
         glm::vec4 color;
+        glm::vec2 scale;
         
         virtual void draw();
 

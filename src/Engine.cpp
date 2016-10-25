@@ -1,24 +1,27 @@
 #include "Engine.hpp"
-#include "GameObjects/Player.hpp"
+#include "DebugDraw.hpp"
 
+#include "GameObjects/Player.hpp"
 
 using namespace SRE;
 using namespace glm;
 
-Player* player;
+DebugDraw debugDraw;
 
 void Engine::startup(){
 
+    renderSystem.startup(16);
     world = new b2World(toB2(glm::vec2(0,-10)));
-    world->SetDebugDraw(&draw);
-    draw.SetFlags(b2Draw::e_shapeBit);
+    world->SetDebugDraw(&debugDraw);
+    debugDraw.SetFlags(b2Draw::e_shapeBit);
 
-    player = new Player(world);
+    gameObjects.push_back(make_shared<Player>(world, vec2(10,10)));
 
 }
 
 void Engine::shutdown(){
     delete world;
+    renderSystem.shutdown();
     world = nullptr;
     gameObjects.clear();
 }
@@ -49,11 +52,17 @@ void Engine::run(){
 
         HandleSDLEvents();
 
+        //UPDATE
+        for(auto& el: gameObjects)
+            el->update(deltaTimeSec);
+
+ 
         world->Step(deltaTimeSec, VELOCITY_ITERATIONS, POSITION_ITERATIONS);         
-//UPDATE
-        player->update(deltaTimeSec);
-//DRAW
-        
+
+       
+        //DRAW
+        renderSystem.update(deltaTimeSec);
+
         world->DrawDebugData(); 
         sre->swapWindow();
         SDL_Delay(16);
