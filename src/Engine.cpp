@@ -1,25 +1,42 @@
 #include "Engine.hpp"
-#include "GameObjects/Player.hpp"
+#include "DebugDraw.hpp"
 
+#include "GameObjects/Player.hpp"
 
 using namespace SRE;
 using namespace glm;
 
-Player* player;
+DebugDraw debugDraw;
 
 void Engine::startup(){
 
-    world = new b2World(toB2(glm::vec2(0,-10)));
-    world->SetDebugDraw(&draw);
-    draw.SetFlags(b2Draw::e_shapeBit);
+    renderSystem.startup(16);
 
-    player = new Player(world);
+    world = new b2World(toB2(glm::vec2(0,0)));
+
+    world->SetDebugDraw(&debugDraw);
+    debugDraw.SetFlags(b2Draw::e_shapeBit);
+
+    auto sre = SimpleRenderEngine::instance;
+    sre->getCamera()->setWindowCoordinates();
+    sre->setLight(0, Light(LightType::Point,{-1, 1,1},{0,0,0},{5,0,0},5,20)); 
+    sre->setLight(1, Light(LightType::Point,{0, 1, -2}, {0,0,0}, {3,3,3},5, 20));
+    sre->setLight(2, Light(LightType::Directional,{0,0,0},{1,1,1},{1,1,1},0,20)); 
+
+
+    gameObjects.push_back(make_shared<Player>(world, vec2(15,15)));
+    gameObjects.push_back(make_shared<Player>(world, vec2(10,15)));
+    gameObjects.push_back(make_shared<Player>(world, vec2(15,10)));
+    gameObjects.push_back(make_shared<Player>(world, vec2(10,10)));
 
 }
 
 void Engine::shutdown(){
+    renderSystem.shutdown();
+
     delete world;
     world = nullptr;
+
     gameObjects.clear();
 }
 
@@ -31,13 +48,6 @@ void Engine::run(){
     quit = 0;
     float deltaTimeSec = 0;
     auto sre = SimpleRenderEngine::instance;
-
-    sre->getCamera()->setWindowCoordinates();
- 
-    sre->setLight(0, Light(LightType::Point,{-1, 1,1},{0,0,0},{5,0,0},5,20)); 
-    sre->setLight(1, Light(LightType::Point,{0, 1, -2}, {0,0,0}, {3,3,3},5, 20));
-    sre->setLight(2, Light(LightType::Directional,{0,0,0},{1,1,1},{1,1,1},0,20)); 
-
    
     while (quit == 0){
         LAST = NOW;
@@ -49,11 +59,15 @@ void Engine::run(){
 
         HandleSDLEvents();
 
+        //UPDATE
+        for(auto& el: gameObjects)
+            el->update(deltaTimeSec);
+ 
         world->Step(deltaTimeSec, VELOCITY_ITERATIONS, POSITION_ITERATIONS);         
-//UPDATE
-        player->update(deltaTimeSec);
-//DRAW
-        
+       
+        //DRAW
+        renderSystem.update(deltaTimeSec);
+
         world->DrawDebugData(); 
         sre->swapWindow();
         SDL_Delay(16);

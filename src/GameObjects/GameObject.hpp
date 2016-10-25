@@ -9,24 +9,29 @@
 #include <SRE/SimpleRenderEngine.hpp>
 #include <SRE/Mesh.hpp>
 #include <SRE/Shader.hpp>
+#include "Box2D/Box2D.h"
 
 
 using namespace glm;
 using namespace std;
 
-class Transform;
 class Sprite;
 
 class GameObject{
 public:
 
-    shared_ptr<Transform> transform;
+    GameObject* parent = nullptr;
+
+    b2Body* body;
     shared_ptr<Sprite> sprite;
 
-    GameObject(vec2 position = vec2(0,0), float rotation = 0, vec2 scale = vec2(1,1));
+    GameObject(){};
         
     ~GameObject(){}
 
     virtual void update(float dt){};
+
+    glm::mat4 localTransform();
+    glm::mat4 globalTransform();
 
 };
