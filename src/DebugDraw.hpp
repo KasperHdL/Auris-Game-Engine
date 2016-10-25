@@ -18,12 +18,17 @@ class DebugDraw : public b2Draw{
             SRE::Debug::setColor(glm::vec4(color.r, color.g, color.b, color.a));
 
             for(int i = 0; i < vertexCount-1; i++){
-//                std::cout << std::printf("v %i (%f,%f)", i, vertices[i].x, vertices[i].y) << std::endl;
-                SRE::Debug::drawLine(glm::vec3(vertices[i].x * Constants::METERS_TO_PIXELS,vertices[i].y * Constants::METERS_TO_PIXELS,0), glm::vec3(vertices[i+1].x * Constants::METERS_TO_PIXELS,vertices[i+1].y * Constants::METERS_TO_PIXELS,0)); 
+                SRE::Debug::drawLine(
+                        glm::vec3(
+                            vertices[i].x * Constants::METERS_TO_PIXELS,
+                            vertices[i].y * Constants::METERS_TO_PIXELS,0), 
+                        glm::vec3(
+                            vertices[i+1].x * Constants::METERS_TO_PIXELS,
+                            vertices[i+1].y * Constants::METERS_TO_PIXELS,0)
+                        ); 
             }
 
             SRE::Debug::drawLine(glm::vec3(vertices[vertexCount-1].x * Constants::METERS_TO_PIXELS,vertices[vertexCount-1].y * Constants::METERS_TO_PIXELS,0), glm::vec3(vertices[0].x * Constants::METERS_TO_PIXELS,vertices[0].y * Constants::METERS_TO_PIXELS,0)); 
-//            std::cout << std::endl;
         }
 
         void DrawSolidPolygon(const b2Vec2* vertices, int32 vertexCount, const b2Color& color) {
