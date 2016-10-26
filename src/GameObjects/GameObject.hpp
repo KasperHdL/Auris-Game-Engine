@@ -16,6 +16,7 @@ using namespace std;
 
 class Transform;
 class Sprite;
+class Scriptable;
 
 class GameObject{
 public:

@@ -5,11 +5,13 @@
 #include "Components/Transform.hpp"
 #include "Components/Sprite.hpp"
 #include "Components/DynamicBody.hpp"
+#include "data/PlayerController.h"
 
 
 class Player : public GameObject{
     public:
     shared_ptr<DynamicBody> body;
+	shared_ptr<Scriptable> script;
 
     Player(b2World* world):GameObject(){
         transform->localScale = vec2(100,100);
@@ -35,12 +37,15 @@ class Player : public GameObject{
         fixtureDef.density = 20.0f;
 
         b->init(world, bodyDef, fixtureDef);
+
+		shared_ptr<PlayerController> scr = make_shared<PlayerController>(this);
+		script = scr;
     }
 
          
     void update(float dt){
         sprite->draw();
-
+		script->Update(dt);
     }
 
 };

@@ -51,6 +51,7 @@ void Engine::run(){
 
         world->Step(deltaTimeSec, VELOCITY_ITERATIONS, POSITION_ITERATIONS);         
 //UPDATE
+
         player->update(deltaTimeSec);
 //DRAW
         
