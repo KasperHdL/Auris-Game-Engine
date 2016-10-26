@@ -13,7 +13,7 @@ class DebugDraw : public b2Draw{
     public:
         DebugDraw(){}
 
-        void DrawPolygon(const b2Vec2* vertices, int32 vertexCount, const b2Color& color) {
+        void DrawPolygon(const b2Vec2* vertices, int vertexCount, const b2Color& color) {
             
             SRE::Debug::setColor(glm::vec4(color.r, color.g, color.b, color.a));
 
@@ -31,12 +31,12 @@ class DebugDraw : public b2Draw{
             SRE::Debug::drawLine(glm::vec3(vertices[vertexCount-1].x * Constants::METERS_TO_PIXELS,vertices[vertexCount-1].y * Constants::METERS_TO_PIXELS,0), glm::vec3(vertices[0].x * Constants::METERS_TO_PIXELS,vertices[0].y * Constants::METERS_TO_PIXELS,0)); 
         }
 
-        void DrawSolidPolygon(const b2Vec2* vertices, int32 vertexCount, const b2Color& color) {
+        void DrawSolidPolygon(const b2Vec2* vertices, int vertexCount, const b2Color& color) {
             DrawPolygon(vertices, vertexCount, color);
         }
 
-        void DrawCircle(const b2Vec2& center, float32 radius, const b2Color& color) {
-            int size = 32;
+        void DrawCircle(const b2Vec2& center, float radius, const b2Color& color) {
+            const int size = 32;
             b2Vec2 array[size];
 
             for(int i = 0;i < size;i++){
@@ -47,7 +47,7 @@ class DebugDraw : public b2Draw{
         
         }
 
-        void DrawSolidCircle(const b2Vec2& center, float32 radius, const b2Vec2& axis, const b2Color& color) {
+        void DrawSolidCircle(const b2Vec2& center, float radius, const b2Vec2& axis, const b2Color& color) {
             DrawCircle(center, radius, color);
 
         }
@@ -60,7 +60,7 @@ class DebugDraw : public b2Draw{
 
         void DrawTransform(const b2Transform& xf) {}
 
-        void DrawPoint(const b2Vec2& p, float32 size, const b2Color& color){
+        void DrawPoint(const b2Vec2& p, float size, const b2Color& color){
             DrawCircle(p, size, color);
         }
 

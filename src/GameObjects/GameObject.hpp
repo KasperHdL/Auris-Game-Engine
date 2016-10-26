@@ -16,6 +16,7 @@ using namespace glm;
 using namespace std;
 
 class Sprite;
+class Scriptable;
 
 class GameObject{
 public:
