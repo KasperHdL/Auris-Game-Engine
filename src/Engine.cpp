@@ -1,5 +1,7 @@
 #include "Engine.hpp"
 #include "GameObjects/Player.hpp"
+#include "Input.hpp";
+#include "Keys.hpp";
 
 
 using namespace SRE;
@@ -31,6 +33,22 @@ void Engine::run(){
     quit = 0;
     float deltaTimeSec = 0;
     auto sre = SimpleRenderEngine::instance;
+	Input input;
+	Keys keys;
+	Keys altKeys;
+
+	//EXAMPLES START
+	keys.setKey("quit", SDL_SCANCODE_ESCAPE);
+	keys.setKey("up", SDL_SCANCODE_W);
+	keys.setKey("down", SDL_SCANCODE_S);
+	keys.setKey("left", SDL_SCANCODE_A);
+	keys.setKey("right", SDL_SCANCODE_D);
+
+	altKeys.setKey("up", SDL_SCANCODE_UP);
+	altKeys.setKey("down", SDL_SCANCODE_DOWN);
+	altKeys.setKey("left", SDL_SCANCODE_LEFT);
+	altKeys.setKey("right", SDL_SCANCODE_RIGHT);
+	//EXAMPLES END
 
     sre->getCamera()->setWindowCoordinates();
  
@@ -38,7 +56,6 @@ void Engine::run(){
     sre->setLight(1, Light(LightType::Point,{0, 1, -2}, {0,0,0}, {3,3,3},5, 20));
     sre->setLight(2, Light(LightType::Directional,{0,0,0},{1,1,1},{1,1,1},0,20)); 
 
-   
     while (quit == 0){
         LAST = NOW;
         NOW = SDL_GetPerformanceCounter();
@@ -46,8 +63,25 @@ void Engine::run(){
         deltaTimeSec = clamp(((NOW - LAST) / (float)SDL_GetPerformanceFrequency() ),0.0f,1.0f);
 
         sre->clearScreen(vec4(0.3f,0.3f,0.3f,1));
-
+		input.update();
         HandleSDLEvents();
+		if (input.keyDown(keys.getKey("quit"))) {
+			quit = 1;
+		}
+		//EXAMPLES START
+		if (input.keyDown(keys.getKey("up"))||input.keyDown(altKeys.getKey("up"))) {
+			cout << "GOING UP" << endl;
+		}
+		if (input.keyDown(keys.getKey("down"))||input.keyDown(altKeys.getKey("down"))) {
+			cout << "GOING DOWN" << endl;
+		}
+		if (input.keyDown(keys.getKey("left"))||input.keyDown(altKeys.getKey("left"))) {
+			cout << "GOING LEFT" << endl;
+		}
+		if (input.keyDown(keys.getKey("right"))||input.keyDown(altKeys.getKey("right"))) {
+			cout << "GOING RIGHT" << endl;
+		}
+		//EXAMPLES END
 
         world->Step(deltaTimeSec, VELOCITY_ITERATIONS, POSITION_ITERATIONS);         
 //UPDATE
