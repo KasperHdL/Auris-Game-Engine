@@ -35,19 +35,12 @@ void Engine::run(){
     auto sre = SimpleRenderEngine::instance;
 	Input input;
 	Keys keys;
-	Keys altKeys;
 
 	//EXAMPLES START
-	keys.setKey("quit", SDL_SCANCODE_ESCAPE);
-	keys.setKey("up", SDL_SCANCODE_W);
-	keys.setKey("down", SDL_SCANCODE_S);
-	keys.setKey("left", SDL_SCANCODE_A);
-	keys.setKey("right", SDL_SCANCODE_D);
-
-	altKeys.setKey("up", SDL_SCANCODE_UP);
-	altKeys.setKey("down", SDL_SCANCODE_DOWN);
-	altKeys.setKey("left", SDL_SCANCODE_LEFT);
-	altKeys.setKey("right", SDL_SCANCODE_RIGHT);
+	keys.setKey("w", SDL_SCANCODE_W);
+	keys.setKey("s", SDL_SCANCODE_S);
+	keys.setKey("a", SDL_SCANCODE_A);
+	keys.setKey("d", SDL_SCANCODE_D);
 	//EXAMPLES END
 
     sre->getCamera()->setWindowCoordinates();
@@ -69,16 +62,16 @@ void Engine::run(){
 			quit = 1;
 		}
 		//EXAMPLES START
-		if (input.keyDown(keys.getKey("up"))||input.keyDown(altKeys.getKey("up"))) {
+		if (input.keyDown(keys.getKey("up"))||input.keyDown(keys.getKey("w"))) {
 			cout << "GOING UP" << endl;
 		}
-		if (input.keyDown(keys.getKey("down"))||input.keyDown(altKeys.getKey("down"))) {
+		if (input.keyDown(keys.getKey("down"))||input.keyDown(keys.getKey("s"))) {
 			cout << "GOING DOWN" << endl;
 		}
-		if (input.keyDown(keys.getKey("left"))||input.keyDown(altKeys.getKey("left"))) {
+		if (input.keyDown(keys.getKey("left"))||input.keyDown(keys.getKey("a"))) {
 			cout << "GOING LEFT" << endl;
 		}
-		if (input.keyDown(keys.getKey("right"))||input.keyDown(altKeys.getKey("right"))) {
+		if (input.keyDown(keys.getKey("right"))||input.keyDown(keys.getKey("d"))) {
 			cout << "GOING RIGHT" << endl;
 		}
 		//EXAMPLES END
