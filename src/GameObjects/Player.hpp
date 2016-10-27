@@ -15,6 +15,7 @@ class Player : public GameObject{
     public:
 
     Player(b2World* world, vec2 position = vec2(0,0)):GameObject(){
+
         //define sprite
         auto s = RenderSystem::getSpriteTexture(this);
         s->mesh = Mesh::createCube();
