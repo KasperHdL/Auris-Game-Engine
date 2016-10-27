@@ -7,7 +7,6 @@
 
 class Scriptable : public Component {
 	public:
-		GameObject* parent = nullptr;
 
 		virtual void Init() {} // Called upon initialization
 
