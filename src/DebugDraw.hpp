@@ -36,7 +36,7 @@ class DebugDraw : public b2Draw{
         }
 
         void DrawCircle(const b2Vec2& center, float radius, const b2Color& color) {
-            int const size = 32;
+            const int size = 32;
             b2Vec2 array[size];
 
             for(int i = 0;i < size;i++){
