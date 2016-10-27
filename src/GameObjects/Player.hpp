@@ -2,45 +2,46 @@
 
 #include "GameObject.hpp"
 #include "Box2D/Box2D.h"
-#include "Components/Transform.hpp"
 #include "Components/Sprite.hpp"
-#include "Components/DynamicBody.hpp"
+
+#include "../RenderSystem.hpp"
+#include "../Constants.hpp"
+#include <iostream>
 
 
+using namespace std;
 class Player : public GameObject{
     public:
-    shared_ptr<DynamicBody> body;
 
-    Player(b2World* world):GameObject(){
-        transform->localScale = vec2(100,100);
-        shared_ptr<SpriteTexture> s = make_shared<SpriteTexture>(this);
+    Player(b2World* world, vec2 position = vec2(0,0)):GameObject(){
+
+        //define sprite
+        auto s = RenderSystem::getSpriteTexture(this);
         s->mesh = Mesh::createCube();
-        s->color = vec4(1,1,0,1);
+        s->color = vec4(1,1,1,1);
         s->texture = SRE::Texture::createFromFile("data/cartman.png",false);
+        s->scale = vec2(s->texture->getWidth(), s->texture->getHeight());
         sprite = s;
 
-        shared_ptr<DynamicBody> b = make_shared<DynamicBody>(this);
-
-        b2CircleShape shape;
-        shape.m_radius = 1.0f;
-
+        //body & fixture definitions and create & assign body
         b2BodyDef bodyDef;
         bodyDef.type = b2_dynamicBody;
-        bodyDef.position.Set(10.0f,30.0f);
-        bodyDef.fixedRotation = true;
+        bodyDef.position.Set(position.x, position.y);
+
+        b2CircleShape shape;
+        shape.m_radius = (s->scale.x * Constants::PIXELS_TO_METERS);
 
         b2FixtureDef fixtureDef;
         fixtureDef.shape = &shape;
         fixtureDef.friction = 1.0f;
         fixtureDef.density = 20.0f;
 
-        b->init(world, bodyDef, fixtureDef);
+        body = world->CreateBody(&bodyDef); 
+        body->CreateFixture(&fixtureDef);
+
     }
 
-         
     void update(float dt){
-        sprite->draw();
 
     }
-
 };

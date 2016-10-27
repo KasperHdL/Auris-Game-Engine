@@ -8,13 +8,13 @@
 #include "Box2D/Box2D.h"
 
 #include <memory>
+#include <vector>
 #include "GameObjects/GameObject.hpp"
 #include <iostream>
 
-#include "DebugDraw.hpp"
+#include "RenderSystem.hpp"
 
-
-
+class DebugDraw;
 class Engine{
 public:
     Engine(int width, int height):width(width),height(height){};
@@ -26,11 +26,11 @@ public:
     void run();
 
     void HandleSDLEvents();
-    
-private:
-    vector<shared_ptr<GameObject>> gameObjects;
 
-    DebugDraw draw;
+private:
+
+    vector<shared_ptr<GameObject>> gameObjects;
+    RenderSystem renderSystem;
 
     b2World* world;
 
