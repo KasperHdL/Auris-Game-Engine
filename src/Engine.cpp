@@ -54,7 +54,7 @@ void Engine::run(){
         NOW = SDL_GetPerformanceCounter();
 
         deltaTimeSec = clamp(((NOW - LAST) / (float)SDL_GetPerformanceFrequency() ),0.0f,1.0f);
-
+		
         sre->clearScreen(vec4(0.3f,0.3f,0.3f,1));
 		input.update();
         HandleSDLEvents();
