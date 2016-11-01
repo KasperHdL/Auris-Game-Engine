@@ -25,6 +25,7 @@ public:
 
     b2Body* body;
     shared_ptr<Sprite> sprite;
+	shared_ptr<Scriptable> script;
 
     GameObject(){};
         

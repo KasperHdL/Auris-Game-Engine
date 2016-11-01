@@ -3,7 +3,6 @@
 #include "GameObject.hpp"
 #include "Box2D/Box2D.h"
 #include "Components/Sprite.hpp"
-#include "Components/DynamicBody.hpp"
 #include "data/PlayerController.h"
 
 #include "../RenderSystem.hpp"
@@ -14,7 +13,6 @@
 using namespace std;
 class Player : public GameObject{
     public:
-	shared_ptr<Scriptable> script;
 
     Player(b2World* world, vec2 position = vec2(0,0)):GameObject(){
 
@@ -39,10 +37,13 @@ class Player : public GameObject{
         fixtureDef.friction = 1.0f;
         fixtureDef.density = 20.0f;
 
-		shared_ptr<PlayerController> scr = make_shared<PlayerController>(this);
-		script = scr;
         body = world->CreateBody(&bodyDef); 
         body->CreateFixture(&fixtureDef);
+
+		// attach script to player and call its Init function
+		shared_ptr<Scriptable> scr = make_shared<PlayerController>(this);
+		script = scr;
+		script->Init();
     }
 
     void update(float dt){

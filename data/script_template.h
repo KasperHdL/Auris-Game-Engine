@@ -2,18 +2,18 @@
 
 #include "../src/GameObjects/Components/Scriptable.hpp"
 
-class CLASSNAME : Scriptable {
+class CLASSNAME : public Scriptable {
 public:
 
-private:
+	void Init() {
 
-	Init() {
-		
 	}
 
-	Update(float deltaTime) {
-		
+	void Update(float deltaTime) {
+
 	}
+
+
+	PlayerController(GameObject* gameObject) :Scriptable(gameObject) {};
 };
-
 
