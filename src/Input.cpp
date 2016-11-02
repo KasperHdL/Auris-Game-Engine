@@ -1,4 +1,5 @@
 #include "Input.hpp"
+#include <iostream>
 
 ///This method clears all the keys that are currently stored, and then updates them to what ever keys are being manipulated this frame
 void Input::update() {

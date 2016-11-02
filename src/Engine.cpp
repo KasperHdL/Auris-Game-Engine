@@ -27,9 +27,13 @@ void Engine::startup(){
 
 
     gameObjects.push_back(make_shared<Player>(world, vec2(15,15)));
-    gameObjects.push_back(make_shared<Player>(world, vec2(10,15)));
-    gameObjects.push_back(make_shared<Player>(world, vec2(15,10)));
-    gameObjects.push_back(make_shared<Player>(world, vec2(10,10)));
+   // gameObjects.push_back(make_shared<Player>(world, vec2(10,15)));
+   // gameObjects.push_back(make_shared<Player>(world, vec2(15,10)));
+   // gameObjects.push_back(make_shared<Player>(world, vec2(10,10)));
+
+	//Run init on all gameobjects
+	for(auto& el: gameObjects)
+            el->Init();
 
 }
 
@@ -50,15 +54,6 @@ void Engine::run(){
     quit = 0;
     float deltaTimeSec = 0;
     auto sre = SimpleRenderEngine::instance;
-	Input input;
-	Keys keys;
-
-	//EXAMPLES START
-	keys.setKey("w", SDL_SCANCODE_W);
-	keys.setKey("s", SDL_SCANCODE_S);
-	keys.setKey("a", SDL_SCANCODE_A);
-	keys.setKey("d", SDL_SCANCODE_D);
-	//EXAMPLES END
 
     while (quit == 0){
         LAST = NOW;
@@ -67,29 +62,13 @@ void Engine::run(){
         deltaTimeSec = clamp(((NOW - LAST) / (float)SDL_GetPerformanceFrequency() ),0.0f,1.0f);
 		
         sre->clearScreen(vec4(0.3f,0.3f,0.3f,1));
-		input.update();
-        HandleSDLEvents();
-		if (input.keyDown(keys.getKey("quit"))) {
-			quit = 1;
-		}
-		//EXAMPLES START
-		if (input.keyDown(keys.getKey("up"))||input.keyDown(keys.getKey("w"))) {
-			cout << "GOING UP" << endl;
-		}
-		if (input.keyDown(keys.getKey("down"))||input.keyDown(keys.getKey("s"))) {
-			cout << "GOING DOWN" << endl;
-		}
-		if (input.keyDown(keys.getKey("left"))||input.keyDown(keys.getKey("a"))) {
-			cout << "GOING LEFT" << endl;
-		}
-		if (input.keyDown(keys.getKey("right"))||input.keyDown(keys.getKey("d"))) {
-			cout << "GOING RIGHT" << endl;
-		}
-		//EXAMPLES END
 
-        //UPDATE
-        for(auto& el: gameObjects)
-            el->update(deltaTimeSec);
+		for(auto& el: gameObjects)
+           el->Update(deltaTimeSec);
+
+        HandleSDLEvents();
+        //Run update on all gameobjects!!
+
  
         world->Step(deltaTimeSec, VELOCITY_ITERATIONS, POSITION_ITERATIONS);         
        

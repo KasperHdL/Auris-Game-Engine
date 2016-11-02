@@ -3,11 +3,12 @@
 #include "GameObject.hpp"
 #include "Box2D/Box2D.h"
 #include "Components/Sprite.hpp"
-#include "data/PlayerController.h"
 
 #include "../RenderSystem.hpp"
 #include "../Constants.hpp"
 #include <iostream>
+#include "src\Input.hpp"
+#include "src\Keys.hpp"
 
 
 using namespace std;
@@ -39,14 +40,28 @@ class Player : public GameObject{
 
         body = world->CreateBody(&bodyDef); 
         body->CreateFixture(&fixtureDef);
-
-		// attach script to player and call its Init function
-		shared_ptr<Scriptable> scr = make_shared<PlayerController>(this);
-		script = scr;
-		script->Init();
     }
 
-    void update(float dt){
-		script->Update(dt);
+	int force;
+	Input input;
+	Keys keys;
+	void Init() {
+		force = 10000;
+	}
+
+    void Update(float dt){
+		input.update();
+		if (input.keyHeld(keys.getKey("up"))) {
+			body->ApplyForceToCenter(b2Vec2(0, force), true);
+		}
+		if (input.keyHeld(keys.getKey("down"))) {
+			body->ApplyForceToCenter(b2Vec2(0, -force), true);
+		}
+		if (input.keyHeld(keys.getKey("left"))) {
+			body->ApplyForceToCenter(b2Vec2(-force, 0), true);
+		}
+		if (input.keyHeld(keys.getKey("right"))) {
+			body->ApplyForceToCenter(b2Vec2(force, 0), true);
+		}
     }
 };
