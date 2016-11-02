@@ -16,7 +16,7 @@ using namespace glm;
 using namespace std;
 
 class Sprite;
-class Scriptable;
+class Animation;
 
 class GameObject{
 public:
@@ -24,8 +24,8 @@ public:
     GameObject* parent = nullptr;
 
     b2Body* body;
-    shared_ptr<Sprite> sprite;
-	shared_ptr<Scriptable> script;
+	shared_ptr<Sprite> sprite;
+	shared_ptr<Animation> anim;
 
     GameObject(){};
         
