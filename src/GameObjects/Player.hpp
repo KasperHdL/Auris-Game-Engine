@@ -7,8 +7,8 @@
 #include "../RenderSystem.hpp"
 #include "../Constants.hpp"
 #include <iostream>
-#include "src\Input.hpp"
-#include "src\Keys.hpp"
+#include "src/Input.hpp"
+#include "src/Keys.hpp"
 
 
 using namespace std;

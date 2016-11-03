@@ -33,3 +33,10 @@ shared_ptr<SpriteTexture> RenderSystem::getSpriteTexture(GameObject* gameObject)
     return s;
 }
 
+shared_ptr<Animation> RenderSystem::getSpriteAnimation(GameObject* gameObject, float length){
+    shared_ptr<Animation> s = make_shared<Animation>(gameObject, length);
+    sprites.push_back(s);
+
+    return s;
+}
+

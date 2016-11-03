@@ -19,10 +19,20 @@ public:
 	}
 	void setTexture(Texture* tex);
 	void delLastTexture();
+	void updateAnim(float dt);
 	void draw();
 
-	Animation(GameObject* gameObject):SpriteTexture(gameObject) {}
+	Animation(GameObject* gameObject, float length):SpriteTexture(gameObject) {
+		
+		this->length = length;
+		frameLength = length / textures.size();
+		index = 0;
+
+	}
 
 private:
-
+	float length;
+	float frameLength;
+	float time;
+	int index;
 };

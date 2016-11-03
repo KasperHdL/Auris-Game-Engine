@@ -23,4 +23,5 @@ class RenderSystem{
 
     static shared_ptr<Sprite> getSprite(GameObject* gameObject);
     static shared_ptr<SpriteTexture> getSpriteTexture(GameObject* gameObject);
+	static shared_ptr<Animation> getSpriteAnimation(GameObject* gameObject, float length);
 };
