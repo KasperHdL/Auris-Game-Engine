@@ -2,8 +2,8 @@
 #include "DebugDraw.hpp"
 
 #include "GameObjects/Player.hpp"
-#include "Input.hpp";
-#include "Keys.hpp";
+#include "Input.hpp"
+#include "Keys.hpp"
 
 using namespace SRE;
 using namespace glm;
