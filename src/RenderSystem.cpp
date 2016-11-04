@@ -26,17 +26,16 @@ shared_ptr<Sprite> RenderSystem::getSprite(GameObject* gameObject){
     return s;
 }
 
-shared_ptr<SpriteTexture> RenderSystem::getSpriteTexture(GameObject* gameObject){
-    shared_ptr<SpriteTexture> s = make_shared<SpriteTexture>(gameObject);
-    sprites.push_back(s);
-
-    return s;
+shared_ptr<Animation> RenderSystem::getAnim(GameObject* gameObject, float length){
+    shared_ptr<Animation> a = make_shared<Animation>(gameObject, length);
+    animations.push_back(a);
+    return a;
 }
 
-shared_ptr<Animation> RenderSystem::getSpriteAnimation(GameObject* gameObject, float length){
-    shared_ptr<Animation> s = make_shared<Animation>(gameObject, length);
-    sprites.push_back(s);
-
-    return s;
-}
+//shared_ptr<SpriteTexture> RenderSystem::getSpriteTexture(GameObject* gameObject){
+//    shared_ptr<SpriteTexture> s = make_shared<SpriteTexture>(gameObject);
+//    sprites.push_back(s);
+//
+//    return s;
+//}
 

@@ -1,5 +1,6 @@
 #pragma once
 
+#include "src\GameObjects\GameObject.hpp"
 #include "src\GameObjects\Components\Sprite.hpp"
 #include "glm/glm.hpp"
 #include "SRE/SimpleRenderEngine.hpp"
@@ -8,10 +9,11 @@
 #include "SRE/Texture.hpp"
 
 using namespace SRE;
-class Animation : public SpriteTexture
+class Animation
 {
 public:
 
+	Texture* tex;
 	std::vector<Texture*> textures;
 
 	~Animation() {
@@ -20,10 +22,10 @@ public:
 	void setTexture(Texture* tex);
 	void delLastTexture();
 	void updateAnim(float dt);
-	void draw();
 
-	Animation(GameObject* gameObject, float length):SpriteTexture(gameObject) {
+	Animation(GameObject* gameObject, float length){
 		
+		tex = gameObject->sprite->texture;
 		this->length = length;
 		frameLength = length / textures.size();
 		index = 0;

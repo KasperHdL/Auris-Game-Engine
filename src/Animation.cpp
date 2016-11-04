@@ -20,16 +20,16 @@ void Animation::updateAnim(float dt)
 		if (index >= textures.size()) {
 			index = 0;
 		}
-		texture = textures[index];
+		tex = textures[index];
 		time = glm::mod<float>(time, frameLength);
 	}
 }
 
-void Animation::draw() {
-
-	Shader* shader = Shader::getUnlitSprite();
-    shader->setVector("color", color);
-    shader->setTexture("tex", texture);
-	SimpleRenderEngine::instance->draw(mesh, gameObject->globalTransform(), shader);
-}
+//void animation::draw() {
+//
+//	shader* shader = shader::getunlitsprite();
+//    shader->setvector("color", color);
+//    shader->settexture("tex", texture);
+//	simplerenderengine::instance->draw(mesh, gameobject->globaltransform(), shader);
+//}
 
