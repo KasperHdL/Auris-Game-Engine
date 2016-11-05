@@ -1,6 +1,7 @@
 #include "Engine.hpp"
 #include "DebugDraw.hpp"
 
+#include <glm/gtc/random.hpp>
 #include "GameObjects/Player.hpp"
 #include "Input.hpp";
 #include "Keys.hpp";
@@ -10,9 +11,12 @@ using namespace glm;
 
 DebugDraw debugDraw;
 
+
 void Engine::startup(){
 
     renderSystem.startup(16);
+
+    particleSystem.startup(20000, 1, SRE::Texture::createFromFile("data/cartman.png",false));
 
     world = new b2World(toB2(glm::vec2(0,0)));
 
@@ -25,11 +29,12 @@ void Engine::startup(){
     sre->setLight(1, Light(LightType::Point,{0, 1, -2}, {0,0,0}, {3,3,3},5, 20));
     sre->setLight(2, Light(LightType::Directional,{0,0,0},{1,1,1},{1,1,1},0,20)); 
 
-
+/*
     gameObjects.push_back(make_shared<Player>(world, vec2(15,15)));
     gameObjects.push_back(make_shared<Player>(world, vec2(10,15)));
     gameObjects.push_back(make_shared<Player>(world, vec2(15,10)));
     gameObjects.push_back(make_shared<Player>(world, vec2(10,10)));
+    */
 
 }
 
@@ -91,6 +96,20 @@ void Engine::run(){
         for(auto& el: gameObjects)
             el->update(deltaTimeSec);
  
+
+        for(int i = 0; i < 100; i++)
+        particleSystem.emit(
+                vec3(width/2, height / 2, 0), //position
+                vec3(glm::circularRand<float>(600.0f), 0), //velocity
+                vec4(glm::sphericalRand<float>(1.0f), glm::linearRand<float>(0,1)), //color
+                glm::linearRand<float>(0,1), //size
+                vec4(0), //end color
+                0 //end size
+                );
+        particleSystem.update(deltaTimeSec);
+        particleSystem.draw();
+
+
         world->Step(deltaTimeSec, VELOCITY_ITERATIONS, POSITION_ITERATIONS);         
        
         //DRAW
