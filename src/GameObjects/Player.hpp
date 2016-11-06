@@ -3,7 +3,7 @@
 #include "GameObject.hpp"
 #include "Box2D/Box2D.h"
 #include "Components/Sprite.hpp"
-#include "src\Animation.hpp"
+#include "src/Animation.hpp"
 
 #include "../RenderSystem.hpp"
 #include "../Constants.hpp"
@@ -27,11 +27,12 @@ class Player : public GameObject{
         sprite = s;
 
 		auto a = RenderSystem::getAnim(this, 4.0f);
+		a->setTexture(SRE::Texture::createFromFile("data/cartman.png", false));
 		a->setTexture(SRE::Texture::createFromFile("data/fugl.png", false));
 		a->setTexture(SRE::Texture::createFromFile("data/hammer.png", false));
 		a->setTexture(SRE::Texture::createFromFile("data/rainbow.png", false));
 		anim = a;
-		
+		anim = a;
 		
         //body & fixture definitions and create & assign body
         b2BodyDef bodyDef;
@@ -59,7 +60,6 @@ class Player : public GameObject{
 
     void Update(float dt){
 		input.update();
-		anim->updateAnim(dt);
 		if (input.keyHeld(keys.getKey("up"))) {
 			body->ApplyForceToCenter(b2Vec2(0, force), true);
 		}

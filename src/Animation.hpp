@@ -1,12 +1,14 @@
 #pragma once
 
-#include "src\GameObjects\GameObject.hpp"
-#include "src\GameObjects\Components\Sprite.hpp"
+#include "src/GameObjects/GameObject.hpp"
+#include "src/GameObjects/Components/Sprite.hpp"
 #include "glm/glm.hpp"
 #include "SRE/SimpleRenderEngine.hpp"
 #include "SRE/Mesh.hpp"
 #include "SRE/Shader.hpp"
 #include "SRE/Texture.hpp"
+
+#include <iostream>
 
 using namespace SRE;
 class Animation
@@ -27,8 +29,9 @@ public:
 		
 		tex = gameObject->sprite->texture;
 		this->length = length;
-		frameLength = length / textures.size();
 		index = 0;
+		time = 0;
+		std::cout << this->length << " " << textures.size() << " " << frameLength << std::endl;
 
 	}
 

@@ -5,7 +5,7 @@
 
 #include "GameObjects/GameObject.hpp"
 #include "GameObjects/Components/Sprite.hpp"
-#include "src\Animation.hpp"
+#include "src/Animation.hpp"
 
 using namespace std;
 class RenderSystem{

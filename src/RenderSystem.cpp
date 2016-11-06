@@ -1,6 +1,7 @@
 #include "RenderSystem.hpp"
 
 vector<shared_ptr<Sprite>> RenderSystem::sprites;
+vector<shared_ptr<Animation>> RenderSystem::animations;
 
 void RenderSystem::startup(int reserve){
     RenderSystem::sprites.reserve(reserve);
@@ -16,7 +17,8 @@ void RenderSystem::shutdown(){
 void RenderSystem::update(float dt){
     for(auto& el : RenderSystem::sprites)
         el->draw();
-
+	for (auto& el : RenderSystem::animations)
+		el->updateAnim(dt);
 }
 
 shared_ptr<Sprite> RenderSystem::getSprite(GameObject* gameObject){

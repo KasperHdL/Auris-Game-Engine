@@ -1,5 +1,4 @@
 #include "Animation.hpp"
-#include "src\GameObjects\GameObject.hpp"
 
 void Animation::setTexture(Texture* tex)
 {
@@ -13,23 +12,17 @@ void Animation::delLastTexture()
 
 void Animation::updateAnim(float dt)
 {
+	frameLength = length / textures.size();
 	time += dt;
-
+	std::cout << index  << std::endl;
 	if (time >= frameLength) {
 		index++;
 		if (index >= textures.size()) {
 			index = 0;
 		}
-		tex = textures[index];
+		Texture temp = *textures[index];
+		*tex = temp;
 		time = glm::mod<float>(time, frameLength);
 	}
 }
-
-//void animation::draw() {
-//
-//	shader* shader = shader::getunlitsprite();
-//    shader->setvector("color", color);
-//    shader->settexture("tex", texture);
-//	simplerenderengine::instance->draw(mesh, gameobject->globaltransform(), shader);
-//}
 
