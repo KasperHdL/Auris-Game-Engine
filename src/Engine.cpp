@@ -24,13 +24,6 @@ void Engine::startup(){
     sre->setLight(0, Light(LightType::Point,{-1, 1,1},{0,0,0},{5,0,0},5,20)); 
     sre->setLight(1, Light(LightType::Point,{0, 1, -2}, {0,0,0}, {3,3,3},5, 20));
     sre->setLight(2, Light(LightType::Directional,{0,0,0},{1,1,1},{1,1,1},0,20)); 
-
-
-    gameObjects.push_back(make_shared<Player>(world, vec2(15,15)));
-    gameObjects.push_back(make_shared<Player>(world, vec2(10,15)));
-    gameObjects.push_back(make_shared<Player>(world, vec2(15,10)));
-    gameObjects.push_back(make_shared<Player>(world, vec2(10,10)));
-
 }
 
 void Engine::shutdown(){
@@ -60,6 +53,14 @@ void Engine::run(){
 	keys.setKey("d", SDL_SCANCODE_D);
 	//EXAMPLES END
 
+	//Initialize MemoryLeakDetector
+	memLeakDet = MemoryLeakDetector();
+
+	//EXAMPLES START
+	cout << "Total CPU:\t\t\t" << memLeakDet.getCurrentTotalCPUValue() << endl;
+	cout << "Total CPU used by this process:\t" << memLeakDet.getCurrentProcessCPUValue() << endl;
+	//EXAMPLES END
+
     while (quit == 0){
         LAST = NOW;
         NOW = SDL_GetPerformanceCounter();
@@ -85,6 +86,7 @@ void Engine::run(){
 		if (input.keyDown(keys.getKey("right"))||input.keyDown(keys.getKey("d"))) {
 			cout << "GOING RIGHT" << endl;
 		}
+
 		//EXAMPLES END
 
         //UPDATE

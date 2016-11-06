@@ -13,6 +13,7 @@
 #include <iostream>
 
 #include "RenderSystem.hpp"
+#include "MemoryLeakDetector.hpp"
 
 class DebugDraw;
 class Engine{
@@ -41,6 +42,8 @@ private:
     int height;
  
     int quit;
+
+	MemoryLeakDetector memLeakDet;
 
     inline glm::vec2 toGlm(const b2Vec2 &v) {
             return glm::vec2(v.x, v.y);
