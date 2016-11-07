@@ -66,6 +66,7 @@ void Engine::run(){
 		for(auto& el: gameObjects)
            el->Update(deltaTimeSec);
 
+		Input::update();
         HandleSDLEvents();
         //Run update on all gameobjects!!
 

@@ -52,24 +52,23 @@ class Player : public GameObject{
     }
 
 	float force;
-	Input input;
 	Keys keys;
 	void Init() {
 		force = 10000.0f;
 	}
 
     void Update(float dt){
-		input.update();
-		if (input.keyHeld(keys.getKey("up"))) {
+		sprite->texture = anim->getSprite();
+		if (Input::keyHeld(keys.getKey("up"))) {
 			body->ApplyForceToCenter(b2Vec2(0, force), true);
 		}
-		if (input.keyHeld(keys.getKey("down"))) {
+		if (Input::keyHeld(keys.getKey("down"))) {
 			body->ApplyForceToCenter(b2Vec2(0, -force), true);
 		}
-		if (input.keyHeld(keys.getKey("left"))) {
+		if (Input::keyHeld(keys.getKey("left"))) {
 			body->ApplyForceToCenter(b2Vec2(-force, 0), true);
 		}
-		if (input.keyHeld(keys.getKey("right"))) {
+		if (Input::keyHeld(keys.getKey("right"))) {
 			body->ApplyForceToCenter(b2Vec2(force, 0), true);
 		}
     }
