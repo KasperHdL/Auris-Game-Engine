@@ -24,6 +24,7 @@ public:
 	void setTexture(Texture* tex);
 	void delLastTexture();
 	void updateAnim(float dt);
+	Texture* getSprite();
 
 	Animation(GameObject* gameObject, float length){
 		
