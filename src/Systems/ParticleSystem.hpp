@@ -38,6 +38,12 @@ class ParticleSystem{
     SRE::ParticleMesh* mesh;
     SRE::Shader* shader;
 
+    //empty
+
+    vector<vec2> uvs;
+    vector<float> uvSize;
+    vector<float> uvRotation;
+
     vec4 lerpColor(vec4 start, vec4 end, float t){
         return vec4(
                 mix(start[0], end[0], t),
@@ -59,7 +65,7 @@ public:
         this->texture = texture;
         
         shader = SRE::Shader::getStandardParticles();
-        acceleration = vec3(0,-10,0);
+        acceleration = vec3(0,0,0);
 
         finalPositions.reserve(numParticles);
 
@@ -86,7 +92,9 @@ public:
             startTimes.push_back(-999);
         }
 
-        update(0);
+
+
+        mesh = new SRE::ParticleMesh(finalPositions, startColors, uvs, uvSize, uvRotation, startSizes);
     }
 
 
@@ -113,28 +121,21 @@ public:
                 continue;
             }
 
-            auto a = .5f * acceleration * t*t;
+            //auto a = .5f * acceleration * t*t;
             auto v = velocities[i] * t;
             auto p0 = positions[i];
 
-            finalPositions[i] = a + v + p0;
+            finalPositions[i] = v + p0;
 
-            
             float p = t / particleDuration;
             finalColors[i] = lerpColor(startColors[i], endColors[i], p); 
             finalSizes[i] = glm::mix<float>(startSizes[i], endSizes[i], p);
             
         }
 
-        vector<vec2> uvs;
-        vector<float> uvSize;
-        vector<float> uvRotation;
 
-        if(mesh == nullptr){
-            mesh = new SRE::ParticleMesh(finalPositions, startColors, uvs, uvSize, uvRotation, startSizes);
-        }else{
-            mesh->update(finalPositions, finalColors, uvs, uvSize, uvRotation, finalSizes);
-        }
+        mesh->update(finalPositions, finalColors, uvs, uvSize, uvRotation, finalSizes);
+
 
         currentTime += dt;
 

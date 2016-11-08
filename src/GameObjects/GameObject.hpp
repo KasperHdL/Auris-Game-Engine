@@ -28,9 +28,8 @@ public:
 	shared_ptr<Scriptable> script;
 
     GameObject(){};
-        
-    ~GameObject(){}
-
+    ~GameObject();
+       
     virtual void update(float dt){};
 
     glm::mat4 localTransform();
