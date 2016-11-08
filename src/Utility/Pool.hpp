@@ -11,12 +11,25 @@ class Pool{
     T* objects;
     bool* occupied;
 
-    public:
+public:
+
+    T* begin() { return &objects[0]; }
+    T* end() { return &objects[count]; }
 
     int count = 0;
     int capacity;
 
+    Pool(){}
     Pool(int capacity){
+        initialize(capacity);
+    }
+
+    ~Pool(){
+        free(objects);
+        free(occupied);
+    }
+
+    void initialize(int capacity){
         this->capacity = capacity;
 
         objects = (T*) malloc(objectSize * capacity);
@@ -29,11 +42,6 @@ class Pool{
             //could not allocate memory
             std::cout << "Could not allocate memory" << std::endl;
         }
-    }
-
-    ~Pool(){
-        free(objects);
-        free(occupied);
     }
 
 

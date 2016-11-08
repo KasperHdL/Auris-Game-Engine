@@ -1,35 +1,27 @@
 #include "RenderSystem.hpp"
 
-vector<shared_ptr<Sprite>> RenderSystem::sprites;
+Pool<Sprite> RenderSystem::spritePool = Pool<Sprite>();
 
 void RenderSystem::startup(int reserve){
-    RenderSystem::sprites.reserve(reserve);
+    RenderSystem::spritePool.initialize(reserve);
 
 }
 
 void RenderSystem::shutdown(){
-    RenderSystem::sprites.clear();
-
 }
 
 
 void RenderSystem::update(float dt){
-    for(auto& el : RenderSystem::sprites)
-        el->draw();
-
+    int i = 0;
+    for(Sprite* s = RenderSystem::spritePool.begin(); s != RenderSystem::spritePool.end(); s++){
+        s->draw();
+        i++;
+    }
 }
 
-shared_ptr<Sprite> RenderSystem::getSprite(GameObject* gameObject){
-    shared_ptr<Sprite> s = make_shared<Sprite>(gameObject);
-    sprites.push_back(s);
+
+Sprite* RenderSystem::getSprite(GameObject* gameObject){
+    Sprite* s = new (RenderSystem::spritePool.create()) Sprite(gameObject);
 
     return s;
 }
-
-shared_ptr<SpriteTexture> RenderSystem::getSpriteTexture(GameObject* gameObject){
-    shared_ptr<SpriteTexture> s = make_shared<SpriteTexture>(gameObject);
-    sprites.push_back(s);
-
-    return s;
-}
-
