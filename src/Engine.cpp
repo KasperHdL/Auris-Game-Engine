@@ -29,7 +29,6 @@ void Engine::startup(){
     sre->setLight(1, Light(LightType::Point,{0, 1, -2}, {0,0,0}, {3,3,3},5, 20));
     sre->setLight(2, Light(LightType::Directional,{0,0,0},{1,1,1},{1,1,1},0,20)); 
 
-/*
     gameObjects.push_back(make_shared<Player>(world, vec2(15,15)));
    // gameObjects.push_back(make_shared<Player>(world, vec2(10,15)));
    // gameObjects.push_back(make_shared<Player>(world, vec2(15,10)));
