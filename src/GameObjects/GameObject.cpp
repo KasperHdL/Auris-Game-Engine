@@ -2,6 +2,10 @@
 #include "Components/Sprite.hpp"
 #include "../Constants.hpp"
 
+GameObject::~GameObject(){
+    delete sprite;
+}
+
 glm::mat4 GameObject::localTransform() {
     glm::mat4 rz = glm::eulerAngleZ((body->GetAngle()));
 

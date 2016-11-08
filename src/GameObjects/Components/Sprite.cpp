@@ -5,14 +5,6 @@ void Sprite::draw(){
     Shader* shader = Shader::getUnlitSprite();
 	shader->setTexture("tex", texture);
     shader->set("color", color);
-    SimpleRenderEngine::instance->draw(mesh, gameObject->globalTransform(), shader);
+    shader->set("tex", texture);
 }
-
-//void SpriteTexture::draw(){
-//    Shader* shader = Shader::getUnlitSprite();
-//    shader->setVector("color", color);
-//    shader->setTexture("tex", texture);
-//    SimpleRenderEngine::instance->draw(mesh, gameObject->globalTransform(), shader);
-//}
-
-
+    SimpleRenderEngine::instance->draw(mesh, gameObject->globalTransform(), shader);

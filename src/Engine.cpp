@@ -3,8 +3,8 @@
 
 #include <glm/gtc/random.hpp>
 #include "GameObjects/Player.hpp"
-#include "Input.hpp";
-#include "Keys.hpp";
+#include "Input.hpp"
+#include "Keys.hpp"
 
 using namespace SRE;
 using namespace glm;
@@ -16,7 +16,7 @@ void Engine::startup(){
 
     renderSystem.startup(16);
 
-    particleSystem.startup(20000, 1, SRE::Texture::createFromFile("data/cartman.png",false));
+    //particleSystem.startup(10000, 1, SRE::Texture::createFromFile("data/cartman.png",false));
 
     world = new b2World(toB2(glm::vec2(0,0)));
 
@@ -25,9 +25,9 @@ void Engine::startup(){
 
     auto sre = SimpleRenderEngine::instance;
     sre->getCamera()->setWindowCoordinates();
-    sre->setLight(0, Light(LightType::Point,{-1, 1,1},{0,0,0},{5,0,0},5,20)); 
-    sre->setLight(1, Light(LightType::Point,{0, 1, -2}, {0,0,0}, {3,3,3},5, 20));
-    sre->setLight(2, Light(LightType::Directional,{0,0,0},{1,1,1},{1,1,1},0,20)); 
+    sre->setLight(0, Light(LightType::Point,{-1, 1,1},{0,0,0},{5,0,0},5));
+    sre->setLight(1, Light(LightType::Point,{0, 1, -2}, {0,0,0}, {3,3,3},5));
+    sre->setLight(2, Light(LightType::Directional,{0,0,0},{1,1,1},{1,1,1},0));
 
     gameObjects.push_back(make_shared<Player>(world, vec2(15,15)));
    // gameObjects.push_back(make_shared<Player>(world, vec2(10,15)));
@@ -74,19 +74,20 @@ void Engine::run(){
         //Run update on all gameobjects!!
 
  
-
-        for(int i = 0; i < 100; i++)
+/*
+        for(int i = 0; i < 1000; i++)
         particleSystem.emit(
                 vec3(width/2, height / 2, 0), //position
-                vec3(glm::circularRand<float>(600.0f), 0), //velocity
-                vec4(glm::sphericalRand<float>(1.0f), glm::linearRand<float>(0,1)), //color
+                vec3(glm::circularRand<float>(200.0f), 0), //velocity
+                vec4(glm::sphericalRand<float>(1.0f), 0.1f), //color
                 glm::linearRand<float>(0,1), //size
-                vec4(0), //end color
-                0 //end size
+                vec4(1,1,1,0.1f), //end color
+                1 //end size
                 );
         particleSystem.update(deltaTimeSec);
         particleSystem.draw();
 
+        */
 
         world->Step(deltaTimeSec, VELOCITY_ITERATIONS, POSITION_ITERATIONS);         
        

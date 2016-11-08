@@ -12,6 +12,8 @@ class Sprite : public Component{
     public:
 		Texture* texture;
         Mesh* mesh;
+        Texture* texture;
+
         glm::vec4 color;
         glm::vec2 scale;
         
@@ -19,24 +21,10 @@ class Sprite : public Component{
 
         ~Sprite(){
             delete mesh;
+            delete texture;
             mesh = nullptr;
+            texture = nullptr;
         }
 
         Sprite(GameObject* gameObject):Component(gameObject){}
 };
-
-
-//class SpriteTexture : public Sprite{
-//    public:
-//        Texture* texture;
-//
-//        ~SpriteTexture(){
-//            delete texture;
-//            texture = nullptr;
-//        }
-//
-//        void draw() override;
-//
-//        SpriteTexture(GameObject* gameObject):Sprite(gameObject){} 
-//
-//};

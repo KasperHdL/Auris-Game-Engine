@@ -4,11 +4,15 @@
 #include <sstream>
 #include "glm/glm.hpp"
 #include "glm/gtx/transform.hpp"
+#include "glm/gtc/matrix_transform.hpp"
 
 #define SDL_MAIN_HANDLED
 #include "SDL.h"
 #include "SRE/SimpleRenderEngine.hpp"
 #include "Engine.hpp"
+#include "Utility/Pool.hpp"
+
+#include "GameObjects/Components/Sprite.hpp"
 
 using namespace std;
 
@@ -45,12 +49,11 @@ int main(int argc, char** argv) {
     SRE::SimpleRenderEngine r{window};
 
     // Use windows coordinates in this example (lower left corner is (0,0), upper right corner is (width, height)
-
+    
     Engine engine(width, height);
     engine.startup();
     engine.run();
     engine.shutdown();
-
     // Close and destroy the window
     SDL_DestroyWindow(window);
 
