@@ -13,6 +13,7 @@
 #include <iostream>
 
 #include "RenderSystem.hpp"
+#include "Systems/ParticleSystem.hpp"
 
 class DebugDraw;
 class Engine{
@@ -31,6 +32,7 @@ private:
 
     vector<shared_ptr<GameObject>> gameObjects;
     RenderSystem renderSystem;
+    ParticleSystem particleSystem;
 
     b2World* world;
 

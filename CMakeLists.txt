@@ -50,23 +50,6 @@ include_directories(.)
 find_package(Box2D REQUIRED)
 include_directories(${BOX2D_INCLUDE_DIR})
 
-# GLM -- on Windows: depends on env var: GLM_ROOT_DIR
-find_package (glm REQUIRED)
-
-IF(UNIX AND NOT APPLE)
-    IF( glm_FOUND )
-        INCLUDE_DIRECTORIES( ${GLM_INCLUDE_DIR} )
-    ELSE( glm_FOUND )
-        MESSAGE( STATUS "Failed to find GLM ----------------------")
-    ENDIF( glm_FOUND )
-ELSE(UNIX AND NOT APPLE)
-    IF( GLM_FOUND )
-        INCLUDE_DIRECTORIES( ${GLM_INCLUDE_DIR} )
-    ELSE( GLM_FOUND )
-        MESSAGE( STATUS "Failed to find GLM ----------------------")
-    ENDIF( GLM_FOUND )
-ENDIF(UNIX AND NOT APPLE)
-
 find_package(SRE REQUIRED)
 if (SRE_FOUND)
     include_directories(${SRE_INCLUDE_DIR})

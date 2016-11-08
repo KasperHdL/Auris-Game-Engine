@@ -3,8 +3,8 @@
 
 void Sprite::draw(){
     Shader* shader = Shader::getUnlitSprite();
-    shader->setVector("color", color);
 	shader->setTexture("tex", texture);
+    shader->set("color", color);
     SimpleRenderEngine::instance->draw(mesh, gameObject->globalTransform(), shader);
 }
 
