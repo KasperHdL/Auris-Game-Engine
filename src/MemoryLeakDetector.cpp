@@ -258,7 +258,7 @@ double MemoryLeakDetector::getCurrentProcessCPUValue() {
 		percent /= (now - lastCPU);
 		percent /= numProcessors;
 		percent *= 100;
-	}
+        }
 	lastCPU = now;
 	lastSysCPU = timeSample.tms_stime;
 	lastUserCPU = timeSample.tms_utime;

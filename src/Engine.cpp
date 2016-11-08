@@ -57,7 +57,17 @@ void Engine::run(){
 	memLeakDet = MemoryLeakDetector();
 
 	//EXAMPLES START
+   
+    cout << "Total phys. mem.:\t\t" << memLeakDet.totalPhysMem << endl;
+    cout << "Phys. mem. used:\t\t" <<  memLeakDet.physMemUsed<< endl;
+    cout << "Total virt. mem.:\t\t" << memLeakDet.totalVirtualMem << endl;
+    cout << "Virt. mem. used:\t\t" << memLeakDet.virtualMemUsed << endl;
+
+    cout << "Current virt. memory:\t\t" << memLeakDet.getCurrentVirtMemValue() << endl;
+    cout << "Current phys. memory:\t\t" << memLeakDet.getCurrentPhysMemValue() << endl;
+    memLeakDet.initTotalCPUFile();
 	cout << "Total CPU:\t\t\t" << memLeakDet.getCurrentTotalCPUValue() << endl;
+    memLeakDet.initCurrentCPUFile();
 	cout << "Total CPU used by this process:\t" << memLeakDet.getCurrentProcessCPUValue() << endl;
 	//EXAMPLES END
 

@@ -57,9 +57,6 @@ ELSE (SRE_FOUND)
     MESSAGE( STATUS "Failed to find Simple Render Engine")
 endif(SRE_FOUND)
 
-find_package(Pdh REQUIRED)
-add_library(Pdh)
-
 target_link_libraries(GoldEngine ${EXTRA_LIBS} ${SDL2_LIBRARY} ${SDL2_IMAGE_LIBRARIES} ${SRE_LIBRARY} ${BOX2D_LIBRARY} ${Pdh_LIBRARY})
 
 file(COPY "data/" DESTINATION "data/")
