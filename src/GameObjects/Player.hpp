@@ -17,10 +17,10 @@ class Player : public GameObject{
     Player(b2World* world, vec2 position = vec2(0,0)):GameObject(){
 
         //define sprite
-        auto s = RenderSystem::getSpriteTexture(this);
+        auto s = RenderSystem::getSprite(this);
         s->mesh = Mesh::createCube();
-        s->color = vec4(1,1,1,1);
         s->texture = SRE::Texture::createFromFile("data/cartman.png",false);
+        s->color = vec4(1,1,1,1);
         s->scale = vec2(s->texture->getWidth(), s->texture->getHeight());
         sprite = s;
 

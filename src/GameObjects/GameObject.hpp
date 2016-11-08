@@ -24,7 +24,7 @@ public:
     GameObject* parent = nullptr;
 
     b2Body* body;
-    shared_ptr<Sprite> sprite;
+    Sprite* sprite;
 	shared_ptr<Scriptable> script;
 
     GameObject(){};
