@@ -15,17 +15,16 @@ void RenderSystem::shutdown(){
 void RenderSystem::update(float dt){
 	for (auto& el : RenderSystem::animations)
 		el->updateAnim(dt);
-    int i = 0;
-    for(Sprite* s = RenderSystem::spritePool.begin(); s != RenderSystem::spritePool.end(); s++){
-        i++;
+
+    for(Sprite* s = RenderSystem::spritePool.begin(); s != RenderSystem::spritePool.end(); s++)
         s->draw();
 }
 
 
 Sprite* RenderSystem::getSprite(GameObject* gameObject){
     Sprite* s = new (RenderSystem::spritePool.create()) Sprite(gameObject);
-
     return s;
+}
 shared_ptr<Animation> RenderSystem::getAnim(GameObject* gameObject, float length){
     shared_ptr<Animation> a = make_shared<Animation>(gameObject, length);
     animations.push_back(a);

@@ -12,7 +12,6 @@ class Sprite : public Component{
     public:
 		Texture* texture;
         Mesh* mesh;
-        Texture* texture;
 
         glm::vec4 color;
         glm::vec2 scale;
