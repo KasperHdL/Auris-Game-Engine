@@ -20,8 +20,6 @@ void Animation::updateAnim(float dt)
 		if (index >= textures.size()) {
 			index = 0;
 		}
-		//Texture temp = *textures[index];
-		//*tex = temp;
 		time = glm::mod<float>(time, frameLength);
 	}
 }

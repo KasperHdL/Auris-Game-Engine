@@ -21,9 +21,9 @@ class Player : public GameObject{
         //define sprite
         auto s = RenderSystem::getSprite(this);
         s->mesh = Mesh::createCube();
-        s->texture = SRE::Texture::createFromFile("data/cartman.png",false);
-        s->color = vec4(1,1,1,1);
-        s->scale = vec2(s->texture->getWidth(), s->texture->getHeight());
+        s->material->texture = SRE::Texture::createFromFile("data/cartman.png",false);
+        s->material->color = vec4(1,1,1,1);
+        s->scale = vec2(s->material->texture->getWidth(), s->material->texture->getHeight());
         sprite = s;
 
 		auto a = RenderSystem::getAnim(this, 4.0f);
@@ -31,7 +31,6 @@ class Player : public GameObject{
 		a->setTexture(SRE::Texture::createFromFile("data/fugl.png", false));
 		a->setTexture(SRE::Texture::createFromFile("data/hammer.png", false));
 		a->setTexture(SRE::Texture::createFromFile("data/rainbow.png", false));
-		anim = a;
 		anim = a;
 		
         //body & fixture definitions and create & assign body
@@ -58,7 +57,7 @@ class Player : public GameObject{
 	}
 
     void Update(float dt){
-		sprite->texture = anim->getSprite();
+		sprite->material->texture = anim->getSprite();
 		if (Input::keyHeld(keys.getKey("up"))) {
 			body->ApplyForceToCenter(b2Vec2(0, force), true);
 		}

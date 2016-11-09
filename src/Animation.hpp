@@ -15,7 +15,6 @@ class Animation
 {
 public:
 
-	Texture* tex;
 	std::vector<Texture*> textures;
 
 	~Animation() {
@@ -28,7 +27,6 @@ public:
 
 	Animation(GameObject* gameObject, float length){
 		
-		tex = gameObject->sprite->texture;
 		this->length = length;
 		index = 0;
 		time = 0;
