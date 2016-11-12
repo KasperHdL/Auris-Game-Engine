@@ -6,21 +6,18 @@
 #include "SRE/Mesh.hpp"
 #include "SRE/Shader.hpp"
 #include "SRE/Texture.hpp"
-#include "../../Material.hpp"
 
 using namespace SRE;
 class Sprite : public Component{
     public:
-        Material* material;
         Mesh* mesh;
-
+        Texture* texture;
+        glm::vec4 color;
         glm::vec2 scale;
         
         virtual void draw();
 
         ~Sprite(){
-            delete mesh;
-            mesh = nullptr;
         }
 
         Sprite(GameObject* gameObject):Component(gameObject){}

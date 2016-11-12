@@ -2,6 +2,8 @@
 #include "../GameObject.hpp"
 
 void Sprite::draw(){
-material->set();
-    SimpleRenderEngine::instance->draw(mesh, gameObject->globalTransform(), material->shader);
+    Shader* shader = Shader::getUnlitSprite();
+    shader->set("color",color);
+    shader->set("tex",texture);
+    SimpleRenderEngine::instance->draw(mesh, gameObject->globalTransform(),shader);
 }
