@@ -20,5 +20,9 @@ class Sprite : public Component{
         ~Sprite(){
         }
 
-        Sprite(GameObject* gameObject):Component(gameObject){}
+        Sprite(GameObject* gameObject):Component(gameObject){
+        mesh = Mesh::createCube();
+        texture = Texture::getWhiteTexture();
+        color = glm::vec4(1,1,1,1);
+        }
 };
