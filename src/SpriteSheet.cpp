@@ -4,9 +4,8 @@
 #include <fstream>
 
 using namespace std;
-SpriteSheet::SpriteSheet(Texture* texture,string pathToJSON,GameObject* go){
+SpriteSheet::SpriteSheet(Texture* texture,string pathToJSON){
 
-    SpriteSheet::parent = go;
     SpriteSheet::texture = texture;
 
     picojson::value v;
@@ -58,9 +57,10 @@ Sprite* SpriteSheet::findSprite(int x, int y, int width, int height, float ancho
         mat->texture = SpriteSheet::texture;
         //as of now only white (fixed!)
         mat->color = glm::vec4(1,1,1,1);
-        auto s = RenderSystem::getSprite(parent);
+        //auto s = RenderSystem::getSprite(new GameObject);
+        Sprite* s;
         mat->set(s);
-        s->scale = vec2(s->texture->getWidth(), s->texture->getHeight());
+        //s->scale = vec2(s->texture->getWidth(), s->texture->getHeight());
         return s;
 
 

@@ -11,7 +11,7 @@ class SpriteSheet{
 
     public:
         
-        SpriteSheet(Texture* texture,std::string pathToJSON, GameObject* go);
+        SpriteSheet(Texture* texture,std::string pathToJSON);
         ~SpriteSheet();
         Sprite* getSprite(std::string name);
 
@@ -20,7 +20,6 @@ class SpriteSheet{
         Sprite* findSprite(int x, int y, int width, int height, float anchorX, float anchorY);
         std::map<std::string,Sprite*> sprites;
         SRE::Texture* texture;
-        GameObject* parent;
 
 };
 

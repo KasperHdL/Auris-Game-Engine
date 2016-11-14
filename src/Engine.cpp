@@ -30,7 +30,6 @@ void Engine::startup(){
     sre->setLight(2, Light(LightType::Directional,{0,0,0},{1,1,1},{1,1,1},0));
 
     gameObjects.push_back(make_shared<Player>(world, vec2(15,15)));
-    cout << "Test" << endl;
    // gameObjects.push_back(make_shared<Player>(world, vec2(10,15)));
    // gameObjects.push_back(make_shared<Player>(world, vec2(15,10)));
    // gameObjects.push_back(make_shared<Player>(world, vec2(10,10)));
@@ -90,8 +89,8 @@ void Engine::run(){
 
         */
 
-        world->Step(deltaTimeSec, VELOCITY_ITERATIONS, POSITION_ITERATIONS);         
-       
+        world->Step(deltaTimeSec, VELOCITY_ITERATIONS, POSITION_ITERATIONS);
+
         //DRAW
         renderSystem.update(deltaTimeSec);
 

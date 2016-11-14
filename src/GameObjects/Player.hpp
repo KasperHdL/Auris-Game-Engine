@@ -22,8 +22,8 @@ class Player : public GameObject{
     Player(b2World* world, vec2 position = vec2(0,0)):GameObject(){
 
 
-        SpriteSheet* ss = new SpriteSheet(SRE::Texture::createFromFile("data/MarioPacked.png",false),"data/MarioPacked.json",this);
-        sprite = ss->getSprite("Mario_10");
+        SpriteSheet* ss = new SpriteSheet(SRE::Texture::createFromFile("data/MarioPacked.png",false),"data/MarioPacked.json");
+        sprite = ss->getSprite("mario_10");
         //Material mat1;
         //mat1.mesh = Mesh::createCube();
         //mat1.texture = SRE::Texture::createFromFile("data/cartman.png",false);
@@ -59,6 +59,7 @@ class Player : public GameObject{
 
         body = world->CreateBody(&bodyDef); 
         body->CreateFixture(&fixtureDef);
+
     }
 
 	float force;
