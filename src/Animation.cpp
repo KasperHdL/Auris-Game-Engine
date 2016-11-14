@@ -14,7 +14,6 @@ void Animation::updateAnim(float dt)
 {
 	frameLength = length / textures.size();
 	time += dt;
-	std::cout << index  << std::endl;
 	if (time >= frameLength) {
 		index++;
 		if (index >= textures.size()) {

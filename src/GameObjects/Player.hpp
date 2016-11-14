@@ -12,6 +12,8 @@
 #include "src/Keys.hpp"
 #include "src/Material.hpp"
 
+#include "../SpriteSheet.hpp"
+
 
 using namespace std;
 class Player : public GameObject{
@@ -19,18 +21,21 @@ class Player : public GameObject{
 
     Player(b2World* world, vec2 position = vec2(0,0)):GameObject(){
 
-        Material mat1;
-        mat1.mesh = Mesh::createCube();
-        mat1.texture = SRE::Texture::createFromFile("data/cartman.png",false);
-        mat1.color = vec4(1,1,1,1);
+
+        SpriteSheet* ss = new SpriteSheet(SRE::Texture::createFromFile("data/MarioPacked.png",false),"data/MarioPacked.json",this);
+        sprite = ss->getSprite("Mario_10");
+        //Material mat1;
+        //mat1.mesh = Mesh::createCube();
+        //mat1.texture = SRE::Texture::createFromFile("data/cartman.png",false);
+        //mat1.color = vec4(1,1,1,1);
         //define sprite
-        auto s = RenderSystem::getSprite(this);
+        //sprite = RenderSystem::getSprite(this);
         //s->mesh = Mesh::createCube();
         //s->texture = SRE::Texture::createFromFile("data/cartman.png",false);
         //s->color = vec4(1,1,1,1);
-        mat1.set(s);
-        s->scale = vec2(s->texture->getWidth(), s->texture->getHeight());
-        sprite = s;
+        //mat1.set(sprite);
+        sprite->scale = vec2(sprite->texture->getWidth(), sprite->texture->getHeight());
+        //sprite = s;
 
 		auto a = RenderSystem::getAnim(this, 4.0f);
 		a->setTexture(SRE::Texture::createFromFile("data/cartman.png", false));
@@ -45,7 +50,7 @@ class Player : public GameObject{
         bodyDef.position.Set(position.x, position.y);
 
         b2CircleShape shape;
-        shape.m_radius = (s->scale.x * Constants::PIXELS_TO_METERS);
+        shape.m_radius = (sprite->scale.x * Constants::PIXELS_TO_METERS);
 
         b2FixtureDef fixtureDef;
         fixtureDef.shape = &shape;
