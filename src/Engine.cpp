@@ -86,7 +86,6 @@ void Engine::run(){
 		if (input.keyDown(keys.getKey("right"))||input.keyDown(keys.getKey("d"))) {
 			cout << "GOING RIGHT" << endl;
 		}
-
 		//EXAMPLES END
 
         //UPDATE

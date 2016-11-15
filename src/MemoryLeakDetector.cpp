@@ -1,33 +1,28 @@
 #include "MemoryLeakDetector.hpp"
 
 MemoryLeakDetector::MemoryLeakDetector() {
+	
 	#ifdef _WIN32 // Windows
 	//Total virt. mem.
 	memInfo.dwLength = sizeof(MEMORYSTATUSEX);
 	GlobalMemoryStatusEx(&memInfo);
 	totalVirtualMem = memInfo.ullTotalPageFile;
-	cout << "Total virtual memory:\t\t\t\t" << totalVirtualMem << endl;
 
 	//Virt. mem. in use
 	virtualMemUsed = memInfo.ullTotalPageFile - memInfo.ullAvailPageFile;
-	cout << "Virtual memory currently used:\t\t\t" << virtualMemUsed << endl;
 
 	//Virt. mem. used by this process
 	GetProcessMemoryInfo(GetCurrentProcess(), (PROCESS_MEMORY_COUNTERS*)&pmc, sizeof(pmc));
 	virtualMemUsedByMe = pmc.PrivateUsage;
-	cout << "Virt. mem. currently used by this process:\t" << virtualMemUsedByMe << endl;
 	
 	//Total phys. mem.
 	totalPhysMem = memInfo.ullTotalPhys;
-	cout << "Total physical memory (RAM):\t\t\t" << totalPhysMem << endl;
 
 	//Phys. mem. used
 	physMemUsed = memInfo.ullTotalPhys - memInfo.ullAvailPhys;
-	cout << "Physical memory currently used:\t\t\t" << physMemUsed << endl;
 
 	//Phys mem. used by this process	
 	physMemUsedByMe = pmc.WorkingSetSize;
-	cout << "Phys. mem. currently used by this process:\t" << physMemUsedByMe << endl;
 
 	//CPU currently used
 	PdhOpenQuery(NULL, NULL, &cpuQuery);
@@ -110,6 +105,39 @@ MemoryLeakDetector::MemoryLeakDetector() {
 }
 
 #ifdef _WIN32 // Windows
+double MemoryLeakDetector::getTotalVirtMem() {
+	memInfo.dwLength = sizeof(MEMORYSTATUSEX);
+	GlobalMemoryStatusEx(&memInfo);
+	double val = memInfo.ullTotalPageFile;
+	return val / MB_DIVIDER;
+}
+
+double MemoryLeakDetector::getVirtMemUsed() {
+	double val = memInfo.ullTotalPageFile - memInfo.ullAvailPageFile;
+	return val / MB_DIVIDER;
+}
+
+double MemoryLeakDetector::getVirtMemUsedByMe()
+{
+	GetProcessMemoryInfo(GetCurrentProcess(), (PROCESS_MEMORY_COUNTERS*)&pmc, sizeof(pmc));
+	return pmc.PrivateUsage / MB_DIVIDER;
+}
+
+double MemoryLeakDetector::getTotalPhysMem()
+{
+	return memInfo.ullTotalPhys / MB_DIVIDER;
+}
+
+double MemoryLeakDetector::getPhysMemUsed()
+{
+	return memInfo.ullTotalPhys - memInfo.ullAvailPhys / MB_DIVIDER;
+}
+
+double MemoryLeakDetector::getPhysMemUsedByMe()
+{
+	return pmc.WorkingSetSize / MB_DIVIDER;
+}
+
 double MemoryLeakDetector::getCurrentTotalCPUValue() {
 	PDH_FMT_COUNTERVALUE counterVal;
 

@@ -3,16 +3,17 @@
 using namespace std;
 
 #ifdef _WIN32 // Windows
-#include "windows.h"
-#include "psapi.h"
-#include "TCHAR.h"
-#include "pdh.h"
+#include <Windows.h>
+#include <Psapi.h>
+#include <tchar.h>
+#include <Pdh.h>
 
 static PDH_HQUERY cpuQuery;
 static PDH_HCOUNTER cpuTotal;
 static ULARGE_INTEGER lastCPU, lastSysCPU, lastUserCPU;
 static int numProcessors;
 static HANDLE self;
+static float MB_DIVIDER = 1024 * 1024;
 
 #elif __linux__ // Linux
 #include "sys/types.h"
@@ -54,6 +55,12 @@ public:
 	SYSTEM_INFO sysInfo;
 	FILETIME ftime, fsys, fuser;
 
+	double getTotalVirtMem();
+	double getVirtMemUsed();
+	double getVirtMemUsedByMe();
+	double getTotalPhysMem();
+	double getPhysMemUsed();
+	double getPhysMemUsedByMe();
 	double getCurrentTotalCPUValue();
 	double getCurrentProcessCPUValue();
 
