@@ -24,6 +24,10 @@ static float MB_DIVIDER = 1024 * 1024;
 #include "stdio.h"
 #include "string.h"
 
+static unsigned long long lastTotalUser, lastTotalUserLow, lastTotalSys, lastTotalIdle;
+static clock_t lastCPU, lastSysCPU, lastUserCPU;
+static int numProcessors;
+
 #elif __APPLE__ // MAC OS X
 #include <mach/mach.h>
 #include <sys/types.h>
@@ -70,16 +74,14 @@ public:
 	long long virtualMemUsed;
 	long long totalPhysMem;
 	long long physMemUsed;
-	static unsigned long long lastTotalUser, lastTotalUserLow, lastTotalSys, lastTotalIdle;
-	static clock_t lastCPU, lastSysCPU, lastUserCPU;
-	static int numProcessors;
 
 	int parseLine(char* line);
 	int getCurrentVirtMemValue();
 	int getCurrentPhysMemValue();
 	void initTotalCPUFile();
 	double getCurrentTotalCPUValue();
-	void initCurrentCPUFile();
+    void initCurrentCPUFile();
+    double getCurrentProcessCPUValue();
 
 	#elif __APPLE__ // MAC OS X
 	struct statfs stats;
