@@ -21,6 +21,7 @@ class Scriptable;
 class GameObject{
 public:
 
+    string name = "";
     GameObject* parent = nullptr;
 
     b2Body* body;

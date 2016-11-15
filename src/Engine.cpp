@@ -28,14 +28,10 @@ void Engine::startup(SDL_Window* window){
 
     auto sre = SimpleRenderEngine::instance;
     sre->getCamera()->setWindowCoordinates();
-    sre->setLight(0, Light(LightType::Point,{-1, 1,1},{0,0,0},{5,0,0},5));
-    sre->setLight(1, Light(LightType::Point,{0, 1, -2}, {0,0,0}, {3,3,3},5));
     sre->setLight(2, Light(LightType::Directional,{0,0,0},{1,1,1},{1,1,1},0));
 
-    gameObjects.push_back(make_shared<Player>(world, vec2(15,15)));
-    gameObjects.push_back(make_shared<Player>(world, vec2(10,15)));
-    gameObjects.push_back(make_shared<Player>(world, vec2(15,10)));
-    gameObjects.push_back(make_shared<Player>(world, vec2(10,10)));
+    gameObjects.push_back(make_shared<Player>(world));
+    gameObjects.push_back(make_shared<Player>(world));
 
 }
 
@@ -65,38 +61,43 @@ void Engine::run(SDL_Window* window){
 	keys.setKey("a", SDL_SCANCODE_A);
 	keys.setKey("d", SDL_SCANCODE_D);
 
-    keys.setKey("debug", SDL_SCANCODE_F2);
-
-
 	//EXAMPLES END
 
 	//Initialize MemoryLeakDetector
 	memLeakDet = MemoryLeakDetector();
 
-	//EXAMPLES START
-   
-    cout << "Total phys. mem.:\t\t\t" << memLeakDet.getTotalPhysMem() << endl;
-    cout << "Phys. mem. used:\t\t\t" <<  memLeakDet.getPhysMemUsed() << endl;
-    cout << "Total virt. mem.:\t\t\t" << memLeakDet.getTotalVirtMem() << endl;
-    cout << "Virt. mem. used:\t\t\t" << memLeakDet.getVirtMemUsed() << endl;
-
-    cout << "Current virt. memory used by me:\t" << memLeakDet.getVirtMemUsedByMe() << endl;
-    cout << "Current phys. memory used by me:\t" << memLeakDet.getPhysMemUsedByMe() << endl;
-	cout << "Total CPU:\t\t\t\t" << memLeakDet.getCurrentTotalCPUValue() << endl;
-	cout << "Total CPU used by this process:\t\t" << memLeakDet.getCurrentProcessCPUValue() << endl;
-	//EXAMPLES END
-
     //DEBUG INFORMATION TODO should be ignored on release build
+ 
+    keys.setKey("debug", SDL_SCANCODE_F2);
+    keys.setKey("pause", SDL_SCANCODE_F3);
+    keys.setKey("stepOne", SDL_SCANCODE_F4);
+    keys.setKey("playOnHold", SDL_SCANCODE_F5);
+
+
+    keys.setKey("arrow_up", SDL_SCANCODE_UP);
+    keys.setKey("arrow_down", SDL_SCANCODE_DOWN);
+    keys.setKey("arrow_left", SDL_SCANCODE_LEFT);
+    keys.setKey("arrow_right", SDL_SCANCODE_RIGHT);
     
-    int arrIndex_deltaTime = 0;
-    const int arrSize_deltaTime = 600;
-    float arr_deltaTime[arrSize_deltaTime] = {};
+
+   
+    int arrIndex = 0;
+    const int arrSize = 600;
+    float arr_deltaTime[arrSize] = {};
     float max_deltaTime = 0;
 
+    
+    float arr_virtMem[arrSize] = {};
+    float max_virtMem = 0;
 
+    float arr_physMem[arrSize] = {};
+    float max_physMem = 0;
 
+    int max_renderSprites = 0;
 
-    //
+    bool toggle_goInspector = false;
+    bool toggle_cameraControls = false;
+
     while (quit == 0){
         LAST = NOW;
         NOW = SDL_GetPerformanceCounter();
@@ -104,7 +105,6 @@ void Engine::run(SDL_Window* window){
         deltaTimeSec = clamp(((NOW - LAST) / (float)SDL_GetPerformanceFrequency() ),0.0f,1.0f);
 		
         sre->clearScreen(vec4(0,0,0,1));
-        ImGui_SRE_NewFrame(window);
 
 		input.update();
         HandleSDLEvents();
@@ -113,78 +113,131 @@ void Engine::run(SDL_Window* window){
 			quit = 1;
 		}
 
-        if(input.keyDown(keys.getKey("debug")))
+        if(input.keyDown(keys.getKey("debug"))){
             debug = !debug;
 
-		//EXAMPLES START
-		if (input.keyDown(keys.getKey("up"))||input.keyDown(keys.getKey("w"))) {
-			cout << "GOING UP" << endl;
-		}
-		if (input.keyDown(keys.getKey("down"))||input.keyDown(keys.getKey("s"))) {
-			cout << "GOING DOWN" << endl;
-		}
-		if (input.keyDown(keys.getKey("left"))||input.keyDown(keys.getKey("a"))) {
-			cout << "GOING LEFT" << endl;
-		}
-		if (input.keyDown(keys.getKey("right"))||input.keyDown(keys.getKey("d"))) {
-			cout << "GOING RIGHT" << endl;
-		}
-        new GameObject();
-        cout << "High watermark phys.: " <<memLeakDet.highWaterMarkPhys << endl;
-        cout << "High watermark virt.: " << memLeakDet.highWaterMarkVirt << endl;
+            if(debug == false){
+                ImGui_SRE_NewFrame(window);
+                ImGui::Render();
+            }
+        }
 
-        memLeakDet.leakDetect(deltaTimeSec);
-		//EXAMPLES END
+        if(input.keyDown(keys.getKey("pause"))){
+            pause = !pause;
+        }
 
-        //UPDATE
-        for(auto& el: gameObjects)
-            el->update(deltaTimeSec);
- 
-
+        bool runOneStep = false;
+        if(input.keyDown(keys.getKey("stepOne")) || input.keyHeld(keys.getKey("playOnHold"))){
+            runOneStep = true;
+            pause = true;
+        }
 
         if(debug){
+            
+            ImGui_SRE_NewFrame(window);
 
-            arr_deltaTime[arrIndex_deltaTime] = deltaTimeSec;
+            ImGui::Checkbox("Debug(F2)", &debug);
+            ImGui::SameLine();
+            ImGui::Checkbox("Pause(F3)", &pause);
+            if(ImGui::Button("Step One Frame(F4)")){
+                runOneStep = true;
+                pause = true;
+            }
+            ImGui::SameLine();
+            ImGui::Text("Play on Hold(F5)");
+//            ImGui::Checkbox("Toggle Camera Controls(Arrow Keys)",&toggle_cameraControls);
+
+            ImGui::Checkbox("Toggle GO Inspector",&toggle_goInspector);
+            ImGui::Separator();
+
+            arr_deltaTime[arrIndex] = deltaTimeSec;
+            arr_physMem[arrIndex] = memLeakDet.getPhysMemUsedByMe();
+            arr_virtMem[arrIndex] = memLeakDet.getVirtMemUsedByMe();
+
             if(deltaTimeSec > max_deltaTime)
                 max_deltaTime = deltaTimeSec;
 
-            arrIndex_deltaTime++;
-            if(arrIndex_deltaTime >= arrSize_deltaTime)
-                arrIndex_deltaTime = 0;
+            if(renderSystem.spritePool.count > max_renderSprites)
+                max_renderSprites = renderSystem.spritePool.count;
 
-            ImGui::Text("Physical Memory: %ll / %ll", memLeakDet.physMemUsed, memLeakDet.totalPhysMem);
-            ImGui::Text("Virtual Memory: %ll / %ll", memLeakDet.virtualMemUsed, memLeakDet.totalVirtualMem);
+            ImGui::PlotLines("Physical Memory", arr_physMem, arrSize);
+            ImGui::Text("Physical Memory: %f / %f", arr_physMem[arrIndex], memLeakDet.getTotalPhysMem());
+            ImGui::PlotLines("Dt", arr_virtMem, arrSize);
+            ImGui::Text("Virtual Memory: %f / %f", arr_virtMem[arrIndex], memLeakDet.getTotalVirtMem());
 
+            ImGui::Separator();
+            ImGui::PlotLines("Dt", arr_deltaTime, arrSize);
+            ImGui::Text("Current Dt: %f - Max dt: %f",deltaTimeSec, max_deltaTime);
+
+            ImGui::Separator();
             ImGui::Text("Num GameObjects %zu", gameObjects.size());
-            
-            ImGui::PlotLines(("Deltatime: " + std::to_string(deltaTimeSec)).c_str(), arr_deltaTime, arrSize_deltaTime);
-            ImGui::Text("Max DeltaTime %f", max_deltaTime);
+            ImGui::Text("Num of Sprites Allocated %d - Max %d", renderSystem.spritePool.count, max_renderSprites);
+
+            ImGui::Separator();
+
+            if(toggle_goInspector){
+                ImGui::Begin("GameObject Inspector");
+                if(ImGui::TreeNode("GameObjects")){
+                    int i = 0;
+                    for(auto& el: gameObjects){
+                        string name = el->name;
+                        if(name == "") name = &"GO " [ i];
+
+                        ImGui::PushID(&el);
+                        if(ImGui::TreeNode(el->name.c_str())){
+                            vec2 pos = toGlm(el->body->GetPosition());
+                            ImGui::Text("Position (%f, %f)", pos.x, pos.y);
+
+                            ImGui::Text("Rotation (%f)", el->body->GetAngle());
+
+                            vec2 vel = toGlm(el->body->GetLinearVelocity());
+                            ImGui::Text("Velocity (%f, %f)", vel.x, vel.y);
+                            
+                            ImGui::Text("Angular Velocity (%f)", el->body->GetAngularVelocity());
+
+                            ImGui::TreePop();
+                        }
+                        ImGui::PopID();
+                        i++;
+                    }
+                    ImGui::TreePop();
+                }
+                ImGui::End();
+            }
 
 
 
+            arrIndex++;
+            if(arrIndex >= arrSize)
+                arrIndex = 0;
+
+            ImGui::Render();
         }
 
+        //UPDATE
+        if(!pause || runOneStep){
+            for(auto& el: gameObjects)
+                el->update(deltaTimeSec);
 
-        for(int i = 0; i < 10; i++)
-        particleSystem.emit(
-                vec3(width/2, height / 2, 0), //position
-                vec3(glm::circularRand<float>(200.0f), 0), //velocity
-                vec4(glm::sphericalRand<float>(1.0f), 0.1f), //color
-                glm::linearRand<float>(0,1), //size
-                vec4(1,1,1,0.1f), //end color
-                1 //end size
-                );
-        particleSystem.update(deltaTimeSec);
-        particleSystem.draw();
+            for(int i = 0; i < 100; i++)
+            particleSystem.emit(
+                    vec3(width/2, height / 2, 0), //position
+                    vec3(glm::circularRand<float>(800.0f), 0), //velocity
+                    vec4(glm::sphericalRand<float>(1.0f), 0), //color
+                    glm::linearRand<float>(0,1), //size
+                    vec4(0,0,0,1), //end color
+                    1 //end size
+                    );
+            particleSystem.update(deltaTimeSec);
 
-
-        world->Step(deltaTimeSec, VELOCITY_ITERATIONS, POSITION_ITERATIONS);         
-       
+            world->Step(deltaTimeSec, VELOCITY_ITERATIONS, POSITION_ITERATIONS);         
+           
+        }
         //DRAW
+        particleSystem.draw();
         renderSystem.update(deltaTimeSec);
 
         world->DrawDebugData();
-        ImGui::Render();
         sre->swapWindow();
     }
 

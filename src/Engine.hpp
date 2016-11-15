@@ -36,11 +36,13 @@ private:
     ParticleSystem particleSystem;
 
     b2World* world;
+    vec2 camPos;
 
     const int VELOCITY_ITERATIONS = 16;
     const int POSITION_ITERATIONS = 16;
 
     bool debug = false;
+    bool pause = false;
 
     int width;
     int height;
