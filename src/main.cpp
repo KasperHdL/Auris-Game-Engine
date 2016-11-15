@@ -26,8 +26,8 @@ int main(int argc, char** argv) {
 
     SDL_GL_SetAttribute(SDL_GL_CONTEXT_PROFILE_MASK, SDL_GL_CONTEXT_PROFILE_CORE);
 
-    int width = 640;
-    int height = 480;
+    int width = 1280;
+    int height = 720;
 
     // Create an application window with the following settings:
     window = SDL_CreateWindow(
@@ -51,8 +51,8 @@ int main(int argc, char** argv) {
     // Use windows coordinates in this example (lower left corner is (0,0), upper right corner is (width, height)
     
     Engine engine(width, height);
-    engine.startup();
-    engine.run();
+    engine.startup(window);
+    engine.run(window);
     engine.shutdown();
     // Close and destroy the window
     SDL_DestroyWindow(window);

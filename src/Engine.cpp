@@ -6,17 +6,20 @@
 #include "Input.hpp"
 #include "Keys.hpp"
 
+#include "SRE/imgui_sre.hpp"
+
 using namespace SRE;
 using namespace glm;
 
 DebugDraw debugDraw;
 
 
-void Engine::startup(){
+void Engine::startup(SDL_Window* window){
+    ImGui_SRE_Init(window);
 
     renderSystem.startup(16);
 
-    //particleSystem.startup(10000, 1, SRE::Texture::createFromFile("data/cartman.png",false));
+    particleSystem.startup(10000, 1, SRE::Texture::createFromFile("data/cartman.png",false));
 
     world = new b2World(toB2(glm::vec2(0,0)));
 
@@ -46,7 +49,7 @@ void Engine::shutdown(){
 }
 
 
-void Engine::run(){
+void Engine::run(SDL_Window* window){
     // delta time from http://gamedev.stackexchange.com/a/110831
     Uint64 NOW = SDL_GetPerformanceCounter();
     Uint64 LAST = 0;
@@ -61,6 +64,10 @@ void Engine::run(){
 	keys.setKey("s", SDL_SCANCODE_S);
 	keys.setKey("a", SDL_SCANCODE_A);
 	keys.setKey("d", SDL_SCANCODE_D);
+
+    keys.setKey("debug", SDL_SCANCODE_F2);
+
+
 	//EXAMPLES END
 
 	//Initialize MemoryLeakDetector
@@ -81,6 +88,17 @@ void Engine::run(){
 	cout << "Total CPU used by this process:\t" << memLeakDet.getCurrentProcessCPUValue() << endl;
 	//EXAMPLES END
 
+    //DEBUG INFORMATION TODO should be ignored on release build
+    
+    int arrIndex_deltaTime = 0;
+    const int arrSize_deltaTime = 600;
+    float arr_deltaTime[arrSize_deltaTime] = {};
+    float max_deltaTime = 0;
+
+
+
+
+    //
     while (quit == 0){
         LAST = NOW;
         NOW = SDL_GetPerformanceCounter();
@@ -88,11 +106,18 @@ void Engine::run(){
         deltaTimeSec = clamp(((NOW - LAST) / (float)SDL_GetPerformanceFrequency() ),0.0f,1.0f);
 		
         sre->clearScreen(vec4(0,0,0,1));
+        ImGui_SRE_NewFrame(window);
+
 		input.update();
         HandleSDLEvents();
+
 		if (input.keyDown(keys.getKey("quit"))) {
 			quit = 1;
 		}
+
+        if(input.keyDown(keys.getKey("debug")))
+            debug = !debug;
+
 		//EXAMPLES START
 		if (input.keyDown(keys.getKey("up"))||input.keyDown(keys.getKey("w"))) {
 			cout << "GOING UP" << endl;
@@ -113,8 +138,32 @@ void Engine::run(){
         for(auto& el: gameObjects)
             el->update(deltaTimeSec);
  
-/*
-        for(int i = 0; i < 1000; i++)
+
+
+        if(debug){
+
+            arr_deltaTime[arrIndex_deltaTime] = deltaTimeSec;
+            if(deltaTimeSec > max_deltaTime)
+                max_deltaTime = deltaTimeSec;
+
+            arrIndex_deltaTime++;
+            if(arrIndex_deltaTime >= arrSize_deltaTime)
+                arrIndex_deltaTime = 0;
+
+            ImGui::Text("Physical Memory: %ll / %ll", memLeakDet.physMemUsed, memLeakDet.totalPhysMem);
+            ImGui::Text("Virtual Memory: %ll / %ll", memLeakDet.virtualMemUsed, memLeakDet.totalVirtualMem);
+
+            ImGui::Text("Num GameObjects %zu", gameObjects.size());
+            
+            ImGui::PlotLines(("Deltatime: " + std::to_string(deltaTimeSec)).c_str(), arr_deltaTime, arrSize_deltaTime);
+            ImGui::Text("Max DeltaTime %f", max_deltaTime);
+
+
+
+        }
+
+
+        for(int i = 0; i < 10; i++)
         particleSystem.emit(
                 vec3(width/2, height / 2, 0), //position
                 vec3(glm::circularRand<float>(200.0f), 0), //velocity
@@ -126,16 +175,15 @@ void Engine::run(){
         particleSystem.update(deltaTimeSec);
         particleSystem.draw();
 
-        */
 
         world->Step(deltaTimeSec, VELOCITY_ITERATIONS, POSITION_ITERATIONS);         
        
         //DRAW
         renderSystem.update(deltaTimeSec);
 
-        world->DrawDebugData(); 
+        world->DrawDebugData();
+        ImGui::Render();
         sre->swapWindow();
-        SDL_Delay(16);
     }
 
 }
@@ -146,6 +194,7 @@ void Engine::HandleSDLEvents(){
     SDL_Event event;
     /* Poll for events */
     while( SDL_PollEvent( &event ) ){
+        ImGui_SRE_ProcessEvent(&event);
         
         switch( event.type ){
             case SDL_QUIT:

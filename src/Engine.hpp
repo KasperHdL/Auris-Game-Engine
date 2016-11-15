@@ -22,10 +22,10 @@ public:
     Engine(int width, int height):width(width),height(height){};
     virtual ~Engine(){};
 
-    void startup();
+    void startup(SDL_Window* window);
     void shutdown();
 
-    void run();
+    void run(SDL_Window* window);
 
     void HandleSDLEvents();
 
@@ -40,10 +40,13 @@ private:
     const int VELOCITY_ITERATIONS = 16;
     const int POSITION_ITERATIONS = 16;
 
+    bool debug = false;
+
     int width;
     int height;
  
     int quit;
+
 
 	MemoryLeakDetector memLeakDet;
 
