@@ -58,7 +58,7 @@ Material* SpriteSheet::findSprite(int x, int y, int width, int height, float anc
         mat->texture = SpriteSheet::texture;
 
         //as of now only white (fixed!)
-        mat->color = glm::vec4(0,1,1,1);
+        mat->color = glm::vec4(1,1,1,1);
 
         return mat;
 

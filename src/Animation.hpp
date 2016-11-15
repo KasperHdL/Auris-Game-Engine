@@ -7,6 +7,7 @@
 #include "SRE/Mesh.hpp"
 #include "SRE/Shader.hpp"
 #include "SRE/Texture.hpp"
+#include "SpriteSheet.hpp"
 
 #include <iostream>
 
@@ -16,14 +17,19 @@ class Animation
 public:
 
 	std::vector<Texture*> textures;
+    std::vector<Mesh*> meshes;
 
 	~Animation() {
 		textures.clear();
 	}
 	void setTexture(Texture* tex);
+    void setSheet(SpriteSheet* spritesheet);
+    void setMesh(Mesh* mesh);
 	void delLastTexture();
+    void delLastMest();
 	void updateAnim(float dt);
-	Texture* getSprite();
+    Texture* getSprite();
+    void setSprite(Sprite* sprite);
 
 	Animation(GameObject* gameObject, float length){
 		

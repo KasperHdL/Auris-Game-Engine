@@ -24,7 +24,7 @@ class Player : public GameObject{
 
         SpriteSheet* ss = new SpriteSheet(SRE::Texture::createFromFile("data/MarioPacked.png",false),"data/MarioPacked.json");
         //cout << sprite->color.x << endl;
-        sprite = ss->getSprite("mario_9",this);
+        sprite = ss->getSprite("mario_10",this);
         //Material mat1;
         //mat1.mesh = Mesh::createCube();
         //mat1.texture = SRE::Texture::createFromFile("data/cartman.png",false);
@@ -39,10 +39,11 @@ class Player : public GameObject{
         //sprite = s;
 
 		auto a = RenderSystem::getAnim(this, 4.0f);
-		a->setTexture(SRE::Texture::createFromFile("data/cartman.png", false));
-		a->setTexture(SRE::Texture::createFromFile("data/fugl.png", false));
-		a->setTexture(SRE::Texture::createFromFile("data/hammer.png", false));
-		a->setTexture(SRE::Texture::createFromFile("data/rainbow.png", false));
+        a->setSheet(ss);
+        //a->setTexture(SRE::Texture::createFromFile("data/cartman.png", false));
+        //a->setTexture(SRE::Texture::createFromFile("data/fugl.png", false));
+        //a->setTexture(SRE::Texture::createFromFile("data/hammer.png", false));
+        //a->setTexture(SRE::Texture::createFromFile("data/rainbow.png", false));
 		anim = a;
 		
         //body & fixture definitions and create & assign body
@@ -70,7 +71,7 @@ class Player : public GameObject{
 	}
 
     void Update(float dt){
-        //sprite->texture = anim->getSprite();
+        anim->setSprite(sprite);
 		if (Input::keyHeld(keys.getKey("up"))) {
 			body->ApplyForceToCenter(b2Vec2(0, force), true);
 		}
