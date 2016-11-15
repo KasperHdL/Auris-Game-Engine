@@ -129,6 +129,11 @@ void Engine::run(SDL_Window* window){
 		if (input.keyDown(keys.getKey("right"))||input.keyDown(keys.getKey("d"))) {
 			cout << "GOING RIGHT" << endl;
 		}
+        new GameObject();
+        cout << "High watermark phys.: " <<memLeakDet.highWaterMarkPhys << endl;
+        cout << "High watermark virt.: " << memLeakDet.highWaterMarkVirt << endl;
+
+        memLeakDet.leakDetect(deltaTimeSec);
 		//EXAMPLES END
 
         //UPDATE

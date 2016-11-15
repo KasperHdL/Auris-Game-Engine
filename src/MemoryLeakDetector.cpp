@@ -1,7 +1,6 @@
 #include "MemoryLeakDetector.hpp"
 
 MemoryLeakDetector::MemoryLeakDetector() {
-	
 	#ifdef _WIN32 // Windows
 	//Total virt. mem.
 	memInfo.dwLength = sizeof(MEMORYSTATUSEX);
@@ -104,6 +103,38 @@ MemoryLeakDetector::MemoryLeakDetector() {
 	#endif
 }
 
+double MemoryLeakDetector::leakDetect(float deltaTime) {
+    double virtVal = getVirtMemUsedByMe();
+    double physVal = getPhysMemUsedByMe();
+    if (virtVal > highWaterMarkVirt) {
+        if (virtRising > 5.0) {
+            cout << "Shit's leaky bro" << endl;
+        }
+        else {
+            highWaterMarkVirt = virtVal;
+            virtRising += deltaTime;
+            cout << "Has been rising for: " << virtRising << endl;
+        }
+    }
+    else {
+        virtRising = 0.0;
+    }
+    if (physVal > highWaterMarkPhys) {
+        if (physRising > 5.0) {
+            cout << "Shit's leaky bro" << endl;
+        }
+        else {
+            highWaterMarkPhys = physVal;
+            physRising += deltaTime;
+            cout << "Has been rising for: " << physRising << endl;
+        }
+    }
+    else {
+        physRising = 0.0;
+    }
+}
+
+
 #ifdef _WIN32 // Windows
 double MemoryLeakDetector::getTotalVirtMem() {
 	memInfo.dwLength = sizeof(MEMORYSTATUSEX);
@@ -181,27 +212,25 @@ int MemoryLeakDetector::parseLine(char* line) {
 }
 
 double MemoryLeakDetector::getTotalVirtMem() {
-	memInfo.dwLength = sizeof(MEMORYSTATUSEX);
-	GlobalMemoryStatusEx(&memInfo);
-	double val = memInfo.ullTotalPageFile;
-	return val / MB_DIVIDER;
+
+    return totalVirtualMem;
 }
 
 double MemoryLeakDetector::getVirtMemUsed() {
-	double val = memInfo.ullTotalPageFile - memInfo.ullAvailPageFile;
-	return val / MB_DIVIDER;
+    return virtualMemUsed;
 }
 
 double MemoryLeakDetector::getTotalPhysMem()
 {
-	return memInfo.totalram;
+    return totalPhysMem;
 }
 
 double MemoryLeakDetector::getPhysMemUsed()
 {
-	return (memInfo.ullTotalPhys - memInfo.ullAvailPhys) / MB_DIVIDER;
+    return physMemUsed;
+}
 
-int MemoryLeakDetector::getVirtMemUsedByMe() { //Note: this value is in KB!
+double MemoryLeakDetector::getVirtMemUsedByMe() { //Note: this value is in KB!
 	FILE* file = fopen("/proc/self/status", "r");
 	int result = -1;
 	char line[128];
@@ -217,7 +246,7 @@ int MemoryLeakDetector::getVirtMemUsedByMe() { //Note: this value is in KB!
 }
 
 //Phys. mem. used by this process
-int MemoryLeakDetector::getPhysMemUsedByMe() { //Note: this value is in KB!
+double MemoryLeakDetector::getPhysMemUsedByMe() { //Note: this value is in KB!
 	FILE* file = fopen("/proc/self/status", "r");
 	int result = -1;
 	char line[128];

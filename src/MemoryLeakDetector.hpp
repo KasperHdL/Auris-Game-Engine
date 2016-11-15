@@ -13,7 +13,7 @@ static PDH_HCOUNTER cpuTotal;
 static ULARGE_INTEGER lastCPU, lastSysCPU, lastUserCPU;
 static int numProcessors;
 static HANDLE self;
-static float MB_DIVIDER = 1024 * 1024;
+
 
 #elif __linux__ // Linux
 #include "sys/types.h"
@@ -41,9 +41,15 @@ static int numProcessors;
 cout << "Error: Unsupported OS" << endl;
 #endif
 
+static float MB_DIVIDER = 1024 * 1024;
 
 class MemoryLeakDetector {
 public:
+    double highWaterMarkVirt = 0.0;
+    double highWaterMarkPhys = 0.0;
+    double virtRising = 0.0;
+    double physRising = 0.0;
+
 	double getTotalVirtMem();
 	double getVirtMemUsed();
 	double getVirtMemUsedByMe();
@@ -52,6 +58,7 @@ public:
 	double getPhysMemUsedByMe();
 	double getCurrentTotalCPUValue();
 	double getCurrentProcessCPUValue();
+    double leakDetect(float dt);
 	MemoryLeakDetector();
 	~MemoryLeakDetector() {}
 
