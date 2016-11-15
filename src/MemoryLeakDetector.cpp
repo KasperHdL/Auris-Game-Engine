@@ -6,28 +6,22 @@ MemoryLeakDetector::MemoryLeakDetector() {
 	memInfo.dwLength = sizeof(MEMORYSTATUSEX);
 	GlobalMemoryStatusEx(&memInfo);
 	totalVirtualMem = memInfo.ullTotalPageFile;
-	cout << "Total virtual memory:\t\t\t\t" << totalVirtualMem << endl;
 
 	//Virt. mem. in use
 	virtualMemUsed = memInfo.ullTotalPageFile - memInfo.ullAvailPageFile;
-	cout << "Virtual memory currently used:\t\t\t" << virtualMemUsed << endl;
 
 	//Virt. mem. used by this process
 	GetProcessMemoryInfo(GetCurrentProcess(), (PROCESS_MEMORY_COUNTERS*)&pmc, sizeof(pmc));
 	virtualMemUsedByMe = pmc.PrivateUsage;
-	cout << "Virt. mem. currently used by this process:\t" << virtualMemUsedByMe << endl;
 	
 	//Total phys. mem.
 	totalPhysMem = memInfo.ullTotalPhys;
-	cout << "Total physical memory (RAM):\t\t\t" << totalPhysMem << endl;
 
 	//Phys. mem. used
 	physMemUsed = memInfo.ullTotalPhys - memInfo.ullAvailPhys;
-	cout << "Physical memory currently used:\t\t\t" << physMemUsed << endl;
 
 	//Phys mem. used by this process	
 	physMemUsedByMe = pmc.WorkingSetSize;
-	cout << "Phys. mem. currently used by this process:\t" << physMemUsedByMe << endl;
 
 	//CPU currently used
 	PdhOpenQuery(NULL, NULL, &cpuQuery);
@@ -109,7 +103,70 @@ MemoryLeakDetector::MemoryLeakDetector() {
 	#endif
 }
 
+double MemoryLeakDetector::leakDetect(float deltaTime) {
+    double virtVal = getVirtMemUsedByMe();
+    double physVal = getPhysMemUsedByMe();
+    if (virtVal > highWaterMarkVirt) {
+        if (virtRising > 60.0) {
+            cout << "Shit's leaky bro" << endl;
+        }
+        else {
+            highWaterMarkVirt = virtVal;
+            virtRising += deltaTime;
+        }
+    }
+    else {
+        virtRising = 0.0;
+    }
+    if (physVal > highWaterMarkPhys) {
+        if (physRising > 60.0) {
+            cout << "Shit's leaky bro" << endl;
+        }
+        else {
+            highWaterMarkPhys = physVal;
+            physRising += deltaTime;
+        }
+    }
+    else {
+        physRising = 0.0;
+    }
+}
+
+
 #ifdef _WIN32 // Windows
+double MemoryLeakDetector::getTotalVirtMem() {
+	memInfo.dwLength = sizeof(MEMORYSTATUSEX);
+	GlobalMemoryStatusEx(&memInfo);
+	double val = memInfo.ullTotalPageFile;
+	return val;
+}
+
+double MemoryLeakDetector::getVirtMemUsed() {
+	double val = memInfo.ullTotalPageFile - memInfo.ullAvailPageFile;
+	return val;
+}
+
+double MemoryLeakDetector::getVirtMemUsedByMe()
+{
+	GetProcessMemoryInfo(GetCurrentProcess(), (PROCESS_MEMORY_COUNTERS*)&pmc, sizeof(pmc));
+	return pmc.PrivateUsage;
+}
+
+double MemoryLeakDetector::getTotalPhysMem()
+{
+	return memInfo.ullTotalPhys;
+}
+
+double MemoryLeakDetector::getPhysMemUsed()
+{
+	return memInfo.ullTotalPhys - memInfo.ullAvailPhys;
+}
+
+double MemoryLeakDetector::getPhysMemUsedByMe()
+{
+	return pmc.WorkingSetSize;
+}
+
 double MemoryLeakDetector::getCurrentTotalCPUValue() {
 	PDH_FMT_COUNTERVALUE counterVal;
 
@@ -152,7 +209,26 @@ int MemoryLeakDetector::parseLine(char* line) {
 	return i;
 }
 
-int MemoryLeakDetector::getCurrentVirtMemValue() { //Note: this value is in KB!
+double MemoryLeakDetector::getTotalVirtMem() {
+
+    return totalVirtualMem;
+}
+
+double MemoryLeakDetector::getVirtMemUsed() {
+    return virtualMemUsed;
+}
+
+double MemoryLeakDetector::getTotalPhysMem()
+{
+    return totalPhysMem;
+}
+
+double MemoryLeakDetector::getPhysMemUsed()
+{
+    return physMemUsed;
+}
+
+double MemoryLeakDetector::getVirtMemUsedByMe() { //Note: this value is in KB!
 	FILE* file = fopen("/proc/self/status", "r");
 	int result = -1;
 	char line[128];
@@ -168,7 +244,7 @@ int MemoryLeakDetector::getCurrentVirtMemValue() { //Note: this value is in KB!
 }
 
 //Phys. mem. used by this process
-int MemoryLeakDetector::getCurrentPhysMemValue() { //Note: this value is in KB!
+double MemoryLeakDetector::getPhysMemUsedByMe() { //Note: this value is in KB!
 	FILE* file = fopen("/proc/self/status", "r");
 	int result = -1;
 	char line[128];
