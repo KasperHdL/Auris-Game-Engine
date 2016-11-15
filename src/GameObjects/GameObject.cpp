@@ -1,9 +1,10 @@
 #include "GameObject.hpp"
 #include "Components/Sprite.hpp"
 #include "../Constants.hpp"
+#include "../RenderSystem.hpp"
 
 GameObject::~GameObject(){
-    delete sprite;
+    RenderSystem::deleteSprite(sprite);
 }
 
 glm::mat4 GameObject::localTransform() {

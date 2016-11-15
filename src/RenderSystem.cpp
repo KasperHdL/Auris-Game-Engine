@@ -25,3 +25,8 @@ Sprite* RenderSystem::getSprite(GameObject* gameObject){
 
     return s;
 }
+
+void RenderSystem::deleteSprite(Sprite* sprite){
+    RenderSystem::spritePool.remove(sprite);
+
+}
