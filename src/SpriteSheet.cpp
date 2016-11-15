@@ -1,6 +1,5 @@
 #include "SpriteSheet.hpp"
 #include "RenderSystem.hpp"
-#include "Material.hpp"
 #include <fstream>
 
 using namespace std;
@@ -25,13 +24,14 @@ SpriteSheet::SpriteSheet(Texture* texture,string pathToJSON){
         float ax = (float)element.get("pivot").get("x").get<double>();
         float ay = (float)element.get("pivot").get("y").get<double>();
 
-        SpriteSheet::sprites[element.get("filename").get<std::string>()] = findSprite(x,y,width,height,ax,ay);
+        SpriteSheet::sprites[element.get("filename").get<std::string>()] = findSprite(x,texture->getHeight()-height-y,width,height,ax,ay);
+        cout << element.get("filename").get<std::string>() << ": " << x << ","<< y << "," << width << "," << height << "," << endl;
     }
 }
 
-Sprite* SpriteSheet::findSprite(int x, int y, int width, int height, float anchorX, float anchorY){
-    float offsetX = (float)width*anchorX;
-    float offsetY = (float)height*anchorY;
+Material* SpriteSheet::findSprite(int x, int y, int width, int height, float anchorX, float anchorY){
+    float offsetX = (float)width*-0.5f;
+    float offsetY = (float)height*-0.5f;
 
     std::vector<glm::vec3> vertices({
             glm::vec3{ width + offsetX, offsetY, 0 }, glm::vec3{ width + offsetX, height + offsetY, 0 },glm::vec3{ offsetX, offsetY, 0 },
@@ -54,14 +54,13 @@ Sprite* SpriteSheet::findSprite(int x, int y, int width, int height, float ancho
 
         Material* mat = new Material();
         mat->mesh = new SRE::Mesh(vertices, normals, uvs);
+        //mat->mesh = Mesh::createCube();
         mat->texture = SpriteSheet::texture;
+
         //as of now only white (fixed!)
-        mat->color = glm::vec4(1,1,1,1);
-        //auto s = RenderSystem::getSprite(new GameObject);
-        Sprite* s;
-        mat->set(s);
-        //s->scale = vec2(s->texture->getWidth(), s->texture->getHeight());
-        return s;
+        mat->color = glm::vec4(0,1,1,1);
+
+        return mat;
 
 
 }
@@ -70,7 +69,9 @@ SpriteSheet::~SpriteSheet(){
     sprites.clear();
 }
 
-Sprite* SpriteSheet::getSprite(string name){
-    return sprites[name];
+Sprite* SpriteSheet::getSprite(string name,GameObject* parent){
+    auto s = RenderSystem::getSprite(parent);
+    sprites[name]->set(s);
+    return s;
 }
 

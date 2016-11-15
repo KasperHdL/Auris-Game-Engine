@@ -5,6 +5,7 @@
 #include "SRE/Texture.hpp"
 #include "src/GameObjects/Components/Sprite.hpp"
 #include "picojson.h"
+#include "Material.hpp"
 
 
 class SpriteSheet{
@@ -13,12 +14,12 @@ class SpriteSheet{
         
         SpriteSheet(Texture* texture,std::string pathToJSON);
         ~SpriteSheet();
-        Sprite* getSprite(std::string name);
+        Sprite* getSprite(std::string name, GameObject* parent);
 
     private:
         
-        Sprite* findSprite(int x, int y, int width, int height, float anchorX, float anchorY);
-        std::map<std::string,Sprite*> sprites;
+        Material* findSprite(int x, int y, int width, int height, float anchorX, float anchorY);
+        std::map<std::string,Material*> sprites;
         SRE::Texture* texture;
 
 };

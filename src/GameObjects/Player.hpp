@@ -23,7 +23,8 @@ class Player : public GameObject{
 
 
         SpriteSheet* ss = new SpriteSheet(SRE::Texture::createFromFile("data/MarioPacked.png",false),"data/MarioPacked.json");
-        sprite = ss->getSprite("mario_10");
+        //cout << sprite->color.x << endl;
+        sprite = ss->getSprite("mario_9",this);
         //Material mat1;
         //mat1.mesh = Mesh::createCube();
         //mat1.texture = SRE::Texture::createFromFile("data/cartman.png",false);
@@ -34,7 +35,7 @@ class Player : public GameObject{
         //s->texture = SRE::Texture::createFromFile("data/cartman.png",false);
         //s->color = vec4(1,1,1,1);
         //mat1.set(sprite);
-        sprite->scale = vec2(sprite->texture->getWidth(), sprite->texture->getHeight());
+        sprite->scale = vec2(1.0f, 1.0f);
         //sprite = s;
 
 		auto a = RenderSystem::getAnim(this, 4.0f);
@@ -50,7 +51,7 @@ class Player : public GameObject{
         bodyDef.position.Set(position.x, position.y);
 
         b2CircleShape shape;
-        shape.m_radius = (sprite->scale.x * Constants::PIXELS_TO_METERS);
+        shape.m_radius = (19 * Constants::PIXELS_TO_METERS);
 
         b2FixtureDef fixtureDef;
         fixtureDef.shape = &shape;
@@ -69,7 +70,7 @@ class Player : public GameObject{
 	}
 
     void Update(float dt){
-		//sprite->texture = anim->getSprite();
+        //sprite->texture = anim->getSprite();
 		if (Input::keyHeld(keys.getKey("up"))) {
 			body->ApplyForceToCenter(b2Vec2(0, force), true);
 		}

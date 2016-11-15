@@ -26,7 +26,7 @@ int main(int argc, char** argv) {
 
     SDL_GL_SetAttribute(SDL_GL_CONTEXT_PROFILE_MASK, SDL_GL_CONTEXT_PROFILE_CORE);
 
-    int width = 640;
+    int width = 720;
     int height = 480;
 
     // Create an application window with the following settings:
