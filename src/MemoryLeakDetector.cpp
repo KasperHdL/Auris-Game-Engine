@@ -109,33 +109,33 @@ double MemoryLeakDetector::getTotalVirtMem() {
 	memInfo.dwLength = sizeof(MEMORYSTATUSEX);
 	GlobalMemoryStatusEx(&memInfo);
 	double val = memInfo.ullTotalPageFile;
-	return val / MB_DIVIDER;
+	return val;
 }
 
 double MemoryLeakDetector::getVirtMemUsed() {
 	double val = memInfo.ullTotalPageFile - memInfo.ullAvailPageFile;
-	return val / MB_DIVIDER;
+	return val;
 }
 
 double MemoryLeakDetector::getVirtMemUsedByMe()
 {
 	GetProcessMemoryInfo(GetCurrentProcess(), (PROCESS_MEMORY_COUNTERS*)&pmc, sizeof(pmc));
-	return pmc.PrivateUsage / MB_DIVIDER;
+	return pmc.PrivateUsage;
 }
 
 double MemoryLeakDetector::getTotalPhysMem()
 {
-	return memInfo.ullTotalPhys / MB_DIVIDER;
+	return memInfo.ullTotalPhys;
 }
 
 double MemoryLeakDetector::getPhysMemUsed()
 {
-	return memInfo.ullTotalPhys - memInfo.ullAvailPhys / MB_DIVIDER;
+	return memInfo.ullTotalPhys - memInfo.ullAvailPhys;
 }
 
 double MemoryLeakDetector::getPhysMemUsedByMe()
 {
-	return pmc.WorkingSetSize / MB_DIVIDER;
+	return pmc.WorkingSetSize;
 }
 
 double MemoryLeakDetector::getCurrentTotalCPUValue() {
@@ -180,7 +180,28 @@ int MemoryLeakDetector::parseLine(char* line) {
 	return i;
 }
 
-int MemoryLeakDetector::getCurrentVirtMemValue() { //Note: this value is in KB!
+double MemoryLeakDetector::getTotalVirtMem() {
+	memInfo.dwLength = sizeof(MEMORYSTATUSEX);
+	GlobalMemoryStatusEx(&memInfo);
+	double val = memInfo.ullTotalPageFile;
+	return val / MB_DIVIDER;
+}
+
+double MemoryLeakDetector::getVirtMemUsed() {
+	double val = memInfo.ullTotalPageFile - memInfo.ullAvailPageFile;
+	return val / MB_DIVIDER;
+}
+
+double MemoryLeakDetector::getTotalPhysMem()
+{
+	return memInfo.totalram;
+}
+
+double MemoryLeakDetector::getPhysMemUsed()
+{
+	return (memInfo.ullTotalPhys - memInfo.ullAvailPhys) / MB_DIVIDER;
+
+int MemoryLeakDetector::getVirtMemUsedByMe() { //Note: this value is in KB!
 	FILE* file = fopen("/proc/self/status", "r");
 	int result = -1;
 	char line[128];
@@ -196,7 +217,7 @@ int MemoryLeakDetector::getCurrentVirtMemValue() { //Note: this value is in KB!
 }
 
 //Phys. mem. used by this process
-int MemoryLeakDetector::getCurrentPhysMemValue() { //Note: this value is in KB!
+int MemoryLeakDetector::getPhysMemUsedByMe() { //Note: this value is in KB!
 	FILE* file = fopen("/proc/self/status", "r");
 	int result = -1;
 	char line[128];

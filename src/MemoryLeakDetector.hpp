@@ -44,6 +44,14 @@ cout << "Error: Unsupported OS" << endl;
 
 class MemoryLeakDetector {
 public:
+	double getTotalVirtMem();
+	double getVirtMemUsed();
+	double getVirtMemUsedByMe();
+	double getTotalPhysMem();
+	double getPhysMemUsed();
+	double getPhysMemUsedByMe();
+	double getCurrentTotalCPUValue();
+	double getCurrentProcessCPUValue();
 	MemoryLeakDetector();
 	~MemoryLeakDetector() {}
 
@@ -59,15 +67,6 @@ public:
 	SYSTEM_INFO sysInfo;
 	FILETIME ftime, fsys, fuser;
 
-	double getTotalVirtMem();
-	double getVirtMemUsed();
-	double getVirtMemUsedByMe();
-	double getTotalPhysMem();
-	double getPhysMemUsed();
-	double getPhysMemUsedByMe();
-	double getCurrentTotalCPUValue();
-	double getCurrentProcessCPUValue();
-
 	#elif __linux__ // Linux
 	struct sysinfo memInfo;
 	long long totalVirtualMem;
@@ -76,12 +75,8 @@ public:
 	long long physMemUsed;
 
 	int parseLine(char* line);
-	int getCurrentVirtMemValue();
-	int getCurrentPhysMemValue();
 	void initTotalCPUFile();
-	double getCurrentTotalCPUValue();
     void initCurrentCPUFile();
-    double getCurrentProcessCPUValue();
 
 	#elif __APPLE__ // MAC OS X
 	struct statfs stats;
