@@ -39,7 +39,7 @@ ELSE (APPLE)
         find_package(glew REQUIRED)
     ENDIF(UNIX)
     include_directories(${GLEW_INCLUDE_DIR})
-    SET(EXTRA_LIBS ${OPENGL_LIBRARY} ${GLEW_LIBRARY})
+    SET(EXTRA_LIBS ${OPENGL_LIBRARY} ${GLEW_LIBRARY} pdh.lib)
 ENDIF (APPLE)
 
 find_package(SDL2_IMAGE REQUIRED)

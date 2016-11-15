@@ -3,16 +3,17 @@
 using namespace std;
 
 #ifdef _WIN32 // Windows
-#include "windows.h"
-#include "psapi.h"
-#include "TCHAR.h"
-#include "pdh.h"
+#include <Windows.h>
+#include <Psapi.h>
+#include <tchar.h>
+#include <Pdh.h>
 
 static PDH_HQUERY cpuQuery;
 static PDH_HCOUNTER cpuTotal;
 static ULARGE_INTEGER lastCPU, lastSysCPU, lastUserCPU;
 static int numProcessors;
 static HANDLE self;
+static float MB_DIVIDER = 1024 * 1024;
 
 #elif __linux__ // Linux
 #include "sys/types.h"
@@ -43,6 +44,14 @@ cout << "Error: Unsupported OS" << endl;
 
 class MemoryLeakDetector {
 public:
+	double getTotalVirtMem();
+	double getVirtMemUsed();
+	double getVirtMemUsedByMe();
+	double getTotalPhysMem();
+	double getPhysMemUsed();
+	double getPhysMemUsedByMe();
+	double getCurrentTotalCPUValue();
+	double getCurrentProcessCPUValue();
 	MemoryLeakDetector();
 	~MemoryLeakDetector() {}
 
@@ -58,9 +67,6 @@ public:
 	SYSTEM_INFO sysInfo;
 	FILETIME ftime, fsys, fuser;
 
-	double getCurrentTotalCPUValue();
-	double getCurrentProcessCPUValue();
-
 	#elif __linux__ // Linux
 	struct sysinfo memInfo;
 	long long totalVirtualMem;
@@ -69,12 +75,8 @@ public:
 	long long physMemUsed;
 
 	int parseLine(char* line);
-	int getCurrentVirtMemValue();
-	int getCurrentPhysMemValue();
 	void initTotalCPUFile();
-	double getCurrentTotalCPUValue();
     void initCurrentCPUFile();
-    double getCurrentProcessCPUValue();
 
 	#elif __APPLE__ // MAC OS X
 	struct statfs stats;

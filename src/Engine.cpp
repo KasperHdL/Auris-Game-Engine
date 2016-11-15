@@ -75,17 +75,15 @@ void Engine::run(SDL_Window* window){
 
 	//EXAMPLES START
    
-    cout << "Total phys. mem.:\t\t" << memLeakDet.totalPhysMem << endl;
-    cout << "Phys. mem. used:\t\t" <<  memLeakDet.physMemUsed<< endl;
-    cout << "Total virt. mem.:\t\t" << memLeakDet.totalVirtualMem << endl;
-    cout << "Virt. mem. used:\t\t" << memLeakDet.virtualMemUsed << endl;
+    cout << "Total phys. mem.:\t\t\t" << memLeakDet.getTotalPhysMem() << endl;
+    cout << "Phys. mem. used:\t\t\t" <<  memLeakDet.getPhysMemUsed() << endl;
+    cout << "Total virt. mem.:\t\t\t" << memLeakDet.getTotalVirtMem() << endl;
+    cout << "Virt. mem. used:\t\t\t" << memLeakDet.getVirtMemUsed() << endl;
 
-    cout << "Current virt. memory:\t\t" << memLeakDet.getCurrentVirtMemValue() << endl;
-    cout << "Current phys. memory:\t\t" << memLeakDet.getCurrentPhysMemValue() << endl;
-    memLeakDet.initTotalCPUFile();
-	cout << "Total CPU:\t\t\t" << memLeakDet.getCurrentTotalCPUValue() << endl;
-    memLeakDet.initCurrentCPUFile();
-	cout << "Total CPU used by this process:\t" << memLeakDet.getCurrentProcessCPUValue() << endl;
+    cout << "Current virt. memory used by me:\t" << memLeakDet.getVirtMemUsedByMe() << endl;
+    cout << "Current phys. memory used by me:\t" << memLeakDet.getPhysMemUsedByMe() << endl;
+	cout << "Total CPU:\t\t\t\t" << memLeakDet.getCurrentTotalCPUValue() << endl;
+	cout << "Total CPU used by this process:\t\t" << memLeakDet.getCurrentProcessCPUValue() << endl;
 	//EXAMPLES END
 
     //DEBUG INFORMATION TODO should be ignored on release build
@@ -131,7 +129,6 @@ void Engine::run(SDL_Window* window){
 		if (input.keyDown(keys.getKey("right"))||input.keyDown(keys.getKey("d"))) {
 			cout << "GOING RIGHT" << endl;
 		}
-
 		//EXAMPLES END
 
         //UPDATE
