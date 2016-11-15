@@ -15,12 +15,13 @@
 #include "RenderSystem.hpp"
 #include "Systems/ParticleSystem.hpp"
 #include "MemoryLeakDetector.hpp"
+#include "collisionhandler.h"
 
 class DebugDraw;
-class Engine{
+class Engine : public b2ContactListener{
 public:
-    Engine(int width, int height):width(width),height(height){};
-    virtual ~Engine(){};
+    Engine(int width, int height):width(width),height(height){}
+    virtual ~Engine(){}
 
     void startup();
     void shutdown();
@@ -44,6 +45,9 @@ private:
     int height;
  
     int quit;
+
+    void BeginContact(b2Contact* contact);
+    void EndContact(b2Contact* contact);
 
 	MemoryLeakDetector memLeakDet;
 

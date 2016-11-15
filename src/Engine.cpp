@@ -11,14 +11,14 @@ using namespace glm;
 
 DebugDraw debugDraw;
 
-
 void Engine::startup(){
 
     renderSystem.startup(16);
 
-    //particleSystem.startup(10000, 1, SRE::Texture::createFromFile("data/cartman.png",false));
+    particleSystem.startup(10000, 1, SRE::Texture::createFromFile("data/cartman.png",false));
 
     world = new b2World(toB2(glm::vec2(0,0)));
+    world->SetContactListener(this);
 
     world->SetDebugDraw(&debugDraw);
     debugDraw.SetFlags(b2Draw::e_shapeBit);
@@ -98,7 +98,11 @@ void Engine::run(){
 		}
 		//EXAMPLES END
 
-        //UPDATE
+        //PHYSICS UPDATE
+        world->Step(deltaTimeSec, VELOCITY_ITERATIONS, POSITION_ITERATIONS);
+
+
+        //GAMEOBJECTS UPDATE
         for(auto& el: gameObjects)
             el->update(deltaTimeSec);
  
@@ -116,8 +120,6 @@ void Engine::run(){
         particleSystem.draw();
 
         */
-
-        world->Step(deltaTimeSec, VELOCITY_ITERATIONS, POSITION_ITERATIONS);         
        
         //DRAW
         renderSystem.update(deltaTimeSec);
@@ -128,7 +130,6 @@ void Engine::run(){
     }
 
 }
-
 
 void Engine::HandleSDLEvents(){
     // message processing loop
@@ -142,9 +143,17 @@ void Engine::HandleSDLEvents(){
                 break;
             default:
                 break;
-        }
-        
+        }   
     }
-
-
 }
+
+void Engine::BeginContact(b2Contact* contact){
+    b2Body* colliderA = contact->GetFixtureA()->GetBody();
+    b2Body* colliderB = contact->GetFixtureB()->GetBody();
+}
+
+void Engine::EndContact(b2Contact* contact) {
+    b2Body* colliderA = contact->GetFixtureA()->GetBody();
+    b2Body* colliderB = contact->GetFixtureB()->GetBody();
+}
+

@@ -27,12 +27,15 @@ public:
     Sprite* sprite;
 	shared_ptr<Scriptable> script;
 
-    GameObject(){};
+    GameObject(){}
     ~GameObject();
        
-    virtual void update(float dt){};
+    virtual void update(float dt){}
 
     glm::mat4 localTransform();
     glm::mat4 globalTransform();
 
+    void enableCollisionEvents(){
+        body->SetUserData(parent);
+    }
 };
