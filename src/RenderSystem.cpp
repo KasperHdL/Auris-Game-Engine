@@ -7,8 +7,7 @@ void RenderSystem::startup(int reserve){
 
 }
 
-void RenderSystem::shutdown(){
-}
+void RenderSystem::shutdown(){}
 
 
 void RenderSystem::update(float dt){

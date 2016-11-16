@@ -16,7 +16,7 @@
 #include "Systems/ParticleSystem.hpp"
 #include "MemoryLeakDetector.hpp"
 
-#include "Testing/Showcases/Showcases.hpp"
+#include "Testing/Showcases/ShowcasePanel.hpp"
 
 class DebugDraw;
 class Engine{
@@ -35,7 +35,7 @@ private:
 
     vector<shared_ptr<GameObject>> gameObjects;
     RenderSystem renderSystem;
-    Showcases showcases;
+    ShowcasePanel showcasePanel;
 
     b2World* world;
     vec2 camPos;

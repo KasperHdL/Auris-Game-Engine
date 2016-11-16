@@ -4,7 +4,6 @@
 #include "GameObjects/Player.hpp"
 #include "Input.hpp"
 #include "Keys.hpp"
-#include "Testing/Showcases/Showcases.hpp"
 
 #include "SRE/imgui_sre.hpp"
 
@@ -29,7 +28,7 @@ void Engine::startup(SDL_Window* window){
     sre->getCamera()->setWindowCoordinates();
     sre->setLight(2, Light(LightType::Directional,{0,0,0},{1,1,1},{1,1,1},0));
 
-    gameObjects.push_back(make_shared<Player>(world));
+    gameObjects.push_back(make_shared<Player>(world,vec2(10,10)));
     gameObjects.push_back(make_shared<Player>(world));
 
 }
@@ -152,10 +151,10 @@ void Engine::run(SDL_Window* window){
             if(ImGui::Checkbox("Toggle Showcases Panel",&toggle_showcasePanel)){
                 if(toggle_showcasePanel){
                     //toggled on
-                    showcases.startup();
+                    showcasePanel.startup();
                 }else{
                     //toggled off
-                    showcases.shutdown();
+                    showcasePanel.shutdown();
                 }
 
             }
@@ -218,7 +217,7 @@ void Engine::run(SDL_Window* window){
 
             if(toggle_showcasePanel){
                 ImGui::Begin("Showcases");
-                showcases.makeGui();
+                showcasePanel.makeGui();
                 ImGui::End();
             }
 
@@ -237,7 +236,7 @@ void Engine::run(SDL_Window* window){
             world->Step(deltaTimeSec, VELOCITY_ITERATIONS, POSITION_ITERATIONS);         
 
             if(toggle_showcasePanel){
-                showcases.update(deltaTimeSec);
+                showcasePanel.update(deltaTimeSec);
             }
            
         }
@@ -245,7 +244,7 @@ void Engine::run(SDL_Window* window){
         renderSystem.update(deltaTimeSec);
 
         if(toggle_showcasePanel)
-            showcases.draw();
+            showcasePanel.draw();
 
         if(debug)
             ImGui::Render();

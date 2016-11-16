@@ -57,7 +57,7 @@ class ParticleSystem{
     }
 
 public:
-    vec3 acceleration;
+    vec3 acceleration = vec3(0,0,0);
     int particleIndex = 0;
 
     ParticleSystem(){}
@@ -75,41 +75,53 @@ public:
         this->texture = texture;
         
         shader = SRE::Shader::getStandardParticles();
-        acceleration = vec3(0,0,0);
 
         finalPositions.reserve(numParticles);
+        finalColors.reserve(numParticles);
+        finalSizes.reserve(numParticles);
+        finalRotation.reserve(numParticles);
 
         positions.reserve(numParticles);
         velocities.reserve(numParticles);
+        rotations.reserve(numParticles);
+        angularVelocities.reserve(numParticles);
         startColors.reserve(numParticles);
         endColors.reserve(numParticles);
         startSizes.reserve(numParticles);
         endSizes.reserve(numParticles);
         startTimes.reserve(numParticles);
 
-        finalRotation.reserve(numParticles);
-        rotations.reserve(numParticles);
-        angularVelocities.reserve(numParticles);
 
         //zero arrays
         for(int i = 0; i < numParticles; i++){
-            finalPositions.push_back(vec3(0,0,0));
+            finalPositions.push_back(vec3(0,0,-1000));
             finalColors.push_back(vec4(0));
             finalSizes.push_back(0);
             finalRotation.push_back(0);
 
-            positions.push_back(vec3(0,0,0));
-            velocities.push_back(vec3(0,0,0));
-            startColors.push_back(vec4(1,1,1,1));
+            positions.push_back(vec3(0));
+            velocities.push_back(vec3(0));
+            rotations.push_back(0);
+            angularVelocities.push_back(0);
+            startColors.push_back(vec4(0));
             endColors.push_back(vec4(0));
-            startSizes.push_back(0.1f);
+            startSizes.push_back(0);
             endSizes.push_back(0);
             startTimes.push_back(-999);
         }
 
+
+        if(mesh == nullptr)
+            mesh = new SRE::ParticleMesh(finalPositions, startColors, uvs, uvSize, finalRotation, startSizes);
+        else
+            mesh->update(finalPositions, finalColors, uvs, uvSize, finalRotation, finalSizes);
     }
 
     void shutdown(){
+        finalPositions.clear();
+        finalColors.clear();
+        finalSizes.clear();
+        finalRotation.clear();
 
         positions.clear();
         velocities.clear();
@@ -149,11 +161,11 @@ public:
                 continue;
             }
 
-            //auto a = .5f * acceleration * t*t;
+            auto a = acceleration * t*t;
             auto v = velocities[i] * t;
             auto p0 = positions[i];
 
-            finalPositions[i] = v + p0;
+            finalPositions[i] = a + v + p0;
             finalRotation[i] = rotations[i] + angularVelocities[i] * t;
 
             float p = t / particleDuration;
@@ -162,10 +174,7 @@ public:
             
         }
 
-        if(mesh == nullptr)
-            mesh = new SRE::ParticleMesh(finalPositions, startColors, uvs, uvSize, finalRotation, startSizes);
-        else
-            mesh->update(finalPositions, finalColors, uvs, uvSize, finalRotation, finalSizes);
+        mesh->update(finalPositions, finalColors, uvs, uvSize, finalRotation, finalSizes);
 
 
         currentTime += dt;
