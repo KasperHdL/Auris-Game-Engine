@@ -1,10 +1,10 @@
 #include "Engine.hpp"
 #include "DebugDraw.hpp"
 
-#include <glm/gtc/random.hpp>
 #include "GameObjects/Player.hpp"
 #include "Input.hpp"
 #include "Keys.hpp"
+#include "Testing/Showcases/Showcases.hpp"
 
 #include "SRE/imgui_sre.hpp"
 
@@ -19,7 +19,6 @@ void Engine::startup(SDL_Window* window){
 
     renderSystem.startup(16);
 
-    particleSystem.startup(10000, 1, SRE::Texture::createFromFile("data/cartman.png",false));
 
     world = new b2World(toB2(glm::vec2(0,0)));
 
@@ -96,6 +95,7 @@ void Engine::run(SDL_Window* window){
     int max_renderSprites = 0;
 
     bool toggle_goInspector = false;
+    bool toggle_showcasePanel = false;
     bool toggle_cameraControls = false;
 
     while (quit == 0){
@@ -145,9 +145,20 @@ void Engine::run(SDL_Window* window){
             }
             ImGui::SameLine();
             ImGui::Text("Play on Hold(F5)");
-//            ImGui::Checkbox("Toggle Camera Controls(Arrow Keys)",&toggle_cameraControls);
+//          ImGui::Checkbox("Toggle Camera Controls(Arrow Keys)",&toggle_cameraControls);
 
+            ImGui::Separator();
             ImGui::Checkbox("Toggle GO Inspector",&toggle_goInspector);
+            if(ImGui::Checkbox("Toggle Showcases Panel",&toggle_showcasePanel)){
+                if(toggle_showcasePanel){
+                    //toggled on
+                    showcases.startup();
+                }else{
+                    //toggled off
+                    showcases.shutdown();
+                }
+
+            }
             ImGui::Separator();
 
             arr_deltaTime[arrIndex] = deltaTimeSec;
@@ -205,39 +216,41 @@ void Engine::run(SDL_Window* window){
                 ImGui::End();
             }
 
+            if(toggle_showcasePanel){
+                ImGui::Begin("Showcases");
+                showcases.makeGui();
+                ImGui::End();
+            }
+
 
 
             arrIndex++;
             if(arrIndex >= arrSize)
                 arrIndex = 0;
 
-            ImGui::Render();
         }
 
         //UPDATE
         if(!pause || runOneStep){
             for(auto& el: gameObjects)
                 el->update(deltaTimeSec);
-
-            for(int i = 0; i < 100; i++)
-            particleSystem.emit(
-                    vec3(width/2, height / 2, 0), //position
-                    vec3(glm::circularRand<float>(800.0f), 0), //velocity
-                    vec4(glm::sphericalRand<float>(1.0f), 0), //color
-                    glm::linearRand<float>(0,1), //size
-                    vec4(0,0,0,1), //end color
-                    1 //end size
-                    );
-            particleSystem.update(deltaTimeSec);
-
             world->Step(deltaTimeSec, VELOCITY_ITERATIONS, POSITION_ITERATIONS);         
+
+            if(toggle_showcasePanel){
+                showcases.update(deltaTimeSec);
+            }
            
         }
         //DRAW
-        particleSystem.draw();
         renderSystem.update(deltaTimeSec);
 
-        world->DrawDebugData();
+        if(toggle_showcasePanel)
+            showcases.draw();
+
+        if(debug)
+            ImGui::Render();
+
+        //world->DrawDebugData();
         sre->swapWindow();
     }
 
