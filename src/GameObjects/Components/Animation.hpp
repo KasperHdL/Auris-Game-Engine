@@ -1,7 +1,7 @@
 #pragma once
 
-#include "src/GameObjects/GameObject.hpp"
-#include "src/GameObjects/Components/Sprite.hpp"
+#include "../GameObject.hpp"
+#include "Sprite.hpp"
 #include "glm/glm.hpp"
 #include "SRE/SimpleRenderEngine.hpp"
 #include "SRE/Mesh.hpp"

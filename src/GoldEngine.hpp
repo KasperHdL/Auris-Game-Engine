@@ -4,7 +4,6 @@
 #include "SRE/Mesh.hpp"
 #include "SRE/Shader.hpp"
 #include "SRE/Texture.hpp"
-#include "SDL.h"
 #include "Box2D/Box2D.h"
 
 #include <memory>
@@ -12,17 +11,25 @@
 #include "GameObjects/GameObject.hpp"
 #include <iostream>
 
-#include "RenderSystem.hpp"
+#include "Systems/RenderSystem.hpp"
 #include "Systems/ParticleSystem.hpp"
-#include "MemoryLeakDetector.hpp"
+#include "Utility/MemoryLeakDetector.hpp"
 
 #include "Testing/Showcases/ShowcasePanel.hpp"
+#include "Testing/DebugDraw.hpp"
+
+#include "GameObjects/Player.hpp"
+#include "Systems/Input.hpp"
+
+#include "SRE/imgui_sre.hpp"
+
+#include <SDL.h>
 
 class DebugDraw;
-class Engine : public b2ContactListener{
+class GoldEngine : public b2ContactListener{
 public:
-    Engine(int width, int height):width(width),height(height){}
-    virtual ~Engine(){}
+    GoldEngine(int width, int height):width(width),height(height){}
+    virtual ~GoldEngine(){}
 
     void startup(SDL_Window* window);
     void shutdown();

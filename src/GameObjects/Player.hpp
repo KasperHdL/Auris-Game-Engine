@@ -3,16 +3,15 @@
 #include "GameObject.hpp"
 #include "Box2D/Box2D.h"
 #include "Components/Sprite.hpp"
-#include "src/Animation.hpp"
+#include "Components/Animation.hpp"
 
-#include "../RenderSystem.hpp"
+#include "../Systems/RenderSystem.hpp"
 #include "../Constants.hpp"
 #include <iostream>
-#include "src/Input.hpp"
-#include "src/Keys.hpp"
-#include "src/Material.hpp"
+#include "../Systems/Input.hpp"
+#include "Components/Material.hpp"
 
-#include "../SpriteSheet.hpp"
+#include "Components/SpriteSheet.hpp"
 
 
 using namespace std;

@@ -1,7 +1,7 @@
 #include "GameObject.hpp"
 #include "Components/Sprite.hpp"
 #include "../Constants.hpp"
-#include "../RenderSystem.hpp"
+#include "../Systems/RenderSystem.hpp"
 
 GameObject::~GameObject(){
     RenderSystem::deleteSprite(sprite);

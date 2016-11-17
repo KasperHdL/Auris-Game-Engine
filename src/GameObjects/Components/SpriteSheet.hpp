@@ -3,8 +3,8 @@
 #include <string>
 #include <map>
 #include "SRE/Texture.hpp"
-#include "src/GameObjects/Components/Sprite.hpp"
-#include "picojson.h"
+#include "Sprite.hpp"
+#include "../../Utility/picojson.h"
 #include "Material.hpp"
 
 

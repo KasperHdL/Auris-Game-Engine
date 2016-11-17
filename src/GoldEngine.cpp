@@ -1,11 +1,4 @@
-#include "Engine.hpp"
-#include "DebugDraw.hpp"
-
-#include "GameObjects/Player.hpp"
-#include "Input.hpp"
-#include "Keys.hpp"
-
-#include "SRE/imgui_sre.hpp"
+#include "GoldEngine.hpp"
 
 using namespace SRE;
 using namespace glm;
@@ -13,7 +6,7 @@ using namespace glm;
 DebugDraw debugDraw;
 
 
-void Engine::startup(SDL_Window* window){
+void GoldEngine::startup(SDL_Window* window){
     ImGui_SRE_Init(window);
 
     renderSystem.startup(64);
@@ -38,7 +31,7 @@ void Engine::startup(SDL_Window* window){
 
 }
 
-void Engine::shutdown(){
+void GoldEngine::shutdown(){
     renderSystem.shutdown();
 
     delete world;
@@ -48,7 +41,7 @@ void Engine::shutdown(){
 }
 
 
-void Engine::run(SDL_Window* window){
+void GoldEngine::run(SDL_Window* window){
     // delta time from http://gamedev.stackexchange.com/a/110831
     Uint64 NOW = SDL_GetPerformanceCounter();
     Uint64 LAST = 0;
@@ -252,7 +245,7 @@ void Engine::run(SDL_Window* window){
 
 }
 
-void Engine::HandleSDLEvents(){
+void GoldEngine::HandleSDLEvents(){
     // message processing loop
     SDL_Event event;
     /* Poll for events */
@@ -269,12 +262,12 @@ void Engine::HandleSDLEvents(){
     }
 }
 
-void Engine::BeginContact(b2Contact* contact){
+void GoldEngine::BeginContact(b2Contact* contact){
     b2Body* colliderA = contact->GetFixtureA()->GetBody();
     b2Body* colliderB = contact->GetFixtureB()->GetBody();
 }
 
-void Engine::EndContact(b2Contact* contact) {
+void GoldEngine::EndContact(b2Contact* contact) {
     b2Body* colliderA = contact->GetFixtureA()->GetBody();
     b2Body* colliderB = contact->GetFixtureB()->GetBody();
 }

@@ -3,10 +3,10 @@
 #include <vector>
 #include <memory>
 
-#include "GameObjects/GameObject.hpp"
-#include "GameObjects/Components/Sprite.hpp"
-#include "Utility/Pool.hpp"
-#include "src/Animation.hpp"
+#include "../GameObjects/GameObject.hpp"
+#include "../GameObjects/Components/Sprite.hpp"
+#include "../Utility/Pool.hpp"
+#include "../GameObjects/Components/Animation.hpp"
 
 using namespace std;
 class RenderSystem{
@@ -15,8 +15,8 @@ class RenderSystem{
     static Pool<Sprite> spritePool;
 	static vector<shared_ptr<Animation>> animations;
     
-    RenderSystem(){};
-    ~RenderSystem(){};
+    RenderSystem(){}
+    ~RenderSystem(){}
 
     void startup(int reserve);
 

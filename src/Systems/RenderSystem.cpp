@@ -32,5 +32,4 @@ shared_ptr<Animation> RenderSystem::getAnim(GameObject* gameObject, float length
 
 void RenderSystem::deleteSprite(Sprite* sprite){
     RenderSystem::spritePool.remove(sprite);
-
 }

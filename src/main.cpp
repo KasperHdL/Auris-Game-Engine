@@ -7,12 +7,14 @@
 #include "glm/gtc/matrix_transform.hpp"
 
 #define SDL_MAIN_HANDLED
-#include "SDL.h"
+
 #include "SRE/SimpleRenderEngine.hpp"
-#include "Engine.hpp"
+#include "GoldEngine.hpp"
 #include "Utility/Pool.hpp"
 
 #include "GameObjects/Components/Sprite.hpp"
+
+#include <SDL.h>
 
 using namespace std;
 
@@ -50,7 +52,7 @@ int main(int argc, char** argv) {
 
     // Use windows coordinates in this example (lower left corner is (0,0), upper right corner is (width, height)
     
-    Engine engine(width, height);
+    GoldEngine engine(width, height);
     engine.startup(window);
     engine.run(window);
     engine.shutdown();
