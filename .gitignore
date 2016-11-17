@@ -1,9 +1,7 @@
-bin
-Ex10*
-Scenegraph.*
-Ex11*
-GoldEngine*
-Box2D.*
+bin/
+*.creator.user*
+*.files
+*.includes
 *.zip
 .ycm*
 

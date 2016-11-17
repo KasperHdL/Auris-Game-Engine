@@ -25,6 +25,8 @@ src/Input.hpp
 src/Keys.cpp
 src/Keys.hpp
 src/main.cpp
+src/MemoryLeakDetector.cpp
+src/MemoryLeakDetector.hpp
 src/Material.hpp
 src/picojson.h
 src/RenderSystem.cpp

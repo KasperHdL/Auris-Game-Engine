@@ -37,6 +37,7 @@ ELSE (APPLE)
         find_package(GLEW REQUIRED)
     ELSE(UNIX)
         find_package(glew REQUIRED)
+        SET(EXTRA_LIBS pdh.lib)
     ENDIF(UNIX)
     include_directories(${GLEW_INCLUDE_DIR})
     SET(EXTRA_LIBS ${OPENGL_LIBRARY} ${GLEW_LIBRARY})
@@ -57,7 +58,7 @@ ELSE (SRE_FOUND)
     MESSAGE( STATUS "Failed to find Simple Render Engine")
 endif(SRE_FOUND)
 
-target_link_libraries(GoldEngine ${EXTRA_LIBS} ${SDL2_LIBRARY} ${SDL2_IMAGE_LIBRARIES} ${SRE_LIBRARY} ${BOX2D_LIBRARY})
+target_link_libraries(GoldEngine ${EXTRA_LIBS} ${SDL2_LIBRARY} ${SDL2_IMAGE_LIBRARIES} ${SRE_LIBRARY} ${BOX2D_LIBRARY} ${Pdh_LIBRARY})
 
 file(COPY "data/" DESTINATION "data/")
 

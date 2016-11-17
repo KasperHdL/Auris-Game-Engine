@@ -8,8 +8,7 @@ void RenderSystem::startup(int reserve){
 
 }
 
-void RenderSystem::shutdown(){
-}
+void RenderSystem::shutdown(){}
 
 
 void RenderSystem::update(float dt){
@@ -29,4 +28,9 @@ shared_ptr<Animation> RenderSystem::getAnim(GameObject* gameObject, float length
     shared_ptr<Animation> a = make_shared<Animation>(gameObject, length);
     animations.push_back(a);
     return a;
+}
+
+void RenderSystem::deleteSprite(Sprite* sprite){
+    RenderSystem::spritePool.remove(sprite);
+
 }

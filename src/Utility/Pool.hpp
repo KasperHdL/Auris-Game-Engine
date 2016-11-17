@@ -76,7 +76,7 @@ public:
 
     void remove(T* ptr){
         for(int i = 0;i < count;i++){
-            if(ptr == objects[i]){
+            if(ptr == &objects[i]){
                 remove(i);
                 break;
             }
@@ -84,7 +84,6 @@ public:
     }
 
     void remove(int index){
-        delete objects[index];
         occupied[index] = false;
         count--;
     }
