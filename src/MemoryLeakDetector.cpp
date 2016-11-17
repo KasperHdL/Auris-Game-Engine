@@ -107,26 +107,24 @@ double MemoryLeakDetector::leakDetect(float deltaTime) {
     double virtVal = getVirtMemUsedByMe();
     double physVal = getPhysMemUsedByMe();
     if (virtVal > highWaterMarkVirt) {
-        if (virtRising > 5.0) {
+        if (virtRising > 60.0) {
             cout << "Shit's leaky bro" << endl;
         }
         else {
             highWaterMarkVirt = virtVal;
             virtRising += deltaTime;
-            cout << "Has been rising for: " << virtRising << endl;
         }
     }
     else {
         virtRising = 0.0;
     }
     if (physVal > highWaterMarkPhys) {
-        if (physRising > 5.0) {
+        if (physRising > 60.0) {
             cout << "Shit's leaky bro" << endl;
         }
         else {
             highWaterMarkPhys = physVal;
             physRising += deltaTime;
-            cout << "Has been rising for: " << physRising << endl;
         }
     }
     else {

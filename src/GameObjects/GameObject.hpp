@@ -28,13 +28,16 @@ public:
 	Sprite* sprite;
 	shared_ptr<Animation> anim;
 
-    GameObject(){};
-        
-~GameObject();
+    GameObject(){}
+    ~GameObject();
+       
 
     glm::mat4 localTransform();
     glm::mat4 globalTransform();
 
+    void enableCollisionEvents(){
+        body->SetUserData(parent);
+    }
 	//ALL THE SCRIPT FUNCTIONS!!!
 	virtual void Init() {} // Called upon initialization
 

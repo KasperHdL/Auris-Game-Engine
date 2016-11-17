@@ -20,6 +20,7 @@ void Engine::startup(SDL_Window* window){
 
 
     world = new b2World(toB2(glm::vec2(0,0)));
+    world->SetContactListener(this);
 
     world->SetDebugDraw(&debugDraw);
     debugDraw.SetFlags(b2Draw::e_shapeBit);
@@ -251,7 +252,6 @@ void Engine::run(SDL_Window* window){
 
 }
 
-
 void Engine::HandleSDLEvents(){
     // message processing loop
     SDL_Event event;
@@ -265,9 +265,17 @@ void Engine::HandleSDLEvents(){
                 break;
             default:
                 break;
-        }
-        
+        }   
     }
-
-
 }
+
+void Engine::BeginContact(b2Contact* contact){
+    b2Body* colliderA = contact->GetFixtureA()->GetBody();
+    b2Body* colliderB = contact->GetFixtureB()->GetBody();
+}
+
+void Engine::EndContact(b2Contact* contact) {
+    b2Body* colliderA = contact->GetFixtureA()->GetBody();
+    b2Body* colliderB = contact->GetFixtureB()->GetBody();
+}
+
