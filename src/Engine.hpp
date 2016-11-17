@@ -15,7 +15,6 @@
 #include "RenderSystem.hpp"
 #include "Systems/ParticleSystem.hpp"
 #include "MemoryLeakDetector.hpp"
-#include "collisionhandler.h"
 
 #include "Testing/Showcases/ShowcasePanel.hpp"
 
