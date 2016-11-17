@@ -25,7 +25,6 @@ SpriteSheet::SpriteSheet(Texture* texture,string pathToJSON){
         float ay = (float)element.get("pivot").get("y").get<double>();
 
         SpriteSheet::sprites[element.get("filename").get<std::string>()] = findSprite(x,texture->getHeight()-height-y,width,height,ax,ay);
-        cout << element.get("filename").get<std::string>() << ": " << x << ","<< y << "," << width << "," << height << "," << endl;
     }
 }
 
