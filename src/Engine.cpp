@@ -55,18 +55,12 @@ void Engine::run(SDL_Window* window){
     float deltaTimeSec = 0;
     auto sre = SimpleRenderEngine::instance;
 
-	//EXAMPLES START
-	keys.setKey("w", SDL_SCANCODE_W);
-	keys.setKey("s", SDL_SCANCODE_S);
-	keys.setKey("a", SDL_SCANCODE_A);
-	keys.setKey("d", SDL_SCANCODE_D);
-
-	//EXAMPLES END
-
 	//Initialize MemoryLeakDetector
 	memLeakDet = MemoryLeakDetector();
 
     //DEBUG INFORMATION TODO should be ignored on release build
+
+    Keys keys;
  
     keys.setKey("debug", SDL_SCANCODE_F2);
     keys.setKey("pause", SDL_SCANCODE_F3);
@@ -107,14 +101,14 @@ void Engine::run(SDL_Window* window){
 		
         sre->clearScreen(vec4(0,0,0,1));
 
-		input.update();
+        Input::update();
         HandleSDLEvents();
 
-		if (input.keyDown(keys.getKey("quit"))) {
+        if (Input::keyDown(keys.getKey("quit"))) {
 			quit = 1;
 		}
 
-        if(input.keyDown(keys.getKey("debug"))){
+        if(Input::keyDown(keys.getKey("debug"))){
             debug = !debug;
 
             if(debug == false){
@@ -123,12 +117,12 @@ void Engine::run(SDL_Window* window){
             }
         }
 
-        if(input.keyDown(keys.getKey("pause"))){
+        if(Input::keyDown(keys.getKey("pause"))){
             pause = !pause;
         }
 
         bool runOneStep = false;
-        if(input.keyDown(keys.getKey("stepOne")) || input.keyHeld(keys.getKey("playOnHold"))){
+        if(Input::keyDown(keys.getKey("stepOne")) || Input::keyHeld(keys.getKey("playOnHold"))){
             runOneStep = true;
             pause = true;
         }
@@ -234,7 +228,7 @@ void Engine::run(SDL_Window* window){
         //UPDATE
         if(!pause || runOneStep){
             for(auto& el: gameObjects)
-                el->update(deltaTimeSec);
+                el->Update(deltaTimeSec);
             world->Step(deltaTimeSec, VELOCITY_ITERATIONS, POSITION_ITERATIONS);         
 
             if(toggle_showcasePanel){
