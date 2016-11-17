@@ -38,7 +38,7 @@ class Player : public GameObject{
         sprite->scale = vec2(1.0f, 1.0f);
         //sprite = s;
 
-		auto a = RenderSystem::getAnim(this, 4.0f);
+        auto a = RenderSystem::getAnim(this, 4.0f);
         a->setSheet(ss);
         //a->setTexture(SRE::Texture::createFromFile("data/cartman.png", false));
         //a->setTexture(SRE::Texture::createFromFile("data/fugl.png", false));

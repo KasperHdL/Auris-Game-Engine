@@ -46,7 +46,6 @@ Texture* Animation::getSprite()
 }
 
 void Animation::setSprite(Sprite *sprite){
-    sprite->texture = textures[index];
     sprite->mesh = meshes[index];
 }
 
