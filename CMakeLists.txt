@@ -7,14 +7,10 @@ set(CMAKE_BUILD_TYPE Debug)
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++14")
 set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} "${CMAKE_SOURCE_DIR}/cmake")
 
-file(GLOB SOURCE_FILES
+file(GLOB_RECURSE SOURCE_FILES
         "src/*.hpp"
         "src/*.h"
         "src/*.cpp"
-        "src/GameObjects/*.cpp"
-        "src/GameObjects/*.hpp"
-        "src/GameObjects/Components/*.cpp"
-        "src/GameObjects/Components/*.hpp"
         )
 
 add_executable(GoldEngine ${SOURCE_FILES})
