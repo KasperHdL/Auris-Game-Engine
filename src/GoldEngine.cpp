@@ -263,12 +263,26 @@ void GoldEngine::HandleSDLEvents(){
 }
 
 void GoldEngine::BeginContact(b2Contact* contact){
-    b2Body* colliderA = contact->GetFixtureA()->GetBody();
-    b2Body* colliderB = contact->GetFixtureB()->GetBody();
+    // Get gameobjects that collide
+    GameObject* colliderA = (GameObject*) contact->GetFixtureA()->GetBody()->GetUserData();
+    GameObject* colliderB = (GameObject*) contact->GetFixtureB()->GetBody()->GetUserData();
+
+    // Call their respective collision functions if they both have collision handling enabled
+    if (colliderA != nullptr & colliderB != nullptr) {
+        colliderA->OnCollisionEnter(colliderB);
+        colliderB->OnCollisionEnter(colliderA);
+    }
 }
 
 void GoldEngine::EndContact(b2Contact* contact) {
-    b2Body* colliderA = contact->GetFixtureA()->GetBody();
-    b2Body* colliderB = contact->GetFixtureB()->GetBody();
+    // Get gameobjects that collide
+    GameObject* colliderA = (GameObject*) contact->GetFixtureA()->GetBody()->GetUserData();
+    GameObject* colliderB = (GameObject*) contact->GetFixtureB()->GetBody()->GetUserData();
+
+    // Call their respective collision functions if they both have collision handling enabled
+    if (colliderA != nullptr & colliderB != nullptr) {
+        colliderA->OnCollisionExit(colliderB);
+        colliderB->OnCollisionExit(colliderA);
+    }
 }
 
