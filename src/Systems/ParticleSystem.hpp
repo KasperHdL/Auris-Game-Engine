@@ -9,6 +9,7 @@
 #include <SRE/Shader.hpp>
 #include <SRE/Texture.hpp>
 
+#include "../Utility/Interpolation.hpp"
 
 using namespace std;
 using namespace glm;
@@ -43,10 +44,8 @@ class ParticleSystem{
     SRE::Shader* shader;
 
     //empty
-
     vector<vec2> uvs;
     vector<float> uvSize;
-
     vec4 lerpColor(vec4 start, vec4 end, float t){
         return vec4(
                 mix<float>(start[0], end[0], t),
@@ -60,7 +59,55 @@ public:
     vec3 acceleration = vec3(0,0,0);
     int particleIndex = 0;
 
-    ParticleSystem(){}
+
+    //interpolation
+ 
+    vector<vec2> interpolationPoints_acceleration;
+    vector<vec2> interpolationPoints_velocity;
+    vector<vec2> interpolationPoints_angularVelocity;
+    vector<vec2> interpolationPoints_color;
+    vector<vec2> interpolationPoints_size;
+   
+    Interpolation  interpolation_acceleration; 
+    Interpolation  interpolation_velocity;
+    Interpolation  interpolation_angularVelocity;
+    Interpolation  interpolation_color;
+    Interpolation  interpolation_size;
+
+
+
+
+    ParticleSystem()
+    :
+        interpolation_acceleration(&interpolationPoints_acceleration), 
+        interpolation_velocity(&interpolationPoints_velocity),
+        interpolation_angularVelocity(&interpolationPoints_angularVelocity),
+        interpolation_color(&interpolationPoints_color),
+        interpolation_size(&interpolationPoints_size)
+
+
+    {
+        interpolationPoints_acceleration.reserve(4);
+        interpolationPoints_velocity.reserve(4);
+        interpolationPoints_angularVelocity.reserve(4);
+        interpolationPoints_color.reserve(4);
+        interpolationPoints_size.reserve(4);
+    
+        interpolationPoints_acceleration.push_back(vec2(0,0));
+        interpolationPoints_velocity.push_back(vec2(0,0));
+        interpolationPoints_angularVelocity.push_back(vec2(0,0));
+        interpolationPoints_color.push_back(vec2(0,0));
+        interpolationPoints_size.push_back(vec2(0,0));
+        
+        for(int i = 0;i<3;i++){
+            interpolationPoints_acceleration.push_back(vec2(1,1));
+            interpolationPoints_velocity.push_back(vec2(1,1));
+            interpolationPoints_angularVelocity.push_back(vec2(1,1));
+            interpolationPoints_color.push_back(vec2(1,1));
+            interpolationPoints_size.push_back(vec2(1,1));
+        }
+    }
+
     ~ParticleSystem(){
         delete mesh;
         delete texture;
@@ -161,21 +208,24 @@ public:
                 continue;
             }
 
-            auto a = acceleration * t*t;
-            auto v = velocities[i] * t;
+            float p = t / particleDuration;
+            float it = interpolation_acceleration.interpolate(p).y;
+            auto a = acceleration * it*it;
+            it = interpolation_velocity.interpolate(p).y;
+            auto v = velocities[i] * it;
             auto p0 = positions[i];
 
             finalPositions[i] = a + v + p0;
-            finalRotation[i] = rotations[i] + angularVelocities[i] * t;
+            finalRotation[i] = rotations[i] + angularVelocities[i] * it;
 
-            float p = t / particleDuration;
-            finalColors[i] = lerpColor(startColors[i], endColors[i], p); 
-            finalSizes[i] = glm::mix<float>(startSizes[i], endSizes[i], p);
+            it = interpolation_color.interpolate(p).y;
+            finalColors[i] = lerpColor(startColors[i], endColors[i], it); 
+            it = interpolation_size.interpolate(p).y;
+            finalSizes[i] = glm::mix<float>(startSizes[i], endSizes[i], it);
             
         }
 
         mesh->update(finalPositions, finalColors, uvs, uvSize, finalRotation, finalSizes);
-
 
         currentTime += dt;
 
