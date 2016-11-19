@@ -36,7 +36,6 @@ public:
 		this->length = length;
 		index = 0;
 		time = 0;
-		std::cout << this->length << " " << textures.size() << " " << frameLength << std::endl;
 
 	}
 

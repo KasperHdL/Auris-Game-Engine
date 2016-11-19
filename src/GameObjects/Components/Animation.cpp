@@ -12,7 +12,6 @@ void Animation::setSheet(SpriteSheet* spritesheet){
 
     vector<std::string> v;
     for(map<std::string,Material*>::iterator it = spritesheet->sprites.begin(); it != spritesheet->sprites.end(); ++it) {
-        cout << it->first << ": " << it->second->texture << endl;
         setTexture(it->second->texture);
         setMesh(it->second->mesh);
     }
