@@ -24,6 +24,7 @@ void GoldEngine::startup(SDL_Window* window){
 
     gameObjects.push_back(make_shared<Player>(world,vec2(10,10)));
     gameObjects.push_back(make_shared<Player>(world));
+    gameObjects.push_back(make_shared<Wall>(world, vec2(30, 30)));
 
 	//Run init on all gameobjects
 	for(auto& el: gameObjects)

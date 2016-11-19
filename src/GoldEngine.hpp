@@ -19,6 +19,7 @@
 #include "Testing/DebugDraw.hpp"
 
 #include "GameObjects/Player.hpp"
+#include "GameObjects/Wall.hpp"
 #include "Systems/Input.hpp"
 
 #include "SRE/imgui_sre.hpp"

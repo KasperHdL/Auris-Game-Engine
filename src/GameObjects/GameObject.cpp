@@ -4,7 +4,7 @@
 #include "../Systems/RenderSystem.hpp"
 
 GameObject::GameObject(){
-    body->SetUserData(nullptr);
+    //body->SetUserData(nullptr);
 }
 
 GameObject::~GameObject(){
