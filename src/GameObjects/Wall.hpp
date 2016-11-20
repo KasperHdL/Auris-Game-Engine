@@ -41,4 +41,8 @@ public:
     void OnCollisionExit(GameObject* other) {
         cout << name << " is longer colliding with " << other->name << endl;
     }
+
+    void OnCollisionStay(GameObject* other) {
+        cout << name << " IS STILL TOUCHING " << other->name << endl;
+    }
 };

@@ -13,7 +13,8 @@ void GoldEngine::startup(SDL_Window* window){
 
 
     world = new b2World(toB2(glm::vec2(0,0)));
-    world->SetContactListener(this);
+    collisionHandler = new CollisionHandler;
+    world->SetContactListener(collisionHandler);
 
     world->SetDebugDraw(&debugDraw);
     debugDraw.SetFlags(b2Draw::e_shapeBit);
@@ -67,7 +68,6 @@ void GoldEngine::run(SDL_Window* window){
     keys.setKey("arrow_down", SDL_SCANCODE_DOWN);
     keys.setKey("arrow_left", SDL_SCANCODE_LEFT);
     keys.setKey("arrow_right", SDL_SCANCODE_RIGHT);
-    
 
    
     int arrIndex = 0;
@@ -260,30 +260,6 @@ void GoldEngine::HandleSDLEvents(){
             default:
                 break;
         }   
-    }
-}
-
-void GoldEngine::BeginContact(b2Contact* contact){
-    // Get gameobjects that collide
-    GameObject* colliderA = (GameObject*) contact->GetFixtureA()->GetBody()->GetUserData();
-    GameObject* colliderB = (GameObject*) contact->GetFixtureB()->GetBody()->GetUserData();
-
-    // Call their respective collision functions if they both have collision handling enabled
-    if (colliderA != nullptr & colliderB != nullptr) {
-        colliderA->OnCollisionEnter(colliderB);
-        colliderB->OnCollisionEnter(colliderA);
-    }
-}
-
-void GoldEngine::EndContact(b2Contact* contact) {
-    // Get gameobjects that collide
-    GameObject* colliderA = (GameObject*) contact->GetFixtureA()->GetBody()->GetUserData();
-    GameObject* colliderB = (GameObject*) contact->GetFixtureB()->GetBody()->GetUserData();
-
-    // Call their respective collision functions if they both have collision handling enabled
-    if (colliderA != nullptr & colliderB != nullptr) {
-        colliderA->OnCollisionExit(colliderB);
-        colliderB->OnCollisionExit(colliderA);
     }
 }
 
