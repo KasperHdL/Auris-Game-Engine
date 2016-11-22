@@ -62,6 +62,7 @@ class Player : public GameObject{
         body = world->CreateBody(&bodyDef); 
         body->CreateFixture(&fixtureDef);
 
+        enableCollisionEvents();
     }
 
 	float force;
@@ -84,5 +85,13 @@ class Player : public GameObject{
 		if (Input::keyHeld(keys.getKey("right"))) {
 			body->ApplyForceToCenter(b2Vec2(force, 0), true);
 		}
+    }
+
+    void OnCollisionEnter(GameObject* other) {
+        cout << name << " hit " << other->name << endl;
+    }
+
+    void OnCollisionExit(GameObject* other) {
+        cout << name << " is longer colliding with " << other->name << endl;
     }
 };

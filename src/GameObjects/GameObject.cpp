@@ -3,6 +3,10 @@
 #include "../Constants.hpp"
 #include "../Systems/RenderSystem.hpp"
 
+GameObject::GameObject(){
+    //body->SetUserData(nullptr);
+}
+
 GameObject::~GameObject(){
     RenderSystem::deleteSprite(sprite);
 }

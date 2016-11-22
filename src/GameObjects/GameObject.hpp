@@ -25,10 +25,11 @@ public:
     GameObject* parent = nullptr;
 
     b2Body* body;
+
 	Sprite* sprite;
 	shared_ptr<Animation> anim;
 
-    GameObject(){}
+    GameObject();
     ~GameObject();
        
 
@@ -36,9 +37,11 @@ public:
     glm::mat4 globalTransform();
 
     void enableCollisionEvents(){
-        body->SetUserData(parent);
+        body->SetUserData(this);
     }
-	//ALL THE SCRIPT FUNCTIONS!!!
+
+    // Scriptable functions
+
 	virtual void Init() {} // Called upon initialization
 
 	virtual void Start() {} // Called just before first update
@@ -47,10 +50,10 @@ public:
 
 	virtual void OnDestruction() {} // Called when object is destroyed
 
-	virtual void OnCollisionEnter() {} // Called upon collision with another game object
+    virtual void OnCollisionEnter(GameObject* collider) {} // Called upon collision with another game object
 
-	virtual void OnCollisionStay() {} // Called while colliding with another game object
+    virtual void OnCollisionStay(GameObject* collider) {} // Called while colliding with another game object
 
-	virtual void OnCollisionExit() {} // Called when exiting collision with another game object
+    virtual void OnCollisionExit(GameObject* collider) {} // Called when exiting collision with another game object
 
 };
