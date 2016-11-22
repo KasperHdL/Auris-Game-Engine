@@ -17,10 +17,6 @@ private:
         if (colliderA != nullptr & colliderB != nullptr) {
             colliderA->OnCollisionEnter(colliderB);
             colliderB->OnCollisionEnter(colliderA);
-            //while (contact->IsEnabled()) { // Call OnCollisionStay as long as they are colliding
-                //colliderA->OnCollisionStay(colliderB);
-                //colliderB->OnCollisionStay(colliderA);
-            //}
         }
     }
 
