@@ -11,6 +11,7 @@
 #include "Components/Material.hpp"
 
 #include "Components/SpriteSheet.hpp"
+#include "../Utility/Resource.hpp"
 
 
 using namespace std;
@@ -20,7 +21,7 @@ class Player : public GameObject{
     Player(b2World* world, vec2 position = vec2(0,0)):GameObject(){
         name = "Player";
 
-        SpriteSheet* ss = new SpriteSheet(SRE::Texture::createFromFile("data/MarioPacked.png",false),"data/MarioPacked.json");
+        SpriteSheet* ss = new SpriteSheet(SRE::Texture::createFromFile(Resource::getPath("MarioPacked.png").c_str(),false),Resource::getPath("MarioPacked.json"));
 
         sprite = ss->getSprite("mario_10",this);
 

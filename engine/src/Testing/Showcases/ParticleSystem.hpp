@@ -4,6 +4,7 @@
 #include "SRE/imgui_sre.hpp"
 #include "../../Systems/ParticleSystem.hpp"
 #include <glm/gtc/random.hpp>
+#include "../../Utility/Resource.hpp"
 
 class ParticleSystemShowcase : public Showcase{
 public:
@@ -11,7 +12,7 @@ public:
     Texture* cartman;
 
     ParticleSystemShowcase(){
-        cartman = SRE::Texture::createFromFile("data/cartman.png",false);
+        cartman = SRE::Texture::createFromFile(Resource::getPath("cartman.png").c_str(),false);
         startup();
     }
 

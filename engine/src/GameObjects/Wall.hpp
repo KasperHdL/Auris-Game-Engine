@@ -3,6 +3,7 @@
 #include "GameObject.hpp"
 #include "Components/SpriteSheet.hpp"
 #include "../Constants.hpp"
+#include "../Utility/Resource.hpp"
 
 using namespace Constants;
 
@@ -11,7 +12,7 @@ public:
     Wall(b2World* world, vec2 position = vec2(0,0)):GameObject() {
         name = "Wall";
 
-        SpriteSheet* ss = new SpriteSheet(SRE::Texture::createFromFile("data/MarioPacked.png",false),"data/MarioPacked.json");
+        SpriteSheet* ss = new SpriteSheet(SRE::Texture::createFromFile(Resource::getPath("MarioPacked.png").c_str(),false),Resource::getPath("MarioPacked.json"));
         sprite = ss->getSprite("brick",this);
 
         sprite->scale = vec2(1.0f, 1.0f);
