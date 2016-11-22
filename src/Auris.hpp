@@ -1,4 +1,5 @@
 #pragma once
+#define SDL_MAIN_HANDLED
 
 #include "SRE/SimpleRenderEngine.hpp"
 #include "SRE/Mesh.hpp"
@@ -15,7 +16,6 @@
 #include "Systems/RenderSystem.hpp"
 #include "Systems/ParticleSystem.hpp"
 #include "Utility/MemoryLeakDetector.hpp"
-#define SDL_MAIN_HANDLED
 
 #include "Testing/Showcases/ShowcasePanel.hpp"
 #include "Testing/DebugDraw.hpp"
