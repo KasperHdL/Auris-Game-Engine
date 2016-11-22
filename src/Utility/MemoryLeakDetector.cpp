@@ -103,7 +103,7 @@ MemoryLeakDetector::MemoryLeakDetector() {
 	#endif
 }
 
-double MemoryLeakDetector::leakDetect(float deltaTime) {
+void MemoryLeakDetector::leakDetect(float deltaTime) {
     double virtVal = getVirtMemUsedByMe();
     double physVal = getPhysMemUsedByMe();
     if (virtVal > highWaterMarkVirt) {
