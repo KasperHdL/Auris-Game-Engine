@@ -4,6 +4,10 @@
 #include "../Systems/RenderSystem.hpp"
 #include "../Utility/Convert.hpp"
 
+GameObject::GameObject(){
+    //body->SetUserData(nullptr);
+}
+
 GameObject::~GameObject(){
     RenderSystem::deleteSprite(sprite);
 }

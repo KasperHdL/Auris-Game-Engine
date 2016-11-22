@@ -13,7 +13,8 @@ void GoldEngine::startup(SDL_Window* window){
 
 
     world = new b2World(toB2(glm::vec2(0,0)));
-    world->SetContactListener(this);
+    collisionHandler = new CollisionHandler;
+    world->SetContactListener(collisionHandler);
 
     world->SetDebugDraw(&debugDraw);
     debugDraw.SetFlags(b2Draw::e_shapeBit);
@@ -24,6 +25,7 @@ void GoldEngine::startup(SDL_Window* window){
 
     gameObjects.push_back(make_shared<Player>(world,vec2(10,10)));
     gameObjects.push_back(make_shared<Player>(world));
+    gameObjects.push_back(make_shared<Wall>(world, vec2(30, 30)));
 
 	//Run init on all gameobjects
 	for(auto& el: gameObjects)
@@ -61,12 +63,10 @@ void GoldEngine::run(SDL_Window* window){
     keys.setKey("stepOne", SDL_SCANCODE_F4);
     keys.setKey("playOnHold", SDL_SCANCODE_F5);
 
-
     keys.setKey("arrow_up", SDL_SCANCODE_UP);
     keys.setKey("arrow_down", SDL_SCANCODE_DOWN);
     keys.setKey("arrow_left", SDL_SCANCODE_LEFT);
     keys.setKey("arrow_right", SDL_SCANCODE_RIGHT);
-    
 
    
     int arrIndex = 0;
@@ -257,15 +257,5 @@ void GoldEngine::HandleSDLEvents(){
                 break;
         }   
     }
-}
-
-void GoldEngine::BeginContact(b2Contact* contact){
-    b2Body* colliderA = contact->GetFixtureA()->GetBody();
-    b2Body* colliderB = contact->GetFixtureB()->GetBody();
-}
-
-void GoldEngine::EndContact(b2Contact* contact) {
-    b2Body* colliderA = contact->GetFixtureA()->GetBody();
-    b2Body* colliderB = contact->GetFixtureB()->GetBody();
 }
 

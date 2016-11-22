@@ -19,14 +19,16 @@
 #include "Testing/DebugDraw.hpp"
 
 #include "GameObjects/Player.hpp"
+#include "GameObjects/Wall.hpp"
 #include "Systems/Input.hpp"
+#include "Systems/CollisionHandler.hpp"
 
 #include "SRE/imgui_sre.hpp"
 
 #include <SDL.h>
 
 class DebugDraw;
-class GoldEngine : public b2ContactListener{
+class GoldEngine{
 public:
     GoldEngine(int width, int height):width(width),height(height){}
     virtual ~GoldEngine(){}
@@ -45,6 +47,7 @@ private:
     ShowcasePanel showcasePanel;
 
     b2World* world;
+    b2ContactListener* collisionHandler;
     vec2 camPos;
 
     const int VELOCITY_ITERATIONS = 16;

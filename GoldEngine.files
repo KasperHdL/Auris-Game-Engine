@@ -23,6 +23,8 @@ src/GameObjects/Components/SpriteSheet.hpp
 src/GameObjects/GameObject.cpp
 src/GameObjects/GameObject.hpp
 src/GameObjects/Player.hpp
+src/GameObjects/Wall.hpp
+src/Systems/CollisionHandler.hpp
 src/Systems/Input.cpp
 src/Systems/Input.hpp
 src/Systems/ParticleSystem.hpp
@@ -32,6 +34,7 @@ src/Testing/Showcases/ParticleSystem.hpp
 src/Testing/Showcases/Showcase.hpp
 src/Testing/Showcases/ShowcasePanel.hpp
 src/Testing/DebugDraw.hpp
+src/Utility/Interpolation.hpp
 src/Utility/MemoryLeakDetector.cpp
 src/Utility/MemoryLeakDetector.hpp
 src/Utility/picojson.h
@@ -39,6 +42,4 @@ src/Utility/Pool.hpp
 src/Constants.hpp
 src/GoldEngine.cpp
 src/GoldEngine.hpp
-src/Keys.cpp
-src/Keys.hpp
 src/main.cpp
