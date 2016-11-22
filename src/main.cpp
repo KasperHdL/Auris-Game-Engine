@@ -1,66 +1,16 @@
-#include <iostream>
-#include <string>
-#include <fstream>
-#include <sstream>
-#include "glm/glm.hpp"
-#include "glm/gtx/transform.hpp"
-#include "glm/gtc/matrix_transform.hpp"
-
-#define SDL_MAIN_HANDLED
-
-#include "SRE/SimpleRenderEngine.hpp"
-#include "GoldEngine.hpp"
-#include "Utility/Pool.hpp"
-
-#include "GameObjects/Components/Sprite.hpp"
-
+#include "Auris.hpp"
+#include "DemoGame.hpp"
 #include <SDL.h>
 
 using namespace std;
 
+DemoGame game;
+
 int main(int argc, char** argv) {
-    SDL_Window *window;                    // Declare a pointer
-
-    SDL_Init(SDL_INIT_VIDEO);              // Initialize SDL2
-
-    SDL_GL_SetAttribute(SDL_GL_CONTEXT_MAJOR_VERSION, 3);
-    SDL_GL_SetAttribute(SDL_GL_CONTEXT_MINOR_VERSION, 1);
-
-    SDL_GL_SetAttribute(SDL_GL_CONTEXT_PROFILE_MASK, SDL_GL_CONTEXT_PROFILE_CORE);
-
-    int width = 1280;
-    int height = 720;
-
-    // Create an application window with the following settings:
-    window = SDL_CreateWindow(
-            "An SDL2 window",                  // window title
-            SDL_WINDOWPOS_UNDEFINED,           // initial x position
-            SDL_WINDOWPOS_UNDEFINED,           // initial y position
-            width,                               // width, in pixels
-            height,                               // height, in pixels
-            SDL_WINDOW_OPENGL                  // flags - see below
-    );
-    SDL_SetWindowTitle(window,"Gold Engine");
-    // Check that the window was successfully made
-    if (window == NULL) {
-        // In the event that the window could not be made...
-        printf("Could not create window: %s\n", SDL_GetError());
-        return 1;
-    }
-
-    SRE::SimpleRenderEngine r{window};
-
     // Use windows coordinates in this example (lower left corner is (0,0), upper right corner is (width, height)
     
-    GoldEngine engine(width, height);
-    engine.startup(window);
-    engine.run(window);
-    engine.shutdown();
-    // Close and destroy the window
-    SDL_DestroyWindow(window);
-
-    // Clean up
-    SDL_Quit();
+    Auris engine(1920, 1080);
+    engine.startup(&game);
 
     return 0;
 }

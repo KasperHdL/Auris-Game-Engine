@@ -11,42 +11,57 @@
 #include "GameObjects/GameObject.hpp"
 #include <iostream>
 
+#include "Game.hpp"
 #include "Systems/RenderSystem.hpp"
 #include "Systems/ParticleSystem.hpp"
 #include "Utility/MemoryLeakDetector.hpp"
+#define SDL_MAIN_HANDLED
 
 #include "Testing/Showcases/ShowcasePanel.hpp"
 #include "Testing/DebugDraw.hpp"
 
-#include "GameObjects/Player.hpp"
-#include "GameObjects/Wall.hpp"
 #include "Systems/Input.hpp"
 #include "Systems/CollisionHandler.hpp"
+#include "SRE/SimpleRenderEngine.hpp"
 
 #include "SRE/imgui_sre.hpp"
+#include <iostream>
+#include <string>
+#include <fstream>
+#include <sstream>
+#include "glm/glm.hpp"
+#include "glm/gtx/transform.hpp"
+#include "glm/gtc/matrix_transform.hpp"
 
 #include <SDL.h>
 
 class DebugDraw;
-class GoldEngine{
-public:
-    GoldEngine(int width, int height):width(width),height(height){}
-    virtual ~GoldEngine(){}
 
-    void startup(SDL_Window* window);
+class Auris{
+public:
+    Auris(int width, int height):width(width),height(height){}
+    virtual ~Auris(){}
+
+    void startup(Game* game);
     void shutdown();
 
     void run(SDL_Window* window);
 
     void HandleSDLEvents();
 
-private:
+    static b2World* world;
 
-    vector<shared_ptr<GameObject>> gameObjects;
+    static void addGameObject(shared_ptr<GameObject> gameObject);
+
+private:
+    Game* game;
+
+    SDL_Window *window;
+
+    static vector<shared_ptr<GameObject>> gameObjects;
     RenderSystem renderSystem;
     ShowcasePanel showcasePanel;
 
-    b2World* world;
     b2ContactListener* collisionHandler;
     vec2 camPos;
 
