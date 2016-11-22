@@ -56,6 +56,7 @@ class ParticleSystem{
     }
 
 public:
+    float timeScale = 1;
     vec3 acceleration = vec3(0,0,0);
     int particleIndex = 0;
 
@@ -109,6 +110,7 @@ public:
     }
 
     ~ParticleSystem(){
+        shutdown();
         delete mesh;
         delete texture;
         mesh = nullptr;
@@ -180,6 +182,7 @@ public:
         endSizes.clear();
         startTimes.clear();
 
+        update(0);
     }
 
 
@@ -202,7 +205,7 @@ public:
     void update(float dt){
 
         for (int i = 0; i < positions.size(); i++){
-            float t = currentTime - startTimes[i];
+            float t = (currentTime - startTimes[i]) * timeScale;
             if(t > particleDuration){
                 finalPositions[i] = vec3(0,0,-1000);
                 continue;
@@ -211,7 +214,7 @@ public:
             float p = t / particleDuration;
             float it = interpolation_acceleration.interpolate(p).y;
             auto a = acceleration * it*it;
-            it = interpolation_velocity.interpolate(p).y;
+            it = interpolation_velocity.interpolate(p).y * particleDuration;
             auto v = velocities[i] * it;
             auto p0 = positions[i];
 

@@ -9,20 +9,20 @@
 
 using namespace SRE;
 class Sprite : public Component{
-    public:
-        Mesh* mesh;
-        Texture* texture;
-        glm::vec4 color;
-        glm::vec2 scale;
+public:
+    Mesh* mesh;
+    Texture* texture;
+    glm::vec4 color;
+    glm::vec2 scale;
         
-        virtual void draw();
+    virtual void draw();
 
-        ~Sprite(){
-        }
+    ~Sprite(){
+    }
 
-        Sprite(GameObject* gameObject):Component(gameObject){
+    Sprite(GameObject* gameObject):Component(gameObject){
         mesh = Mesh::createCube();
         texture = Texture::getWhiteTexture();
         color = glm::vec4(1,1,1,1);
-        }
+    }
 };

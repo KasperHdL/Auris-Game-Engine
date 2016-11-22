@@ -9,7 +9,7 @@ DemoGame game;
 int main(int argc, char** argv) {
     // Use windows coordinates in this example (lower left corner is (0,0), upper right corner is (width, height)
     
-    Auris engine(1920, 1080);
+    Auris engine(1280, 720);
     engine.startup(&game);
 
     return 0;

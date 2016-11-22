@@ -51,6 +51,10 @@ public:
     static const int numInterpolateItems = 5;
     const char* interpolateItems[numInterpolateItems] = {"Acceleration", "Velocity", "AngularVelocity", "Color", "Size"};
 
+    int selectedItemInterpolateType = 0;
+    static const int num_interpolationTypeItems = 5;
+    const char* interpolationTypeItems[num_interpolationTypeItems] = {"Linear", "Bezier", "Hermite", "CatmullRom", "BSpline"};
+
     static const int arrSize = 600;
     float arr_interpolation[arrSize] = {};
     
@@ -76,6 +80,7 @@ public:
         }
         ImGui::Separator();
         ImGui::DragFloat2("Global Acceleration", &particleSystem.acceleration.x, 0.1f);
+        //ImGui::DragFloat2("TimeScale", &particleSystem.timeScale, 0.1f);
         ImGui::Separator();
 
         ImGui::Text("Update Properties");
@@ -104,7 +109,7 @@ public:
         ImGui::Separator();
 
         ImGui::Combo("Interpolation", &selectedItemInterpolate, interpolateItems, numInterpolateItems);
-        ImGui::PlotLines("Dt", arr_interpolation, arrSize);
+        ImGui::PlotLines("", arr_interpolation, arrSize);
         drawSelectedInterpolate();
     
         maxNumParticles = clamp<int>(maxNumParticles, 1, 1000000);
@@ -136,10 +141,14 @@ public:
         switch(selectedItemInterpolate){
             case 0:
                 //acceleration
+                selectedItemInterpolateType = (int)particleSystem.interpolation_acceleration.getInterpolationType();
+                ImGui::Combo("Type", &selectedItemInterpolateType, interpolationTypeItems, num_interpolationTypeItems); 
                 ImGui::DragFloat2("p1", &particleSystem.interpolationPoints_acceleration[0].x);
                 ImGui::DragFloat2("p2", &particleSystem.interpolationPoints_acceleration[1].x);
                 ImGui::DragFloat2("p3", &particleSystem.interpolationPoints_acceleration[2].x);
                 ImGui::DragFloat2("p4", &particleSystem.interpolationPoints_acceleration[3].x);
+
+                particleSystem.interpolation_acceleration.setInterpolation((InterpolationType)selectedItemInterpolateType);
 
                 for(int i = 0; i < arrSize;i++)
                     arr_interpolation[i] = particleSystem.interpolation_acceleration.interpolate((float)i/arrSize).y;
@@ -147,10 +156,13 @@ public:
                 break;
             case 1:
                 //velocity
+                selectedItemInterpolateType = (int)particleSystem.interpolation_velocity.getInterpolationType();
+                ImGui::Combo("Type", &selectedItemInterpolateType, interpolationTypeItems, num_interpolationTypeItems); 
                 ImGui::DragFloat2("p1", &particleSystem.interpolationPoints_velocity[0].x);
                 ImGui::DragFloat2("p2", &particleSystem.interpolationPoints_velocity[1].x);
                 ImGui::DragFloat2("p3", &particleSystem.interpolationPoints_velocity[2].x);
                 ImGui::DragFloat2("p4", &particleSystem.interpolationPoints_velocity[3].x);
+                particleSystem.interpolation_velocity.setInterpolation((InterpolationType)selectedItemInterpolateType);
 
                 for(int i = 0; i < arrSize;i++)
                     arr_interpolation[i] = particleSystem.interpolation_velocity.interpolate((float)i/arrSize).y;
@@ -160,11 +172,14 @@ public:
                 break;
             case 2:
                 //angularvelocity
+                selectedItemInterpolateType = (int)particleSystem.interpolation_angularVelocity.getInterpolationType();
+                ImGui::Combo("Type", &selectedItemInterpolateType, interpolationTypeItems, num_interpolationTypeItems); 
                 ImGui::DragFloat2("p1", &particleSystem.interpolationPoints_angularVelocity[0].x);
                 ImGui::DragFloat2("p2", &particleSystem.interpolationPoints_angularVelocity[1].x);
                 ImGui::DragFloat2("p3", &particleSystem.interpolationPoints_angularVelocity[2].x);
                 ImGui::DragFloat2("p4", &particleSystem.interpolationPoints_angularVelocity[3].x);
 
+                particleSystem.interpolation_angularVelocity.setInterpolation((InterpolationType)selectedItemInterpolateType);
 
                 for(int i = 0; i < arrSize;i++)
                     arr_interpolation[i] = particleSystem.interpolation_angularVelocity.interpolate((float)i/arrSize).y;
@@ -174,11 +189,14 @@ public:
                 break;
             case 3:
                 //color
+                selectedItemInterpolateType = (int)particleSystem.interpolation_color.getInterpolationType();
+                ImGui::Combo("Type", &selectedItemInterpolateType, interpolationTypeItems, num_interpolationTypeItems); 
                 ImGui::DragFloat2("p1", &particleSystem.interpolationPoints_color[0].x);
                 ImGui::DragFloat2("p2", &particleSystem.interpolationPoints_color[1].x);
                 ImGui::DragFloat2("p3", &particleSystem.interpolationPoints_color[2].x);
                 ImGui::DragFloat2("p4", &particleSystem.interpolationPoints_color[3].x);
 
+                particleSystem.interpolation_color.setInterpolation((InterpolationType)selectedItemInterpolateType);
 
                 for(int i = 0; i < arrSize;i++)
                     arr_interpolation[i] = particleSystem.interpolation_color.interpolate((float)i/arrSize).y;
@@ -188,10 +206,14 @@ public:
                 break;
             case 4:
                 //size
+                selectedItemInterpolateType = (int)particleSystem.interpolation_size.getInterpolationType();
+                ImGui::Combo("Type", &selectedItemInterpolateType, interpolationTypeItems, num_interpolationTypeItems); 
                 ImGui::DragFloat2("p1", &particleSystem.interpolationPoints_size[0].x);
                 ImGui::DragFloat2("p2", &particleSystem.interpolationPoints_size[1].x);
                 ImGui::DragFloat2("p3", &particleSystem.interpolationPoints_size[2].x);
                 ImGui::DragFloat2("p4", &particleSystem.interpolationPoints_size[3].x);
+
+                particleSystem.interpolation_size.setInterpolation((InterpolationType)selectedItemInterpolateType);
 
                 for(int i = 0; i < arrSize;i++)
                     arr_interpolation[i] = particleSystem.interpolation_size.interpolate((float)i/arrSize).y;
