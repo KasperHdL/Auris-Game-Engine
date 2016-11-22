@@ -63,7 +63,6 @@ void GoldEngine::run(SDL_Window* window){
     keys.setKey("stepOne", SDL_SCANCODE_F4);
     keys.setKey("playOnHold", SDL_SCANCODE_F5);
 
-
     keys.setKey("arrow_up", SDL_SCANCODE_UP);
     keys.setKey("arrow_down", SDL_SCANCODE_DOWN);
     keys.setKey("arrow_left", SDL_SCANCODE_LEFT);
