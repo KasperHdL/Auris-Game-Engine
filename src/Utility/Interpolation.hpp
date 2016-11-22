@@ -16,7 +16,7 @@ class Interpolation{
 public:
 
     Interpolation(std::vector<vec2> *points) :points(points) {
-        interpolationType = InterpolationType::Bezier;
+        interpolationType = InterpolationType::Linear;
     }
 
     void setInterpolation(InterpolationType i) { interpolationType = i; }
@@ -38,8 +38,8 @@ public:
                 break;
         }
     }
-private:
     InterpolationType interpolationType;
+private:
     std::vector<vec2> *points;
 
     glm::vec2 linear(float t) {
