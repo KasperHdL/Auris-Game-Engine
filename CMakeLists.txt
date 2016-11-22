@@ -1,20 +1,12 @@
 cmake_minimum_required(VERSION 3.6)
-project(GoldEngine)
+project(Auris CXX)
 
 set(CMAKE_EXPORT_COMPILE_COMMANDS 1)
 set(CMAKE_BUILD_TYPE Debug)
 
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++14")
 set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} "${CMAKE_SOURCE_DIR}/cmake")
-
-file(GLOB_RECURSE SOURCE_FILES
-        "src/*.hpp"
-        "src/*.h"
-        "src/*.cpp"
-        )
-
-add_executable(GoldEngine ${SOURCE_FILES})
-
+   
 find_package(SDL2 REQUIRED)
 include_directories(${SDL2_INCLUDE_DIR})
 
@@ -48,25 +40,15 @@ find_package(Box2D REQUIRED)
 include_directories(${BOX2D_INCLUDE_DIR})
 
 find_package(SRE REQUIRED)
+
 if (SRE_FOUND)
     include_directories(${SRE_INCLUDE_DIR})
 ELSE (SRE_FOUND)
     MESSAGE( STATUS "Failed to find Simple Render Engine")
 endif(SRE_FOUND)
 
-target_link_libraries(GoldEngine ${EXTRA_LIBS} ${SDL2_LIBRARY} ${SDL2_IMAGE_LIBRARIES} ${SRE_LIBRARY} ${BOX2D_LIBRARY} ${Pdh_LIBRARY})
+include_directories(engine/src)
 
-file(COPY "data/" DESTINATION "data/")
+add_subdirectory(engine)
+add_subdirectory(game)
 
-IF (WIN32)
-    SET(SDL2_dll "" CACHE STRING "Where the SDL2.dll can be found")
-    SET(SDL2_image_dll "" CACHE STRING "Where the SDL2_image.dll can be found")
-    SET(libjpeg-9_dll "" CACHE STRING "Where the libjpeg-9.dll can be found")
-    SET(libpng16-16_dll "" CACHE STRING "Where the libpng16-16.dll can be found")
-    SET(libtiff-5_dll "" CACHE STRING "Where the libtiff-5.dll can be found")
-    SET(libwebp-4_dll "" CACHE STRING "Where the libwebp-4.dll can be found")
-    SET(zlib1_dll "" CACHE STRING "Where the zlib1.dll can be found")
-    SET(DLLFileList ${libjpeg-9_dll} ${libpng16-16_dll} ${SDL2_dll} ${SDL2_image_dll} ${zlib1_dll} ${libtiff-5_dll} ${libwebp-4_dll})
-    file(COPY ${DLLFileList} DESTINATION Debug)
-    file(COPY ${DLLFileList} DESTINATION Release)
-ENDIF(WIN32)

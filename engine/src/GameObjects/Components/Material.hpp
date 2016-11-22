@@ -5,7 +5,7 @@
 #include "SRE/Texture.hpp"
 #include "glm/glm.hpp"
 #include "SRE/Mesh.hpp"
-#include "src/GameObjects/Components/Sprite.hpp"
+#include "Sprite.hpp"
 
 using namespace SRE;
 class Material{
