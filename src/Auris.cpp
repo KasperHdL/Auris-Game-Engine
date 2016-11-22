@@ -2,40 +2,91 @@
 
 using namespace SRE;
 using namespace glm;
+using namespace std;
 
 DebugDraw debugDraw;
 
+b2World* Auris::world;
+vector<shared_ptr<GameObject>> Auris::gameObjects;
 
-void Auris::startup(SDL_Window* window){
+void Auris::startup(Game* game){
+    this->game = game;
+
+    SDL_Init(SDL_INIT_VIDEO);              // Initialize SDL2
+    SDL_GL_SetAttribute(SDL_GL_CONTEXT_MAJOR_VERSION, 3);
+    SDL_GL_SetAttribute(SDL_GL_CONTEXT_MINOR_VERSION, 1);
+    SDL_GL_SetAttribute(SDL_GL_CONTEXT_PROFILE_MASK, SDL_GL_CONTEXT_PROFILE_CORE);
+
+    // Create an application window with the following settings:
+
+    window = SDL_CreateWindow(
+        "An SDL2 window",                  // window title
+        SDL_WINDOWPOS_UNDEFINED,           // initial x position
+        SDL_WINDOWPOS_UNDEFINED,           // initial y position
+        width,                               // width, in pixels
+        height,                               // height, in pixels
+        SDL_WINDOW_OPENGL                  // flags - see below
+    );
+
+    SDL_SetWindowTitle(window,"Gold Engine");
+    // Check that the window was successfully made
+
+    if (window == NULL) {
+        // In the event that the window could not be made...
+        printf("Could not create window: %s\n", SDL_GetError());
+        exit(1);
+    }
+
+
+    SRE::SimpleRenderEngine r{window};
+
     ImGui_SRE_Init(window);
 
     renderSystem.startup(64);
 
 
+
     world = new b2World(toB2(glm::vec2(0,0)));
     collisionHandler = new CollisionHandler;
-    world->SetContactListener(collisionHandler);
+    Auris::world->SetContactListener(collisionHandler);
 
-    world->SetDebugDraw(&debugDraw);
+    Auris::world->SetDebugDraw(&debugDraw);
     debugDraw.SetFlags(b2Draw::e_shapeBit);
 
     auto sre = SimpleRenderEngine::instance;
     sre->getCamera()->setWindowCoordinates();
     sre->setLight(2, Light(LightType::Directional,{0,0,0},{1,1,1},{1,1,1},0));
 
-	//Run init on all gameobjects
-	for(auto& el: gameObjects)
+//    gameObjects.push_back(make_shared<Player>(world,vec2(10,10)));
+//    gameObjects.push_back(make_shared<Player>(world));
+//    gameObjects.push_back(make_shared<Wall>(world, vec2(30, 30)));
+
+//    INIT GAME
+    game->init();
+
+    //Run init on all gameobjects
+    for(auto& el: Auris::gameObjects)
             el->Init();
 
+    run(window);
+    shutdown();
 }
 
 void Auris::shutdown(){
+    game->shutdown();
+
     renderSystem.shutdown();
 
-    delete world;
-    world = nullptr;
+    delete Auris::world;
+    Auris::world = nullptr;
 
-    gameObjects.clear();
+    Auris::gameObjects.clear();
+
+    // Close and destroy the window
+    SDL_DestroyWindow(window);
+
+    // Clean up
+    SDL_Quit();
 }
 
 
@@ -89,6 +140,8 @@ void Auris::run(SDL_Window* window){
 
         deltaTimeSec = clamp(((NOW - LAST) / (float)SDL_GetPerformanceFrequency() ),0.0f,1.0f);
 		
+        game->earlyUpdate(deltaTimeSec);
+
         sre->clearScreen(vec4(0,0,0,1));
 
         Input::update();
@@ -166,7 +219,7 @@ void Auris::run(SDL_Window* window){
             ImGui::Text("Current Dt: %f - Max dt: %f",deltaTimeSec, max_deltaTime);
 
             ImGui::Separator();
-            ImGui::Text("Num GameObjects %zu", gameObjects.size());
+            ImGui::Text("Num GameObjects %zu", Auris::gameObjects.size());
             ImGui::Text("Num of Sprites Allocated %d - Max %d", renderSystem.spritePool.count, max_renderSprites);
 
             ImGui::Separator();
@@ -175,7 +228,7 @@ void Auris::run(SDL_Window* window){
                 ImGui::Begin("GameObject Inspector");
                 if(ImGui::TreeNode("GameObjects")){
                     int i = 0;
-                    for(auto& el: gameObjects){
+                    for(auto& el: Auris::gameObjects){
                         string name = el->name;
                         if(name == "") name = &"GO " [ i];
 
@@ -217,15 +270,22 @@ void Auris::run(SDL_Window* window){
 
         //UPDATE
         if(!pause || runOneStep){
-            for(auto& el: gameObjects)
+            // GAME UPDATE
+            game->update(deltaTimeSec);
+
+            // GAMEOBJECT UPDATE
+            for(auto& el: Auris::gameObjects)
                 el->Update(deltaTimeSec);
-            world->Step(deltaTimeSec, VELOCITY_ITERATIONS, POSITION_ITERATIONS);         
+            Auris::world->Step(deltaTimeSec, VELOCITY_ITERATIONS, POSITION_ITERATIONS);
 
             if(toggle_showcasePanel){
                 showcasePanel.update(deltaTimeSec);
             }
            
         }
+
+        game->lateUpdate(deltaTimeSec);
+
         //DRAW
         renderSystem.update(deltaTimeSec);
 
@@ -256,5 +316,9 @@ void Auris::HandleSDLEvents(){
                 break;
         }   
     }
+}
+
+void Auris::addGameObject(shared_ptr<GameObject> gameObject){
+    Auris::gameObjects.push_back(gameObject);
 }
 

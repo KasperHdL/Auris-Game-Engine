@@ -1,21 +1,18 @@
+#pragma once
+
 #include "Auris.hpp"
 
 
 class Game {
-    vector<shared_ptr<GameObject>> gameObjects;
 
-    void init() {
-        Auris engine(width, height);
-        engine.startup();
-    }
+public:
+    virtual void init() = 0;
 
-    void update() {
+    virtual void earlyUpdate(float dt) = 0;
 
-    }
+    virtual void update(float dt) = 0;
 
-    void shutdown();
+    virtual void lateUpdate(float dt) = 0;
 
-    gameObjects.push_back(make_shared<Player>(world,vec2(10,10)));
-    gameObjects.push_back(make_shared<Player>(world));
-    gameObjects.push_back(make_shared<Wall>(world, vec2(30, 30)));
+    virtual void shutdown() = 0;
 };
