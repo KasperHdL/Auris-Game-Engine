@@ -3,6 +3,8 @@
 using namespace std;
 
 #ifdef _WIN32 // Windows
+#define NOMINMAX
+
 #include <Windows.h>
 #include <Psapi.h>
 #include <tchar.h>
@@ -58,7 +60,7 @@ public:
 	double getPhysMemUsedByMe();
 	double getCurrentTotalCPUValue();
 	double getCurrentProcessCPUValue();
-    double leakDetect(float dt);
+    void leakDetect(float dt);
 	MemoryLeakDetector();
 	~MemoryLeakDetector() {}
 
