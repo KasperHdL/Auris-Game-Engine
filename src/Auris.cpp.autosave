@@ -1,4 +1,4 @@
-#include "GoldEngine.hpp"
+#include "Auris.hpp"
 
 using namespace SRE;
 using namespace glm;
@@ -6,7 +6,7 @@ using namespace glm;
 DebugDraw debugDraw;
 
 
-void GoldEngine::startup(SDL_Window* window){
+void Auris::startup(){
     ImGui_SRE_Init(window);
 
     renderSystem.startup(64);
@@ -23,17 +23,13 @@ void GoldEngine::startup(SDL_Window* window){
     sre->getCamera()->setWindowCoordinates();
     sre->setLight(2, Light(LightType::Directional,{0,0,0},{1,1,1},{1,1,1},0));
 
-    gameObjects.push_back(make_shared<Player>(world,vec2(10,10)));
-    gameObjects.push_back(make_shared<Player>(world));
-    gameObjects.push_back(make_shared<Wall>(world, vec2(30, 30)));
-
 	//Run init on all gameobjects
 	for(auto& el: gameObjects)
             el->Init();
 
 }
 
-void GoldEngine::shutdown(){
+void Auris::shutdown(){
     renderSystem.shutdown();
 
     delete world;
@@ -43,7 +39,7 @@ void GoldEngine::shutdown(){
 }
 
 
-void GoldEngine::run(SDL_Window* window){
+void Auris::run(SDL_Window* window){
     // delta time from http://gamedev.stackexchange.com/a/110831
     Uint64 NOW = SDL_GetPerformanceCounter();
     Uint64 LAST = 0;
@@ -245,7 +241,7 @@ void GoldEngine::run(SDL_Window* window){
 
 }
 
-void GoldEngine::HandleSDLEvents(){
+void Auris::HandleSDLEvents(){
     // message processing loop
     SDL_Event event;
     /* Poll for events */
