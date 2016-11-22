@@ -155,9 +155,6 @@ void GoldEngine::run(SDL_Window* window){
             arr_physMem[arrIndex] = memLeakDet.getPhysMemUsedByMe();
             arr_virtMem[arrIndex] = memLeakDet.getVirtMemUsedByMe();
 
-            if(deltaTimeSec > max_deltaTime)
-                max_deltaTime = deltaTimeSec;
-
             if(renderSystem.spritePool.count > max_renderSprites)
                 max_renderSprites = renderSystem.spritePool.count;
 
@@ -168,7 +165,7 @@ void GoldEngine::run(SDL_Window* window){
 
             ImGui::Separator();
             ImGui::PlotLines("Dt", arr_deltaTime, arrSize);
-            ImGui::Text("Current Dt: %f - Max dt: %f",deltaTimeSec, max_deltaTime);
+            ImGui::Text("Current Dt: %f",deltaTimeSec);
 
             ImGui::Separator();
             ImGui::Text("Num GameObjects %zu", gameObjects.size());
