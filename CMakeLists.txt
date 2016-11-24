@@ -47,8 +47,17 @@ ELSE (SRE_FOUND)
     MESSAGE( STATUS "Failed to find Simple Render Engine")
 endif(SRE_FOUND)
 
-include_directories(engine/src)
+include_directories(src)
 
-add_subdirectory(engine)
-add_subdirectory(game)
+file(GLOB_RECURSE SOURCE_FILES
+    "src/*.cpp"
+    "src/*.h"
+    "src/*.hpp"
+    )
+
+add_library(Auris STATIC ${SOURCE_FILES})
+target_link_libraries(Auris ${EXTRA_LIBS} ${SDL2_LIBRARY} ${SDL2_IMAGE_LIBRARIES} ${SRE_LIBRARY} ${BOX2D_LIBRARY} ${Pdh_LIBRARY})
+
+install(TARGETS Auris DESTINATION lib)
+install(DIRECTORY src/ DESTINATION include)
 
