@@ -2,10 +2,12 @@
 
 #include <SDL.h>
 #include <map>
+#include "SRE/imgui_sre.hpp"
 
 using namespace std;
 class Input{
 public:
+
 	///A method to update the keypresses
 	static void update();
 	
@@ -15,11 +17,17 @@ public:
 	static bool keyUp(SDL_Scancode key);
 	///A method to get the key that is currently being held down
 	static bool keyHeld(SDL_Scancode key);
+
+    static int quit;
 private:
 	///A method to register a key being lifted up event
 	static void keyUpEvent(const SDL_Event& event);
 	///A method to register a key being pressed down event
 	static void keyDownEvent(const SDL_Event& event);
+
+    static void joyKeyUpEvent(const SDL_Event& event);
+
+    static void joyKeyDownEvent(const SDL_Event& event);
 
 	///A map to hold all keys that are currently being held
 	static map<SDL_Scancode, bool> heldKeys;
@@ -27,9 +35,13 @@ private:
 	static map<SDL_Scancode, bool> downKeys;
 	///A map tp hold all keys that has been lifted up
 	static map<SDL_Scancode, bool> upKeys;
+
+    static map <SDL_GameControllerButton, bool> joyHeldKeys;
+    static map <SDL_GameControllerButton, bool> joyDownKeys;
+    static map <SDL_GameControllerButton, bool> joyUpKeys;
+
 };
 
-using namespace std;
 class Keys {
 public:
     Keys();

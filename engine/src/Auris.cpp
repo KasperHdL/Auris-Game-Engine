@@ -12,7 +12,19 @@ vector<shared_ptr<GameObject>> Auris::gameObjects;
 void Auris::startup(Game* game){
     this->game = game;
 
-    SDL_Init(SDL_INIT_VIDEO);              // Initialize SDL2
+    if (SDL_Init( SDL_INIT_VIDEO | SDL_INIT_JOYSTICK ) < 0) // Initialize SDL2
+        {
+            fprintf(stderr, "Couldn't initialize SDL: %s\n", SDL_GetError());
+            exit(1);
+        }
+    printf("%i joysticks were found.\n\n", SDL_NumJoysticks());
+
+    SDL_Joystick *joystick;
+
+    SDL_JoystickEventState(SDL_ENABLE);
+    joystick = SDL_JoystickOpen(0);
+
+
     SDL_GL_SetAttribute(SDL_GL_CONTEXT_MAJOR_VERSION, 3);
     SDL_GL_SetAttribute(SDL_GL_CONTEXT_MINOR_VERSION, 1);
     SDL_GL_SetAttribute(SDL_GL_CONTEXT_PROFILE_MASK, SDL_GL_CONTEXT_PROFILE_CORE);
@@ -55,6 +67,8 @@ void Auris::startup(Game* game){
 
     auto sre = SimpleRenderEngine::instance;
     sre->getCamera()->setWindowCoordinates();
+    //sre->getCamera()->setViewport(0,0,width/2,height/2);
+
     sre->setLight(2, Light(LightType::Directional,{0,0,0},{1,1,1},{1,1,1},0));
 
 //    gameObjects.push_back(make_shared<Player>(world,vec2(10,10)));
@@ -94,7 +108,6 @@ void Auris::run(SDL_Window* window){
     // delta time from http://gamedev.stackexchange.com/a/110831
     Uint64 NOW = SDL_GetPerformanceCounter();
     Uint64 LAST = 0;
-    quit = 0;
     float deltaTimeSec = 0;
     auto sre = SimpleRenderEngine::instance;
 
@@ -134,7 +147,7 @@ void Auris::run(SDL_Window* window){
     bool toggle_showcasePanel = false;
     bool toggle_cameraControls = false;
 
-    while (quit == 0){
+    while (Input::quit == 0){
         LAST = NOW;
         NOW = SDL_GetPerformanceCounter();
 
@@ -145,11 +158,6 @@ void Auris::run(SDL_Window* window){
         sre->clearScreen(vec4(0,0,0,1));
 
         Input::update();
-        HandleSDLEvents();
-
-        if (Input::keyDown(keys.getKey("quit"))) {
-			quit = 1;
-		}
 
         if(Input::keyDown(keys.getKey("debug"))){
             debug = !debug;
@@ -299,23 +307,6 @@ void Auris::run(SDL_Window* window){
         sre->swapWindow();
     }
 
-}
-
-void Auris::HandleSDLEvents(){
-    // message processing loop
-    SDL_Event event;
-    /* Poll for events */
-    while( SDL_PollEvent( &event ) ){
-        ImGui_SRE_ProcessEvent(&event);
-        
-        switch( event.type ){
-            case SDL_QUIT:
-                quit = 1;
-                break;
-            default:
-                break;
-        }   
-    }
 }
 
 void Auris::addGameObject(shared_ptr<GameObject> gameObject){

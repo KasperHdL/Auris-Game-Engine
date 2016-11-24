@@ -5,20 +5,44 @@ map<SDL_Scancode, bool> Input::heldKeys;
 map<SDL_Scancode, bool> Input::downKeys;
 map<SDL_Scancode, bool> Input::upKeys;
 
+map <SDL_GameControllerButton, bool> joyHeldKeys;
+map <SDL_GameControllerButton, bool> joyDownKeys;
+map <SDL_GameControllerButton, bool> joyUpKeys;
+
+int Input::quit = 0;
+
 ///This method clears all the keys that are currently stored, and then updates them to what ever keys are being manipulated this frame
 void Input::update() {
 	downKeys.clear();//clear down keys
 	upKeys.clear();//clear up keys
 	SDL_Event e; ///An SDL event to figure out which keys are being manipulated
-	if (SDL_PollEvent(&e)) { //If there is an event
-		if (e.type == SDL_KEYDOWN) { //if this event is that a key is being pressed down
-			if (e.key.repeat == 0) { //if this key is not being held down
-				keyDownEvent(e); //register the event
-			}
-		}
-		else if (e.type == SDL_KEYUP) { //if this event is that a key is being lifted up
-			keyUpEvent(e); //register the event
-		}
+    while (SDL_PollEvent(&e)) { //If there is an event
+        ImGui_SRE_ProcessEvent(&e);
+        switch (e.type){
+
+            case SDL_KEYDOWN:
+            if (e.key.repeat == 0) { //if this key is not being held down
+                keyDownEvent(e); //register the event
+            }
+            break;
+
+            case SDL_KEYUP:
+                keyUpEvent(e); //register the event
+            break;
+
+            case SDL_JOYBUTTONDOWN:
+                   //joyKeyDownEvent(e);
+            break;
+
+            case SDL_JOYBUTTONUP:
+                //joyKeyUpEvent(e);
+            break;
+
+        case SDL_QUIT:
+            quit = 1;
+            default:
+            break;
+        }
 	}
 }
 
@@ -30,9 +54,19 @@ void Input::keyDownEvent(const SDL_Event& event) {
 
 ///This method registers a keyup event, and therefore takes and SDL event as input, to figure out which key has been released
 void Input::keyUpEvent(const SDL_Event& event) {
+    heldKeys[event.key.keysym.scancode] = false; //Remove the key from held keys
 	upKeys[event.key.keysym.scancode] = true; //Save the key in up keys
-	heldKeys[event.key.keysym.scancode] = false; //Remove the key from held keys
 }
+
+//void Input::joyKeyDownEvent(const SDL_Event& event){
+//    joyDownKeys[event.jbutton.button] = true;
+//    joyHeldKeys[event.jbutton.button] = true;
+//}
+
+//void Input::joyKeyUpEvent(const SDL_Event& event){
+//    joyHeldKeys[event.jbutton.button] =false;
+//    joyUpKeys[event.jbutton.button] = true;
+//}
 
 ///This method returns true if the key being checked is currently being pressed down, otherwise false
 bool Input::keyDown(SDL_Scancode key) {
@@ -46,6 +80,8 @@ bool Input::keyUp(SDL_Scancode key) {
 bool Input::keyHeld(SDL_Scancode key) {
 	return heldKeys[key];
 }
+
+
 
 
 // KEYS CLASS

@@ -47,8 +47,6 @@ public:
 
     void run(SDL_Window* window);
 
-    void HandleSDLEvents();
-
     static b2World* world;
 
     static void addGameObject(shared_ptr<GameObject> gameObject);
@@ -73,8 +71,6 @@ private:
 
     int width;
     int height;
- 
-    int quit;
 
     void BeginContact(b2Contact* contact);
     void EndContact(b2Contact* contact);
