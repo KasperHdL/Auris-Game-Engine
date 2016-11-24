@@ -1,4 +1,5 @@
 #pragma once
+#include <SDL.h>
 #define SDL_MAIN_HANDLED
 
 #include "SRE/SimpleRenderEngine.hpp"
@@ -35,7 +36,6 @@
 
 #include "Utility/Convert.hpp"
 
-#include <SDL.h>
 
 class DebugDraw;
 
@@ -50,7 +50,6 @@ public:
     void run(SDL_Window* window);
 
     void HandleSDLEvents();
-    void EnableBodystandards();
 
     static b2World* world;
 
