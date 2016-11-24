@@ -46,7 +46,7 @@ void Auris::startup(Game* game){
 
 
 
-    world = new b2World(toB2(glm::vec2(0,0)));
+    world = new b2World(Convert::toB2(glm::vec2(0,0)));
     collisionHandler = new CollisionHandler;
     Auris::world->SetContactListener(collisionHandler);
 
@@ -234,12 +234,12 @@ void Auris::run(SDL_Window* window){
 
                         ImGui::PushID(&el);
                         if(ImGui::TreeNode(el->name.c_str())){
-                            vec2 pos = toGlm(el->body->GetPosition());
+                            vec2 pos = Convert::toGlm(el->body->GetPosition());
                             ImGui::Text("Position (%f, %f)", pos.x, pos.y);
 
                             ImGui::Text("Rotation (%f)", el->body->GetAngle());
 
-                            vec2 vel = toGlm(el->body->GetLinearVelocity());
+                            vec2 vel = Convert::toGlm(el->body->GetLinearVelocity());
                             ImGui::Text("Velocity (%f, %f)", vel.x, vel.y);
                             
                             ImGui::Text("Angular Velocity (%f)", el->body->GetAngularVelocity());
@@ -321,4 +321,3 @@ void Auris::HandleSDLEvents(){
 void Auris::addGameObject(shared_ptr<GameObject> gameObject){
     Auris::gameObjects.push_back(gameObject);
 }
-

@@ -24,5 +24,6 @@ public:
         mesh = Mesh::createCube();
         texture = Texture::getWhiteTexture();
         color = glm::vec4(1,1,1,1);
+        scale = glm::vec2(1,1);
     }
 };

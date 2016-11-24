@@ -12,41 +12,29 @@
 
 #include "Components/SpriteSheet.hpp"
 #include "../Utility/Resource.hpp"
+#include "../Utility/BodyStandard.hpp"
 
 
 using namespace std;
 class Player : public GameObject{
     public:
+	shared_ptr<Animation> anim;
 
-    Player(b2World* world, vec2 position = vec2(0,0)):GameObject(){
+    Player(vec2 position = vec2(0,0)):GameObject(){
         name = "Player";
 
         SpriteSheet* ss = new SpriteSheet(SRE::Texture::createFromFile(Resource::getPath("MarioPacked.png").c_str(),false),Resource::getPath("MarioPacked.json"));
 
         sprite = ss->getSprite("mario_10",this);
 
-        sprite->scale = vec2(1.0f, 1.0f);
-
         auto a = RenderSystem::getAnim(this, 4.0f);
         a->setSheet(ss);
 
 		anim = a;
-		
-        //body & fixture definitions and create & assign body
-        b2BodyDef bodyDef;
-        bodyDef.type = b2_dynamicBody;
-        bodyDef.position.Set(position.x, position.y);
 
         b2CircleShape shape;
         shape.m_radius = (19 * Constants::PIXELS_TO_METERS);
-
-        b2FixtureDef fixtureDef;
-        fixtureDef.shape = &shape;
-        fixtureDef.friction = 1.0f;
-        fixtureDef.density = 20.0f;
-
-        body = world->CreateBody(&bodyDef); 
-        body->CreateFixture(&fixtureDef);
+        body = Utility::BodyStandard::getDynamicBody(&shape, position);
 
         enableCollisionEvents();
     }

@@ -27,7 +27,6 @@ public:
     b2Body* body;
 
 	Sprite* sprite;
-	shared_ptr<Animation> anim;
 
     GameObject();
     ~GameObject();

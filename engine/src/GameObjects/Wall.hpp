@@ -4,33 +4,22 @@
 #include "Components/SpriteSheet.hpp"
 #include "../Constants.hpp"
 #include "../Utility/Resource.hpp"
+#include "../Utility/BodyStandard.hpp"
 
 using namespace Constants;
 
 class Wall : public GameObject{
 public:
-    Wall(b2World* world, vec2 position = vec2(0,0)):GameObject() {
+    Wall(vec2 position = vec2(0,0)):GameObject() {
         name = "Wall";
 
         SpriteSheet* ss = new SpriteSheet(SRE::Texture::createFromFile(Resource::getPath("MarioPacked.png").c_str(),false),Resource::getPath("MarioPacked.json"));
         sprite = ss->getSprite("brick",this);
 
-        sprite->scale = vec2(1.0f, 1.0f);
+        b2PolygonShape shape; 
+        shape.SetAsBox(30.0f * PIXELS_TO_METERS, 30.0f * PIXELS_TO_METERS); 
 
-        b2BodyDef bodyDef;
-        bodyDef.type = b2_staticBody;
-        bodyDef.position.Set(position.x, position.y);
-
-        b2PolygonShape shape;
-        shape.SetAsBox(30.0f * PIXELS_TO_METERS, 30.0f * PIXELS_TO_METERS);
-
-        b2FixtureDef fixtureDef;
-        fixtureDef.shape = &shape;
-        fixtureDef.friction = 1.0f;
-        fixtureDef.density = 20.0f;
-
-        body = world->CreateBody(&bodyDef);
-        body->CreateFixture(&fixtureDef);
+        body = Utility::BodyStandard::getStaticBody(&shape, position);
 
         enableCollisionEvents();
     }
