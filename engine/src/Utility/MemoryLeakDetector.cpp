@@ -108,7 +108,7 @@ void MemoryLeakDetector::leakDetect(float deltaTime) {
     double physVal = getPhysMemUsedByMe();
     if (virtVal > highWaterMarkVirt) {
         if (virtRising > 60.0) {
-            cout << "Shit's leaky bro" << endl;
+            cout << "Warning: Memory leak - make sure there are no undeleted pointers." << endl;
         }
         else {
             highWaterMarkVirt = virtVal;
@@ -120,7 +120,7 @@ void MemoryLeakDetector::leakDetect(float deltaTime) {
     }
     if (physVal > highWaterMarkPhys) {
         if (physRising > 60.0) {
-            cout << "Shit's leaky bro" << endl;
+            cout << "Warning: Memory leak - make sure there are no undeleted pointers." << endl;
         }
         else {
             highWaterMarkPhys = physVal;
