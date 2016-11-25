@@ -1,4 +1,3 @@
-#pragma once
 #include <SDL.h>
 #define SDL_MAIN_HANDLED
 
@@ -6,43 +5,42 @@
 #include "SRE/Mesh.hpp"
 #include "SRE/Shader.hpp"
 #include "SRE/Texture.hpp"
-#include "Box2D/Box2D.h"
-
-#include <memory>
-#include <vector>
-#include "GameObjects/GameObject.hpp"
-#include <iostream>
-
-#include "Game.hpp"
-#include "Systems/RenderSystem.hpp"
-#include "Systems/ParticleSystem.hpp"
-#include "Utility/MemoryLeakDetector.hpp"
-
-#include "Testing/Showcases/ShowcasePanel.hpp"
-#include "Testing/DebugDraw.hpp"
-
-#include "Systems/Input.hpp"
-#include "Systems/CollisionHandler.hpp"
-#include "SRE/SimpleRenderEngine.hpp"
-
 #include "SRE/imgui_sre.hpp"
-#include <iostream>
-#include <string>
-#include <fstream>
-#include <sstream>
+
 #include "glm/glm.hpp"
 #include "glm/gtx/transform.hpp"
 #include "glm/gtc/matrix_transform.hpp"
 
-#include "Utility/Convert.hpp"
+#include "Box2D/Box2D.h"
+
+#include <memory>
+#include <vector>
+#include <iostream>
+#include <string>
+#include <fstream>
+#include <sstream>
+
+//Auris
+#include "Auris/Game.hpp"
+#include "Auris/GameObjects/GameObject.hpp"
+#include "Auris/Utility/MemoryLeakDetector.hpp"
+#include "Auris/Utility/Convert.hpp"
+
+#include "Auris/Systems/Input.hpp"
+#include "Auris/Systems/RenderSystem.hpp"
+#include "Auris/Systems/ParticleSystem.hpp"
+#include "Auris/Systems/CollisionHandler.hpp"
+
+#include "Auris/Testing/Showcases/ShowcasePanel.hpp"
+#include "Auris/Testing/DebugDraw.hpp"
 
 
 class DebugDraw;
 
-class Auris{
+class Engine{
 public:
-    Auris(int width, int height):width(width),height(height){}
-    virtual ~Auris(){}
+    Engine(int width, int height):width(width),height(height){}
+    virtual ~Engine(){}
 
     void startup(Game* game);
     void shutdown();
@@ -85,5 +83,4 @@ private:
 
 
 };
-
 

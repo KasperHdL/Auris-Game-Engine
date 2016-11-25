@@ -1,4 +1,4 @@
-#include "MemoryLeakDetector.hpp"
+#include "Auris/Utility/MemoryLeakDetector.hpp"
 
 MemoryLeakDetector::MemoryLeakDetector() {
 	#ifdef _WIN32 // Windows

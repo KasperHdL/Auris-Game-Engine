@@ -1,8 +1,8 @@
-#include "GameObject.hpp"
-#include "Components/Sprite.hpp"
-#include "../Constants.hpp"
-#include "../Systems/RenderSystem.hpp"
-#include "../Utility/Convert.hpp"
+#include "Auris/GameObjects/GameObject.hpp"
+#include "Auris/GameObjects/Components/Sprite.hpp"
+#include "Auris/Constants.hpp"
+#include "Auris/Systems/RenderSystem.hpp"
+#include "Auris/Utility/Convert.hpp"
 
 GameObject::GameObject(){
     //body->SetUserData(nullptr);

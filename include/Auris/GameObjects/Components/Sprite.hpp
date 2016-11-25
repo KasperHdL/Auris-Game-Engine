@@ -1,11 +1,13 @@
 #pragma once
 
-#include "Component.hpp"
+
 #include "glm/glm.hpp"
 #include "SRE/SimpleRenderEngine.hpp"
 #include "SRE/Mesh.hpp"
 #include "SRE/Shader.hpp"
 #include "SRE/Texture.hpp"
+
+#include "Auris/GameObjects/Components/Component.hpp"
 
 using namespace SRE;
 class Sprite : public Component{

@@ -2,9 +2,9 @@
 
 #include "Showcase.hpp"
 #include "SRE/imgui_sre.hpp"
-#include "../../Systems/ParticleSystem.hpp"
 #include <glm/gtc/random.hpp>
-#include "../../Utility/Resource.hpp"
+#include "Auris/Systems/ParticleSystem.hpp"
+#include "Auris/Utility/Resource.hpp"
 
 class ParticleSystemShowcase : public Showcase{
 public:

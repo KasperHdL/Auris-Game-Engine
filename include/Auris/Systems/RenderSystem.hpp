@@ -3,10 +3,10 @@
 #include <vector>
 #include <memory>
 
-#include "../GameObjects/GameObject.hpp"
-#include "../GameObjects/Components/Sprite.hpp"
-#include "../Utility/Pool.hpp"
-#include "../GameObjects/Components/Animation.hpp"
+#include "Auris/GameObjects/GameObject.hpp"
+#include "Auris/GameObjects/Components/Sprite.hpp"
+#include "Auris/Utility/Pool.hpp"
+#include "Auris/GameObjects/Components/Animation.hpp"
 
 using namespace std;
 class RenderSystem{

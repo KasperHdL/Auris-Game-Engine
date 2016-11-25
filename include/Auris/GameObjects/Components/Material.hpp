@@ -3,9 +3,11 @@
 #include "SRE/SimpleRenderEngine.hpp"
 #include "SRE/Shader.hpp"
 #include "SRE/Texture.hpp"
-#include "glm/glm.hpp"
 #include "SRE/Mesh.hpp"
-#include "Sprite.hpp"
+
+#include "glm/glm.hpp"
+
+#include "Auris/GameObjects/Components/Sprite.hpp"
 
 using namespace SRE;
 class Material{

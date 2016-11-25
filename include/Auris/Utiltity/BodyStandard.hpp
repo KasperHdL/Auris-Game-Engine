@@ -2,7 +2,7 @@
 
 #include "Box2D/Box2D.h"
 #include "glm/glm.hpp"
-#include "../Auris.hpp"
+#include "Auris/Engine.hpp"
 
 namespace Utility{
 

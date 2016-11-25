@@ -1,4 +1,4 @@
-#include "RenderSystem.hpp"
+#include "Auris/Systems/RenderSystem.hpp"
 
 Pool<Sprite> RenderSystem::spritePool = Pool<Sprite>();
 vector<shared_ptr<Animation>> RenderSystem::animations;

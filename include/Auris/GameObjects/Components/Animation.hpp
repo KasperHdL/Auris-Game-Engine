@@ -1,15 +1,16 @@
 #pragma once
 
-#include "../GameObject.hpp"
-#include "Sprite.hpp"
 #include "glm/glm.hpp"
 #include "SRE/SimpleRenderEngine.hpp"
 #include "SRE/Mesh.hpp"
 #include "SRE/Shader.hpp"
 #include "SRE/Texture.hpp"
-#include "SpriteSheet.hpp"
 
 #include <iostream>
+
+#include "Auris/GameObjects/GameObject.hpp"
+#include "Auris/GameObjects/Components/Sprite.hpp"
+#include "Auris/GameObjects/Components/SpriteSheet.hpp"
 
 using namespace SRE;
 class Animation

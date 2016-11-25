@@ -42,6 +42,8 @@ include_directories(${BOX2D_INCLUDE_DIR})
 find_package(SRE REQUIRED)
 include_directories(${SRE_INCLUDE_DIR})
 
+include_directories(include)
+
 SET(EXTRA_LIBS ${EXTRA_LIBS} ${SDL2_LIBRARY} ${SDL2_IMAGE_LIBRARY} ${BOX2D_LIBRARY} ${SRE_LIBRARY})
 
 add_subdirectory(Auris)

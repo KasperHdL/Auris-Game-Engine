@@ -1,5 +1,5 @@
-#include "SpriteSheet.hpp"
-#include "../../Systems/RenderSystem.hpp"
+#include "Auris/GameObjects/Components/SpriteSheet.hpp"
+#include "Auris/Systems/RenderSystem.hpp"
 #include <fstream>
 
 using namespace std;

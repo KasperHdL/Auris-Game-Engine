@@ -1,5 +1,5 @@
-#include "Sprite.hpp"
-#include "../GameObject.hpp"
+#include "Auris/GameObjects/Components/Sprite.hpp"
+#include "Auris/GameObjects/GameObject.hpp"
 
 void Sprite::draw(){
     Shader* shader = Shader::getUnlitSprite();

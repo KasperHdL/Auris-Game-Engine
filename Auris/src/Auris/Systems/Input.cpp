@@ -1,4 +1,4 @@
-#include "Input.hpp"
+#include "Auris/Systems/Input.hpp"
 #include <iostream>
 
 map<SDL_Scancode, bool> Input::heldKeys;

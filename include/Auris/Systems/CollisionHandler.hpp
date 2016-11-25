@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../GameObjects/GameObject.hpp"
+#include "Auris/GameObjects/GameObject.hpp"
 #include "Box2D/Box2D.h"
 
 class CollisionHandler : public b2ContactListener{

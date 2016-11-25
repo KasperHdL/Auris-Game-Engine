@@ -9,7 +9,7 @@
 #include <SRE/Shader.hpp>
 #include <SRE/Texture.hpp>
 
-#include "../Utility/Interpolation.hpp"
+#include "Auris/Utility/Interpolation.hpp"
 
 using namespace std;
 using namespace glm;

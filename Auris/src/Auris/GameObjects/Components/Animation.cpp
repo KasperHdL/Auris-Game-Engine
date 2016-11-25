@@ -1,4 +1,4 @@
-#include "Animation.hpp"
+#include "Auris/GameObjects/Components/Animation.hpp"
 
 void Animation::setTexture(Texture* tex){
 	textures.push_back(tex);
