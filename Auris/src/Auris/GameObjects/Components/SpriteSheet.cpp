@@ -70,7 +70,7 @@ SpriteSheet::~SpriteSheet(){
 
 Sprite* SpriteSheet::getSprite(string name,GameObject* parent){
     auto s = RenderSystem::getSprite(parent);
-    sprites[name]->set(s);
+    s->setMaterial(sprites[name]);
     return s;
 }
 

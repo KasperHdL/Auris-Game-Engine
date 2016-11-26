@@ -1,15 +1,15 @@
 #include "Auris/GameObjects/GameObject.hpp"
 #include "Auris/GameObjects/Components/Sprite.hpp"
 #include "Auris/Constants.hpp"
-#include "Auris/Systems/RenderSystem.hpp"
 #include "Auris/Utility/Convert.hpp"
+
 
 GameObject::GameObject(){
     //body->SetUserData(nullptr);
 }
 
 GameObject::~GameObject(){
-    RenderSystem::deleteSprite(sprite);
+    delete sprite;
 }
 
 glm::mat4 GameObject::localTransform() {

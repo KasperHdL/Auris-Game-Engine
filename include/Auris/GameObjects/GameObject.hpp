@@ -7,8 +7,6 @@
 #include <memory>
 #include <vector>
 #include <SRE/SimpleRenderEngine.hpp>
-#include <SRE/Mesh.hpp>
-#include <SRE/Shader.hpp>
 #include "Box2D/Box2D.h"
 
 

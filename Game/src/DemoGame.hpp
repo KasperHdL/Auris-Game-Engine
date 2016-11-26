@@ -7,9 +7,9 @@
 class DemoGame : public Game {
 
     void init() {
-        Auris::addGameObject(make_shared<Player>(vec2(10,10)));
-        Auris::addGameObject(make_shared<Player>());
-        Auris::addGameObject(make_shared<Wall>(vec2(30,30)));
+        Engine::addGameObject(make_shared<Player>(vec2(10,10)));
+        Engine::addGameObject(make_shared<Player>());
+        Engine::addGameObject(make_shared<Wall>(vec2(30,30)));
     }
 
     void earlyUpdate(float dt){

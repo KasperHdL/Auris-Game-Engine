@@ -8,6 +8,7 @@
 #include "SRE/Texture.hpp"
 
 #include "Auris/GameObjects/Components/Component.hpp"
+#include "Auris/GameObjects/Components/Material.hpp"
 
 using namespace SRE;
 class Sprite : public Component{
@@ -19,13 +20,18 @@ public:
         
     virtual void draw();
 
-    ~Sprite(){
-    }
-
+    ~Sprite();
     Sprite(GameObject* gameObject):Component(gameObject){
         mesh = Mesh::createCube();
         texture = Texture::getWhiteTexture();
         color = glm::vec4(1,1,1,1);
         scale = glm::vec2(1,1);
+    }
+
+    void setMaterial(Material* material){
+        mesh = material->mesh;
+        texture = material->texture;
+        color = material->color;
+
     }
 };

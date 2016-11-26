@@ -20,7 +20,7 @@ namespace BodyStandard{
         fixtureDef.density = density;
 
         b2Body* body;
-        body = Auris::world->CreateBody(&bodyDef);
+        body = Engine::world->CreateBody(&bodyDef);
         body->CreateFixture(&fixtureDef);
 
         return body;
@@ -38,7 +38,7 @@ namespace BodyStandard{
         fixtureDef.density = density; 
  
         b2Body* body;
-        body = Auris::world->CreateBody(&bodyDef); 
+        body = Engine::world->CreateBody(&bodyDef); 
         body->CreateFixture(&fixtureDef);  
 
         return body;

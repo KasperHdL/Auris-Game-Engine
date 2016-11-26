@@ -1,3 +1,5 @@
+#pragma once
+
 #include <SDL.h>
 #define SDL_MAIN_HANDLED
 

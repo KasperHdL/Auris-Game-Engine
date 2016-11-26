@@ -1,5 +1,17 @@
 #include "Auris/GameObjects/Components/Sprite.hpp"
 #include "Auris/GameObjects/GameObject.hpp"
+#include "Auris/Systems/RenderSystem.hpp"
+
+
+Sprite::~Sprite(){
+        delete mesh;
+        delete texture;
+
+        mesh = nullptr;
+        texture = nullptr;
+
+        RenderSystem::deleteSprite(this);
+}
 
 void Sprite::draw(){
     Shader* shader = Shader::getUnlitSprite();
