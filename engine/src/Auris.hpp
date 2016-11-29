@@ -18,6 +18,7 @@
 #include <memory>
 #include <vector>
 #include <iostream>
+#include "Systems/Scene.hpp"
 #include <string>
 #include <fstream>
 #include <sstream>
@@ -53,15 +54,15 @@ public:
 
     static b2World* world;
 
-    static void addGameObject(shared_ptr<GameObject> gameObject);
-    static void removeGameObject(GameObject* gameObject);
+    static Scene* currentScene;
+
+    static void loadScene(Scene* scene);
 
 private:
     Game* game;
 
     SDL_Window *window;
 
-    static vector<shared_ptr<GameObject>> gameObjects;
     RenderSystem renderSystem;
     ShowcasePanel showcasePanel;
 
@@ -78,9 +79,6 @@ private:
     int height;
  
     int quit;
-
-    void BeginContact(b2Contact* contact);
-    void EndContact(b2Contact* contact);
 
 	MemoryLeakDetector memLeakDet;
 

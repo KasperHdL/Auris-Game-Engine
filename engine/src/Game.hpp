@@ -1,5 +1,7 @@
 #pragma once
 
+#include "Auris.hpp"
+
 class Game {
 
 public:

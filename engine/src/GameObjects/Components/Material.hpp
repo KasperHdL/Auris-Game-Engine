@@ -7,5 +7,8 @@
 struct Material{
         SRE::Texture* texture;
         glm::vec4 color;
-        SRE::Mesh* mesh;
+    ~Material() {
+        delete texture;
+        delete mesh;
+    }
 };

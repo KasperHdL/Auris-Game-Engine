@@ -60,12 +60,11 @@ Material* SpriteSheet::findSprite(int x, int y, int width, int height, float anc
         mat->color = glm::vec4(1,1,1,1);
 
         return mat;
-
-
 }
 
 SpriteSheet::~SpriteSheet(){
     sprites.clear();
+    delete texture;
 }
 
 Sprite* SpriteSheet::getSprite(string name,GameObject* parent){
