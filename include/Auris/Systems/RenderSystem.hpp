@@ -13,7 +13,7 @@ class RenderSystem{
     public:
 
     static Pool<Sprite> spritePool;
-	static vector<shared_ptr<Animation>> animations;
+    static vector<shared_ptr<Animation>> animations;
     
     RenderSystem(){}
     ~RenderSystem(){}
@@ -26,4 +26,5 @@ class RenderSystem{
     static Sprite* getSprite(GameObject* gameObject);
     static void deleteSprite(Sprite* sprite);
 	static shared_ptr<Animation> getAnim(GameObject* gameObject, float length);
+    static void deleteAnim(shared_ptr<Animation> ani);
 };

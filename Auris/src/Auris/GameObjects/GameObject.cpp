@@ -1,19 +1,21 @@
 #include "Auris/GameObjects/GameObject.hpp"
 #include "Auris/GameObjects/Components/Sprite.hpp"
 #include "Auris/Constants.hpp"
+#include "Auris/Engine.hpp"
 #include "Auris/Utility/Convert.hpp"
+#include "Auris/Systems/RenderSystem.hpp"
 
 
 GameObject::GameObject(){
-    //body->SetUserData(nullptr);
 }
 
 GameObject::~GameObject(){
-    delete sprite;
+    RenderSystem::deleteSprite(sprite);
+    Engine::removeGameObject(this);
 }
 
 glm::mat4 GameObject::localTransform() {
-    glm::mat4 rz = glm::eulerAngleZ((body->GetAngle()));
+    glm::mat4 rz = glm::eulerAngleZ(body->GetAngle());
     glm::vec2 pos = Convert::toGlm(body->GetPosition());
 
     glm::mat4 t = glm::translate(glm::mat4(1), vec3(pos * Constants::METERS_TO_PIXELS,0));

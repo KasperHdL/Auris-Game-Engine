@@ -19,7 +19,7 @@
 using namespace std;
 class Player : public GameObject{
     public:
-	shared_ptr<Animation> anim;
+    shared_ptr<Animation> anim;
 
     Player(vec2 position = vec2(0,0)):GameObject(){
         name = "Player";
@@ -28,16 +28,18 @@ class Player : public GameObject{
 
         sprite = ss->getSprite("mario_10",this);
 
-        auto a = RenderSystem::getAnim(this, 4.0f);
-        a->setSheet(ss);
-
-		anim = a;
+        anim = RenderSystem::getAnim(this, 4.0f);
+        anim->setSheet(ss);
 
         b2CircleShape shape;
         shape.m_radius = (19 * Constants::PIXELS_TO_METERS);
         body = Utility::BodyStandard::getDynamicBody(&shape, position);
 
         enableCollisionEvents();
+    }
+
+    ~Player(){
+        RenderSystem::deleteAnim(anim);
     }
 
 	float force;

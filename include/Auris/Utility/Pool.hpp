@@ -13,7 +13,7 @@ class Pool{
 public:
 
     T* begin() { return &objects[0]; }
-    T* end() { return &objects[count]; }
+    T* end() { return &objects[capacity]; }
 
     int count = 0;
     int capacity;
@@ -50,6 +50,11 @@ public:
             return nullptr;
         }
 
+        if(occupied[index] == false){
+            //std::cout << "Index is not occupied, returning nullptr" << std::endl;
+            return nullptr;
+        }
+
         return &objects[index];
     }
 
@@ -74,8 +79,8 @@ public:
     }
 
     void remove(T* ptr){
-        for(int i = 0;i < count;i++){
-            if(ptr == &objects[i]){
+        for(int i = 0;i < capacity;i++){
+            if(occupied[i] && ptr == &objects[i]){
                 remove(i);
                 break;
             }

@@ -54,6 +54,7 @@ public:
     static b2World* world;
 
     static void addGameObject(shared_ptr<GameObject> gameObject);
+    static void removeGameObject(GameObject* gameObject);
 
 private:
     Game* game;

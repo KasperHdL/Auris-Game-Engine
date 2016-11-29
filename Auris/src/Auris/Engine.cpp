@@ -80,7 +80,6 @@ void Engine::shutdown(){
     delete Engine::world;
     Engine::world = nullptr;
 
-    Engine::gameObjects.clear();
 
     // Close and destroy the window
     SDL_DestroyWindow(window);
@@ -299,6 +298,7 @@ void Engine::run(SDL_Window* window){
         sre->swapWindow();
     }
 
+    shutdown();
 }
 
 void Engine::HandleSDLEvents(){
@@ -320,4 +320,7 @@ void Engine::HandleSDLEvents(){
 
 void Engine::addGameObject(shared_ptr<GameObject> gameObject){
     Engine::gameObjects.push_back(gameObject);
+}
+void Engine::removeGameObject(GameObject* gameObject){
+    Engine::world->DestroyBody(gameObject->body);
 }

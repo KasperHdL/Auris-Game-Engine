@@ -4,13 +4,8 @@
 
 
 Sprite::~Sprite(){
-        delete mesh;
-        delete texture;
-
-        mesh = nullptr;
-        texture = nullptr;
-
-        RenderSystem::deleteSprite(this);
+    delete texture;
+    delete mesh;
 }
 
 void Sprite::draw(){

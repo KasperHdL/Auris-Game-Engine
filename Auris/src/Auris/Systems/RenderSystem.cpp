@@ -15,8 +15,12 @@ void RenderSystem::update(float dt){
 	for (auto& el : RenderSystem::animations)
 		el->updateAnim(dt);
 
-    for(Sprite* s = RenderSystem::spritePool.begin(); s != RenderSystem::spritePool.end(); s++)
-        s->draw();
+    for(int i = 0; i < RenderSystem::spritePool.capacity;i++){
+        Sprite* s = RenderSystem::spritePool[i];
+        if(s != nullptr)
+            s->draw();
+    }
+
 }
 
 
@@ -32,4 +36,14 @@ shared_ptr<Animation> RenderSystem::getAnim(GameObject* gameObject, float length
 
 void RenderSystem::deleteSprite(Sprite* sprite){
     RenderSystem::spritePool.remove(sprite);
+}
+
+void RenderSystem::deleteAnim(shared_ptr<Animation> ani){
+    int index = 0;
+    for (auto& el : RenderSystem::animations){
+        if(ani == el)
+            break;
+        index++;
+    }
+    animations.erase(animations.begin() + index);
 }

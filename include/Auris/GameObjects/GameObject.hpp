@@ -14,7 +14,6 @@ using namespace glm;
 using namespace std;
 
 class Sprite;
-class Animation;
 
 class GameObject{
 public:
@@ -23,7 +22,6 @@ public:
     GameObject* parent = nullptr;
 
     b2Body* body;
-
 	Sprite* sprite;
 
     GameObject();
