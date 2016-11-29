@@ -2,16 +2,19 @@
 
 #include "Auris/Engine.hpp"
 
+#include "Scenes/Scene1.hpp"
+#include "Scenes/Scene2.hpp"
+
 class DemoGame : public Game {
     Keys keys;
-//    Level1 level1;
-//    Level2 level2;
+    Scene1 scene1;
+    Scene2 scene2;
 
 
     void init() {
         keys.setKey("space", SDL_SCANCODE_SPACE);
 
-       // Auris::loadScene(&level1);
+        Engine::loadScene(&scene1);
         for (auto & el : RenderSystem::animations)
             cout << "Animation after load: " << &el << endl;
     }
@@ -27,7 +30,7 @@ class DemoGame : public Game {
     void lateUpdate(float dt){
         if (Input::keyDown(keys.getKey("space"))){
 
-//            Auris::loadScene(&level2);
+            Engine::loadScene(&scene2);
         }
     }
 
