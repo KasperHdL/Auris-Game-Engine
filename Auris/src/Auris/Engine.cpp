@@ -77,6 +77,8 @@ void Engine::shutdown(){
 
     renderSystem.shutdown();
 
+    gameObjects.clear();
+
     delete Engine::world;
     Engine::world = nullptr;
 
