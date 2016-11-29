@@ -3,7 +3,7 @@
 #include "ParticleSystem.hpp"
 #include "SRE/imgui_sre.hpp"
 
-
+namespace Auris{
 class ShowcasePanel{
 
     int previousItem = 0;
@@ -77,3 +77,4 @@ public:
 
 
 };
+}

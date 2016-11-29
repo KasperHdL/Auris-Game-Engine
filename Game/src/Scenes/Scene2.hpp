@@ -1,10 +1,11 @@
 #pragma once 
  
 #include "Auris/Engine.hpp"
+#include "Auris/Systems/Scene.hpp"
 #include "../Player.hpp"
 #include "../Wall.hpp"
  
-class Scene2 : public Scene {
+class Scene2 : public Auris::Scene {
 public: 
     void init() { 
         name = "Scene 2";

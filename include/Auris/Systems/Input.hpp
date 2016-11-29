@@ -3,6 +3,7 @@
 #include <SDL.h>
 #include <map>
 
+namespace Auris{
 using namespace std;
 class Input{
 public:
@@ -40,3 +41,4 @@ private:
 
     map<string, SDL_Scancode> allKeys; ///A map to hold all the SDL keys, and the strings that correspond to that key
 };
+}

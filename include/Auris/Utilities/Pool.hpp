@@ -3,6 +3,7 @@
 #include <iostream>
 
 
+namespace Auris{
 template <class T>
 class Pool{
 
@@ -92,3 +93,4 @@ public:
         count--;
     }
 };
+}

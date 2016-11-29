@@ -39,7 +39,7 @@
 
 
 class DebugDraw;
-
+namespace Auris{
 class Engine{
 public:
     Engine(int width, int height):width(width),height(height){}
@@ -85,4 +85,4 @@ private:
 
 
 };
-
+}

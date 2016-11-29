@@ -3,6 +3,7 @@
 #include "Auris/GameObjects/GameObject.hpp"
 #include "Box2D/Box2D.h"
 
+namespace Auris{
 class CollisionHandler : public b2ContactListener{
 
 private:
@@ -34,3 +35,4 @@ private:
         }
     }
 };
+}

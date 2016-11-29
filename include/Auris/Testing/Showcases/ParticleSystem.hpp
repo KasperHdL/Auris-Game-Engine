@@ -6,6 +6,7 @@
 #include "Auris/Systems/ParticleSystem.hpp"
 #include "Auris/Utility/Resource.hpp"
 
+namespace Auris{
 class ParticleSystemShowcase : public Showcase{
 public:
     ParticleSystem particleSystem;
@@ -226,3 +227,4 @@ public:
     }
 
 };
+}

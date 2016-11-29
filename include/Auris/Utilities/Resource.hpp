@@ -4,6 +4,7 @@
 #include <string>
 #include <SDL.h>
 
+namespace Auris{
 class Resource {
 
     public:
@@ -43,3 +44,4 @@ class Resource {
     }
 
 };
+}

@@ -1,7 +1,7 @@
 #pragma once
 
 #include "Auris/Engine.hpp"
-
+namespace Auris{
 class Game {
 
 public:
@@ -15,3 +15,4 @@ public:
 
     virtual void shutdown() = 0;
 };
+}

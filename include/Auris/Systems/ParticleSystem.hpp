@@ -11,6 +11,7 @@
 
 #include "Auris/Utility/Interpolation.hpp"
 
+namespace Auris{
 using namespace std;
 using namespace glm;
 using namespace SRE;
@@ -243,3 +244,4 @@ public:
 
 
 };
+}

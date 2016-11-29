@@ -13,6 +13,8 @@
 #include "Auris/GameObjects/Components/SpriteSheet.hpp"
 
 using namespace SRE;
+
+namespace Auris{
 class Animation
 {
 public:
@@ -47,3 +49,4 @@ private:
 	float time;
 	int index;
 };
+}

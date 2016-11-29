@@ -5,9 +5,10 @@
 
 #include "Auris/GameObjects/GameObject.hpp"
 #include "Auris/GameObjects/Components/Sprite.hpp"
-#include "Auris/Utility/Pool.hpp"
+#include "Auris/Utilities/Pool.hpp"
 #include "Auris/GameObjects/Components/Animation.hpp"
 
+namespace Auris{
 using namespace std;
 class RenderSystem{
     public:
@@ -28,3 +29,4 @@ class RenderSystem{
 	static shared_ptr<Animation> getAnim(GameObject* gameObject, float length);
     static void deleteAnim(shared_ptr<Animation> ani);
 };
+}

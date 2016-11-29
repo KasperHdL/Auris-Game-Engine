@@ -4,7 +4,8 @@
 #include "glm/glm.hpp"
 #include "Auris/Engine.hpp"
 
-namespace Utility{
+namespace Auris{
+namespace Utilities{
 
 namespace BodyStandard{
 
@@ -46,4 +47,5 @@ namespace BodyStandard{
 
 
 };
+}
 }

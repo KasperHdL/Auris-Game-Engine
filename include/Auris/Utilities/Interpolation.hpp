@@ -3,6 +3,7 @@
 #include <vector>
 #include "glm/glm.hpp"
 
+namespace Auris{
 enum class InterpolationType{
     Linear,
     Bezier,
@@ -98,4 +99,4 @@ private:
                a3 * points[3])*(1/6.0f);
     }
 };
-
+}

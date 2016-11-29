@@ -10,6 +10,7 @@
 
 #include "Auris/Constants.hpp"
 
+namespace Auris{
 class DebugDraw : public b2Draw{
     public:
         DebugDraw(){}
@@ -67,3 +68,4 @@ class DebugDraw : public b2Draw{
 
 
 };
+}

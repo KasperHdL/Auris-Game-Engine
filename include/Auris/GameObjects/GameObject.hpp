@@ -15,6 +15,8 @@ using namespace std;
 
 class Sprite;
 
+namespace Auris{
+
 class GameObject{
 public:
 
@@ -52,3 +54,4 @@ public:
     virtual void OnCollisionExit(GameObject* collider) {} // Called when exiting collision with another game object
 
 };
+}

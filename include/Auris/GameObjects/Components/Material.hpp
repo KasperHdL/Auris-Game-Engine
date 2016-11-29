@@ -4,6 +4,7 @@
 #include "SRE/Mesh.hpp"
 #include "glm/glm.hpp"
 
+namespace Auris{
 struct Material{
     SRE::Texture* texture;
     glm::vec4 color;
@@ -14,3 +15,4 @@ struct Material{
         delete mesh;
     }
 };
+}

@@ -1,6 +1,7 @@
 #pragma once
 #include <iostream>
 using namespace std;
+namespace Auris{
 
 #ifdef _WIN32 // Windows
 #define NOMINMAX
@@ -101,6 +102,7 @@ public:
 	cout << "Error: Unsupported OS" << endl;
 	#endif
 };
+}
 
 
 

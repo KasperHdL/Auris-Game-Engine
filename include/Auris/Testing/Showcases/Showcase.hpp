@@ -1,5 +1,6 @@
 #pragma once
 
+namespace Auris{
 struct Showcase{
     Showcase(){};
     ~Showcase(){};
@@ -8,3 +9,4 @@ struct Showcase{
     virtual void update(float dt) = 0;
     virtual void draw() = 0;
 };
+}

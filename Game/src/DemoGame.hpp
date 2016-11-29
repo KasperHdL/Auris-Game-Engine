@@ -5,8 +5,8 @@
 #include "Scenes/Scene1.hpp"
 #include "Scenes/Scene2.hpp"
 
-class DemoGame : public Game {
-    Keys keys;
+class DemoGame : public Auris::Game {
+    Auris::Keys keys;
     Scene1 scene1;
     Scene2 scene2;
 
@@ -14,8 +14,8 @@ class DemoGame : public Game {
     void init() {
         keys.setKey("space", SDL_SCANCODE_SPACE);
 
-        Engine::loadScene(&scene1);
-        for (auto & el : RenderSystem::animations)
+        Auris::Engine::loadScene(&scene1);
+        for (auto & el : Auris::RenderSystem::animations)
             cout << "Animation after load: " << &el << endl;
     }
 
@@ -28,9 +28,9 @@ class DemoGame : public Game {
     }
 
     void lateUpdate(float dt){
-        if (Input::keyDown(keys.getKey("space"))){
+        if (Auris::Input::keyDown(keys.getKey("space"))){
 
-            Engine::loadScene(&scene2);
+           Auris::Engine::loadScene(&scene2);
         }
     }
 

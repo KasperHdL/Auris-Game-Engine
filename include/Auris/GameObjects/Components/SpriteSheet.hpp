@@ -9,6 +9,7 @@
 #include "Auris/GameObjects/Components/Material.hpp"
 
 
+namespace Auris{
 class SpriteSheet{
     public:
         SpriteSheet(SRE::Texture* texture,std::string pathToJSON);
@@ -21,4 +22,4 @@ class SpriteSheet{
         SRE::Texture* texture;
 
 };
-
+}

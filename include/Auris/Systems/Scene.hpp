@@ -4,6 +4,7 @@
 #include <vector>
 
 
+namespace Auris{
 class Scene {
 public:
     string name;
@@ -21,3 +22,4 @@ public:
 
     virtual void init() {}
 };
+}

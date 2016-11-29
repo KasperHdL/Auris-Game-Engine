@@ -39,7 +39,6 @@ class Player : public GameObject{
     }
 
     ~Player(){
-        //RenderSystem::deleteAnim(anim);
     }
 
 	float force;

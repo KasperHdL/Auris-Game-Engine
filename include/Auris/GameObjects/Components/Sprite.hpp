@@ -10,6 +10,7 @@
 #include "Auris/GameObjects/Components/Component.hpp"
 #include "Auris/GameObjects/Components/Material.hpp"
 
+namespace Auris{
 using namespace SRE;
 class Sprite : public Component{
 public:
@@ -35,3 +36,4 @@ public:
 
     }
 };
+}
