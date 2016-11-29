@@ -4,7 +4,7 @@ file(GLOB_RECURSE GAME_FILES
 )
 
 add_executable(Game ${GAME_FILES})
-target_link_libraries(Game ${EXTRA_LIBS} Auris)
+target_link_libraries(Game ${EXTRA_LIBS} Engine)
 
 file(COPY data DESTINATION .)
 

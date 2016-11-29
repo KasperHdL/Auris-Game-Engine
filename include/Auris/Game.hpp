@@ -1,6 +1,6 @@
 #pragma once
 
-#include "Auris.hpp"
+#include "Auris/Engine.hpp"
 
 class Game {
 

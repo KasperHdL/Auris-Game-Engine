@@ -6,7 +6,7 @@ using namespace std;
 
 DebugDraw debugDraw;
 
-Scene* Auris::currentScene;
+Scene* Engine::currentScene;
 b2World* Engine::world;
 
 void Engine::startup(Game* game){
@@ -63,10 +63,14 @@ void Engine::startup(Game* game){
     game->init();
 
     //Run init on all gameobjects
-    for(auto& el: Auris::currentScene->gameObjects)
-            el->Init();
+    if(Engine::currentScene == nullptr){
+        std::cout << "Auris Error - No scene loaded exiting" << std::endl;
+    }else{
+        for(auto& el: Engine::currentScene->gameObjects)
+                el->Init();
 
-    run(window);
+        run(window);
+    }
     shutdown();
 }
 
@@ -75,9 +79,9 @@ void Engine::shutdown(){
 
     renderSystem.shutdown();
 
-    gameObjects.clear();
+    if(Engine::currentScene != nullptr)
+        Engine::currentScene->gameObjects.clear();
 
-    Auris::currentScene->gameObjects.clear();
     delete Engine::world;
     Engine::world = nullptr;
 
@@ -219,17 +223,17 @@ void Engine::run(SDL_Window* window){
             ImGui::Text("Current Dt: %f - Max dt: %f",deltaTimeSec, max_deltaTime);
 
             ImGui::Separator();
-            ImGui::Text("Num GameObjects %zu", Auris::currentScene->gameObjects.size());
+            ImGui::Text("Num GameObjects %zu", Engine::currentScene->gameObjects.size());
             ImGui::Text("Num of Sprites Allocated %d - Max %d", renderSystem.spritePool.count, max_renderSprites);
 
             ImGui::Separator();
 
             if(toggle_goInspector){
                 ImGui::Begin("GameObject Inspector");
-                ImGui::Text("Current scene: %s", Auris::currentScene->name.c_str());
+                ImGui::Text("Current scene: %s", Engine::currentScene->name.c_str());
                 if(ImGui::TreeNode("GameObjects")){
                     int i = 0;
-                    for(auto& el: Auris::currentScene->gameObjects){
+                    for(auto& el: Engine::currentScene->gameObjects){
                         string name = el->name;
                         if(name == "") name = &"GO " [ i];
 
@@ -275,10 +279,10 @@ void Engine::run(SDL_Window* window){
             game->update(deltaTimeSec);
 
             // GAMEOBJECT UPDATE
-            for(auto& el: Auris::currentScene->gameObjects)
+            for(auto& el: Engine::currentScene->gameObjects)
                 el->Update(deltaTimeSec);
 
-            Auris::world->Step(deltaTimeSec, VELOCITY_ITERATIONS, POSITION_ITERATIONS);
+            Engine::world->Step(deltaTimeSec, VELOCITY_ITERATIONS, POSITION_ITERATIONS);
 
             if(toggle_showcasePanel){
                 showcasePanel.update(deltaTimeSec);
@@ -321,7 +325,7 @@ void Engine::HandleSDLEvents(){
     }
 }
 
-void Auris::loadScene(Scene* scene) {
+void Engine::loadScene(Scene* scene) {
     for (auto & el : RenderSystem::spritePool)
         cout << "GameObjects that are drawn before unload: " << el.gameObject << endl;
 
@@ -340,6 +344,7 @@ void Auris::loadScene(Scene* scene) {
     for (auto & el : currentScene->gameObjects)
         el->Init();
 }
+
 void Engine::removeGameObject(GameObject* gameObject){
     Engine::world->DestroyBody(gameObject->body);
 }

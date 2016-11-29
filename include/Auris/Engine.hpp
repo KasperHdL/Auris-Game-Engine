@@ -23,7 +23,7 @@
 #include <fstream>
 #include <sstream>
 
-//Auris
+//Engine
 #include "Auris/Game.hpp"
 #include "Auris/GameObjects/GameObject.hpp"
 #include "Auris/Utility/MemoryLeakDetector.hpp"
@@ -57,6 +57,7 @@ public:
     static Scene* currentScene;
 
     static void loadScene(Scene* scene);
+    static void removeGameObject(GameObject* gameObject);
 
 private:
     Game* game;
