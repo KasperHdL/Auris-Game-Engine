@@ -55,8 +55,6 @@ private:
     Game* game;
     SDL_Window *window;
 
-    std::vector<SDL_GameController*> ctrl;
-
     static vector<shared_ptr<GameObject>> gameObjects;
     RenderSystem renderSystem;
     ShowcasePanel showcasePanel;

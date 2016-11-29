@@ -3,13 +3,18 @@
 #include <SDL.h>
 #include <map>
 #include "SRE/imgui_sre.hpp"
+#include <vector>
 
 using namespace std;
 class Input{
 public:
 
+    static void init();
+
 	///A method to update the keypresses
 	static void update();
+
+    static void shutdown();
 	
 	///A method to get the key that is pressed down
 	static bool keyDown(SDL_Scancode key);
@@ -22,7 +27,11 @@ public:
     static bool ctrlKeyUp(uint ctrlkey);
     static bool ctrlKeyHeld(uint ctrlkey);
 
+    static bool getCtrlButtonStatus();
+
     static int quit;
+    static std::vector<SDL_GameController*> ctrl;
+
 private:
 	///A method to register a key being lifted up event
 	static void keyUpEvent(const SDL_Event& event);

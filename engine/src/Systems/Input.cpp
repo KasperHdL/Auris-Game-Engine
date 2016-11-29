@@ -9,8 +9,23 @@ map <uint, bool> Input::ctrlHeldKeys;
 map <uint, bool> Input::ctrlDownKeys;
 map <uint, bool> Input::ctrlUpKeys;
 
+std::vector<SDL_GameController*> Input::ctrl;
+
 int Input::quit = 0;
-bool oneclick = true;
+
+void Input::init(){
+    SDL_Init(SDL_INIT_GAMECONTROLLER);
+    for (int i = 0; i < SDL_NumJoysticks(); ++i) {
+        if (SDL_IsGameController(i)) {
+            char *mapping;
+            SDL_Log("Index \'%i\' is a compatible controller, named \'%s\'", i, SDL_GameControllerNameForIndex(i));
+            ctrl.push_back(SDL_GameControllerOpen(i));
+            mapping = SDL_GameControllerMapping(ctrl[i]);
+            SDL_Log("Controller %i is mapped as \"%s\".", i, mapping);
+            SDL_free(mapping);
+        }
+    }
+}
 ///This method clears all the keys that are currently stored, and then updates them to what ever keys are being manipulated this frame
 void Input::update() {
 	downKeys.clear();//clear down keys
@@ -46,6 +61,21 @@ void Input::update() {
             break;
         }
 	}
+}
+
+void Input::shutdown(){
+
+    heldKeys.clear();
+    downKeys.clear();
+    upKeys.clear();
+
+    ctrlHeldKeys.clear();
+    ctrlDownKeys.clear();
+    ctrlUpKeys.clear();
+
+    for(auto &c : ctrl){
+        SDL_GameControllerClose(c);
+    }
 }
 
 ///This method registers a keydown event, and therefore takes an SDL event as input, to figure out which key has been pressed

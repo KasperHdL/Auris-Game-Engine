@@ -18,19 +18,6 @@ void Auris::startup(Game* game){
             exit(1);
         }
 
-    SDL_Init(SDL_INIT_GAMECONTROLLER);
-    for (int i = 0; i < SDL_NumJoysticks(); ++i) {
-        if (SDL_IsGameController(i)) {
-            char *mapping;
-            SDL_Log("Index \'%i\' is a compatible controller, named \'%s\'", i, SDL_GameControllerNameForIndex(i));
-            ctrl.push_back(SDL_GameControllerOpen(i));
-            mapping = SDL_GameControllerMapping(ctrl[i]);
-            SDL_Log("Controller %i is mapped as \"%s\".", i, mapping);
-            SDL_free(mapping);
-        }
-    }
-
-
     SDL_GL_SetAttribute(SDL_GL_CONTEXT_MAJOR_VERSION, 3);
     SDL_GL_SetAttribute(SDL_GL_CONTEXT_MINOR_VERSION, 1);
     SDL_GL_SetAttribute(SDL_GL_CONTEXT_PROFILE_MASK, SDL_GL_CONTEXT_PROFILE_CORE);
@@ -77,9 +64,8 @@ void Auris::startup(Game* game){
 
     sre->setLight(2, Light(LightType::Directional,{0,0,0},{1,1,1},{1,1,1},0));
 
-//    gameObjects.push_back(make_shared<Player>(world,vec2(10,10)));
-//    gameObjects.push_back(make_shared<Player>(world));
-//    gameObjects.push_back(make_shared<Wall>(world, vec2(30, 30)));
+//    INIT INPUT
+    Input::init();
 
 //    INIT GAME
     game->init();
@@ -95,9 +81,7 @@ void Auris::startup(Game* game){
 void Auris::shutdown(){
     game->shutdown();
 
-    for(auto &c : ctrl){
-        SDL_GameControllerClose(c);
-    }
+
 
     renderSystem.shutdown();
 
