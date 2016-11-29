@@ -29,6 +29,11 @@ public:
         scale = glm::vec2(1,1);
     }
 
+    Sprite(GameObject* gameObject, Material* material):Component(gameObject){
+        setMaterial(material);
+        scale = glm::vec2(1,1);
+    }
+
     void setMaterial(Material* material){
         mesh = material->mesh;
         texture = material->texture;

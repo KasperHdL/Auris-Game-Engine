@@ -4,7 +4,7 @@
 #include "SRE/imgui_sre.hpp"
 #include <glm/gtc/random.hpp>
 #include "Auris/Systems/ParticleSystem.hpp"
-#include "Auris/Utility/Resource.hpp"
+#include "Auris/Utilities/Resource.hpp"
 
 namespace Auris{
 class ParticleSystemShowcase : public Showcase{

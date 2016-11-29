@@ -1,8 +1,8 @@
 #pragma once
 
+namespace Auris{
 class GameObject;
 
-namespace Auris{
 class Component {
     public:
         Component(GameObject *gameObject):gameObject(gameObject){};

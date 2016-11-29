@@ -9,7 +9,7 @@
 #include <SRE/Shader.hpp>
 #include <SRE/Texture.hpp>
 
-#include "Auris/Utility/Interpolation.hpp"
+#include "Auris/Utilities/Interpolation.hpp"
 
 namespace Auris{
 using namespace std;

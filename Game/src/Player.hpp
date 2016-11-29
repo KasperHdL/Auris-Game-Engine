@@ -10,35 +10,38 @@
 #include "Auris/GameObjects/Components/Material.hpp"
 
 #include "Auris/GameObjects/Components/SpriteSheet.hpp"
-#include "Auris/Utility/Resource.hpp"
-#include "Auris/Utility/BodyStandard.hpp"
+#include "Auris/Utilities/Resource.hpp"
+#include "Auris/Utilities/BodyStandard.hpp"
 
 #include "SRE/Texture.hpp"
 
 
 using namespace std;
+using namespace Auris;
 class Player : public GameObject{
     public:
     shared_ptr<Animation> anim;
+    SpriteSheet* spriteSheet;
 
     Player(vec2 position = vec2(0,0)):GameObject(){
         name = "Player";
 
-        SpriteSheet* ss = new SpriteSheet(SRE::Texture::createFromFile(Resource::getPath("MarioPacked.png").c_str(),false),Resource::getPath("MarioPacked.json"));
+        spriteSheet = new SpriteSheet(SRE::Texture::createFromFile(Resource::getPath("MarioPacked.png").c_str(),false),Resource::getPath("MarioPacked.json"));
 
-        sprite = ss->getSprite("mario_10",this);
+        sprite = spriteSheet->getSprite("mario_10",this);
 
         anim = RenderSystem::getAnim(this, 4.0f);
-        anim->setSheet(ss);
+        anim->setSheet(spriteSheet);
 
         b2CircleShape shape;
         shape.m_radius = (19 * Constants::PIXELS_TO_METERS);
-        body = Utility::BodyStandard::getDynamicBody(&shape, position);
+        body = Auris::Utilities::BodyStandard::getDynamicBody(&shape, position);
 
         enableCollisionEvents();
     }
 
     ~Player(){
+        delete spriteSheet;
     }
 
 	float force;

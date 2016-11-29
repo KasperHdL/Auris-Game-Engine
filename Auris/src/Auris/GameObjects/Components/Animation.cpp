@@ -1,5 +1,5 @@
 #include "Auris/GameObjects/Components/Animation.hpp"
-
+using namespace Auris;
 void Animation::setTexture(Texture* tex){
 	textures.push_back(tex);
 }

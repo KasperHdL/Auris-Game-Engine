@@ -1,5 +1,6 @@
 #include "Auris/Systems/RenderSystem.hpp"
 
+using namespace Auris;
 Pool<Sprite> RenderSystem::spritePool = Pool<Sprite>();
 vector<shared_ptr<Animation>> RenderSystem::animations;
 
@@ -24,6 +25,10 @@ void RenderSystem::update(float dt){
 
 Sprite* RenderSystem::getSprite(GameObject* gameObject){
     Sprite* s = new (RenderSystem::spritePool.create()) Sprite(gameObject);
+    return s;
+}
+Sprite* RenderSystem::getSprite(GameObject* gameObject, Material* material){
+    Sprite* s = new (RenderSystem::spritePool.create()) Sprite(gameObject, material);
     return s;
 }
 

@@ -23,8 +23,9 @@ class RenderSystem{
 
     void shutdown();
     void update(float dt);
-    
+
     static Sprite* getSprite(GameObject* gameObject);
+    static Sprite* getSprite(GameObject* gameObject, Material* material);
     static void deleteSprite(Sprite* sprite);
 	static shared_ptr<Animation> getAnim(GameObject* gameObject, float length);
     static void deleteAnim(shared_ptr<Animation> ani);

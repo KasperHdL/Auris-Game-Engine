@@ -1,5 +1,6 @@
-#include "Auris/Utility/MemoryLeakDetector.hpp"
+#include "Auris/Utilities/MemoryLeakDetector.hpp"
 
+using namespace Auris;
 MemoryLeakDetector::MemoryLeakDetector() {
 	#ifdef _WIN32 // Windows
 	//Total virt. mem.

@@ -26,8 +26,8 @@
 //Engine
 #include "Auris/Game.hpp"
 #include "Auris/GameObjects/GameObject.hpp"
-#include "Auris/Utility/MemoryLeakDetector.hpp"
-#include "Auris/Utility/Convert.hpp"
+#include "Auris/Utilities/MemoryLeakDetector.hpp"
+#include "Auris/Utilities/Convert.hpp"
 
 #include "Auris/Systems/Input.hpp"
 #include "Auris/Systems/RenderSystem.hpp"

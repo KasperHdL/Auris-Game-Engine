@@ -1,6 +1,7 @@
 #include "Auris/Systems/Input.hpp"
 #include <iostream>
 
+using namespace Auris;
 map<SDL_Scancode, bool> Input::heldKeys;
 map<SDL_Scancode, bool> Input::downKeys;
 map<SDL_Scancode, bool> Input::upKeys;

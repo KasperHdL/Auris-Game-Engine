@@ -2,6 +2,7 @@
 #include "Auris/GameObjects/GameObject.hpp"
 #include "Auris/Systems/RenderSystem.hpp"
 
+using namespace Auris;
 
 Sprite::~Sprite(){
 }

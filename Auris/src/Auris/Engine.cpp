@@ -3,8 +3,9 @@
 using namespace SRE;
 using namespace glm;
 using namespace std;
+using namespace Auris;
 
-DebugDraw debugDraw;
+Auris::DebugDraw debugDraw;
 
 Scene* Engine::currentScene;
 b2World* Engine::world;
@@ -82,6 +83,7 @@ void Engine::shutdown(){
     if(Engine::currentScene != nullptr)
         Engine::currentScene->gameObjects.clear();
 
+    delete collisionHandler;
     delete Engine::world;
     Engine::world = nullptr;
 
@@ -326,9 +328,6 @@ void Engine::HandleSDLEvents(){
 }
 
 void Engine::loadScene(Scene* scene) {
-    for (auto & el : RenderSystem::spritePool)
-        cout << "GameObjects that are drawn before unload: " << el.gameObject << endl;
-
     RenderSystem::animations.clear();
     if (currentScene != nullptr)
         currentScene->unload();
@@ -337,9 +336,6 @@ void Engine::loadScene(Scene* scene) {
     // Load new scene and init gameObjects
     scene->init();
     currentScene = scene;
-
-    for (auto & el : RenderSystem::spritePool)
-        cout << "GameObjects that are drawn after new init: " << el.gameObject << endl;
 
     for (auto & el : currentScene->gameObjects)
         el->Init();

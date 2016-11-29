@@ -3,8 +3,8 @@
 #include "Auris/GameObjects/GameObject.hpp"
 #include "Auris/GameObjects/Components/SpriteSheet.hpp"
 #include "Auris/Constants.hpp"
-#include "Auris/Utility/Resource.hpp"
-#include "Auris/Utility/BodyStandard.hpp"
+#include "Auris/Utilities/Resource.hpp"
+#include "Auris/Utilities/BodyStandard.hpp"
 
 using namespace Constants;
 
@@ -24,7 +24,7 @@ public:
         b2PolygonShape shape; 
         shape.SetAsBox(30.0f * PIXELS_TO_METERS, 30.0f * PIXELS_TO_METERS); 
 
-        body = Utility::BodyStandard::getStaticBody(&shape, position);
+        body = Auris::Utilities::BodyStandard::getStaticBody(&shape, position);
 
         enableCollisionEvents();
     }

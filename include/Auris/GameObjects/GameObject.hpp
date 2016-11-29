@@ -13,9 +13,9 @@
 using namespace glm;
 using namespace std;
 
+namespace Auris{
 class Sprite;
 
-namespace Auris{
 
 class GameObject{
 public:

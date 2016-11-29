@@ -5,7 +5,7 @@
 #include "SRE/Texture.hpp"
 
 #include "Auris/GameObjects/Components/Sprite.hpp"
-#include "Auris/Utility/picojson.h"
+#include "Auris/Utilities/picojson.h"
 #include "Auris/GameObjects/Components/Material.hpp"
 
 

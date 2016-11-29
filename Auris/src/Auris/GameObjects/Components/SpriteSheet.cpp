@@ -2,6 +2,7 @@
 #include "Auris/Systems/RenderSystem.hpp"
 #include <fstream>
 
+using namespace Auris;
 using namespace std;
 SpriteSheet::SpriteSheet(Texture* texture,string pathToJSON){
 
@@ -37,39 +38,43 @@ Material* SpriteSheet::findSprite(int x, int y, int width, int height, float anc
             glm::vec3{ offsetX, offsetY, 0 }, glm::vec3{ width + offsetX, height + offsetY, 0 }, glm::vec3{ offsetX, height + offsetY, 0 }
         });
 
-        // Normals are not used for 2D graphics
-        std::vector<glm::vec3> normals;
+    // Normals are not used for 2D graphics
+    std::vector<glm::vec3> normals;
 
-        // UVs containts the normalized texture coordinates.
-        float uvx1 = (float)x / SpriteSheet::texture->getWidth();
-        float uvy1 = (float)y / SpriteSheet::texture->getHeight();
-        float uvx2 = ((float)(x + width)) / SpriteSheet::texture->getWidth();
-        float uvy2 = ((float)(y + height)) / SpriteSheet::texture->getHeight();
+    // UVs containts the normalized texture coordinates.
+    float uvx1 = (float)x / SpriteSheet::texture->getWidth();
+    float uvy1 = (float)y / SpriteSheet::texture->getHeight();
+    float uvx2 = ((float)(x + width)) / SpriteSheet::texture->getWidth();
+    float uvy2 = ((float)(y + height)) / SpriteSheet::texture->getHeight();
 
-        std::vector<glm::vec2> uvs({
-            glm::vec2{ uvx2, uvy1 }, glm::vec2{ uvx2, uvy2 }, glm::vec2{ uvx1, uvy1 },
-            glm::vec2{ uvx1, uvy1 }, glm::vec2{ uvx2, uvy2 }, glm::vec2{ uvx1, uvy2 }
-        });
+    std::vector<glm::vec2> uvs({
+        glm::vec2{ uvx2, uvy1 }, glm::vec2{ uvx2, uvy2 }, glm::vec2{ uvx1, uvy1 },
+        glm::vec2{ uvx1, uvy1 }, glm::vec2{ uvx2, uvy2 }, glm::vec2{ uvx1, uvy2 }
+    });
 
-        Material* mat = new Material();
-        mat->mesh = new SRE::Mesh(vertices, normals, uvs);
-        //mat->mesh = Mesh::createCube();
-        mat->texture = SpriteSheet::texture;
+    Material* mat = new Material();
+    mat->mesh = new SRE::Mesh(vertices, normals, uvs);
+    //mat->mesh = Mesh::createCube();
+    mat->texture = SpriteSheet::texture;
 
-        //as of now only white (fixed!)
-        mat->color = glm::vec4(1,1,1,1);
+    //as of now only white (fixed!)
+    mat->color = glm::vec4(1,1,1,1);
 
-        return mat;
+    return mat;
 }
 
 SpriteSheet::~SpriteSheet(){
+
+    vector<std::string> v;
+    for(map<std::string,Material*>::iterator it = sprites.begin(); it != sprites.end(); ++it)
+        delete it->second;
+
     sprites.clear();
     delete texture;
 }
 
 Sprite* SpriteSheet::getSprite(string name,GameObject* parent){
-    auto s = RenderSystem::getSprite(parent);
-    s->setMaterial(sprites[name]);
+    auto s = RenderSystem::getSprite(parent, sprites[name]);
     return s;
 }
 

@@ -2,9 +2,10 @@
 #include "Auris/GameObjects/Components/Sprite.hpp"
 #include "Auris/Constants.hpp"
 #include "Auris/Engine.hpp"
-#include "Auris/Utility/Convert.hpp"
+#include "Auris/Utilities/Convert.hpp"
 #include "Auris/Systems/RenderSystem.hpp"
 
+using namespace Auris;
 
 GameObject::GameObject(){
 }
