@@ -11,7 +11,6 @@
 class SpriteSheet{
 
     public:
-        
         SpriteSheet(Texture* texture,std::string pathToJSON);
         ~SpriteSheet();
         Sprite* getSprite(std::string name, GameObject* parent);

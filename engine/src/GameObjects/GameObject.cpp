@@ -3,13 +3,16 @@
 #include "../Constants.hpp"
 #include "../Systems/RenderSystem.hpp"
 #include "../Utility/Convert.hpp"
+#include <Python.h>
 
 GameObject::GameObject(){
-    //body->SetUserData(nullptr);
+
 }
 
 GameObject::~GameObject(){
     RenderSystem::deleteSprite(sprite);
+    body->SetUserData(nullptr);
+    sprite = nullptr;
 }
 
 glm::mat4 GameObject::localTransform() {

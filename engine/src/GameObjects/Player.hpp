@@ -9,6 +9,7 @@
 #include <iostream>
 #include "../Systems/Input.hpp"
 #include "Components/Material.hpp"
+#include <iostream>
 
 #include "Components/SpriteSheet.hpp"
 
@@ -17,10 +18,12 @@ using namespace std;
 class Player : public GameObject{
     public:
 
+    SpriteSheet* ss;
+
     Player(b2World* world, vec2 position = vec2(0,0)):GameObject(){
         name = "Player";
 
-        SpriteSheet* ss = new SpriteSheet(SRE::Texture::createFromFile("data/MarioPacked.png",false),"data/MarioPacked.json");
+        ss = new SpriteSheet(SRE::Texture::createFromFile("data/MarioPacked.png",false),"data/MarioPacked.json");
 
         sprite = ss->getSprite("mario_10",this);
 
@@ -46,12 +49,15 @@ class Player : public GameObject{
 
         body = world->CreateBody(&bodyDef); 
         body->CreateFixture(&fixtureDef);
+    }
 
-        enableCollisionEvents();
+    ~Player() {
+        delete ss;
     }
 
 	float force;
 	Keys keys;
+
 	void Init() {
 		force = 10000.0f;
 	}
@@ -70,13 +76,5 @@ class Player : public GameObject{
 		if (Input::keyHeld(keys.getKey("right"))) {
 			body->ApplyForceToCenter(b2Vec2(force, 0), true);
 		}
-    }
-
-    void OnCollisionEnter(GameObject* other) {
-        cout << name << " hit " << other->name << endl;
-    }
-
-    void OnCollisionExit(GameObject* other) {
-        cout << name << " is longer colliding with " << other->name << endl;
     }
 };

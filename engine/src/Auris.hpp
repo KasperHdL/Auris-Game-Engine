@@ -16,6 +16,7 @@
 #include "Systems/RenderSystem.hpp"
 #include "Systems/ParticleSystem.hpp"
 #include "Utility/MemoryLeakDetector.hpp"
+#include "Systems/Scene.hpp"
 
 #include "Testing/Showcases/ShowcasePanel.hpp"
 #include "Testing/DebugDraw.hpp"
@@ -51,14 +52,15 @@ public:
 
     static b2World* world;
 
-    static void addGameObject(shared_ptr<GameObject> gameObject);
+    static Scene* currentScene;
+
+    static void loadScene(Scene* scene);
 
 private:
     Game* game;
 
     SDL_Window *window;
 
-    static vector<shared_ptr<GameObject>> gameObjects;
     RenderSystem renderSystem;
     ShowcasePanel showcasePanel;
 
@@ -75,9 +77,6 @@ private:
     int height;
  
     int quit;
-
-    void BeginContact(b2Contact* contact);
-    void EndContact(b2Contact* contact);
 
 	MemoryLeakDetector memLeakDet;
 

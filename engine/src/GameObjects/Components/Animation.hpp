@@ -21,6 +21,7 @@ public:
 
 	~Animation() {
 		textures.clear();
+        meshes.clear();
 	}
 	void setTexture(Texture* tex);
     void setSheet(SpriteSheet* spritesheet);

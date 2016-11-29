@@ -7,7 +7,7 @@ using namespace std;
 DebugDraw debugDraw;
 
 b2World* Auris::world;
-vector<shared_ptr<GameObject>> Auris::gameObjects;
+Scene* Auris::currentScene;
 
 void Auris::startup(Game* game){
     this->game = game;
@@ -45,7 +45,7 @@ void Auris::startup(Game* game){
     renderSystem.startup(64);
 
 
-
+    // Initialize Box2D physics
     world = new b2World(toB2(glm::vec2(0,0)));
     collisionHandler = new CollisionHandler;
     Auris::world->SetContactListener(collisionHandler);
@@ -53,19 +53,17 @@ void Auris::startup(Game* game){
     Auris::world->SetDebugDraw(&debugDraw);
     debugDraw.SetFlags(b2Draw::e_shapeBit);
 
+
+    // Initialize Simple Render Engine
     auto sre = SimpleRenderEngine::instance;
     sre->getCamera()->setWindowCoordinates();
     sre->setLight(2, Light(LightType::Directional,{0,0,0},{1,1,1},{1,1,1},0));
 
-//    gameObjects.push_back(make_shared<Player>(world,vec2(10,10)));
-//    gameObjects.push_back(make_shared<Player>(world));
-//    gameObjects.push_back(make_shared<Wall>(world, vec2(30, 30)));
-
-//    INIT GAME
+    // INIT GAME
     game->init();
 
     //Run init on all gameobjects
-    for(auto& el: Auris::gameObjects)
+    for(auto& el: Auris::currentScene->gameObjects)
             el->Init();
 
     run(window);
@@ -80,7 +78,7 @@ void Auris::shutdown(){
     delete Auris::world;
     Auris::world = nullptr;
 
-    Auris::gameObjects.clear();
+    Auris::currentScene->gameObjects.clear();
 
     // Close and destroy the window
     SDL_DestroyWindow(window);
@@ -219,16 +217,17 @@ void Auris::run(SDL_Window* window){
             ImGui::Text("Current Dt: %f - Max dt: %f",deltaTimeSec, max_deltaTime);
 
             ImGui::Separator();
-            ImGui::Text("Num GameObjects %zu", Auris::gameObjects.size());
+            ImGui::Text("Num GameObjects %zu", Auris::currentScene->gameObjects.size());
             ImGui::Text("Num of Sprites Allocated %d - Max %d", renderSystem.spritePool.count, max_renderSprites);
 
             ImGui::Separator();
 
             if(toggle_goInspector){
                 ImGui::Begin("GameObject Inspector");
+                ImGui::Text("Current scene: %s", Auris::currentScene->name.c_str());
                 if(ImGui::TreeNode("GameObjects")){
                     int i = 0;
-                    for(auto& el: Auris::gameObjects){
+                    for(auto& el: Auris::currentScene->gameObjects){
                         string name = el->name;
                         if(name == "") name = &"GO " [ i];
 
@@ -274,8 +273,9 @@ void Auris::run(SDL_Window* window){
             game->update(deltaTimeSec);
 
             // GAMEOBJECT UPDATE
-            for(auto& el: Auris::gameObjects)
+            for(auto& el: Auris::currentScene->gameObjects)
                 el->Update(deltaTimeSec);
+
             Auris::world->Step(deltaTimeSec, VELOCITY_ITERATIONS, POSITION_ITERATIONS);
 
             if(toggle_showcasePanel){
@@ -318,7 +318,31 @@ void Auris::HandleSDLEvents(){
     }
 }
 
-void Auris::addGameObject(shared_ptr<GameObject> gameObject){
-    Auris::gameObjects.push_back(gameObject);
-}
+void Auris::loadScene(Scene* scene) {
+    for (auto & el : RenderSystem::spritePool)
+        cout << "GameObjects that are drawn before unload: " << el.gameObject << endl;
 
+//    Clear current scene
+    RenderSystem::animations.clear();
+//    for (auto & el : RenderSystem::spritePool) {
+//        RenderSystem::deleteSprite(&el);
+//    }
+
+    if (currentScene != nullptr)
+        currentScene->unload();
+
+//    for (auto & el : RenderSystem::spritePool) {
+//        cout << "GameObjects that are drawn after unload: " << el.gameObject->name << endl;
+//        delete el.gameObject;
+//    }
+
+    // Load new scene and init gameObjects
+    scene->init();
+    currentScene = scene;
+
+    for (auto & el : RenderSystem::spritePool)
+        cout << "GameObjects that are drawn after new init: " << el.gameObject << endl;
+
+    for (auto & el : currentScene->gameObjects)
+        el->Init();
+}

@@ -1,14 +1,21 @@
 #pragma once
 
-#include "GameObjects/Player.hpp"
-#include "GameObjects/Wall.hpp"
-#include "Game.hpp"
+#include "../../engine/src/Auris.hpp"
+#include "../data/level1.hpp"
+#include "../data/level2.hpp"
 
 class DemoGame : public Game {
+    Keys keys;
+    Level1 level1;
+    Level2 level2;
+
+
     void init() {
-        Auris::addGameObject(make_shared<Player>(Auris::world,vec2(10,10)));
-        Auris::addGameObject(make_shared<Player>(Auris::world));
-        Auris::addGameObject(make_shared<Wall>(Auris::world,vec2(30,30)));
+        keys.setKey("space", SDL_SCANCODE_SPACE);
+
+        Auris::loadScene(&level1);
+        for (auto & el : RenderSystem::animations)
+            cout << "Animation after load: " << &el << endl;
     }
 
     void earlyUpdate(float dt){
@@ -20,7 +27,10 @@ class DemoGame : public Game {
     }
 
     void lateUpdate(float dt){
+        if (Input::keyDown(keys.getKey("space"))){
 
+            Auris::loadScene(&level2);
+        }
     }
 
     void shutdown(){

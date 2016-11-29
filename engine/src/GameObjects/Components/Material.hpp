@@ -19,4 +19,9 @@ class Material{
        sprite->texture = texture;
        sprite->color = color;
     }
+
+    ~Material() {
+        delete texture;
+        delete mesh;
+    }
 };

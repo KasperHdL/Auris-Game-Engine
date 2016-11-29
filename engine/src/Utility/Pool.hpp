@@ -59,7 +59,7 @@ public:
         int index = 0;
         for(;index <= capacity;index++){
             if(index == capacity){
-                std::cout << "Pool is completly occupied, returning nullptr" << std::endl;
+                std::cout << "Pool is completely occupied, returning nullptr" << std::endl;
                 return nullptr;
 
             }

@@ -3,8 +3,7 @@
 class GameObject;
 class Component {
     public:
-        Component(GameObject *gameObject):gameObject(gameObject){};
-        virtual ~Component(){};
+        Component(GameObject *gameObject):gameObject(gameObject){}
 
         GameObject* gameObject;
         friend class GameObject;

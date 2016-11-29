@@ -18,6 +18,9 @@ public:
     virtual void draw();
 
     ~Sprite(){
+        gameObject = nullptr;
+        delete mesh;
+        delete texture;
     }
 
     Sprite(GameObject* gameObject):Component(gameObject){

@@ -2,7 +2,6 @@
 
 #include "Auris.hpp"
 
-
 class Game {
 
 public:
