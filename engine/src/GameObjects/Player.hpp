@@ -67,9 +67,9 @@ class Player : public GameObject{
 		if (Input::keyHeld(keys.getKey("left"))) {
 			body->ApplyForceToCenter(b2Vec2(-force, 0), true);
 		}
-		if (Input::keyHeld(keys.getKey("right"))) {
-			body->ApplyForceToCenter(b2Vec2(force, 0), true);
-		}
+        if (Input::keyHeld(keys.getKey("right"))) {
+            body->ApplyForceToCenter(b2Vec2(force, 0), true);
+        }
     }
 
     void OnCollisionEnter(GameObject* other) {

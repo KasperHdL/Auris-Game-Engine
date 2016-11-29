@@ -18,6 +18,10 @@ public:
 	///A method to get the key that is currently being held down
 	static bool keyHeld(SDL_Scancode key);
 
+    static bool ctrlKeyDown(uint ctrlkey);
+    static bool ctrlKeyUp(uint ctrlkey);
+    static bool ctrlKeyHeld(uint ctrlkey);
+
     static int quit;
 private:
 	///A method to register a key being lifted up event
@@ -25,20 +29,20 @@ private:
 	///A method to register a key being pressed down event
 	static void keyDownEvent(const SDL_Event& event);
 
-    static void joyKeyUpEvent(const SDL_Event& event);
+    static void controllerKeyUpEvent(const SDL_Event& event);
 
-    static void joyKeyDownEvent(const SDL_Event& event);
+    static void controllerKeyDownEvent(const SDL_Event& event);
 
 	///A map to hold all keys that are currently being held
-	static map<SDL_Scancode, bool> heldKeys;
+    static map<SDL_Scancode, bool> heldKeys;
 	///A map to hold all keys that has been pressed down
-	static map<SDL_Scancode, bool> downKeys;
+    static map<SDL_Scancode, bool> downKeys;
 	///A map tp hold all keys that has been lifted up
-	static map<SDL_Scancode, bool> upKeys;
+    static map<SDL_Scancode, bool> upKeys;
 
-    static map <SDL_GameControllerButton, bool> joyHeldKeys;
-    static map <SDL_GameControllerButton, bool> joyDownKeys;
-    static map <SDL_GameControllerButton, bool> joyUpKeys;
+    static map <uint, bool> ctrlHeldKeys;
+    static map <uint, bool> ctrlDownKeys;
+    static map <uint, bool> ctrlUpKeys;
 
 };
 

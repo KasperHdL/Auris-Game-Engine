@@ -12,17 +12,23 @@ vector<shared_ptr<GameObject>> Auris::gameObjects;
 void Auris::startup(Game* game){
     this->game = game;
 
-    if (SDL_Init( SDL_INIT_VIDEO | SDL_INIT_JOYSTICK ) < 0) // Initialize SDL2
+    if (SDL_Init( SDL_INIT_VIDEO) < 0) // Initialize SDL2
         {
             fprintf(stderr, "Couldn't initialize SDL: %s\n", SDL_GetError());
             exit(1);
         }
-    printf("%i joysticks were found.\n\n", SDL_NumJoysticks());
 
-    SDL_Joystick *joystick;
-
-    SDL_JoystickEventState(SDL_ENABLE);
-    joystick = SDL_JoystickOpen(0);
+    SDL_Init(SDL_INIT_GAMECONTROLLER);
+    for (int i = 0; i < SDL_NumJoysticks(); ++i) {
+        if (SDL_IsGameController(i)) {
+            char *mapping;
+            SDL_Log("Index \'%i\' is a compatible controller, named \'%s\'", i, SDL_GameControllerNameForIndex(i));
+            ctrl.push_back(SDL_GameControllerOpen(i));
+            mapping = SDL_GameControllerMapping(ctrl[i]);
+            SDL_Log("Controller %i is mapped as \"%s\".", i, mapping);
+            SDL_free(mapping);
+        }
+    }
 
 
     SDL_GL_SetAttribute(SDL_GL_CONTEXT_MAJOR_VERSION, 3);
@@ -88,6 +94,10 @@ void Auris::startup(Game* game){
 
 void Auris::shutdown(){
     game->shutdown();
+
+    for(auto &c : ctrl){
+        SDL_GameControllerClose(c);
+    }
 
     renderSystem.shutdown();
 
