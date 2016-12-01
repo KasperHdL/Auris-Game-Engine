@@ -26,7 +26,7 @@ class Player : public GameObject{
     Player(vec2 position = vec2(0,0)):GameObject(){
         name = "Player";
 
-        spriteSheet = new SpriteSheet(SRE::Texture::createFromFile(Resource::getPath("MarioPacked.png").c_str(),false),Resource::getPath("MarioPacked.json"));
+        spriteSheet = new SpriteSheet(Resource::getPath("MarioPacked.json"));
 
         sprite = spriteSheet->getSprite("mario_10",this);
 

@@ -14,7 +14,7 @@ public:
     Wall(vec2 position = vec2(0,0)):GameObject() {
         name = "Wall";
 
-        SpriteSheet* ss = new SpriteSheet(SRE::Texture::createFromFile(Resource::getPath("MarioPacked.png").c_str(),false),Resource::getPath("MarioPacked.json"));
+        SpriteSheet* ss = new SpriteSheet(Resource::getPath("MarioPacked.json"));
 
         sprite = ss->getSprite("brick",this);
 

@@ -17,9 +17,8 @@ void Animation::setSheet(SpriteSheet* spritesheet){
 
 void Animation::makeSequence(SpriteSheet* spritesheet, string name){
     for(map<std::string,Material*>::iterator it = spritesheet->sprites.begin(); it != spritesheet->sprites.end(); ++it) {
-        cout << name << " : " << it->first << endl;
+        //cout << name << " : " << it->first << endl;
         if(!it->first.compare(0,name.size(),name)){
-            cout << "Ran" << endl;
         setTexture(it->second->texture);
         setMesh(it->second->mesh);
         }

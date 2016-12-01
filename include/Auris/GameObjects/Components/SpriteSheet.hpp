@@ -12,7 +12,7 @@
 namespace Auris{
 class SpriteSheet{
     public:
-        SpriteSheet(SRE::Texture* texture,std::string pathToJSON);
+        SpriteSheet(std::string pathToJSON);
         ~SpriteSheet();
         Sprite* getSprite(std::string name, GameObject* parent);
         std::map<std::string,Material*> sprites;
