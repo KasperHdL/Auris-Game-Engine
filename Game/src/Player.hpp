@@ -31,7 +31,7 @@ class Player : public GameObject{
         sprite = spriteSheet->getSprite("mario_10",this);
 
         anim = RenderSystem::getAnim(this, 4.0f);
-        anim->setSheet(spriteSheet);
+        anim->makeSequence(spriteSheet,"green_plant");
 
         b2CircleShape shape;
         shape.m_radius = (19 * Constants::PIXELS_TO_METERS);

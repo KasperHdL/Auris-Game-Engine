@@ -28,6 +28,7 @@ public:
 	}
 	void setTexture(Texture* tex);
     void setSheet(SpriteSheet* spritesheet);
+    void makeSequence(SpriteSheet* spritesheet, string name);
     void setMesh(Mesh* mesh);
 	void delLastTexture();
     void delLastMest();
