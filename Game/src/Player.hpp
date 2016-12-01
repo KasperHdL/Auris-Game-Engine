@@ -22,9 +22,9 @@ class Player : public GameObject{
     Player(vec2 position = vec2(0,0)):GameObject(){
         name = "Player";
 
-        SpriteSheet* ss = new SpriteSheet(SRE::Texture::createFromFile(Resource::getPath("MarioPacked.png").c_str(),false),Resource::getPath("MarioPacked.json"));
+        spriteSheet = new SpriteSheet(Resource::getPath("MarioPacked.json"));
 
-        sprite = ss->getSprite("mario_0",this);
+        sprite = spriteSheet->getSprite("mario_0",this);
 
         b2PolygonShape shape;
         shape.SetAsBox(10.0f * Constants::PIXELS_TO_METERS, 10.0f * Constants::PIXELS_TO_METERS);

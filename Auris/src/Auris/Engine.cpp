@@ -60,6 +60,8 @@ void Engine::startup(Game* game){
     sre->getCamera()->setWindowCoordinates();
     sre->setLight(2, Light(LightType::Directional,{0,0,0},{1,1,1},{1,1,1},0));
 
+    Input::init();
+
     // INIT GAME
     game->init();
 
@@ -77,7 +79,7 @@ void Engine::startup(Game* game){
 
 void Engine::shutdown(){
     game->shutdown();
-
+    Input::shutdown();
     renderSystem.shutdown();
 
     if(Engine::currentScene != nullptr)
@@ -139,7 +141,7 @@ void Engine::run(SDL_Window* window){
     bool toggle_showcasePanel = false;
     bool toggle_cameraControls = false;
 
-    while (quit == 0){
+    while (Input::quit == 0){
         LAST = NOW;
         NOW = SDL_GetPerformanceCounter();
 

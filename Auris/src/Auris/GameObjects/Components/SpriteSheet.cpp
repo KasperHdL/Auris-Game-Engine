@@ -1,12 +1,16 @@
 #include "Auris/GameObjects/Components/SpriteSheet.hpp"
 #include "Auris/Systems/RenderSystem.hpp"
 #include <fstream>
+#include <iostream>
+
+#include "Auris/Utilities/Resource.hpp"
 
 using namespace Auris;
 using namespace std;
-SpriteSheet::SpriteSheet(Texture* texture,string pathToJSON){
+SpriteSheet::SpriteSheet(string pathToJSON){
 
-    SpriteSheet::texture = texture;
+    //SpriteSheet::texture = texture;
+    bool invertY = true;
 
     picojson::value v;
     ifstream t(pathToJSON);
@@ -16,6 +20,18 @@ SpriteSheet::SpriteSheet(Texture* texture,string pathToJSON){
         cerr<<err<<endl;
     }
     picojson::array arr = v.get("frames").get<picojson::array>();
+    picojson::value::object meta = v.get("meta").get<picojson::value::object>();
+
+    for(auto & stuff : meta){
+        if(stuff.first=="image"){
+        SpriteSheet::texture = SRE::Texture::createFromFile(Resource::getPath(stuff.second.get<string>()).c_str(),false);
+        cout << stuff.second.get<string>()<< endl;
+        }
+        if(stuff.first=="invert-y"){
+            invertY = stuff.second.get<bool>();
+        }
+    }
+    //cout << meta.get("image").get<string>; << endl;
     for(auto & element : arr){
 
         int x = (int)element.get("frame").get("x").get<double>();
@@ -25,7 +41,11 @@ SpriteSheet::SpriteSheet(Texture* texture,string pathToJSON){
         float ax = (float)element.get("pivot").get("x").get<double>();
         float ay = (float)element.get("pivot").get("y").get<double>();
 
+        if(invertY){
         SpriteSheet::sprites[element.get("filename").get<std::string>()] = findSprite(x,texture->getHeight()-height-y,width,height,ax,ay);
+        }else{
+        SpriteSheet::sprites[element.get("filename").get<std::string>()] = findSprite(x,y,width,height,ax,ay);
+        }
     }
 }
 
