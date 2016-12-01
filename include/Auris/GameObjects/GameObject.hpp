@@ -7,15 +7,14 @@
 #include <memory>
 #include <vector>
 #include <SRE/SimpleRenderEngine.hpp>
-#include "Box2D/Box2D.h"
 
+#include "Box2D/Box2D.h"
 
 using namespace glm;
 using namespace std;
 
 namespace Auris{
 class Sprite;
-
 
 class GameObject{
 public:
