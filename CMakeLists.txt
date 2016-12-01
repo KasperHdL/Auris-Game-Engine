@@ -1,14 +1,11 @@
 cmake_minimum_required(VERSION 3.6)
-project(Auris CXX)
+project(AurisProject CXX)
 
 set(CMAKE_EXPORT_COMPILE_COMMANDS 1)
 set(CMAKE_BUILD_TYPE Debug)
 
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++14")
 set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} "${CMAKE_SOURCE_DIR}/cmake")
-   
-find_package(SDL2 REQUIRED)
-include_directories(${SDL2_INCLUDE_DIR})
 
 #########################################################
 # FIND OPENGL
@@ -25,30 +22,29 @@ ELSE (APPLE)
         find_package(GLEW REQUIRED)
     ELSE(UNIX)
         find_package(glew REQUIRED)
-        SET(EXTRA_LIBS pdh.lib)
+        SET(EXTRA_LIBS ${EXTRA_LIBS} pdh.lib)
     ENDIF(UNIX)
     include_directories(${GLEW_INCLUDE_DIR})
-    SET(EXTRA_LIBS ${OPENGL_LIBRARY} ${GLEW_LIBRARY})
+    SET(EXTRA_LIBS ${EXTRA_LIBS} ${OPENGL_LIBRARY} ${GLEW_LIBRARY})
 ENDIF (APPLE)
+ 
+find_package(SDL2 REQUIRED)
+include_directories(${SDL2_INCLUDE_DIR})
 
 find_package(SDL2_IMAGE REQUIRED)
 include_directories(${SDL2_IMAGE_INCLUDE_DIRS})
-include_directories(.)
 
 # Box2D
 find_package(Box2D REQUIRED)
 include_directories(${BOX2D_INCLUDE_DIR})
 
+#SRE
 find_package(SRE REQUIRED)
+include_directories(${SRE_INCLUDE_DIR})
 
-if (SRE_FOUND)
-    include_directories(${SRE_INCLUDE_DIR})
-ELSE (SRE_FOUND)
-    MESSAGE( STATUS "Failed to find Simple Render Engine")
-endif(SRE_FOUND)
+include_directories(include)
 
-include_directories(engine/src)
+SET(EXTRA_LIBS ${EXTRA_LIBS} ${SDL2_LIBRARY} ${SDL2_IMAGE_LIBRARY} ${BOX2D_LIBRARY} ${SRE_LIBRARY})
 
-add_subdirectory(engine)
-add_subdirectory(game)
-
+add_subdirectory(Auris)
+add_subdirectory(Game)

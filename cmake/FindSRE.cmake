@@ -45,12 +45,16 @@ ELSE(WIN32)
             NAMES
             libSRE.a
             PATHS
+            /usr/lib
+            /usr/local/lib
             ${SRE_LOCATION}/lib
             DOC "The libSRE.a library")
 
 ENDIF(WIN32)
 
+IF(SRE_LIBRARY)
 IF(SRE_INCLUDE_DIR)
     SET(SRE_FOUND "YES")
     MESSAGE(STATUS "Found SRE.")
 ENDIF(SRE_INCLUDE_DIR)
+ENDIF(SRE_LIBRARY)
