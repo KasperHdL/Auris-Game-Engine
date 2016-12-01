@@ -29,7 +29,7 @@ void Engine::startup(Game* game){
         SDL_WINDOW_OPENGL                  // flags - see below
     );
 
-    SDL_SetWindowTitle(window,"Gold Engine");
+    SDL_SetWindowTitle(window,"[Au]ris Engine");
     // Check that the window was successfully made
 
     if (window == NULL) {
