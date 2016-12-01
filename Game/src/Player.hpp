@@ -18,15 +18,25 @@ class Player : public GameObject{
     shared_ptr<Animation> anim;
     SpriteSheet* spriteSheet;
 
+    bool canJump;
+
     Player(vec2 position = vec2(0,0)):GameObject(){
         name = "Player";
 
+        SpriteSheet* ss = new SpriteSheet(SRE::Texture::createFromFile(Resource::getPath("MarioPacked.png").c_str(),false),Resource::getPath("MarioPacked.json"));
+
+        sprite = ss->getSprite("mario_0",this);
+
         b2PolygonShape shape;
-        shape.SetAsBox(30.0f * PIXELS_TO_METERS, 30.0f * PIXELS_TO_METERS);
+        shape.SetAsBox(10.0f * Constants::PIXELS_TO_METERS, 10.0f * Constants::PIXELS_TO_METERS);
 
         body = Auris::Utilities::BodyStandard::getDynamicBody(&shape, position);
 
-        enableCollisionEvents();
+        // Physics properties
+        setCollisionEvents(true);
+        setFixedRotation(true);
+        setGravity(3.0f);
+        setFriction(2.0f);
     }
 
     ~Player(){
@@ -35,32 +45,37 @@ class Player : public GameObject{
 
     float movementSpeed;
     float jumpHeight;
+    float maxSpeed;
 
 	Keys keys;
 
 	void Init() {
-        movementSpeed = 10000.0f;
-        jumpHeight = 10000.0f;
+        movementSpeed = 300.0f;
+        jumpHeight = 2000.0f;
+        maxSpeed = 50.0f;
 	}
 
     void Update(float dt){
-        anim->setSprite(sprite);
-		if (Input::keyHeld(keys.getKey("up"))) {
-            body->ApplyLinearImpulse(b2Vec2(0, jumpHeight), b2vec2(0, 0));
+        if (Input::keyHeld(keys.getKey("up")) & canJump) {
+            applyForce(up * jumpHeight, true);
+            canJump = false;
 		}
 		if (Input::keyHeld(keys.getKey("down"))) {
             // CROUCH;
 		}
 		if (Input::keyHeld(keys.getKey("left"))) {
-            body->ApplyForceToCenter(b2Vec2(-movementSpeed, 0), true);
+            if (getLinearVelocity()[0] > -maxSpeed)
+                applyForce(left * movementSpeed, true);
 		}
 		if (Input::keyHeld(keys.getKey("right"))) {
-            body->ApplyForceToCenter(b2Vec2(movementSpeed, 0), true);
+            if (getLinearVelocity()[0] < maxSpeed)
+                applyForce(right * movementSpeed, true);
 		}
     }
 
     void OnCollisionEnter(GameObject* other) {
-
+        if (other->name == "Wall")
+            canJump = true;
     }
 
     void OnCollisionExit(GameObject* other) {

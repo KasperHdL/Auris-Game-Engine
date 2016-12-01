@@ -3,6 +3,7 @@
 #include "glm/glm.hpp"
 #include "glm/gtx/euler_angles.hpp"
 #include "glm/gtc/matrix_transform.hpp"
+#include "Auris/Utilities/Convert.hpp"
 
 #include <memory>
 #include <vector>
@@ -17,6 +18,9 @@ namespace Auris{
 class Sprite;
 
 class GameObject{
+private:
+    b2Fixture* fixture;
+
 public:
 
     string name = "";
@@ -27,13 +31,69 @@ public:
 
     GameObject();
     ~GameObject();
-       
 
     glm::mat4 localTransform();
     glm::mat4 globalTransform();
 
-    void enableCollisionEvents(){
-        body->SetUserData(this);
+
+    // Box2D encapsulation
+
+    // Vectors
+    vec2 up = vec2(0, 1);
+    vec2 down = vec2(0, -1);
+    vec2 left = vec2(-1, 0);
+    vec2 right = vec2(1, 0);
+
+    // Setters
+    void setCollisionEvents(bool flag){
+        if (flag)
+            body->SetUserData(this);
+        else
+            body->SetUserData(nullptr);
+    }
+
+    void setGravity(float gravityScale) {
+        body->SetGravityScale(gravityScale);
+    }
+
+    void setFixedRotation(bool flag) {
+        body->SetFixedRotation(flag);
+    }
+
+    void setActive (bool flag) {
+        body->SetActive(flag);
+    }
+
+    void setFriction(float friction) {
+        fixture->SetFriction(friction);
+    }
+
+    void setDensity(float density) {
+        fixture->SetDensity(density);
+        body->ResetMassData();
+    }
+
+    void setRestitution(float restitution) {
+        fixture->SetRestitution(restitution);
+    }
+
+    void applyForce(vec2 force, bool impulse = false, bool awake = true) {
+        if (impulse)
+            body->ApplyLinearImpulseToCenter(Convert::toB2(force), awake);
+        else
+            body->ApplyForceToCenter(Convert::toB2(force), awake);
+    }
+
+    void applyForce(vec2 force, vec2 point, bool impulse = false,  bool awake = true){
+        if (impulse)
+            body->ApplyLinearImpulse(Convert::toB2(force), Convert::toB2(point), awake);
+        else
+            body->ApplyForce(Convert::toB2(force), Convert::toB2(point), awake);
+    }
+
+    // Getters
+    vec2 getLinearVelocity() {
+        return Convert::toGlm(body->GetLinearVelocity());
     }
 
     // Scriptable functions

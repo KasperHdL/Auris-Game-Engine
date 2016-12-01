@@ -8,6 +8,7 @@
 using namespace Auris;
 
 GameObject::GameObject(){
+    fixture = body->GetFixtureList();
 }
 
 GameObject::~GameObject(){
