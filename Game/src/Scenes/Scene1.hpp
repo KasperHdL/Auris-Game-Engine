@@ -11,8 +11,7 @@ public:
         name = "Scene 1";
  
         addGameObject(make_shared<Player>(vec2(10, 10)));
-        addGameObject(make_shared<Player>(vec2(20, 10)));
-        addGameObject(make_shared<Player>(vec2(30, 10)));
-        addGameObject(make_shared<Player>(vec2(40, 10)));
+        for (int i = 0; i < 200; i + 10)
+            addGameObject(make_shared<Wall>(vec2(0, i)));
     } 
 }; 

@@ -83,7 +83,6 @@ void Engine::shutdown(){
     if(Engine::currentScene != nullptr)
         Engine::currentScene->gameObjects.clear();
 
-    delete collisionHandler;
     delete Engine::world;
     Engine::world = nullptr;
 

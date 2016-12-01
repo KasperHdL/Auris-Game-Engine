@@ -39,7 +39,7 @@ namespace BodyStandard{
         fixtureDef.density = density; 
  
         b2Body* body;
-        body = Engine::world->CreateBody(&bodyDef); 
+        body = Engine::world->CreateBody(&bodyDef);
         body->CreateFixture(&fixtureDef);  
 
         return body;
