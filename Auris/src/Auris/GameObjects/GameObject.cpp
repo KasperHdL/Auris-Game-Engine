@@ -7,9 +7,7 @@
 
 using namespace Auris;
 
-GameObject::GameObject(){
-    fixture = body->GetFixtureList();
-}
+GameObject::GameObject(){}
 
 GameObject::~GameObject(){
     RenderSystem::deleteSprite(sprite);

@@ -10,7 +10,6 @@ using namespace Constants;
 
 class Wall : public GameObject{
 public:
-    shared_ptr<Animation> anim;
     Wall(vec2 position = vec2(0,0)):GameObject() {
         name = "Wall";    
 
@@ -21,13 +20,12 @@ public:
         b2PolygonShape shape; 
         shape.SetAsBox(30.0f * PIXELS_TO_METERS, 30.0f * PIXELS_TO_METERS); 
 
-        body = Auris::Utilities::BodyStandard::getStaticBody(&shape, position);
+        body = Auris::Utilities::BodyStandard::getStaticBody(&shape, position, 30.0f);
 
         setCollisionEvents(true);
     }
 
     ~Wall(){
-        RenderSystem::deleteAnim(anim);
     }
 
     void Update(float dt){

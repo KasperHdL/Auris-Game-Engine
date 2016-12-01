@@ -18,11 +18,7 @@ namespace Auris{
 class Sprite;
 
 class GameObject{
-private:
-    b2Fixture* fixture;
-
 public:
-
     string name = "";
     GameObject* parent = nullptr;
 
@@ -62,19 +58,6 @@ public:
 
     void setActive (bool flag) {
         body->SetActive(flag);
-    }
-
-    void setFriction(float friction) {
-        fixture->SetFriction(friction);
-    }
-
-    void setDensity(float density) {
-        fixture->SetDensity(density);
-        body->ResetMassData();
-    }
-
-    void setRestitution(float restitution) {
-        fixture->SetRestitution(restitution);
     }
 
     void applyForce(vec2 force, bool impulse = false, bool awake = true) {

@@ -15,7 +15,6 @@ using namespace std;
 using namespace Auris;
 class Player : public GameObject{
     public:
-    shared_ptr<Animation> anim;
     SpriteSheet* spriteSheet;
 
     bool canJump;
@@ -36,7 +35,6 @@ class Player : public GameObject{
         setCollisionEvents(true);
         setFixedRotation(true);
         setGravity(3.0f);
-        setFriction(2.0f);
     }
 
     ~Player(){
@@ -50,23 +48,26 @@ class Player : public GameObject{
 	Keys keys;
 
 	void Init() {
-        movementSpeed = 300.0f;
+        movementSpeed = 1000.0f;
         jumpHeight = 2000.0f;
-        maxSpeed = 50.0f;
+        maxSpeed = 40.0f;
 	}
 
     void Update(float dt){
-        if (Input::keyHeld(keys.getKey("up")) & canJump) {
+        if (Input::keyDown(keys.getKey("up")) & canJump) {
             applyForce(up * jumpHeight, true);
             canJump = false;
 		}
-		if (Input::keyHeld(keys.getKey("down"))) {
+
+        if (Input::keyHeld(keys.getKey("down"))) {
             // CROUCH;
 		}
-		if (Input::keyHeld(keys.getKey("left"))) {
+
+        if (Input::keyHeld(keys.getKey("left"))) {
             if (getLinearVelocity()[0] > -maxSpeed)
                 applyForce(left * movementSpeed, true);
 		}
+
 		if (Input::keyHeld(keys.getKey("right"))) {
             if (getLinearVelocity()[0] < maxSpeed)
                 applyForce(right * movementSpeed, true);
