@@ -70,6 +70,9 @@ class Player : public GameObject{
         if (Input::keyHeld(keys.getKey("right"))) {
             body->ApplyForceToCenter(b2Vec2(force, 0), true);
         }
+        if(Input::ctrlKeyDown(SDL_CONTROLLER_BUTTON_A)){
+            cout << "Konge" << endl;
+        }
     }
 
     void OnCollisionEnter(GameObject* other) {

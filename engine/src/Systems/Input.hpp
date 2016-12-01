@@ -5,11 +5,12 @@
 #include "SRE/imgui_sre.hpp"
 #include <vector>
 
+Class Game;
 using namespace std;
 class Input{
 public:
 
-    static void init();
+    static void init(Game* game);
 
 	///A method to update the keypresses
 	static void update();
@@ -52,6 +53,10 @@ private:
     static map <uint, bool> ctrlHeldKeys;
     static map <uint, bool> ctrlDownKeys;
     static map <uint, bool> ctrlUpKeys;
+
+    static void controllerAdded(const SDL_Event& event);
+
+    Game* game;
 
 };
 

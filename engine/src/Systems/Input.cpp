@@ -13,7 +13,8 @@ std::vector<SDL_GameController*> Input::ctrl;
 
 int Input::quit = 0;
 
-void Input::init(){
+void Input::init(Game* game){
+    Input::game = game;
     SDL_Init(SDL_INIT_GAMECONTROLLER);
     for (int i = 0; i < SDL_NumJoysticks(); ++i) {
         if (SDL_IsGameController(i)) {
@@ -53,6 +54,10 @@ void Input::update() {
 
             case SDL_CONTROLLERBUTTONUP:
                 controllerKeyUpEvent(e);
+            break;
+
+            case SDL_CONTROLLERDEVICEADDED:
+                controllerAdded(e);
             break;
 
         case SDL_QUIT:
@@ -121,6 +126,17 @@ bool Input::ctrlKeyUp(uint ctrlkey){
 }
 bool Input::ctrlKeyHeld(uint ctrlkey){
     return ctrlHeldKeys[ctrlkey];
+}
+
+void Input::controllerAdded(const SDL_Event &event){
+    if (SDL_IsGameController(event.cdevice.which)) {
+        char *mapping;
+        SDL_Log("Index \'%i\' is a compatible controller, named \'%s\'", event.cdevice.which, SDL_GameControllerNameForIndex(event.cdevice.which));
+        ctrl.push_back(SDL_GameControllerOpen(event.cdevice.which));
+        mapping = SDL_GameControllerMapping(ctrl[event.cdevice.which]);
+        SDL_Log("Controller %i is mapped as \"%s\".", event.cdevice.which, mapping);
+        SDL_free(mapping);
+    }
 }
 
 // KEYS CLASS
