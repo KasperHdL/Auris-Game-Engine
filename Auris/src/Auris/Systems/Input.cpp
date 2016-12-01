@@ -2,25 +2,86 @@
 #include <iostream>
 
 using namespace Auris;
+
 map<SDL_Scancode, bool> Input::heldKeys;
 map<SDL_Scancode, bool> Input::downKeys;
 map<SDL_Scancode, bool> Input::upKeys;
 
+map <uint, bool> Input::ctrlHeldKeys;
+map <uint, bool> Input::ctrlDownKeys;
+map <uint, bool> Input::ctrlUpKeys;
+
+std::vector<SDL_GameController*> Input::ctrl;
+
+int Input::quit = 0;
+
+void Input::init(){
+    SDL_Init(SDL_INIT_GAMECONTROLLER);
+    for (int i = 0; i < SDL_NumJoysticks(); ++i) {
+        if (SDL_IsGameController(i)) {
+            char *mapping;
+            SDL_Log("Index \'%i\' is a compatible controller, named \'%s\'", i, SDL_GameControllerNameForIndex(i));
+            ctrl.push_back(SDL_GameControllerOpen(i));
+            mapping = SDL_GameControllerMapping(ctrl[i]);
+            SDL_Log("Controller %i is mapped as \"%s\".", i, mapping);
+            SDL_free(mapping);
+        }
+    }
+}
 ///This method clears all the keys that are currently stored, and then updates them to what ever keys are being manipulated this frame
 void Input::update() {
 	downKeys.clear();//clear down keys
 	upKeys.clear();//clear up keys
+    ctrlDownKeys.clear();
+    ctrlUpKeys.clear();
 	SDL_Event e; ///An SDL event to figure out which keys are being manipulated
-	if (SDL_PollEvent(&e)) { //If there is an event
-		if (e.type == SDL_KEYDOWN) { //if this event is that a key is being pressed down
-			if (e.key.repeat == 0) { //if this key is not being held down
-				keyDownEvent(e); //register the event
-			}
-		}
-		else if (e.type == SDL_KEYUP) { //if this event is that a key is being lifted up
-			keyUpEvent(e); //register the event
-		}
+    while (SDL_PollEvent(&e)) { //If there is an event
+        ImGui_SRE_ProcessEvent(&e);
+        switch (e.type){
+
+            case SDL_KEYDOWN:
+            if (e.key.repeat == 0) { //if this key is not being held down
+                keyDownEvent(e); //register the event
+            }
+            break;
+
+            case SDL_KEYUP:
+                keyUpEvent(e); //register the event
+            break;
+
+            case SDL_CONTROLLERBUTTONDOWN:
+                controllerKeyDownEvent(e);
+            break;
+
+            case SDL_CONTROLLERBUTTONUP:
+                controllerKeyUpEvent(e);
+            break;
+
+            case SDL_CONTROLLERDEVICEADDED:
+                controllerAdded(e);
+            break;
+
+        case SDL_QUIT:
+            quit = 1;
+            default:
+            break;
+        }
 	}
+}
+
+void Input::shutdown(){
+
+    heldKeys.clear();
+    downKeys.clear();
+    upKeys.clear();
+
+    ctrlHeldKeys.clear();
+    ctrlDownKeys.clear();
+    ctrlUpKeys.clear();
+
+    for(auto &c : ctrl){
+        SDL_GameControllerClose(c);
+    }
 }
 
 ///This method registers a keydown event, and therefore takes an SDL event as input, to figure out which key has been pressed
@@ -31,8 +92,18 @@ void Input::keyDownEvent(const SDL_Event& event) {
 
 ///This method registers a keyup event, and therefore takes and SDL event as input, to figure out which key has been released
 void Input::keyUpEvent(const SDL_Event& event) {
+    heldKeys[event.key.keysym.scancode] = false; //Remove the key from held keys
 	upKeys[event.key.keysym.scancode] = true; //Save the key in up keys
-	heldKeys[event.key.keysym.scancode] = false; //Remove the key from held keys
+}
+
+void Input::controllerKeyDownEvent(const SDL_Event& event){
+    ctrlDownKeys[event.cbutton.button] = true;
+    ctrlHeldKeys[event.cbutton.button] = true;
+}
+
+void Input::controllerKeyUpEvent(const SDL_Event& event){
+    ctrlHeldKeys[event.cbutton.button] =false;
+    ctrlUpKeys[event.cbutton.button] = true;
 }
 
 ///This method returns true if the key being checked is currently being pressed down, otherwise false
@@ -48,6 +119,26 @@ bool Input::keyHeld(SDL_Scancode key) {
 	return heldKeys[key];
 }
 
+bool Input::ctrlKeyDown(uint ctrlkey){
+    return ctrlDownKeys[ctrlkey];
+}
+bool Input::ctrlKeyUp(uint ctrlkey){
+    return ctrlUpKeys[ctrlkey];
+}
+bool Input::ctrlKeyHeld(uint ctrlkey){
+    return ctrlHeldKeys[ctrlkey];
+}
+
+void Input::controllerAdded(const SDL_Event &event){
+    if (SDL_IsGameController(event.cdevice.which)) {
+        char *mapping;
+        SDL_Log("Index \'%i\' is a compatible controller, named \'%s\'", event.cdevice.which, SDL_GameControllerNameForIndex(event.cdevice.which));
+        ctrl.push_back(SDL_GameControllerOpen(event.cdevice.which));
+        mapping = SDL_GameControllerMapping(ctrl[event.cdevice.which]);
+        SDL_Log("Controller %i is mapped as \"%s\".", event.cdevice.which, mapping);
+        SDL_free(mapping);
+    }
+}
 
 // KEYS CLASS
 Keys::Keys() {
