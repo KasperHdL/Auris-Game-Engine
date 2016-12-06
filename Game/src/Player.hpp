@@ -15,21 +15,27 @@ using namespace std;
 using namespace Auris;
 class Player : public GameObject{
     public:
+    shared_ptr<Animation> anim;
     SpriteSheet* spriteSheet;
 
     bool canJump;
+    Sprite* upper;
 
     Player(vec2 position = vec2(0,0)):GameObject(){
         name = "Player";
 
-        spriteSheet = new SpriteSheet(Resource::getPath("MarioPacked.json"));
-
-        sprite = spriteSheet->getSprite("mario_0",this);
+        spriteSheet = new SpriteSheet(Resource::getPath("player.json"));
+        upper = spriteSheet->getSprite("upper_3", this);
+        anim = RenderSystem::getAnim(this, 1.0f);
+        anim->makeSequence(spriteSheet, "lower_run");
+        sprite = spriteSheet->getSprite("lower_run_3",this);
 
         b2PolygonShape shape;
         shape.SetAsBox(10.0f * Constants::PIXELS_TO_METERS, 10.0f * Constants::PIXELS_TO_METERS);
 
         body = Auris::Utilities::BodyStandard::getDynamicBody(&shape, position);
+
+        sprite->scale = vec2(2.0f, 2.0f);
 
         // Physics properties
         setCollisionEvents(true);
@@ -54,6 +60,7 @@ class Player : public GameObject{
 	}
 
     void Update(float dt){
+
         if (Input::keyDown(keys.getKey("up")) & canJump) {
             applyForce(up * jumpHeight, true);
             canJump = false;
@@ -64,11 +71,13 @@ class Player : public GameObject{
 		}
 
         if (Input::keyHeld(keys.getKey("left"))) {
+            anim->setSprite(sprite);
             if (getLinearVelocity()[0] > -maxSpeed)
                 applyForce(left * movementSpeed, true);
 		}
 
 		if (Input::keyHeld(keys.getKey("right"))) {
+            anim->setSprite(sprite);
             if (getLinearVelocity()[0] < maxSpeed)
                 applyForce(right * movementSpeed, true);
 		}

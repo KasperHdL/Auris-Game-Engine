@@ -34,7 +34,7 @@ public:
 
     // Box2D encapsulation
 
-    // Vectors
+    // Default direction vectors
     vec2 up = vec2(0, 1);
     vec2 down = vec2(0, -1);
     vec2 left = vec2(-1, 0);

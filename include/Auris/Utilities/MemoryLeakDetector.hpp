@@ -1,4 +1,6 @@
 #pragma once
+
+namespace Auris{
 #include <iostream>
 using namespace std;
 
@@ -26,7 +28,6 @@ static HANDLE self;
 #include "stdio.h"
 #include "string.h"
 
-namespace Auris{
 static unsigned long long lastTotalUser, lastTotalUserLow, lastTotalSys, lastTotalIdle;
 static clock_t lastCPU, lastSysCPU, lastUserCPU;
 static int numProcessors;
