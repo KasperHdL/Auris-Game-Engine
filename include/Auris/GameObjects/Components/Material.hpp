@@ -11,8 +11,6 @@ struct Material{
     SRE::Mesh* mesh;
 
     ~Material() {
-        delete texture;
-        delete mesh;
     }
 };
 }
