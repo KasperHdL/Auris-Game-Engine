@@ -8,7 +8,9 @@ void RenderSystem::startup(int reserve){
     RenderSystem::spritePool.initialize(reserve);
 }
 
-void RenderSystem::shutdown(){}
+void RenderSystem::shutdown(){
+    RenderSystem::animations.clear();
+}
 
 
 void RenderSystem::update(float dt){
@@ -34,7 +36,7 @@ Sprite* RenderSystem::getSprite(GameObject* gameObject, Material* material){
 
 shared_ptr<Animation> RenderSystem::getAnim(GameObject* gameObject, float length){
     shared_ptr<Animation> a = make_shared<Animation>(gameObject, length);
-    animations.push_back(a);
+    RenderSystem::animations.push_back(a);
     return a;
 }
 
@@ -43,11 +45,16 @@ void RenderSystem::deleteSprite(Sprite* sprite){
 }
 
 void RenderSystem::deleteAnim(shared_ptr<Animation> ani){
+    if(RenderSystem::animations.size() == 0){
+        std::cout << "No Animations to delete" << std::endl;
+        return;
+    }
+
     int index = 0;
     for (auto& el : RenderSystem::animations){
         if(ani == el)
             break;
         index++;
     }
-    animations.erase(animations.begin() + index);
+    RenderSystem::animations.erase(RenderSystem::animations.begin() + index);
 }

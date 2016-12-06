@@ -12,7 +12,7 @@ public:
  
         addGameObject(make_shared<Player>(vec2(10, 10)));
         addGameObject(make_shared<Player>(vec2(10, 20)));
-        addGameObject(make_shared<Player>(vec2(10, 30)));
+        addGameObject(make_shared<Wall>(vec2(10, 30)));
         addGameObject(make_shared<Player>(vec2(10, 40)));
     } 
 }; 

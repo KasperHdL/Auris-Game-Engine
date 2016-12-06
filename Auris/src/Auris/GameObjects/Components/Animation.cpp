@@ -9,6 +9,8 @@ void Animation::setMesh(Mesh *mesh){
 }
 
 void Animation::setSheet(SpriteSheet* spritesheet){
+    meshes.clear();
+    textures.clear();
 
     vector<std::string> v;
     for(map<std::string,Material*>::iterator it = spritesheet->sprites.begin(); it != spritesheet->sprites.end(); ++it) {

@@ -24,8 +24,9 @@ SpriteSheet::SpriteSheet(Texture* texture,string pathToJSON){
         int height = (int)element.get("frame").get("h").get<double>();
         float ax = (float)element.get("pivot").get("x").get<double>();
         float ay = (float)element.get("pivot").get("y").get<double>();
+        string name = element.get("filename").get<std::string>();
 
-        SpriteSheet::sprites[element.get("filename").get<std::string>()] = findSprite(x,texture->getHeight()-height-y,width,height,ax,ay);
+        SpriteSheet::sprites[name] = findSprite(x,texture->getHeight()-height-y,width,height,ax,ay);
     }
 }
 
@@ -66,11 +67,14 @@ Material* SpriteSheet::findSprite(int x, int y, int width, int height, float anc
 SpriteSheet::~SpriteSheet(){
 
     vector<std::string> v;
-    for(map<std::string,Material*>::iterator it = sprites.begin(); it != sprites.end(); ++it)
+    for(map<std::string,Material*>::iterator it = sprites.begin(); it != sprites.end(); ++it){
         delete it->second;
+        it->second = nullptr;
+    }
 
     sprites.clear();
     delete texture;
+    texture = nullptr;
 }
 
 Sprite* SpriteSheet::getSprite(string name,GameObject* parent){

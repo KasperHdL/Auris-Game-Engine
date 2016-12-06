@@ -16,6 +16,7 @@ public:
     }
 
     void unload() {
+
         gameObjects.clear();
     }
 

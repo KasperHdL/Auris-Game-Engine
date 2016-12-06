@@ -15,8 +15,6 @@ class DemoGame : public Auris::Game {
         keys.setKey("space", SDL_SCANCODE_SPACE);
 
         Auris::Engine::loadScene(&scene1);
-        for (auto & el : Auris::RenderSystem::animations)
-            cout << "Animation after load: " << &el << endl;
     }
 
     void earlyUpdate(float dt){
