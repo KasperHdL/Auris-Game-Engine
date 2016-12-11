@@ -12,9 +12,6 @@ void RenderSystem::shutdown(){}
 
 
 void RenderSystem::update(float dt){
-	for (auto& el : RenderSystem::animations)
-		el->updateAnim(dt);
-
     for(int i = 0; i < RenderSystem::spritePool.capacity;i++){
         Sprite* s = RenderSystem::spritePool[i];
         if(s != nullptr)
