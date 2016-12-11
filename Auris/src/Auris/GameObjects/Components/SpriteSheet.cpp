@@ -42,14 +42,14 @@ SpriteSheet::SpriteSheet(string pathToJSON){
         float ay = (float)element.get("pivot").get("y").get<double>();
 
 //        if(invertY){
-        SpriteSheet::sprites[element.get("filename").get<std::string>()] = findSprite(x,texture->getHeight()-height-y,width,height,ax,ay);
+        SpriteSheet::sprites[element.get("filename").get<std::string>()] = saveMaterial(x,texture->getHeight()-height-y,width,height,ax,ay);
 //        }else{
 //        SpriteSheet::sprites[element.get("filename").get<std::string>()] = findSprite(x,y,width,height,ax,ay);
 //        }
     }
 }
 
-Material* SpriteSheet::findSprite(int x, int y, int width, int height, float anchorX, float anchorY){
+Material* SpriteSheet::saveMaterial(int x, int y, int width, int height, float anchorX, float anchorY){
     float offsetX = (float)width*anchorX;
     float offsetY = (float)height*anchorY;
 
