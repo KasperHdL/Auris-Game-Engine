@@ -8,8 +8,20 @@ DemoGame game;
 
 int main(int argc, char** argv) {
     // Use windows coordinates in this example (lower left corner is (0,0), upper right corner is (width, height)
-    float width = argv.length() > 0 ? argv[0][0] : 1920;
-    float height = argv.length() > 0 ? argv[0][1] : 1080;
+    float width = 1280;
+    float height = 720;
+
+    if (argc > 1) {
+        if ((string)argv[1] == "2") {
+            width *= 2;
+            height *= 2;
+        }
+
+        if ((string)argv[1] == "3") {
+            width *= 3;
+            height *= 3;
+        }
+    }
 
     Engine engine(width, height);
     engine.startup(&game);
