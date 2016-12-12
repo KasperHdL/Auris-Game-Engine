@@ -56,7 +56,7 @@ class Player : public GameObject{
 	void Init() {
         movementSpeed = 1000.0f;
         jumpHeight = 2000.0f;
-        maxSpeed = 40.0f;
+        maxSpeed = 30.0f;
 	}
 
     void Update(float dt){
