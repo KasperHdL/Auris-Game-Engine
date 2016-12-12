@@ -14,8 +14,8 @@ int main(int argc, char** argv) {
     float screenWidth = mode->w;
     float screenHeight = mode->h;
 
-    float width = 1920;
-    float height = 1080;
+    float width = 1280;
+    float height = 720;
 
     Engine engine(width, height);
     engine.startup(&game);
