@@ -1,8 +1,5 @@
 #pragma once
-
-namespace Auris{
 #include <iostream>
-using namespace std;
 
 #ifdef _WIN32 // Windows
 #define NOMINMAX
@@ -11,13 +8,6 @@ using namespace std;
 #include <Psapi.h>
 #include <tchar.h>
 #include <Pdh.h>
-
-static PDH_HQUERY cpuQuery;
-static PDH_HCOUNTER cpuTotal;
-static ULARGE_INTEGER lastCPU, lastSysCPU, lastUserCPU;
-static int numProcessors;
-static HANDLE self;
-
 
 #elif __linux__ // Linux
 #include "sys/types.h"
@@ -28,9 +18,6 @@ static HANDLE self;
 #include "stdio.h"
 #include "string.h"
 
-static unsigned long long lastTotalUser, lastTotalUserLow, lastTotalSys, lastTotalIdle;
-static clock_t lastCPU, lastSysCPU, lastUserCPU;
-static int numProcessors;
 
 #elif __APPLE__ // MAC OS X
 #include <mach/mach.h>
@@ -43,6 +30,28 @@ static int numProcessors;
 
 #else
 cout << "Error: Unsupported OS" << endl;
+#endif
+
+
+namespace Auris{
+using namespace std;
+
+
+
+#ifdef _WIN32 // Windows
+
+static PDH_HQUERY cpuQuery;
+static PDH_HCOUNTER cpuTotal;
+static ULARGE_INTEGER lastCPU, lastSysCPU, lastUserCPU;
+static int numProcessors;
+static HANDLE self;
+
+#elif __linux__ // Linux
+
+static unsigned long long lastTotalUser, lastTotalUserLow, lastTotalSys, lastTotalIdle;
+static clock_t lastCPU, lastSysCPU, lastUserCPU;
+static int numProcessors;
+
 #endif
 
 static float MB_DIVIDER = 1024 * 1024;
