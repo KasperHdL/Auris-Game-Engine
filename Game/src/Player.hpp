@@ -10,6 +10,7 @@
 #include "Auris/GameObjects/Components/SpriteSheet.hpp"
 #include "Auris/Utilities/Resource.hpp"
 #include "Auris/Utilities/BodyStandard.hpp"
+#include "Auris/Utilities/AudioPlayer.hpp"
 
 using namespace std;
 using namespace Auris;
@@ -17,9 +18,11 @@ class Player : public GameObject{
     public:
     shared_ptr<Animation> anim;
     SpriteSheet* spriteSheet;
+    Sprite* upper;
+    AudioPlayer* audioPlayer;
 
     bool canJump;
-    Sprite* upper;
+    char* shotPath = "../data/pistolShot.wav";
 
     Player(vec2 position = vec2(0,0)):GameObject(){
         name = "Player";
@@ -82,6 +85,10 @@ class Player : public GameObject{
             if (getLinearVelocity()[0] < maxSpeed)
                 applyForce(right * movementSpeed, true);
 		}
+
+        if(Input::keyDown(SDL_SCANCODE_SPACE)){
+            audioPlayer->playSound(shotPath);
+        }
     }
 
     void OnCollisionEnter(GameObject* other) {

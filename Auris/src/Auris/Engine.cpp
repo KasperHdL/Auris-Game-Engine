@@ -38,7 +38,6 @@ void Engine::startup(Game* game){
         exit(1);
     }
 
-
     SRE::SimpleRenderEngine r{window};
 
     ImGui_SRE_Init(window);
