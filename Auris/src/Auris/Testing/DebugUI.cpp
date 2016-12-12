@@ -142,6 +142,8 @@ void DebugUI::update(float dt){
         arrIndex++;
         if(arrIndex >= arrSize)
             arrIndex = 0;
+
+        e->game->debugDraw();
     }
 
 }
