@@ -72,13 +72,13 @@ class Player : public GameObject{
 		}
 
         if (Input::keyHeld(keys.getKey("left"))) {
-            anim->setSprite(sprite);
+            anim->run(sprite, dt);
             if (getLinearVelocity()[0] > -maxSpeed)
                 applyForce(left * movementSpeed, true);
 		}
 
 		if (Input::keyHeld(keys.getKey("right"))) {
-            anim->setSprite(sprite);
+            anim->run(sprite, dt);
             if (getLinearVelocity()[0] < maxSpeed)
                 applyForce(right * movementSpeed, true);
 		}
