@@ -22,10 +22,16 @@ public:
 	std::vector<Texture*> textures;
     std::vector<Mesh*> meshes;
 
-	~Animation() {
+    ~Animation() {
+        for(auto& el : textures)
+            delete el;
+
+        for(auto& el : meshes)
+            delete el;
+
 		textures.clear();
         meshes.clear();
-	}
+    }
 	void setTexture(Texture* tex);
     void setSheet(SpriteSheet* spritesheet);
     void makeSequence(SpriteSheet* spritesheet, string name);

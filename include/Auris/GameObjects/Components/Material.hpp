@@ -5,12 +5,15 @@
 #include "glm/glm.hpp"
 
 namespace Auris{
-struct Material{
+class Material{
+public:
     SRE::Texture* texture;
     glm::vec4 color;
     SRE::Mesh* mesh;
 
     ~Material() {
+        delete mesh;
+        mesh = nullptr;
     }
 };
 }

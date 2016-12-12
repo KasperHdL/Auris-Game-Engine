@@ -48,9 +48,11 @@ void Engine::startup(Game* game){
 
 
     world = new b2World(Convert::toB2(glm::vec2(0,0)));
+
     collisionHandler = new CollisionHandler;
     Engine::world->SetContactListener(collisionHandler);
 
+    //@TODO debug stuff!
     Engine::world->SetDebugDraw(&debugDraw);
     debugDraw.SetFlags(b2Draw::e_shapeBit);
 
@@ -80,13 +82,16 @@ void Engine::startup(Game* game){
 void Engine::shutdown(){
     game->shutdown();
     Input::shutdown();
-    renderSystem.shutdown();
 
     if(Engine::currentScene != nullptr)
         Engine::currentScene->gameObjects.clear();
 
     delete Engine::world;
     Engine::world = nullptr;
+    //delete collisionHandler;
+
+    renderSystem.shutdown();
+
 
 
     // Close and destroy the window
@@ -333,13 +338,12 @@ void Engine::HandleSDLEvents(){
 }
 
 void Engine::loadScene(Scene* scene) {
-    RenderSystem::animations.clear();
     if (currentScene != nullptr)
         currentScene->unload();
 
 
     // Load new scene and init gameObjects
-    scene->init();
+     scene->init();
     currentScene = scene;
 
     for (auto & el : currentScene->gameObjects)

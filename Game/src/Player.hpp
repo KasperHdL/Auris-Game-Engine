@@ -44,6 +44,7 @@ class Player : public GameObject{
     }
 
     ~Player(){
+        RenderSystem::deleteAnim(anim);
         delete spriteSheet;
     }
 

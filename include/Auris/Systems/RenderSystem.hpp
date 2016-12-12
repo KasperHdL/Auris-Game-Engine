@@ -11,11 +11,11 @@
 namespace Auris{
 using namespace std;
 class RenderSystem{
-    public:
 
+public:
     static Pool<Sprite> spritePool;
     static vector<shared_ptr<Animation>> animations;
-    
+
     RenderSystem(){}
     ~RenderSystem(){}
 
