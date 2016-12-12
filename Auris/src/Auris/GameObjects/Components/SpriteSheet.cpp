@@ -53,6 +53,9 @@ Material* SpriteSheet::saveMaterial(int x, int y, int width, int height, float a
     float offsetX = (float)width*anchorX;
     float offsetY = (float)height*anchorY;
 
+    //cout << anchorX << " : " << anchorY << endl;
+    //cout << offsetX << " : " << offsetY << endl;
+
     std::vector<glm::vec3> vertices({
             glm::vec3{ width + offsetX, offsetY, 0 }, glm::vec3{ width + offsetX, height + offsetY, 0 },glm::vec3{ offsetX, offsetY, 0 },
             glm::vec3{ offsetX, offsetY, 0 }, glm::vec3{ width + offsetX, height + offsetY, 0 }, glm::vec3{ offsetX, height + offsetY, 0 }
