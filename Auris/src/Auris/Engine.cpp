@@ -58,9 +58,12 @@ void Engine::startup(Game* game){
 
 
     // Initialize Simple Render Engine
-    auto sre = SimpleRenderEngine::instance;
-    sre->getCamera()->setWindowCoordinates();
-    sre->setLight(2, Light(LightType::Directional,{0,0,0},{1,1,1},{1,1,1},0));
+
+    //nisse->setRotation(-3.14);
+    //nisse->moveCamera(vec2(400,0));
+    //nisse->moveCamera(vec2(400,0));
+    //auto sre = SimpleRenderEngine::instance;
+    //sre->getCamera()->setWindowCoordinates();
 
     Input::init();
 
@@ -147,6 +150,8 @@ void Engine::run(SDL_Window* window){
     bool toggle_showcasePanel = false;
     bool toggle_cameraControls = false;
 
+    Auris::Camera* nisse = new Auris::Camera(width,height);
+
     while (Input::quit == 0){
         LAST = NOW;
         NOW = SDL_GetPerformanceCounter();
@@ -156,6 +161,8 @@ void Engine::run(SDL_Window* window){
         game->earlyUpdate(deltaTimeSec);
 
         sre->clearScreen(vec4(0,0,0,1));
+
+        nisse->rotateCamera(0.1f);
 
         Input::update();
         HandleSDLEvents();

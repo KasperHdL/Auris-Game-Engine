@@ -27,9 +27,6 @@ SpriteSheet::SpriteSheet(string pathToJSON){
         SpriteSheet::texture = SRE::Texture::createFromFile(Resource::getPath(stuff.second.get<string>()).c_str(),false);
         cout << stuff.second.get<string>()<< endl;
         }
-        if(stuff.first=="invert-y"){
-            invertY = stuff.second.get<bool>();
-        }
     }
     //cout << meta.get("image").get<string>; << endl;
     for(auto & element : arr){
@@ -41,12 +38,8 @@ SpriteSheet::SpriteSheet(string pathToJSON){
         float ax = (float)element.get("pivot").get("x").get<double>();
         float ay = (float)element.get("pivot").get("y").get<double>();
         string name = element.get("filename").get<std::string>();
-
-//        if(invertY){
+        cout << name << endl;
         SpriteSheet::sprites[element.get("filename").get<std::string>()] = saveMaterial(x,texture->getHeight()-height-y,width,height,ax,ay);
-//        }else{
-//        SpriteSheet::sprites[element.get("filename").get<std::string>()] = findSprite(x,y,width,height,ax,ay);
-//        }
     }
 }
 
@@ -54,7 +47,7 @@ Material* SpriteSheet::saveMaterial(int x, int y, int width, int height, float a
     float offsetX = (float)width*anchorX;
     float offsetY = (float)height*anchorY;
 
-    //cout << anchorX << " : " << anchorY << endl;
+    cout << anchorX << " : " << anchorY << endl;
     //cout << offsetX << " : " << offsetY << endl;
 
     std::vector<glm::vec3> vertices({
