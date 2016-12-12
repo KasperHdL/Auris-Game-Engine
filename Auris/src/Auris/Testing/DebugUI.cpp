@@ -52,11 +52,6 @@ void DebugUI::update(float dt){
         drawDebug = !drawDebug;
     }
 
-
-    if (Input::keyDown(keys.getKey("quit"))) {
-        this->e->quit = 1;
-    }
-
     if(Input::keyDown(keys.getKey("debug"))){
         debug = !debug;
 
