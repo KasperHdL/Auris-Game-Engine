@@ -121,6 +121,7 @@ void Engine::run(SDL_Window* window){
     keys.setKey("pause", SDL_SCANCODE_F3);
     keys.setKey("stepOne", SDL_SCANCODE_F4);
     keys.setKey("playOnHold", SDL_SCANCODE_F5);
+    keys.setKey("drawDebug", SDL_SCANCODE_F6);
 
     keys.setKey("arrow_up", SDL_SCANCODE_UP);
     keys.setKey("arrow_down", SDL_SCANCODE_DOWN);
@@ -182,6 +183,10 @@ void Engine::run(SDL_Window* window){
             pause = true;
         }
 
+        if(Input::keyDown(keys.getKey("drawDebug"))){
+            drawDebug = !drawDebug;
+        }
+
         if(debug){
             
             ImGui_SRE_NewFrame(window);
@@ -196,6 +201,7 @@ void Engine::run(SDL_Window* window){
             ImGui::SameLine();
             ImGui::Text("Play on Hold(F5)");
 //          ImGui::Checkbox("Toggle Camera Controls(Arrow Keys)",&toggle_cameraControls);
+            ImGui::Checkbox("Debug draw(F6)", &drawDebug);
 
             ImGui::Separator();
             ImGui::Checkbox("Toggle GO Inspector",&toggle_goInspector);
@@ -273,12 +279,9 @@ void Engine::run(SDL_Window* window){
                 ImGui::End();
             }
 
-
-
             arrIndex++;
             if(arrIndex >= arrSize)
                 arrIndex = 0;
-
         }
 
         //UPDATE
@@ -295,7 +298,6 @@ void Engine::run(SDL_Window* window){
             if(toggle_showcasePanel){
                 showcasePanel.update(deltaTimeSec);
             }
-           
         }
 
         game->lateUpdate(deltaTimeSec);
@@ -309,7 +311,9 @@ void Engine::run(SDL_Window* window){
         if(debug)
             ImGui::Render();
 
-        //world->DrawDebugData();
+        if(drawDebug)
+            world->DrawDebugData();
+
         sre->swapWindow();
     }
 

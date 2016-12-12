@@ -8,13 +8,11 @@
 class DemoGame : public Auris::Game {
     Auris::Keys keys;
     Scene1 scene1;
-    Scene2 scene2;
 
 
     void init() {
-        keys.setKey("space", SDL_SCANCODE_SPACE);
-
         Auris::Engine::loadScene(&scene1);
+        Auris::Engine::world->SetGravity(b2Vec2(0, -9.8));
     }
 
     void earlyUpdate(float dt){
@@ -26,10 +24,7 @@ class DemoGame : public Auris::Game {
     }
 
     void lateUpdate(float dt){
-        if (Auris::Input::keyDown(keys.getKey("space"))){
 
-           Auris::Engine::loadScene(&scene2);
-        }
     }
 
     void shutdown(){

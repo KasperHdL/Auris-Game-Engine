@@ -75,6 +75,7 @@ private:
 
     bool debug = false;
     bool pause = false;
+    bool drawDebug = false;
 
     int width;
     int height;

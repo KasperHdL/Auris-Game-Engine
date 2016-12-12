@@ -1,20 +1,15 @@
 #pragma once
 
-#include "Auris/GameObjects/GameObject.hpp"
+#include "SRE/Texture.hpp"
 #include "Auris/GameObjects/Components/Sprite.hpp"
 #include "Auris/GameObjects/Components/Animation.hpp"
-
 #include "Auris/Systems/RenderSystem.hpp"
 #include "Auris/Constants.hpp"
 #include "Auris/Systems/Input.hpp"
 #include "Auris/GameObjects/Components/Material.hpp"
-
 #include "Auris/GameObjects/Components/SpriteSheet.hpp"
 #include "Auris/Utilities/Resource.hpp"
 #include "Auris/Utilities/BodyStandard.hpp"
-
-#include "SRE/Texture.hpp"
-
 
 using namespace std;
 using namespace Auris;
@@ -23,21 +18,29 @@ class Player : public GameObject{
     shared_ptr<Animation> anim;
     SpriteSheet* spriteSheet;
 
+    bool canJump;
+    Sprite* upper;
+
     Player(vec2 position = vec2(0,0)):GameObject(){
         name = "Player";
 
-        spriteSheet = new SpriteSheet(SRE::Texture::createFromFile(Resource::getPath("MarioPacked.png").c_str(),false),Resource::getPath("MarioPacked.json"));
+        spriteSheet = new SpriteSheet(Resource::getPath("player.json"));
+        upper = spriteSheet->getSprite("upper_3", this);
+        anim = RenderSystem::getAnim(this, 1.0f);
+        anim->makeSequence(spriteSheet, "lower_run");
+        sprite = spriteSheet->getSprite("lower_run_3",this);
 
-        sprite = spriteSheet->getSprite("mario_10",this);
+        b2PolygonShape shape;
+        shape.SetAsBox(10.0f * Constants::PIXELS_TO_METERS, 10.0f * Constants::PIXELS_TO_METERS);
 
-        anim = RenderSystem::getAnim(this, 4.0f);
-        anim->setSheet(spriteSheet);
-
-        b2CircleShape shape;
-        shape.m_radius = (19 * Constants::PIXELS_TO_METERS);
         body = Auris::Utilities::BodyStandard::getDynamicBody(&shape, position);
 
-        enableCollisionEvents();
+        sprite->scale = vec2(2.0f, 2.0f);
+
+        // Physics properties
+        setCollisionEvents(true);
+        setFixedRotation(true);
+        setGravity(3.0f);
     }
 
     ~Player(){
@@ -45,33 +48,48 @@ class Player : public GameObject{
         delete spriteSheet;
     }
 
-	float force;
+    float movementSpeed;
+    float jumpHeight;
+    float maxSpeed;
+
 	Keys keys;
+
 	void Init() {
-		force = 10000.0f;
+        movementSpeed = 1000.0f;
+        jumpHeight = 2000.0f;
+        maxSpeed = 30.0f;
 	}
 
     void Update(float dt){
-        anim->setSprite(sprite);
-		if (Input::keyHeld(keys.getKey("up"))) {
-			body->ApplyForceToCenter(b2Vec2(0, force), true);
+
+        if (Input::keyDown(keys.getKey("up")) & canJump) {
+            applyForce(up * jumpHeight, true);
+            canJump = false;
 		}
-		if (Input::keyHeld(keys.getKey("down"))) {
-			body->ApplyForceToCenter(b2Vec2(0, -force), true);
+
+        if (Input::keyHeld(keys.getKey("down"))) {
+            // CROUCH;
 		}
-		if (Input::keyHeld(keys.getKey("left"))) {
-			body->ApplyForceToCenter(b2Vec2(-force, 0), true);
+
+        if (Input::keyHeld(keys.getKey("left"))) {
+            anim->setSprite(sprite);
+            if (getLinearVelocity()[0] > -maxSpeed)
+                applyForce(left * movementSpeed, true);
 		}
+
 		if (Input::keyHeld(keys.getKey("right"))) {
-			body->ApplyForceToCenter(b2Vec2(force, 0), true);
+            anim->setSprite(sprite);
+            if (getLinearVelocity()[0] < maxSpeed)
+                applyForce(right * movementSpeed, true);
 		}
     }
 
     void OnCollisionEnter(GameObject* other) {
-        cout << name << " hit " << other->name << endl;
+        if (other->name == "Wall")
+            canJump = true;
     }
 
     void OnCollisionExit(GameObject* other) {
-        cout << name << " is longer colliding with " << other->name << endl;
+
     }
 };

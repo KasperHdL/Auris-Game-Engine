@@ -1,0 +1,3 @@
+/home/mdhedelund/Documents/Git/GameEngine/Game/CMakeFiles/rebuild_cache.dir
+/home/mdhedelund/Documents/Git/GameEngine/Game/CMakeFiles/edit_cache.dir
+/home/mdhedelund/Documents/Git/GameEngine/Game/CMakeFiles/Game.dir

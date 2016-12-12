@@ -9,13 +9,19 @@ void Animation::setMesh(Mesh *mesh){
 }
 
 void Animation::setSheet(SpriteSheet* spritesheet){
-    meshes.clear();
-    textures.clear();
-
-    vector<std::string> v;
     for(map<std::string,Material*>::iterator it = spritesheet->sprites.begin(); it != spritesheet->sprites.end(); ++it) {
         setTexture(it->second->texture);
         setMesh(it->second->mesh);
+    }
+}
+
+void Animation::makeSequence(SpriteSheet* spritesheet, string name){
+    for(map<std::string,Material*>::iterator it = spritesheet->sprites.begin(); it != spritesheet->sprites.end(); ++it) {
+        //cout << name << " : " << it->first << endl;
+        if(!it->first.compare(0,name.size(),name)){
+        setTexture(it->second->texture);
+        setMesh(it->second->mesh);
+        }
     }
 }
 
