@@ -7,10 +7,6 @@ map<SDL_Scancode, bool> Input::heldKeys;
 map<SDL_Scancode, bool> Input::downKeys;
 map<SDL_Scancode, bool> Input::upKeys;
 
-map <uint, bool> Input::ctrlHeldKeys;
-map <uint, bool> Input::ctrlDownKeys;
-map <uint, bool> Input::ctrlUpKeys;
-
 std::vector<SDL_GameController*> Input::ctrl;
 
 int Input::quit = 0;
@@ -32,8 +28,6 @@ void Input::init(){
 void Input::update() {
 	downKeys.clear();//clear down keys
 	upKeys.clear();//clear up keys
-    ctrlDownKeys.clear();
-    ctrlUpKeys.clear();
 	SDL_Event e; ///An SDL event to figure out which keys are being manipulated
     while (SDL_PollEvent(&e)) { //If there is an event
         ImGui_SRE_ProcessEvent(&e);
@@ -49,20 +43,14 @@ void Input::update() {
                 keyUpEvent(e); //register the event
             break;
 
-            case SDL_CONTROLLERBUTTONDOWN:
-                controllerKeyDownEvent(e);
-            break;
-
-            case SDL_CONTROLLERBUTTONUP:
-                controllerKeyUpEvent(e);
-            break;
-
             case SDL_CONTROLLERDEVICEADDED:
                 controllerAdded(e);
             break;
 
-        case SDL_QUIT:
+            case SDL_QUIT:
             quit = 1;
+            break;
+
             default:
             break;
         }
@@ -74,10 +62,6 @@ void Input::shutdown(){
     heldKeys.clear();
     downKeys.clear();
     upKeys.clear();
-
-    ctrlHeldKeys.clear();
-    ctrlDownKeys.clear();
-    ctrlUpKeys.clear();
 
     for(auto &c : ctrl){
         SDL_GameControllerClose(c);
@@ -96,16 +80,6 @@ void Input::keyUpEvent(const SDL_Event& event) {
 	upKeys[event.key.keysym.scancode] = true; //Save the key in up keys
 }
 
-void Input::controllerKeyDownEvent(const SDL_Event& event){
-    ctrlDownKeys[event.cbutton.button] = true;
-    ctrlHeldKeys[event.cbutton.button] = true;
-}
-
-void Input::controllerKeyUpEvent(const SDL_Event& event){
-    ctrlHeldKeys[event.cbutton.button] =false;
-    ctrlUpKeys[event.cbutton.button] = true;
-}
-
 ///This method returns true if the key being checked is currently being pressed down, otherwise false
 bool Input::keyDown(SDL_Scancode key) {
 	return downKeys[key];
@@ -117,16 +91,6 @@ bool Input::keyUp(SDL_Scancode key) {
 ///This method returns true if the key being checked is currently being held down, otherwise false
 bool Input::keyHeld(SDL_Scancode key) {
 	return heldKeys[key];
-}
-
-bool Input::ctrlKeyDown(uint ctrlkey){
-    return ctrlDownKeys[ctrlkey];
-}
-bool Input::ctrlKeyUp(uint ctrlkey){
-    return ctrlUpKeys[ctrlkey];
-}
-bool Input::ctrlKeyHeld(uint ctrlkey){
-    return ctrlHeldKeys[ctrlkey];
 }
 
 void Input::controllerAdded(const SDL_Event &event){

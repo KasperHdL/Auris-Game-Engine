@@ -162,10 +162,9 @@ void Engine::run(SDL_Window* window){
 
         sre->clearScreen(vec4(0,0,0,1));
 
-        nisse->rotateCamera(0.1f);
+        //nisse->rotateCamera(0.1f);
 
         Input::update();
-        HandleSDLEvents();
 
         if (Input::keyDown(keys.getKey("quit"))) {
 			quit = 1;
@@ -325,23 +324,6 @@ void Engine::run(SDL_Window* window){
     }
 
     shutdown();
-}
-
-void Engine::HandleSDLEvents(){
-    // message processing loop
-    SDL_Event event;
-    /* Poll for events */
-    while( SDL_PollEvent( &event ) ){
-        ImGui_SRE_ProcessEvent(&event);
-        
-        switch( event.type ){
-            case SDL_QUIT:
-                quit = 1;
-                break;
-            default:
-                break;
-        }   
-    }
 }
 
 void Engine::loadScene(Scene* scene) {

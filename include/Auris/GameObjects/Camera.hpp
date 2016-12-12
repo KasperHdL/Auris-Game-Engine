@@ -6,6 +6,14 @@ namespace Auris{
 class Camera{
 public:
 
+    //! The camera constructor which take in float to calculate the projection
+       /*!
+         \param right a float argument which is the width of the camera
+         \param top a float argument which is the height of the camera
+         \param near a float for the near clipping plane, its default is -1
+         \param far a float for the far clipping plane, its default is 1
+         \return void
+       */
     Camera(float right, float top, float near=-1, float far=1);
     ~Camera();
     void setPos(glm::vec2 poss);

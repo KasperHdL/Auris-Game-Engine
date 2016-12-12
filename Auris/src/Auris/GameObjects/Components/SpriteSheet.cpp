@@ -25,7 +25,7 @@ SpriteSheet::SpriteSheet(string pathToJSON){
     for(auto & stuff : meta){
         if(stuff.first=="image"){
         SpriteSheet::texture = SRE::Texture::createFromFile(Resource::getPath(stuff.second.get<string>()).c_str(),false);
-        cout << stuff.second.get<string>()<< endl;
+        //cout << stuff.second.get<string>()<< endl;
         }
     }
     //cout << meta.get("image").get<string>; << endl;
@@ -47,7 +47,7 @@ Material* SpriteSheet::saveMaterial(int x, int y, int width, int height, float a
     float offsetX = (float)width*anchorX;
     float offsetY = (float)height*anchorY;
 
-    cout << anchorX << " : " << anchorY << endl;
+    //cout << anchorX << " : " << anchorY << endl;
     //cout << offsetX << " : " << offsetY << endl;
 
     std::vector<glm::vec3> vertices({
