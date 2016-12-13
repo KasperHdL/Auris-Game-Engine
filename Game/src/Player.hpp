@@ -22,7 +22,6 @@ class Player : public GameObject{
     AudioPlayer* audioPlayer;
 
     bool canJump;
-    char* shotPath = "../data/pistolShot.wav";
 
     Player(vec2 position = vec2(0,0)):GameObject(){
         name = "Player";
@@ -87,7 +86,7 @@ class Player : public GameObject{
 		}
 
         if(Input::keyDown(SDL_SCANCODE_SPACE)){
-            audioPlayer->playSound(shotPath);
+//            audioPlayer->playSound(shotPath);
         }
     }
 
