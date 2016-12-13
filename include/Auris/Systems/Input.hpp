@@ -27,6 +27,7 @@ public:
     static int quit;
 
     static int getControllerButtonState(int controllerID, SDL_GameControllerButton button);
+    static int getControllerAxisState(int controllerID, SDL_GameControllerAxis axis);
 
 
 private:

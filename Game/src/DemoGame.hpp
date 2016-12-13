@@ -22,14 +22,10 @@ class DemoGame : public Auris::Game {
     void update(float dt){
 
         if(id1!=-1){
-            if(Input::getControllerButtonState(id1,SDL_CONTROLLER_BUTTON_A)){
-                cout << id1 << ": " << "X PRESSED" << endl;
-            }
+          cout << id1 << ": " << Input::getControllerAxisState(id1,SDL_CONTROLLER_AXIS_TRIGGERRIGHT) << endl;
         }
         if(id2!=-1){
-            if(Input::getControllerButtonState(id2,SDL_CONTROLLER_BUTTON_A)){
-                cout << id2 << ": " << "X PRESSED" << endl;
-            }
+            cout << id2 << ": " << Input::getControllerAxisState(id2,SDL_CONTROLLER_AXIS_TRIGGERRIGHT) << endl;
         }
 
     }

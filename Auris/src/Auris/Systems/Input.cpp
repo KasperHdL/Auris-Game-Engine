@@ -122,3 +122,7 @@ void Input::controllerRemoved(const SDL_Event& event){
 int Input::getControllerButtonState(int controllerID, SDL_GameControllerButton button){
     return SDL_GameControllerGetButton(SDL_GameControllerOpen(controllerID),button);
 }
+
+int Input::getControllerAxisState(int controllerID, SDL_GameControllerAxis axis){
+    return SDL_GameControllerGetAxis(SDL_GameControllerOpen(controllerID),axis);
+}
