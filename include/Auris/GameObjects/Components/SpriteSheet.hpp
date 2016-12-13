@@ -18,7 +18,7 @@ class SpriteSheet{
         std::map<std::string,Material*> sprites;
 
     private:
-        Material* findSprite(int x, int y, int width, int height, float anchorX, float anchorY);
+        Material* saveMaterial(int x, int y, int width, int height, float anchorX, float anchorY);
         SRE::Texture* texture;
         SRE::Texture* normalMap = nullptr;
 

@@ -19,36 +19,15 @@ class Animation
 {
 public:
 
-	std::vector<Texture*> textures;
-    std::vector<Mesh*> meshes;
+    std::vector<Material*> materials;
 
-    ~Animation() {
-        for(auto& el : textures)
-            delete el;
+    ~Animation();
+     Animation(GameObject* gameObject, float length);
 
-        for(auto& el : meshes)
-            delete el;
-
-		textures.clear();
-        meshes.clear();
-    }
-	void setTexture(Texture* tex);
+    void addMaterial(Material* mat);
     void setSheet(SpriteSheet* spritesheet);
     void makeSequence(SpriteSheet* spritesheet, string name);
-    void setMesh(Mesh* mesh);
-	void delLastTexture();
-    void delLastMest();
-	void updateAnim(float dt);
-    Texture* getSprite();
-    void setSprite(Sprite* sprite);
-
-	Animation(GameObject* gameObject, float length){
-		
-		this->length = length;
-		index = 0;
-		time = 0;
-
-	}
+    void run(Sprite* sprite, float dt);
 
 private:
 	float length;

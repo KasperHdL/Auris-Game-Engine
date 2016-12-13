@@ -27,6 +27,7 @@
 #include "Auris/GameObjects/GameObject.hpp"
 #include "Auris/Utilities/MemoryLeakDetector.hpp"
 #include "Auris/Utilities/Convert.hpp"
+#include "Auris/GameObjects/Camera.hpp"
 
 #include "Auris/Systems/Scene.hpp"
 #include "Auris/Systems/Input.hpp"
