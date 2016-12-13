@@ -74,6 +74,10 @@ public:
             body->ApplyForce(Convert::toB2(force), Convert::toB2(point), awake);
     }
 
+    void setTransform(vec2 position, float32 angle) {
+        body->SetTransform(Auris::Convert::toB2(position), angle);
+    }
+
     // Getters
     vec2 getLinearVelocity() {
         return Convert::toGlm(body->GetLinearVelocity());

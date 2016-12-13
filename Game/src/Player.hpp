@@ -15,13 +15,20 @@
 using namespace std;
 using namespace Auris;
 class Player : public GameObject{
-    public:
+public:
     shared_ptr<Animation> anim;
     SpriteSheet* spriteSheet;
     Sprite* upper;
     AudioPlayer* audioPlayer;
 
     bool canJump;
+    bool alive;
+
+    int healthPoints;
+
+    float movementSpeed;
+    float jumpHeight;
+    float maxSpeed;
 
     Player(vec2 position = vec2(0,0)):GameObject(){
         name = "Player";
@@ -50,12 +57,6 @@ class Player : public GameObject{
         delete spriteSheet;
     }
 
-    float movementSpeed;
-    float jumpHeight;
-    float maxSpeed;
-
-	Keys keys;
-
 	void Init() {
         movementSpeed = 1000.0f;
         jumpHeight = 2000.0f;
@@ -63,39 +64,54 @@ class Player : public GameObject{
 	}
 
     void Update(float dt){
+        // INPUTS
+        if (alive){
+            if (Input::keyDown(SDL_SCANCODE_UP) & canJump) {
+                applyForce(up * jumpHeight, true);
+                canJump = false;
+            }
 
-        if (Input::keyDown(keys.getKey("up")) & canJump) {
-            applyForce(up * jumpHeight, true);
-            canJump = false;
-		}
+            if (Input::keyHeld(SDL_SCANCODE_DOWN)) {
+                // CROUCH;
+            }
 
-        if (Input::keyHeld(keys.getKey("down"))) {
-            // CROUCH;
-		}
+            if (Input::keyHeld(SDL_SCANCODE_LEFT)) {
+                anim->run(sprite, dt);
+                if (getLinearVelocity()[0] > -maxSpeed)
+                    applyForce(left * movementSpeed, true);
+            }
 
-        if (Input::keyHeld(keys.getKey("left"))) {
-            anim->run(sprite, dt);
-            if (getLinearVelocity()[0] > -maxSpeed)
-                applyForce(left * movementSpeed, true);
-		}
+            if (Input::keyHeld(SDL_SCANCODE_RIGHT)) {
+                anim->run(sprite, dt);
+                if (getLinearVelocity()[0] < maxSpeed)
+                    applyForce(right * movementSpeed, true);
+            }
 
-		if (Input::keyHeld(keys.getKey("right"))) {
-            anim->run(sprite, dt);
-            if (getLinearVelocity()[0] < maxSpeed)
-                applyForce(right * movementSpeed, true);
-		}
+            if(Input::keyDown(SDL_SCANCODE_SPACE)){
+                //audioPlayer->playSound(shotPath);
+            }
+        }
 
-        if(Input::keyDown(SDL_SCANCODE_SPACE)){
-//            audioPlayer->playSound(shotPath);
+        // FLAGS
+        if (healthPoints <= 0) {
+            die();
         }
     }
 
     void OnCollisionEnter(GameObject* other) {
         if (other->name == "Wall")
             canJump = true;
+
+//        if (other->name == "Bullet")
+//            healthPoints -= other->damage;
     }
 
     void OnCollisionExit(GameObject* other) {
 
+    }
+
+    void die() {
+        alive = false;
+        setFixedRotation(false);
     }
 };

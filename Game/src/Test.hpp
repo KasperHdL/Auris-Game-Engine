@@ -47,15 +47,15 @@ class Test : public Auris::GameObject{
 
         if (Auris::Input::keyHeld(SDL_SCANCODE_W)) {
             pos.y += 100 * dt;
-		}else if (Auris::Input::keyHeld(SDL_SCANCODE_S)) {
+        }else if (Auris::Input::keyHeld(SDL_SCANCODE_S)) {
             pos.y -= 100 * dt;
-		}else if (Auris::Input::keyHeld(SDL_SCANCODE_A)) {
+        }else if (Auris::Input::keyHeld(SDL_SCANCODE_A)) {
             pos.x -= 100 * dt;
-		}else if (Auris::Input::keyHeld(SDL_SCANCODE_D)) {
+        }else if (Auris::Input::keyHeld(SDL_SCANCODE_D)) {
             pos.x += 100 * dt;
         }
 
-        body->SetTransform(Auris::Convert::toB2(pos),0);
+        setTransform(pos,0);
     }
 
     ~Test(){
