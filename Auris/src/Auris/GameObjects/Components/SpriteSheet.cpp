@@ -39,7 +39,6 @@ SpriteSheet::SpriteSheet(string pathToJSON){
         float ax = (float)element.get("pivot").get("x").get<double>();
         float ay = (float)element.get("pivot").get("y").get<double>();
         string name = element.get("filename").get<std::string>();
-        cout << name << endl;
         SpriteSheet::sprites[element.get("filename").get<std::string>()] = saveMaterial(x,texture->getHeight()-height-y,width,height,ax,ay);
     }
 }

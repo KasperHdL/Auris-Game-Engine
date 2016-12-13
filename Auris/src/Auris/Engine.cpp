@@ -55,8 +55,8 @@ void Engine::startup(Game* game){
     //nisse->setRotation(-3.14);
     //nisse->moveCamera(vec2(400,0));
     //nisse->moveCamera(vec2(400,0));
-    //auto sre = SimpleRenderEngine::instance;
-    //sre->getCamera()->setWindowCoordinates();
+    auto sre = SimpleRenderEngine::instance;
+    sre->getCamera()->setWindowCoordinates();
 
     Input::init();
 
