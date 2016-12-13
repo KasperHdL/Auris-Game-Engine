@@ -67,7 +67,7 @@ class Player : public GameObject{
 		}
 
         if (Input::keyDown(Auris::Action::down)) {
-            cout << Input::ctrl.size()<<endl;
+
 		}
 
         if (Input::keyHeld(Auris::Action::left)) {

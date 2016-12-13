@@ -8,7 +8,8 @@
 class DemoGame : public Auris::Game {
     Scene1 scene1;
 
-
+    int id1 = -1;
+    int id2 = -1;
     void init() {
         Auris::Engine::loadScene(&scene1);
         Auris::Engine::world->SetGravity(b2Vec2(0, -9.8));
@@ -20,6 +21,17 @@ class DemoGame : public Auris::Game {
 
     void update(float dt){
 
+        if(id1!=-1){
+            if(Input::getControllerButtonState(id1,SDL_CONTROLLER_BUTTON_A)){
+                cout << id1 << ": " << "X PRESSED" << endl;
+            }
+        }
+        if(id2!=-1){
+            if(Input::getControllerButtonState(id2,SDL_CONTROLLER_BUTTON_A)){
+                cout << id2 << ": " << "X PRESSED" << endl;
+            }
+        }
+
     }
 
     void lateUpdate(float dt){
@@ -30,11 +42,15 @@ class DemoGame : public Auris::Game {
 
     }
 
-    virtual void controllerConnected(){
-
+    void controllerConnected(int controllerID){
+        if(id1==-1){
+            id1 = controllerID;
+        }else{
+            id2 = controllerID;
+        }
     }
 
-    virtual void controllerDisconnected(){
+    void controllerDisconnected(int controllerID){
 
     }
 };

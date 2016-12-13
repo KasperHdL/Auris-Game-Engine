@@ -65,7 +65,7 @@ void Engine::startup(Game* game){
     //auto sre = SimpleRenderEngine::instance;
     //sre->getCamera()->setWindowCoordinates();
 
-    Input::init();
+    Input::init(game);
 
     // INIT GAME
     game->init();

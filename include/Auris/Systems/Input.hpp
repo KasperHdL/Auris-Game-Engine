@@ -6,10 +6,11 @@
 #include <vector>
 
 namespace Auris{
+class Game;
 class Input{
 public:
 
-    static void init();
+    static void init(Game* game);
 
 	///A method to update the keypresses
 	static void update();
@@ -23,10 +24,10 @@ public:
 	///A method to get the key that is currently being held down
 	static bool keyHeld(SDL_Scancode key);
 
-    static bool getCtrlButtonStatus();
-
     static int quit;
-    static std::map<SDL_JoystickID,SDL_GameController*> ctrl;
+
+    static int getControllerButtonState(int controllerID, SDL_GameControllerButton button);
+
 
 private:
 	///A method to register a key being lifted up event
@@ -46,6 +47,10 @@ private:
     static void initController(const SDL_Event& event);
 
     static void controllerRemoved(const SDL_Event& event);
+
+    static std::map<SDL_JoystickID,SDL_GameController*> ctrl;
+
+    static Game* game;
 
 };
 }
