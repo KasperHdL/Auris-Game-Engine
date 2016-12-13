@@ -22,17 +22,17 @@ void RenderSystem::update(float dt){
 
 }
 
-Sprite* RenderSystem::getSprite(GameObject* gameObject){
-    Sprite* s = new (RenderSystem::spritePool.create()) Sprite(gameObject);
+Sprite* RenderSystem::getSprite(Entity* entity){
+    Sprite* s = new (RenderSystem::spritePool.create()) Sprite(entity);
     return s;
 }
-Sprite* RenderSystem::getSprite(GameObject* gameObject, Material* material){
-    Sprite* s = new (RenderSystem::spritePool.create()) Sprite(gameObject, material);
+Sprite* RenderSystem::getSprite(Entity* entity, Material* material){
+    Sprite* s = new (RenderSystem::spritePool.create()) Sprite(entity, material);
     return s;
 }
 
-shared_ptr<Animation> RenderSystem::getAnim(GameObject* gameObject, float length){
-    shared_ptr<Animation> a = make_shared<Animation>(gameObject, length);
+shared_ptr<Animation> RenderSystem::getAnim(Entity* entity, float length){
+    shared_ptr<Animation> a = make_shared<Animation>(entity, length);
     RenderSystem::animations.push_back(a);
     return a;
 }

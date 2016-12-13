@@ -8,25 +8,24 @@
 
 #include <iostream>
 
-#include "Auris/GameObjects/GameObject.hpp"
-#include "Auris/GameObjects/Components/Sprite.hpp"
-#include "Auris/GameObjects/Components/SpriteSheet.hpp"
+#include "Auris/Entity.hpp"
+#include "Auris/Entities/Nuggets/Sprite.hpp"
+#include "Auris/Entities/Nuggets/SpriteSheet.hpp"
 
 using namespace SRE;
 
 namespace Auris{
-class Animation
-{
+class Animation : public Nugget {
 public:
 
     std::vector<Material*> materials;
 
     ~Animation();
-     Animation(GameObject* gameObject, float length);
+    Animation(Entity* entity, float length);
 
     void addMaterial(Material* mat);
     void setSheet(SpriteSheet* spritesheet);
-    void makeSequence(SpriteSheet* spritesheet, string name);
+    void makeSequence(SpriteSheet* spritesheet, std::string name);
     void run(Sprite* sprite, float dt);
 
 private:

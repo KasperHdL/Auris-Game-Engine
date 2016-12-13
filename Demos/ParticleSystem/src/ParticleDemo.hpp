@@ -23,7 +23,6 @@ class ParticleDemo : public Game {
 
     ParticleSystem particleSystem;
     Texture* cartman;
-    Scene1 scene;
 
     //startup properties
     bool useTexture = false;
@@ -66,7 +65,6 @@ class ParticleDemo : public Game {
 
 
     void init() {
-        Engine::loadScene(&scene);
         cartman = SRE::Texture::createFromFile(Resource::getPath("cartman.png").c_str(),false);
  
         start();

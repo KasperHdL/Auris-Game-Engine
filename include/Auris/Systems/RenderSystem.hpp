@@ -3,10 +3,10 @@
 #include <vector>
 #include <memory>
 
-#include "Auris/GameObjects/GameObject.hpp"
-#include "Auris/GameObjects/Components/Sprite.hpp"
+#include "Auris/Entity.hpp"
+#include "Auris/Entities/Nuggets/Sprite.hpp"
+#include "Auris/Entities/Nuggets/Animation.hpp"
 #include "Auris/Utilities/Pool.hpp"
-#include "Auris/GameObjects/Components/Animation.hpp"
 
 namespace Auris{
 using namespace std;
@@ -24,10 +24,10 @@ public:
     void shutdown();
     void update(float dt);
 
-    static Sprite* getSprite(GameObject* gameObject);
-    static Sprite* getSprite(GameObject* gameObject, Material* material);
+    static Sprite* getSprite(Entity* entity);
+    static Sprite* getSprite(Entity* entity, Material* material);
     static void deleteSprite(Sprite* sprite);
-	static shared_ptr<Animation> getAnim(GameObject* gameObject, float length);
+	static shared_ptr<Animation> getAnim(Entity* entity, float length);
     static void deleteAnim(shared_ptr<Animation> ani);
 };
 }

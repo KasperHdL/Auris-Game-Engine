@@ -7,7 +7,6 @@ using namespace std;
 using namespace Auris;
 
 
-Scene* Engine::currentScene;
 b2World* Engine::world;
 
 void Engine::startup(Game* game){
@@ -66,24 +65,14 @@ void Engine::startup(Game* game){
     // INIT GAME
     game->init();
 
-    //Run init on all gameobjects
-    if(Engine::currentScene == nullptr){
-        std::cout << "Auris Error - No scene loaded exiting" << std::endl;
-    }else{
-        for(auto& el: Engine::currentScene->gameObjects)
-                el->Init();
+    run(window);
 
-        run(window);
-    }
     shutdown();
 }
 
 void Engine::shutdown(){
     game->shutdown();
     Input::shutdown();
-
-    if(Engine::currentScene != nullptr)
-        Engine::currentScene->gameObjects.clear();
 
     delete Engine::world;
     Engine::world = nullptr;
@@ -132,11 +121,15 @@ void Engine::run(SDL_Window* window){
             // GAME UPDATE
             game->update(deltaTimeSec);
 
-            // GAMEOBJECT UPDATE
-            for(auto& el: Engine::currentScene->gameObjects)
+            // entities UPDATE
+            for(auto& el: game->entities)
                 el->Update(deltaTimeSec);
 
             Engine::world->Step(deltaTimeSec, VELOCITY_ITERATIONS, POSITION_ITERATIONS);
+
+
+            for(auto& el: game->entities)
+                el->UpdateTransform();
         }
 
         game->lateUpdate(deltaTimeSec);
@@ -153,19 +146,3 @@ void Engine::run(SDL_Window* window){
     shutdown();
 }
 
-void Engine::loadScene(Scene* scene) {
-    if (currentScene != nullptr)
-        currentScene->unload();
-
-
-    // Load new scene and init gameObjects
-     scene->init();
-    currentScene = scene;
-
-    for (auto & el : currentScene->gameObjects)
-        el->Init();
-}
-
-void Engine::removeGameObject(GameObject* gameObject){
-    Engine::world->DestroyBody(gameObject->body);
-}

@@ -1,6 +1,6 @@
 #pragma once
 
-#include "Auris/GameObjects/GameObject.hpp"
+#include "Auris/Entities/PhysicsEntity.hpp"
 #include "Box2D/Box2D.h"
 
 namespace Auris{
@@ -8,9 +8,9 @@ class CollisionHandler : public b2ContactListener{
 
 private:
     void BeginContact(b2Contact* contact){
-        // Get gameobjects that collide
-        GameObject* colliderA = (GameObject*) contact->GetFixtureA()->GetBody()->GetUserData();
-        GameObject* colliderB = (GameObject*) contact->GetFixtureB()->GetBody()->GetUserData();
+        // Get Entity that collide
+        PhysicsEntity* colliderA = (PhysicsEntity*) contact->GetFixtureA()->GetBody()->GetUserData();
+        PhysicsEntity* colliderB = (PhysicsEntity*) contact->GetFixtureB()->GetBody()->GetUserData();
 
         contact->SetEnabled(true);
 
@@ -22,9 +22,9 @@ private:
     }
 
     void EndContact(b2Contact* contact) {
-        // Get gameobjects that collide
-        GameObject* colliderA = (GameObject*) contact->GetFixtureA()->GetBody()->GetUserData();
-        GameObject* colliderB = (GameObject*) contact->GetFixtureB()->GetBody()->GetUserData();
+        // Get PhysicsEntity that collide
+        PhysicsEntity* colliderA = (PhysicsEntity*) contact->GetFixtureA()->GetBody()->GetUserData();
+        PhysicsEntity* colliderB = (PhysicsEntity*) contact->GetFixtureB()->GetBody()->GetUserData();
 
         contact->SetEnabled(false);
 

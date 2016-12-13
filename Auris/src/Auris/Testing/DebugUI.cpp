@@ -82,6 +82,9 @@ void DebugUI::update(float dt){
         ImGui::Checkbox("Debug draw(F6)", &drawDebug);
 
         ImGui::Separator();
+        ImGui::Checkbox("Toggle GO inspector", &toggle_goInspector);
+
+        ImGui::Separator();
 
         arr_deltaTime[arrIndex] = dt;
         arr_physMem[arrIndex] = e->memLeakDet.getPhysMemUsedByMe();
@@ -103,31 +106,33 @@ void DebugUI::update(float dt){
         ImGui::Text("Current Dt: %f - Max dt: %f",dt, max_deltaTime);
 
         ImGui::Separator();
-        ImGui::Text("Num GameObjects %zu", Engine::currentScene->gameObjects.size());
+        ImGui::Text("Num Entities %zu", e->game->entities.size());
         ImGui::Text("Num of Sprites Allocated %d - Max %d", e->renderSystem.spritePool.count, max_renderSprites);
 
         ImGui::Separator();
 
         if(toggle_goInspector){
-            ImGui::Begin("GameObject Inspector");
-            ImGui::Text("Current scene: %s", Engine::currentScene->name.c_str());
-            if(ImGui::TreeNode("GameObjects")){
+            ImGui::Begin("Entities Inspector");
+            if(ImGui::TreeNode("Entities")){
                 int i = 0;
-                for(auto& el: Engine::currentScene->gameObjects){
+                for(auto& el: e->game->entities){
                     string name = el->name;
                     if(name == "") name = &"GO " [ i];
 
                     ImGui::PushID(&el);
                     if(ImGui::TreeNode(el->name.c_str())){
-                        vec2 pos = Convert::toGlm(el->body->GetPosition());
-                        ImGui::Text("Position (%f, %f)", pos.x, pos.y);
+                        vec3 pos = el->transform->position;
+                        vec2 scale = el->transform->scale;
+                        ImGui::Text("Position (%f, %f, %f)", pos.x, pos.y, pos.z);
+                        ImGui::Text("Scale (%f, %f)", scale.x, scale.y);
 
-                        ImGui::Text("Rotation (%f)", el->body->GetAngle());
+                        ImGui::Text("Rotation (%f)", el->transform->rotation);
 
-                        vec2 vel = Convert::toGlm(el->body->GetLinearVelocity());
+                        /*vec2 vel = Convert::toGlm(el->body->GetLinearVelocity());
                         ImGui::Text("Velocity (%f, %f)", vel.x, vel.y);
                         
                         ImGui::Text("Angular Velocity (%f)", el->body->GetAngularVelocity());
+*/
 
                         ImGui::TreePop();
                     }

@@ -24,16 +24,14 @@
 
 //Engine
 #include "Auris/Game.hpp"
-#include "Auris/GameObjects/GameObject.hpp"
+#include "Auris/Entity.hpp"
 #include "Auris/Utilities/MemoryLeakDetector.hpp"
 #include "Auris/Utilities/Convert.hpp"
-#include "Auris/GameObjects/Camera.hpp"
 
 #include "Auris/Systems/Scene.hpp"
 #include "Auris/Systems/Input.hpp"
 #include "Auris/Systems/RenderSystem.hpp"
 #include "Auris/Systems/CollisionHandler.hpp"
-
 
 
 namespace Auris{
@@ -52,10 +50,7 @@ public:
 
     static b2World* world;
 
-    static Scene* currentScene;
-
     static void loadScene(Scene* scene);
-    static void removeGameObject(GameObject* gameObject);
 
     Game* game;
 
@@ -65,7 +60,6 @@ public:
     DebugUI* debugUI;
 
     b2ContactListener* collisionHandler;
-    vec2 camPos;
 
     const int VELOCITY_ITERATIONS = 16;
     const int POSITION_ITERATIONS = 16;
@@ -76,7 +70,6 @@ public:
     int quit;
 
 	MemoryLeakDetector memLeakDet;
-
 
 };
 }

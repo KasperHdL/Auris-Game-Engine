@@ -1,4 +1,4 @@
-#include "Auris/GameObjects/Camera.hpp"
+#include "Auris/Entities/Camera.hpp"
 #include "glm/gtx/rotate_vector.hpp"
 
 using namespace Auris;

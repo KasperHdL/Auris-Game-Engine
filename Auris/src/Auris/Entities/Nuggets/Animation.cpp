@@ -1,7 +1,7 @@
-#include "Auris/GameObjects/Components/Animation.hpp"
+#include "Auris/Entities/Nuggets/Animation.hpp"
 using namespace Auris;
 
-Animation::Animation(GameObject *gameObject, float length){
+Animation::Animation(Entity *entity, float length):Nugget(entity){
     this->length = length;
     Animation::index = 0;
     Animation::time = 0;
@@ -16,13 +16,13 @@ void Animation::addMaterial(Material* mat){
 }
 
 void Animation::setSheet(SpriteSheet* spritesheet){
-    for(map<std::string,Material*>::iterator it = spritesheet->sprites.begin(); it != spritesheet->sprites.end(); ++it) {
+    for(std::map<std::string,Material*>::iterator it = spritesheet->sprites.begin(); it != spritesheet->sprites.end(); ++it) {
         addMaterial(it->second);
     }
 }
 
-void Animation::makeSequence(SpriteSheet* spritesheet, string name){
-    for(map<std::string,Material*>::iterator it = spritesheet->sprites.begin(); it != spritesheet->sprites.end(); ++it) {
+void Animation::makeSequence(SpriteSheet* spritesheet, std::string name){
+    for(std::map<std::string,Material*>::iterator it = spritesheet->sprites.begin(); it != spritesheet->sprites.end(); ++it) {
         //cout << name << " : " << it->first << endl;
         if(!it->first.compare(0,name.size(),name)){
         addMaterial(it->second);

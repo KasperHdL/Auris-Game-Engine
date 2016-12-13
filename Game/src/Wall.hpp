@@ -1,16 +1,20 @@
 #pragma once
 
-#include "Auris/GameObjects/GameObject.hpp"
-#include "Auris/GameObjects/Components/SpriteSheet.hpp"
+#include "Auris/Entities/PhysicsEntity.hpp"
+#include "Auris/Entities/Nuggets/Sprite.hpp"
+#include "Auris/Entities/Nuggets/SpriteSheet.hpp"
 #include "Auris/Constants.hpp"
 #include "Auris/Utilities/Resource.hpp"
 #include "Auris/Utilities/BodyStandard.hpp"
 
 using namespace Constants;
 
-class Wall : public GameObject{
+class Wall : public PhysicsEntity{
 public:
-    Wall(vec2 position = vec2(0,0)):GameObject() {
+
+    Sprite* sprite;
+
+    Wall(vec2 position = vec2(0,0)):PhysicsEntity() {
         name = "Wall";    
 
         SpriteSheet* ss = new SpriteSheet(Resource::getPath("MarioPacked.json"));
@@ -26,21 +30,22 @@ public:
     }
 
     ~Wall(){
+        Auris::RenderSystem::deleteSprite(sprite);
     }
 
     void Update(float dt){
         //anim->setSprite(sprite);
     }
 
-    void OnCollisionEnter(GameObject* other) {
+    void OnCollisionEnter(PhysicsEntity* other) {
 
     }
 
-    void OnCollisionExit(GameObject* other) {
+    void OnCollisionExit(PhysicsEntity* other) {
 
     }
 
-    void OnCollisionStay(GameObject* other) {
+    void OnCollisionStay(PhysicsEntity* other) {
 
     }
 };

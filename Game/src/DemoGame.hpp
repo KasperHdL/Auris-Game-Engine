@@ -11,7 +11,7 @@ class DemoGame : public Auris::Game {
 
 
     void init() {
-        Auris::Engine::loadScene(&scene1);
+        loadScene(&scene1);
         Auris::Engine::world->SetGravity(b2Vec2(0, -9.8));
     }
 

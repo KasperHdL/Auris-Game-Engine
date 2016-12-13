@@ -8,35 +8,32 @@
 #include "SRE/Texture.hpp"
 
 #include "Auris/Utilities/Shader.hpp"
-#include "Auris/GameObjects/Components/Component.hpp"
-#include "Auris/GameObjects/Components/Material.hpp"
+#include "Auris/Entities/Nugget.hpp"
+#include "Auris/Entities/Nuggets/Material.hpp"
 
 namespace Auris{
 using namespace SRE;
-class Sprite : public Component{
+class Sprite : public Nugget{
 public:
     Mesh* mesh;
     SRE::Shader* shader;
     Texture* texture;
     Texture* normalMap;
     glm::vec4 color;
-    glm::vec2 scale;
         
     virtual void draw();
 
     ~Sprite();
-    Sprite(GameObject* gameObject):Component(gameObject){
+    Sprite(Entity* entity):Nugget(entity){
         mesh = Mesh::createCube();
         texture = Texture::getWhiteTexture();
         normalMap = nullptr;
         shader = SRE::Shader::getUnlitSprite();
         color = glm::vec4(1,1,1,1);
-        scale = glm::vec2(1,1);
     }
 
-    Sprite(GameObject* gameObject, Material* material):Component(gameObject){
+    Sprite(Entity* entity, Material* material):Nugget(entity){
         setMaterial(material);
-        scale = glm::vec2(1,1);
     }
 
     void setMaterial(Material* material){

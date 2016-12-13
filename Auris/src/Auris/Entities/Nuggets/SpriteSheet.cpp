@@ -1,4 +1,4 @@
-#include "Auris/GameObjects/Components/SpriteSheet.hpp"
+#include "Auris/Entities/Nuggets/SpriteSheet.hpp"
 #include "Auris/Systems/RenderSystem.hpp"
 #include <fstream>
 #include <iostream>
@@ -94,7 +94,7 @@ SpriteSheet::~SpriteSheet(){
     texture = nullptr;
 }
 
-Sprite* SpriteSheet::getSprite(string name,GameObject* parent){
+Sprite* SpriteSheet::getSprite(string name, Entity* parent){
     auto s = RenderSystem::getSprite(parent, sprites[name]);
     return s;
 }

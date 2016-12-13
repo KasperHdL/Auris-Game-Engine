@@ -1,5 +1,5 @@
-#include "Auris/GameObjects/Components/Sprite.hpp"
-#include "Auris/GameObjects/GameObject.hpp"
+#include "Auris/Entities/Nuggets/Sprite.hpp"
+#include "Auris/Entity.hpp"
 #include "Auris/Systems/RenderSystem.hpp"
 #include "Auris/Utilities/Shader.hpp"
 
@@ -10,8 +10,10 @@ Sprite::~Sprite(){
 
 void Sprite::draw(){
     shader->set("color",color);
+
     if(normalMap != nullptr)
         shader->set("normalMap", normalMap, 1);
+
     shader->set("tex",texture, 0);
-    SimpleRenderEngine::instance->draw(mesh, gameObject->globalTransform(),shader);
+    SimpleRenderEngine::instance->draw(mesh, entity->transform->getGlobal(), shader);
 }
