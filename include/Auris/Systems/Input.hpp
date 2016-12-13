@@ -26,7 +26,7 @@ public:
     static bool getCtrlButtonStatus();
 
     static int quit;
-    static std::vector<SDL_GameController*> ctrl;
+    static std::map<SDL_JoystickID,SDL_GameController*> ctrl;
 
 private:
 	///A method to register a key being lifted up event
@@ -42,6 +42,10 @@ private:
     static std::map<SDL_Scancode, bool> upKeys;
 
     static void controllerAdded(const SDL_Event& event);
+
+    static void initController(const SDL_Event& event);
+
+    static void controllerRemoved(const SDL_Event& event);
 
 };
 }

@@ -29,4 +29,12 @@ class DemoGame : public Auris::Game {
     void shutdown(){
 
     }
+
+    virtual void controllerConnected(){
+
+    }
+
+    virtual void controllerDisconnected(){
+
+    }
 };

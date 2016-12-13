@@ -14,5 +14,9 @@ public:
     virtual void lateUpdate(float dt) = 0;
 
     virtual void shutdown() = 0;
+
+    virtual void controllerConnected() = 0;
+
+    virtual void controllerDisconnected() = 0;
 };
 }

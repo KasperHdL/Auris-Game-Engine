@@ -66,8 +66,8 @@ class Player : public GameObject{
             canJump = false;
 		}
 
-        if (Input::keyHeld(Auris::Action::down)) {
-            // CROUCH;
+        if (Input::keyDown(Auris::Action::down)) {
+            cout << Input::ctrl.size()<<endl;
 		}
 
         if (Input::keyHeld(Auris::Action::left)) {
