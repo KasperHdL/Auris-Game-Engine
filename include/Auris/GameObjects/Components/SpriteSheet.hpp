@@ -20,6 +20,7 @@ class SpriteSheet{
     private:
         Material* saveMaterial(int x, int y, int width, int height, float anchorX, float anchorY);
         SRE::Texture* texture;
+        SRE::Texture* normalMap = nullptr;
 
 };
 }

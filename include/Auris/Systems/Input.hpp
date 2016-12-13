@@ -24,10 +24,6 @@ public:
 	///A method to get the key that is currently being held down
 	static bool keyHeld(SDL_Scancode key);
 
-    static bool ctrlKeyDown(uint ctrlkey);
-    static bool ctrlKeyUp(uint ctrlkey);
-    static bool ctrlKeyHeld(uint ctrlkey);
-
     static bool getCtrlButtonStatus();
 
     static int quit;
@@ -39,10 +35,6 @@ private:
 	///A method to register a key being pressed down event
 	static void keyDownEvent(const SDL_Event& event);
 
-    static void controllerKeyUpEvent(const SDL_Event& event);
-
-    static void controllerKeyDownEvent(const SDL_Event& event);
-
 	///A map to hold all keys that are currently being held
     static map<SDL_Scancode, bool> heldKeys;
 	///A map to hold all keys that has been pressed down
@@ -50,12 +42,17 @@ private:
 	///A map tp hold all keys that has been lifted up
     static map<SDL_Scancode, bool> upKeys;
 
-    static map <uint, bool> ctrlHeldKeys;
-    static map <uint, bool> ctrlDownKeys;
-    static map <uint, bool> ctrlUpKeys;
-
     static void controllerAdded(const SDL_Event& event);
 
+};
+
+class Button{
+public:
+    SDL_Scancode up = SDL_SCANCODE_UP;
+    SDL_Scancode down = SDL_SCANCODE_DOWN;
+    SDL_Scancode left = SDL_SCANCODE_LEFT;
+    SDL_Scancode right = SDL_SCANCODE_RIGHT;
+    SDL_Scancode quit = SDL_SCANCODE_ESCAPE;
 };
 
 class Keys {

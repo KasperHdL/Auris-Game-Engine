@@ -48,3 +48,4 @@ SET(EXTRA_LIBS ${EXTRA_LIBS} ${SDL2_LIBRARY} ${SDL2_IMAGE_LIBRARY} ${BOX2D_LIBRA
 
 add_subdirectory(Auris)
 add_subdirectory(Game)
+add_subdirectory(Demos)

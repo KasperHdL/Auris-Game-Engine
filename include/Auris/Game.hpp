@@ -13,6 +13,9 @@ public:
 
     virtual void lateUpdate(float dt) = 0;
 
+    virtual void debugDraw(){}
+
+
     virtual void shutdown() = 0;
 };
 }
