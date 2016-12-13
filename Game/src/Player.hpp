@@ -10,7 +10,7 @@
 #include "Auris/GameObjects/Components/SpriteSheet.hpp"
 #include "Auris/Utilities/Resource.hpp"
 #include "Auris/Utilities/BodyStandard.hpp"
-#include "Auris/Utilities/AudioPlayer.hpp"
+#include "Auris/Action.hpp"
 
 using namespace std;
 using namespace Auris;
@@ -71,31 +71,25 @@ public:
                 canJump = false;
             }
 
-            if (Input::keyHeld(SDL_SCANCODE_DOWN)) {
-                // CROUCH;
-            }
+        if (Input::keyDown(Auris::Action::up) & canJump) {
+            applyForce(up * jumpHeight, true);
+            canJump = false;
+		}
 
-            if (Input::keyHeld(SDL_SCANCODE_LEFT)) {
-                anim->run(sprite, dt);
-                if (getLinearVelocity()[0] > -maxSpeed)
-                    applyForce(left * movementSpeed, true);
-            }
+        if (Input::keyDown(Auris::Action::down)) {
+		}
 
-            if (Input::keyHeld(SDL_SCANCODE_RIGHT)) {
-                anim->run(sprite, dt);
-                if (getLinearVelocity()[0] < maxSpeed)
-                    applyForce(right * movementSpeed, true);
-            }
+        if (Input::keyHeld(Auris::Action::left)) {
+            anim->run(sprite, dt);
+            if (getLinearVelocity()[0] > -maxSpeed)
+                applyForce(left * movementSpeed, true);
+		}
 
-            if(Input::keyDown(SDL_SCANCODE_SPACE)){
-                //audioPlayer->playSound(shotPath);
-            }
-        }
-
-        // FLAGS
-        if (healthPoints <= 0) {
-            die();
-        }
+        if (Input::keyHeld(Auris::Action::right)) {
+            anim->run(sprite, dt);
+            if (getLinearVelocity()[0] < maxSpeed)
+                applyForce(right * movementSpeed, true);
+		}
     }
 
     void OnCollisionEnter(GameObject* other) {
