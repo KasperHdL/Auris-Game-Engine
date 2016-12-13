@@ -9,8 +9,9 @@ Sprite::~Sprite(){
 }
 
 void Sprite::draw(){
-    SRE::Shader* shader = Auris::Shader::getLitSprite();
     shader->set("color",color);
-    shader->set("tex",texture);
+    if(normalMap != nullptr)
+        shader->set("normalMap", normalMap, 1);
+    shader->set("tex",texture, 0);
     SimpleRenderEngine::instance->draw(mesh, gameObject->globalTransform(),shader);
 }

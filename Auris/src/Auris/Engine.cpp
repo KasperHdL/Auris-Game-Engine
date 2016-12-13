@@ -53,7 +53,6 @@ void Engine::startup(Game* game){
     // Initialize Simple Render Engine
     auto sre = SimpleRenderEngine::instance;
     sre->getCamera()->setWindowCoordinates();
-    sre->setLight(2, Light(LightType::Directional,{0,0,0},{1,1,1},{1,1,1},0));
 
     Input::init();
 
