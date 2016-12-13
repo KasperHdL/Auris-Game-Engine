@@ -117,20 +117,6 @@ void Engine::run(SDL_Window* window){
 	memLeakDet = MemoryLeakDetector();
 
     //DEBUG INFORMATION TODO should be ignored on release build
-
-    Keys keys;
- 
-    keys.setKey("debug", SDL_SCANCODE_F2);
-    keys.setKey("pause", SDL_SCANCODE_F3);
-    keys.setKey("stepOne", SDL_SCANCODE_F4);
-    keys.setKey("playOnHold", SDL_SCANCODE_F5);
-    keys.setKey("drawDebug", SDL_SCANCODE_F6);
-
-    keys.setKey("arrow_up", SDL_SCANCODE_UP);
-    keys.setKey("arrow_down", SDL_SCANCODE_DOWN);
-    keys.setKey("arrow_left", SDL_SCANCODE_LEFT);
-    keys.setKey("arrow_right", SDL_SCANCODE_RIGHT);
-
    
     int arrIndex = 0;
     const int arrSize = 600;
@@ -166,11 +152,11 @@ void Engine::run(SDL_Window* window){
 
         Input::update();
 
-        if (Input::keyDown(keys.getKey("quit"))) {
+        if (Input::keyDown(Auris::Action::quit)) {
 			quit = 1;
 		}
 
-        if(Input::keyDown(keys.getKey("debug"))){
+        if(Input::keyDown(Auris::Action::debug)){
             debug = !debug;
 
             if(debug == false){
@@ -179,17 +165,17 @@ void Engine::run(SDL_Window* window){
             }
         }
 
-        if(Input::keyDown(keys.getKey("pause"))){
+        if(Input::keyDown(Auris::Action::pause)){
             pause = !pause;
         }
 
         bool runOneStep = false;
-        if(Input::keyDown(keys.getKey("stepOne")) || Input::keyHeld(keys.getKey("playOnHold"))){
+        if(Input::keyDown(Auris::Action::stepOne) || Input::keyHeld(Auris::Action::playOnHold)){
             runOneStep = true;
             pause = true;
         }
 
-        if(Input::keyDown(keys.getKey("drawDebug"))){
+        if(Input::keyDown(Auris::Action::drawDebug)){
             drawDebug = !drawDebug;
         }
 

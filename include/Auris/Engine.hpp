@@ -38,6 +38,8 @@
 #include "Auris/Testing/Showcases/ShowcasePanel.hpp"
 #include "Auris/Testing/DebugDraw.hpp"
 
+#include "Auris/Action.hpp"
+
 
 class DebugDraw;
 namespace Auris{

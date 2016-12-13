@@ -6,7 +6,6 @@
 #include "Scenes/Scene2.hpp"
 
 class DemoGame : public Auris::Game {
-    Auris::Keys keys;
     Scene1 scene1;
 
 

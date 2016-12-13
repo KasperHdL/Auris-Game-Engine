@@ -10,6 +10,7 @@
 #include "Auris/GameObjects/Components/SpriteSheet.hpp"
 #include "Auris/Utilities/Resource.hpp"
 #include "Auris/Utilities/BodyStandard.hpp"
+#include "Auris/Action.hpp"
 
 using namespace std;
 using namespace Auris;
@@ -52,8 +53,6 @@ class Player : public GameObject{
     float jumpHeight;
     float maxSpeed;
 
-	Keys keys;
-
 	void Init() {
         movementSpeed = 1000.0f;
         jumpHeight = 2000.0f;
@@ -62,22 +61,22 @@ class Player : public GameObject{
 
     void Update(float dt){
 
-        if (Input::keyDown(keys.getKey("up")) & canJump) {
+        if (Input::keyDown(Auris::Action::up) & canJump) {
             applyForce(up * jumpHeight, true);
             canJump = false;
 		}
 
-        if (Input::keyHeld(keys.getKey("down"))) {
+        if (Input::keyHeld(Auris::Action::down)) {
             // CROUCH;
 		}
 
-        if (Input::keyHeld(keys.getKey("left"))) {
+        if (Input::keyHeld(Auris::Action::left)) {
             anim->run(sprite, dt);
             if (getLinearVelocity()[0] > -maxSpeed)
                 applyForce(left * movementSpeed, true);
 		}
 
-		if (Input::keyHeld(keys.getKey("right"))) {
+        if (Input::keyHeld(Auris::Action::right)) {
             anim->run(sprite, dt);
             if (getLinearVelocity()[0] < maxSpeed)
                 applyForce(right * movementSpeed, true);
