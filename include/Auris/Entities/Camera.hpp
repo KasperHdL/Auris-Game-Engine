@@ -16,7 +16,8 @@ public:
        */
     Camera(float right, float top, float near=-1, float far=1);
     ~Camera();
-    void setPos(glm::vec2 poss);
+    void setPos(glm::vec2 pos);
+    glm::vec2 getPos();
     void setRotation(float z);
 
     void translate(glm::vec2 amount);
