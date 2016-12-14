@@ -10,19 +10,7 @@ using namespace Auris;
 void DebugUI::startup(Engine* engine){
     this->e = engine;
     ImGui_SRE_Init(e->window);
- 
-    keys.setKey("debug", SDL_SCANCODE_F2);
-    keys.setKey("pause", SDL_SCANCODE_F3);
-    keys.setKey("stepOne", SDL_SCANCODE_F4);
-    keys.setKey("playOnHold", SDL_SCANCODE_F5);
-    keys.setKey("drawDebug", SDL_SCANCODE_F6);
-
-    keys.setKey("arrow_up", SDL_SCANCODE_UP);
-    keys.setKey("arrow_down", SDL_SCANCODE_DOWN);
-    keys.setKey("arrow_left", SDL_SCANCODE_LEFT);
-    keys.setKey("arrow_right", SDL_SCANCODE_RIGHT);
-
- 
+  
     e->world->SetDebugDraw(&debugDraw);
     debugDraw.SetFlags(b2Draw::e_shapeBit);
 
@@ -43,16 +31,16 @@ void DebugUI::shutdown(){
 void DebugUI::update(float dt){
     runOneStep = false;
 
-    if(Input::keyDown(keys.getKey("stepOne")) || Input::keyHeld(keys.getKey("playOnHold"))){
+    if(Input::keyDown(Auris::Action::stepOne) || Input::keyHeld(Auris::Action::playOnHold)){
         runOneStep = true;
         pause = true;
     }
 
-    if(Input::keyDown(keys.getKey("drawDebug"))){
+    if(Input::keyDown(Auris::Action::drawDebug)){
         drawDebug = !drawDebug;
     }
 
-    if(Input::keyDown(keys.getKey("debug"))){
+    if(Input::keyDown(Auris::Action::debug)){
         debug = !debug;
 
         if(debug == false){
@@ -61,7 +49,7 @@ void DebugUI::update(float dt){
         }
     }
 
-    if(Input::keyDown(keys.getKey("pause"))){
+    if(Input::keyDown(Auris::Action::pause)){
         pause = !pause;
     }
 

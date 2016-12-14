@@ -18,8 +18,6 @@ private:
 
     DebugDraw debugDraw;
 
-    Keys keys;
-
     bool drawDebug = false; //!< will draw box2d DebugDraw
 
   

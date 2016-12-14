@@ -19,7 +19,6 @@ public:
     shared_ptr<Animation> anim;
     SpriteSheet* spriteSheet;
     Sprite* upper;
-    AudioPlayer* audioPlayer;
 
     bool canJump;
     bool alive;
@@ -71,33 +70,37 @@ public:
                 canJump = false;
             }
 
-        if (Input::keyDown(Auris::Action::up) & canJump) {
-            applyForce(up * jumpHeight, true);
-            canJump = false;
-		}
+            if (Input::keyDown(Auris::Action::up) & canJump) {
+                applyForce(up * jumpHeight, true);
+                canJump = false;
+            }
 
-        if (Input::keyDown(Auris::Action::down)) {
-		}
+            if (Input::keyDown(Auris::Action::down)) {
+            }
 
-        if (Input::keyHeld(Auris::Action::left)) {
-            anim->run(sprite, dt);
-            if (getLinearVelocity()[0] > -maxSpeed)
-                applyForce(left * movementSpeed, true);
-		}
+            if (Input::keyHeld(Auris::Action::left)) {
+                anim->run(sprite, dt);
+                if (getLinearVelocity()[0] > -maxSpeed)
+                    applyForce(left * movementSpeed, true);
+            }
 
-        if (Input::keyHeld(Auris::Action::right)) {
-            anim->run(sprite, dt);
-            if (getLinearVelocity()[0] < maxSpeed)
-                applyForce(right * movementSpeed, true);
-		}
+            if (Input::keyHeld(Auris::Action::right)) {
+                anim->run(sprite, dt);
+                if (getLinearVelocity()[0] < maxSpeed)
+                    applyForce(right * movementSpeed, true);
+            }
+        }
     }
 
     void OnCollisionEnter(GameObject* other) {
         if (other->name == "Wall")
             canJump = true;
 
-//        if (other->name == "Bullet")
+        if (other->name == "Bullet") {
 //            healthPoints -= other->damage;
+            other->setGravity(3);
+            other->setFixedRotation(true);
+        }
     }
 
     void OnCollisionExit(GameObject* other) {
@@ -107,5 +110,6 @@ public:
     void die() {
         alive = false;
         setFixedRotation(false);
+        setGravity(0);
     }
 };

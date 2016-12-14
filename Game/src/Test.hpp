@@ -14,7 +14,7 @@
 #include "glm/glm.hpp"
 #include "SRE/Texture.hpp"
 #include "SRE/Mesh.hpp"
-#include <SDL.h>
+#include <SDL2/SDL.h>
 
 
 class Test : public Auris::GameObject{
