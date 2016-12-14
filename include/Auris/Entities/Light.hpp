@@ -24,6 +24,7 @@ class Light : public Entity{
         float range; //!< range of the light, 0 means inifinite
 
         Light(int lightNum, vec2 position = vec2(0,0), Type type = Point, bool alwaysOn = false):Entity(){
+            name = "Light";
 
             transform->position = vec3(position,0);
 
@@ -37,7 +38,7 @@ class Light : public Entity{
 
         void Update(float dt){
 
-            SimpleRenderEngine::instance->setLight(
+            SRE::SimpleRenderEngine::instance->setLight(
                     lightNum,
                     SRE::Light(
                         (SRE::LightType)type,

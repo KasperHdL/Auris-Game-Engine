@@ -1,5 +1,6 @@
 #include "Auris/Engine.hpp"
 #include "Auris/Testing/DebugUI.hpp"
+#include "Auris/Systems/AssetSystem.hpp"
 
 using namespace SRE;
 using namespace glm;
@@ -46,7 +47,6 @@ void Engine::startup(Game* game){
     }
 
     SRE::SimpleRenderEngine r{window};
-
 
     renderSystem.startup(64);
 
