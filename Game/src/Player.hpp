@@ -65,11 +65,6 @@ public:
     void Update(float dt){
         // INPUTS
         if (alive){
-            if (Input::keyDown(SDL_SCANCODE_UP) & canJump) {
-                applyForce(up * jumpHeight, true);
-                canJump = false;
-            }
-
             if (Input::keyDown(Auris::Action::up) & canJump) {
                 applyForce(up * jumpHeight, true);
                 canJump = false;
