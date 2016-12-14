@@ -88,12 +88,13 @@ class Player : public PhysicsEntity{
 		}
     }
 
-    void OnCollisionEnter(Entity* other) {
+    virtual void OnCollisionEnter(Entity* other) {
+        std::cout << "hitting something" << std::endl;
         if (other->name == "Wall")
             canJump = true;
     }
 
-    void OnCollisionExit(Entity* other) {
+    virtual void OnCollisionExit(Entity* other) {
 
     }
 };
