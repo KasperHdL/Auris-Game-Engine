@@ -13,7 +13,6 @@ private:
         PhysicsEntity* colliderA = (PhysicsEntity*) contact->GetFixtureA()->GetBody()->GetUserData();
         PhysicsEntity* colliderB = (PhysicsEntity*) contact->GetFixtureB()->GetBody()->GetUserData();
 
-        std::cout << "hitting something" << std::endl;
         contact->SetEnabled(true);
 
         // Call their respective collision functions if they both have collision events enabled
