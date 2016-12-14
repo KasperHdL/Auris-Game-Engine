@@ -28,12 +28,12 @@ class DemoGame : public Auris::Game {
             audioPlayer.playSoundEffect(pistolShot);
         }
 
-        if(id1!=-1){
-          cout << id1 << ": " << Input::getControllerAxisState(id1,SDL_CONTROLLER_AXIS_TRIGGERRIGHT) << endl;
-        }
-        if(id2!=-1){
-            cout << id2 << ": " << Input::getControllerAxisState(id2,SDL_CONTROLLER_AXIS_TRIGGERRIGHT) << endl;
-        }
+          //cout << id1 << ": " << Input::getControllerAxisState(id1,SDL_CONTROLLER_AXIS_TRIGGERRIGHT) << endl;
+        //if(id1!=-1)
+        //cout << id1 << ": " << Input::getControllerButtonState(id1,SDL_CONTROLLER_BUTTON_A) << endl;
+
+          //cout << id2 << ": " << Input::getControllerAxisState(id2,SDL_CONTROLLER_AXIS_TRIGGERRIGHT) << endl;
+          //cout << id2 << ": " << Input::getControllerButtonState(id2,SDL_CONTROLLER_BUTTON_A) << endl;
 
     }
 
@@ -48,12 +48,18 @@ class DemoGame : public Auris::Game {
     void controllerConnected(int controllerID){
         if(id1==-1){
             id1 = controllerID;
-        }else{
+            std::cout << "Controller connected: " << id1 << std::endl;
+        }else if(id2==-1){
             id2 = controllerID;
         }
     }
 
     void controllerDisconnected(int controllerID){
-
+        if(id1==controllerID){
+            cout << "Controller disconnected: " << id1 << endl;
+            id1 = -1;
+        }else if(id2==controllerID){
+            id2 = -1;
+        }
     }
 };

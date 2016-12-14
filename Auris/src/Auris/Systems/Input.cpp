@@ -102,6 +102,7 @@ void Input::controllerAdded(const SDL_Event &event){
 }
 
 void Input::initController(const SDL_Event& event){
+    std::cout << "Controller: " <<event.cbutton.which << " Button: "<< (int)event.cbutton.button << std::endl;
     if (SDL_IsGameController(event.cbutton.which)) {
         if(!ctrl.count(event.cbutton.which)){
             ctrl[event.cbutton.which]= SDL_GameControllerOpen(event.cdevice.which);
@@ -112,6 +113,7 @@ void Input::initController(const SDL_Event& event){
 
 void Input::controllerRemoved(const SDL_Event& event){
     if (SDL_IsGameController(event.cdevice.which)) {
+            SDL_GameControllerClose(ctrl[event.cdevice.which]);
             std::map<SDL_JoystickID,SDL_GameController*>::iterator it;
             it=ctrl.find(event.cdevice.which);
             ctrl.erase (it);
@@ -120,9 +122,11 @@ void Input::controllerRemoved(const SDL_Event& event){
 }
 
 int Input::getControllerButtonState(int controllerID, SDL_GameControllerButton button){
-    return SDL_GameControllerGetButton(SDL_GameControllerOpen(controllerID),button);
+    //std::cout << "controllerID: " << controllerID <<" Button: "<< button << " State: " << (int)SDL_GameControllerGetButton(ctrl[controllerID],button) <<std::endl;
+    return SDL_GameControllerGetButton(ctrl[controllerID],button);
 }
 
 int Input::getControllerAxisState(int controllerID, SDL_GameControllerAxis axis){
-    return SDL_GameControllerGetAxis(SDL_GameControllerOpen(controllerID),axis);
+    //std::cout << ctrl.size() << std::endl;
+    return SDL_GameControllerGetAxis(ctrl[controllerID],axis);
 }
