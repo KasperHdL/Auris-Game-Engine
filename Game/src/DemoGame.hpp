@@ -1,6 +1,7 @@
 #pragma once
 
 #include "Auris/Engine.hpp"
+#include "Auris/Entities/Camera.hpp"
 
 #include "Scenes/Scene1.hpp"
 #include "Scenes/Scene2.hpp"
@@ -11,6 +12,7 @@ using namespace Auris;
 class DemoGame : public Auris::Game {
     Scene1 scene1;
     AudioPlayer audioPlayer;
+    Auris::Camera* camera;
 
     int pistolShot;
     int warSounds;
@@ -27,6 +29,7 @@ class DemoGame : public Auris::Game {
         pistolShot = audioPlayer.addSound(Resource::getPath("pistolShot.wav").c_str(), 128);
         warSounds = audioPlayer.addMusic(Resource::getPath("warSounds.wav").c_str(), 128);
         audioPlayer.playMusic(warSounds);
+        camera = new Auris::Camera(1280, 720);
     }
 
     void earlyUpdate(float dt){

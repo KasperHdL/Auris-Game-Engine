@@ -18,7 +18,7 @@ void Engine::startup(Game* game){
     if (SDL_Init(SDL_INIT_AUDIO) == -1) // Initialize SDL2_audio
         cout << SDL_GetError() << endl;
 
-    if( Mix_OpenAudio( 44100, MIX_DEFAULT_FORMAT, 2, 1024 ) == -1 ) // Initialize SDL_mixer
+    if( Mix_OpenAudio( 44100, MIX_DEFAULT_FORMAT, MIX_DEFAULT_CHANNELS, 1024 ) == -1 ) // Initialize SDL_mixer
         cout << SDL_GetError() << endl;
 
     SDL_GL_SetAttribute(SDL_GL_CONTEXT_MAJOR_VERSION, 3);
@@ -155,13 +155,13 @@ void Engine::run(SDL_Window* window){
 
             // entities UPDATE
             for(auto& el: game->entities)
-                el->Update(deltaTimeSec);
+                el->update(deltaTimeSec);
 
             Engine::world->Step(deltaTimeSec, VELOCITY_ITERATIONS, POSITION_ITERATIONS);
 
 
             for(auto& el: game->entities)
-                el->UpdateTransform();
+                el->updateTransform();
         }
 
         game->lateUpdate(deltaTimeSec);

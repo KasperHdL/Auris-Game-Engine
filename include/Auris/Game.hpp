@@ -38,7 +38,7 @@ public:
         scene->init(this);
 
         for (auto & el : entities)
-            el->Init();
+            el->init();
     }
 
 
