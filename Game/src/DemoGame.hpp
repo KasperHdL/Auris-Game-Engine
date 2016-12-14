@@ -11,9 +11,12 @@ using namespace Auris;
 class DemoGame : public Auris::Game {
     Scene1 scene1;
     AudioPlayer audioPlayer;
-    bool musicPaused = false;
+
     int pistolShot;
     int warSounds;
+
+    int musicVolume = 128;
+    int soundVolume = 128;
 
     int id1 = -1;
     int id2 = -1;
@@ -21,8 +24,8 @@ class DemoGame : public Auris::Game {
     void init() {
         loadScene(&scene1);
         Auris::Engine::world->SetGravity(b2Vec2(0, -9.8));
-        pistolShot = audioPlayer.addSoundEffect(Resource::getPath("pistolShot.wav").c_str(), 1.0f);
-        warSounds = audioPlayer.addMusic(Resource::getPath("warSounds.wav").c_str(), 1.0f);
+        pistolShot = audioPlayer.addSound(Resource::getPath("pistolShot.wav").c_str(), 128);
+        warSounds = audioPlayer.addMusic(Resource::getPath("warSounds.wav").c_str(), 128);
         audioPlayer.playMusic(warSounds);
     }
 
@@ -31,9 +34,8 @@ class DemoGame : public Auris::Game {
     }
 
     void update(float dt){
-        if (Input::keyDown(SDL_SCANCODE_RETURN)){
-            audioPlayer.playSoundEffect(pistolShot);
-        }
+        if (Input::keyDown(SDL_SCANCODE_RETURN))
+            audioPlayer.playSound(pistolShot);
 
           //cout << id1 << ": " << Input::getControllerAxisState(id1,SDL_CONTROLLER_AXIS_TRIGGERRIGHT) << endl;
           //cout << id1 << ": " << Input::getControllerButtonState(id1,SDL_CONTROLLER_BUTTON_A) << endl;
