@@ -5,6 +5,7 @@
 #include "Scenes/Scene1.hpp"
 #include "Scenes/Scene2.hpp"
 #include "Auris/Utilities/AudioPlayer.hpp"
+#include "Auris/Entities/Camera.hpp"
 
 using namespace Auris;
 
@@ -18,12 +19,15 @@ class DemoGame : public Auris::Game {
     int id1 = -1;
     int id2 = -1;
     int id3 = -1;
+
+    Auris::Camera* cam;
     void init() {
         loadScene(&scene1);
         Auris::Engine::world->SetGravity(b2Vec2(0, -9.8));
         pistolShot = audioPlayer.addSoundEffect(Resource::getPath("pistolShot.wav").c_str(), 1.0f);
         warSounds = audioPlayer.addMusic(Resource::getPath("warSounds.wav").c_str(), 1.0f);
         audioPlayer.playMusic(warSounds);
+        cam = new Auris::Camera(1280,720);
     }
 
     void earlyUpdate(float dt){

@@ -43,10 +43,6 @@ void DebugUI::update(float dt){
     if(Input::keyDown(Auris::Action::debug)){
         debug = !debug;
 
-        if(debug == false){
-            ImGui_SRE_NewFrame(e->window);
-            ImGui::Render();
-        }
     }
 
     if(Input::keyDown(Auris::Action::pause)){
