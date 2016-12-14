@@ -8,7 +8,7 @@
 
 namespace Auris{
 
-    class AssetSystem{
+    class AssetManager{
     public:
         static SRE::Texture* getTexture(std::string path);
 
