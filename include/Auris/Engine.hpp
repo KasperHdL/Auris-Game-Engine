@@ -18,7 +18,6 @@
 #include <memory>
 #include <vector>
 #include <iostream>
-#include "Systems/Scene.hpp"
 #include <string>
 #include <fstream>
 #include <sstream>
@@ -30,19 +29,17 @@
 #include "Auris/Utilities/Convert.hpp"
 #include "Auris/GameObjects/Camera.hpp"
 
+#include "Auris/Systems/Scene.hpp"
 #include "Auris/Systems/Input.hpp"
 #include "Auris/Systems/RenderSystem.hpp"
-#include "Auris/Systems/ParticleSystem.hpp"
 #include "Auris/Systems/CollisionHandler.hpp"
 
-#include "Auris/Testing/Showcases/ShowcasePanel.hpp"
-#include "Auris/Testing/DebugDraw.hpp"
 
 #include "Auris/Action.hpp"
 
 
-class DebugDraw;
 namespace Auris{
+class DebugUI;
 class Engine{
 public:
     Engine(int width, int height):width(width),height(height){}
@@ -62,23 +59,18 @@ public:
     static void loadScene(Scene* scene);
     static void removeGameObject(GameObject* gameObject);
 
-private:
     Game* game;
 
     SDL_Window *window;
 
     RenderSystem renderSystem;
-    ShowcasePanel showcasePanel;
+    DebugUI* debugUI;
 
     b2ContactListener* collisionHandler;
     vec2 camPos;
 
     const int VELOCITY_ITERATIONS = 16;
     const int POSITION_ITERATIONS = 16;
-
-    bool debug = false;
-    bool pause = false;
-    bool drawDebug = false;
 
     int width;
     int height;

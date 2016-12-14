@@ -6,6 +6,7 @@
 #include "Auris/Utilities/Resource.hpp"
 #include "Auris/Utilities/BodyStandard.hpp"
 
+using namespace Auris;
 using namespace Constants;
 
 class Wall : public GameObject{
@@ -13,23 +14,25 @@ public:
     Wall(vec2 position = vec2(0,0)):GameObject() {
         name = "Wall";    
 
-        SpriteSheet* ss = new SpriteSheet(Resource::getPath("MarioPacked.json"));
+        SpriteSheet* spriteSheet = new SpriteSheet(Resource::getPath("MarioPacked.json"));
 
-        sprite = ss->getSprite("brick",this);
+        sprite = spriteSheet->getSprite("brick",this);
 
         b2PolygonShape shape; 
-        shape.SetAsBox(30.0f * PIXELS_TO_METERS, 30.0f * PIXELS_TO_METERS); 
+        shape.SetAsBox(20.0f * Constants::PIXELS_TO_METERS, 20.0f * PIXELS_TO_METERS);
 
         body = Auris::Utilities::BodyStandard::getStaticBody(&shape, position, 30.0f);
 
+        // Physics properties
         setCollisionEvents(true);
     }
 
     ~Wall(){
+
     }
 
     void Update(float dt){
-        //anim->setSprite(sprite);
+
     }
 
     void OnCollisionEnter(GameObject* other) {

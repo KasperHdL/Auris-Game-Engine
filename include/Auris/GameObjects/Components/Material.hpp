@@ -8,6 +8,7 @@ namespace Auris{
 class Material{
 public:
     SRE::Texture* texture;
+    SRE::Texture* normalMap = nullptr;
     glm::vec4 color;
     SRE::Mesh* mesh;
 

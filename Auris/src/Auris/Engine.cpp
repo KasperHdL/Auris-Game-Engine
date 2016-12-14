@@ -1,11 +1,11 @@
 #include "Auris/Engine.hpp"
+#include "Auris/Testing/DebugUI.hpp"
 
 using namespace SRE;
 using namespace glm;
 using namespace std;
 using namespace Auris;
 
-Auris::DebugDraw debugDraw;
 
 Scene* Engine::currentScene;
 b2World* Engine::world;
@@ -38,13 +38,10 @@ void Engine::startup(Game* game){
         exit(1);
     }
 
-
     SRE::SimpleRenderEngine r{window};
 
-    ImGui_SRE_Init(window);
 
     renderSystem.startup(64);
-
 
 
     world = new b2World(Convert::toB2(glm::vec2(0,0)));
@@ -52,20 +49,18 @@ void Engine::startup(Game* game){
     collisionHandler = new CollisionHandler;
     Engine::world->SetContactListener(collisionHandler);
 
-    //@TODO debug stuff!
-    Engine::world->SetDebugDraw(&debugDraw);
-    debugDraw.SetFlags(b2Draw::e_shapeBit);
-
-
     // Initialize Simple Render Engine
 
     //nisse->setRotation(-3.14);
     //nisse->moveCamera(vec2(400,0));
     //nisse->moveCamera(vec2(400,0));
-    //auto sre = SimpleRenderEngine::instance;
-    //sre->getCamera()->setWindowCoordinates();
+    auto sre = SimpleRenderEngine::instance;
+    sre->getCamera()->setWindowCoordinates();
 
     Input::init(game);
+
+    debugUI = new DebugUI();
+    debugUI->startup(this);
 
     // INIT GAME
     game->init();
@@ -95,6 +90,7 @@ void Engine::shutdown(){
 
     renderSystem.shutdown();
 
+    debugUI->shutdown();
 
 
     // Close and destroy the window
@@ -152,132 +148,11 @@ void Engine::run(SDL_Window* window){
 
         Input::update();
 
-        if (Input::keyDown(Auris::Action::quit)) {
-			quit = 1;
-		}
-
-        if(Input::keyDown(Auris::Action::debug)){
-            debug = !debug;
-
-            if(debug == false){
-                ImGui_SRE_NewFrame(window);
-                ImGui::Render();
-            }
-        }
-
-        if(Input::keyDown(Auris::Action::pause)){
-            pause = !pause;
-        }
-
-        bool runOneStep = false;
-        if(Input::keyDown(Auris::Action::stepOne) || Input::keyHeld(Auris::Action::playOnHold)){
-            runOneStep = true;
-            pause = true;
-        }
-
-        if(Input::keyDown(Auris::Action::drawDebug)){
-            drawDebug = !drawDebug;
-        }
-
-        if(debug){
-            
-            ImGui_SRE_NewFrame(window);
-
-            ImGui::Checkbox("Debug(F2)", &debug);
-            ImGui::SameLine();
-            ImGui::Checkbox("Pause(F3)", &pause);
-            if(ImGui::Button("Step One Frame(F4)")){
-                runOneStep = true;
-                pause = true;
-            }
-            ImGui::SameLine();
-            ImGui::Text("Play on Hold(F5)");
-//          ImGui::Checkbox("Toggle Camera Controls(Arrow Keys)",&toggle_cameraControls);
-            ImGui::Checkbox("Debug draw(F6)", &drawDebug);
-
-            ImGui::Separator();
-            ImGui::Checkbox("Toggle GO Inspector",&toggle_goInspector);
-            if(ImGui::Checkbox("Toggle Showcases Panel",&toggle_showcasePanel)){
-                if(toggle_showcasePanel){
-                    //toggled on
-                    showcasePanel.startup();
-                }else{
-                    //toggled off
-                    showcasePanel.shutdown();
-                }
-
-            }
-            ImGui::Separator();
-
-            arr_deltaTime[arrIndex] = deltaTimeSec;
-            arr_physMem[arrIndex] = memLeakDet.getPhysMemUsedByMe();
-            arr_virtMem[arrIndex] = memLeakDet.getVirtMemUsedByMe();
-
-            if(deltaTimeSec > max_deltaTime)
-                max_deltaTime = deltaTimeSec;
-
-            if(renderSystem.spritePool.count > max_renderSprites)
-                max_renderSprites = renderSystem.spritePool.count;
-
-            ImGui::PlotLines("Physical Memory", arr_physMem, arrSize);
-            ImGui::Text("Physical Memory: %f / %f", arr_physMem[arrIndex], memLeakDet.getTotalPhysMem());
-            ImGui::PlotLines("Dt", arr_virtMem, arrSize);
-            ImGui::Text("Virtual Memory: %f / %f", arr_virtMem[arrIndex], memLeakDet.getTotalVirtMem());
-
-            ImGui::Separator();
-            ImGui::PlotLines("Dt", arr_deltaTime, arrSize);
-            ImGui::Text("Current Dt: %f - Max dt: %f",deltaTimeSec, max_deltaTime);
-
-            ImGui::Separator();
-            ImGui::Text("Num GameObjects %zu", Engine::currentScene->gameObjects.size());
-            ImGui::Text("Num of Sprites Allocated %d - Max %d", renderSystem.spritePool.count, max_renderSprites);
-
-            ImGui::Separator();
-
-            if(toggle_goInspector){
-                ImGui::Begin("GameObject Inspector");
-                ImGui::Text("Current scene: %s", Engine::currentScene->name.c_str());
-                if(ImGui::TreeNode("GameObjects")){
-                    int i = 0;
-                    for(auto& el: Engine::currentScene->gameObjects){
-                        string name = el->name;
-                        if(name == "") name = &"GO " [ i];
-
-                        ImGui::PushID(&el);
-                        if(ImGui::TreeNode(el->name.c_str())){
-                            vec2 pos = Convert::toGlm(el->body->GetPosition());
-                            ImGui::Text("Position (%f, %f)", pos.x, pos.y);
-
-                            ImGui::Text("Rotation (%f)", el->body->GetAngle());
-
-                            vec2 vel = Convert::toGlm(el->body->GetLinearVelocity());
-                            ImGui::Text("Velocity (%f, %f)", vel.x, vel.y);
-                            
-                            ImGui::Text("Angular Velocity (%f)", el->body->GetAngularVelocity());
-
-                            ImGui::TreePop();
-                        }
-                        ImGui::PopID();
-                        i++;
-                    }
-                    ImGui::TreePop();
-                }
-                ImGui::End();
-            }
-
-            if(toggle_showcasePanel){
-                ImGui::Begin("Showcases");
-                showcasePanel.makeGui();
-                ImGui::End();
-            }
-
-            arrIndex++;
-            if(arrIndex >= arrSize)
-                arrIndex = 0;
-        }
-
+        debugUI->update(deltaTimeSec);
+        
         //UPDATE
-        if(!pause || runOneStep){
+        if(!debugUI->pause || debugUI->runOneStep){
+
             // GAME UPDATE
             game->update(deltaTimeSec);
 
@@ -286,10 +161,6 @@ void Engine::run(SDL_Window* window){
                 el->Update(deltaTimeSec);
 
             Engine::world->Step(deltaTimeSec, VELOCITY_ITERATIONS, POSITION_ITERATIONS);
-
-            if(toggle_showcasePanel){
-                showcasePanel.update(deltaTimeSec);
-            }
         }
 
         game->lateUpdate(deltaTimeSec);
@@ -297,14 +168,8 @@ void Engine::run(SDL_Window* window){
         //DRAW
         renderSystem.update(deltaTimeSec);
 
-        if(toggle_showcasePanel)
-            showcasePanel.draw();
+        debugUI->draw();
 
-        if(debug)
-            ImGui::Render();
-
-        if(drawDebug)
-            world->DrawDebugData();
 
         sre->swapWindow();
     }

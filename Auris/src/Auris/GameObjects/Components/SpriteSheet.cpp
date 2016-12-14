@@ -25,7 +25,8 @@ SpriteSheet::SpriteSheet(string pathToJSON){
     for(auto & stuff : meta){
         if(stuff.first=="image"){
         SpriteSheet::texture = SRE::Texture::createFromFile(Resource::getPath(stuff.second.get<string>()).c_str(),false);
-        //cout << stuff.second.get<string>()<< endl;
+        }if(stuff.first=="normal"){
+            SpriteSheet::normalMap = SRE::Texture::createFromFile(Resource::getPath(stuff.second.get<string>()).c_str(),false);
         }
     }
     //cout << meta.get("image").get<string>; << endl;
@@ -38,7 +39,6 @@ SpriteSheet::SpriteSheet(string pathToJSON){
         float ax = (float)element.get("pivot").get("x").get<double>();
         float ay = (float)element.get("pivot").get("y").get<double>();
         string name = element.get("filename").get<std::string>();
-        cout << name << endl;
         SpriteSheet::sprites[element.get("filename").get<std::string>()] = saveMaterial(x,texture->getHeight()-height-y,width,height,ax,ay);
     }
 }
@@ -73,6 +73,7 @@ Material* SpriteSheet::saveMaterial(int x, int y, int width, int height, float a
     mat->mesh = new SRE::Mesh(vertices, normals, uvs);
     //mat->mesh = Mesh::createCube();
     mat->texture = SpriteSheet::texture;
+    mat->normalMap = SpriteSheet::normalMap;
 
     //as of now only white (fixed!)
     mat->color = glm::vec4(1,1,1,1);

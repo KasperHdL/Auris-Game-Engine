@@ -3,16 +3,16 @@ file(GLOB_RECURSE SOURCE_FILES
     )
 
 #include_directories(../include)
-add_library(Engine STATIC ${SOURCE_FILES})
-target_link_libraries(Engine ${EXTRA_LIBS})
+add_library(Auris STATIC ${SOURCE_FILES})
+target_link_libraries(Auris ${EXTRA_LIBS})
 
-install(TARGETS Engine EXPORT AurisConfig
+install(TARGETS Auris EXPORT AurisConfig
     ARCHIVE  DESTINATION lib
     LIBRARY  DESTINATION lib
     RUNTIME  DESTINATION bin) #for windows
 
 install(DIRECTORY ../include/ DESTINATION include)
 
-install(EXPORT AurisConfig DESTINATION share/Engine/cmake)
+install(EXPORT AurisConfig DESTINATION share/Auris/cmake)
 
-export(TARGETS Engine FILE AurisConfig.cmake)
+export(TARGETS Auris FILE AurisConfig.cmake)

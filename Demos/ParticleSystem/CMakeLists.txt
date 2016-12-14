@@ -3,8 +3,8 @@ file(GLOB_RECURSE GAME_FILES
     "src/*.hpp"
 )
 
-add_executable(Game ${GAME_FILES})
-target_link_libraries(Game ${EXTRA_LIBS} Auris)
+add_executable(Demo_ParticleSystem ${GAME_FILES})
+target_link_libraries(Demo_ParticleSystem ${EXTRA_LIBS} Auris)
 
 file(COPY data DESTINATION .)
 

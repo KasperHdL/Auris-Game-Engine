@@ -7,6 +7,7 @@
 #include "SRE/Shader.hpp"
 #include "SRE/Texture.hpp"
 
+#include "Auris/Utilities/Shader.hpp"
 #include "Auris/GameObjects/Components/Component.hpp"
 #include "Auris/GameObjects/Components/Material.hpp"
 
@@ -15,7 +16,9 @@ using namespace SRE;
 class Sprite : public Component{
 public:
     Mesh* mesh;
+    SRE::Shader* shader;
     Texture* texture;
+    Texture* normalMap;
     glm::vec4 color;
     glm::vec2 scale;
         
@@ -25,6 +28,8 @@ public:
     Sprite(GameObject* gameObject):Component(gameObject){
         mesh = Mesh::createCube();
         texture = Texture::getWhiteTexture();
+        normalMap = nullptr;
+        shader = SRE::Shader::getUnlitSprite();
         color = glm::vec4(1,1,1,1);
         scale = glm::vec2(1,1);
     }
@@ -37,6 +42,11 @@ public:
     void setMaterial(Material* material){
         mesh = material->mesh;
         texture = material->texture;
+        normalMap = material->normalMap;
+        if(normalMap == nullptr)
+            shader = SRE::Shader::getUnlitSprite();
+        else
+            shader = Auris::Shader::getLitSprite();
         color = material->color;
 
     }
