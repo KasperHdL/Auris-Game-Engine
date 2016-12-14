@@ -73,4 +73,23 @@ class DemoGame : public Auris::Game {
             id3 = -1;
         }
     }
+
+    void imGUI(){
+
+        bool open = true;
+
+        ImGui::SetNextWindowPos(ImVec2(100,000));
+        ImGui::Begin("#TestLabel",&open,ImVec2(500,100),0,ImGuiWindowFlags_NoTitleBar|ImGuiWindowFlags_NoResize|ImGuiWindowFlags_NoMove|ImGuiWindowFlags_NoScrollbar|ImGuiWindowFlags_NoSavedSettings|ImGuiWindowFlags_NoInputs);
+        ImGui::Text("Hello, world!");
+        ImGui::End();
+
+        // Show Button (with invisible window)
+        // Note window may disappear behind other windows
+        ImGui::SetNextWindowPos(ImVec2(200,100));
+        ImGui::Begin("#Button",&open,ImVec2(100,25),0,ImGuiWindowFlags_NoTitleBar|ImGuiWindowFlags_NoResize|ImGuiWindowFlags_NoMove|ImGuiWindowFlags_NoScrollbar);
+        if (ImGui::Button("Click me")){
+            std::cout << "Clicked"<<std::endl;
+            }
+        ImGui::End();
+    }
 };

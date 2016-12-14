@@ -9,7 +9,7 @@ using namespace Auris;
  */
 void DebugUI::startup(Engine* engine){
     this->e = engine;
-    ImGui_SRE_Init(e->window);
+    //ImGui_SRE_Init(e->window);
   
     e->world->SetDebugDraw(&debugDraw);
     debugDraw.SetFlags(b2Draw::e_shapeBit);
@@ -55,8 +55,6 @@ void DebugUI::update(float dt){
 
     if(debug){
         
-        ImGui_SRE_NewFrame(e->window);
-
         ImGui::Checkbox("Debug(F2)", &debug);
         ImGui::SameLine();
         ImGui::Checkbox("Pause(F3)", &pause);
@@ -145,9 +143,6 @@ void DebugUI::update(float dt){
 /*! calls ImGui::Render() and box2d draw debug if enabled.
  */
 void DebugUI::draw(){
-
-    if(debug)
-        ImGui::Render();
 
     if(drawDebug)
         e->world->DrawDebugData();

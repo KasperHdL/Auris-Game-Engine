@@ -25,6 +25,9 @@ public:
     virtual void controllerConnected(int controllerID){}
 
     virtual void controllerDisconnected(int controllerID){}
+
+    virtual void imGUI(){}
+
     std::vector<std::shared_ptr<Entity>> entities;
 
     inline void addEntity(std::shared_ptr<Entity> entity){

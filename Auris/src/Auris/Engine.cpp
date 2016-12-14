@@ -67,6 +67,7 @@ void Engine::startup(Game* game){
     Input::init(game);
 
     debugUI = new DebugUI();
+    ImGui_SRE_Init(window);
     debugUI->startup(this);
 
     // INIT GAME
@@ -141,10 +142,9 @@ void Engine::run(SDL_Window* window){
 
         sre->clearScreen(vec4(0,0,0,1));
 
-        //nisse->rotateCamera(0.1f);
-
         Input::update();
 
+        ImGui_SRE_NewFrame(window);
         debugUI->update(deltaTimeSec);
         
         //UPDATE
@@ -169,8 +169,10 @@ void Engine::run(SDL_Window* window){
         //DRAW
         renderSystem.update(deltaTimeSec);
 
-        debugUI->draw();
+        game->imGUI();
 
+        debugUI->draw();
+        ImGui::Render();
 
         sre->swapWindow();
     }
