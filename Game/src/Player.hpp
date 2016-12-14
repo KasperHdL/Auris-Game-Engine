@@ -74,9 +74,9 @@ class Player : public PhysicsEntity{
                 canJump = false;
             }
 
-        if (Input::keyDown(Auris::Action::down)) {
+            if (Input::keyDown(Auris::Action::down)) {
 
-		}
+            }
 
             if (Input::keyHeld(Auris::Action::left)) {
                 anim->run(sprite, dt);

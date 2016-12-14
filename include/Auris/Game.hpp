@@ -3,6 +3,7 @@
 #include "Auris/Engine.hpp"
 #include "Auris/Systems/Scene.hpp"
 #include "Auris/Entity.hpp"
+#include "Auris/Entities/Camera.hpp"
 #include <vector>
 #include <memory>
 
@@ -10,6 +11,8 @@ namespace Auris{
 class Game {
 
 public:
+    Auris::Camera* camera;
+
     virtual void init() = 0;
 
     virtual void earlyUpdate(float dt) = 0;
@@ -27,8 +30,9 @@ public:
     virtual void controllerDisconnected(int controllerID){}
     std::vector<std::shared_ptr<Entity>> entities;
 
-    inline void addEntity(std::shared_ptr<Entity> entity){
+    inline int addEntity(std::shared_ptr<Entity> entity){
         entities.push_back(entity);
+        return entities.size()-1;
     }
 
     void loadScene(Scene* scene) {

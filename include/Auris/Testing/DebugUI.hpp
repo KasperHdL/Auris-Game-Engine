@@ -4,7 +4,7 @@
 #include "Auris/Systems/Input.hpp"
 
 /*!
- * DebugUI allow the Engine to draw an Debug overlay to show debug information for the engine.
+ * DebugUI allows the Engine to draw an Debug overlay to show debug information for the engine.
  *
  */
 

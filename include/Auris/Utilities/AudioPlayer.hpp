@@ -1,5 +1,8 @@
 #pragma once
 
+#include "Auris/Entity.hpp"
+#include "Auris/Entities/Camera.hpp"
+#include "Auris/Utilities/Resource.hpp"
 #include <SDL2/SDL_mixer.h>
 
 using namespace Auris;
@@ -11,9 +14,58 @@ private:
     vector<Mix_Music*> music;
     vector<Mix_Chunk*> sounds;
 
-    int channel = -1;
+    int channel;
+
+    int sound;
+    int difference = 0;
+    int pan = 127;
+    int distance = 0;
+
+    Auris::Camera* listener;
 
 public:
+    AudioPlayer(Auris::Camera* listener = nullptr, int channel = -1) {
+        name = "AudioListener";
+        if (listener != nullptr)
+            this->listener = listener;
+        this->channel = channel;
+    }
+
+    void init() {
+        sound = addSound(Auris::Resource::getPath("pistolShot.wav").c_str(), 128);
+    }
+
+    void update(float deltaTime) {
+        if (listener != nullptr) {
+            difference = 127 - (transform->position.x - listener->getPos().x)/(listener->getWidth()/254);
+            pan = difference < 0 ? 0: difference > 254 ? 254 : difference;
+            Mix_SetPanning(channel, pan, 254-pan);
+            if (difference < 100)
+                distance = (100 - difference)*2;
+            else if (difference > 154)
+                distance = (difference - 154)*2;
+
+            distance = distance > 255 ? 255 : distance;
+
+            Mix_SetDistance(channel, distance);
+
+            cout << "normalized pos: " << difference << endl;
+            cout << "pan: " << pan << endl;
+            cout << "distance: " << distance << endl;
+        }
+
+        if (Auris::Input::keyHeld(Auris::Action::a)) {
+            listener->setPos(vec2(listener->getPos().x-5, listener->getPos().y));
+        }
+
+        if (Auris::Input::keyHeld(Auris::Action::d)) {
+            listener->setPos(vec2(listener->getPos().x+5, listener->getPos().y));
+        }
+
+        if (Auris::Input::keyDown(Auris::Action::enter)) {
+            playSound(sound);
+        }
+    }
 
     //! Adds music to this AudioPlayer.
     /*!
@@ -91,7 +143,7 @@ public:
         Mix_VolumeChunk(sounds[index], volume);
     }
 
-    //! Sets the channel, this AudioPlayer plays in.
+    //! Sets the channel this AudioPlayer plays in.
     /*!
      * \param int The new channel.*/
     void setChannel(int channel) {
@@ -108,11 +160,6 @@ public:
 
         music.clear();
         sounds.clear();
-    }
-
-    void update(float dt) {
-//        left = cam.pos.x;
-//        Mix_SetPanning()
     }
 };
 }

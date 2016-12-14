@@ -174,7 +174,5 @@ void Engine::run(SDL_Window* window){
 
         sre->swapWindow();
     }
-
-    shutdown();
 }
 

@@ -11,5 +11,8 @@ namespace Action{
     const SDL_Scancode stepOne = SDL_SCANCODE_F4;
     const SDL_Scancode playOnHold = SDL_SCANCODE_F5;
     const SDL_Scancode drawDebug = SDL_SCANCODE_F6;
+    const SDL_Scancode a = SDL_SCANCODE_A;
+    const SDL_Scancode d = SDL_SCANCODE_D;
+    const SDL_Scancode enter = SDL_SCANCODE_RETURN;
 }
 }

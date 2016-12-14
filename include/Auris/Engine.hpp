@@ -26,6 +26,7 @@
 //Engine
 #include "Auris/Game.hpp"
 #include "Auris/Entity.hpp"
+
 #include "Auris/Utilities/MemoryLeakDetector.hpp"
 #include "Auris/Utilities/Convert.hpp"
 
@@ -36,6 +37,7 @@
 
 
 #include "Auris/Action.hpp"
+
 
 
 namespace Auris{
