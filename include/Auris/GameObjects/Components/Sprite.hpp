@@ -40,14 +40,14 @@ public:
     }
 
     void setMaterial(Material* material){
-        mesh = material->mesh;
-        texture = material->texture;
-        normalMap = material->normalMap;
+        mesh = material->getMesh();
+        texture = material->getTexture();
+        normalMap = material->getNormalMap();
         if(normalMap == nullptr)
             shader = SRE::Shader::getUnlitSprite();
         else
             shader = Auris::Shader::getLitSprite();
-        color = material->color;
+        color = material->getColor();
 
     }
 };
