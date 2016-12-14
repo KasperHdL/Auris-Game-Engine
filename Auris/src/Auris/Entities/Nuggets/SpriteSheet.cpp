@@ -3,7 +3,7 @@
 #include <fstream>
 #include <iostream>
 
-#include "Auris/Utilities/Resource.hpp"
+#include "Auris/Utilities/AssetManager.hpp"
 
 using namespace Auris;
 using namespace std;
@@ -24,9 +24,9 @@ SpriteSheet::SpriteSheet(string pathToJSON){
 
     for(auto & stuff : meta){
         if(stuff.first=="image"){
-        SpriteSheet::texture = SRE::Texture::createFromFile(Resource::getPath(stuff.second.get<string>()).c_str(),false);
+            texture = AssetManager(stuff.second.get<string>());
         }if(stuff.first=="normal"){
-            SpriteSheet::normalMap = SRE::Texture::createFromFile(Resource::getPath(stuff.second.get<string>()).c_str(),false);
+            normalMap = AssetManager(stuff.second.get<string>());
         }
     }
     //cout << meta.get("image").get<string>; << endl;
