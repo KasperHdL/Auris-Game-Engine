@@ -70,13 +70,13 @@ Material* SpriteSheet::saveMaterial(int x, int y, int width, int height, float a
     });
 
     Material* mat = new Material();
-    mat->mesh = new SRE::Mesh(vertices, normals, uvs);
+    mat->setMesh(new SRE::Mesh(vertices, normals, uvs));
     //mat->mesh = Mesh::createCube();
-    mat->texture = SpriteSheet::texture;
-    mat->normalMap = SpriteSheet::normalMap;
+    mat->setTexture(SpriteSheet::texture);
+    mat->setNormalMap(SpriteSheet::normalMap);
 
     //as of now only white (fixed!)
-    mat->color = glm::vec4(1,1,1,1);
+    mat->setColor(glm::vec4(1,1,1,1));
 
     return mat;
 }

@@ -18,8 +18,8 @@ public:
 
     virtual void shutdown() = 0;
 
-    virtual void controllerConnected() = 0;
+    virtual void controllerConnected(int controllerID){}
 
-    virtual void controllerDisconnected() = 0;
+    virtual void controllerDisconnected(int controllerID){}
 };
 }

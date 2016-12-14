@@ -9,17 +9,16 @@ public:
     int damage = 10;
     float movementSpeed = 10;
 
-    Auris::Material* mat;
+    Auris::Material mat;
 
     Bullet(vec2 position) : GameObject(){
         name = "Bullet";
+        mat.setColor(vec4(1,1,1,1));
+//        mat.texture = SRE::Texture::createFromFile(Resource::getPath("data/bullet.png").c_str(), false);
+        mat.setTexture(SRE::Texture::getWhiteTexture());
+        mat.setMesh(SRE::Mesh::createCube());
 
-        mat->color = vec4(1);
-//        mat->texture = SRE::Texture::createFromFile(Resource::getPath("data/bullet.png").c_str(), false);
-        mat->texture = SRE::Texture::getWhiteTexture();
-        mat->mesh = SRE::Mesh::createCube();
-
-        sprite = Auris::RenderSystem::getSprite(this, mat);
+        sprite = Auris::RenderSystem::getSprite(this, &mat);
         sprite->scale = vec2(1,1);
 
         b2PolygonShape shape;

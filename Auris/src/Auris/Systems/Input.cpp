@@ -1,5 +1,6 @@
 #include "Auris/Systems/Input.hpp"
 #include <iostream>
+#include "Auris/Game.hpp"
 
 using namespace Auris;
 
@@ -10,8 +11,11 @@ std::map<SDL_Scancode, bool> Input::upKeys;
 std::map<SDL_JoystickID,SDL_GameController*> Input::ctrl;
 
 int Input::quit = 0;
+Game* Input::game;
 
-void Input::init(){
+void Input::init(Game* game){
+    Input::game = game;
+
     if(SDL_Init(SDL_INIT_GAMECONTROLLER)<0){
          fprintf(stderr, "Couldn't initialize controller: %s\n", SDL_GetError());
     }
@@ -98,10 +102,10 @@ void Input::controllerAdded(const SDL_Event &event){
 }
 
 void Input::initController(const SDL_Event& event){
-if (SDL_IsGameController(event.cbutton.which)) {
-    if(ctrl[event.cbutton.which]!=nullptr){
-        ctrl[event.cbutton.which]= SDL_GameControllerOpen(event.cdevice.which);
-
+    if (SDL_IsGameController(event.cbutton.which)) {
+        if(!ctrl.count(event.cbutton.which)){
+            ctrl[event.cbutton.which]= SDL_GameControllerOpen(event.cdevice.which);
+            game->controllerConnected(event.cbutton.which);
         }
     }
 }
@@ -111,5 +115,14 @@ void Input::controllerRemoved(const SDL_Event& event){
             std::map<SDL_JoystickID,SDL_GameController*>::iterator it;
             it=ctrl.find(event.cdevice.which);
             ctrl.erase (it);
+            game->controllerDisconnected(event.cdevice.which);
         }
+}
+
+int Input::getControllerButtonState(int controllerID, SDL_GameControllerButton button){
+    return SDL_GameControllerGetButton(SDL_GameControllerOpen(controllerID),button);
+}
+
+int Input::getControllerAxisState(int controllerID, SDL_GameControllerAxis axis){
+    return SDL_GameControllerGetAxis(SDL_GameControllerOpen(controllerID),axis);
 }

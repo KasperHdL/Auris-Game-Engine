@@ -34,6 +34,9 @@ include_directories(${SDL2_INCLUDE_DIR})
 find_package(SDL2_IMAGE REQUIRED)
 include_directories(${SDL2_IMAGE_INCLUDE_DIRS})
 
+find_package(SDL2_MIXER REQUIRED)
+include_directories(${SDL2_MIXER_INCLUDE_DIRS})
+
 # Box2D
 find_package(Box2D REQUIRED)
 include_directories(${BOX2D_INCLUDE_DIR})
@@ -44,7 +47,7 @@ include_directories(${SRE_INCLUDE_DIR})
 
 include_directories(include)
 
-SET(EXTRA_LIBS ${EXTRA_LIBS} ${SDL2_LIBRARY} ${SDL2_IMAGE_LIBRARY} ${BOX2D_LIBRARY} ${SRE_LIBRARY})
+SET(EXTRA_LIBS ${EXTRA_LIBS} ${SDL2_LIBRARY} ${SDL2_MIXER_LIBRARY} ${SDL2_IMAGE_LIBRARY} ${BOX2D_LIBRARY} ${SRE_LIBRARY})
 
 add_subdirectory(Auris)
 add_subdirectory(Game)

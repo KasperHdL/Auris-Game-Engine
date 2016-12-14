@@ -27,9 +27,9 @@ class Test : public Auris::GameObject{
 
         
         mat = new Auris::Material();
-        mat->color = vec4(1);
-        mat->texture = SRE::Texture::getWhiteTexture();
-        mat->mesh = SRE::Mesh::createSphere();
+        mat->setColor(vec4(1));
+        mat->setTexture(SRE::Texture::getWhiteTexture());
+        mat->setMesh(SRE::Mesh::createSphere());
         
         sprite = Auris::RenderSystem::getSprite(this, mat);
         sprite->scale = vec2(5,5);
@@ -59,8 +59,6 @@ class Test : public Auris::GameObject{
     }
 
     ~Test(){
-        delete mat->texture;
-        delete mat->normalMap;
         delete mat;
     }
 
