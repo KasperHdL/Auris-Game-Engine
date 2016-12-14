@@ -12,7 +12,15 @@ b2World* Engine::world;
 void Engine::startup(Game* game){
     this->game = game;
 
-    SDL_Init(SDL_INIT_VIDEO);              // Initialize SDL2
+    if (SDL_Init(SDL_INIT_VIDEO) == -1) // Initialize SDL2
+        cout << SDL_GetError() << endl;
+
+    if (SDL_Init(SDL_INIT_AUDIO) == -1) // Initialize SDL2_audio
+        cout << SDL_GetError() << endl;
+
+    if( Mix_OpenAudio( 44100, MIX_DEFAULT_FORMAT, 2, 1024 ) == -1 ) // Initialize SDL_mixer
+        cout << SDL_GetError() << endl;
+
     SDL_GL_SetAttribute(SDL_GL_CONTEXT_MAJOR_VERSION, 3);
     SDL_GL_SetAttribute(SDL_GL_CONTEXT_MINOR_VERSION, 1);
     SDL_GL_SetAttribute(SDL_GL_CONTEXT_PROFILE_MASK, SDL_GL_CONTEXT_PROFILE_CORE);
@@ -81,6 +89,8 @@ void Engine::shutdown(){
 
     debugUI->shutdown();
 
+    //! Close SDL_mixer
+    Mix_CloseAudio();
 
     // Close and destroy the window
     SDL_DestroyWindow(window);

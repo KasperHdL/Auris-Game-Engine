@@ -13,19 +13,25 @@ private:
     vector<Mix_Chunk*> sfx;
 
 public:
-    /*! Add music to this AudioPlayer. Returns the index of the music.*/
+    /*! Adds music to this AudioPlayer. Returns the index of the music.*/
     int addMusic(const char* path, float volume) {
         music.push_back(Mix_LoadMUS(path));
+        cout << music[music.size()-1] << endl;
+        if (music[music.size()-1] == nullptr)
+            cout << "Nullptr: Failed to load \"" << path << "\". Make sure the path is correct." << endl;
         return sfx.size()-1;
     }
 
-    /*! Add a sound effect to this AudioPlayer. Returns the index of the sound effect.*/
+    /*! Adds a sound effect to this AudioPlayer. Returns the index of the sound effect.*/
     int addSoundEffect(const char* path, float volume) {
         sfx.push_back(Mix_LoadWAV(path));
+        cout << sfx[sfx.size()-1] << endl;
+        if (sfx[sfx.size()-1] == nullptr)
+            cout << "Nullptr: Failed to load \"" << path << "\". Make sure the path is correct." << endl;
         return sfx.size()-1;
     }
 
-    /*! Play piece of music. Takes the index of the music.*/
+    /*! Plays piece of music. Takes the index of the music.*/
     void playMusic(int index){
         //If there is no music playing
         if( Mix_PlayingMusic() == 0 )
@@ -33,7 +39,7 @@ public:
             Mix_PlayMusic( music[index], -1 );
     }
 
-    /*! Play a sound effect. Takes the index of the sound effect.*/
+    /*! Plays a sound effect. Takes the index of the sound effect.*/
     void playSoundEffect(int index) {
         Mix_PlayChannel(-1, sfx[index], 0 );
     }
@@ -47,6 +53,16 @@ public:
 
         music.clear();
         sfx.clear();
+    }
+
+    void pauseMusic() {
+        if( Mix_PlayingMusic() == 1 )
+            Mix_PauseMusic();
+    }
+
+    void resumeMusic() {
+        if( Mix_PlayingMusic() == 1 )
+            Mix_ResumeMusic();
     }
 };
 }

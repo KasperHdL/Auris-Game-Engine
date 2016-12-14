@@ -9,7 +9,9 @@
 class DemoGame : public Auris::Game {
     Scene1 scene1;
     AudioPlayer audioPlayer;
+    bool musicPaused = false;
     int pistolShot;
+    int warSounds;
 
     int id1 = -1;
     int id2 = -1;
@@ -17,7 +19,9 @@ class DemoGame : public Auris::Game {
     void init() {
         loadScene(&scene1);
         Auris::Engine::world->SetGravity(b2Vec2(0, -9.8));
-        pistolShot = audioPlayer.addSoundEffect("../../data/pistolShot.wav", 1.0f);
+        pistolShot = audioPlayer.addSoundEffect("Game/data/pistolShot.wav", 1.0f);
+        warSounds = audioPlayer.addMusic("Game/data/warSounds.wav", 1.0f);
+        audioPlayer.playMusic(warSounds);
     }
 
     void earlyUpdate(float dt){
@@ -25,7 +29,7 @@ class DemoGame : public Auris::Game {
     }
 
     void update(float dt){
-        if (Input::keyDown(SDL_SCANCODE_SPACE)){
+        if (Input::keyDown(SDL_SCANCODE_RETURN)){
             audioPlayer.playSoundEffect(pistolShot);
         }
 
