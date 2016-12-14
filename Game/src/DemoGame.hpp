@@ -4,7 +4,7 @@
 
 #include "Scenes/Scene1.hpp"
 #include "Scenes/Scene2.hpp"
-
+#include "Auris/Utilities/AudioPlayer.hpp"
 
 class DemoGame : public Auris::Game {
     Scene1 scene1;
