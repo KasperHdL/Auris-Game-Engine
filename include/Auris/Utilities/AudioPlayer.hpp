@@ -16,7 +16,6 @@ public:
     /*! Adds music to this AudioPlayer. Returns the index of the music.*/
     int addMusic(const char* path, float volume) {
         music.push_back(Mix_LoadMUS(path));
-        cout << music[music.size()-1] << endl;
         if (music[music.size()-1] == nullptr)
             cout << "Nullptr: Failed to load \"" << path << "\". Make sure the path is correct." << endl;
         return sfx.size()-1;
@@ -25,7 +24,6 @@ public:
     /*! Adds a sound effect to this AudioPlayer. Returns the index of the sound effect.*/
     int addSoundEffect(const char* path, float volume) {
         sfx.push_back(Mix_LoadWAV(path));
-        cout << sfx[sfx.size()-1] << endl;
         if (sfx[sfx.size()-1] == nullptr)
             cout << "Nullptr: Failed to load \"" << path << "\". Make sure the path is correct." << endl;
         return sfx.size()-1;

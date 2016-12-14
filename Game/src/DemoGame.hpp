@@ -6,6 +6,8 @@
 #include "Scenes/Scene2.hpp"
 #include "Auris/Utilities/AudioPlayer.hpp"
 
+using namespace Auris;
+
 class DemoGame : public Auris::Game {
     Scene1 scene1;
     AudioPlayer audioPlayer;
@@ -19,8 +21,8 @@ class DemoGame : public Auris::Game {
     void init() {
         loadScene(&scene1);
         Auris::Engine::world->SetGravity(b2Vec2(0, -9.8));
-        pistolShot = audioPlayer.addSoundEffect("Game/data/pistolShot.wav", 1.0f);
-        warSounds = audioPlayer.addMusic("Game/data/warSounds.wav", 1.0f);
+        pistolShot = audioPlayer.addSoundEffect(Resource::getPath("pistolShot.wav").c_str(), 1.0f);
+        warSounds = audioPlayer.addMusic(Resource::getPath("warSounds.wav").c_str(), 1.0f);
         audioPlayer.playMusic(warSounds);
     }
 
