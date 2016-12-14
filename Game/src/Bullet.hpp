@@ -1,25 +1,21 @@
 #pragma once
 #include "Auris/Engine.hpp"
+#include "Auris/Entities/PhysicsEntity.hpp"
 
 using namespace std;
 using namespace Auris;
 
-class Bullet : public GameObject {
+class Bullet : public PhysicsEntity {
 public:
     int damage = 10;
     float movementSpeed = 10;
 
-    Auris::Material mat;
+    Sprite* sprite;
 
-    Bullet(vec2 position) : GameObject(){
+    Bullet(vec2 position) : PhysicsEntity(){
         name = "Bullet";
-        mat.setColor(vec4(1,1,1,1));
-//        mat.texture = SRE::Texture::createFromFile(Resource::getPath("data/bullet.png").c_str(), false);
-        mat.setTexture(SRE::Texture::getWhiteTexture());
-        mat.setMesh(SRE::Mesh::createCube());
 
-        sprite = Auris::RenderSystem::getSprite(this, &mat);
-        sprite->scale = vec2(1,1);
+        sprite = Auris::RenderSystem::getSprite(this);
 
         b2PolygonShape shape;
         shape.SetAsBox(0.5f * Constants::PIXELS_TO_METERS, 0.1f * Constants::PIXELS_TO_METERS);
@@ -33,7 +29,7 @@ public:
     }
 
     void Update(float dt) {
-        applyForce(right * movementSpeed);
+        applyForce(vec2(1,0) * movementSpeed);
     }
 
 };

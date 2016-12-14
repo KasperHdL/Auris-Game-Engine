@@ -10,6 +10,7 @@
 #include "Auris/Entities/Nuggets/SpriteSheet.hpp"
 #include "Auris/Utilities/Resource.hpp"
 #include "Auris/Utilities/BodyStandard.hpp"
+#include "Auris/Entities/PhysicsEntity.hpp"
 #include "Auris/Action.hpp"
 
 using namespace std;
@@ -18,12 +19,12 @@ class Player : public PhysicsEntity{
     public:
     shared_ptr<Animation> anim;
     SpriteSheet* spriteSheet;
-    Sprite* upper;
 
-    bool canJump;
     Sprite* sprite;
     Sprite* upper;
+
     bool alive;
+    bool canJump;
 
     float maxSpeed;
     float jumpHeight;
@@ -69,12 +70,12 @@ class Player : public PhysicsEntity{
         // INPUTS
         if (alive){
             if (Input::keyDown(SDL_SCANCODE_UP) & canJump) {
-                applyForce(up * jumpHeight, true);
+                applyForce(vec2(0,1) * jumpHeight, true);
                 canJump = false;
             }
 
             if (Input::keyDown(Auris::Action::up) & canJump) {
-                applyForce(up * jumpHeight, true);
+                applyForce(vec2(0,1) * jumpHeight, true);
                 canJump = false;
             }
 
@@ -85,19 +86,18 @@ class Player : public PhysicsEntity{
             if (Input::keyHeld(Auris::Action::left)) {
                 anim->run(sprite, dt);
                 if (getLinearVelocity()[0] > -maxSpeed)
-                    applyForce(left * movementSpeed, true);
+                    applyForce(vec2(-1,0) * movementSpeed, true);
             }
 
             if (Input::keyHeld(Auris::Action::right)) {
                 anim->run(sprite, dt);
                 if (getLinearVelocity()[0] < maxSpeed)
-                    applyForce(right * movementSpeed, true);
+                    applyForce(vec2(1,0) * movementSpeed, true);
             }
         }
     }
 
-    virtual void OnCollisionEnter(Entity* other) {
-        std::cout << "hitting something" << std::endl;
+    virtual void OnCollisionEnter(PhysicsEntity* other) {
         if (other->name == "Wall")
             canJump = true;
 
@@ -108,7 +108,7 @@ class Player : public PhysicsEntity{
         }
     }
 
-    virtual void OnCollisionExit(Entity* other) {
+    virtual void OnCollisionExit(PhysicsEntity* other) {
 
     }
 

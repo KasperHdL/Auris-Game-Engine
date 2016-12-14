@@ -121,8 +121,6 @@ void Engine::run(SDL_Window* window){
     bool toggle_showcasePanel = false;
     bool toggle_cameraControls = false;
 
-    Auris::Camera* nisse = new Auris::Camera(width,height);
-
     while (Input::quit == 0){
         LAST = NOW;
         NOW = SDL_GetPerformanceCounter();
