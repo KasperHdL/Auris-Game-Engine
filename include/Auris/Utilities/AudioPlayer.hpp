@@ -1,7 +1,7 @@
 #pragma once
 
-#include <SDL2/SDL.h>
-#include <SDL_mixer.h>
+#include <SDL.h>
+#include <SDL2/SDL_mixer.h>
 #include <string>
 #include <vector>
 
@@ -13,16 +13,16 @@ private:
     vector<Mix_Chunk*> sfx;
 
 public:
-    /*! Add music to this AudioPlayer. Returns the index needed for playing this music.*/
-    void addMusic(char* path, float volume, bool music) {
-        sfx.push_back(Mix_LoadMUS(&path));
-        return sfx.length()-1;
+    /*! Add music to this AudioPlayer. Returns the index of the music.*/
+    int addMusic(const char* path, float volume) {
+        music.push_back(Mix_LoadMUS(path));
+        return sfx.size()-1;
     }
 
-    /*! Add a sound effect to this AudioPlayer. Returns the index needed for playing this sound effect.*/
-    void addSoundEffect(char* path, float volume, bool music) {
-        sfx.push_back(Mix_LoadWAV(&path));
-        return sfx.length()-1;
+    /*! Add a sound effect to this AudioPlayer. Returns the index of the sound effect.*/
+    int addSoundEffect(const char* path, float volume) {
+        sfx.push_back(Mix_LoadWAV(path));
+        return sfx.size()-1;
     }
 
     /*! Play piece of music. Takes the index of the music.*/
@@ -44,6 +44,9 @@ public:
 
         for (auto & element: sfx)
             Mix_FreeChunk(element);
+
+        music.clear();
+        sfx.clear();
     }
 };
 }
