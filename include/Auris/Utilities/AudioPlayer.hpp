@@ -18,7 +18,7 @@ public:
         music.push_back(Mix_LoadMUS(path));
         cout << music[music.size()-1] << endl;
         if (music[music.size()-1] == nullptr)
-            cout << "Failed to load " << path << ". Make sure the path is correct." << endl;
+            cout << "Nullptr: Failed to load \"" << path << "\". Make sure the path is correct." << endl;
         return sfx.size()-1;
     }
 
@@ -27,7 +27,7 @@ public:
         sfx.push_back(Mix_LoadWAV(path));
         cout << sfx[sfx.size()-1] << endl;
         if (sfx[sfx.size()-1] == nullptr)
-            cout << "Failed to load \"" << path << "\". Make sure the path is correct." << endl;
+            cout << "Nullptr: Failed to load \"" << path << "\". Make sure the path is correct." << endl;
         return sfx.size()-1;
     }
 
@@ -35,7 +35,6 @@ public:
     void playMusic(int index){
         //If there is no music playing
         if( Mix_PlayingMusic() == 0 )
-            cout << "No music playing right now. Will start:" << endl;
             //Play the music
             Mix_PlayMusic( music[index], -1 );
     }
@@ -54,6 +53,16 @@ public:
 
         music.clear();
         sfx.clear();
+    }
+
+    void pauseMusic() {
+        if( Mix_PlayingMusic() == 1 )
+            Mix_PauseMusic();
+    }
+
+    void resumeMusic() {
+        if( Mix_PlayingMusic() == 1 )
+            Mix_ResumeMusic();
     }
 };
 }
