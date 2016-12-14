@@ -13,6 +13,7 @@ class DemoGame : public Auris::Game {
 
     int id1 = -1;
     int id2 = -1;
+    int id3 = -1;
     void init() {
         Auris::Engine::loadScene(&scene1);
         Auris::Engine::world->SetGravity(b2Vec2(0, -9.8));
@@ -29,11 +30,13 @@ class DemoGame : public Auris::Game {
         }
 
           //cout << id1 << ": " << Input::getControllerAxisState(id1,SDL_CONTROLLER_AXIS_TRIGGERRIGHT) << endl;
-        //if(id1!=-1)
-        //cout << id1 << ": " << Input::getControllerButtonState(id1,SDL_CONTROLLER_BUTTON_A) << endl;
+          //cout << id1 << ": " << Input::getControllerButtonState(id1,SDL_CONTROLLER_BUTTON_A) << endl;
 
           //cout << id2 << ": " << Input::getControllerAxisState(id2,SDL_CONTROLLER_AXIS_TRIGGERRIGHT) << endl;
           //cout << id2 << ": " << Input::getControllerButtonState(id2,SDL_CONTROLLER_BUTTON_A) << endl;
+
+          //cout << id3 << ": " << Input::getControllerAxisState(id3,SDL_CONTROLLER_AXIS_TRIGGERRIGHT) << endl;
+          //cout << id3 << ": " << Input::getControllerButtonState(id3,SDL_CONTROLLER_BUTTON_A) << endl;
 
     }
 
@@ -48,18 +51,20 @@ class DemoGame : public Auris::Game {
     void controllerConnected(int controllerID){
         if(id1==-1){
             id1 = controllerID;
-            std::cout << "Controller connected: " << id1 << std::endl;
         }else if(id2==-1){
             id2 = controllerID;
+        }else if(id3==-1){
+            id3 = controllerID;
         }
     }
 
     void controllerDisconnected(int controllerID){
         if(id1==controllerID){
-            cout << "Controller disconnected: " << id1 << endl;
             id1 = -1;
         }else if(id2==controllerID){
             id2 = -1;
+        }else if(id3==controllerID){
+            id3 = -1;
         }
     }
 };

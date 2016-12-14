@@ -98,7 +98,14 @@ bool Input::keyHeld(SDL_Scancode key) {
 }
 
 void Input::controllerAdded(const SDL_Event &event){
-     SDL_GameController* temp = SDL_GameControllerOpen(event.cdevice.which);
+    if (SDL_IsGameController(event.cdevice.which)) {
+            char *mapping;
+            SDL_Log("Index \'%i\' is a compatible controller, named \'%s\'", event.cdevice.which, SDL_GameControllerNameForIndex(event.cdevice.which));
+            SDL_GameController* temp = SDL_GameControllerOpen(event.cdevice.which);
+            mapping = SDL_GameControllerMapping(temp);
+            SDL_Log("Controller %i is mapped as \"%s\".", event.cdevice.which, mapping);
+            SDL_free(mapping);
+    }
 }
 
 void Input::initController(const SDL_Event& event){
