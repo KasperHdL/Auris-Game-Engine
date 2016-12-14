@@ -1,27 +1,23 @@
 #include "Auris/Systems/Input.hpp"
 #include <iostream>
+#include "Auris/Game.hpp"
 
 using namespace Auris;
 
-map<SDL_Scancode, bool> Input::heldKeys;
-map<SDL_Scancode, bool> Input::downKeys;
-map<SDL_Scancode, bool> Input::upKeys;
+std::map<SDL_Scancode, bool> Input::heldKeys;
+std::map<SDL_Scancode, bool> Input::downKeys;
+std::map<SDL_Scancode, bool> Input::upKeys;
 
-std::vector<SDL_GameController*> Input::ctrl;
+std::map<SDL_JoystickID,SDL_GameController*> Input::ctrl;
 
 int Input::quit = 0;
+Game* Input::game;
 
-void Input::init(){
-    SDL_Init(SDL_INIT_GAMECONTROLLER);
-    for (int i = 0; i < SDL_NumJoysticks(); ++i) {
-        if (SDL_IsGameController(i)) {
-            char *mapping;
-            SDL_Log("Index \'%i\' is a compatible controller, named \'%s\'", i, SDL_GameControllerNameForIndex(i));
-            ctrl.push_back(SDL_GameControllerOpen(i));
-            mapping = SDL_GameControllerMapping(ctrl[i]);
-            SDL_Log("Controller %i is mapped as \"%s\".", i, mapping);
-            SDL_free(mapping);
-        }
+void Input::init(Game* game){
+    Input::game = game;
+
+    if(SDL_Init(SDL_INIT_GAMECONTROLLER)<0){
+         fprintf(stderr, "Couldn't initialize controller: %s\n", SDL_GetError());
     }
 }
 ///This method clears all the keys that are currently stored, and then updates them to what ever keys are being manipulated this frame
@@ -47,6 +43,14 @@ void Input::update() {
                 controllerAdded(e);
             break;
 
+            case SDL_CONTROLLERBUTTONDOWN:
+                initController(e);
+            break;
+
+            case SDL_CONTROLLERDEVICEREMOVED:
+                controllerRemoved(e);
+            break;
+
             case SDL_QUIT:
             quit = 1;
             break;
@@ -63,9 +67,9 @@ void Input::shutdown(){
     downKeys.clear();
     upKeys.clear();
 
-    for(auto &c : ctrl){
-        SDL_GameControllerClose(c);
-    }
+//    for(auto &c : ctrl){
+//        SDL_GameControllerClose(c);
+//    }
 }
 
 ///This method registers a keydown event, and therefore takes an SDL event as input, to figure out which key has been pressed
@@ -95,32 +99,41 @@ bool Input::keyHeld(SDL_Scancode key) {
 
 void Input::controllerAdded(const SDL_Event &event){
     if (SDL_IsGameController(event.cdevice.which)) {
-        char *mapping;
-        SDL_Log("Index \'%i\' is a compatible controller, named \'%s\'", event.cdevice.which, SDL_GameControllerNameForIndex(event.cdevice.which));
-        ctrl.push_back(SDL_GameControllerOpen(event.cdevice.which));
-        mapping = SDL_GameControllerMapping(ctrl[event.cdevice.which]);
-        SDL_Log("Controller %i is mapped as \"%s\".", event.cdevice.which, mapping);
-        SDL_free(mapping);
+            char *mapping;
+            SDL_Log("Index \'%i\' is a compatible controller, named \'%s\'", event.cdevice.which, SDL_GameControllerNameForIndex(event.cdevice.which));
+            SDL_GameController* temp = SDL_GameControllerOpen(event.cdevice.which);
+            mapping = SDL_GameControllerMapping(temp);
+            SDL_Log("Controller %i is mapped as \"%s\".", event.cdevice.which, mapping);
+            SDL_free(mapping);
     }
 }
 
-// KEYS CLASS
-Keys::Keys() {
-    allKeys["up"] = SDL_SCANCODE_UP;
-    allKeys["down"] = SDL_SCANCODE_DOWN;
-    allKeys["left"] = SDL_SCANCODE_LEFT;
-    allKeys["right"] = SDL_SCANCODE_RIGHT;
-    allKeys["quit"] = SDL_SCANCODE_ESCAPE;
-}
-Keys::~Keys() {
-    allKeys.clear();
-}
-///maps the string to a SDL scancode
-void Keys::setKey(string key, SDL_Scancode mappedkey) {
-    allKeys[key] = mappedkey;///save the SDL key in the map all keys
+void Input::initController(const SDL_Event& event){
+    std::cout << "Controller: " <<event.cbutton.which << " Button: "<< (int)event.cbutton.button << std::endl;
+    if (SDL_IsGameController(event.cbutton.which)) {
+        if(!ctrl.count(event.cbutton.which)){
+            ctrl[event.cbutton.which]= SDL_GameControllerOpen(event.cdevice.which);
+            game->controllerConnected(event.cbutton.which);
+        }
+    }
 }
 
-///returns the SDL key corresponding to the string that has been set in the allKeys map (If it has not been set, it will return null)
-SDL_Scancode Keys::getKey(string key) {
-    return allKeys[key]; ///returns the SDL key with the string mapped
+void Input::controllerRemoved(const SDL_Event& event){
+    if (SDL_IsGameController(event.cdevice.which)) {
+            SDL_GameControllerClose(ctrl[event.cdevice.which]);
+            std::map<SDL_JoystickID,SDL_GameController*>::iterator it;
+            it=ctrl.find(event.cdevice.which);
+            ctrl.erase (it);
+            game->controllerDisconnected(event.cdevice.which);
+        }
+}
+
+int Input::getControllerButtonState(int controllerID, SDL_GameControllerButton button){
+    //std::cout << "controllerID: " << controllerID <<" Button: "<< button << " State: " << (int)SDL_GameControllerGetButton(ctrl[controllerID],button) <<std::endl;
+    return SDL_GameControllerGetButton(ctrl[controllerID],button);
+}
+
+int Input::getControllerAxisState(int controllerID, SDL_GameControllerAxis axis){
+    //std::cout << ctrl.size() << std::endl;
+    return SDL_GameControllerGetAxis(ctrl[controllerID],axis);
 }

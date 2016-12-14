@@ -34,6 +34,9 @@
 #include "Auris/Systems/CollisionHandler.hpp"
 
 
+#include "Auris/Action.hpp"
+
+
 namespace Auris{
 class DebugUI;
 class Engine{

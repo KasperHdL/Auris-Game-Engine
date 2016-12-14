@@ -10,6 +10,7 @@
 #include "Auris/Entities/Nuggets/SpriteSheet.hpp"
 #include "Auris/Utilities/Resource.hpp"
 #include "Auris/Utilities/BodyStandard.hpp"
+#include "Auris/Action.hpp"
 
 using namespace std;
 using namespace Auris;
@@ -17,11 +18,17 @@ class Player : public PhysicsEntity{
     public:
     shared_ptr<Animation> anim;
     SpriteSheet* spriteSheet;
+    Sprite* upper;
 
     bool canJump;
     Sprite* sprite;
     Sprite* upper;
+    bool alive;
 
+    float maxSpeed;
+    float jumpHeight;
+    float movementSpeed;
+    int healthPoints;
     Player(vec2 position = vec2(0,0)):PhysicsEntity(){
         name = "Player";
 
@@ -52,12 +59,6 @@ class Player : public PhysicsEntity{
         delete spriteSheet;
     }
 
-    float movementSpeed;
-    float jumpHeight;
-    float maxSpeed;
-
-	Keys keys;
-
 	void Init() {
         movementSpeed = 1000.0f;
         jumpHeight = 2000.0f;
@@ -65,36 +66,55 @@ class Player : public PhysicsEntity{
 	}
 
     void Update(float dt){
+        // INPUTS
+        if (alive){
+            if (Input::keyDown(SDL_SCANCODE_UP) & canJump) {
+                applyForce(up * jumpHeight, true);
+                canJump = false;
+            }
 
-        if (Input::keyDown(keys.getKey("up")) & canJump) {
-            applyForce(glm::vec3(0,1,0) * jumpHeight, true);
-            canJump = false;
+            if (Input::keyDown(Auris::Action::up) & canJump) {
+                applyForce(up * jumpHeight, true);
+                canJump = false;
+            }
+
+        if (Input::keyDown(Auris::Action::down)) {
+
 		}
 
-        if (Input::keyHeld(keys.getKey("down"))) {
-            // CROUCH;
-		}
+            if (Input::keyHeld(Auris::Action::left)) {
+                anim->run(sprite, dt);
+                if (getLinearVelocity()[0] > -maxSpeed)
+                    applyForce(left * movementSpeed, true);
+            }
 
-        if (Input::keyHeld(keys.getKey("left"))) {
-            anim->run(sprite, dt);
-            if (getLinearVelocity()[0] > -maxSpeed)
-                applyForce(glm::vec3(-1,0,0) * movementSpeed, true);
-		}
-
-		if (Input::keyHeld(keys.getKey("right"))) {
-            anim->run(sprite, dt);
-            if (getLinearVelocity()[0] < maxSpeed)
-                applyForce(glm::vec3(1,0,0) * movementSpeed, true);
-		}
+            if (Input::keyHeld(Auris::Action::right)) {
+                anim->run(sprite, dt);
+                if (getLinearVelocity()[0] < maxSpeed)
+                    applyForce(right * movementSpeed, true);
+            }
+        }
     }
 
     virtual void OnCollisionEnter(Entity* other) {
         std::cout << "hitting something" << std::endl;
         if (other->name == "Wall")
             canJump = true;
+
+        if (other->name == "Bullet") {
+//            healthPoints -= other->damage;
+            other->setGravity(3);
+            other->setFixedRotation(true);
+        }
     }
 
     virtual void OnCollisionExit(Entity* other) {
 
+    }
+
+    void die() {
+        alive = false;
+        setFixedRotation(false);
+        setGravity(0);
     }
 };

@@ -37,7 +37,6 @@ void Engine::startup(Game* game){
         exit(1);
     }
 
-
     SRE::SimpleRenderEngine r{window};
 
 
@@ -57,7 +56,7 @@ void Engine::startup(Game* game){
     auto sre = SimpleRenderEngine::instance;
     sre->getCamera()->setWindowCoordinates();
 
-    Input::init();
+    Input::init(game);
 
     debugUI = new DebugUI();
     debugUI->startup(this);
@@ -98,6 +97,31 @@ void Engine::run(SDL_Window* window){
     quit = 0;
     float deltaTimeSec = 0;
     auto sre = SimpleRenderEngine::instance;
+
+	//Initialize MemoryLeakDetector
+	memLeakDet = MemoryLeakDetector();
+
+    //DEBUG INFORMATION TODO should be ignored on release build
+   
+    int arrIndex = 0;
+    const int arrSize = 600;
+    float arr_deltaTime[arrSize] = {};
+    float max_deltaTime = 0;
+
+    
+    float arr_virtMem[arrSize] = {};
+    float max_virtMem = 0;
+
+    float arr_physMem[arrSize] = {};
+    float max_physMem = 0;
+
+    int max_renderSprites = 0;
+
+    bool toggle_goInspector = false;
+    bool toggle_showcasePanel = false;
+    bool toggle_cameraControls = false;
+
+    Auris::Camera* nisse = new Auris::Camera(width,height);
 
     while (Input::quit == 0){
         LAST = NOW;

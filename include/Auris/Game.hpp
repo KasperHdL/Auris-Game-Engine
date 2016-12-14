@@ -22,6 +22,9 @@ public:
 
     virtual void shutdown() = 0;
 
+    virtual void controllerConnected(int controllerID){}
+
+    virtual void controllerDisconnected(int controllerID){}
     std::vector<std::shared_ptr<Entity>> entities;
 
     inline void addEntity(std::shared_ptr<Entity> entity){
