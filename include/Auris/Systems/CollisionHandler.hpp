@@ -9,7 +9,7 @@ class CollisionHandler : public b2ContactListener{
 
 private:
     void BeginContact(b2Contact* contact){
-        // Get Entity that collide
+        // Get PhysicsEntities that are colliding
         PhysicsEntity* colliderA = (PhysicsEntity*) contact->GetFixtureA()->GetBody()->GetUserData();
         PhysicsEntity* colliderB = (PhysicsEntity*) contact->GetFixtureB()->GetBody()->GetUserData();
 
@@ -23,7 +23,7 @@ private:
     }
 
     void EndContact(b2Contact* contact) {
-        // Get PhysicsEntity that collide
+        // Get PhysicsEntities that are colliding
         PhysicsEntity* colliderA = (PhysicsEntity*) contact->GetFixtureA()->GetBody()->GetUserData();
         PhysicsEntity* colliderB = (PhysicsEntity*) contact->GetFixtureB()->GetBody()->GetUserData();
 

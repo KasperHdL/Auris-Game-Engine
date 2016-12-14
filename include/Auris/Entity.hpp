@@ -23,7 +23,7 @@ public:
 
     //! Scriptable functions
 
-    //! Used by PhysicsEnities
+    //! Used by PhysicsEntities
     virtual void updateTransform(){}
 
     virtual void init() {} // Called upon initialization
