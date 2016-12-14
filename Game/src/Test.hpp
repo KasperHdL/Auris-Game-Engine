@@ -26,7 +26,7 @@ class Test : public Auris::Entity{
         name = "testobject";
        
         sprite = Auris::RenderSystem::getSprite(this);
-        sprite->scale = vec2(5,5);
+        transform->scale = vec2(0.5f,0.5f);
 
     }
 

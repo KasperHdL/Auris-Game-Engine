@@ -32,11 +32,10 @@ class Player : public PhysicsEntity{
         sprite = spriteSheet->getSprite("lower_run_3",this);
 
         b2PolygonShape shape;
-        shape.SetAsBox(10.0f * Constants::PIXELS_TO_METERS, 10.0f * Constants::PIXELS_TO_METERS);
+        shape.SetAsBox(1.0f,2.0f);
 
-        body = Auris::Utilities::BodyStandard::getDynamicBody(&shape, position);
+        body = Auris::Utilities::BodyStandard::getDynamicBody(&shape,position);
 
-        sprite->scale = vec2(2.0f, 2.0f);
 
         // Physics properties
         setCollisionEvents(true);

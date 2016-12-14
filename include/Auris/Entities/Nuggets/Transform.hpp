@@ -16,7 +16,12 @@ class Transform : public Nugget{
         vec2 scale;
         float rotation;
 
-        Transform(Entity* entity):Nugget(entity){}
+        Transform(Entity* entity):Nugget(entity){
+            position = vec3(0,0,0);
+            scale = vec2(1,1);
+            rotation = 0;
+        
+        }
 
         mat4 getLocal();
         mat4 getGlobal();
