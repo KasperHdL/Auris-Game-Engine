@@ -18,14 +18,18 @@ class Light : public Entity{
             Directional,
         };
 
+        int lightNum; //!< between 0-4 maximum of four lights
         vec3 direction;//!< only used on directional lights
         vec3 color;//!< color of the light
         float range; //!< range of the light, 0 means inifinite
 
-        Light(vec2 position = vec2(0,0), Type type = Point, bool alwaysOn = false):Entity(){
+        Light(int lightNum, vec2 position = vec2(0,0), Type type = Point, bool alwaysOn = false):Entity(){
+            name = "Light";
 
             transform->position = vec3(position,0);
+
             this->type = type;
+            this->lightNum = lightNum;
 
             direction = vec3(0);
             color = vec3(1);
@@ -34,8 +38,8 @@ class Light : public Entity{
 
         void Update(float dt){
 
-            SimpleRenderEngine::instance->setLight(
-                    1,
+            SRE::SimpleRenderEngine::instance->setLight(
+                    lightNum,
                     SRE::Light(
                         (SRE::LightType)type,
                         {
