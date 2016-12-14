@@ -33,6 +33,10 @@ void Camera::setPos(glm::vec2 pos){
     updateCam();
 }
 
+glm::vec2 Camera::getPos(){
+    return pos;
+}
+
 void Camera::translate(glm::vec2 amount){
     pos += amount;
     updateCam();
