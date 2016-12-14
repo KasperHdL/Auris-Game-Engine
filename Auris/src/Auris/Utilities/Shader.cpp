@@ -6,9 +6,10 @@
 
 namespace Auris{
     SRE::Shader* Shader::litSprite = nullptr;
-    SRE::Shader* Shader::getLitSprite() {
+
+    Shader* Shader::getLitSprite() {
         if (litSprite != nullptr){
-            return litSprite;
+            return (Shader*) litSprite;
         }
         const char* vertexShader = R"(#version 140
         in vec4 position;
@@ -91,6 +92,10 @@ namespace Auris{
         litSprite->set("tex", SRE::Texture::getWhiteTexture());
         litSprite->setBlend(SRE::BlendType::AlphaBlending);
         litSprite->setDepthTest(false);
-        return litSprite;
+        return (Shader*)litSprite;
     }
+
+
+
+
 }

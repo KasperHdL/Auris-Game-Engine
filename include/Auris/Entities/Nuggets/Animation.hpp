@@ -2,12 +2,12 @@
 
 #include "glm/glm.hpp"
 #include "SRE/SimpleRenderEngine.hpp"
-#include "SRE/Mesh.hpp"
-#include "SRE/Shader.hpp"
 #include "SRE/Texture.hpp"
 
 #include <iostream>
 
+#include "Auris/Utilities/Mesh.hpp"
+#include "Auris/Utilities/Shader.hpp"
 #include "Auris/Entity.hpp"
 #include "Auris/Entities/Nuggets/Sprite.hpp"
 #include "Auris/Entities/Nuggets/SpriteSheet.hpp"
@@ -18,12 +18,12 @@ namespace Auris{
 class Animation : public Nugget {
 public:
 
-    std::vector<Material*> materials;
+    std::vector<Mesh*> meshes;
 
     ~Animation();
     Animation(Entity* entity, float length);
 
-    void addMaterial(Material* mat);
+    void addMesh(Mesh* mesh);
     void setSheet(SpriteSheet* spritesheet);
     void makeSequence(SpriteSheet* spritesheet, std::string name);
     void run(Sprite* sprite, float dt);

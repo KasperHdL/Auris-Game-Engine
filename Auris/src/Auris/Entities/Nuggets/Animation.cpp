@@ -8,38 +8,38 @@ Animation::Animation(Entity *entity, float length):Nugget(entity){
 }
 
 Animation::~Animation(){
-    Animation::materials.clear();
+    meshes.clear();
 }
 
-void Animation::addMaterial(Material* mat){
-    materials.push_back(mat);
+void Animation::addMesh(Mesh* mesh){
+    meshes.push_back(mesh);
 }
 
 void Animation::setSheet(SpriteSheet* spritesheet){
-    for(std::map<std::string,Material*>::iterator it = spritesheet->sprites.begin(); it != spritesheet->sprites.end(); ++it) {
-        addMaterial(it->second);
+    for(std::map<std::string,Mesh*>::iterator it = spritesheet->meshes.begin(); it != spritesheet->meshes.end(); ++it) {
+        addMesh(it->second);
     }
 }
 
 void Animation::makeSequence(SpriteSheet* spritesheet, std::string name){
-    for(std::map<std::string,Material*>::iterator it = spritesheet->sprites.begin(); it != spritesheet->sprites.end(); ++it) {
+    for(std::map<std::string,Mesh*>::iterator it = spritesheet->meshes.begin(); it != spritesheet->meshes.end(); ++it) {
         //cout << name << " : " << it->first << endl;
         if(!it->first.compare(0,name.size(),name)){
-        addMaterial(it->second);
+            addMesh(it->second);
         }
     }
 }
 
 void Animation::run(Sprite *sprite, float dt){
-    frameLength = length / materials.size();
+    frameLength = length / meshes.size();
     time += dt;
     if (time >= frameLength) {
         index++;
-        if (index >= materials.size()) {
+        if (index >= meshes.size()) {
             index = 0;
         }
         time = glm::mod<float>(time, frameLength);
     }
-    sprite->setMaterial(materials[index]);
+    sprite->mesh = meshes[index];
 }
 

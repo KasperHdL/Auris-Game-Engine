@@ -23,8 +23,8 @@ class Transform : public Nugget{
         
         }
 
-        mat4 getLocal();
-        mat4 getGlobal();
+        mat4 getLocal(vec3 offset = vec3(0));
+        mat4 getGlobal(vec3 offset = vec3(0));
 
 
 };

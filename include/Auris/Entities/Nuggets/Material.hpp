@@ -9,12 +9,7 @@ class Material{
 public:
     SRE::Texture* texture;
     SRE::Texture* normalMap = nullptr;
+    SRE::Shader* shader;
     glm::vec4 color;
-    SRE::Mesh* mesh;
-
-    ~Material() {
-        delete mesh;
-        mesh = nullptr;
-    }
 };
 }

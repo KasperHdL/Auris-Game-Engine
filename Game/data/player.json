@@ -124,7 +124,7 @@
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":50,"h":27},
 	"sourceSize": {"w":50,"h":27},
-	"pivot": {"x":0.5,"y":0.5}
+	"pivot": {"x":0.5,"y":1.0}
 },
 {
     "filename": "lower_run_1",

@@ -9,11 +9,11 @@ Sprite::~Sprite(){
 }
 
 void Sprite::draw(){
-    shader->set("color",color);
+    material.shader->set("color",material.color);
 
-    if(normalMap != nullptr)
-        shader->set("normalMap", normalMap, 1);
+    if(material.normalMap != nullptr)
+        material.shader->set("normalMap", material.normalMap, 1);
 
-    shader->set("tex",texture, 0);
-    SimpleRenderEngine::instance->draw(mesh, entity->transform->getGlobal(), shader);
+    material.shader->set("tex",material.texture, 0);
+    SimpleRenderEngine::instance->draw(mesh, entity->transform->getGlobal(offset), material.shader);
 }

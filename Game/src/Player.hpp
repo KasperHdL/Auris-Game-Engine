@@ -30,9 +30,11 @@ class Player : public PhysicsEntity{
         anim = RenderSystem::getAnim(this, 1.0f);
         anim->makeSequence(spriteSheet, "lower_run");
         sprite = spriteSheet->getSprite("lower_run_3",this);
+        upper->offset = vec3(3,8,0);
+        sprite->offset = vec3(3,4,0);
 
         b2PolygonShape shape;
-        shape.SetAsBox(1.0f,2.0f);
+        shape.SetAsBox(((sprite->getWidth()/3) * Constants::PIXELS_TO_METERS),(upper->getHeight() + sprite->getHeight()-9)/3 * Constants::PIXELS_TO_METERS);
 
         body = Auris::Utilities::BodyStandard::getDynamicBody(&shape,position);
 

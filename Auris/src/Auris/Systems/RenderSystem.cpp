@@ -26,8 +26,9 @@ Sprite* RenderSystem::getSprite(Entity* entity){
     Sprite* s = new (RenderSystem::spritePool.create()) Sprite(entity);
     return s;
 }
-Sprite* RenderSystem::getSprite(Entity* entity, Material* material){
-    Sprite* s = new (RenderSystem::spritePool.create()) Sprite(entity, material);
+
+Sprite* RenderSystem::getSprite(Entity* entity, Auris::Mesh* mesh, SRE::Texture* texture, SRE::Texture* normalMap){
+    Sprite* s = new (RenderSystem::spritePool.create()) Sprite(entity, mesh, texture, normalMap);
     return s;
 }
 

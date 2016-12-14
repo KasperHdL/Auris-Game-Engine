@@ -5,11 +5,18 @@
 namespace Auris{
 class Shader : public SRE::Shader{
     public:
-        static SRE::Shader* getLitSprite();
-    
+        static Shader* getLitSprite();
+
+        static Shader* getUnlitSprite(){
+            return (Shader*) SRE::Shader::getUnlitSprite();
+        }
+ 
+        static Shader* getStandardParticles(){
+            return (Shader*) SRE::Shader::getStandardParticles();
+        }
+   
     private:
         static SRE::Shader* litSprite;
-
 
 };
 }

@@ -39,11 +39,12 @@ SpriteSheet::SpriteSheet(string pathToJSON){
         float ax = (float)element.get("pivot").get("x").get<double>();
         float ay = (float)element.get("pivot").get("y").get<double>();
         string name = element.get("filename").get<std::string>();
-        SpriteSheet::sprites[element.get("filename").get<std::string>()] = saveMaterial(x,texture->getHeight()-height-y,width,height,ax,ay);
+
+        addMesh(name, x, texture->getHeight()-height-y, width, height, ax, ay);
     }
 }
 
-Material* SpriteSheet::saveMaterial(int x, int y, int width, int height, float anchorX, float anchorY){
+Auris::Mesh* SpriteSheet::addMesh(string name, int x, int y, int width, int height, float anchorX, float anchorY){
     float offsetX = (float)-width * anchorX;
     float offsetY = (float)-height * anchorY;
 
@@ -70,33 +71,25 @@ Material* SpriteSheet::saveMaterial(int x, int y, int width, int height, float a
         glm::vec2{ uvx1, uvy1 }, glm::vec2{ uvx2, uvy2 }, glm::vec2{ uvx1, uvy2 }
     });
 
-    Material* mat = new Material();
-    mat->mesh = new SRE::Mesh(vertices, normals, uvs);
-    //mat->mesh = Mesh::createCube();
-    mat->texture = SpriteSheet::texture;
-    mat->normalMap = SpriteSheet::normalMap;
+    meshes[name] = new Mesh(vertices, normals, uvs, width, height);
+    return meshes[name];
 
-    //as of now only white (fixed!)
-    mat->color = glm::vec4(1,1,1,1);
-
-    return mat;
 }
 
 SpriteSheet::~SpriteSheet(){
 
-    vector<std::string> v;
-    for(map<std::string,Material*>::iterator it = sprites.begin(); it != sprites.end(); ++it){
+    for(map<std::string, Auris::Mesh*>::iterator it = meshes.begin(); it != meshes.end(); ++it){
         delete it->second;
         it->second = nullptr;
     }
 
-    sprites.clear();
+    meshes.clear();
     delete texture;
     texture = nullptr;
 }
 
 Sprite* SpriteSheet::getSprite(string name, Entity* parent){
-    auto s = RenderSystem::getSprite(parent, sprites[name]);
+    auto s = RenderSystem::getSprite(parent, meshes[name], texture, normalMap);
     return s;
 }
 

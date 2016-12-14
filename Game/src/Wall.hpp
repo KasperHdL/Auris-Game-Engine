@@ -22,7 +22,7 @@ public:
         sprite = ss->getSprite("brick",this);
 
         b2PolygonShape shape; 
-        shape.SetAsBox(2,2); 
+        shape.SetAsBox(sprite->getWidth() * PIXELS_TO_METERS/2, sprite->getHeight() * PIXELS_TO_METERS/2); 
 
         body = Auris::Utilities::BodyStandard::getStaticBody(&shape, position, 30.0f);
 
