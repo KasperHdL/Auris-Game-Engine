@@ -19,9 +19,9 @@ public:
     void setPos(glm::vec2 poss);
     void setRotation(float z);
 
-    void moveCamera(glm::vec2 amount);
-    void rotateCamera(float amount);
-    void zoomCamera(float amount);
+    void translate(glm::vec2 amount);
+    void rotate(float amount);
+    void zoom(float amount);
 
 private:
 
@@ -35,10 +35,9 @@ private:
     float z;
 
     glm::vec3 up;
-
     glm::vec2 pos;
 
     void updateCam();
 
-    };
+};
 }

@@ -58,11 +58,11 @@ namespace Auris{
 
 
 
-            virtual void OnCollisionEnter(PhysicsEntity* collider) {} // Called upon collision with another game object 
-         
-            virtual void OnCollisionStay(PhysicsEntity* collider) {} // Called while colliding with another game object 
-         
-            virtual void OnCollisionExit(PhysicsEntity* collider) {} // Called when exiting collision with another game object 
+        virtual void OnCollisionEnter(PhysicsEntity* collider) {} // Called upon collision with another game object 
+     
+        virtual void OnCollisionStay(PhysicsEntity* collider) {} // Called while colliding with another game object 
+     
+        virtual void OnCollisionExit(PhysicsEntity* collider) {} // Called when exiting collision with another game object 
 
 
     };

@@ -33,12 +33,12 @@ void Camera::setPos(glm::vec2 pos){
     updateCam();
 }
 
-void Camera::moveCamera(glm::vec2 amount){
+void Camera::translate(glm::vec2 amount){
     pos += amount;
     updateCam();
 }
 
-void Camera::zoomCamera(float amount){
+void Camera::zoom(float amount){
     cam->setOrthographicProjection(left*amount,right*amount,bottom*amount,top*amount,near*amount,far*amount);
 }
 
@@ -48,7 +48,7 @@ void Camera::setRotation(float z){
     updateCam();
 }
 
-void Camera::rotateCamera(float amount){
+void Camera::rotate(float amount){
     this->z += amount;
     up = glm::rotateZ(up,amount);
     updateCam();
