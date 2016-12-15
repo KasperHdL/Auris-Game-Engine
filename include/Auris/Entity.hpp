@@ -12,7 +12,7 @@ namespace Auris{
     */
 class Entity{
 public:
-    std::string type = "";
+    std::string type = "";/*!< A string value: type. The type of the entity. */
     std::string name = "";/*!< A string value: name. The name of the entity. */  
     Entity* parent = nullptr;/*!< An Entity pointer: parent. An pointer to the parent entity of this entity. */
     std::vector<Entity*> children;/*!< An Entity pointer: child. A pointer to the parent entity of this entity.*/
@@ -34,18 +34,35 @@ public:
         delete transform;
     }
 
+    //! Sets the parent of this entity.
+        /*!
+         * \param parent The parent to set.
+         */
     void setParent(Entity* parent) {
         this->parent = parent;
     }
 
+    //! Adds a child to this entity.
+        /*!
+         * \param child The child to add.
+         */
     void addChild(Entity* child) {
         this->children.push_back(child);
     }
 
+    //! Get the parent of this entity.
+        /*!
+         * \return parent The parent of this entity.
+         */
     Entity* getParent() {
         return parent;
     }
 
+    //! Get a child of this entity by type.
+        /*!
+         * \param type The type of child.
+         * \return child The first child of this entity that matches the string parameter.
+         */
     Entity* getChildByType(std::string type){
         for (auto & child : children)
             if (child->type == type)
@@ -53,6 +70,11 @@ public:
         return nullptr;
     }
 
+    //! Get a child of this entity by type.
+        /*!
+         * \param name The name of the child.
+         * \return child The child of this entity that matches the string parameter.
+         */
     Entity* getChildByName(std::string name) {
         for (auto & child : children)
             if (child->name == name)
