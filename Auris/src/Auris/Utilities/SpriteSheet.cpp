@@ -21,7 +21,9 @@ SpriteSheet::~SpriteSheet(){
 }
 
 Sprite* SpriteSheet::getSprite(string name, Entity* parent){
-    auto s = RenderSystem::getSprite(parent, meshes[name], texture, normalMap);
+    if(meshes[name] == nullptr)
+        std::cerr << "Error: Sprite was no found in spritesheet" << std::endl;
+    auto s = RenderSystem::getSprite(parent, texture, normalMap, meshes[name]);
     return s;
 }
 

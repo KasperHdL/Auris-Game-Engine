@@ -95,7 +95,7 @@ class ParticleDemo : public Game {
 
     }
 
-    void debugDraw(){
+    void drawDebugImGui(){
         ImGui::Begin("Showcases"); 
  
         ImGui::Text("Startup Properties");

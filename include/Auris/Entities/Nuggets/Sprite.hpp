@@ -33,9 +33,17 @@ public:
 
     }
 
-    Sprite(Entity* entity, Mesh* mesh, SRE::Texture* texture, SRE::Texture* normalMap = nullptr):Nugget(entity){
-        this->mesh = mesh;
-        material.texture = texture;
+    Sprite(Entity* entity, SRE::Texture* texture = nullptr, SRE::Texture* normalMap = nullptr, Mesh* mesh = nullptr):Nugget(entity){
+        if(mesh == nullptr)
+            this->mesh = Mesh::createQuad();
+        else
+            this->mesh = mesh;
+
+        if(texture == nullptr)
+            material.texture = SRE::Texture::getWhiteTexture();
+        else
+            material.texture = texture;
+
         material.normalMap = normalMap;
         material.color = glm::vec4(1);
 
@@ -46,17 +54,8 @@ public:
 
     }
 
-    Sprite(Entity* entity, SRE::Texture* texture, SRE::Texture* normalMap = nullptr):Nugget(entity){
-        mesh = Mesh::createQuad();
-        material.texture = texture;
-        material.normalMap = normalMap;
-        material.color = glm::vec4(1);
-
-        if(normalMap == nullptr)
-            material.shader = (Shader*) Shader::getUnlitSprite();
-        else
-            material.shader = (Shader*) Shader::getLitSprite();
-
+    Sprite(Entity* entity, SRE::Texture* texture, Mesh* mesh = nullptr):Nugget(entity){
+        Sprite(entity, texture, nullptr, mesh);
     }
 
     //! Return the width of the currently assigned mesh in pixels
