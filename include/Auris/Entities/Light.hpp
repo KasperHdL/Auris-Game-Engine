@@ -10,9 +10,16 @@
 namespace Auris{
 using namespace glm;
 
+//! The Light class that extend the Entity class
+    /*! Used to control the lights.
+    */
 class Light : public Entity{
     public:
 
+        //! An enum of type.
+        /*! That holds information about the type of light.
+         * Point og directional
+         */
         enum Type{
             Point,
             Directional,
