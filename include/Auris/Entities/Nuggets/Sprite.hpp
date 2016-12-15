@@ -23,15 +23,6 @@ public:
     virtual void draw();
 
     ~Sprite();
-    Sprite(Entity* entity):Nugget(entity){
-        mesh = Mesh::createQuad();
-
-        material.texture = SRE::Texture::getWhiteTexture();
-        material.normalMap = nullptr;
-        material.color = glm::vec4(1,1,1,1);
-        material.shader = Shader::getUnlitSprite();
-
-    }
 
     Sprite(Entity* entity, SRE::Texture* texture = nullptr, SRE::Texture* normalMap = nullptr, Mesh* mesh = nullptr):Nugget(entity){
         if(mesh == nullptr)
