@@ -26,7 +26,7 @@ namespace Auris{
             transform->rotation = body->GetAngle();
         }
 
-        //! The method setCollisionEvents.
+        //! The method setCollisionEvents, taking 1 argument.
             /*! set the collision event on or off in box2D
              * \param flag a bool value, that controls on or off (true = on).
             */
@@ -36,7 +36,7 @@ namespace Auris{
             else 
                 body->SetUserData(nullptr); 
         } 
-        //! The method setGravity.
+        //! The method setGravity, taking 1 argument.
             /*! set the scale of gravity in box2D
              * \param gravityScale a float value, that is the scale of the gravity.
             */
@@ -44,7 +44,7 @@ namespace Auris{
             body->SetGravityScale(gravityScale); 
         } 
      
-        //! The method setFixedRotation.
+        //! The method setFixedRotation, taking 1 argument.
             /*! set the fixed rotation of the object in box2D
              * \param flag a bool value, that controls  the fixed rotation.
             */
@@ -52,7 +52,7 @@ namespace Auris{
             body->SetFixedRotation(flag); 
         } 
      
-        //! The method setActive.
+        //! The method setActive, taking 1 argument.
             /*! sets if the box2D body should be active
              * \param flag a bool value, that controls if the body is active.
             */
@@ -60,6 +60,12 @@ namespace Auris{
             body->SetActive(flag); 
         } 
      
+        //! The applyForce method, taking 1-3 arguments.
+            /*! Applies force to the physics entity center via box2D body
+             * \param force a vec2 value, that is the force that should be apllied.
+             * \param impule a bool value, that is if the force is an impulse or not (default is false).
+             * \param awake a bool value, that is if the box2D body can receive physics updates (default is true).
+            */
         void applyForce(vec2 force, bool impulse = false, bool awake = true) { 
             if (impulse) 
                 body->ApplyLinearImpulseToCenter(Convert::toB2(force), awake); 
@@ -67,6 +73,14 @@ namespace Auris{
                 body->ApplyForceToCenter(Convert::toB2(force), awake); 
         } 
      
+        //! The applyForce method, taking 2-4 arguments.
+            /*! Applies force to the physics entity on a specific point via box2D body
+             * \param force a vec2 value, that is the force that should be apllied.
+             * \param point a vec2 value, that is the point where the force should be applied.
+             * \param impule a bool value, that is if the force is an impulse or not (default is false).
+             * \param awake a bool value, that is if the box2D body can receive physics updates (default is true).
+             * \overload applyForce(vec2 force, bool impulse = false, bool awake = true)
+            */
         void applyForce(vec2 force, vec2 point, bool impulse = false,  bool awake = true){ 
             if (impulse) 
                 body->ApplyLinearImpulse(Convert::toB2(force), Convert::toB2(point), awake); 
@@ -74,23 +88,44 @@ namespace Auris{
                 body->ApplyForce(Convert::toB2(force), Convert::toB2(point), awake); 
         } 
 
+        //! The setBullet method, taking 1 argument.
+            /*! Set the body to bullet physics, meaning that if the entity is moving fast it will still not clip through stuff
+             * \param awake a bool value, that is if the box2D body is a bullet.
+            */
         void setBullet(bool flag){
             body->SetBullet(flag);
         }
      
-        // Getters 
+        //! The getLinearVelocity method.
+            /*! Gets the linear velocity of the box2D body associated with the physics entity.
+             * \return vec2, that is the velocity
+            */
         vec2 getLinearVelocity() { 
             return Convert::toGlm(body->GetLinearVelocity()); 
         }
 
+        //! The isBullet method.
+            /*! Gets if the body is using bullet physics, so if it potentially goes so fast that it needs to not clip through objects
+             * \return bool, that is if the body is bullet
+            */
         bool isBullet() {
             return body->IsBullet();
         }
 
-        virtual void OnCollisionEnter(PhysicsEntity* collider) {} //! Called upon collision with another PhysicsEntity
+        //! The scriptable function onCollisionEnter.
+            /*!
+             * Used by the game programmer to add on collision enter functionality to the physics entity.
+             * Called upon collision with another PhysicsEntity
+             * \param collider a PhysicsEntity pointer, that is the physics entity colliding with
+            */
+        virtual void OnCollisionEnter(PhysicsEntity* collider) {}
      
-        virtual void OnCollisionStay(PhysicsEntity* collider) {} //! Called while colliding with another PhysicsEntity
-     
+        //! The scriptable function onCollisionExit.
+            /*!
+             * Used by the game programmer to add on collision exit functionality to the physics entity.
+             * Called when exiting collision with another PhysicsEntity
+             * \param collider a PhysicsEntity pointer, that is the physics entity colliding with
+            */
         virtual void OnCollisionExit(PhysicsEntity* collider) {} //! Called when exiting collision with another PhysicsEntity
 
 

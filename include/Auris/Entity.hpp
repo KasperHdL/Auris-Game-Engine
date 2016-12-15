@@ -24,7 +24,7 @@ public:
         transform = new Transform(this);
     }
 
-    //! The engine destructor.
+    //! The entity destructor.
         /*!
          * Deletes the Transform pointer.
         */
@@ -32,11 +32,17 @@ public:
         delete transform;
     }
 
+    //! A setParent method.
+        /*! sets the parent of the entity
+        */
     void setParent(Entity* parent) {
         this->parent = parent;
         parent->setChild(this);
     }
 
+    //! A setChild method.
+        /*! sets the child of the entity
+        */
     void setChild(Entity* child) {
         this->child = child;
         child->setParent(this);
