@@ -27,10 +27,10 @@ public:
     void shutdown();
     void update(float dt);
 
-    static Sprite* getSprite(Entity* entity, SRE::Texture* texture, SRE::Texture* normalMap, Auris::Mesh* mesh = nullptr);
-    static Sprite* getSprite(Entity* entity, SRE::Texture* texture = nullptr, Auris::Mesh* mesh = nullptr);
+    static Sprite* getSprite(Entity* entity, SRE::Texture* texture = nullptr,Auris::Mesh* mesh = nullptr,SRE::Texture* normalMap = nullptr);
+
     static void deleteSprite(Sprite* sprite);
-	static shared_ptr<Animation> getAnim(Entity* entity, float length);
+    static shared_ptr<Animation> getAnim(Entity* entity, float length);
     static void deleteAnim(shared_ptr<Animation> ani);
 };
 }
