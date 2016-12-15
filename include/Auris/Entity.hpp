@@ -49,7 +49,7 @@ public:
 
     //! The method updateTransform.
         /*!
-         * Updates the enitities transform according to the physics body.
+         * Updates the entities transform according to the physics body.
          * Should not be used by the game programmer.
          * Called every frame.
         */

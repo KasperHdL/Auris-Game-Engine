@@ -29,22 +29,46 @@ public:
         */
     ~Animation();
 
-    //! The Animation contructor taking 2 arguments.
+    //! The Animation contructor, taking 2 arguments.
         /*! Which saves the length of the animation and also have a reference to the entity it is associated with
           \param entity an Entity pointer, that is a reference to the entity the animation is associated with.
           \param height an interger, that is the height of the window.
         */
     Animation(Entity* entity, float length);
 
+    //! The method addMesh, taking 1 argument.
+        /*!
+         * Adds a mesh to the vector of all meshes
+         * \param mesh a Mesh pointer, that is the mesh to add
+        */
     void addMesh(Mesh* mesh);
+
+    //! The method setSheet, taking 1 argument.
+        /*!
+         * set the spritesheet of the animation
+         * \param spritesheet a SpriteSheet pointer, that is the spritesheet to add
+        */
     void setSheet(SpriteSheet* spritesheet);
+
+    //! The method makeSequence, taking 2 arguments.
+        /*!
+         * make the animation use a sequence of sprites in a spritesheet
+         * \param spritesheet a SpriteSheet pointer, that is the spritesheet to add
+         * \param name a string, that is the name of the sequence in the spritesheet
+        */
     void makeSequence(SpriteSheet* spritesheet, std::string name);
+
+    //! The method run, taking 2 arguments.
+        /*! Makes the animation execute
+         * \param sprite a Sprite pointer, that is the sprite to add the animation to
+         * \param dt a float, that is the delta time
+        */
     void run(Sprite* sprite, float dt);
 
 private:
-	float length;
-	float frameLength;
-	float time;
-	int index;
+    float length; /*!< A float value: length. The length of the animation. */
+    float frameLength; /*!< A float value: frameLength. The length of each frame. */
+    float time; /*!< A float value: time. The current animation time. */
+    int index; /*!< An int value: index. The index of the current frame. */
 };
 }
