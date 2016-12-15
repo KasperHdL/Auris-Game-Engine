@@ -15,38 +15,52 @@ namespace Auris{
 using namespace std;
 using namespace glm;
 using namespace SRE;
+
+//! The ParticleSystem class
+    /*! Handles all particles
+    */
 class ParticleSystem{
-    vector<vec3> finalPositions;
-    vector<vec4> finalColors;
-    vector<float> finalSizes;
-    vector<float> finalRotation;
+
+    vector<vec3> finalPositions; /*!< A vector of vec3 values: finalPositions. The final positions of the particle. */
+    vector<vec4> finalColors; /*!< A vector of vec4 values: finalColors. The final colors of the particle. */
+    vector<float> finalSizes; /*!< A vector of float values: finalSizes. The final sizes of the particle. */
+    vector<float> finalRotation; /*!< A vector of float values: finalRotation. The final rotations of the particle. */
     
 
     //particle properties
-    vector<vec3> positions;
-    vector<vec3> velocities;
-    vector<float> rotations;
-    vector<float> angularVelocities;
+    vector<vec3> positions;  /*!< A vector of vec3 values: positions. The positions of the particles. */
+    vector<vec3> velocities; /*!< A vector of vec3 values: velocities. The rotations of the particles. */
+    vector<float> rotations; /*!< A vector of float values: rotations. The rotations of the particles. */
+    vector<float> angularVelocities; /*!< A vector of float values: AngularVelocities. The angular velocities of the particles. */
 
-    vector<vec4> startColors;
-    vector<float> startSizes;
+    vector<vec4> startColors; /*!< A vector of vec4 values: startColors. The start colors of the particles. */
+    vector<float> startSizes; /*!< A vector of float values: startSizes. The start sizes of the particles. */
 
-    vector<vec4> endColors;
-    vector<float> endSizes;
+    vector<vec4> endColors; /*!< A vector of vec4 values: endColors. The end colors of the particles. */
+    vector<float> endSizes; /*!< A vector of float values: endSizes. The end sizes of the particles. */
 
-    vector<float> startTimes;
+    vector<float> startTimes; /*!< A vector of float values: startTimes. The start times of the particles. */
 
-    float currentTime;
-    float particleDuration;
+    float currentTime; /*!< A float value: currentTime. The current Particle time in the particle system. */
+    float particleDuration; /*!< A float value: particleDuration. The duration of each particle. */
 
-    SRE::Texture* texture;
+    SRE::Texture* texture; /*!< A Texture pointer: texture. An instance of the texture of the particle. */
     
-    SRE::ParticleMesh* mesh = nullptr;
-    SRE::Shader* shader;
+    SRE::ParticleMesh* mesh = nullptr; /*!< A Mesh pointer: mesh. An instance of the mesh of the particle */
+    SRE::Shader* shader; /*!< A shader pointer:shader. An instance of the shader of the particle. */
 
     //empty
-    vector<vec2> uvs;
-    vector<float> uvSize;
+    vector<vec2> uvs; /*!< A vector of vec2: uvs. Empty, as it is not needed in 2D. */
+    vector<float> uvSize; /*!< A vector of float: uvSize. Empty, as it is not needed in 2D. */
+
+    //! A lerpColor method, taking 3 arguments.
+        /*!
+         * Lerps from one color to the other, based on the float
+         * \param start a vec4 value, that is the start color
+         * \param end a vec4 value, that is the end color
+         * \param t a float value, that is the current lerp differentiater (between 0-1)
+         * \return vec4, as the color between the two colors
+        */
     vec4 lerpColor(vec4 start, vec4 end, float t){
         return vec4(
                 mix<float>(start[0], end[0], t),
