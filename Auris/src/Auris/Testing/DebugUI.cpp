@@ -9,7 +9,7 @@ using namespace Auris;
  */
 void DebugUI::startup(Engine* engine){
     this->e = engine;
-    ImGui_SRE_Init(e->window);
+    //ImGui_SRE_Init(e->window);
   
     e->world->SetDebugDraw(&debugDraw);
     debugDraw.SetFlags(b2Draw::e_shapeBit);
@@ -43,10 +43,6 @@ void DebugUI::update(float dt){
     if(Input::keyDown(Auris::Action::debug)){
         debug = !debug;
 
-        if(debug == false){
-            ImGui_SRE_NewFrame(e->window);
-            ImGui::Render();
-        }
     }
 
     if(Input::keyDown(Auris::Action::pause)){
@@ -55,8 +51,6 @@ void DebugUI::update(float dt){
 
     if(debug){
         
-        ImGui_SRE_NewFrame(e->window);
-
         ImGui::Checkbox("Debug(F2)", &debug);
         ImGui::SameLine();
         ImGui::Checkbox("Pause(F3)", &pause);
@@ -76,8 +70,8 @@ void DebugUI::update(float dt){
         ImGui::Separator();
 
         arr_deltaTime[arrIndex] = dt;
-        arr_physMem[arrIndex] = e->memLeakDet.getPhysMemUsedByMe();
-        arr_virtMem[arrIndex] = e->memLeakDet.getVirtMemUsedByMe();
+        arr_physMem[arrIndex] = memLeakDet.getPhysMemUsedByMe();
+        arr_virtMem[arrIndex] = memLeakDet.getVirtMemUsedByMe();
 
         if(dt > max_deltaTime)
             max_deltaTime = dt;
@@ -86,9 +80,9 @@ void DebugUI::update(float dt){
             max_renderSprites = e->renderSystem.spritePool.count;
 
         ImGui::PlotLines("Physical Memory", arr_physMem, arrSize);
-        ImGui::Text("Physical Memory: %f / %f", arr_physMem[arrIndex], e->memLeakDet.getTotalPhysMem());
+        ImGui::Text("Physical Memory: %f / %f", arr_physMem[arrIndex], memLeakDet.getTotalPhysMem());
         ImGui::PlotLines("Dt", arr_virtMem, arrSize);
-        ImGui::Text("Virtual Memory: %f / %f", arr_virtMem[arrIndex], e->memLeakDet.getTotalVirtMem());
+        ImGui::Text("Virtual Memory: %f / %f", arr_virtMem[arrIndex], memLeakDet.getTotalVirtMem());
 
         ImGui::Separator();
         ImGui::PlotLines("Dt", arr_deltaTime, arrSize);
@@ -184,9 +178,6 @@ void DebugUI::update(float dt){
 /*! calls ImGui::Render() and box2d draw debug if enabled.
  */
 void DebugUI::draw(){
-
-    if(debug)
-        ImGui::Render();
 
     if(drawDebug)
         e->world->DrawDebugData();

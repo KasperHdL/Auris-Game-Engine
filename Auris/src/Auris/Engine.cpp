@@ -9,6 +9,11 @@ using namespace Auris;
 
 b2World* Engine::world;
 
+Engine::Engine(int width, int height){
+    Constants::width = width;
+    Constants::height = height;
+}
+
 void Engine::startup(Game* game){
     this->game = game;
 
@@ -31,8 +36,8 @@ void Engine::startup(Game* game){
         "An SDL2 window",                  // window title
         SDL_WINDOWPOS_UNDEFINED,           // initial x position
         SDL_WINDOWPOS_UNDEFINED,           // initial y position
-        width,                               // width, in pixels
-        height,                               // height, in pixels
+        Constants::width,                               // width, in pixels
+        Constants::height,                               // height, in pixels
         SDL_WINDOW_OPENGL                  // flags - see below
     );
 
@@ -63,6 +68,7 @@ void Engine::startup(Game* game){
     Input::init(game);
 
     debugUI = new DebugUI();
+    ImGui_SRE_Init(window);
     debugUI->startup(this);
 
     // INIT GAME
@@ -100,7 +106,6 @@ void Engine::run(SDL_Window* window){
     // delta time from http://gamedev.stackexchange.com/a/110831
     Uint64 NOW = SDL_GetPerformanceCounter();
     Uint64 LAST = 0;
-    quit = 0;
     float deltaTimeSec = 0;
     auto sre = SimpleRenderEngine::instance;
 
@@ -120,6 +125,7 @@ void Engine::run(SDL_Window* window){
         Input::update();
         if(debugUI->profiling) profile_InputTimer.stop();
 
+        ImGui_SRE_NewFrame(window);
         debugUI->update(deltaTimeSec);
         
         //UPDATE
@@ -156,8 +162,10 @@ void Engine::run(SDL_Window* window){
         renderSystem.update(deltaTimeSec);
         if(debugUI->profiling) profile_RenderTimer.stop();
 
-        debugUI->draw();
+        game->imGUI();
 
+        debugUI->draw();
+        ImGui::Render();
 
         sre->swapWindow();
     }

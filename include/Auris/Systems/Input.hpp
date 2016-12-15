@@ -4,6 +4,7 @@
 #include <map>
 #include "SRE/imgui_sre.hpp"
 #include <vector>
+#include "glm/glm.hpp"
 
 namespace Auris{
 class Game;
@@ -28,6 +29,8 @@ public:
 
     static int getControllerButtonState(int controllerID, SDL_GameControllerButton button);
     static int getControllerAxisState(int controllerID, SDL_GameControllerAxis axis);
+    static glm::vec2 getControllerLeftStickState(int controllerID);
+    static glm::vec2 getControllerRightStickState(int controllerID);
 
 
 private:
