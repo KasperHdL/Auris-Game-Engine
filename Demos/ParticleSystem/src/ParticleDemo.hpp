@@ -14,11 +14,6 @@
 using namespace glm;
 using namespace Auris;
 
-class Scene1 : public Scene{
-    public:
-        void init(){}
-};
-
 class ParticleDemo : public Game {
 
     ParticleSystem particleSystem;
