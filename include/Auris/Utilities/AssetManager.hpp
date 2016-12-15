@@ -8,6 +8,7 @@
 #include <iostream>
 #include <fstream>
 #include <SDL.h>
+#include <SDL2/SDL_mixer.h>
 
 namespace Auris{
     class AssetManager{
@@ -16,11 +17,16 @@ namespace Auris{
         static std::map<std::string, SRE::Texture*> textures;
         static std::map<std::string, SpriteSheet*> spritesheets;
 
+        static std::map<std::string, Mix_Music*> music;
+        static std::map<std::string, Mix_Chunk*> sounds;
+
         static void createSheet(SpriteSheet* sheet, std::string pathToJson);
     public:
-        static SRE::Texture* getTexture(std::string path);
-        static SpriteSheet* getSpriteSheet(std::string pathToJson);
+        static SRE::Texture* getTexture(std::string filename);
+        static SpriteSheet* getSpriteSheet(std::string jsonFilename);
 
+        static Mix_Chunk* getSound(std::string filename);
+        static Mix_Music* getMusic(std::string filename);
 
         //! Helper Function to get the datafolder
         /*! returns the data folder path and is windows safe, it can be parsed a string which is simply appended

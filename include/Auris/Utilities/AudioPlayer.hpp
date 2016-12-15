@@ -16,7 +16,6 @@ private:
 
     int channel;
 
-    int sound;
     int differenceX = 0;
     int differenceY = 0;
     int pan = 127;
@@ -24,8 +23,6 @@ private:
 
     float fadeX = 1.0f;
     float fadeY = 1.0f;
-
-    bool debugDraw = false;
 
     Auris::Camera* listener;
 
@@ -40,7 +37,6 @@ public:
     }
 
     void init() {
-        sound = addSound(Auris::AssetManager::getDataPath("pistolShot.wav").c_str(), 128);
     }
 
     //! Sets the pan and master volume according to the relative distance between this AudioPlayer and its listener
@@ -68,46 +64,18 @@ public:
             Mix_SetDistance(channel, distance);
         }
 
-        if (debugDraw) {
-
-        }
-
-        if (Auris::Input::keyHeld(Auris::Action::a)) {
-            listener->setPos(vec2(listener->getPos().x-5, listener->getPos().y));
-        }
-
-        if (Auris::Input::keyHeld(Auris::Action::d)) {
-            listener->setPos(vec2(listener->getPos().x+5, listener->getPos().y));
-        }
-
-        if (Auris::Input::keyHeld(Auris::Action::w)) {
-            listener->setPos(vec2(listener->getPos().x, listener->getPos().y+5));
-        }
-
-        if (Auris::Input::keyHeld(Auris::Action::s)) {
-            listener->setPos(vec2(listener->getPos().x, listener->getPos().y-5));
-        }
-
-        if (Auris::Input::keyDown(Auris::Action::enter)) {
-            playSound(sound);
-        }
-
-        if (Auris::Input::keyDown(Auris::Action::space)) {
-            debugDraw = !debugDraw;
-        }
     }
 
     //! Adds music to this AudioPlayer.
     /*!
-     * \param path Path to the music to be played
+     * \param mixMusic The Mix_Music pointer, use AssetManager::getMusic() to get the pointer
      * \param volume The initial volume of that music (0-128). If over 128, it will default to 128.
-     * \return int The index of the music. Returns -1 on load error.*/
-    int addMusic(const char* path, int volume) {
-        music.push_back(Mix_LoadMUS(path));
-        if (music[music.size()-1] == nullptr) {
-            cout << "Nullptr: Failed to load \"" << path << "\". Make sure the path is correct." << endl;
-            return -1;
-        }
+     * \return int The index of the music. Returns -1 on load error.
+     * \sa addSound()
+     * \sa AssetManager::getMusic()
+     */
+    int addMusic(Mix_Music* mixMusic, int volume) {
+        music.push_back(mixMusic);
 
         Mix_VolumeMusic(volume);
         return music.size()-1;
@@ -115,15 +83,14 @@ public:
 
     //! Adds a sound to this AudioPlayer.
     /*!
-     * \param path Path to the .wav file
+     * \param mixChunk The Mix_Chunk pointer, use AssetManager::getSound() to get the pointer
      * \param volume The initial volume of that sound (0-128). If over 128, it will default to 128.
-     * \return int The index of the sound. Returns -1 on load error.*/
-    int addSound(const char* path, int volume) {
-        sounds.push_back(Mix_LoadWAV(path));
-        if (sounds[sounds.size()-1] == nullptr) {
-            cout << "Nullptr: Failed to load \"" << path << "\". Make sure the path is correct." << endl;
-            return -1;
-        }
+     * \return int The index of the sound. Returns -1 on load error.
+     * \sa addMusic()
+     * \sa AssetManager::getSound()
+     */
+    int addSound(Mix_Chunk* mixChunk, int volume) {
+        sounds.push_back(mixChunk);
 
         Mix_VolumeChunk(sounds[sounds.size()-1], volume);
         return sounds.size()-1;
@@ -133,7 +100,7 @@ public:
     /*!
      * \param index The index of the music.*/
     void playMusic(int index){
-        if (sounds.size()-1 >= index)
+        if (music.size()-1 >= index)
             //If there is no music playing
             if( Mix_PlayingMusic() == 0 )
                 Mix_PlayMusic( music[index], channel );
@@ -200,12 +167,6 @@ public:
 
     //! Destructor
     ~AudioPlayer(){
-        for (auto & element: music)
-            Mix_FreeMusic(element);
-
-        for (auto & element: sounds)
-            Mix_FreeChunk(element);
-
         music.clear();
         sounds.clear();
     }
