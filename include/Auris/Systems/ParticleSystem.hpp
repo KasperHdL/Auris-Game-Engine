@@ -71,28 +71,30 @@ class ParticleSystem{
     }
 
 public:
-    float timeScale = 1;
-    vec3 acceleration = vec3(0,0,0);
-    int particleIndex = 0;
+    float timeScale = 1; /*!< A float value: timeScale. The time scale of the particle (default is 1). */
+    vec3 acceleration = vec3(0,0,0); /*!< A vec3 value: acceleration. The acceleration of the particle (default is vec3(0)). */
+    int particleIndex = 0; /*!< An int value: particleIndex. The index of the particle */
 
 
     //interpolation
  
-    vector<vec2> interpolationPoints_acceleration;
-    vector<vec2> interpolationPoints_velocity;
-    vector<vec2> interpolationPoints_angularVelocity;
-    vector<vec2> interpolationPoints_color;
-    vector<vec2> interpolationPoints_size;
+    vector<vec2> interpolationPoints_acceleration; /*!< A vector of vec2 values: interpolationPoints_acceleration. The acceleration points to interpolate between */
+    vector<vec2> interpolationPoints_velocity; /*!< A vector of vec2 values: interpolationPoints_velocity. The velocity points to interpolate between */
+    vector<vec2> interpolationPoints_angularVelocity; /*!< A vector of vec2 values: interpolationPoints_angularVelocity. The angular velocity points to interpolate between */
+    vector<vec2> interpolationPoints_color; /*!< A vector of vec2 values: interpolationPoints_color. The color points to interpolate between */
+    vector<vec2> interpolationPoints_size; /*!< A vector of vec2 values: interpolationPoints_size. The size points to interpolate between */
    
-    Interpolation  interpolation_acceleration; 
-    Interpolation  interpolation_velocity;
-    Interpolation  interpolation_angularVelocity;
-    Interpolation  interpolation_color;
-    Interpolation  interpolation_size;
+    Interpolation  interpolation_acceleration; /*!< An Interpolation value: interpolation_acceleration. The acceleration interpolation. */
+    Interpolation  interpolation_velocity; /*!< An Interpolation value: interpolation_velocity. The velocity interpolation. */
+    Interpolation  interpolation_angularVelocity; /*!< An Interpolation value: interpolation_angularVelocity. The angular velocity acceleration interpolation. */
+    Interpolation  interpolation_color; /*!< An Interpolation value: interpolation_color. The color interpolation. */
+    Interpolation  interpolation_size; /*!< An Interpolation value: interpolation_size. The size interpolation. */
 
-
-
-
+    //! The ParticleSystem constructor.
+        /*!
+         * Reserves space in all the arrays, and creates all the initial values
+         * \sa startup()
+        */
     ParticleSystem()
     :
         interpolation_acceleration(&interpolationPoints_acceleration), 
@@ -124,6 +126,11 @@ public:
         }
     }
 
+    //! The ParticleSystem destructor.
+        /*!
+         * Shuts down the particle system, and deletes all the mesh and texture pointers
+         * \sa shutdown()
+        */
     ~ParticleSystem(){
         shutdown();
         delete mesh;
@@ -133,6 +140,13 @@ public:
 
     }
 
+    //! A startup method, taking 2-3 arguments.
+        /*!
+         * Starts the particle system, and initializes all the particles to their initial position
+         * \param numParticles an int value. The number of particles in the particle system.
+         * \param particleDuration a float value. Each particles duration.
+         * \param texture a Texture pointer. The texture of the particle (default is a white texture).
+        */
     void startup(int numParticles, float particleDuration, Texture* texture = Texture::getWhiteTexture()){
         currentTime = 0;
         this->particleDuration = particleDuration;
@@ -181,6 +195,10 @@ public:
             mesh->update(finalPositions, finalColors, uvs, uvSize, finalRotation, finalSizes);
     }
 
+    //! A shutdown method.
+        /*!
+         * shuts down the particle system, meaning that it clears all the values and paremeters of each particle
+         */
     void shutdown(){
         finalPositions.clear();
         finalColors.clear();
@@ -201,6 +219,18 @@ public:
     }
 
 
+    //! An emit method, taking 8 arguments.
+        /*!
+         * Emits one particle with the properties inputted, has to be called multiple times, if more than one particle is neeeded.
+         * \param position a vec3 value. The position of the particle.
+         * \param velocity a vec3 value. The velocity of the particle.
+         * \param angle a float value. The angle of the particle.
+         * \param angularRotation a float value. The angular rotation of the particle.
+         * \param color a vec4 value. The start color of the particle.
+         * \param size a float value. The start size of the particle.
+         * \param endColor a vec4 value. The end color of the particle.
+         * \param endSize a float value. The end size of the particle
+        */
     void emit(vec3 position, vec3 velocity, float angle, float angularRotation, vec4 color, float size, vec4 endColor, float endSize){
         if(startTimes[particleIndex] + particleDuration < currentTime){
             startTimes[particleIndex] = currentTime;
@@ -217,6 +247,12 @@ public:
         }
     }
 
+    //! An update method, taking 1 argument.
+        /*!
+         * Updates all particles in the particle system, called once per frame.
+         * \param dt a float value. The delta time.
+         * \sa draw()
+        */
     void update(float dt){
 
         for (int i = 0; i < positions.size(); i++){
@@ -249,6 +285,11 @@ public:
 
     }
 
+    //! A draw method.
+        /*!
+         * Draws all particles in the particle system, called once per frame, after update
+         * \sa update()
+        */
     void draw(){
         shader->set("tex", texture);
         SRE::SimpleRenderEngine::instance->draw(mesh, glm::mat4(1), shader);
