@@ -28,7 +28,7 @@ private:
 
 public:
     AudioPlayer(Auris::Camera* listener = nullptr, int channel = -1, float fadeX = 1.0f, float fadeY = 1.0f) {
-        name = "AudioListener";
+        type = "AudioListener";
         if (listener != nullptr)
             this->listener = listener;
         this->channel = channel;

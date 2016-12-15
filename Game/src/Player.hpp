@@ -17,6 +17,7 @@
 
 using namespace std;
 using namespace Auris;
+
 class Player : public PhysicsEntity{
 public:
     shared_ptr<Animation> anim;
@@ -37,7 +38,7 @@ public:
     int controller;
 
     Player(vec2 position = vec2(0,0)):PhysicsEntity(){
-        name = "Player";
+        type = "Player";
 
         spriteSheet = AssetManager::getSpriteSheet("player.json");
         upper = spriteSheet->getSprite("upper_3", this);
@@ -119,10 +120,10 @@ public:
     }
 
     void OnCollisionEnter(PhysicsEntity* other) {
-        if (other->name == "Wall")
+        if (other->type == "Wall")
             canJump = true;
 
-        if (other->name == "Bullet") {
+        if (other->type == "Bullet") {
             healthPoints -= ((Bullet*)other)->damage;
             other->setGravity(3);
             other->setFixedRotation(true);
