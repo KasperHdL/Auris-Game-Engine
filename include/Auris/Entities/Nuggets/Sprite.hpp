@@ -13,16 +13,34 @@
 
 #include <iostream>
 namespace Auris{
+
+//! The Sprite class that extend the Nugget class
+    /*! Used to make give Sprites to objects
+    */
 class Sprite : public Nugget{
 public:
-    Mesh* mesh;
-    Material material;
+    Mesh* mesh; /*!< A Mesh pointer: mesh. The mesh of the sprite. */
+    Material material; /*!< A Material value: material. The material of the sprite. */
 
-    glm::vec3 offset = glm::vec3(0);
+    glm::vec3 offset = glm::vec3(0); /*!< A vec3 value: offset. The offset of the sprite (default is vec3(0)). */
 
-    virtual void draw();
+    //! A draw method.
+        /*!
+         * Draws the sprite to the screen, with SimpleRenderEngine.
+        */
+    void draw();
 
+    //! The sprite destructor.
+        /*!
+         * Does nothing.
+        */
     ~Sprite();
+
+    //! The sprite constructor, taking 1 argument.
+        /*!
+         * Initializes the mesh and the material of the sprite to default values.
+         * \param entity an Entity pointer, that is the entity the sprite is associated with.
+        */
     Sprite(Entity* entity):Nugget(entity){
         mesh = Mesh::createQuad();
 
@@ -33,6 +51,15 @@ public:
 
     }
 
+    //! The overloaded sprite constructor, taking 3-4 arguments.
+        /*!
+         * Initializes the mesh and the material of the sprite to values inputted.
+         * \param entity an Entity pointer, that is the entity the sprite is associated with.
+         * \param mesh a Mesh pointer, that is the mesh of the sprite.
+         * \param texture a Texture pointer, that is the texture of the sprite.
+         * \param normalMap a Texture pointer, that is the normal map of the sprite (default is no normal map).
+         * \overload Sprite(Entity* entity)
+        */
     Sprite(Entity* entity, Mesh* mesh, SRE::Texture* texture, SRE::Texture* normalMap = nullptr):Nugget(entity){
         this->mesh = mesh;
         material.texture = texture;
@@ -46,6 +73,14 @@ public:
 
     }
 
+    //! The overloaded sprite constructor, taking 2-3 arguments.
+        /*!
+         * Initializes the mesh and the material of the sprite to values inputted (Mesh default is quad).
+         * \param entity an Entity pointer, that is the entity the sprite is associated with.
+         * \param texture a Texture pointer, that is the texture of the sprite.
+         * \param normalMap a Texture pointer, that is the normal map of the sprite (default is no normal map).
+         * \overload Sprite(Entity* entity)
+        */
     Sprite(Entity* entity, SRE::Texture* texture, SRE::Texture* normalMap = nullptr):Nugget(entity){
         mesh = Mesh::createQuad();
         material.texture = texture;
@@ -59,12 +94,18 @@ public:
 
     }
 
-    //! Return the width of the currently assigned mesh in pixels
+    //! A getWidth method
+    /*! Used to get the width of the currently assigned mesh in pixels
+     * \return float, that is the width of the currently assigned mesh in pixels
+     */
     float getWidth(){
         return mesh->width;
     }
 
-    //! Return the height of the currently assigned mesh in pixels
+    //! A getHeight method
+    /*! Used to get the height of the currently assigned mesh in pixels
+     * \return float, that is the height of the currently assigned mesh in pixels
+     */
     float getHeight(){
         return mesh->height;
     }

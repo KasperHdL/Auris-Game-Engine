@@ -16,7 +16,7 @@ public:
     Entity* child = nullptr;/*!< An Entity pointer: child. A pointer to the child entity. */
     Transform* transform; /*!< A Transform pointer: transform. An instance of the transform. */
 
-    //! The engine contructor.
+    //! The entity contructor.
         /*!
          * Declares a new Transform.
         */
