@@ -2,8 +2,8 @@
 
 #include "Auris/Engine.hpp"
 #include "Auris/Systems/ParticleSystem.hpp"
-#include "Auris/Utilities/Resource.hpp"
 #include "Auris/Utilities/Interpolation.hpp"
+#include "Auris/Utilities/AssetManager.hpp"
 
 #include "SRE/imgui_sre.hpp"
 #include "SRE/Texture.hpp"
@@ -13,11 +13,6 @@
 
 using namespace glm;
 using namespace Auris;
-
-class Scene1 : public Scene{
-    public:
-        void init(){}
-};
 
 class ParticleDemo : public Game {
 
@@ -65,7 +60,7 @@ class ParticleDemo : public Game {
 
 
     void init() {
-        cartman = SRE::Texture::createFromFile(Resource::getPath("cartman.png").c_str(),false);
+        cartman = AssetManager::getTexture("cartman.png");
  
         start();
     }
