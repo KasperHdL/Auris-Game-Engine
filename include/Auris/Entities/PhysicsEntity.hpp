@@ -52,7 +52,7 @@ namespace Auris{
             body->SetFixedRotation(flag); 
         } 
      
-        //! The method setActive, taking 1 argument.
+        //! The method setAwake, taking 1 argument.
             /*! sets if the box2D body should be active
              * \param flag a bool value, that controls if the body is active.
             */
