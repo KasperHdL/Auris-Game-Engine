@@ -12,8 +12,8 @@ using namespace Auris;
 class DemoGame : public Auris::Game {
     Scene1 scene1;
 
-//    int pistolShot;
-//    int warSounds;
+    int pistolShot;
+    int warSounds;
 
     int musicVolume = 128;
     int soundVolume = 128;
@@ -25,9 +25,14 @@ class DemoGame : public Auris::Game {
         camera = new Auris::Camera(1280, 720);
         loadScene(&scene1);
         Auris::Engine::world->SetGravity(b2Vec2(0, -9.8));
-//        pistolShot = audioPlayer.addSound(Resource::getPath("pistolShot.wav").c_str(), 128);
-//        warSounds = audioPlayer.addMusic(Resource::getPath("warSounds.wav").c_str(), 128);
-//        audioPlayer.playMusic(warSounds);
+
+        auto audioPlayer = (AudioPlayer*) addEntity(make_shared<AudioPlayer>());
+
+        pistolShot = audioPlayer->addSound(AssetManager::getSound("pistolShot.wav"), 128);
+        warSounds = audioPlayer->addMusic(AssetManager::getMusic("warSounds.wav"), 128);
+        audioPlayer->playMusic(warSounds);
+        audioPlayer->playSound(pistolShot);
+
     }
 
     void earlyUpdate(float dt){

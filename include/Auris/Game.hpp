@@ -30,9 +30,9 @@ public:
     virtual void controllerDisconnected(int controllerID){}
     std::vector<std::shared_ptr<Entity>> entities;
 
-    inline int addEntity(std::shared_ptr<Entity> entity){
+    inline Entity* addEntity(std::shared_ptr<Entity> entity){
         entities.push_back(entity);
-        return entities.size()-1;
+        return entity.get();
     }
 
     void loadScene(Scene* scene) {
