@@ -2,6 +2,7 @@
 
 #include "Auris/Testing/DebugDraw.hpp"
 #include "Auris/Systems/Input.hpp"
+#include "Auris/Utilities/MemoryLeakDetector.hpp"
 
 /*!
  * DebugUI allow the Engine to draw an Debug overlay to show debug information for the engine.
@@ -40,6 +41,8 @@ private:
     //Toggles
     bool toggle_goInspector = false;
     bool toggle_cameraControls = false;
+
+    MemoryLeakDetector memLeakDet;
 
 
 public:

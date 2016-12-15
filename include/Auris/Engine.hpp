@@ -42,17 +42,18 @@ namespace Auris{
 class DebugUI;
 
 //! The game engine class
-    /*! Everything happens here */
+    /*! Everything happens here!
+    */
 class Engine{
 public:
-    //! The engine contructor taking two arguments.
+    //! The engine contructor taking 2 arguments.
         /*!
           \param width an integer, that is the width of the window.
           \param height an interger, that is the height of the window.
         */
-    Engine(int width, int height):width(width),height(height){}
+    Engine(int width, int height);
 
-    //! The engine decontructor.
+    //! The engine destructor.
         /*! Not used for anything, because when shutdown is run, everything is closed anyway
             \sa shutdown()
         */
@@ -84,12 +85,6 @@ public:
     DebugUI* debugUI; /*!< A DebugUI pointer: debugUI. A reference to the current engine debugUI */
 
     b2ContactListener* collisionHandler; /*!< A b2ContactListener pointer: collisionHandler. A reference to the box2d contactlistener, handling collision */
-
-    const int VELOCITY_ITERATIONS = 16; /*!< A constant int value: VELOCITY_ITERATIONS. The velocity iterations of the physics world per frame */
-    const int POSITION_ITERATIONS = 16; /*!< A constant int value: POSITION_ITERATIONS. The position iterations of the physics world per frame */
-
-    int width; /*!< An int value: width. The current width of the window */
-    int height; /*!< An int value: height. The current height of the window */
 
 };
 }

@@ -9,6 +9,11 @@ using namespace Auris;
 
 b2World* Engine::world;
 
+Engine::Engine(int width, int height){
+    Constants::width = width;
+    Constants::height = height;
+}
+
 void Engine::startup(Game* game){
     this->game = game;
 
@@ -31,8 +36,8 @@ void Engine::startup(Game* game){
         "An SDL2 window",                  // window title
         SDL_WINDOWPOS_UNDEFINED,           // initial x position
         SDL_WINDOWPOS_UNDEFINED,           // initial y position
-        width,                               // width, in pixels
-        height,                               // height, in pixels
+        Constants::width,                               // width, in pixels
+        Constants::height,                               // height, in pixels
         SDL_WINDOW_OPENGL                  // flags - see below
     );
 
@@ -129,7 +134,7 @@ void Engine::run(SDL_Window* window){
             for(auto& el: game->entities)
                 el->update(deltaTimeSec);
 
-            Engine::world->Step(deltaTimeSec, VELOCITY_ITERATIONS, POSITION_ITERATIONS);
+            Engine::world->Step(deltaTimeSec, Constants::VELOCITY_ITERATIONS,Constants:: POSITION_ITERATIONS);
 
 
             for(auto& el: game->entities)

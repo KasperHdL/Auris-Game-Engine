@@ -69,8 +69,8 @@ void DebugUI::update(float dt){
         ImGui::Separator();
 
         arr_deltaTime[arrIndex] = dt;
-        arr_physMem[arrIndex] = e->memLeakDet.getPhysMemUsedByMe();
-        arr_virtMem[arrIndex] = e->memLeakDet.getVirtMemUsedByMe();
+        arr_physMem[arrIndex] = memLeakDet.getPhysMemUsedByMe();
+        arr_virtMem[arrIndex] = memLeakDet.getVirtMemUsedByMe();
 
         if(dt > max_deltaTime)
             max_deltaTime = dt;
@@ -79,9 +79,9 @@ void DebugUI::update(float dt){
             max_renderSprites = e->renderSystem.spritePool.count;
 
         ImGui::PlotLines("Physical Memory", arr_physMem, arrSize);
-        ImGui::Text("Physical Memory: %f / %f", arr_physMem[arrIndex], e->memLeakDet.getTotalPhysMem());
+        ImGui::Text("Physical Memory: %f / %f", arr_physMem[arrIndex], memLeakDet.getTotalPhysMem());
         ImGui::PlotLines("Dt", arr_virtMem, arrSize);
-        ImGui::Text("Virtual Memory: %f / %f", arr_virtMem[arrIndex], e->memLeakDet.getTotalVirtMem());
+        ImGui::Text("Virtual Memory: %f / %f", arr_virtMem[arrIndex], memLeakDet.getTotalVirtMem());
 
         ImGui::Separator();
         ImGui::PlotLines("Dt", arr_deltaTime, arrSize);
