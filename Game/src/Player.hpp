@@ -118,4 +118,19 @@ class Player : public PhysicsEntity{
 
     }
 
+    void inspectorImGui(){
+        PhysicsEntity::inspectorImGui();
+        ImGui::Separator();
+
+        ImGui::Checkbox("Is Alive", &alive);
+        ImGui::Checkbox("Can Jump", &canJump);
+
+        ImGui::DragInt("Health Points", &healthPoints);
+
+        ImGui::DragFloat("MaxSpeed", &maxSpeed);
+        ImGui::DragFloat("jumpHeight", &jumpHeight);
+        ImGui::DragFloat("movementSpeed", &movementSpeed);
+
+    }
+
 };

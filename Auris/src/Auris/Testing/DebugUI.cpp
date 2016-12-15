@@ -9,11 +9,9 @@ using namespace Auris;
  */
 void DebugUI::startup(Engine* engine){
     this->e = engine;
-    //ImGui_SRE_Init(e->window);
   
     e->world->SetDebugDraw(&debugDraw);
     debugDraw.SetFlags(b2Draw::e_shapeBit);
-
 
 }
 
@@ -40,6 +38,10 @@ void DebugUI::update(float dt){
         drawDebug = !drawDebug;
     }
 
+    if(Input::keyDown(Auris::Action::drawColliders)){
+        drawColliders = !drawColliders;
+    }
+
     if(Input::keyDown(Auris::Action::debug)){
         debug = !debug;
 
@@ -61,7 +63,8 @@ void DebugUI::update(float dt){
         ImGui::SameLine();
         ImGui::Text("Play on Hold(F5)");
 //          ImGui::Checkbox("Toggle Camera Controls(Arrow Keys)",&toggle_cameraControls);
-        ImGui::Checkbox("Debug draw(F6)", &drawDebug);
+        ImGui::Checkbox("Debug Colliders(F6)", &drawColliders);
+        ImGui::Checkbox("Call DrawDebug on Entities(F7)", &drawDebug);
 
         ImGui::Separator();
         ImGui::Checkbox("Toggle Entity inspector", &toggle_goInspector);
@@ -134,33 +137,36 @@ void DebugUI::update(float dt){
 
         if(toggle_goInspector){
             ImGui::Begin("Entities Inspector");
-            if(ImGui::TreeNode("Entities")){
-                int i = 0;
-                for(auto& el: e->game->entities){
-                    string name = el->name;
-                    if(name == "") name = &"GO " [ i];
 
-                    ImGui::PushID(&el);
-                    if(ImGui::TreeNode(el->name.c_str())){
-                        vec3 pos = el->transform->position;
-                        vec2 scale = el->transform->scale;
-                        ImGui::Text("Position (%f, %f, %f)", pos.x, pos.y, pos.z);
-                        ImGui::Text("Scale (%f, %f)", scale.x, scale.y);
+            int i = 0;
+            for(auto& ent: e->game->entities){
+                if(i >= entityInspectorOpenSize)
+                    continue;
 
-                        ImGui::Text("Rotation (%f)", el->transform->rotation);
+                string name = ent->name;
+                if(name == "") name = &"Entity " [ i];
 
-                        /*vec2 vel = Convert::toGlm(el->body->GetLinearVelocity());
-                        ImGui::Text("Velocity (%f, %f)", vel.x, vel.y);
-                        
-                        ImGui::Text("Angular Velocity (%f)", el->body->GetAngularVelocity());
-*/
-
-                        ImGui::TreePop();
+                ImGui::PushID(&entityInspectorOpen);
+                ImGui::Checkbox(name.c_str(),&entityInspectorOpen[i]);
+                if(entityInspectorOpen[i]){
+                    ImGui::Begin(name.c_str());
+                    if(ent->parent != nullptr){
+                        int j = 0;
+                        for(auto& parEnt: e->game->entities){
+                            if(&parEnt == &ent)continue;
+                            if(parEnt.get() == ent->parent)break;
+                            j++;
+                        }
+                        if(j != 127) 
+                            ImGui::Checkbox(("Parent: " + ent->parent->name).c_str(),&entityInspectorOpen[j]);
                     }
-                    ImGui::PopID();
-                    i++;
+
+                    ent->inspectorImGui();
+                    ImGui::End();
                 }
-                ImGui::TreePop();
+                ImGui::PopID();
+                i++;
+
             }
             ImGui::End();
         }
@@ -169,18 +175,25 @@ void DebugUI::update(float dt){
         if(arrIndex >= arrSize)
             arrIndex = 0;
 
-        e->game->debugDraw();
+        e->game->drawDebugImGui();
     }
 
 }
 
-//! Render the Debug UI
-/*! calls ImGui::Render() and box2d draw debug if enabled.
- */
+//! Draws debug information in world 
+/*! calls debugdraw on entities and draws box2d debug if drawdebug and draw colliders is enabled respectively
+*/
 void DebugUI::draw(){
 
-    if(drawDebug)
+    if(drawColliders){
         e->world->DrawDebugData();
+    }
 
+
+    if(drawDebug){
+        for(auto& ent: e->game->entities){
+            ent->debugDraw();
+        }
+    }
 
 }

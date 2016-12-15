@@ -3,6 +3,7 @@
 #include "Auris/Testing/DebugDraw.hpp"
 #include "Auris/Systems/Input.hpp"
 #include "Auris/Utilities/MemoryLeakDetector.hpp"
+#include <vector>
 
 /*!
  * DebugUI allows the Engine to draw an Debug overlay to show debug information for the engine.
@@ -19,7 +20,8 @@ private:
 
     DebugDraw debugDraw;
 
-    bool drawDebug = false; //!< will draw box2d DebugDraw
+    bool drawDebug = false; //!< will call drawDebug on entities
+    bool drawColliders = false;//!< will draw box2d DebugDraw
 
   
     //Following is to manage plots for dt, mem
@@ -40,7 +42,6 @@ private:
 
 
     //Profiling
-
     float arr_profInput[arrSize] = {};
     float arr_profEntityUpdate[arrSize] = {};
     float arr_profGEarlyUpdate[arrSize] = {};
@@ -54,6 +55,15 @@ private:
     //Toggles
     bool toggle_goInspector = false;
     bool toggle_cameraControls = false;
+
+    enum InspectorMode{
+        Closed,
+        Open,
+
+    };
+
+    static const int entityInspectorOpenSize = 1024;
+    bool entityInspectorOpen[entityInspectorOpenSize] = {false};
 
     MemoryLeakDetector memLeakDet;
 

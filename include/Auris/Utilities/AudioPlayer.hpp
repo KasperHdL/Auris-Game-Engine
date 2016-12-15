@@ -11,8 +11,8 @@ namespace Auris {
 
 class AudioPlayer : public Entity {
 private:
-    vector<Mix_Music*> music;
-    vector<Mix_Chunk*> sounds;
+    std::vector<Mix_Music*> music;
+    std::vector<Mix_Chunk*> sounds;
 
     int channel;
 
@@ -100,12 +100,14 @@ public:
     /*!
      * \param index The index of the music.*/
     void playMusic(int index){
-        if (music.size()-1 >= index)
+        if (music.size()-1 >= index){
             //If there is no music playing
-            if( Mix_PlayingMusic() == 0 )
+            if( Mix_PlayingMusic() == 0 ){
                 Mix_PlayMusic( music[index], channel );
-        else
-            cout << "Nullptr: No music at this index (" << index << ")." << endl;
+            }
+        }else{
+            std::cout << "Nullptr: No music at this index (" << index << ")." << std::endl;
+        }
     }
 
     //! Plays a sound.
@@ -116,7 +118,7 @@ public:
             Mix_PlayChannel(channel, sounds[index], 0 );
         }
         else
-            cout << "Nullptr: No sound at this index (" << index << ")." << endl;
+            std::cout << "Nullptr: No sound at this index (" << index << ")." << std::endl;
     }
 
     //! Pauses music if music is playing.
@@ -153,7 +155,7 @@ public:
             Mix_VolumeChunk(sounds[index], volume);
         }
         else
-            cout << "Nullptr: No sound at this index (" << index << ")." << endl;
+            std::cout << "Nullptr: No sound at this index (" << index << ")." << std::endl;
     }
 
     //! Sets the channel this AudioPlayer plays in.
@@ -169,6 +171,19 @@ public:
     ~AudioPlayer(){
         music.clear();
         sounds.clear();
+    }
+
+
+    void inspectorImGui(){
+        Entity::inspectorImGui();
+        ImGui::Separator();
+
+        ImGui::Text("Channel %d", channel); 
+        ImGui::Text("Distance(in Fade Units)(%d,%d)", differenceX, differenceY);
+        ImGui::Text("Current Fade: %f", (fadeX + fadeY));
+        ImGui::Text("Pan: %d", pan);
+
+
     }
 };
 }

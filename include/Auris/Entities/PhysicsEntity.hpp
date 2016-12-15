@@ -32,8 +32,8 @@ namespace Auris{
             body->SetFixedRotation(flag); 
         } 
      
-        void setActive (bool flag) { 
-            body->SetActive(flag); 
+        void setAwake (bool flag) { 
+            body->SetAwake(flag);
         } 
      
         void applyForce(vec2 force, bool impulse = false, bool awake = true) { 
@@ -69,6 +69,37 @@ namespace Auris{
      
         virtual void OnCollisionExit(PhysicsEntity* collider) {} //! Called when exiting collision with another PhysicsEntity
 
+        virtual void inspectorImGui(){
+            if(ImGui::TreeNode("Physics Transform")){
+                glm::vec3 pos = transform->position;
+                float rotation = transform->rotation;
+                glm::vec2 vel = Convert::toGlm(body->GetLinearVelocity());
+                float rvel = body->GetAngularVelocity();
+                float mass = body->GetMass();
+            
+                ImGui::DragFloat3("Position", &pos.x,0.1f);
+                ImGui::DragFloat("Rotation", &rotation,0.1f);
+
+                ImGui::DragFloat2("Scale", &transform->scale.x,0.1f);
+
+                ImGui::DragFloat2("Velocity", &vel.x);
+                ImGui::DragFloat("Angular Velocity", &rvel);
+                ImGui::DragFloat("Mass", &mass);
+
+                if(pos != transform->position || rotation != transform->rotation){
+                    body->SetTransform(Convert::toB2(pos), rotation);
+                    setAwake(true);
+                }
+
+                if(Convert::toB2(vel) != body->GetLinearVelocity())
+                    body->SetLinearVelocity(Convert::toB2(vel));
+
+                if(rvel != body->GetAngularVelocity())
+                    body->SetAngularVelocity(rvel);
+
+                ImGui::TreePop();
+            } 
+        }
 
     };
 }
