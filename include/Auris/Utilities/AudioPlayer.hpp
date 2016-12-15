@@ -25,6 +25,8 @@ private:
     float fadeX = 1.0f;
     float fadeY = 1.0f;
 
+    bool debugDraw = false;
+
     Auris::Camera* listener;
 
 public:
@@ -41,6 +43,7 @@ public:
         sound = addSound(Auris::AssetManager::getDataPath("pistolShot.wav").c_str(), 128);
     }
 
+    //! Sets the pan and master volume according to the relative distance between this AudioPlayer and its listener
     void update(float deltaTime) {
         if (listener != nullptr) {
             differenceX = 127 - (transform->position.x - listener->getPos().x)/(listener->getWidth()/254);
@@ -63,11 +66,10 @@ public:
             distance = distance > 255 ? 255 : distance;
 
             Mix_SetDistance(channel, distance);
+        }
 
-            cout << "difference X: " << differenceX << endl;
-            cout << "difference Y: " << differenceY << endl;
-            cout << "pan: " << pan << endl;
-            cout << "distance: " << distance << endl;
+        if (debugDraw) {
+
         }
 
         if (Auris::Input::keyHeld(Auris::Action::a)) {
@@ -87,7 +89,11 @@ public:
         }
 
         if (Auris::Input::keyDown(Auris::Action::enter)) {
-            playSound(sound);
+            playSound(sound+1);
+        }
+
+        if (Auris::Input::keyDown(Auris::Action::space)) {
+            debugDraw = !debugDraw;
         }
     }
 
@@ -95,11 +101,14 @@ public:
     /*!
      * \param path Path to the music to be played
      * \param volume The initial volume of that music (0-128). If over 128, it will default to 128.
-     * \return int The index of the music.*/
+     * \return int The index of the music. Returns -1 on load error.*/
     int addMusic(const char* path, int volume) {
         music.push_back(Mix_LoadMUS(path));
-        if (music[music.size()-1] == nullptr)
+        if (music[music.size()-1] == nullptr) {
             cout << "Nullptr: Failed to load \"" << path << "\". Make sure the path is correct." << endl;
+            return -1;
+        }
+
         Mix_VolumeMusic(volume);
         return music.size()-1;
     }
@@ -108,11 +117,14 @@ public:
     /*!
      * \param path Path to the .wav file
      * \param volume The initial volume of that sound (0-128). If over 128, it will default to 128.
-     * \return int The index of the sound.*/
+     * \return int The index of the sound. Returns -1 on load error.*/
     int addSound(const char* path, int volume) {
         sounds.push_back(Mix_LoadWAV(path));
-        if (sounds[sounds.size()-1] == nullptr)
+        if (sounds[sounds.size()-1] == nullptr) {
             cout << "Nullptr: Failed to load \"" << path << "\". Make sure the path is correct." << endl;
+            return -1;
+        }
+
         Mix_VolumeChunk(sounds[sounds.size()-1], volume);
         return sounds.size()-1;
     }
@@ -121,17 +133,23 @@ public:
     /*!
      * \param index The index of the music.*/
     void playMusic(int index){
-        //If there is no music playing
-        if( Mix_PlayingMusic() == 0 )
-            //Play the music
-            Mix_PlayMusic( music[index], channel );
+        if (sounds.size()-1 >= index)
+            //If there is no music playing
+            if( Mix_PlayingMusic() == 0 )
+                Mix_PlayMusic( music[index], channel );
+        else
+            cout << "Nullptr: No music at this index (" << index << ")." << endl;
     }
 
     //! Plays a sound.
     /*!
      * \param index The index of the sound.*/
     void playSound(int index) {
-        Mix_PlayChannel(channel, sounds[index], 0 );
+        if (sounds.size()-1 >= index) {
+            Mix_PlayChannel(channel, sounds[index], 0 );
+        }
+        else
+            cout << "Nullptr: No sound at this index (" << index << ")." << endl;
     }
 
     //! Pauses music if music is playing.
@@ -164,10 +182,16 @@ public:
      * \param index The index of that sound
      * \param volume The volume to set it to.*/
     void setSoundVolume(int index, int volume) {
-        Mix_VolumeChunk(sounds[index], volume);
+        if (sounds.size()-1 >= index) {
+            Mix_VolumeChunk(sounds[index], volume);
+        }
+        else
+            cout << "Nullptr: No sound at this index (" << index << ")." << endl;
     }
 
     //! Sets the channel this AudioPlayer plays in.
+    //! If music or sounds are playing, they will keep playing in the old channel.
+    //! Music needs to be halted and restarted in the new channel.
     /*!
      * \param int The new channel.*/
     void setChannel(int channel) {
