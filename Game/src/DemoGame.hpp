@@ -15,6 +15,8 @@ class DemoGame : public Auris::Game {
 
     vector<int> controllers;
 
+    vector<Player*> players;
+
     int pistolShot;
     int warSounds;
 
@@ -26,9 +28,10 @@ class DemoGame : public Auris::Game {
         loadScene(&scene1);
         Auris::Engine::world->SetGravity(b2Vec2(0, -9.8));
 
-        controllers.reserve(8);
-        for (auto & element : controllers)
+        controllers.resize(8);
+        for (auto & element : controllers) {
             element = -1;
+        }
     }
 
     void earlyUpdate(float dt){
@@ -63,11 +66,19 @@ class DemoGame : public Auris::Game {
     }
 
     void controllerActivated(int controllerID){
-        for (auto & element : controllers)
+        int i = 0;
+        for (auto & element : controllers) {
             if (element == -1) {
                 element = controllerID;
+                vec2 pos = i == 0 ? vec2(-40, -10) : i == 1 ? vec2(-40, 30) : i == 2 ? vec2(40, -10) : i == 3 ? vec2(40, 30): vec2(0, 0);
+                auto player = (Player*) addEntity(make_shared<Player>(pos));
+                player->controller = controllerID;
+                auto audio = (AudioPlayer*) addEntity(make_shared<AudioPlayer>(this->camera, 1));
+                player->setChild(audio);
                 break;
             }
+            i++;
+        }
     }
 
 

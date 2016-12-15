@@ -37,7 +37,6 @@ public:
         */
     void setParent(Entity* parent) {
         this->parent = parent;
-        parent->setChild(this);
     }
 
     //! A setChild method.
@@ -45,7 +44,6 @@ public:
         */
     void setChild(Entity* child) {
         this->child = child;
-        child->setParent(this);
     }
 
 
