@@ -22,7 +22,7 @@ public:
     shared_ptr<Animation> anim;
     SpriteSheet* spriteSheet;
 
-    Sprite* sprite;
+    Sprite* lower;
     Sprite* upper;
 
     bool alive;
@@ -43,13 +43,13 @@ public:
         upper = spriteSheet->getSprite("upper_3", this);
         anim = RenderSystem::getAnim(this, 1.0f);
         anim->makeSequence(spriteSheet, "lower_run");
-        sprite = spriteSheet->getSprite("lower_run_3",this);
+        lower = spriteSheet->getSprite("lower_run_3",this);
 
         upper->offset = vec3(3,8,0);
-        sprite->offset = vec3(3,4,0);
+        lower->offset = vec3(3,4,0);
 
         b2PolygonShape shape;
-        shape.SetAsBox(((sprite->getWidth()/3) * Constants::PIXELS_TO_METERS),(upper->getHeight() + sprite->getHeight()-9)/3 * Constants::PIXELS_TO_METERS);
+        shape.SetAsBox(((lower->getWidth()/3) * Constants::PIXELS_TO_METERS),(upper->getHeight() + lower->getHeight()-9)/3 * Constants::PIXELS_TO_METERS);
 
         body = Auris::Utilities::BodyStandard::getDynamicBody(&shape,position);
 
@@ -62,7 +62,7 @@ public:
 
     ~Player(){
         RenderSystem::deleteAnim(anim);
-        RenderSystem::deleteSprite(sprite);
+        RenderSystem::deleteSprite(lower);
         RenderSystem::deleteSprite(upper);
     }
 
@@ -92,13 +92,13 @@ public:
             }
 
             if (Input::keyHeld(Auris::Action::left)) {
-                anim->run(sprite, dt);
+                anim->run(lower, dt);
                 if (getLinearVelocity()[0] > -maxSpeed)
                     applyForce(vec2(-1,0) * movementSpeed, true);
             }
 
             if (Input::keyHeld(Auris::Action::right)) {
-                anim->run(sprite, dt);
+                anim->run(lower, dt);
                 if (getLinearVelocity()[0] < maxSpeed)
                     applyForce(vec2(1,0) * movementSpeed, true);
             }

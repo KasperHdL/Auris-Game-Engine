@@ -34,12 +34,10 @@ public:
 
     void setParent(Entity* parent) {
         this->parent = parent;
-        parent->setChild(this);
     }
 
     void setChild(Entity* child) {
         this->child = child;
-        child->setParent(this);
     }
 
 
