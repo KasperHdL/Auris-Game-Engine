@@ -3,7 +3,7 @@
 #include "SRE/SimpleRenderEngine.hpp"
 
 namespace Auris{
-class Camera{
+class Camera {
 public:
 
     //! The camera constructor which take in float to calculate the projection
@@ -18,6 +18,8 @@ public:
     ~Camera();
     void setPos(glm::vec2 pos);
     glm::vec2 getPos();
+    float getWidth();
+    float getHeight();
     void setRotation(float z);
 
     void translate(glm::vec2 amount);

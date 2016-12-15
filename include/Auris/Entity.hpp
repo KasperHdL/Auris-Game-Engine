@@ -20,12 +20,10 @@ public:
         delete transform;
     }
 
-
-    //! Scriptable functions
-
     //! Used by PhysicsEntities
     virtual void updateTransform(){}
 
+    //! Scriptable functions
     virtual void init() {} // Called upon initialization
 
     virtual void start() {} // Called just before first update
