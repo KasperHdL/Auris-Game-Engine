@@ -37,6 +37,19 @@ private:
 
     int max_renderSprites = 0;
 
+
+    //Profiling
+
+    float arr_profInput[arrSize] = {};
+    float arr_profEntityUpdate[arrSize] = {};
+    float arr_profGEarlyUpdate[arrSize] = {};
+    float arr_profGUpdate[arrSize] = {};
+    float arr_profGLateUpdate[arrSize] = {};
+    float arr_profPhysics[arrSize] = {};
+    float arr_profUpdateTransform[arrSize] = {};
+    float arr_profRender[arrSize] = {};
+
+
     //Toggles
     bool toggle_goInspector = false;
     bool toggle_cameraControls = false;
@@ -46,6 +59,7 @@ public:
     bool debug = false;//!< turn on or off debug
     bool pause = false;//!< pause the engine(is read by the \see Auris::Engine
     bool runOneStep = false;//!< run one frame and pause
+    bool profiling = false;//!< run profiling in engine update loop
  
     DebugUI(){}
 

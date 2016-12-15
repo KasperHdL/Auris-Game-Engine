@@ -35,8 +35,8 @@
 #include "Auris/Systems/RenderSystem.hpp"
 #include "Auris/Systems/CollisionHandler.hpp"
 
-
 #include "Auris/Action.hpp"
+#include "Auris/Testing/ProfilingTimer.hpp"
 
 
 
@@ -77,5 +77,17 @@ public:
 
 	MemoryLeakDetector memLeakDet;
 
+    ProfilingTimer profile_InputTimer;
+
+    ProfilingTimer profile_Entity_UpdateTimer;
+
+    ProfilingTimer profile_Game_EarlyUpdateTimer;
+    ProfilingTimer profile_Game_UpdateTimer;
+    ProfilingTimer profile_Game_LateUpdateTimer;
+
+    ProfilingTimer profile_PhysicsTimer;
+    ProfilingTimer profile_UpdatePhysicsEntityTransformTimer;
+
+    ProfilingTimer profile_RenderTimer;
 };
 }
