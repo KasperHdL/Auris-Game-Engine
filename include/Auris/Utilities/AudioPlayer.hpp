@@ -2,7 +2,7 @@
 
 #include "Auris/Entity.hpp"
 #include "Auris/Entities/Camera.hpp"
-#include "Auris/Utilities/Resource.hpp"
+#include "Auris/Utilities/AssetManager.hpp"
 #include <SDL2/SDL_mixer.h>
 
 using namespace Auris;
@@ -22,18 +22,23 @@ private:
     int pan = 127;
     int distance = 0;
 
+    float fadeX = 1.0f;
+    float fadeY = 1.0f;
+
     Auris::Camera* listener;
 
 public:
-    AudioPlayer(Auris::Camera* listener = nullptr, int channel = -1) {
+    AudioPlayer(Auris::Camera* listener = nullptr, int channel = -1, float fadeX = 1.0f, float fadeY = 1.0f) {
         name = "AudioListener";
         if (listener != nullptr)
             this->listener = listener;
         this->channel = channel;
+        this->fadeX = fadeX;
+        this->fadeY = fadeY;
     }
 
     void init() {
-        sound = addSound(Auris::Resource::getPath("pistolShot.wav").c_str(), 128);
+        sound = addSound(Auris::AssetManager::getDataPath("pistolShot.wav").c_str(), 128);
     }
 
     void update(float deltaTime) {
@@ -46,14 +51,14 @@ public:
             distance = 0;
 
             if (differenceX < 100)
-                distance += (100 - differenceX);
+                distance += (100 - differenceX)*fadeX;
             else if (differenceX > 154)
-                distance += (differenceX - 154);
+                distance += (differenceX - 154)*fadeX;
 
-            if (differenceY < 100)
-                distance += (100 - differenceY);
-            else if (differenceY > 154)
-                distance += (differenceY - 154);
+            if (differenceY < 80)
+                distance += (80 - differenceY)*fadeY;
+            else if (differenceY > 174)
+                distance += (differenceY - 174)*fadeY;
 
             distance = distance > 255 ? 255 : distance;
 
