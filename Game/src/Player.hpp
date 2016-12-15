@@ -78,7 +78,7 @@ class Player : public PhysicsEntity{
 
     void update(float dt){
         // INPUTS
-//        Input::getControllerAxisState()
+    //        Input::getControllerAxisState()
         if (alive){
             if (Input::keyDown(Auris::Action::up) & canJump) {
                 applyForce(vec2(0,1) * jumpHeight, true);

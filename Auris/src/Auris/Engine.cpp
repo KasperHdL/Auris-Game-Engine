@@ -143,7 +143,7 @@ void Engine::run(SDL_Window* window){
             if(debugUI->profiling) profile_Entity_UpdateTimer.stop();
 
             if(debugUI->profiling) profile_PhysicsTimer.start();
-            Engine::world->Step(deltaTimeSec, VELOCITY_ITERATIONS, POSITION_ITERATIONS);
+            Engine::world->Step(deltaTimeSec, Constants::VELOCITY_ITERATIONS, Constants::POSITION_ITERATIONS);
             if(debugUI->profiling) profile_PhysicsTimer.stop();
 
 

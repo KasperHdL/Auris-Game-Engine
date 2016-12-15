@@ -28,6 +28,7 @@ class DemoGame : public Auris::Game {
 //        pistolShot = audioPlayer.addSound(Resource::getPath("pistolShot.wav").c_str(), 128);
 //        warSounds = audioPlayer.addMusic(Resource::getPath("warSounds.wav").c_str(), 128);
 //        audioPlayer.playMusic(warSounds);
+        controllers.resize(8);
     }
 
     void earlyUpdate(float dt){
@@ -57,13 +58,20 @@ class DemoGame : public Auris::Game {
 
     }
 
-    void controllerActivated(int controllerID){
-
-    }
-
     void controllerConnected(){
 
     }
+
+    void controllerActivated(int controllerID){
+        for (auto & element : controllers)
+            if (element == -1) {
+                element = controllerID;
+                break;
+            }
+        cout << "Controller " << controllerID << " activated." << endl;
+
+    }
+
 
     void controllerDisconnected(int controllerID){
 
@@ -71,20 +79,5 @@ class DemoGame : public Auris::Game {
 
     void imGUI(){
 
-        bool open = true;
-
-        ImGui::SetNextWindowPos(ImVec2(100,000));
-        ImGui::Begin("#TestLabel",&open,ImVec2(500,100),0,ImGuiWindowFlags_NoTitleBar|ImGuiWindowFlags_NoResize|ImGuiWindowFlags_NoMove|ImGuiWindowFlags_NoScrollbar|ImGuiWindowFlags_NoSavedSettings|ImGuiWindowFlags_NoInputs);
-        ImGui::Text("Hello, world!");
-        ImGui::End();
-
-        // Show Button (with invisible window)
-        // Note window may disappear behind other windows
-        ImGui::SetNextWindowPos(ImVec2(200,100));
-        ImGui::Begin("#Button",&open,ImVec2(100,25),0,ImGuiWindowFlags_NoTitleBar|ImGuiWindowFlags_NoResize|ImGuiWindowFlags_NoMove|ImGuiWindowFlags_NoScrollbar);
-        if (ImGui::Button("Click me")){
-            std::cout << "Clicked"<<std::endl;
-            }
-        ImGui::End();
     }
 };

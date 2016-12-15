@@ -96,7 +96,7 @@ public:
          * Add the enity to the vector of all entities in the game
          * \param enity a shared_ptr of Entity, that is the entity that should be added to the game
         */
-    inline void addEntity(std::shared_ptr<Entity> entity){
+    inline int addEntity(std::shared_ptr<Entity> entity){
         entities.push_back(entity);
         return entities.size()-1;
     }
