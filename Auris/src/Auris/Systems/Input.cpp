@@ -137,9 +137,9 @@ glm::vec2 Input::getControllerRightStickState(int controllerID){
     return glm::vec2(SDL_GameControllerGetAxis(ctrl[controllerID],SDL_CONTROLLER_AXIS_RIGHTX),SDL_GameControllerGetAxis(ctrl[controllerID],SDL_CONTROLLER_AXIS_RIGHTY));
 }
 
-int Input::getControllerButtonState(int controllerID, SDL_GameControllerButton button){
-    //std::cout << "controllerID: " << controllerID <<" Button: "<< button << " State: " << (int)SDL_GameControllerGetButton(ctrl[controllerID],button) <<std::endl;
-    return SDL_GameControllerGetButton(ctrl[controllerID],button);
+bool Input::getControllerButtonState(int controllerID, SDL_GameControllerButton button){
+    //std::cout << "controllerID: " << controllerID <<" Button: "<< button << " State: " << (bool)SDL_GameControllerGetButton(ctrl[controllerID],button) <<std::endl;
+    return (SDL_GameControllerGetButton(ctrl[controllerID],button) == 1);
 }
 
 int Input::getControllerAxisState(int controllerID, SDL_GameControllerAxis axis){

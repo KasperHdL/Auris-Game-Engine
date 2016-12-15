@@ -25,12 +25,12 @@ public:
     Sprite* lower;
     Sprite* upper;
 
-    bool alive;
-    bool canJump;
+    bool alive = true;
+    bool canJump = true;
 
-    float maxSpeed;
-    float jumpHeight;
-    float movementSpeed;
+    float maxSpeed = 50;
+    float jumpHeight = 8000;
+    float movementSpeed = 1000;
 
     int healthPoints = 100;
 
@@ -66,41 +66,54 @@ public:
         RenderSystem::deleteSprite(upper);
     }
 
-    void init() {
-        movementSpeed = 1000.0f;
-        jumpHeight = 8000.0f;
-        maxSpeed = 30.0f;
-	}
-
     void die() {
         alive = false;
         setFixedRotation(false);
         setGravity(0);
     }
 
+    void setController(int controllerID){
+        this->controller = controllerID;
+    }
+
+    void init() {
+        movementSpeed = 1000.0f;
+        jumpHeight = 8000.0f;
+        maxSpeed = 30.0f;
+	}
+
     void update(float dt){
-        // INPUTS
-    //        Input::getControllerAxisState()
         if (alive){
-            if (Input::keyDown(Auris::Action::up) & canJump) {
-                applyForce(vec2(0,1) * jumpHeight, true);
+            float leftStickX = Input::getControllerAxisState(controller, SDL_CONTROLLER_AXIS_LEFTX);
+            leftStickX = leftStickX/32767;
+
+            float leftStickY = Input::getControllerAxisState(controller, SDL_CONTROLLER_AXIS_LEFTY);
+            leftStickY = leftStickY/32767;
+
+            vec2 rightStick = Input::getControllerRightStickState(controller);
+            rightStick = vec2(rightStick.x / 32767, rightStick.y / 32767);
+
+            if ((Input::getControllerButtonState(controller, SDL_CONTROLLER_BUTTON_LEFTSHOULDER) | Input::getControllerButtonState(controller, SDL_CONTROLLER_BUTTON_RIGHTSHOULDER)) & canJump) {
+                applyForce(vec2(0, 1) * jumpHeight, true);
                 canJump = false;
+            }
+
+            if (leftStickX < 0)  {
+                anim->run(lower, dt);
+                if (getLinearVelocity()[0] > -maxSpeed)
+                    applyForce(vec2(1, 0) * leftStickX * movementSpeed, true);
+//                cout << "Left stick: " << leftStick << endl;
+            }
+
+            if (leftStickX > 0)  {
+                anim->run(lower, dt);
+                if (getLinearVelocity()[0] < maxSpeed)
+                    applyForce(vec2(1, 0) * leftStickX * movementSpeed, true);
+//                cout << "Left stick: " << leftStick << endl;
             }
 
             if (Input::keyDown(Auris::Action::down)) {
 
-            }
-
-            if (Input::keyHeld(Auris::Action::left)) {
-                anim->run(lower, dt);
-                if (getLinearVelocity()[0] > -maxSpeed)
-                    applyForce(vec2(-1,0) * movementSpeed, true);
-            }
-
-            if (Input::keyHeld(Auris::Action::right)) {
-                anim->run(lower, dt);
-                if (getLinearVelocity()[0] < maxSpeed)
-                    applyForce(vec2(1,0) * movementSpeed, true);
             }
         }
     }

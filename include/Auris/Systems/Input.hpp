@@ -27,7 +27,7 @@ public:
 
     static int quit;
 
-    static int getControllerButtonState(int controllerID, SDL_GameControllerButton button);
+    static bool getControllerButtonState(int controllerID, SDL_GameControllerButton button);
     static int getControllerAxisState(int controllerID, SDL_GameControllerAxis axis);
     static glm::vec2 getControllerLeftStickState(int controllerID);
     static glm::vec2 getControllerRightStickState(int controllerID);
