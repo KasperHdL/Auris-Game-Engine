@@ -49,11 +49,19 @@ namespace Auris{
             else 
                 body->ApplyForce(Convert::toB2(force), Convert::toB2(point), awake); 
         } 
+
+        void setBullet(bool flag){
+            body->SetBullet(flag);
+        }
      
         // Getters 
         vec2 getLinearVelocity() { 
             return Convert::toGlm(body->GetLinearVelocity()); 
-        } 
+        }
+
+        bool isBullet() {
+            return body->IsBullet();
+        }
 
         virtual void OnCollisionEnter(PhysicsEntity* collider) {} //! Called upon collision with another PhysicsEntity
      

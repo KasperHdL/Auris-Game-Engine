@@ -70,7 +70,7 @@ void DebugUI::update(float dt){
         ImGui::Checkbox("Debug draw(F6)", &drawDebug);
 
         ImGui::Separator();
-        ImGui::Checkbox("Toggle GO inspector", &toggle_goInspector);
+        ImGui::Checkbox("Toggle Entity inspector", &toggle_goInspector);
         ImGui::Checkbox("Toggle Profiling inspector", &profiling);
 
         ImGui::Separator();

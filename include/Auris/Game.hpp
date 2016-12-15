@@ -25,7 +25,9 @@ public:
 
     virtual void shutdown() = 0;
 
-    virtual void controllerConnected(int controllerID){}
+    virtual void controllerConnected(){}
+
+    virtual void controllerActivated(int controllerID){}
 
     virtual void controllerDisconnected(int controllerID){}
     std::vector<std::shared_ptr<Entity>> entities;
@@ -36,8 +38,6 @@ public:
     }
 
     void loadScene(Scene* scene) {
-
-
         // Load new scene and init entities
         scene->init(this);
 
