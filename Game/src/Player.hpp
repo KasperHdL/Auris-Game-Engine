@@ -29,7 +29,10 @@ class Player : public PhysicsEntity{
     float maxSpeed;
     float jumpHeight;
     float movementSpeed;
+
     int healthPoints;
+
+    int controller;
 
     Player(vec2 position = vec2(0,0)):PhysicsEntity(){
         name = "Player";
@@ -63,12 +66,19 @@ class Player : public PhysicsEntity{
 
     void init() {
         movementSpeed = 1000.0f;
-        jumpHeight = 2000.0f;
+        jumpHeight = 8000.0f;
         maxSpeed = 30.0f;
 	}
 
+    void die() {
+        alive = false;
+        setFixedRotation(false);
+        setGravity(0);
+    }
+
     void update(float dt){
         // INPUTS
+    //        Input::getControllerAxisState()
         if (alive){
             if (Input::keyDown(Auris::Action::up) & canJump) {
                 applyForce(vec2(0,1) * jumpHeight, true);
@@ -93,7 +103,7 @@ class Player : public PhysicsEntity{
         }
     }
 
-    virtual void OnCollisionEnter(PhysicsEntity* other) {
+    void OnCollisionEnter(PhysicsEntity* other) {
         if (other->name == "Wall")
             canJump = true;
 
@@ -104,13 +114,8 @@ class Player : public PhysicsEntity{
         }
     }
 
-    virtual void OnCollisionExit(PhysicsEntity* other) {
+    void OnCollisionExit(PhysicsEntity* other) {
 
     }
 
-    void die() {
-        alive = false;
-        setFixedRotation(false);
-        setGravity(0);
-    }
 };

@@ -1,5 +1,7 @@
 #pragma once
 namespace Auris{
+//! A namespace for scancodes
+/*! If you need more actions it is possible to extend them yourself*/
 namespace Action{
     const SDL_Scancode up = SDL_SCANCODE_UP;
     const SDL_Scancode down = SDL_SCANCODE_DOWN;

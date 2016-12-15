@@ -99,21 +99,22 @@ bool Input::keyHeld(SDL_Scancode key) {
 
 void Input::controllerAdded(const SDL_Event &event){
     if (SDL_IsGameController(event.cdevice.which)) {
-            char *mapping;
-            SDL_Log("Index \'%i\' is a compatible controller, named \'%s\'", event.cdevice.which, SDL_GameControllerNameForIndex(event.cdevice.which));
+            //char *mapping;
+            //SDL_Log("Index \'%i\' is a compatible controller, named \'%s\'", event.cdevice.which, SDL_GameControllerNameForIndex(event.cdevice.which));
             SDL_GameController* temp = SDL_GameControllerOpen(event.cdevice.which);
-            mapping = SDL_GameControllerMapping(temp);
-            SDL_Log("Controller %i is mapped as \"%s\".", event.cdevice.which, mapping);
-            SDL_free(mapping);
+            //mapping = SDL_GameControllerMapping(temp);
+            //SDL_Log("Controller %i is mapped as \"%s\".", event.cdevice.which, mapping);
+            //SDL_free(mapping);
+            game->controllerConnected();
     }
 }
 
 void Input::initController(const SDL_Event& event){
-    std::cout << "Controller: " <<event.cbutton.which << " Button: "<< (int)event.cbutton.button << std::endl;
+    //std::cout << "Controller: " <<event.cbutton.which << " Button: "<< (int)event.cbutton.button << std::endl;
     if (SDL_IsGameController(event.cbutton.which)) {
         if(!ctrl.count(event.cbutton.which)){
             ctrl[event.cbutton.which]= SDL_GameControllerOpen(event.cdevice.which);
-            game->controllerConnected(event.cbutton.which);
+            game->controllerActivated(event.cbutton.which);
         }
     }
 }
@@ -126,6 +127,14 @@ void Input::controllerRemoved(const SDL_Event& event){
             ctrl.erase (it);
             game->controllerDisconnected(event.cdevice.which);
         }
+}
+
+glm::vec2 Input::getControllerLeftStickState(int controllerID){
+    return glm::vec2(SDL_GameControllerGetAxis(ctrl[controllerID],SDL_CONTROLLER_AXIS_LEFTX),SDL_GameControllerGetAxis(ctrl[controllerID],SDL_CONTROLLER_AXIS_LEFTY));
+}
+
+glm::vec2 Input::getControllerRightStickState(int controllerID){
+    return glm::vec2(SDL_GameControllerGetAxis(ctrl[controllerID],SDL_CONTROLLER_AXIS_RIGHTX),SDL_GameControllerGetAxis(ctrl[controllerID],SDL_CONTROLLER_AXIS_RIGHTY));
 }
 
 int Input::getControllerButtonState(int controllerID, SDL_GameControllerButton button){

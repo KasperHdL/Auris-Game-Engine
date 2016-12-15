@@ -6,21 +6,20 @@
 #include "Scenes/Scene1.hpp"
 #include "Scenes/Scene2.hpp"
 #include "Auris/Utilities/AudioPlayer.hpp"
+#include <vector>
 
 using namespace Auris;
 
 class DemoGame : public Auris::Game {
     Scene1 scene1;
 
+    vector<int> controllers;
     int pistolShot;
     int warSounds;
 
     int musicVolume = 128;
     int soundVolume = 128;
 
-    int id1 = -1;
-    int id2 = -1;
-    int id3 = -1;
     void init() {
         camera = new Auris::Camera(1280, 720);
         loadScene(&scene1);
@@ -33,6 +32,7 @@ class DemoGame : public Auris::Game {
         audioPlayer->playMusic(warSounds);
         audioPlayer->playSound(pistolShot);
 
+        controllers.resize(8);
     }
 
     void earlyUpdate(float dt){
@@ -62,23 +62,26 @@ class DemoGame : public Auris::Game {
 
     }
 
-    void controllerConnected(int controllerID){
-        if(id1==-1){
-            id1 = controllerID;
-        }else if(id2==-1){
-            id2 = controllerID;
-        }else if(id3==-1){
-            id3 = controllerID;
-        }
+    void controllerConnected(){
+
     }
 
+    void controllerActivated(int controllerID){
+        for (auto & element : controllers)
+            if (element == -1) {
+                element = controllerID;
+                break;
+            }
+        cout << "Controller " << controllerID << " activated." << endl;
+
+    }
+
+
     void controllerDisconnected(int controllerID){
-        if(id1==controllerID){
-            id1 = -1;
-        }else if(id2==controllerID){
-            id2 = -1;
-        }else if(id3==controllerID){
-            id3 = -1;
-        }
+
+    }
+
+    void imGUI(){
+
     }
 };

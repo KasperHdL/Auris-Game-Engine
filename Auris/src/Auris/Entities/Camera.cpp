@@ -21,7 +21,7 @@ Camera::Camera(float right, float top, float near, float far){
 }
 
 Camera::~Camera(){
-    delete  cam;
+    delete cam;
 }
 
 void Camera::updateCam(){
