@@ -14,8 +14,6 @@ class DemoGame : public Auris::Game {
     Scene1 scene1;
 
     vector<int> controllers;
-    vector<AudioPlayer*> audioPlayers;
-    vector<Player*> players;
 
     int pistolShot;
     int warSounds;
@@ -27,17 +25,6 @@ class DemoGame : public Auris::Game {
         camera = new Auris::Camera(1280, 720);
         loadScene(&scene1);
         Auris::Engine::world->SetGravity(b2Vec2(0, -9.8));
-
-        audioPlayers.reserve(4);
-        players.reserve(4);
-
-        players.push_back((Player*) addEntity(make_shared<Player>(vec2(0, 10))));
-        audioPlayers.push_back((AudioPlayer*) addEntity(make_shared<AudioPlayer>(this->camera, 1)));
-
-        pistolShot = audioPlayers[0]->addSound(AssetManager::getSound("pistolShot.wav"), 128);
-        warSounds = audioPlayers[0]->addMusic(AssetManager::getMusic("warSounds.wav"), 128);
-        audioPlayers[0]->playMusic(warSounds);
-        audioPlayers[0]->playSound(pistolShot);
 
         controllers.reserve(8);
         for (auto & element : controllers)
