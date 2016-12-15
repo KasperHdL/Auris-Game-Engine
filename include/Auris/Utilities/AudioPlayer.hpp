@@ -89,7 +89,7 @@ public:
         }
 
         if (Auris::Input::keyDown(Auris::Action::enter)) {
-            playSound(sound+1);
+            playSound(sound);
         }
 
         if (Auris::Input::keyDown(Auris::Action::space)) {
