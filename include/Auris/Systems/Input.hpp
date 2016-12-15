@@ -68,7 +68,7 @@ public:
          * \param button a SDL_GameControllerButton, that is the button to get the state of
          * \return bool, the state of the button (true for pressed down)
         */
-    static int getControllerButtonState(int controllerID, SDL_GameControllerButton button);
+    static bool getControllerButtonState(int controllerID, SDL_GameControllerButton button);
 
     //! A static getControllerAxisState method, taking 2 arguments.
         /*!

@@ -17,7 +17,7 @@ public:
     std::string type = "";/*!< A string value: type. The type of the entity. */
     std::string name = "";/*!< A string value: name. The name of the entity. */  
     Entity* parent = nullptr;/*!< An Entity pointer: parent. An pointer to the parent entity of this entity. */
-    std::vector<Entity*> children;/*!< An Entity pointer: child. A pointer to the parent entity of this entity.*/
+    std::vector<Entity*> children;/*!< A vector of Entity pointer: childen. A pointer to the parent entity of this entity.*/
     Transform* transform; /*!< A Transform pointer: transform. An instance of the transform. */
 
     //! The entity contructor.
@@ -38,7 +38,7 @@ public:
 
     //! Sets the parent of this entity.
         /*!
-         * \param parent The parent to set.
+         * \param parent an Entity pointer, that is the parent to set.
          */
     void setParent(Entity* parent) {
         this->parent = parent;
@@ -46,7 +46,7 @@ public:
 
     //! Adds a child to this entity.
         /*!
-         * \param child The child to add.
+         * \param child an Entity pointer, that is the child to add.
          */
     void addChild(Entity* child) {
         this->children.push_back(child);
@@ -54,7 +54,7 @@ public:
 
     //! Get the parent of this entity.
         /*!
-         * \return parent The parent of this entity.
+         * \return parent, that is the parent of this entity.
          */
     Entity* getParent() {
         return parent;
@@ -62,8 +62,8 @@ public:
 
     //! Get a child of this entity by type.
         /*!
-         * \param type The type of child.
-         * \return child The first child of this entity that matches the string parameter.
+         * \param type a string value, that is the type of child.
+         * \return Entity pointer, that is the first child of this entity that matches the string parameter.
          */
     Entity* getChildByType(std::string type){
         for (auto & child : children)
@@ -74,8 +74,8 @@ public:
 
     //! Get a child of this entity by type.
         /*!
-         * \param name The name of the child.
-         * \return child The child of this entity that matches the string parameter.
+         * \param name a string value, that is the name of the child.
+         * \return Entity pointer, that is the child of this entity that matches the string parameter.
          */
     Entity* getChildByName(std::string name) {
         for (auto & child : children)
