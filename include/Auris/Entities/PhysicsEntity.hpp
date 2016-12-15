@@ -16,32 +16,46 @@ namespace Auris{
         b2Body* body; /*!< A b2Body pointer: body. Reference to the physics body. */
 
         //! The overloaded method updateTransform.
-            /*!
-             * Updates the enitities transform according to the physics body.
+            /*! Updates the enitities transform according to the physics body.
              * Should not be used by the game programmer.
              * Called every frame.
+             * \overload Entity::updateTransform()
             */
         virtual void updateTransform() {
             transform->position = vec3(Convert::toGlm(body->GetPosition()),transform->position.z);
             transform->rotation = body->GetAngle();
-        } // Called every frame
+        }
 
-    // Setters 
+        //! The method setCollisionEvents.
+            /*! set the collision event on or off in box2D
+             * \param flag a bool value, that controls on or off (true = on).
+            */
         void setCollisionEvents(bool flag){ 
             if (flag) 
                 body->SetUserData(this); 
             else 
                 body->SetUserData(nullptr); 
         } 
-     
+        //! The method setGravity.
+            /*! set the scale of gravity in box2D
+             * \param gravityScale a float value, that is the scale of the gravity.
+            */
         void setGravity(float gravityScale) { 
             body->SetGravityScale(gravityScale); 
         } 
      
+        //! The method setFixedRotation.
+            /*! set the fixed rotation of the object in box2D
+             * \param flag a bool value, that controls  the fixed rotation.
+            */
         void setFixedRotation(bool flag) { 
             body->SetFixedRotation(flag); 
         } 
      
+        //! The method setActive.
+            /*! sets if the box2D body should be active
+             * \param flag a bool value, that controls if the body is active.
+            */
         void setActive (bool flag) { 
             body->SetActive(flag); 
         } 
