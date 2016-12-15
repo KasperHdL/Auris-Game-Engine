@@ -128,6 +128,12 @@ namespace Auris{
             */
         virtual void OnCollisionExit(PhysicsEntity* collider) {} //! Called when exiting collision with another PhysicsEntity
 
+        //! The scriptable function inspectorImGui.
+            /*!
+             * Used by the game programmer to add inspector GUI functionality to the entity.
+             * Is called every frame, when the inspector gui is open
+             * The game programmer can call PhysicsEntity::inspectorImGui to get Transform, Position, Scale and Rotation inspection
+            */
         virtual void inspectorImGui(){
             if(ImGui::TreeNode("Physics Transform")){
                 glm::vec3 pos = transform->position;

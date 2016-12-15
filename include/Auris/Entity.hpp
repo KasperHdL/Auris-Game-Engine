@@ -86,8 +86,19 @@ public:
         */
     virtual void onDestruction() {}
 
-
+    //! The scriptable function debugDraw.
+        /*!
+         * Used by the game programmer to add debugdraw functionality to the entity.
+         * Is called every frame, when the debug gui is open
+        */
     virtual void debugDraw(){}
+
+    //! The scriptable function inspectorImGui.
+        /*!
+         * Used by the game programmer to add inspector GUI functionality to the entity.
+         * Is called every frame, when the inspector gui is open
+         * The game programmer can call Entity::inspectorImGui to get Transform, Position, Scale and Rotation inspection
+        */
     virtual void inspectorImGui(){
         if(ImGui::TreeNode("Transform")){
             ImGui::DragFloat3("Position", &transform->position.x);
