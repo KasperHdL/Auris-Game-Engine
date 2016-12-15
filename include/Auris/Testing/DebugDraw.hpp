@@ -1,9 +1,6 @@
 #pragma once
 
 #include "Box2D/Box2D.h"
-#include "SRE/SimpleRenderEngine.hpp"
-#include "SRE/Shader.hpp"
-#include "SRE/Mesh.hpp"
 #include "SRE/Debug.hpp"
 #include "glm/glm.hpp"
 #include <glm/gtc/constants.hpp>
@@ -17,7 +14,7 @@ public:
     DebugDraw(){}
 
     void DrawPolygon(const b2Vec2* vertices, int vertexCount, const b2Color& color) {
-        //std::cout << color.r << " " << color.a << std::endl;
+        //std::cout << color.r << " " << color.g << " " << color.b << " " << color.a << std::endl;
         
         SRE::Debug::setColor(glm::vec4(color.r, color.g, color.b, color.a));
 
