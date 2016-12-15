@@ -51,13 +51,13 @@ public:
 
     }
 
-    //! The overloaded sprite constructor, taking 3-4 arguments.
+    //! The overloaded sprite constructor, taking 1-4 arguments.
         /*!
          * Initializes the mesh and the material of the sprite to values inputted.
-         * \param mesh a Mesh pointer, that is the mesh of the sprite.
          * \param entity an Entity pointer, that is the entity the sprite is associated with.
-         * \param texture a Texture pointer, that is the texture of the sprite.
+         * \param texture a Texture pointer, that is the texture of the sprite (default is no texture).
          * \param normalMap a Texture pointer, that is the normal map of the sprite (default is no normal map).
+         * \param mesh a Mesh pointer, that is the mesh of the sprite (default is no mesh).
          * \overload Sprite(Entity* entity)
         */
     Sprite(Entity* entity, SRE::Texture* texture = nullptr, SRE::Texture* normalMap = nullptr, Mesh* mesh = nullptr):Nugget(entity){
@@ -71,7 +71,6 @@ public:
         else
             material.texture = texture;
 
-    }
         material.normalMap = normalMap;
         material.color = glm::vec4(1);
 
@@ -82,11 +81,18 @@ public:
 
     }
 
+    //! The overloaded sprite constructor, taking 1-3 arguments.
+        /*!
+         * Initializes the mesh and the material of the sprite to values inputted.
+         * \param entity an Entity pointer, that is the entity the sprite is associated with.
+         * \param texture a Texture pointer, that is the texture of the sprite (default is no texture).
+         * \param mesh a Mesh pointer, that is the mesh of the sprite (default is no mesh).
+         * \overload Sprite(Entity* entity)
+        */
     Sprite(Entity* entity, SRE::Texture* texture, Mesh* mesh = nullptr):Nugget(entity){
         Sprite(entity, texture, nullptr, mesh);
     }
 
-    //! Return the width of the currently assigned mesh in pixels
     //! A getWidth method
     /*! Used to get the width of the currently assigned mesh in pixels
      * \return float, that is the width of the currently assigned mesh in pixels
