@@ -61,13 +61,13 @@ class Player : public PhysicsEntity{
         RenderSystem::deleteSprite(upper);
     }
 
-	void Init() {
+    void init() {
         movementSpeed = 1000.0f;
         jumpHeight = 2000.0f;
         maxSpeed = 30.0f;
 	}
 
-    void Update(float dt){
+    void update(float dt){
         // INPUTS
         if (alive){
             if (Input::keyDown(Auris::Action::up) & canJump) {

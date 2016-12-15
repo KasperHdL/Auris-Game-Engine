@@ -28,7 +28,7 @@ public:
         setGravity(0);
     }
 
-    void Update(float dt) {
+    void update(float dt) {
         applyForce(vec2(1,0) * movementSpeed);
     }
 

@@ -36,7 +36,7 @@ class Light : public Entity{
             range = 0;
         }
 
-        void Update(float dt){
+        void update(float dt){
 
             SRE::SimpleRenderEngine::instance->setLight(
                     lightNum,

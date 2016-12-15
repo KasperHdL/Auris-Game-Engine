@@ -32,20 +32,4 @@ public:
     ~Wall(){
         Auris::RenderSystem::deleteSprite(sprite);
     }
-
-    void Update(float dt){
-
-    }
-
-    void OnCollisionEnter(PhysicsEntity* other) {
-
-    }
-
-    void OnCollisionExit(PhysicsEntity* other) {
-
-    }
-
-    void OnCollisionStay(PhysicsEntity* other) {
-
-    }
 };
