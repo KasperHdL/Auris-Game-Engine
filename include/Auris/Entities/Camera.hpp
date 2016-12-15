@@ -36,6 +36,8 @@ public:
          * \sa translate()
         */
     glm::vec2 getPos();
+    float getWidth();
+    float getHeight();
 
     //! A method to set the rotation, taking 1 argument.
         /*! Calculates the rotation of the camera based on the argument inputted.

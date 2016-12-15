@@ -64,7 +64,8 @@ void DebugUI::update(float dt){
         ImGui::Checkbox("Debug draw(F6)", &drawDebug);
 
         ImGui::Separator();
-        ImGui::Checkbox("Toggle GO inspector", &toggle_goInspector);
+        ImGui::Checkbox("Toggle Entity inspector", &toggle_goInspector);
+        ImGui::Checkbox("Toggle Profiling inspector", &profiling);
 
         ImGui::Separator();
 
@@ -92,6 +93,44 @@ void DebugUI::update(float dt){
         ImGui::Text("Num of Sprites Allocated %d - Max %d", e->renderSystem.spritePool.count, max_renderSprites);
 
         ImGui::Separator();
+
+        if(profiling){
+            ImGui::Begin("Profling:");
+
+            arr_profInput           [arrIndex] = e->profile_InputTimer.length;
+            arr_profEntityUpdate    [arrIndex] = e->profile_Entity_UpdateTimer.length;
+            arr_profGEarlyUpdate    [arrIndex] = e->profile_Game_EarlyUpdateTimer.length;
+            arr_profGUpdate         [arrIndex] = e->profile_Game_UpdateTimer.length;
+            arr_profGLateUpdate     [arrIndex] = e->profile_Game_LateUpdateTimer.length;
+            arr_profPhysics         [arrIndex] = e->profile_PhysicsTimer.length;
+            arr_profUpdateTransform [arrIndex] = e->profile_UpdatePhysicsEntityTransformTimer.length;
+            arr_profRender          [arrIndex] = e->profile_RenderTimer.length;
+
+
+            ImGui::PlotLines("Input", arr_profInput, arrSize);
+            ImGui::Text("Input %f", e->profile_InputTimer.length);
+
+            ImGui::PlotLines("Entity Update", arr_profEntityUpdate, arrSize);
+            ImGui::Text("Entity update %f", e->profile_Entity_UpdateTimer.length);
+
+            ImGui::PlotLines("Game Early Update", arr_profGEarlyUpdate, arrSize);
+            ImGui::Text("Game early update %f", e->profile_Game_EarlyUpdateTimer.length);
+            ImGui::PlotLines("Game Update", arr_profGUpdate, arrSize);
+            ImGui::Text("Game update %f", e->profile_Game_UpdateTimer.length);
+            ImGui::PlotLines("Game Late Update", arr_profGLateUpdate, arrSize);
+            ImGui::Text("Game late update %f", e->profile_Game_LateUpdateTimer.length);
+
+            ImGui::PlotLines("Physics", arr_profPhysics, arrSize);
+            ImGui::Text("Physics %f", e->profile_PhysicsTimer.length);
+            ImGui::PlotLines("PhysicsEntity Update Transform", arr_profUpdateTransform, arrSize);
+            ImGui::Text("PhysicsEntity update transform %f", e->profile_UpdatePhysicsEntityTransformTimer.length);
+
+            ImGui::PlotLines("Render", arr_profRender, arrSize);
+            ImGui::Text("Render %f", e->profile_RenderTimer.length);
+
+            ImGui::End();
+        }
+
 
         if(toggle_goInspector){
             ImGui::Begin("Entities Inspector");

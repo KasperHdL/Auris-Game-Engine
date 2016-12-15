@@ -115,11 +115,15 @@ void Engine::run(SDL_Window* window){
 
         deltaTimeSec = clamp(((NOW - LAST) / (float)SDL_GetPerformanceFrequency() ),0.0f,1.0f);
 		
+        if(debugUI->profiling) profile_Game_EarlyUpdateTimer.start();
         game->earlyUpdate(deltaTimeSec);
+        if(debugUI->profiling) profile_Game_EarlyUpdateTimer.stop();
 
         sre->clearScreen(vec4(0,0,0,1));
 
+        if(debugUI->profiling) profile_InputTimer.start();
         Input::update();
+        if(debugUI->profiling) profile_InputTimer.stop();
 
         ImGui_SRE_NewFrame(window);
         debugUI->update(deltaTimeSec);
@@ -128,23 +132,35 @@ void Engine::run(SDL_Window* window){
         if(!debugUI->pause || debugUI->runOneStep){
 
             // GAME UPDATE
+            if(debugUI->profiling) profile_Game_UpdateTimer.start();
             game->update(deltaTimeSec);
+            if(debugUI->profiling) profile_Game_UpdateTimer.stop();
 
             // entities UPDATE
+            if(debugUI->profiling) profile_Entity_UpdateTimer.start();
             for(auto& el: game->entities)
                 el->update(deltaTimeSec);
+            if(debugUI->profiling) profile_Entity_UpdateTimer.stop();
 
-            Engine::world->Step(deltaTimeSec, Constants::VELOCITY_ITERATIONS,Constants:: POSITION_ITERATIONS);
+            if(debugUI->profiling) profile_PhysicsTimer.start();
+            Engine::world->Step(deltaTimeSec, Constants::VELOCITY_ITERATIONS, Constants::POSITION_ITERATIONS);
+            if(debugUI->profiling) profile_PhysicsTimer.stop();
 
 
+            if(debugUI->profiling) profile_UpdatePhysicsEntityTransformTimer.start();
             for(auto& el: game->entities)
                 el->updateTransform();
+            if(debugUI->profiling) profile_UpdatePhysicsEntityTransformTimer.stop();
         }
 
+        if(debugUI->profiling) profile_Game_LateUpdateTimer.start();
         game->lateUpdate(deltaTimeSec);
+        if(debugUI->profiling) profile_Game_LateUpdateTimer.stop();
 
+        if(debugUI->profiling) profile_RenderTimer.start();
         //DRAW
         renderSystem.update(deltaTimeSec);
+        if(debugUI->profiling) profile_RenderTimer.stop();
 
         game->imGUI();
 
@@ -153,7 +169,5 @@ void Engine::run(SDL_Window* window){
 
         sre->swapWindow();
     }
-
-    shutdown();
 }
 

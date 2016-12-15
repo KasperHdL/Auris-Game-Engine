@@ -3,6 +3,7 @@
 #include "Auris/Engine.hpp"
 #include "Auris/Systems/Scene.hpp"
 #include "Auris/Entity.hpp"
+#include "Auris/Entities/Camera.hpp"
 #include <vector>
 #include <memory>
 
@@ -15,6 +16,8 @@ namespace Auris{
 class Game {
 
 public:
+    Auris::Camera* camera;
+
 
     //! The scriptable function init.
         /*!
@@ -61,13 +64,15 @@ public:
         */
     virtual void shutdown() = 0;
 
+    virtual void controllerConnected(){}
     //! The scriptable function controllerConnected, taking 1 argument.
         /*!
          * Used by the game programmer to add functionality to when a controller is connected.
          * Called when a controller is connected to the pc, and recognized with a button press.
          * \param controllerID an int value, that is the controller id of the controller connected
         */
-    virtual void controllerConnected(int controllerID){}
+
+    virtual void controllerActivated(int controllerID){}
 
     //! The scriptable function controllerDisconnected, taking 1 argument.
         /*!
@@ -91,8 +96,9 @@ public:
          * Add the enity to the vector of all entities in the game
          * \param enity a shared_ptr of Entity, that is the entity that should be added to the game
         */
-    inline void addEntity(std::shared_ptr<Entity> entity){
+    inline Entity* addEntity(std::shared_ptr<Entity> entity){
         entities.push_back(entity);
+        return entity.get();
     }
 
     //! A method to load a scene, taking 1 argument.

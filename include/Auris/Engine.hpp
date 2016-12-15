@@ -26,6 +26,7 @@
 //Engine
 #include "Auris/Game.hpp"
 #include "Auris/Entity.hpp"
+
 #include "Auris/Utilities/MemoryLeakDetector.hpp"
 #include "Auris/Utilities/Convert.hpp"
 
@@ -34,8 +35,9 @@
 #include "Auris/Systems/RenderSystem.hpp"
 #include "Auris/Systems/CollisionHandler.hpp"
 
-
 #include "Auris/Action.hpp"
+#include "Auris/Testing/ProfilingTimer.hpp"
+
 
 
 namespace Auris{
@@ -86,5 +88,17 @@ public:
 
     b2ContactListener* collisionHandler; /*!< A b2ContactListener pointer: collisionHandler. A reference to the box2d contactlistener, handling collision */
 
+    ProfilingTimer profile_InputTimer;
+
+    ProfilingTimer profile_Entity_UpdateTimer;
+
+    ProfilingTimer profile_Game_EarlyUpdateTimer;
+    ProfilingTimer profile_Game_UpdateTimer;
+    ProfilingTimer profile_Game_LateUpdateTimer;
+
+    ProfilingTimer profile_PhysicsTimer;
+    ProfilingTimer profile_UpdatePhysicsEntityTransformTimer;
+
+    ProfilingTimer profile_RenderTimer;
 };
 }

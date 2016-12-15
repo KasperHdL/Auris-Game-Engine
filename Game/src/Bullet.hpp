@@ -25,6 +25,7 @@ public:
         // Physics properties
         setCollisionEvents(true);
         setFixedRotation(true);
+        setBullet(true);
         setGravity(0);
     }
 
