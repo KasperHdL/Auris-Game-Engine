@@ -26,8 +26,8 @@ class DemoGame : public Auris::Game {
     void init() {
         loadScene(&scene1);
         Auris::Engine::world->SetGravity(b2Vec2(0, -9.8));
-        pistolShot = audioPlayer.addSound(Resource::getPath("pistolShot.wav").c_str(), 128);
-        warSounds = audioPlayer.addMusic(Resource::getPath("warSounds.wav").c_str(), 128);
+        pistolShot = audioPlayer.addSound(AssetManager::getDataPath("pistolShot.wav").c_str(), 128);
+        warSounds = audioPlayer.addMusic(AssetManager::getDataPath("warSounds.wav").c_str(), 128);
         audioPlayer.playMusic(warSounds);
         camera = new Auris::Camera(1280, 720);
     }

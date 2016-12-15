@@ -8,9 +8,9 @@
 
 #include "Auris/Utilities/Mesh.hpp"
 #include "Auris/Utilities/Shader.hpp"
+#include "Auris/Utilities/SpriteSheet.hpp"
 #include "Auris/Entity.hpp"
 #include "Auris/Entities/Nuggets/Sprite.hpp"
-#include "Auris/Entities/Nuggets/SpriteSheet.hpp"
 
 using namespace SRE;
 
