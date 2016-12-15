@@ -72,6 +72,22 @@ class Light : public Entity{
 
         }
 
+        virtual void inspectorImGui(){
+            Entity::inspectorImGui();
+            ImGui::Separator();
+
+            ImGui::Text("Light Number(channel) %d", lightNum);
+            lightNum = glm::clamp<int>(lightNum, 0, 3);
+            if(type == Type::Directional)
+                ImGui::DragFloat3("Direction", &direction.x);
+            ImGui::ColorEdit3("Light Color", &color.r);
+            ImGui::DragFloat("Light Range", &range, 0.1f);
+
+
+
+
+        }
+
     private:
         Type type; /*!< A Light::Type value: type. A value to hold the type of light */
         SRE::SimpleRenderEngine* sre; /*!< A SimpleRenderEngine pointer: sre. A reference to the SimpleRenderEngine */

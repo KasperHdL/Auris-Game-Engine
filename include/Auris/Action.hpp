@@ -1,4 +1,5 @@
 #pragma once
+#include "SDL.h"
 namespace Auris{
 //! A namespace for scancodes
 /*! If you need more actions it is possible to extend them yourself*/
@@ -12,7 +13,8 @@ namespace Action{
     const SDL_Scancode pause = SDL_SCANCODE_F3;
     const SDL_Scancode stepOne = SDL_SCANCODE_F4;
     const SDL_Scancode playOnHold = SDL_SCANCODE_F5;
-    const SDL_Scancode drawDebug = SDL_SCANCODE_F6;
+    const SDL_Scancode drawColliders = SDL_SCANCODE_F6;
+    const SDL_Scancode drawDebug = SDL_SCANCODE_F7;
     const SDL_Scancode w = SDL_SCANCODE_W;
     const SDL_Scancode a = SDL_SCANCODE_A;
     const SDL_Scancode s = SDL_SCANCODE_S;

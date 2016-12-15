@@ -17,6 +17,7 @@ public:
     DebugDraw(){}
 
     void DrawPolygon(const b2Vec2* vertices, int vertexCount, const b2Color& color) {
+        //std::cout << color.r << " " << color.a << std::endl;
         
         SRE::Debug::setColor(glm::vec4(color.r, color.g, color.b, color.a));
 

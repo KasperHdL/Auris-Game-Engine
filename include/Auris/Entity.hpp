@@ -1,7 +1,9 @@
 #pragma once
 
 #include "Auris/Entities/Nuggets/Transform.hpp"
+#include "SRE/imgui_sre.hpp"
 #include <string>
+#include "glm/glm.hpp"
 
 
 namespace Auris{
@@ -83,6 +85,17 @@ public:
          * Called when the object is destroyed.
         */
     virtual void onDestruction() {}
+
+
+    virtual void debugDraw(){}
+    virtual void inspectorImGui(){
+        if(ImGui::TreeNode("Transform")){
+            ImGui::DragFloat3("Position", &transform->position.x);
+            ImGui::DragFloat2("Scale", &transform->scale.x);
+            ImGui::DragFloat("Rotation", &transform->rotation);
+            ImGui::TreePop();
+        } 
+    }
 
 };
 

@@ -49,12 +49,12 @@ public:
         */
     virtual void lateUpdate(float dt) = 0;
 
-    //! The scriptable function debugDraw.
+    //! The scriptable function drawDebugImGui.
         /*!
          * Used by the game programmer to add debug imgui functionality to the game.
          * Called every frame, when the engine debug imgui is drawed.
         */
-    virtual void debugDraw(){}
+    virtual void drawDebugImGui(){}
 
     //! The scriptable function shutdown.
         /*!
