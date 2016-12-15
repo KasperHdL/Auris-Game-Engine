@@ -32,6 +32,16 @@ public:
         delete transform;
     }
 
+    void setParent(Entity* parent) {
+        this->parent = parent;
+        parent->setChild(this);
+    }
+
+    void setChild(Entity* child) {
+        this->child = child;
+        child->setParent(this);
+    }
+
 
     //! The scriptable function updateTransform.
         /*!
