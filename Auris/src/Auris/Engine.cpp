@@ -101,7 +101,6 @@ void Engine::run(SDL_Window* window){
     // delta time from http://gamedev.stackexchange.com/a/110831
     Uint64 NOW = SDL_GetPerformanceCounter();
     Uint64 LAST = 0;
-    quit = 0;
     float deltaTimeSec = 0;
     auto sre = SimpleRenderEngine::instance;
 
