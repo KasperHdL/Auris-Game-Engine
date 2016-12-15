@@ -13,10 +13,12 @@
 #include "Auris/Entities/PhysicsEntity.hpp"
 #include "Auris/Action.hpp"
 
+#include "Bullet.hpp"
+
 using namespace std;
 using namespace Auris;
 class Player : public PhysicsEntity{
-    public:
+public:
     shared_ptr<Animation> anim;
     SpriteSheet* spriteSheet;
 
@@ -30,7 +32,7 @@ class Player : public PhysicsEntity{
     float jumpHeight;
     float movementSpeed;
 
-    int healthPoints;
+    int healthPoints = 100;
 
     int controller;
 
@@ -108,7 +110,7 @@ class Player : public PhysicsEntity{
             canJump = true;
 
         if (other->name == "Bullet") {
-//            healthPoints -= other->damage;
+            healthPoints -= ((Bullet*)other)->damage;
             other->setGravity(3);
             other->setFixedRotation(true);
         }
