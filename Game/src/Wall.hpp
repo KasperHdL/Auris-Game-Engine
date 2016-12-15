@@ -2,9 +2,8 @@
 
 #include "Auris/Entities/PhysicsEntity.hpp"
 #include "Auris/Entities/Nuggets/Sprite.hpp"
-#include "Auris/Entities/Nuggets/SpriteSheet.hpp"
+#include "Auris/Utilities/SpriteSheet.hpp"
 #include "Auris/Constants.hpp"
-#include "Auris/Utilities/Resource.hpp"
 #include "Auris/Utilities/BodyStandard.hpp"
 
 using namespace Auris;
@@ -18,8 +17,7 @@ public:
     Wall(vec2 position = vec2(0,0)):PhysicsEntity() {
         name = "Wall";    
 
-        SpriteSheet* spriteSheet = new SpriteSheet(Resource::getPath("MarioPacked.json"));
-
+        SpriteSheet* spriteSheet = AssetManager::getSpriteSheet("MarioPacked.json");
         sprite = spriteSheet->getSprite("brick",this);
 
         b2PolygonShape shape; 
@@ -33,21 +31,5 @@ public:
 
     ~Wall(){
         Auris::RenderSystem::deleteSprite(sprite);
-    }
-
-    void Update(float dt){
-
-    }
-
-    void OnCollisionEnter(PhysicsEntity* other) {
-
-    }
-
-    void OnCollisionExit(PhysicsEntity* other) {
-
-    }
-
-    void OnCollisionStay(PhysicsEntity* other) {
-
     }
 };

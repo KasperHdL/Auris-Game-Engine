@@ -18,7 +18,7 @@ void Engine::startup(Game* game){
     if (SDL_Init(SDL_INIT_AUDIO) == -1) // Initialize SDL2_audio
         cout << SDL_GetError() << endl;
 
-    if( Mix_OpenAudio( 44100, MIX_DEFAULT_FORMAT, 2, 1024 ) == -1 ) // Initialize SDL_mixer
+    if( Mix_OpenAudio( 44100, MIX_DEFAULT_FORMAT, MIX_DEFAULT_CHANNELS, 1024 ) == -1 ) // Initialize SDL_mixer
         cout << SDL_GetError() << endl;
 
     SDL_GL_SetAttribute(SDL_GL_CONTEXT_MAJOR_VERSION, 3);
@@ -47,7 +47,6 @@ void Engine::startup(Game* game){
 
     SRE::SimpleRenderEngine r{window};
 
-
     renderSystem.startup(64);
 
 
@@ -58,9 +57,6 @@ void Engine::startup(Game* game){
 
     // Initialize Simple Render Engine
 
-    //nisse->setRotation(-3.14);
-    //nisse->moveCamera(vec2(400,0));
-    //nisse->moveCamera(vec2(400,0));
     auto sre = SimpleRenderEngine::instance;
     sre->getCamera()->setWindowCoordinates();
 
@@ -109,29 +105,6 @@ void Engine::run(SDL_Window* window){
     float deltaTimeSec = 0;
     auto sre = SimpleRenderEngine::instance;
 
-	//Initialize MemoryLeakDetector
-	memLeakDet = MemoryLeakDetector();
-
-    //DEBUG INFORMATION TODO should be ignored on release build
-   
-    int arrIndex = 0;
-    const int arrSize = 600;
-    float arr_deltaTime[arrSize] = {};
-    float max_deltaTime = 0;
-
-    
-    float arr_virtMem[arrSize] = {};
-    float max_virtMem = 0;
-
-    float arr_physMem[arrSize] = {};
-    float max_physMem = 0;
-
-    int max_renderSprites = 0;
-
-    bool toggle_goInspector = false;
-    bool toggle_showcasePanel = false;
-    bool toggle_cameraControls = false;
-
     while (Input::quit == 0){
         LAST = NOW;
         NOW = SDL_GetPerformanceCounter();
@@ -155,13 +128,13 @@ void Engine::run(SDL_Window* window){
 
             // entities UPDATE
             for(auto& el: game->entities)
-                el->Update(deltaTimeSec);
+                el->update(deltaTimeSec);
 
             Engine::world->Step(deltaTimeSec, VELOCITY_ITERATIONS, POSITION_ITERATIONS);
 
 
             for(auto& el: game->entities)
-                el->UpdateTransform();
+                el->updateTransform();
         }
 
         game->lateUpdate(deltaTimeSec);

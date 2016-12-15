@@ -11,7 +11,7 @@ namespace Auris{
     public:
         b2Body* body;
 
-        virtual void UpdateTransform() {
+        virtual void updateTransform() {
             transform->position = vec3(Convert::toGlm(body->GetPosition()),transform->position.z);
             transform->rotation = body->GetAngle();
         } // Called every frame
@@ -55,14 +55,11 @@ namespace Auris{
             return Convert::toGlm(body->GetLinearVelocity()); 
         } 
 
-
-
-
-        virtual void OnCollisionEnter(PhysicsEntity* collider) {} // Called upon collision with another game object 
+        virtual void OnCollisionEnter(PhysicsEntity* collider) {} //! Called upon collision with another PhysicsEntity
      
-        virtual void OnCollisionStay(PhysicsEntity* collider) {} // Called while colliding with another game object 
+        virtual void OnCollisionStay(PhysicsEntity* collider) {} //! Called while colliding with another PhysicsEntity
      
-        virtual void OnCollisionExit(PhysicsEntity* collider) {} // Called when exiting collision with another game object 
+        virtual void OnCollisionExit(PhysicsEntity* collider) {} //! Called when exiting collision with another PhysicsEntity
 
 
     };

@@ -20,17 +20,19 @@ public:
         delete transform;
     }
 
-    virtual void UpdateTransform(){}
 
-    // Scriptable functions
+    //! Scriptable functions
 
-	virtual void Init() {} // Called upon initialization
+    //! Used by PhysicsEntities
+    virtual void updateTransform(){}
 
-	virtual void Start() {} // Called just before first update
+    virtual void init() {} // Called upon initialization
 
-	virtual void Update(float deltaTime) {} // Called every frame
+    virtual void start() {} // Called just before first update
 
-	virtual void OnDestruction() {} // Called when object is destroyed
+    virtual void update(float deltaTime) {} // Called every frame
+
+    virtual void onDestruction() {} // Called when object is destroyed
 
 };
 
