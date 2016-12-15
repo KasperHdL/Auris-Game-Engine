@@ -25,7 +25,6 @@ class DemoGame : public Auris::Game {
     int id2 = -1;
     int id3 = -1;
 
-    Auris::Camera* cam;
     void init() {
         loadScene(&scene1);
         Auris::Engine::world->SetGravity(b2Vec2(0, -9.8));
