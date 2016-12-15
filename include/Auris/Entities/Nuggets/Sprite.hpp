@@ -15,7 +15,7 @@
 namespace Auris{
 
 //! The Sprite class that extend the Nugget class
-    /*! Used to make give Sprites to objects
+    /*! Used to give Sprites to objects
     */
 class Sprite : public Nugget{
 public:
