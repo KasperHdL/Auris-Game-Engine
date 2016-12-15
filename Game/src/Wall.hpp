@@ -15,7 +15,7 @@ public:
     Sprite* sprite;
 
     Wall(vec2 position = vec2(0,0)):PhysicsEntity() {
-        name = "Wall";    
+        type = "Wall";
 
         SpriteSheet* spriteSheet = AssetManager::getSpriteSheet("MarioPacked.json");
         sprite = spriteSheet->getSprite("brick",this);

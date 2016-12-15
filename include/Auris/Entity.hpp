@@ -2,6 +2,7 @@
 
 #include "Auris/Entities/Nuggets/Transform.hpp"
 #include "SRE/imgui_sre.hpp"
+#include "SRE/Debug.hpp"
 #include <string>
 #include <vector>
 #include "glm/glm.hpp"

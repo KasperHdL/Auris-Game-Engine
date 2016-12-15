@@ -185,15 +185,16 @@ void DebugUI::update(float dt){
 */
 void DebugUI::draw(){
 
-    if(drawColliders){
-        e->world->DrawDebugData();
-    }
-
 
     if(drawDebug){
         for(auto& ent: e->game->entities){
             ent->debugDraw();
         }
     }
+
+    if(drawColliders){
+        e->world->DrawDebugData();
+    }
+
 
 }

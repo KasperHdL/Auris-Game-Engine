@@ -28,7 +28,7 @@ private:
 
 public:
     AudioPlayer(Auris::Camera* listener = nullptr, int channel = -1, float fadeX = 1.0f, float fadeY = 1.0f) {
-        name = "AudioListener";
+        type = "AudioListener";
         if (listener != nullptr)
             this->listener = listener;
         this->channel = channel;
@@ -173,6 +173,18 @@ public:
         sounds.clear();
     }
 
+    void debugDraw(){
+        float scale = 10;
+        vec2 p = transform->position;
+        SRE::Debug::setColor(vec4(1,1,1,1));
+        SRE::Debug::drawLine(vec3(p.x - scale, p.y + scale,0), vec3(p.x, p.y + scale,0));
+        SRE::Debug::drawLine(vec3(p.x, p.y + scale,0), vec3(p.x + scale, p.y + scale*2,0));
+        SRE::Debug::drawLine(vec3(p.x + scale, p.y + scale * 2,0), vec3(p.x + scale, p.y - scale*2,0));
+        SRE::Debug::drawLine(vec3(p.x + scale, p.y - scale * 2,0), vec3(p.x, p.y - scale,0));
+        SRE::Debug::drawLine(vec3(p.x , p.y - scale,0), vec3(p.x - scale, p.y - scale,0));
+        SRE::Debug::drawLine(vec3(p.x - scale, p.y - scale,0), vec3(p.x - scale, p.y + scale,0));
+
+    }
 
     void inspectorImGui(){
         Entity::inspectorImGui();

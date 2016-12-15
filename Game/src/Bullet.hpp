@@ -13,7 +13,7 @@ public:
     Sprite* sprite;
 
     Bullet(vec2 position) : PhysicsEntity(){
-        name = "Bullet";
+        type = "Bullet";
 
         sprite = Auris::RenderSystem::getSprite(this);
 
