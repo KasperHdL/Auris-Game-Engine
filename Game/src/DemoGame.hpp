@@ -71,8 +71,8 @@ class DemoGame : public Auris::Game {
         int i = 0;
         for (auto & element : controllers) {
             if (element == -1) {
-                addPlayer(i, element);
-
+                element = controllerID;
+                addPlayer(i, controllerID);
                 break;
             }
             i++;
