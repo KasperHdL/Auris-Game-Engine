@@ -7,6 +7,10 @@
 
 namespace Auris{
     using namespace glm;
+
+//! The PhysicsEntity class that extend the Entity class
+    /*! Used to control physic objects.
+    */
     class PhysicsEntity : public Entity{
     public:
         b2Body* body;

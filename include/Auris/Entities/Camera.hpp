@@ -36,7 +36,19 @@ public:
          * \sa translate()
         */
     glm::vec2 getPos();
+
+    //! A method to get the width.
+        /*!
+         * \return a float, that is the width of the camera.
+         * \sa getHeight()
+        */
     float getWidth();
+
+    //! A method to get the height.
+        /*!
+         * \return a float, that is the height of the camera.
+         * \sa getWidth()
+        */
     float getHeight();
 
     //! A method to set the rotation, taking 1 argument.
