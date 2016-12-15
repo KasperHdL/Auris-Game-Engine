@@ -12,7 +12,8 @@ namespace Auris{
 class Entity{
 public:
     std::string name = "";/*!< A string value: name. The name of the entity. */  
-    Entity* parent = nullptr;/*!< An Entity pointer: parent. An instance of the parent entity. */
+    Entity* parent = nullptr;/*!< An Entity pointer: parent. An pointer to the parent entity of this entity. */
+    Entity* child = nullptr;/*!< An Entity pointer: child. A pointer to the parent entity of this entity.
     Transform* transform; /*!< A Transform pointer: transform. An instance of the transform. */
 
     //! The engine contructor.
