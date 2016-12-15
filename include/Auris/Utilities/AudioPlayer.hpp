@@ -17,7 +17,8 @@ private:
     int channel;
 
     int sound;
-    int difference = 0;
+    int differenceX = 0;
+    int differenceY = 0;
     int pan = 127;
     int distance = 0;
 
@@ -37,19 +38,29 @@ public:
 
     void update(float deltaTime) {
         if (listener != nullptr) {
-            difference = 127 - (transform->position.x - listener->getPos().x)/(listener->getWidth()/254);
-            pan = difference < 0 ? 0: difference > 254 ? 254 : difference;
+            differenceX = 127 - (transform->position.x - listener->getPos().x)/(listener->getWidth()/254);
+            differenceY = 127 - (transform->position.y - listener->getPos().y)/(listener->getHeight()/254);
+            pan = differenceX < 0 ? 0: differenceX > 254 ? 254 : differenceX;
             Mix_SetPanning(channel, pan, 254-pan);
-            if (difference < 100)
-                distance = (100 - difference)*2;
-            else if (difference > 154)
-                distance = (difference - 154)*2;
+
+            distance = 0;
+
+            if (differenceX < 100)
+                distance += (100 - differenceX);
+            else if (differenceX > 154)
+                distance += (differenceX - 154);
+
+            if (differenceY < 100)
+                distance += (100 - differenceY);
+            else if (differenceY > 154)
+                distance += (differenceY - 154);
 
             distance = distance > 255 ? 255 : distance;
 
             Mix_SetDistance(channel, distance);
 
-            cout << "normalized pos: " << difference << endl;
+            cout << "difference X: " << differenceX << endl;
+            cout << "difference Y: " << differenceY << endl;
             cout << "pan: " << pan << endl;
             cout << "distance: " << distance << endl;
         }
@@ -60,6 +71,14 @@ public:
 
         if (Auris::Input::keyHeld(Auris::Action::d)) {
             listener->setPos(vec2(listener->getPos().x+5, listener->getPos().y));
+        }
+
+        if (Auris::Input::keyHeld(Auris::Action::w)) {
+            listener->setPos(vec2(listener->getPos().x, listener->getPos().y+5));
+        }
+
+        if (Auris::Input::keyHeld(Auris::Action::s)) {
+            listener->setPos(vec2(listener->getPos().x, listener->getPos().y-5));
         }
 
         if (Auris::Input::keyDown(Auris::Action::enter)) {

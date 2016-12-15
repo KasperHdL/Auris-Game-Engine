@@ -3,7 +3,7 @@
 #include <fstream>
 #include <iostream>
 
-#include "Auris/Utilities/Resource.hpp"
+//#include "Auris/Utilities/AssetManager.hpp"
 
 using namespace Auris;
 using namespace std;

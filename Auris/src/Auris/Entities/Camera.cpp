@@ -41,6 +41,10 @@ float Camera::getWidth(){
     return right-left;
 }
 
+float Camera::getHeight(){
+    return top-bottom;
+}
+
 void Camera::translate(glm::vec2 amount){
     pos += amount;
     updateCam();
