@@ -12,8 +12,8 @@ namespace Auris{
 class Entity{
 public:
     std::string name = "";/*!< A string value: name. The name of the entity. */  
-    Entity* parent = nullptr;/*!< An Entity pointer: parent. An pointer to the parent entity of this entity. */
-    Entity* child = nullptr;/*!< An Entity pointer: child. A pointer to the parent entity of this entity.
+    Entity* parent = nullptr;/*!< An Entity pointer: parent. An pointer to the parent entity. */
+    Entity* child = nullptr;/*!< An Entity pointer: child. A pointer to the child entity.
     Transform* transform; /*!< A Transform pointer: transform. An instance of the transform. */
 
     //! The engine contructor.
@@ -33,39 +33,40 @@ public:
     }
 
 
-    //! The scriptable function updateTransform.
+    //! The method updateTransform.
         /*!
-         * Updates the enitities transform according to the physics body
-         * Should not be used by the game programmer
+         * Updates the enitities transform according to the physics body.
+         * Should not be used by the game programmer.
+         * Called every frame.
         */
     virtual void updateTransform(){}
 
     //! The scriptable function init.
         /*!
-         * Used by the game programmer to add initial functionality to the enitity
-         * Called upon initialization
+         * Used by the game programmer to add initial functionality to the entity.
+         * Called upon initialization.
         */
     virtual void init() {}
 
     //! The scriptable function start.
         /*!
-         * Used by the game programmer to add start functionality to the enitity
-         * Called just before first update
+         * Used by the game programmer to add start functionality to the entity.
+         * Called just before first update.
         */
     virtual void start() {}
 
-    //! The scriptable function update, taking 1 argument
+    //! The scriptable function update, taking 1 argument.
         /*!
-         * Used by the game programmer to add update functionality to the enitity
-         * Called every frame
-          \param deltaTime a float value, that is the current delta time
+         * Used by the game programmer to add update functionality to the entity.
+         * Called every frame.
+          \param deltaTime a float value, that is the current delta time.
         */
     virtual void update(float deltaTime) {}
 
     //! The scriptable function onDestruction.
         /*!
-         * Used by the game programmer to add on destruction functionality to the enitity
-         * Called when the object is destroyed
+         * Used by the game programmer to add on destruction functionality to the entity.
+         * Called when the object is destroyed.
         */
     virtual void onDestruction() {}
 

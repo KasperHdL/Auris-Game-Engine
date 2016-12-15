@@ -13,8 +13,14 @@ namespace Auris{
     */
     class PhysicsEntity : public Entity{
     public:
-        b2Body* body;
+        b2Body* body; /*!< A b2Body pointer: body. Reference to the physics body. */
 
+        //! The overloaded method updateTransform.
+            /*!
+             * Updates the enitities transform according to the physics body.
+             * Should not be used by the game programmer.
+             * Called every frame.
+            */
         virtual void updateTransform() {
             transform->position = vec3(Convert::toGlm(body->GetPosition()),transform->position.z);
             transform->rotation = body->GetAngle();
