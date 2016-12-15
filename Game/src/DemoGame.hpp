@@ -28,7 +28,9 @@ class DemoGame : public Auris::Game {
 //        pistolShot = audioPlayer.addSound(Resource::getPath("pistolShot.wav").c_str(), 128);
 //        warSounds = audioPlayer.addMusic(Resource::getPath("warSounds.wav").c_str(), 128);
 //        audioPlayer.playMusic(warSounds);
-        controllers.resize(8);
+        controllers.reserve(8);
+        for (auto & element : controllers)
+            element = -1;
     }
 
     void earlyUpdate(float dt){
@@ -68,8 +70,6 @@ class DemoGame : public Auris::Game {
                 element = controllerID;
                 break;
             }
-        cout << "Controller " << controllerID << " activated." << endl;
-
     }
 
 
