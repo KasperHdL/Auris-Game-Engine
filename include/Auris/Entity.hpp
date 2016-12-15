@@ -2,6 +2,7 @@
 
 #include "Auris/Entities/Nuggets/Transform.hpp"
 #include <string>
+#include <vector>
 
 
 namespace Auris{
@@ -11,9 +12,10 @@ namespace Auris{
     */
 class Entity{
 public:
+    std::string type = "";
     std::string name = "";/*!< A string value: name. The name of the entity. */  
     Entity* parent = nullptr;/*!< An Entity pointer: parent. An pointer to the parent entity of this entity. */
-    Entity* child = nullptr;/*!< An Entity pointer: child. A pointer to the parent entity of this entity.*/
+    std::vector<Entity*> children;/*!< An Entity pointer: child. A pointer to the parent entity of this entity.*/
     Transform* transform; /*!< A Transform pointer: transform. An instance of the transform. */
 
     //! The engine contructor.
@@ -36,8 +38,26 @@ public:
         this->parent = parent;
     }
 
-    void setChild(Entity* child) {
-        this->child = child;
+    void addChild(Entity* child) {
+        this->children.push_back(child);
+    }
+
+    Entity* getParent() {
+        return parent;
+    }
+
+    Entity* getChildByType(std::string type){
+        for (auto & child : children)
+            if (child->type == type)
+                return child;
+        return nullptr;
+    }
+
+    Entity* getChildByName(std::string name) {
+        for (auto & child : children)
+            if (child->name == name)
+                return child;
+        return nullptr;
     }
 
 

@@ -74,7 +74,7 @@ class DemoGame : public Auris::Game {
                 auto player = (Player*) addEntity(make_shared<Player>(pos));
                 player->setController(controllerID);
                 auto audio = (AudioPlayer*) addEntity(make_shared<AudioPlayer>(this->camera, 1));
-                player->setChild(audio);
+                player->addChild(audio);
                 players.push_back(player);
                 break;
             }
