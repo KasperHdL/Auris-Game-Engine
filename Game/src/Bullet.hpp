@@ -12,7 +12,7 @@ public:
 
     Sprite* sprite;
 
-    Bullet(vec2 position) : PhysicsEntity(){
+    Bullet(vec2 position = vec2(0, 0)) : PhysicsEntity(){
         type = "Bullet";
 
         sprite = Auris::RenderSystem::getSprite(this);
@@ -32,5 +32,7 @@ public:
     void update(float dt) {
         applyForce(vec2(1,0) * movementSpeed, true);
     }
+
+    //void
 
 };

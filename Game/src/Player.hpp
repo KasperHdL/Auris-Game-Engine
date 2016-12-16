@@ -40,7 +40,7 @@ public:
 
     int controller;
 
-    Player(vec2 position = vec2(0,0)):PhysicsEntity(){
+    Player(vec2 position = vec2(0,0)) : PhysicsEntity(){
         type = "Player";
 
         spriteSheet = AssetManager::getSpriteSheet("player.json");
@@ -85,7 +85,7 @@ public:
     }
 
     void fireBullet() {
-        //Bullet* bullet = new Bullet;
+        //Bullet* bullet = Game::instance->addEntity(make_shared<Bullet>())
         //Game::instance::addEntity(make_shared<Bullet>(aimDirection, this))
     }
 
@@ -112,14 +112,14 @@ public:
             }
 
             if (leftStickX < 0)  {
-                anim->run(lower, leftStickX*dt);
+                anim->run(lower, abs(leftStickX)*dt);
                 //transform->scale = vec2(-1, 1);
                 if (getLinearVelocity()[0] > -maxSpeed)
                     applyForce(vec2(1, 0) * leftStickX * movementSpeed, true);
             }
 
             if (leftStickX > 0)  {
-                anim->run(lower, leftStickX*dt);
+                anim->run(lower, abs(leftStickX)*dt);
                 //transform->scale = vec2(1, 1);
                 if (getLinearVelocity()[0] < maxSpeed)
                     applyForce(vec2(1, 0) * leftStickX * movementSpeed, true);
