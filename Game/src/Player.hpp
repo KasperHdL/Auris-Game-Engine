@@ -86,7 +86,7 @@ public:
 
     void fireBullet() {
         //Bullet* bullet = new Bullet;
-        //Game::addEntity(make_shared)
+        //Game::instance::addEntity(make_shared<Bullet>(aimDirection, this))
     }
 
     void init() {
@@ -145,9 +145,8 @@ public:
                     abs(aimDirection) > 180-divider*3 ? 2 :
                     abs(aimDirection) > 180-divider*4 ? 3 :
                     abs(aimDirection) > 180-divider*5 ? 4 :
-                    abs(aimDirection) > 180-divider*6 ? 5 :
-                                                        6;
-                string sprite = "upper_" + to_string(aim);
+                    abs(aimDirection) > 180-divider*6 ? 5 : 6;
+                string sprite   = "upper_" + to_string(aim);
                 spriteSheet->setSpriteTo(upper, sprite);
             }
         }
@@ -183,5 +182,4 @@ public:
         ImGui::DragFloat("movementSpeed", &movementSpeed);
 
     }
-
 };

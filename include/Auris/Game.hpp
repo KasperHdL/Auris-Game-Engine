@@ -108,5 +108,11 @@ public:
          * \param scene a Scene pointer, that is the scene that should be loaded
         */
     void loadScene(Scene* scene);
+
+    bool destroyEntity(Entity* entity) {
+        for (auto & element : Game::instance::entities)
+            if (element.get() == entity)
+                Game::instance::entities->remove(element);
+    }
 };
 }

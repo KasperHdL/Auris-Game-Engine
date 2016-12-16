@@ -30,7 +30,7 @@ public:
     }
 
     void update(float dt) {
-        applyForce(vec2(1,0) * movementSpeed);
+        applyForce(vec2(1,0) * movementSpeed, true);
     }
 
 };
