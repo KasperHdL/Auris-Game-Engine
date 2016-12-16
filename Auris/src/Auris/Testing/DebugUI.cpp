@@ -178,6 +178,7 @@ void DebugUI::update(float dt){
                         }
 
                         if(ImGui::TreeNode(name.c_str())){
+                            /* Child Toggle Parent in Inspector
                             if(ent->parent != nullptr){
 
                                 int k = 0;
@@ -188,6 +189,7 @@ void DebugUI::update(float dt){
 
                                 ImGui::Checkbox(("Parent: " + ent->parent->name).c_str(),&entityInspectorOpen[k]);
                             }
+                            */
 
                             ent->inspectorImGui();
                             ImGui::TreePop();
