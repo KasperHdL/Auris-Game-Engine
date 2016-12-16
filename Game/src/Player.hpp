@@ -133,12 +133,12 @@ public:
 
             if (aiming) {
                 float divider = 180/7;
-                int aim = abs(aimDirection) > 180-divider ? 0 :
-                    abs(aimDirection) > 180-divider*2 ? 1 :
-                    abs(aimDirection) > 180-divider*3 ? 2 :
+                int aim = abs(aimDirection) > 180-divider ? 6 :
+                    abs(aimDirection) > 180-divider*2 ? 5 :
+                    abs(aimDirection) > 180-divider*3 ? 4 :
                     abs(aimDirection) > 180-divider*4 ? 3 :
-                    abs(aimDirection) > 180-divider*5 ? 4 :
-                    abs(aimDirection) > 180-divider*6 ? 5 : 6;
+                    abs(aimDirection) > 180-divider*5 ? 2 :
+                    abs(aimDirection) > 180-divider*6 ? 1 : 0;
                 string sprite   = "upper_" + to_string(aim);
                 spriteSheet->setSpriteTo(upper, sprite, rightStick.x < 0);
                 if (rightTrigger > 16000) {
