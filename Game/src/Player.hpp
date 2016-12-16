@@ -28,10 +28,13 @@ public:
 
     bool alive = true;
     bool canJump = true;
+    bool aiming = false;
 
     float maxSpeed = 50;
     float jumpHeight = 8000;
     float movementSpeed = 1000;
+    float crosshairOffset = 10;
+    float aimDirection;
 
     int healthPoints = 100;
 
@@ -101,22 +104,25 @@ public:
 
             if (leftStickX < 0)  {
                 anim->run(lower, dt);
-                transform->scale = vec2(-transform->scale.x, transform->scale.y);
+                //transform->scale = vec2(-1, 1);
                 if (getLinearVelocity()[0] > -maxSpeed)
                     applyForce(vec2(1, 0) * leftStickX * movementSpeed, true);
-//                cout << "Left stick: " << leftStick << endl;
             }
 
             if (leftStickX > 0)  {
                 anim->run(lower, dt);
+                //transform->scale = vec2(1, 1);
                 if (getLinearVelocity()[0] < maxSpeed)
                     applyForce(vec2(1, 0) * leftStickX * movementSpeed, true);
-//                cout << "Left stick: " << leftStick << endl;
             }
 
-            if (Input::keyDown(Auris::Action::down)) {
-
+            if (rightStick != vec2(0, 0)) {
+                aimDirection = (float)(atan2(rightStick.x, rightStick.y));
+                //getChildByType("crosshair")->transform->position = rightStick*crosshairOffset;
+                aiming = true;
             }
+
+            //if ();
         }
     }
 
@@ -127,7 +133,8 @@ public:
         if (other->type == "Bullet") {
             healthPoints -= ((Bullet*)other)->damage;
             other->setGravity(3);
-            other->setFixedRotation(true);
+            other->setFixedRotation(false);
+            other->setBullet(false);
         }
     }
 
