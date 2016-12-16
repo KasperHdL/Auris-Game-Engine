@@ -97,7 +97,8 @@ public:
     virtual void imGUI(){}
 
     std::vector<std::shared_ptr<Entity>> entities; /*!< A vector value: entities, of shared pointers of Entity instances. Holds all entities of the game. */
-    std::vector<int> destroyEntities;
+    std::vector<int> destroyEntities; /*!< A vector value: destroyEntities, of integers. Holds the indexes of all gameobjects that are going to be destroyed this loop */
+    std::vector<std::shared_ptr<Entity>> newEntities; /*!< A vector value: newEntities, of shared pointers of Entity instances. Holds the entities that are going to be added this loop */
 
     //! A method to add enitities to the game, taking 1 argument.
         /*!
@@ -105,7 +106,7 @@ public:
          * \param enity a shared_ptr of Entity, that is the entity that should be added to the game
         */
     Entity* addEntity(std::shared_ptr<Entity> entity){
-        entities.push_back(entity);
+        newEntities.push_back(entity);
         entity.get()->init();
         return entity.get();
     }
