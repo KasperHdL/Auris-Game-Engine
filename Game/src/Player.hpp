@@ -85,7 +85,7 @@ public:
     }
 
     void fireBullet(float rotation, vec2 direction) {
-        auto bullet = (Bullet*) Game::instance->addEntity(make_shared<Bullet>(vec2(transform->position.x, transform->position.y)));
+        auto bullet = (Bullet*) Game::instance->addEntity(make_shared<Bullet>(transform->position));
         bullet->setRotation(rotation);
         bullet->direction = direction;
     }
@@ -123,7 +123,7 @@ public:
             }
 
             if (rightStick != vec2(0, 0)) {
-                aimDirection = (float)(atan2(rightStick.x, rightStick.y));
+                aimDirection = (float)(atan2(rightStick.x, -rightStick.y));
                 aimDirection = degrees(aimDirection);
                 getChildByType("crosshair")->transform->position = vec3(rightStick*crosshairOffset, 0);
                 aiming = true;
@@ -140,7 +140,7 @@ public:
                     abs(aimDirection) > 180-divider*5 ? 4 :
                     abs(aimDirection) > 180-divider*6 ? 5 : 6;
                 string sprite   = "upper_" + to_string(aim);
-                spriteSheet->setSpriteTo(upper, sprite);
+                spriteSheet->setSpriteTo(upper, sprite, rightStick.x < 0);
                 if (rightTrigger > 16000) {
                     fireBullet(aimDirection, rightStick);
                 }

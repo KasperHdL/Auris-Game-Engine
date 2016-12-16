@@ -170,7 +170,10 @@ void Engine::run(SDL_Window* window){
         debugUI->draw();
         ImGui::Render();
 
+
+        if(debugUI->profiling) profile_SwapTimer.start();
         sre->swapWindow();
+        if(debugUI->profiling) profile_SwapTimer.stop();
 
         std::sort(Game::instance->destroyEntities.begin(),Game::instance->destroyEntities.end());
 

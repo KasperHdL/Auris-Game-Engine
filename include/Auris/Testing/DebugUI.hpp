@@ -48,6 +48,7 @@ private:
     float arr_profPhysics[arrSize] = {}; /*!< A float array: arr_profPhysics. Array for profiling physics loop */
     float arr_profUpdateTransform[arrSize] = {}; /*!< A float array: arr_profUpdateTransform. Array for profiling transform update loop */
     float arr_profRender[arrSize] = {}; /*!< A float array: arr_profRender. Array for profiling render loop */
+    float arr_profSwap[arrSize] = {}; /*!< A float array: arr_profRender. Array for profiling render loop */
 
 
     double sum_dt              = 0;
@@ -59,6 +60,7 @@ private:
     double sum_physics         = 0;
     double sum_updateTransform = 0;
     double sum_render          = 0;
+    double sum_swap          = 0;
 
     //Toggles
     bool toggle_inspector = false;/*!< A bool value: toggle_inspector. Toggle the inspector view */
