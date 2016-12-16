@@ -66,12 +66,13 @@ void DebugUI::update(float dt){
             ImGui::Checkbox("Toggle Hierarchy", &toggle_hierarchy);
             ImGui::Checkbox("Toggle Inspector", &toggle_inspector);
             ImGui::Checkbox("Toggle Profiling inspector", &profiling);
+        }
+        ImGui::End();
+    }
 
-            ImGui::Separator();
-
-            arr_deltaTime[arrIndex] = dt;
-            arr_physMem[arrIndex] = memLeakDet.getPhysMemUsedByMe();
-            arr_virtMem[arrIndex] = memLeakDet.getVirtMemUsedByMe();
+    if(profiling){
+        ImGui::Begin("Profiling:");
+        {
 
             if(dt > max_deltaTime)
                 max_deltaTime = dt;
@@ -83,33 +84,26 @@ void DebugUI::update(float dt){
             ImGui::Text("Physical Memory: %f / %f", arr_physMem[arrIndex], memLeakDet.getTotalPhysMem());
             ImGui::PlotLines("Dt", arr_virtMem, arrSize);
             ImGui::Text("Virtual Memory: %f / %f", arr_virtMem[arrIndex], memLeakDet.getTotalVirtMem());
+ 
 
-            ImGui::Separator();
-            ImGui::PlotLines("Dt", arr_deltaTime, arrSize);
-            ImGui::Text("Current Dt: %f - Max dt: %f",dt, max_deltaTime);
+            arr_deltaTime           [ arrIndex] = dt;
+            arr_physMem             [ arrIndex] = memLeakDet.getPhysMemUsedByMe();
+            arr_virtMem             [ arrIndex] = memLeakDet.getVirtMemUsedByMe();
+            arr_profInput           [ arrIndex] = e->profile_InputTimer.length;
+            arr_profEntityUpdate    [ arrIndex] = e->profile_Entity_UpdateTimer.length;
+            arr_profGEarlyUpdate    [ arrIndex] = e->profile_Game_EarlyUpdateTimer.length;
+            arr_profGUpdate         [ arrIndex] = e->profile_Game_UpdateTimer.length;
+            arr_profGLateUpdate     [ arrIndex] = e->profile_Game_LateUpdateTimer.length;
+            arr_profPhysics         [ arrIndex] = e->profile_PhysicsTimer.length;
+            arr_profUpdateTransform [ arrIndex] = e->profile_UpdatePhysicsEntityTransformTimer.length;
+            arr_profRender          [ arrIndex] = e->profile_RenderTimer.length;
 
-            ImGui::Separator();
             ImGui::Text("Num Entities %zu", e->game->entities.size());
             ImGui::Text("Num of Sprites Allocated %d - Max %d", e->renderSystem.spritePool.count, max_renderSprites);
 
             ImGui::Separator();
-        }
-        ImGui::End();
-    }
-
-    if(profiling){
-        ImGui::Begin("Profiling:");
-        {
-
-            arr_profInput           [arrIndex] = e->profile_InputTimer.length;
-            arr_profEntityUpdate    [arrIndex] = e->profile_Entity_UpdateTimer.length;
-            arr_profGEarlyUpdate    [arrIndex] = e->profile_Game_EarlyUpdateTimer.length;
-            arr_profGUpdate         [arrIndex] = e->profile_Game_UpdateTimer.length;
-            arr_profGLateUpdate     [arrIndex] = e->profile_Game_LateUpdateTimer.length;
-            arr_profPhysics         [arrIndex] = e->profile_PhysicsTimer.length;
-            arr_profUpdateTransform [arrIndex] = e->profile_UpdatePhysicsEntityTransformTimer.length;
-            arr_profRender          [arrIndex] = e->profile_RenderTimer.length;
-
+            ImGui::PlotLines("Dt", arr_deltaTime, arrSize);
+            ImGui::Text("Current Dt: %f - Max dt: %f",dt, max_deltaTime);
 
             ImGui::PlotLines("Input", arr_profInput, arrSize);
             ImGui::Text("Input %f", e->profile_InputTimer.length);
@@ -131,6 +125,8 @@ void DebugUI::update(float dt){
 
             ImGui::PlotLines("Render", arr_profRender, arrSize);
             ImGui::Text("Render %f", e->profile_RenderTimer.length);
+
+
 
         }
         ImGui::End();
