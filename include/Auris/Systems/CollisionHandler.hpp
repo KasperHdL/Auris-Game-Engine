@@ -5,9 +5,20 @@
 
 #include <iostream>
 namespace Auris{
+
+//! The CollisionHandler class that extend the b2ContactListener from box2D
+    /*! Handles all collision of the engine
+    */
 class CollisionHandler : public b2ContactListener{
 
 private:
+
+    //! A BeginContact overload method, taking 1 argument.
+        /*!
+         * If there is a contact between two bodies, sent their information to one another
+         * \param contact a b2Contact pointer, that is the contact happening.
+         * \overload b2ContactListener::BeginContact(b2Contact* contact)
+        */
     void BeginContact(b2Contact* contact){
         // Get PhysicsEntities that are colliding
         PhysicsEntity* colliderA = (PhysicsEntity*) contact->GetFixtureA()->GetBody()->GetUserData();
@@ -22,6 +33,12 @@ private:
         }
     }
 
+    //! An EndContact overload method, taking 1 argument.
+        /*!
+         * If contact is ending between two bodies, sent their information to one another
+         * \param contact a b2Contact pointer, that is the contact endind.
+         * \overload b2ContactListener::EndContact(b2Contact* contact)
+        */
     void EndContact(b2Contact* contact) {
         // Get PhysicsEntities that are colliding
         PhysicsEntity* colliderA = (PhysicsEntity*) contact->GetFixtureA()->GetBody()->GetUserData();

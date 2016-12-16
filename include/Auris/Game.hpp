@@ -16,8 +16,7 @@ namespace Auris{
 class Game {
 
 public:
-    Auris::Camera* camera;
-
+    Auris::Camera* camera; /*!< An Auris::Camera pointer. A reference to a camera, can be used to control the game camera. */
 
     //! The scriptable function init.
         /*!
@@ -64,14 +63,19 @@ public:
         */
     virtual void shutdown() = 0;
 
-    virtual void controllerConnected(){}
-    //! The scriptable function controllerConnected, taking 1 argument.
+    //! The scriptable function controllerConnected.
         /*!
          * Used by the game programmer to add functionality to when a controller is connected.
-         * Called when a controller is connected to the pc, and recognized with a button press.
-         * \param controllerID an int value, that is the controller id of the controller connected
+         * Called when a controller is connected to the pc.
         */
+    virtual void controllerConnected(){}
 
+    //! The scriptable function controllerActivated, taking 1 argument.
+        /*!
+         * Used by the game programmer to add functionality to when a controller is activated.
+         * Called when a controller is activated (recognized with a button press).
+         * \param controllerID an int value, that is the controller id of the controller activated.
+        */
     virtual void controllerActivated(int controllerID){}
 
     //! The scriptable function controllerDisconnected, taking 1 argument.

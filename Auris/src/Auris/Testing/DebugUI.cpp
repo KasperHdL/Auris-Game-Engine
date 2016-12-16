@@ -2,11 +2,6 @@
 #include "Auris/Engine.hpp"
 
 using namespace Auris;
-
-//! Startup function
-/*! Initializes the DebugUI, starts ImGui and sets required keys for debug input
- * \param engine pointer to the engine
- */
 void DebugUI::startup(Engine* engine){
     this->e = engine;
   
@@ -15,17 +10,10 @@ void DebugUI::startup(Engine* engine){
 
 }
 
-//! Shutdown the DebugUI
-/*! TODO(@Kasper) does nothing currently
- */
 void DebugUI::shutdown(){
 
 }
 
-//! update DebugUI
-/*! updates ImGui, saves deltatime and memory, 
- * \param deltatime in seconds
- */
 void DebugUI::update(float dt){
     runOneStep = false;
 
@@ -34,81 +22,88 @@ void DebugUI::update(float dt){
         pause = true;
     }
 
-    if(Input::keyDown(Auris::Action::drawDebug)){
+    if(Input::keyDown(Auris::Action::drawDebug))
         drawDebug = !drawDebug;
-    }
+    
 
-    if(Input::keyDown(Auris::Action::drawColliders)){
+    if(Input::keyDown(Auris::Action::drawColliders))
         drawColliders = !drawColliders;
-    }
 
-    if(Input::keyDown(Auris::Action::debug)){
-        debug = !debug;
-
-    }
-
-    if(Input::keyDown(Auris::Action::pause)){
+    if(Input::keyDown(Auris::Action::debug_menu))
+        debug_menu = !debug_menu;
+    
+    if(Input::keyDown(Auris::Action::pause))
         pause = !pause;
+   
+    if(Input::keyDown(Auris::Action::toggleProfiler))
+        profiling = !profiling;
+
+    if(Input::keyDown(Auris::Action::toggleHierarchy))
+        toggle_hierarchy = !toggle_hierarchy;
+
+    if(Input::keyDown(Auris::Action::toggleInspector))
+        toggle_inspector = !toggle_inspector;
+
+
+    if(debug_menu){
+        
+        ImGui::Begin("Debug Menu");
+        {
+            ImGui::Checkbox("Debug(F2)[this]", &debug_menu);
+            ImGui::SameLine();
+            ImGui::Checkbox("Pause(F3)", &pause);
+            if(ImGui::Button("Step One Frame(F4)")){
+                runOneStep = true;
+                pause = true;
+            }
+            ImGui::SameLine();
+            ImGui::Text("Play on Hold(F5)");
+    //          ImGui::Checkbox("Toggle Camera Controls(Arrow Keys)",&toggle_cameraControls);
+            ImGui::Checkbox("Debug Colliders(F6)", &drawColliders);
+            ImGui::Checkbox("Call DrawDebug on Entities(F7)", &drawDebug);
+
+            ImGui::Separator();
+            ImGui::Checkbox("Toggle Hierarchy", &toggle_hierarchy);
+            ImGui::Checkbox("Toggle Inspector", &toggle_inspector);
+            ImGui::Checkbox("Toggle Profiling inspector", &profiling);
+        }
+        ImGui::End();
     }
 
-    if(debug){
-        
-        ImGui::Checkbox("Debug(F2)", &debug);
-        ImGui::SameLine();
-        ImGui::Checkbox("Pause(F3)", &pause);
-        if(ImGui::Button("Step One Frame(F4)")){
-            runOneStep = true;
-            pause = true;
-        }
-        ImGui::SameLine();
-        ImGui::Text("Play on Hold(F5)");
-//          ImGui::Checkbox("Toggle Camera Controls(Arrow Keys)",&toggle_cameraControls);
-        ImGui::Checkbox("Debug Colliders(F6)", &drawColliders);
-        ImGui::Checkbox("Call DrawDebug on Entities(F7)", &drawDebug);
+    if(profiling){
+        ImGui::Begin("Profiling:");
+        {
 
-        ImGui::Separator();
-        ImGui::Checkbox("Toggle Entity inspector", &toggle_goInspector);
-        ImGui::Checkbox("Toggle Profiling inspector", &profiling);
+            if(dt > max_deltaTime)
+                max_deltaTime = dt;
 
-        ImGui::Separator();
+            if(e->renderSystem.spritePool.count > max_renderSprites)
+                max_renderSprites = e->renderSystem.spritePool.count;
 
-        arr_deltaTime[arrIndex] = dt;
-        arr_physMem[arrIndex] = memLeakDet.getPhysMemUsedByMe();
-        arr_virtMem[arrIndex] = memLeakDet.getVirtMemUsedByMe();
+            ImGui::PlotLines("Physical Memory", arr_physMem, arrSize);
+            ImGui::Text("Physical Memory: %f / %f", arr_physMem[arrIndex], memLeakDet.getTotalPhysMem());
+            ImGui::PlotLines("Dt", arr_virtMem, arrSize);
+            ImGui::Text("Virtual Memory: %f / %f", arr_virtMem[arrIndex], memLeakDet.getTotalVirtMem());
+ 
 
-        if(dt > max_deltaTime)
-            max_deltaTime = dt;
+            arr_deltaTime           [ arrIndex] = dt;
+            arr_physMem             [ arrIndex] = memLeakDet.getPhysMemUsedByMe();
+            arr_virtMem             [ arrIndex] = memLeakDet.getVirtMemUsedByMe();
+            arr_profInput           [ arrIndex] = e->profile_InputTimer.length;
+            arr_profEntityUpdate    [ arrIndex] = e->profile_Entity_UpdateTimer.length;
+            arr_profGEarlyUpdate    [ arrIndex] = e->profile_Game_EarlyUpdateTimer.length;
+            arr_profGUpdate         [ arrIndex] = e->profile_Game_UpdateTimer.length;
+            arr_profGLateUpdate     [ arrIndex] = e->profile_Game_LateUpdateTimer.length;
+            arr_profPhysics         [ arrIndex] = e->profile_PhysicsTimer.length;
+            arr_profUpdateTransform [ arrIndex] = e->profile_UpdatePhysicsEntityTransformTimer.length;
+            arr_profRender          [ arrIndex] = e->profile_RenderTimer.length;
 
-        if(e->renderSystem.spritePool.count > max_renderSprites)
-            max_renderSprites = e->renderSystem.spritePool.count;
+            ImGui::Text("Num Entities %zu", e->game->entities.size());
+            ImGui::Text("Num of Sprites Allocated %d - Max %d", e->renderSystem.spritePool.count, max_renderSprites);
 
-        ImGui::PlotLines("Physical Memory", arr_physMem, arrSize);
-        ImGui::Text("Physical Memory: %f / %f", arr_physMem[arrIndex], memLeakDet.getTotalPhysMem());
-        ImGui::PlotLines("Dt", arr_virtMem, arrSize);
-        ImGui::Text("Virtual Memory: %f / %f", arr_virtMem[arrIndex], memLeakDet.getTotalVirtMem());
-
-        ImGui::Separator();
-        ImGui::PlotLines("Dt", arr_deltaTime, arrSize);
-        ImGui::Text("Current Dt: %f - Max dt: %f",dt, max_deltaTime);
-
-        ImGui::Separator();
-        ImGui::Text("Num Entities %zu", e->game->entities.size());
-        ImGui::Text("Num of Sprites Allocated %d - Max %d", e->renderSystem.spritePool.count, max_renderSprites);
-
-        ImGui::Separator();
-
-        if(profiling){
-            ImGui::Begin("Profling:");
-
-            arr_profInput           [arrIndex] = e->profile_InputTimer.length;
-            arr_profEntityUpdate    [arrIndex] = e->profile_Entity_UpdateTimer.length;
-            arr_profGEarlyUpdate    [arrIndex] = e->profile_Game_EarlyUpdateTimer.length;
-            arr_profGUpdate         [arrIndex] = e->profile_Game_UpdateTimer.length;
-            arr_profGLateUpdate     [arrIndex] = e->profile_Game_LateUpdateTimer.length;
-            arr_profPhysics         [arrIndex] = e->profile_PhysicsTimer.length;
-            arr_profUpdateTransform [arrIndex] = e->profile_UpdatePhysicsEntityTransformTimer.length;
-            arr_profRender          [arrIndex] = e->profile_RenderTimer.length;
-
+            ImGui::Separator();
+            ImGui::PlotLines("Dt", arr_deltaTime, arrSize);
+            ImGui::Text("Current Dt: %f - Max dt: %f",dt, max_deltaTime);
 
             ImGui::PlotLines("Input", arr_profInput, arrSize);
             ImGui::Text("Input %f", e->profile_InputTimer.length);
@@ -131,61 +126,117 @@ void DebugUI::update(float dt){
             ImGui::PlotLines("Render", arr_profRender, arrSize);
             ImGui::Text("Render %f", e->profile_RenderTimer.length);
 
-            ImGui::End();
+
+
         }
+        ImGui::End();
+    }
 
 
-        if(toggle_goInspector){
-            ImGui::Begin("Entities Inspector");
+    int countOpen = 0;
+    if(toggle_hierarchy){
+        ImGui::Begin("Hierarchy");
+        {
 
             int i = 0;
+            int numWithNoName = 0;
             for(auto& ent: e->game->entities){
                 if(i >= entityInspectorOpenSize)
                     continue;
 
                 string name = ent->name;
-                if(name == "") name = &"Entity " [ i];
-
-                ImGui::PushID(&entityInspectorOpen);
-                ImGui::Checkbox(name.c_str(),&entityInspectorOpen[i]);
-                if(entityInspectorOpen[i]){
-                    ImGui::Begin(name.c_str());
-                    if(ent->parent != nullptr){
-                        int j = 0;
-                        for(auto& parEnt: e->game->entities){
-                            if(&parEnt == &ent)continue;
-                            if(parEnt.get() == ent->parent)break;
-                            j++;
-                        }
-                        if(j != 127) 
-                            ImGui::Checkbox(("Parent: " + ent->parent->name).c_str(),&entityInspectorOpen[j]);
-                    }
-
-                    ent->inspectorImGui();
-                    ImGui::End();
+                if(name == ""){
+                    numWithNoName++;
+                    i++;
+                    continue;
                 }
-                ImGui::PopID();
+
+
+                if(ent->parent == nullptr){
+                    ImGui::PushID(&entityInspectorOpen);
+                    if(ent->children.size() > 0){
+                        ImGui::Checkbox("",&entityInspectorOpen[i]);
+                        ImGui::SameLine();
+                        if(ImGui::TreeNode(name.c_str())){
+                            for(int j = 0; j < ent->children.size(); j++){
+
+                                int k = 0;
+                                for(auto& q: e->game->entities){
+                                    if(ent->children[j] == q.get()) break;
+                                    k++;
+                                }
+
+                                ImGui::Checkbox(ent->children[j]->name.c_str(),&entityInspectorOpen[k]);
+
+
+                            }
+                            ImGui::TreePop();
+
+                        }
+                    }else{
+                        ImGui::Checkbox(ent->name.c_str(),&entityInspectorOpen[i]);
+                    }
+                    ImGui::PopID();
+                }
+
+                if(toggle_inspector){
+                    if(entityInspectorOpen[i]){
+                        ImGui::Begin("Inspector");
+                        {
+                            if(countOpen > 0){
+                                ImGui::Separator();
+                                ImGui::Separator();
+                            }
+
+                            if(ImGui::TreeNode(name.c_str())){
+                                /* Child Toggle Parent in Inspector
+                                if(ent->parent != nullptr){
+
+                                    int k = 0;
+                                    for(auto& q: e->game->entities){
+                                        if(ent->parent == q.get()) break;
+                                        k++;
+                                    }
+
+                                    ImGui::Checkbox(("Parent: " + ent->parent->name).c_str(),&entityInspectorOpen[k]);
+                                }
+                                */
+
+                                ent->inspectorImGui();
+                                ImGui::TreePop();
+                            }
+                            countOpen++;
+                        }
+                        ImGui::End();
+                    }
+                }
                 i++;
 
+
             }
-            ImGui::End();
+            ImGui::Text("Num Entities with no name: %d", numWithNoName);
         }
-
-        arrIndex++;
-        if(arrIndex >= arrSize)
-            arrIndex = 0;
-
-        e->game->drawDebugImGui();
+        ImGui::End();
     }
+
+
+    if(toggle_inspector && countOpen == 0){
+        ImGui::Begin("Inspector");
+        ImGui::Text("Select Entities in the Hierarchy");
+        ImGui::End();
+    }
+
+
+    arrIndex++;
+    if(arrIndex >= arrSize)
+        arrIndex = 0;
+
+    e->game->drawDebugImGui();
+
 
 }
 
-//! Draws debug information in world 
-/*! calls debugdraw on entities and draws box2d debug if drawdebug and draw colliders is enabled respectively
-*/
 void DebugUI::draw(){
-
-
     if(drawDebug){
         for(auto& ent: e->game->entities){
             ent->debugDraw();
