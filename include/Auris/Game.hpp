@@ -107,13 +107,6 @@ public:
          * Loads the scene, and initialize the scene and all the enitities
          * \param scene a Scene pointer, that is the scene that should be loaded
         */
-    void loadScene(Scene* scene) {
-        scene->init();
-
-        for (auto & el : Game::entities)
-            el->init();
-    }
-
-
+    void loadScene(Scene* scene);
 };
 }

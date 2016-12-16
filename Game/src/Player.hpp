@@ -148,7 +148,7 @@ public:
                     abs(aimDirection) > 180-divider*6 ? 5 :
                                                         6;
                 string sprite = "upper_" + to_string(aim);
-                upper = spriteSheet->getSprite(sprite, this);
+                spriteSheet->setSpriteTo(upper, sprite);
             }
         }
     }
