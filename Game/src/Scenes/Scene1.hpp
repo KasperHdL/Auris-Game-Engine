@@ -16,5 +16,6 @@ public:
         game->addEntity(make_shared<Wall>(vec2(-40, 20)));
         game->addEntity(make_shared<Wall>(vec2(40, -20)));
         game->addEntity(make_shared<Wall>(vec2(40, 20)));
+        game->addEntity(make_shared<AudioPlayer>(game->camera));
     }
 }; 

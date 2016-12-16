@@ -25,7 +25,7 @@ Camera::~Camera(){
 }
 
 void Camera::updateCam(){
-    cam->lookAt(glm::vec3(pos.x,pos.y,1),glm::vec3(pos.x,pos.y,-1),up);
+    cam->lookAt(glm::vec3(pos.x,pos.y,0),glm::vec3(pos.x,pos.y,-1),up);
 }
 
 void Camera::setPos(glm::vec2 pos){
