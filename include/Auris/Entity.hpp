@@ -18,10 +18,10 @@ public:
     std::string type = "";/*!< A string value: type. The type of the entity. */
     std::string name = "";/*!< A string value: name. The name of the entity. */  
     Entity* parent = nullptr;/*!< An Entity pointer: parent. An pointer to the parent entity of this entity. */
-    std::vector<Entity*> children;/*!< An Entity pointer: child. A pointer to the parent entity of this entity.*/
+    std::vector<Entity*> children;/*!< A vector of Entity pointer: childen. A pointer to the parent entity of this entity.*/
     Transform* transform; /*!< A Transform pointer: transform. An instance of the transform. */
 
-    //! The engine contructor.
+    //! The entity contructor.
         /*!
          * Declares a new Transform.
         */
@@ -29,7 +29,7 @@ public:
         transform = new Transform(this);
     }
 
-    //! The engine destructor.
+    //! The entity destructor.
         /*!
          * Deletes the Transform pointer.
         */
@@ -39,7 +39,7 @@ public:
 
     //! Sets the parent of this entity.
         /*!
-         * \param parent The parent to set.
+         * \param parent an Entity pointer, that is the parent to set.
          */
     void setParent(Entity* parent) {
         this->parent = parent;
@@ -47,7 +47,7 @@ public:
 
     //! Adds a child to this entity.
         /*!
-         * \param child The child to add.
+         * \param child an Entity pointer, that is the child to add.
          */
     void addChild(Entity* child) {
         this->children.push_back(child);
@@ -56,7 +56,7 @@ public:
 
     //! Get the parent of this entity.
         /*!
-         * \return parent The parent of this entity.
+         * \return parent, that is the parent of this entity.
          */
     Entity* getParent() {
         return parent;
@@ -64,8 +64,8 @@ public:
 
     //! Get a child of this entity by type.
         /*!
-         * \param type The type of child.
-         * \return child The first child of this entity that matches the string parameter.
+         * \param type a string value, that is the type of child.
+         * \return Entity pointer, that is the first child of this entity that matches the string parameter.
          */
     Entity* getChildByType(std::string type){
         for (auto & child : children)
@@ -76,8 +76,8 @@ public:
 
     //! Get a child of this entity by type.
         /*!
-         * \param name The name of the child.
-         * \return child The child of this entity that matches the string parameter.
+         * \param name a string value, that is the name of the child.
+         * \return Entity pointer, that is the child of this entity that matches the string parameter.
          */
     Entity* getChildByName(std::string name) {
         for (auto & child : children)
@@ -89,42 +89,54 @@ public:
 
     //! The scriptable function updateTransform.
         /*!
-         * Updates the enitities transform according to the physics body
-         * Should not be used by the game programmer
+         * Updates the entities transform according to the physics body.
+         * Should not be used by the game programmer.
+         * Called every frame.
         */
     virtual void updateTransform(){}
 
     //! The scriptable function init.
         /*!
-         * Used by the game programmer to add initial functionality to the enitity
-         * Called upon initialization
+         * Used by the game programmer to add initial functionality to the entity.
+         * Called upon initialization.
         */
     virtual void init() {}
 
     //! The scriptable function start.
         /*!
-         * Used by the game programmer to add start functionality to the enitity
-         * Called just before first update
+         * Used by the game programmer to add start functionality to the entity.
+         * Called just before first update.
         */
     virtual void start() {}
 
-    //! The scriptable function update, taking 1 argument
+    //! The scriptable function update, taking 1 argument.
         /*!
-         * Used by the game programmer to add update functionality to the enitity
-         * Called every frame
-          \param deltaTime a float value, that is the current delta time
+         * Used by the game programmer to add update functionality to the entity.
+         * Called every frame.
+          \param deltaTime a float value, that is the current delta time.
         */
     virtual void update(float deltaTime) {}
 
     //! The scriptable function onDestruction.
         /*!
-         * Used by the game programmer to add on destruction functionality to the enitity
-         * Called when the object is destroyed
+         * Used by the game programmer to add on destruction functionality to the entity.
+         * Called when the object is destroyed.
         */
     virtual void onDestruction() {}
 
-
+    //! The scriptable function debugDraw.
+        /*!
+         * Used by the game programmer to add debugdraw functionality to the entity.
+         * Is called every frame, when the debug gui is open
+        */
     virtual void debugDraw(){}
+
+    //! The scriptable function inspectorImGui.
+        /*!
+         * Used by the game programmer to add inspector GUI functionality to the entity.
+         * Is called every frame, when the inspector gui is open
+         * The game programmer can call Entity::inspectorImGui to get Transform, Position, Scale and Rotation inspection
+        */
     virtual void inspectorImGui(){
         if(ImGui::TreeNode("Transform")){
             ImGui::DragFloat3("Position", &transform->position.x);

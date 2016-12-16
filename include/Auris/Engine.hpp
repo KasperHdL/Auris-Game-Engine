@@ -88,17 +88,17 @@ public:
 
     b2ContactListener* collisionHandler; /*!< A b2ContactListener pointer: collisionHandler. A reference to the box2d contactlistener, handling collision */
 
-    ProfilingTimer profile_InputTimer;
+    ProfilingTimer profile_InputTimer; /*!< A ProfilingTimer value: profile_InputTimer. The profile timer to handle the input loop */
 
-    ProfilingTimer profile_Entity_UpdateTimer;
+    ProfilingTimer profile_Entity_UpdateTimer; /*!< A ProfilingTimer value: profile_Entity_UpdateTimer. The profile timer to handle the entity update loop */
 
-    ProfilingTimer profile_Game_EarlyUpdateTimer;
-    ProfilingTimer profile_Game_UpdateTimer;
-    ProfilingTimer profile_Game_LateUpdateTimer;
+    ProfilingTimer profile_Game_EarlyUpdateTimer; /*!< A ProfilingTimer value: profile_Game_EarlyUpdateTimer. The profile timer to handle the game early update loop */
+    ProfilingTimer profile_Game_UpdateTimer; /*!< A ProfilingTimer value: profile_Game_UpdateTimer. The profile timer to handle the game update loop */
+    ProfilingTimer profile_Game_LateUpdateTimer; /*!< A ProfilingTimer value: profile_Game_LateUpdateTimer. The profile timer to handle the game late update loop */
 
-    ProfilingTimer profile_PhysicsTimer;
-    ProfilingTimer profile_UpdatePhysicsEntityTransformTimer;
+    ProfilingTimer profile_PhysicsTimer; /*!< A ProfilingTimer value: profile_PhysicsTimer. The profile timer to handle the physics loop */
+    ProfilingTimer profile_UpdatePhysicsEntityTransformTimer; /*!< A ProfilingTimer value: profile_UpdatePhysicsEntityTransformTimer. The profile timer to handle the physics entity transform update loop */
 
-    ProfilingTimer profile_RenderTimer;
+    ProfilingTimer profile_RenderTimer; /*!< A ProfilingTimer value: profile_RenderTimer. The profile timer to handle the render loop */
 };
 }

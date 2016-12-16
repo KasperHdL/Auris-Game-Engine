@@ -16,21 +16,27 @@ using namespace glm;
 class Light : public Entity{
     public:
 
-        //! An enum of type.
+        //! An enum of Light::Type.
         /*! That holds information about the type of light.
-         * Point og directional
+         * Point and directional
          */
         enum Type{
             Point,
             Directional,
         };
 
-        int lightNum; //!< between 0-4 maximum of four lights
-        vec3 direction;//!< only used on directional lights
-        vec3 color;//!< color of the light
-        float range; //!< range of the light, 0 means inifinite
+        int lightNum; /*!< An int value: lightNum. That is the number of the specific light (between 0-3). */
+        vec3 direction;/*!< A vec3 value: direction. That is the direction of the light (only used on directional lights) */
+        vec3 color;/*!< A vec3 value: color. That is the color of the light */
+        float range; /*!< A float value: range, that is the range of the light (0 means inifinite). */
 
-        Light(int lightNum, vec2 position = vec2(0,0), Type type = Point, bool alwaysOn = false):Entity(){
+        //! The light contructor taking 1-3 arguments.
+            /*! Initializes a light with the input arguments.
+             * \param lightNum an integer, that is the index of the light.
+             * \param position a vec2, that is the position of the light (default vec2(0,0)).
+             * \param type a Light::Type, that is the type of light (default Point).
+            */
+        Light(int lightNum, vec2 position = vec2(0,0), Type type = Point):Entity(){
             name = "Light";
 
             transform->position = vec3(position,0);
@@ -43,6 +49,10 @@ class Light : public Entity{
             range = 0;
         }
 
+        //! An update method taking 1 argument.
+            /*! Updates the light every frame, to be able to move the light.
+             * \param dt a float, that is the delta time.
+            */
         void update(float dt){
 
             SRE::SimpleRenderEngine::instance->setLight(
@@ -79,7 +89,7 @@ class Light : public Entity{
         }
 
     private:
-        Type type;
-        SRE::SimpleRenderEngine* sre;
+        Type type; /*!< A Light::Type value: type. A value to hold the type of light */
+        SRE::SimpleRenderEngine* sre; /*!< A SimpleRenderEngine pointer: sre. A reference to the SimpleRenderEngine */
 };
 }
