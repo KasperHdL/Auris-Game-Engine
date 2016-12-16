@@ -28,7 +28,7 @@ class Light : public Entity{
         vec3 direction;/*!< A vec3 value: direction. That is the direction of the light (only used on directional lights) */
         vec3 color;/*!< A vec3 value: color. That is the color of the light */
         float range; /*!< A float value: range, that is the range of the light (0 means inifinite). */
-        static int lightCount; /*!< An int value: lightNum. That is the number of the specific light (between 0-3). */
+        static int lightCount; /*!< An int value: lightCount. The total number of instances of Light*/
 
 
         //! The light contructor taking 1-3 arguments.
