@@ -71,7 +71,7 @@ private:
 
 
 public:
-    bool debug = false;/*!< A bool value: debug. Turn on or off debug */
+    bool debug_menu = false;/*!< A bool value: debug_menu. Turn on or off debug_menu */
     bool pause = false; /*!< A bool value: pause. Pause the engine (is read by the \sa Auris::Engine::run) */
     bool runOneStep = false;/*!< A bool value: runOneStep. Run one frame and pause */
     bool profiling = false;/*!< A bool value: profiling. Run profiling in engine update loop */
