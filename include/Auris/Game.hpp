@@ -16,7 +16,7 @@ namespace Auris{
 class Game {
 
 public:
-    Auris::Camera* camera; /*!< An Auris::Camera pointer. A reference to a camera, can be used to control the game camera. */
+    static Auris::Camera* camera; /*!< An Auris::Camera pointer. A reference to a camera, can be used to control the game camera. */
 
     //! The scriptable function init.
         /*!
@@ -93,17 +93,14 @@ public:
         */
     virtual void imGUI(){}
 
-    std::vector<std::shared_ptr<Entity>> entities; /*!< A vector value: entities, of shared pointers of Entity instances. Holds all entities of the game. */
+    static std::vector<std::shared_ptr<Entity>> entities; /*!< A vector value: entities, of shared pointers of Entity instances. Holds all entities of the game. */
 
     //! A method to add enitities to the game, taking 1 argument.
         /*!
          * Add the enity to the vector of all entities in the game
          * \param enity a shared_ptr of Entity, that is the entity that should be added to the game
         */
-    inline Entity* addEntity(std::shared_ptr<Entity> entity){
-        entities.push_back(entity);
-        return entity.get();
-    }
+    static Entity* addEntity(std::shared_ptr<Entity> entity);
 
     //! A method to load a scene, taking 1 argument.
         /*!
@@ -111,9 +108,9 @@ public:
          * \param scene a Scene pointer, that is the scene that should be loaded
         */
     void loadScene(Scene* scene) {
-        scene->init(this);
+        scene->init();
 
-        for (auto & el : entities)
+        for (auto & el : Game::entities)
             el->init();
     }
 

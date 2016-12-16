@@ -14,6 +14,6 @@ public:
          * The game programmer can use this to create new scenes in the game
          * \param game a Game Pointer. An instance of the game.
         */
-    virtual void init(Game* game) {}
+    virtual void init() {}
 };
 }

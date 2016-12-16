@@ -98,7 +98,7 @@ void DebugUI::update(float dt){
             arr_profUpdateTransform [ arrIndex] = e->profile_UpdatePhysicsEntityTransformTimer.length;
             arr_profRender          [ arrIndex] = e->profile_RenderTimer.length;
 
-            ImGui::Text("Num Entities %zu", e->game->entities.size());
+            ImGui::Text("Num Entities %zu", Game::entities.size());
             ImGui::Text("Num of Sprites Allocated %d - Max %d", e->renderSystem.spritePool.count, max_renderSprites);
 
             ImGui::Separator();
@@ -140,7 +140,7 @@ void DebugUI::update(float dt){
 
             int i = 0;
             int numWithNoName = 0;
-            for(auto& ent: e->game->entities){
+            for(auto& ent: Game::entities){
                 if(i >= entityInspectorOpenSize)
                     continue;
 
@@ -161,7 +161,7 @@ void DebugUI::update(float dt){
                             for(int j = 0; j < ent->children.size(); j++){
 
                                 int k = 0;
-                                for(auto& q: e->game->entities){
+                                for(auto& q: Game::entities){
                                     if(ent->children[j] == q.get()) break;
                                     k++;
                                 }

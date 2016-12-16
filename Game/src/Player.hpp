@@ -70,20 +70,23 @@ public:
         RenderSystem::deleteSprite(upper);
     }
 
+    void setController(int controllerID){
+        this->controller = controllerID;
+    }
+
     void die() {
         alive = false;
         setFixedRotation(false);
         setGravity(0);
     }
 
-    void setController(int controllerID){
-        this->controller = controllerID;
+    void fireBullet() {
+        //Bullet* bullet = new Bullet;
+        //Game::addEntity(make_shared)
     }
 
     void init() {
-        movementSpeed = 1000.0f;
-        jumpHeight = 8000.0f;
-        maxSpeed = 30.0f;
+
 	}
 
     void update(float dt){
@@ -97,20 +100,22 @@ public:
             vec2 rightStick = Input::getControllerRightStickState(controller);
             rightStick = vec2(rightStick.x / 32767, rightStick.y / 32767);
 
+            int rightTrigger = Input::getControllerAxisState(controller, SDL_CONTROLLER_AXIS_TRIGGERRIGHT);
+
             if ((Input::getControllerButtonState(controller, SDL_CONTROLLER_BUTTON_LEFTSHOULDER) | Input::getControllerButtonState(controller, SDL_CONTROLLER_BUTTON_RIGHTSHOULDER)) & canJump) {
                 applyForce(vec2(0, 1) * jumpHeight, true);
                 canJump = false;
             }
 
             if (leftStickX < 0)  {
-                anim->run(lower, dt);
+                anim->run(lower, leftStickX*dt);
                 //transform->scale = vec2(-1, 1);
                 if (getLinearVelocity()[0] > -maxSpeed)
                     applyForce(vec2(1, 0) * leftStickX * movementSpeed, true);
             }
 
             if (leftStickX > 0)  {
-                anim->run(lower, dt);
+                anim->run(lower, leftStickX*dt);
                 //transform->scale = vec2(1, 1);
                 if (getLinearVelocity()[0] < maxSpeed)
                     applyForce(vec2(1, 0) * leftStickX * movementSpeed, true);
@@ -118,11 +123,29 @@ public:
 
             if (rightStick != vec2(0, 0)) {
                 aimDirection = (float)(atan2(rightStick.x, rightStick.y));
-                //getChildByType("crosshair")->transform->position = rightStick*crosshairOffset;
+                aimDirection = degrees(aimDirection);
+                getChildByType("crosshair")->transform->position = vec3(rightStick*crosshairOffset, 0);
                 aiming = true;
             }
+            else
+                aiming = false;
 
-            //if ();
+            if (rightTrigger > 16000) {
+                fireBullet();
+            }
+
+            if (aiming) {
+                float divider = 180/7;
+                int aim = abs(aimDirection) > 180-divider ? 0 :
+                    abs(aimDirection) > 180-divider*2 ? 1 :
+                    abs(aimDirection) > 180-divider*3 ? 2 :
+                    abs(aimDirection) > 180-divider*4 ? 3 :
+                    abs(aimDirection) > 180-divider*5 ? 4 :
+                    abs(aimDirection) > 180-divider*6 ? 5 :
+                                                        6;
+                string sprite = "upper_" + to_string(aim);
+                upper = spriteSheet->getSprite(sprite, this);
+            }
         }
     }
 

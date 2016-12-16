@@ -25,7 +25,7 @@ class DemoGame : public Auris::Game {
     int soundVolume = 128;
 
     void init() {
-        camera = new Auris::Camera(1280, 720);
+        Game::camera = new Auris::Camera(1280, 720);
         loadScene(&scene1);
         Auris::Engine::world->SetGravity(b2Vec2(0, -9.8));
 
@@ -82,17 +82,17 @@ class DemoGame : public Auris::Game {
     void addPlayer(int i, int controllerID){
 
         vec2 pos = i == 0 ? vec2(-40, -10) : i == 1 ? vec2(-40, 30) : i == 2 ? vec2(40, -10) : i == 3 ? vec2(40, 30): vec2(0, 0);
-        auto player = (Player*) addEntity(make_shared<Player>(pos));
+        auto player = (Player*) Game::addEntity(make_shared<Player>(pos));
         player->setController(controllerID);
         player->name = player->type + to_string(controllerID);
 
-        auto audio = (AudioPlayer*) addEntity(make_shared<AudioPlayer>(this->camera, 1));
-        audio->name = audio->type + to_string(controllerID);
+        //auto audio = (AudioPlayer*) addEntity(make_shared<AudioPlayer>(Game::camera, 1));
+        //audio->name = audio->type + to_string(controllerID);
 
-        auto crosshair = (Crosshair*) addEntity(make_shared<Crosshair>());
+        auto crosshair = (Crosshair*) Game::addEntity(make_shared<Crosshair>());
         crosshair->name = crosshair->type + to_string(controllerID);
 
-        player->addChild(audio);
+        //player->addChild(audio);
         player->addChild(crosshair);
 
         players.push_back(player);
