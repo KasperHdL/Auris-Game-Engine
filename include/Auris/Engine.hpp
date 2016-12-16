@@ -102,5 +102,6 @@ public:
     ProfilingTimer profile_UpdatePhysicsEntityTransformTimer; /*!< A ProfilingTimer value: profile_UpdatePhysicsEntityTransformTimer. The profile timer to handle the physics entity transform update loop */
 
     ProfilingTimer profile_RenderTimer; /*!< A ProfilingTimer value: profile_RenderTimer. The profile timer to handle the render loop */
+    ProfilingTimer profile_SwapTimer; /*!< A ProfilingTimer value: profile_RenderTimer. The profile timer to handle the render loop */
 };
 }

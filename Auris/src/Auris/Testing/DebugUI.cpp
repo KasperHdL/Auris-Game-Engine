@@ -89,6 +89,7 @@ void DebugUI::update(float dt){
             sum_physics         -= arr_profPhysics         [ arrIndex];
             sum_updateTransform -= arr_profUpdateTransform [ arrIndex];
             sum_render          -= arr_profRender          [ arrIndex];
+            sum_swap            -= arr_profSwap            [ arrIndex];
 
             arr_deltaTime           [ arrIndex] = dt;
             arr_physMem             [ arrIndex] = memLeakDet.getPhysMemUsedByMe();
@@ -101,6 +102,7 @@ void DebugUI::update(float dt){
             arr_profPhysics         [ arrIndex] = e->profile_PhysicsTimer.length;
             arr_profUpdateTransform [ arrIndex] = e->profile_UpdatePhysicsEntityTransformTimer.length;
             arr_profRender          [ arrIndex] = e->profile_RenderTimer.length;
+            arr_profSwap            [ arrIndex] = e->profile_SwapTimer.length;
 
 
             sum_dt              += arr_deltaTime           [ arrIndex];
@@ -112,6 +114,7 @@ void DebugUI::update(float dt){
             sum_physics         += arr_profPhysics         [ arrIndex];
             sum_updateTransform += arr_profUpdateTransform [ arrIndex];
             sum_render          += arr_profRender          [ arrIndex];
+            sum_swap            += arr_profSwap            [ arrIndex];
 
 
             ImGui::Text("Physical Memory in MB");
@@ -170,6 +173,12 @@ void DebugUI::update(float dt){
             ImGui::Text("Render time in ms");
             ImGui::PlotLines("", arr_profRender, arrSize);
             ImGui::Text("%f \t- Avg: %f", 1000 * e->profile_RenderTimer.length, (1000 * sum_render) / (double)arrSize);
+
+            ImGui::Separator();
+            ImGui::Text("SwapWindow time in ms");
+            ImGui::PlotLines("", arr_profSwap, arrSize);
+            ImGui::Text("%f \t- Avg: %f", 1000 * e->profile_SwapTimer.length, (1000 * sum_swap) / (double)arrSize);
+
 
 
 
