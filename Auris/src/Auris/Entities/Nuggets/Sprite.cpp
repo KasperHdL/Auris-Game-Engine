@@ -14,6 +14,6 @@ void Sprite::draw(){
     if(material.normalMap != nullptr)
         material.shader->set("normalMap", material.normalMap, 1);
 
-    material.shader->set("tex",material.texture, 0);
+    material.shader->set("tex", material.texture, 0);
     SimpleRenderEngine::instance->draw(mesh, entity->transform->getGlobal(offset), material.shader);
 }

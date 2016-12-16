@@ -36,21 +36,6 @@ public:
         */
     ~Sprite();
 
-    //! The sprite constructor, taking 1 argument.
-        /*!
-         * Initializes the mesh and the material of the sprite to default values.
-         * \param entity an Entity pointer, that is the entity the sprite is associated with.
-        */
-    Sprite(Entity* entity):Nugget(entity){
-        mesh = Mesh::createQuad();
-
-        material.texture = SRE::Texture::getWhiteTexture();
-        material.normalMap = nullptr;
-        material.color = glm::vec4(1,1,1,1);
-        material.shader = Shader::getUnlitSprite();
-
-    }
-
     //! The overloaded sprite constructor, taking 1-4 arguments.
         /*!
          * Initializes the mesh and the material of the sprite to values inputted.

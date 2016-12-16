@@ -22,13 +22,8 @@ void RenderSystem::update(float dt){
 
 }
 
-Sprite* RenderSystem::getSprite(Entity* entity, SRE::Texture* texture, SRE::Texture* normalMap, Auris::Mesh* mesh){
+Sprite* RenderSystem::getSprite(Entity* entity, SRE::Texture* texture, Auris::Mesh* mesh, SRE::Texture* normalMap){
     Sprite* s = new (RenderSystem::spritePool.create()) Sprite(entity, texture, normalMap, mesh);
-    return s;
-}
-
-Sprite* RenderSystem::getSprite(Entity* entity, SRE::Texture* texture, Auris::Mesh* mesh){
-    Sprite* s = new (RenderSystem::spritePool.create()) Sprite(entity, texture, mesh);
     return s;
 }
 

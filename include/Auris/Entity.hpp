@@ -51,6 +51,7 @@ public:
          */
     void addChild(Entity* child) {
         this->children.push_back(child);
+        child->parent = this;
     }
 
     //! Get the parent of this entity.

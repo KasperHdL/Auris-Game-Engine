@@ -25,5 +25,6 @@ public:
         type = "crosshair";
 
         sprite = RenderSystem::getSprite(this);
+        transform->scale *= 2;
     }
 };

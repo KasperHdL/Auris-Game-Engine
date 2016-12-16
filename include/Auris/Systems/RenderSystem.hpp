@@ -64,17 +64,7 @@ public:
          * \param mesh a Mesh pointer. The mesh of the sprite (default is no mesh).
          * return Sprite. The sprite created.
         */
-    static Sprite* getSprite(Entity* entity, SRE::Texture* texture = nullptr, SRE::Texture* normalMap = nullptr, Auris::Mesh* mesh = nullptr);
-
-    //! A static getSrite overload method, taking 1-3 arguments.
-        /*!
-         * Creates a new sprite and returns it
-         * \param entity an Entity pointer. The Entity that needs the sprite.
-         * \param texture a Texture pointer. The texture of the sprite (default is no texture).
-         * \param mesh a Mesh pointer. The mesh of the sprite (default is no mesh).
-         * return Sprite. The sprite created.
-        */
-    static Sprite* getSprite(Entity* entity, SRE::Texture* texture = nullptr, Auris::Mesh* mesh = nullptr);
+    static Sprite* getSprite(Entity* entity, SRE::Texture* texture = nullptr,Auris::Mesh* mesh = nullptr,SRE::Texture* normalMap = nullptr);
 
     //! A static deleteSprite method, taking 1 argument.
         /*!
