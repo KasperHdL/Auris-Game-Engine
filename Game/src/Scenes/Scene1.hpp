@@ -11,7 +11,7 @@
 class Scene1 : public Auris::Scene {
 public: 
     void init(Game* game) { 
-        game->addEntity(make_shared<Auris::Light>(0,vec2(20,20)));
+        game->addEntity(make_shared<Auris::Light>(vec2(20,20)));
         game->addEntity(make_shared<Wall>(vec2(-40, -20)));
         game->addEntity(make_shared<Wall>(vec2(-40, 20)));
         game->addEntity(make_shared<Wall>(vec2(40, -20)));
