@@ -138,7 +138,7 @@ void Engine::run(SDL_Window* window){
 
             // entities UPDATE
             if(debugUI->profiling) profile_Entity_UpdateTimer.start();
-            for(auto& el: Game::entities)
+            for(auto& el: game->entities)
                 el->update(deltaTimeSec);
             if(debugUI->profiling) profile_Entity_UpdateTimer.stop();
 
@@ -148,7 +148,7 @@ void Engine::run(SDL_Window* window){
 
 
             if(debugUI->profiling) profile_UpdatePhysicsEntityTransformTimer.start();
-            for(auto& el: Game::entities)
+            for(auto& el: game->entities)
                 el->updateTransform();
             if(debugUI->profiling) profile_UpdatePhysicsEntityTransformTimer.stop();
         }

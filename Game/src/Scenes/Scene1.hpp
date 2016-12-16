@@ -11,11 +11,11 @@
 class Scene1 : public Auris::Scene {
 public: 
     void init() {
-        Game::addEntity(make_shared<Auris::Light>(vec2(20,20)));
-        Game::addEntity(make_shared<Wall>(vec2(-40, -20)));
-        Game::addEntity(make_shared<Wall>(vec2(-40, 20)));
-        Game::addEntity(make_shared<Wall>(vec2(40, -20)));
-        Game::addEntity(make_shared<Wall>(vec2(40, 20)));
-        Game::addEntity(make_shared<AudioPlayer>(Game::camera, 1, 1, 1, 30, 20));
+        Game::instance->addEntity(make_shared<Auris::Light>(vec2(20,20)));
+        Game::instance->addEntity(make_shared<Wall>(vec2(-40, -20)));
+        Game::instance->addEntity(make_shared<Wall>(vec2(-40, 20)));
+        Game::instance->addEntity(make_shared<Wall>(vec2(40, -20)));
+        Game::instance->addEntity(make_shared<Wall>(vec2(40, 20)));
+        Game::instance->addEntity(make_shared<AudioPlayer>(Game::instance->camera, 1, 1, 1, 30, 20));
     }
 }; 
