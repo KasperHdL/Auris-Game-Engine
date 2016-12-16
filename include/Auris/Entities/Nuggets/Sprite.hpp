@@ -49,6 +49,7 @@ public:
             texture = SRE::Texture::getWhiteTexture();
 
         setProperties(texture, glm::vec4(1), normalMap, mesh);
+
     }
 
     //! The overloaded sprite constructor, taking 1-3 arguments.
