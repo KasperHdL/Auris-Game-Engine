@@ -8,7 +8,9 @@ using namespace Auris;
 class Bullet : public PhysicsEntity {
 public:
     int damage = 10;
-    float movementSpeed = 10;
+
+    vec2 direction = vec2(0,0);
+    float speed = 10;
 
     Sprite* sprite;
 
@@ -30,7 +32,11 @@ public:
     }
 
     void update(float dt) {
-        applyForce(vec2(1,0) * movementSpeed, true);
+        applyForce(direction*speed, true);
+    }
+
+    void OnCollisionEnter(PhysicsEntity* other) {
+        Game::instance->destroyEntity(this);
     }
 
     //void

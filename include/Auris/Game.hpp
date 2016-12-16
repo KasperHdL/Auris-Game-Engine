@@ -97,6 +97,7 @@ public:
     virtual void imGUI(){}
 
     std::vector<std::shared_ptr<Entity>> entities; /*!< A vector value: entities, of shared pointers of Entity instances. Holds all entities of the game. */
+    std::vector<int> destroyEntities;
 
     //! A method to add enitities to the game, taking 1 argument.
         /*!
@@ -122,17 +123,21 @@ public:
 
     //! A method to destroy an entity, taking 1 argument.
         /*!
-         * Loops through the static vector of entities in the game and removes the entity and its children if found.
+         * Loops through the static vector of entities in the game and marks
+         * the entity and its children for destruction. Entities marked
+         * for destructed are removed in the last call of the Engine::run loop.
          * \param entity an Entity pointer, the entity to be deleted.
         */
     void destroyEntity(Entity* entity) {
         int i = 0;
-        for (auto & element : Game::instance->entities)
-            if (element.get() == entity)
+        for (auto & element : entities) {
+            if (element.get() == entity) {
+                destroyEntities.push_back(i);
                 for (auto & child : element->children)
                     destroyEntity(child);
-                Game::instance->entities.erase(Game::instance->entities.begin() + i);
-        i++;
+            }
+            i++;
+        }
     }
 };
 }

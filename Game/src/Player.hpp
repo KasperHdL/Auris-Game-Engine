@@ -84,9 +84,9 @@ public:
     }
 
     void fireBullet(float rotation, vec2 direction) {
-        Bullet* bullet = (Bullet*) Game::instance->addEntity(make_shared<Bullet>());
+        auto bullet = (Bullet*) Game::instance->addEntity(make_shared<Bullet>());
         bullet->setRotation(rotation);
-        bullet->applyForce(direction*bullet->movementSpeed);
+        bullet->direction = direction;
     }
 
     void init() {

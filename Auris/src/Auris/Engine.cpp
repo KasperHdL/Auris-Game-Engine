@@ -168,6 +168,17 @@ void Engine::run(SDL_Window* window){
         ImGui::Render();
 
         sre->swapWindow();
+
+        std::sort(Game::instance->destroyEntities.begin(),Game::instance->destroyEntities.end());
+
+        int index = 0;
+        while (Game::instance->destroyEntities.size() > 0) {
+            index = Game::instance->destroyEntities.back();
+            cout << "index: " << index << endl;
+            cout << "destroyEntities: " << Game::instance->destroyEntities[index] << endl;
+            Game::instance->entities.erase(Game::instance->entities.begin() + index);
+            Game::instance->destroyEntities.pop_back();
+        }
     }
 }
 
