@@ -153,7 +153,7 @@ void DebugUI::update(float dt){
 
 
                 if(ent->parent == nullptr){
-                    ImGui::PushID(&entityInspectorOpen);
+                    ImGui::PushID(&entityInspectorOpen[i]);
                     if(ent->children.size() > 0){
                         ImGui::Checkbox("",&entityInspectorOpen[i]);
                         ImGui::SameLine();
