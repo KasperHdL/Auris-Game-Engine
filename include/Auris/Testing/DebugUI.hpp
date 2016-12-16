@@ -53,7 +53,8 @@ private:
 
 
     //Toggles
-    bool toggle_goInspector = false;
+    bool toggle_inspector = false;
+    bool toggle_hierarchy = false;
     bool toggle_cameraControls = false;
 
     enum InspectorMode{

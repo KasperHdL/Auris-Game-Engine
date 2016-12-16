@@ -67,7 +67,8 @@ void DebugUI::update(float dt){
         ImGui::Checkbox("Call DrawDebug on Entities(F7)", &drawDebug);
 
         ImGui::Separator();
-        ImGui::Checkbox("Toggle Entity inspector", &toggle_goInspector);
+        ImGui::Checkbox("Toggle Hierarchy", &toggle_hierarchy);
+        ImGui::Checkbox("Toggle Inspector", &toggle_inspector);
         ImGui::Checkbox("Toggle Profiling inspector", &profiling);
 
         ImGui::Separator();
@@ -135,8 +136,9 @@ void DebugUI::update(float dt){
         }
 
 
-        if(toggle_goInspector){
-            ImGui::Begin("Entities Inspector");
+        int countOpen = 0;
+        if(toggle_hierarchy){
+            ImGui::Begin("Hierarchy");
 
             int i = 0;
             int numWithNoName = 0;
@@ -179,25 +181,35 @@ void DebugUI::update(float dt){
                     ImGui::PopID();
                 }
 
-                if(entityInspectorOpen[i]){
-                    ImGui::PushID(&entityInspectorOpen);
-                    ImGui::Begin(name.c_str());
-                    if(ent->parent != nullptr){
-
-                        int k = 0;
-                        for(auto& q: e->game->entities){
-                            if(ent->parent == q.get()) break;
-                            k++;
+                if(toggle_inspector){
+                    if(entityInspectorOpen[i]){
+                        ImGui::Begin("Inspector");
+                        if(countOpen > 0){
+                            ImGui::Separator();
+                            ImGui::Separator();
                         }
 
-                        ImGui::Checkbox(("Parent: " + ent->parent->name).c_str(),&entityInspectorOpen[k]);
-                    }
+                        if(ImGui::TreeNode(name.c_str())){
+                            if(ent->parent != nullptr){
 
-                    ent->inspectorImGui();
-                    ImGui::End();
-                    ImGui::PopID();
+                                int k = 0;
+                                for(auto& q: e->game->entities){
+                                    if(ent->parent == q.get()) break;
+                                    k++;
+                                }
+
+                                ImGui::Checkbox(("Parent: " + ent->parent->name).c_str(),&entityInspectorOpen[k]);
+                            }
+
+                            ent->inspectorImGui();
+                            ImGui::TreePop();
+                        }
+                        countOpen++;
+                        ImGui::End();
+                    }
                 }
                 i++;
+
 
             }
 
@@ -207,6 +219,13 @@ void DebugUI::update(float dt){
 
             ImGui::End();
         }
+
+        if(toggle_inspector && countOpen == 0){
+            ImGui::Begin("Inspector");
+            ImGui::Text("Select Entities in the Hierarchy");
+            ImGui::End();
+        }
+
 
         arrIndex++;
         if(arrIndex >= arrSize)
