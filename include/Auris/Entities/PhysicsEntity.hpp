@@ -50,7 +50,15 @@ namespace Auris{
             */
         void setFixedRotation(bool flag) { 
             body->SetFixedRotation(flag); 
-        } 
+        }
+
+        //! The method setRotation, taking 1 argument.
+            /*! set the rotation of the object in box2D
+             * \param rotation a float value, that controls the rotation.
+            */
+        void setRotation(float rotation) {
+            body->SetTransform(body->GetPosition(), rotation);
+        }
      
         //! The method setAwake, taking 1 argument.
             /*! sets if the box2D body should be active

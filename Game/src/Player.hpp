@@ -84,9 +84,10 @@ public:
         setGravity(0);
     }
 
-    void fireBullet() {
-        //Bullet* bullet = Game::instance->addEntity(make_shared<Bullet>())
-        //Game::instance::addEntity(make_shared<Bullet>(aimDirection, this))
+    void fireBullet(float rotation, vec2 direction) {
+        Bullet* bullet = (Bullet*) Game::instance->addEntity(make_shared<Bullet>());
+        bullet->setRotation(rotation);
+        bullet->applyForce(direction*bullet->movementSpeed);
     }
 
     void init() {
@@ -135,7 +136,7 @@ public:
                 aiming = false;
 
             if (rightTrigger > 16000) {
-                fireBullet();
+                fireBullet(aimDirection, rightStick);
             }
 
             if (aiming) {

@@ -119,7 +119,13 @@ public:
         scene->init();
     }
 
-    bool destroyEntity(Entity* entity) {
+
+    //! A method to destroy an entity, taking 1 argument.
+        /*!
+         * Loops through the static vector of entities in the game and removes the entity and its children if found.
+         * \param entity an Entity pointer, the entity to be deleted.
+        */
+    void destroyEntity(Entity* entity) {
         int i = 0;
         for (auto & element : Game::instance->entities)
             if (element.get() == entity)

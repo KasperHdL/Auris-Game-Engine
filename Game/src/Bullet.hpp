@@ -15,7 +15,7 @@ public:
     Bullet(vec2 position = vec2(0, 0)) : PhysicsEntity(){
         type = "Bullet";
 
-        sprite = Auris::RenderSystem::getSprite(this);
+        //sprite = Auris::RenderSystem::getSprite(this);
 
         b2PolygonShape shape;
         shape.SetAsBox(0.5f * Constants::PIXELS_TO_METERS, 0.1f * Constants::PIXELS_TO_METERS);

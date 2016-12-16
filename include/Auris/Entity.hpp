@@ -42,7 +42,7 @@ public:
          * \param parent an Entity pointer, that is the parent to set.
          */
     void setParent(Entity* parent) {
-        this->parent = parent;
+        parent->addChild(this);
     }
 
     //! Adds a child to this entity.
