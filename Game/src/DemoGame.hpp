@@ -40,8 +40,8 @@ class DemoGame : public Auris::Game {
     }
 
     void update(float dt){
-        if (Input::keyDown(SDL_SCANCODE_RETURN))
-            addPlayer(0,0);
+//        if (Input::keyDown(SDL_SCANCODE_RETURN))
+//            addPlayer(0,0);
 //            audioPlayer.playSound(pistolShot);
 
           //cout << id1 << ": " << Input::getControllerAxisState(id1,SDL_CONTROLLER_AXIS_TRIGGERRIGHT) << endl;

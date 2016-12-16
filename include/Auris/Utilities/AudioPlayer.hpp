@@ -3,6 +3,7 @@
 #include "Auris/Entity.hpp"
 #include "Auris/Entities/Camera.hpp"
 #include "Auris/Utilities/AssetManager.hpp"
+#include "Auris/Systems/Input.hpp"
 #include <SDL2/SDL_mixer.h>
 
 using namespace Auris;
@@ -16,54 +17,58 @@ private:
 
     int channel;
 
-    int differenceX = 0;
-    int differenceY = 0;
+    int deltaDistanceX = 0;
+    int deltaDistanceY = 0;
     int pan = 127;
-    int distance = 0;
+    int fade = 0;
 
-    float fadeX = 1.0f;
-    float fadeY = 1.0f;
+    float fadeScaleX = 1.0f;
+    float fadeScaleY = 1.0f;
+    float fadeDelayX = 1.0f;
+    float fadeDelayY = 1.0f;
 
     Auris::Camera* listener;
 
 public:
-    AudioPlayer(Auris::Camera* listener = nullptr, int channel = -1, float fadeX = 1.0f, float fadeY = 1.0f) {
-        type = "AudioListener";
+    AudioPlayer(Auris::Camera* listener = nullptr, int channel = -1, float fadeScaleX = 1.0f, float fadeScaleY = 1.0f, int fadeDelayX = 0, int fadeDelayY = 0) {
+        type = "AudioPlayer";
+
         if (listener != nullptr)
             this->listener = listener;
-        this->channel = channel;
-        this->fadeX = fadeX;
-        this->fadeY = fadeY;
-    }
 
-    void init() {
+        this->channel = channel;
+
+        this->fadeScaleX = fadeScaleX;
+        this->fadeScaleY = fadeScaleY;
+
+        this->fadeDelayX = fadeDelayX;
+        this->fadeDelayY = fadeDelayY;
     }
 
     //! Sets the pan and master volume according to the relative distance between this AudioPlayer and its listener
     void update(float deltaTime) {
         if (listener != nullptr) {
-            differenceX = 127 - (transform->position.x - listener->getPos().x)/(listener->getWidth()/254);
-            differenceY = 127 - (transform->position.y - listener->getPos().y)/(listener->getHeight()/254);
-            pan = differenceX < 0 ? 0: differenceX > 254 ? 254 : differenceX;
+            deltaDistanceX = 127 - (transform->position.x - listener->getPos().x)/(listener->getWidth()/254);
+            deltaDistanceY = 127 - (transform->position.y - listener->getPos().y)/(listener->getHeight()/254);
+            pan = deltaDistanceX < 0 ? 0: deltaDistanceX > 254 ? 254 : deltaDistanceX;
             Mix_SetPanning(channel, pan, 254-pan);
 
-            distance = 0;
+            fade = 0; // 0 is near, 255 is far
 
-            if (differenceX < 100)
-                distance += (100 - differenceX)*fadeX;
-            else if (differenceX > 154)
-                distance += (differenceX - 154)*fadeX;
+            if (deltaDistanceX < (127 - fadeDelayX))
+                fade += ((127 - fadeDelayX) - deltaDistanceX)*fadeScaleX;
+            else if (deltaDistanceX > (127 + fadeDelayX))
+                fade += (deltaDistanceX - (127 + fadeDelayX))*fadeScaleX;
 
-            if (differenceY < 80)
-                distance += (80 - differenceY)*fadeY;
-            else if (differenceY > 174)
-                distance += (differenceY - 174)*fadeY;
+            if (deltaDistanceY < (127 - fadeDelayY))
+                fade += ((127 - fadeDelayY) - deltaDistanceY)*fadeScaleY;
+            else if (deltaDistanceY > (127 + fadeDelayY))
+                fade += (deltaDistanceY - (127 + fadeDelayY))*fadeScaleY;
 
-            distance = distance > 255 ? 255 : distance;
+            fade = fade > 255 ? 255 : fade;
 
-            Mix_SetDistance(channel, distance);
+            Mix_SetDistance(channel, fade);
         }
-
     }
 
     //! Adds music to this AudioPlayer.
@@ -74,7 +79,7 @@ public:
      * \sa addSound()
      * \sa AssetManager::getMusic()
      */
-    int addMusic(Mix_Music* mixMusic, int volume) {
+    int addMusic(Mix_Music* mixMusic, int volume = 128) {
         music.push_back(mixMusic);
 
         Mix_VolumeMusic(volume);
@@ -89,7 +94,7 @@ public:
      * \sa addMusic()
      * \sa AssetManager::getSound()
      */
-    int addSound(Mix_Chunk* mixChunk, int volume) {
+    int addSound(Mix_Chunk* mixChunk, int volume = 128) {
         sounds.push_back(mixChunk);
 
         Mix_VolumeChunk(sounds[sounds.size()-1], volume);
@@ -185,6 +190,7 @@ public:
         float scale = audioIconScale;
         vec2 p = transform->position;
 
+        // Icon
         SRE::Debug::setColor(vec4(1,1,1,1));
         SRE::Debug::drawLine(vec3(p.x - scale, p.y + scale,0), vec3(p.x, p.y + scale,0));
         SRE::Debug::drawLine(vec3(p.x, p.y + scale,0), vec3(p.x + scale, p.y + scale*2,0));
@@ -193,9 +199,25 @@ public:
         SRE::Debug::drawLine(vec3(p.x , p.y - scale,0), vec3(p.x - scale, p.y - scale,0));
         SRE::Debug::drawLine(vec3(p.x - scale, p.y - scale,0), vec3(p.x - scale, p.y + scale,0));
 
-        //SRE::Debug::setColor(vec4(1,0,0,1));
-        SRE::Debug::drawLine(vec3(p.x, p.y,0), vec3(p.x + fadeX * 255, p.y,0));
-        SRE::Debug::drawLine(vec3(p.x, p.y,0), vec3(p.x, p.y + fadeY * 255,0));
+        SRE::Debug::setColor(vec4(1,0,0,1));
+
+        if (drawAudioRange) {
+            // Range
+            float minX = p.x - (fadeScaleX * listener->getWidth()/2) - fadeDelayX*Constants::METERS_TO_PIXELS/2;
+            float maxX = p.x + (fadeScaleX * listener->getWidth()/2) + fadeDelayX*Constants::METERS_TO_PIXELS/2;
+            float minY = p.y - (fadeScaleY * listener->getHeight()/2) - fadeDelayY*Constants::METERS_TO_PIXELS/2;
+            float maxY = p.y + (fadeScaleY * listener->getHeight()/2) + fadeDelayY*Constants::METERS_TO_PIXELS/2;
+
+            float line_len = 30;
+
+            SRE::Debug::drawLine(vec3(minX, p.y,0), vec3(maxX, p.y,0));
+            SRE::Debug::drawLine(vec3(p.x, minY,0), vec3(p.x, maxY, 0));
+
+            SRE::Debug::drawLine(vec3(minX, p.y - line_len, 0), vec3(minX, p.y + line_len, 0));
+            SRE::Debug::drawLine(vec3(maxX, p.y - line_len, 0), vec3(maxX, p.y + line_len, 0));
+            SRE::Debug::drawLine(vec3(p.x - line_len, minY, 0), vec3(p.x + line_len, minY, 0));
+            SRE::Debug::drawLine(vec3(p.x - line_len, maxY, 0), vec3(p.x + line_len, maxY, 0));
+        }
 
     }
 
@@ -204,8 +226,8 @@ public:
         ImGui::Separator();
 
         ImGui::Text("Channel %d", channel); 
-        ImGui::Text("Distance(in Fade Units)(%d,%d)", differenceX, differenceY);
-        ImGui::Text("Current Fade: (%f,%f)", fadeX ,fadeY);
+        ImGui::Text("Distance(in Fade Units)(%d,%d)", deltaDistanceX, deltaDistanceY);
+        ImGui::Text("Current Fade: (%f,%f)", fade);
         ImGui::Text("Pan: %d", pan);
 
         ImGui::Separator();

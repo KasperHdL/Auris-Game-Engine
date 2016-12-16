@@ -101,6 +101,7 @@ public:
 
             if (leftStickX < 0)  {
                 anim->run(lower, dt);
+                transform->scale = vec2(-transform->scale.x, transform->scale.y);
                 if (getLinearVelocity()[0] > -maxSpeed)
                     applyForce(vec2(1, 0) * leftStickX * movementSpeed, true);
 //                cout << "Left stick: " << leftStick << endl;
@@ -131,7 +132,7 @@ public:
     }
 
     void OnCollisionExit(PhysicsEntity* other) {
-
+        canJump = false;
     }
 
     void inspectorImGui(){
