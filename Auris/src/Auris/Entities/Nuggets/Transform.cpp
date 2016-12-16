@@ -18,6 +18,13 @@ namespace Auris{
         return entity->parent->transform->getGlobal() * getLocal(offset);
     }
 
+    glm::vec3 Transform::getGlobalPosition(){
+        if(entity->parent == nullptr)
+            return position;
+
+        return entity->parent->transform->getGlobalPosition() + position;
+    }
+
 
 
 
