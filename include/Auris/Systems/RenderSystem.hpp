@@ -59,9 +59,9 @@ public:
         /*!
          * Creates a new sprite and returns it
          * \param entity an Entity pointer. The Entity that needs the sprite.
-         * \param texture a Texture pointer. The texture of the sprite (default is no texture).
+         * \param texture a Texture pointer. The texture of the sprite (default is white texture).
+         * \param mesh a Mesh pointer. The mesh of the sprite (default is quad mesh).
          * \param normalMap a Texture pointer. The normal map of the the sprite (default is no normal map).
-         * \param mesh a Mesh pointer. The mesh of the sprite (default is no mesh).
          * return Sprite. The sprite created.
         */
     static Sprite* getSprite(Entity* entity, SRE::Texture* texture = nullptr,Auris::Mesh* mesh = nullptr,SRE::Texture* normalMap = nullptr);
