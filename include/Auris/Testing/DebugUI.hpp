@@ -51,11 +51,8 @@ private:
 
 
     //Toggles
-    bool toggle_inspector = false;
-    bool toggle_hierarchy = false;
-    bool toggle_cameraControls = false;
-    bool toggle_goInspector = false; /*!< A bool value: toggle_goInspector. Toggle the inspector view */
-    bool toggle_cameraControls = false; /*!< A bool value: toggle_cameraControls. Toggle the camera controls */
+    bool toggle_inspector = false;/*!< A bool value: toggle_inspector. Toggle the inspector view */
+    bool toggle_hierarchy = false;/*!< A bool value: toggle_hierarchy. Toggle the hierarchy view */
 
     //! An enum of DebugUI::InspectorMode.
     /*! That holds information about in which mode of inspector.
