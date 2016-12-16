@@ -2,11 +2,6 @@
 #include "Auris/Engine.hpp"
 
 using namespace Auris;
-
-//! Startup function
-/*! Initializes the DebugUI, starts ImGui and sets required keys for debug input
- * \param engine pointer to the engine
- */
 void DebugUI::startup(Engine* engine){
     this->e = engine;
   
@@ -15,17 +10,10 @@ void DebugUI::startup(Engine* engine){
 
 }
 
-//! Shutdown the DebugUI
-/*! TODO(@Kasper) does nothing currently
- */
 void DebugUI::shutdown(){
 
 }
 
-//! update DebugUI
-/*! updates ImGui, saves deltatime and memory, 
- * \param deltatime in seconds
- */
 void DebugUI::update(float dt){
     runOneStep = false;
 
@@ -236,9 +224,6 @@ void DebugUI::update(float dt){
 
 }
 
-//! Draws debug information in world 
-/*! calls debugdraw on entities and draws box2d debug if drawdebug and draw colliders is enabled respectively
-*/
 void DebugUI::draw(){
 
 
