@@ -18,7 +18,8 @@ public:
         type = "Wall";
 
         SpriteSheet* spriteSheet = AssetManager::getSpriteSheet("MarioPacked.json");
-        sprite = spriteSheet->getSprite("brick",this);
+        sprite = RenderSystem::getSprite(this);
+        spriteSheet->setSpriteTo(sprite, "brick");
 
         b2PolygonShape shape; 
         shape.SetAsBox(sprite->getWidth() * PIXELS_TO_METERS/2, sprite->getHeight() * PIXELS_TO_METERS/2); 
