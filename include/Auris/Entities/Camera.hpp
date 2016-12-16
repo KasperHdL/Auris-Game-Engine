@@ -13,12 +13,12 @@ public:
     //! The camera constructor, taking 2-4 arguments
        /*!
         * Calculates the orthographic projection based on the arguments, and also centers the position of the camera.
-        * \param right a float, that is the width of the camera.
-        * \param top a float, that is the height of the camera.
+        * \param width a float, that is the width of the camera.
+        * \param height a float, that is the height of the camera.
         * \param near a float, that is the near clipping plane (default is -1).
         * \param far a float, that is the far clipping plane (default is 1).
        */
-    Camera(float right, float top, float near=-1, float far=1);
+    Camera(float width, float height, float near=-1, float far=1);
 
     //! The camera destructor.
         /*! Deletes the Camera pointer.

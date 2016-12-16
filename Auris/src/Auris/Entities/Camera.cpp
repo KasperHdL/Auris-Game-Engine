@@ -3,11 +3,11 @@
 
 using namespace Auris;
 
-Camera::Camera(float right, float top, float near, float far){
-    this->left = -right/2;
-    this->bottom = -top/2;
-    this->right = right/2;
-    this->top = top/2;
+Camera::Camera(float width, float height, float near, float far){
+    this->left = -width/2;
+    this->bottom = -height/2;
+    this->right = width/2;
+    this->top = height/2;
     this->near = near;
     this->far = far;
     this->pos.x = 0;
