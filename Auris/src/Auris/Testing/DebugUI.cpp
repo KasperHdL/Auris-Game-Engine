@@ -185,7 +185,7 @@ void DebugUI::update(float dt){
 
             int i = 0;
             int numWithNoName = 0;
-            for(auto& ent: Game::entities){
+            for(auto& ent: e->game->entities){
                 if(i >= entityInspectorOpenSize)
                     continue;
 
@@ -206,7 +206,7 @@ void DebugUI::update(float dt){
                             for(int j = 0; j < ent->children.size(); j++){
 
                                 int k = 0;
-                                for(auto& q: Game::entities){
+                                for(auto& q: e->game->entities){
                                     if(ent->children[j] == q.get()) break;
                                     k++;
                                 }

@@ -4,7 +4,7 @@
 
 using namespace std;
 
-DemoGame game;
+DemoGame game = DemoGame();
 
 int main(int argc, char** argv) {
     // Use windows coordinates in this example (lower left corner is (0,0), upper right corner is (width, height)

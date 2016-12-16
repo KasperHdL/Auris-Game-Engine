@@ -86,7 +86,7 @@ public:
 
     void fireBullet() {
         //Bullet* bullet = new Bullet;
-        //Game::addEntity(make_shared)
+        //Game::instance->addEntity(make_shared)
     }
 
     void init() {
