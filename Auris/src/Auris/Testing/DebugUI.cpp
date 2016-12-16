@@ -139,35 +139,72 @@ void DebugUI::update(float dt){
             ImGui::Begin("Entities Inspector");
 
             int i = 0;
+            int numWithNoName = 0;
             for(auto& ent: e->game->entities){
                 if(i >= entityInspectorOpenSize)
                     continue;
 
                 string name = ent->name;
-                if(name == "") name = &"Entity " [ i];
+                if(name == ""){
+                    numWithNoName++;
+                    i++;
+                    continue;
+                }
 
-                ImGui::PushID(&entityInspectorOpen);
-                ImGui::Checkbox(name.c_str(),&entityInspectorOpen[i]);
+
+                if(ent->parent == nullptr){
+                    ImGui::PushID(&entityInspectorOpen);
+                    if(ent->children.size() > 0){
+                        ImGui::Checkbox("",&entityInspectorOpen[i]);
+                        ImGui::SameLine();
+                        if(ImGui::TreeNode(name.c_str())){
+                            for(int j = 0; j < ent->children.size(); j++){
+
+                                int k = 0;
+                                for(auto& q: e->game->entities){
+                                    if(ent->children[j] == q.get()) break;
+                                    k++;
+                                }
+
+                                ImGui::Checkbox(ent->children[j]->name.c_str(),&entityInspectorOpen[k]);
+
+
+                            }
+                            ImGui::TreePop();
+
+                        }
+                    }else{
+                        ImGui::Checkbox(ent->name.c_str(),&entityInspectorOpen[i]);
+                    }
+                    ImGui::PopID();
+                }
+
                 if(entityInspectorOpen[i]){
+                    ImGui::PushID(&entityInspectorOpen);
                     ImGui::Begin(name.c_str());
                     if(ent->parent != nullptr){
-                        int j = 0;
-                        for(auto& parEnt: e->game->entities){
-                            if(&parEnt == &ent)continue;
-                            if(parEnt.get() == ent->parent)break;
-                            j++;
+
+                        int k = 0;
+                        for(auto& q: e->game->entities){
+                            if(ent->parent == q.get()) break;
+                            k++;
                         }
-                        if(j != 127) 
-                            ImGui::Checkbox(("Parent: " + ent->parent->name).c_str(),&entityInspectorOpen[j]);
+
+                        ImGui::Checkbox(("Parent: " + ent->parent->name).c_str(),&entityInspectorOpen[k]);
                     }
 
                     ent->inspectorImGui();
                     ImGui::End();
+                    ImGui::PopID();
                 }
-                ImGui::PopID();
                 i++;
 
             }
+
+            ImGui::Text("Num Entities with no name: %d", numWithNoName);
+
+
+
             ImGui::End();
         }
 
