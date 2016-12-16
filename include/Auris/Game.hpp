@@ -105,6 +105,7 @@ public:
         */
     Entity* addEntity(std::shared_ptr<Entity> entity){
         entities.push_back(entity);
+        entity.get()->init();
         return entity.get();
     }
 
@@ -116,10 +117,16 @@ public:
         */
     void loadScene(Scene* scene){
         scene->init();
-
-        for (auto & el : entities)
-            el->init();
     }
 
+    bool destroyEntity(Entity* entity) {
+        int i = 0;
+        for (auto & element : Game::instance->entities)
+            if (element.get() == entity)
+                for (auto & child : element->children)
+                    destroyEntity(child);
+                Game::instance->entities.erase(Game::instance->entities.begin() + i);
+        i++;
+    }
 };
 }

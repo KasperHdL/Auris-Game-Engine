@@ -40,7 +40,7 @@ public:
 
     int controller;
 
-    Player(vec2 position = vec2(0,0)):PhysicsEntity(){
+    Player(vec2 position = vec2(0,0)) : PhysicsEntity(){
         type = "Player";
 
         spriteSheet = AssetManager::getSpriteSheet("player.json", true);
@@ -84,8 +84,8 @@ public:
     }
 
     void fireBullet() {
-        //Bullet* bullet = new Bullet;
-        //Game::instance->addEntity(make_shared)
+        //Bullet* bullet = Game::instance->addEntity(make_shared<Bullet>())
+        //Game::instance::addEntity(make_shared<Bullet>(aimDirection, this))
     }
 
     void init() {
@@ -111,14 +111,14 @@ public:
             }
 
             if (leftStickX < 0)  {
-                anim->run(lower, leftStickX*dt);
+                anim->run(lower, abs(leftStickX)*dt);
                 //transform->scale = vec2(-1, 1);
                 if (getLinearVelocity()[0] > -maxSpeed)
                     applyForce(vec2(1, 0) * leftStickX * movementSpeed, true);
             }
 
             if (leftStickX > 0)  {
-                anim->run(lower, leftStickX*dt);
+                anim->run(lower, abs(leftStickX)*dt);
                 //transform->scale = vec2(1, 1);
                 if (getLinearVelocity()[0] < maxSpeed)
                     applyForce(vec2(1, 0) * leftStickX * movementSpeed, true);
@@ -144,9 +144,8 @@ public:
                     abs(aimDirection) > 180-divider*3 ? 2 :
                     abs(aimDirection) > 180-divider*4 ? 3 :
                     abs(aimDirection) > 180-divider*5 ? 4 :
-                    abs(aimDirection) > 180-divider*6 ? 5 :
-                                                        6;
-                string sprite = "upper_" + to_string(aim);
+                    abs(aimDirection) > 180-divider*6 ? 5 : 6;
+                string sprite   = "upper_" + to_string(aim);
                 spriteSheet->setSpriteTo(upper, sprite);
             }
         }
@@ -182,5 +181,4 @@ public:
         ImGui::DragFloat("movementSpeed", &movementSpeed);
 
     }
-
 };
