@@ -133,12 +133,13 @@ public:
 
             if (aiming) {
                 float divider = 180/7;
-                int aim = abs(aimDirection) > 180-divider ? 6 :
-                    abs(aimDirection) > 180-divider*2 ? 5 :
-                    abs(aimDirection) > 180-divider*3 ? 4 :
-                    abs(aimDirection) > 180-divider*4 ? 3 :
-                    abs(aimDirection) > 180-divider*5 ? 2 :
-                    abs(aimDirection) > 180-divider*6 ? 1 : 0;
+                float absDir = abs(aimDirection);
+                int aim =  absDir > 180-divider ? 6 :
+                    absDir > 180-divider*2 ? 5 :
+                    absDir > 180-divider*3 ? 4 :
+                    absDir > 180-divider*4 ? 3 :
+                    absDir > 180-divider*5 ? 2 :
+                    absDir > 180-divider*6 ? 1 : 0;
                 string sprite   = "upper_" + to_string(aim);
                 spriteSheet->setSpriteTo(upper, sprite, rightStick.x < 0);
                 if (rightTrigger > 16000) {
@@ -161,7 +162,8 @@ public:
     }
 
     void OnCollisionExit(PhysicsEntity* other) {
-        canJump = false;
+        if (other->type == "Wall")
+            canJump = false;
     }
 
     void inspectorImGui(){
