@@ -84,7 +84,7 @@ public:
     }
 
     void fireBullet(float rotation, vec2 direction) {
-        auto bullet = (Bullet*) Game::instance->addEntity(make_shared<Bullet>());
+        auto bullet = (Bullet*) Game::instance->addEntity(make_shared<Bullet>(vec2(transform->position.x, transform->position.y)));
         bullet->setRotation(rotation);
         bullet->direction = direction;
     }
@@ -134,10 +134,6 @@ public:
             else
                 aiming = false;
 
-            if (rightTrigger > 16000) {
-                fireBullet(aimDirection, rightStick);
-            }
-
             if (aiming) {
                 float divider = 180/7;
                 int aim = abs(aimDirection) > 180-divider ? 0 :
@@ -148,6 +144,9 @@ public:
                     abs(aimDirection) > 180-divider*6 ? 5 : 6;
                 string sprite   = "upper_" + to_string(aim);
                 spriteSheet->setSpriteTo(upper, sprite);
+                if (rightTrigger > 16000) {
+                    fireBullet(aimDirection, rightStick);
+                }
             }
         }
     }

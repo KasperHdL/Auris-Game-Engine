@@ -36,7 +36,7 @@ public:
     }
 
     void OnCollisionEnter(PhysicsEntity* other) {
-        Game::instance->destroyEntity(this);
+
     }
 
     //void

@@ -138,6 +138,9 @@ void Engine::run(SDL_Window* window){
 
             // entities UPDATE
             if(debugUI->profiling) profile_Entity_UpdateTimer.start();
+            for(auto& el: game->newEntities)
+                game->entities.push_back(el);
+            game->newEntities.clear();
             for(auto& el: game->entities)
                 el->update(deltaTimeSec);
             if(debugUI->profiling) profile_Entity_UpdateTimer.stop();
