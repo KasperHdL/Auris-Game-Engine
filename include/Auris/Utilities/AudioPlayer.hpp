@@ -116,9 +116,9 @@ public:
     void playSound(int index) {
         if (sounds.size()-1 >= index) {
             Mix_PlayChannel(channel, sounds[index], 0 );
-        }
-        else
+        }else{
             std::cout << "Nullptr: No sound at this index (" << index << ")." << std::endl;
+        }
     }
 
     //! Pauses music if music is playing.
@@ -173,9 +173,18 @@ public:
         sounds.clear();
     }
 
+
+    ///////////
+    // DEBUG
+    //////
+
+    bool drawAudioRange = true;
+    float audioIconScale = 10;
+
     void debugDraw(){
-        float scale = 10;
+        float scale = audioIconScale;
         vec2 p = transform->position;
+
         SRE::Debug::setColor(vec4(1,1,1,1));
         SRE::Debug::drawLine(vec3(p.x - scale, p.y + scale,0), vec3(p.x, p.y + scale,0));
         SRE::Debug::drawLine(vec3(p.x, p.y + scale,0), vec3(p.x + scale, p.y + scale*2,0));
@@ -183,6 +192,10 @@ public:
         SRE::Debug::drawLine(vec3(p.x + scale, p.y - scale * 2,0), vec3(p.x, p.y - scale,0));
         SRE::Debug::drawLine(vec3(p.x , p.y - scale,0), vec3(p.x - scale, p.y - scale,0));
         SRE::Debug::drawLine(vec3(p.x - scale, p.y - scale,0), vec3(p.x - scale, p.y + scale,0));
+
+        //SRE::Debug::setColor(vec4(1,0,0,1));
+        SRE::Debug::drawLine(vec3(p.x, p.y,0), vec3(p.x + fadeX * 255, p.y,0));
+        SRE::Debug::drawLine(vec3(p.x, p.y,0), vec3(p.x, p.y + fadeY * 255,0));
 
     }
 
@@ -192,9 +205,12 @@ public:
 
         ImGui::Text("Channel %d", channel); 
         ImGui::Text("Distance(in Fade Units)(%d,%d)", differenceX, differenceY);
-        ImGui::Text("Current Fade: %f", (fadeX + fadeY));
+        ImGui::Text("Current Fade: (%f,%f)", fadeX ,fadeY);
         ImGui::Text("Pan: %d", pan);
 
+        ImGui::Separator();
+        ImGui::Checkbox("Draw Audio Range", &drawAudioRange);
+        ImGui::DragFloat("Audio Icon Scale", &audioIconScale);
 
     }
 };

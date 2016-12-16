@@ -80,6 +80,7 @@ class DemoGame : public Auris::Game {
     }
 
     void addPlayer(int i, int controllerID){
+
         vec2 pos = i == 0 ? vec2(-40, -10) : i == 1 ? vec2(-40, 30) : i == 2 ? vec2(40, -10) : i == 3 ? vec2(40, 30): vec2(0, 0);
         auto player = (Player*) addEntity(make_shared<Player>(pos));
         player->setController(controllerID);
@@ -95,6 +96,7 @@ class DemoGame : public Auris::Game {
         player->addChild(crosshair);
 
         players.push_back(player);
+
     }
 
 

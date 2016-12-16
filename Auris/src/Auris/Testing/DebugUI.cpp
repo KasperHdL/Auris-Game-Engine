@@ -10,7 +10,7 @@ using namespace Auris;
 void DebugUI::startup(Engine* engine){
     this->e = engine;
   
-    e->world->SetDebugDraw(&debugDraw);
+    Engine::world->SetDebugDraw(&debugDraw);
     debugDraw.SetFlags(b2Draw::e_shapeBit);
 
 }
@@ -193,7 +193,7 @@ void DebugUI::draw(){
     }
 
     if(drawColliders){
-        e->world->DrawDebugData();
+        Engine::world->DrawDebugData();
     }
 
 

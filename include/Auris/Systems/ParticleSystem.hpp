@@ -78,7 +78,6 @@ public:
 
 
 
-
     ParticleSystem()
     :
         interpolation_acceleration(&interpolationPoints_acceleration), 
