@@ -139,33 +139,33 @@ double MemoryLeakDetector::getTotalVirtMem() {
 	memInfo.dwLength = sizeof(MEMORYSTATUSEX);
 	GlobalMemoryStatusEx(&memInfo);
 	double val = memInfo.ullTotalPageFile;
-	return val;
+	return val / MB_DIVIDER;
 }
 
 double MemoryLeakDetector::getVirtMemUsed() {
 	double val = memInfo.ullTotalPageFile - memInfo.ullAvailPageFile;
-	return val;
+	return val / MB_DIVIDER;
 }
 
 double MemoryLeakDetector::getVirtMemUsedByMe()
 {
 	GetProcessMemoryInfo(GetCurrentProcess(), (PROCESS_MEMORY_COUNTERS*)&pmc, sizeof(pmc));
-	return pmc.PrivateUsage;
+	return pmc.PrivateUsage / MB_DIVIDER;
 }
 
 double MemoryLeakDetector::getTotalPhysMem()
 {
-	return memInfo.ullTotalPhys;
+	return memInfo.ullTotalPhys / MB_DIVIDER;
 }
 
 double MemoryLeakDetector::getPhysMemUsed()
 {
-	return memInfo.ullTotalPhys - memInfo.ullAvailPhys;
+	return memInfo.ullTotalPhys - memInfo.ullAvailPhys / MB_DIVIDER;
 }
 
 double MemoryLeakDetector::getPhysMemUsedByMe()
 {
-	return pmc.WorkingSetSize;
+	return pmc.WorkingSetSize / MB_DIVIDER;
 }
 
 double MemoryLeakDetector::getCurrentTotalCPUValue() {
@@ -212,21 +212,21 @@ int MemoryLeakDetector::parseLine(char* line) {
 
 double MemoryLeakDetector::getTotalVirtMem() {
 
-    return totalVirtualMem;
+    return totalVirtualMem / MB_DIVIDER;
 }
 
 double MemoryLeakDetector::getVirtMemUsed() {
-    return virtualMemUsed;
+    return virtualMemUsed / MB_DIVIDER;
 }
 
 double MemoryLeakDetector::getTotalPhysMem()
 {
-    return totalPhysMem;
+    return totalPhysMem / MB_DIVIDER;
 }
 
 double MemoryLeakDetector::getPhysMemUsed()
 {
-    return physMemUsed;
+    return physMemUsed / MB_DIVIDER;
 }
 
 double MemoryLeakDetector::getVirtMemUsedByMe() { //Note: this value is in KB!
@@ -241,7 +241,7 @@ double MemoryLeakDetector::getVirtMemUsedByMe() { //Note: this value is in KB!
 		}
 	}
 	fclose(file);
-	return result;
+	return result / MB_DIVIDER;
 }
 
 //Phys. mem. used by this process
@@ -257,7 +257,7 @@ double MemoryLeakDetector::getPhysMemUsedByMe() { //Note: this value is in KB!
 		}
 	}
 	fclose(file);
-	return result;
+	return result / MB_DIVIDER;
 }
 
 // CPU currently used

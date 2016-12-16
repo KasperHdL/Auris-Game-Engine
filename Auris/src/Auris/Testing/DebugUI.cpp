@@ -80,11 +80,15 @@ void DebugUI::update(float dt){
             if(e->renderSystem.spritePool.count > max_renderSprites)
                 max_renderSprites = e->renderSystem.spritePool.count;
 
-            ImGui::PlotLines("Physical Memory", arr_physMem, arrSize);
-            ImGui::Text("Physical Memory: %f / %f", arr_physMem[arrIndex], memLeakDet.getTotalPhysMem());
-            ImGui::PlotLines("Dt", arr_virtMem, arrSize);
-            ImGui::Text("Virtual Memory: %f / %f", arr_virtMem[arrIndex], memLeakDet.getTotalVirtMem());
- 
+            sum_dt              -= arr_deltaTime           [ arrIndex];
+            sum_input           -= arr_profInput           [ arrIndex];
+            sum_entUpdate       -= arr_profEntityUpdate    [ arrIndex];
+            sum_gEarlyUpdate    -= arr_profGEarlyUpdate    [ arrIndex];
+            sum_gUpdate         -= arr_profGUpdate         [ arrIndex];
+            sum_gLateUpdate     -= arr_profGLateUpdate     [ arrIndex];
+            sum_physics         -= arr_profPhysics         [ arrIndex];
+            sum_updateTransform -= arr_profUpdateTransform [ arrIndex];
+            sum_render          -= arr_profRender          [ arrIndex];
 
             arr_deltaTime           [ arrIndex] = dt;
             arr_physMem             [ arrIndex] = memLeakDet.getPhysMemUsedByMe();
@@ -98,33 +102,74 @@ void DebugUI::update(float dt){
             arr_profUpdateTransform [ arrIndex] = e->profile_UpdatePhysicsEntityTransformTimer.length;
             arr_profRender          [ arrIndex] = e->profile_RenderTimer.length;
 
+
+            sum_dt              += arr_deltaTime           [ arrIndex];
+            sum_input           += arr_profInput           [ arrIndex];
+            sum_entUpdate       += arr_profEntityUpdate    [ arrIndex];
+            sum_gEarlyUpdate    += arr_profGEarlyUpdate    [ arrIndex];
+            sum_gUpdate         += arr_profGUpdate         [ arrIndex];
+            sum_gLateUpdate     += arr_profGLateUpdate     [ arrIndex];
+            sum_physics         += arr_profPhysics         [ arrIndex];
+            sum_updateTransform += arr_profUpdateTransform [ arrIndex];
+            sum_render          += arr_profRender          [ arrIndex];
+
+
+            ImGui::Text("Physical Memory in MB");
+            ImGui::PlotLines("", arr_physMem, arrSize);
+            ImGui::Text("%f \n/ \n%f", arr_physMem[arrIndex], memLeakDet.getTotalPhysMem());
+            ImGui::Separator();
+            ImGui::Text("Virtual Memory in MB");
+            ImGui::PlotLines("", arr_virtMem, arrSize);
+            ImGui::Text("%f \n/ \n%f", arr_virtMem[arrIndex], memLeakDet.getTotalVirtMem());
+ 
+
+
             ImGui::Text("Num Entities %zu", e->game->entities.size());
             ImGui::Text("Num of Sprites Allocated %d - Max %d", e->renderSystem.spritePool.count, max_renderSprites);
 
             ImGui::Separator();
-            ImGui::PlotLines("Dt", arr_deltaTime, arrSize);
-            ImGui::Text("Current Dt: %f - Max dt: %f",dt, max_deltaTime);
+            ImGui::Separator();
+            ImGui::Text("Delta time in ms");
+            ImGui::PlotLines("", arr_deltaTime, arrSize);
+            ImGui::Text("%f \t- Avg: %f",1000 * dt, (1000 * sum_dt) / (double)arrSize);
 
-            ImGui::PlotLines("Input", arr_profInput, arrSize);
-            ImGui::Text("Input %f", e->profile_InputTimer.length);
+            ImGui::Separator();
+            ImGui::Text("Input Update in ms");
+            ImGui::PlotLines("", arr_profInput, arrSize);
+            ImGui::Text("%f \t- Avg: %f", 1000 * e->profile_InputTimer.length, (1000 * sum_input) / (double)arrSize);
 
-            ImGui::PlotLines("Entity Update", arr_profEntityUpdate, arrSize);
-            ImGui::Text("Entity update %f", e->profile_Entity_UpdateTimer.length);
+            ImGui::Separator();
+            ImGui::Text("Entity Update in ms");
+            ImGui::PlotLines("", arr_profEntityUpdate, arrSize);
+            ImGui::Text("%f \t- Avg: %f", 1000 * e->profile_Entity_UpdateTimer.length, (1000 * sum_entUpdate) / (double)arrSize);
 
-            ImGui::PlotLines("Game Early Update", arr_profGEarlyUpdate, arrSize);
-            ImGui::Text("Game early update %f", e->profile_Game_EarlyUpdateTimer.length);
-            ImGui::PlotLines("Game Update", arr_profGUpdate, arrSize);
-            ImGui::Text("Game update %f", e->profile_Game_UpdateTimer.length);
-            ImGui::PlotLines("Game Late Update", arr_profGLateUpdate, arrSize);
-            ImGui::Text("Game late update %f", e->profile_Game_LateUpdateTimer.length);
+            ImGui::Separator();
+            ImGui::Text("Game Early Update in ms");
+            ImGui::PlotLines("", arr_profGEarlyUpdate, arrSize);
+            ImGui::Text("%f \t- Avg: %f", 1000 * e->profile_Game_EarlyUpdateTimer.length, (1000 * sum_gEarlyUpdate) / (double)arrSize);
+            ImGui::Separator();
+            ImGui::Text("Game Update in ms");
+            ImGui::PlotLines("", arr_profGUpdate, arrSize);
+            ImGui::Text("%f \t- Avg: %f", 1000 * e->profile_Game_UpdateTimer.length, (1000 * sum_gUpdate) / (double)arrSize);
+            ImGui::Separator();
+            ImGui::Text("Game Late Update in ms");
+            ImGui::PlotLines("", arr_profGLateUpdate, arrSize);
+            ImGui::Text("%f \t- Avg: %f", 1000 * e->profile_Game_LateUpdateTimer.length, (1000 * sum_gLateUpdate) / (double)arrSize);
 
-            ImGui::PlotLines("Physics", arr_profPhysics, arrSize);
-            ImGui::Text("Physics %f", e->profile_PhysicsTimer.length);
-            ImGui::PlotLines("PhysicsEntity Update Transform", arr_profUpdateTransform, arrSize);
-            ImGui::Text("PhysicsEntity update transform %f", e->profile_UpdatePhysicsEntityTransformTimer.length);
+            ImGui::Separator();
+            ImGui::Text("Physics Step in ms");
+            ImGui::PlotLines("", arr_profPhysics, arrSize);
+            ImGui::Text("%f \t- Avg: %f", 1000 * e->profile_PhysicsTimer.length, (1000 * sum_physics) / (double)arrSize);
 
-            ImGui::PlotLines("Render", arr_profRender, arrSize);
-            ImGui::Text("Render %f", e->profile_RenderTimer.length);
+            ImGui::Separator();
+            ImGui::Text("PhysicsEntity Update Transform in ms");
+            ImGui::PlotLines("", arr_profUpdateTransform, arrSize);
+            ImGui::Text("%f \t- Avg: %f", 1000 * e->profile_UpdatePhysicsEntityTransformTimer.length, (1000 * sum_updateTransform) / (double)arrSize);
+
+            ImGui::Separator();
+            ImGui::Text("Render time in ms");
+            ImGui::PlotLines("", arr_profRender, arrSize);
+            ImGui::Text("%f \t- Avg: %f", 1000 * e->profile_RenderTimer.length, (1000 * sum_render) / (double)arrSize);
 
 
 

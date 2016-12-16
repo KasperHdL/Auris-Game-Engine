@@ -52,7 +52,7 @@ void Engine::startup(Game* game){
 
     SRE::SimpleRenderEngine r{window};
 
-    renderSystem.startup(64);
+    renderSystem.startup(512);
 
 
     world = new b2World(Convert::toB2(glm::vec2(0,0)));

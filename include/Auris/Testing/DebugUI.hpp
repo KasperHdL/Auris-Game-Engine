@@ -50,6 +50,16 @@ private:
     float arr_profRender[arrSize] = {}; /*!< A float array: arr_profRender. Array for profiling render loop */
 
 
+    double sum_dt              = 0;
+    double sum_input           = 0;
+    double sum_entUpdate       = 0;
+    double sum_gEarlyUpdate    = 0;
+    double sum_gUpdate         = 0;
+    double sum_gLateUpdate     = 0;
+    double sum_physics         = 0;
+    double sum_updateTransform = 0;
+    double sum_render          = 0;
+
     //Toggles
     bool toggle_inspector = false;/*!< A bool value: toggle_inspector. Toggle the inspector view */
     bool toggle_hierarchy = false;/*!< A bool value: toggle_hierarchy. Toggle the hierarchy view */
