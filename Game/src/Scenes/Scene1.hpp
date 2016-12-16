@@ -17,5 +17,5 @@ public:
         Game::instance->addEntity(make_shared<Wall>(vec2(40, -20)));
         Game::instance->addEntity(make_shared<Wall>(vec2(40, 20)));
         Game::instance->addEntity(make_shared<AudioPlayer>(Game::instance->camera, 1, 1, 1, 30, 20));
-    }
+    };
 }; 

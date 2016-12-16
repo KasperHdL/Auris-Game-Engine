@@ -43,9 +43,9 @@ public:
     Player(vec2 position = vec2(0,0)):PhysicsEntity(){
         type = "Player";
 
-        spriteSheet = AssetManager::getSpriteSheet("player.json");
+        spriteSheet = AssetManager::getSpriteSheet("player.json", true);
         upper = RenderSystem::getSprite(this);
-        spriteSheet->setSpriteTo(upper, "upper_3");
+        spriteSheet->setSpriteTo(upper, "upper_3", true);
 
         anim = RenderSystem::getAnim(this, 1.0f);
         anim->makeSequence(spriteSheet, "lower_run");
@@ -60,7 +60,6 @@ public:
         shape.SetAsBox(((lower->getWidth()/3) * Constants::PIXELS_TO_METERS),(upper->getHeight() + lower->getHeight()-9)/3 * Constants::PIXELS_TO_METERS);
 
         body = Auris::Utilities::BodyStandard::getDynamicBody(&shape,position);
-
 
         // Physics properties
         setCollisionEvents(true);

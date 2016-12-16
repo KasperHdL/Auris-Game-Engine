@@ -23,6 +23,7 @@ class Animation : public Nugget {
 public:
 
     std::vector<Mesh*> meshes; /*!< A vector of Mesh pointer: meshes. Reference to all the meshes in the animation. */
+    std::vector<Mesh*> flipped_meshes; /*!< A vector of Mesh pointer: flipped_meshes. Reference to all the flipped meshes in the animation, makeSequence must be called with createFlipped = true \sa makeSequence()*/
 
     //! The Animation destructor.
         /*! Clears all the meshes associated with the animation
@@ -56,14 +57,14 @@ public:
          * \param spritesheet a SpriteSheet pointer, that is the spritesheet to add
          * \param name a string, that is the name of the sequence in the spritesheet
         */
-    void makeSequence(SpriteSheet* spritesheet, std::string name);
+    void makeSequence(SpriteSheet* spritesheet, std::string name, bool createFlipped = false);
 
     //! The method run, taking 2 arguments.
         /*! Makes the animation execute
          * \param sprite a Sprite pointer, that is the sprite to add the animation to
          * \param dt a float, that is the delta time
         */
-    void run(Sprite* sprite, float dt);
+    void run(Sprite* sprite, float dt, bool getFlipped = false);
 
 private:
     float length; /*!< A float value: length. The length of the animation. */

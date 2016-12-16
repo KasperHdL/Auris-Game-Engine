@@ -20,11 +20,11 @@ SpriteSheet::~SpriteSheet(){
     normalMap = nullptr;
 }
 
-void SpriteSheet::setSpriteTo(Sprite* sprite, std::string name){
-    if(meshes[name] == nullptr)
+void SpriteSheet::setSpriteTo(Sprite* sprite, std::string name, bool getFlipped){
+    if(meshes[(getFlipped ? "flipped_" : "") + name] == nullptr)
         std::cerr << "Error: Sprite was no found in spritesheet" << std::endl;
 
-    sprite->setProperties(texture, glm::vec4(1), normalMap, meshes[name]);
+    sprite->setProperties(texture, glm::vec4(1), normalMap, meshes[(getFlipped ? "flipped_" : "") + name]);
 }
 
 }

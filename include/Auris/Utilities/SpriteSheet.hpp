@@ -32,7 +32,7 @@ class SpriteSheet{
              * \param name a String value, that is the name of the sprite
              * \sa RenderSystem::getSprite()
             */
-        void setSpriteTo(Sprite* sprite, std::string name);
+        void setSpriteTo(Sprite* sprite, std::string name, bool getFlipped = false);
 
         std::map<std::string, Auris::Mesh*> meshes; /*!< A map of strings and mesh pointer pointer: meshes. Reference to the mesh, dependent on the string. */
         SRE::Texture* texture; /*!< A Texture pointer: texture. Reference to the texture of the sprite. */
