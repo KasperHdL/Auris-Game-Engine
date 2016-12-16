@@ -45,24 +45,10 @@ public:
          * \param mesh a Mesh pointer, that is the mesh of the sprite (default is cube mesh).
         */
     Sprite(Entity* entity, SRE::Texture* texture = nullptr, SRE::Texture* normalMap = nullptr, Mesh* mesh = nullptr):Nugget(entity){
-        if(mesh == nullptr)
-            this->mesh = Mesh::createCube();
-        else
-            this->mesh = mesh;
-
         if(texture == nullptr)
-            material.texture = SRE::Texture::getWhiteTexture();
-        else
-            material.texture = texture;
+            texture = SRE::Texture::getWhiteTexture();
 
-        material.normalMap = normalMap;
-        material.color = glm::vec4(1);
-
-        if(normalMap == nullptr)
-            material.shader = (Shader*) Shader::getUnlitSprite();
-        else
-            material.shader = (Shader*) Shader::getLitSprite();
-
+        setProperties(texture, glm::vec4(1), normalMap, mesh);
     }
 
     //! The overloaded sprite constructor, taking 1-3 arguments.
@@ -92,5 +78,24 @@ public:
     float getHeight(){
         return mesh->height;
     }
+
+
+    void setProperties(SRE::Texture* texture,glm::vec4 color = glm::vec4(1), SRE::Texture* normalMap = nullptr, Mesh* mesh = nullptr){
+        material.texture = texture;
+
+       if(mesh == nullptr)
+            this->mesh = Mesh::createCube();
+        else
+            this->mesh = mesh;
+
+        material.normalMap = normalMap;
+        material.color = color;
+
+        if(normalMap == nullptr)
+            material.shader = (Shader*) Shader::getUnlitSprite();
+        else
+            material.shader = (Shader*) Shader::getLitSprite();
+    }
+
 };
 }

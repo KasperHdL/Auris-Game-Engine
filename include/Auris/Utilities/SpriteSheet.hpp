@@ -26,13 +26,13 @@ class SpriteSheet{
             */
         ~SpriteSheet();
 
-        //! A getSprite method, taking 2 arguments.
-            /*! Creates a sprite from the render system with the spritesheet, and gives it back
+        //! A setSpriteTo method, taking 2 arguments. The Sprite passed must be initialized \sa RenderSystem::getSprite()
+            /*! Sets the sprite mesh to the one corresponding with the name given, if name does not exist then it prints an error
+             * \param sprite an Sprite pointer, which mesh will change to correspond with the given name of the spritesheet frame 
              * \param name a String value, that is the name of the sprite
-             * \param parent an Entity pointer, that is the entity that is associated with the sprite
-             * \return Sprite pointer, that is the sprite created
+             * \sa RenderSystem::getSprite()
             */
-        Sprite* getSprite(std::string name, Entity* parent);
+        void setSpriteTo(Sprite* sprite, std::string name);
 
         std::map<std::string, Auris::Mesh*> meshes; /*!< A map of strings and mesh pointer pointer: meshes. Reference to the mesh, dependent on the string. */
         SRE::Texture* texture; /*!< A Texture pointer: texture. Reference to the texture of the sprite. */

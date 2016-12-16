@@ -20,12 +20,11 @@ SpriteSheet::~SpriteSheet(){
     normalMap = nullptr;
 }
 
-Sprite* SpriteSheet::getSprite(string name, Entity* parent){
+void SpriteSheet::setSpriteTo(Sprite* sprite, std::string name){
     if(meshes[name] == nullptr)
-        std::cerr << "Error: Sprite was not found in spritesheet" << std::endl;
-    auto s = RenderSystem::getSprite(parent, texture, meshes[name], normalMap);
+        std::cerr << "Error: Sprite was no found in spritesheet" << std::endl;
 
-    return s;
+    sprite->setProperties(texture, glm::vec4(1), normalMap, meshes[name]);
 }
 
 }

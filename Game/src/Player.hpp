@@ -44,10 +44,14 @@ public:
         type = "Player";
 
         spriteSheet = AssetManager::getSpriteSheet("player.json");
-        upper = spriteSheet->getSprite("upper_3", this);
+        upper = RenderSystem::getSprite(this);
+        spriteSheet->setSpriteTo(upper, "upper_3");
+
         anim = RenderSystem::getAnim(this, 1.0f);
         anim->makeSequence(spriteSheet, "lower_run");
-        lower = spriteSheet->getSprite("lower_run_3",this);
+
+        lower = RenderSystem::getSprite(this);
+        spriteSheet->setSpriteTo(lower, "lower_run_3");
 
         upper->offset = vec3(3,8,0);
         lower->offset = vec3(3,4,0);
