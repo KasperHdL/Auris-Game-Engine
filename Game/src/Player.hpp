@@ -29,6 +29,7 @@ public:
     bool alive = true;
     bool canJump = true;
     bool aiming = false;
+    bool canfire = true;
 
     float maxSpeed = 50;
     float jumpHeight = 8000;
@@ -89,11 +90,7 @@ public:
         bullet->direction = direction;
     }
 
-    void init() {
-
-	}
-
-    void update(float dt){
+    void update(float deltaTime){
         if (alive){
             float leftStickX = Input::getControllerAxisState(controller, SDL_CONTROLLER_AXIS_LEFTX);
             leftStickX = leftStickX/32767;
@@ -112,14 +109,14 @@ public:
             }
 
             if (leftStickX < 0)  {
-                anim->run(lower, abs(leftStickX)*dt);
+                anim->run(lower, abs(leftStickX)*deltaTime);
                 //transform->scale = vec2(-1, 1);
                 if (getLinearVelocity()[0] > -maxSpeed)
                     applyForce(vec2(1, 0) * leftStickX * movementSpeed, true);
             }
 
             if (leftStickX > 0)  {
-                anim->run(lower, abs(leftStickX)*dt);
+                anim->run(lower, abs(leftStickX)*deltaTime);
                 //transform->scale = vec2(1, 1);
                 if (getLinearVelocity()[0] < maxSpeed)
                     applyForce(vec2(1, 0) * leftStickX * movementSpeed, true);
