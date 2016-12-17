@@ -48,6 +48,7 @@ public:
     float movementSpeed = 1000;
     float crosshairOffset = 10;
     float bulletOffset = 5;
+    float grenadeOffset = 5;
     float aimRotation;
     float deltaTime;
 
@@ -123,6 +124,10 @@ public:
         bullet->player = this;
     }
 
+    void throwGrenade(vec2 direction) {
+        auto grenade = (Grenade*) Game::instance->addEntity(make_shared<Grenade>(vec2(transform->getPosition().x*direction.x*grenadeOffset, transform->getPosition().y-direction.y*grenadeOffset), vec2(direction.x, -direction.y)));
+    }
+
     void update(float deltaTime){
         this->deltaTime = deltaTime;
         if (alive){
@@ -185,7 +190,7 @@ public:
             if (rightTrigger > 16000) {
                 if (canFire) {
                     audioPlayer->playSound(pistolShot);
-                    fireBullet(-aimRotation-(radians(90.0f)), vec2(normalized.x, normalized.y));
+                    fireBullet(-aimRotation-(radians(90.0f)), normalized);
                     canFire = false;
                     pistolReload.reset();
                 }
@@ -196,7 +201,9 @@ public:
             }
 
             if (Input::getControllerButtonState(controller, SDL_CONTROLLER_BUTTON_RIGHTSHOULDER)) {
-
+                throwGrenade(normalized);
+                canThrow = false;
+                grenadeReload.reset();
             }
 
             if (healthPoints <= 0) {

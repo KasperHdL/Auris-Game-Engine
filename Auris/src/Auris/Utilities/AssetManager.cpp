@@ -69,9 +69,10 @@ Mix_Music* AssetManager::getMusic(std::string filename) {
 Mix_Chunk* AssetManager::getSound(std::string filename) {
 
     if(AssetManager::sounds[filename] == nullptr){
-        AssetManager::sounds[filename] = Mix_LoadWAV(AssetManager::getDataPath(filename).c_str());
+        std::string path = AssetManager::getDataPath(filename);
+        AssetManager::sounds[filename] = Mix_LoadWAV(path.c_str());
         if (AssetManager::sounds[filename] == nullptr) {
-            std::cout << "Nullptr: Failed to load Sound \"" << filename << "\". Make sure the filename is correct and that the file is placed in the data folder." << std::endl;
+            std::cerr << "Nullptr: Failed to load Sound \"" << filename << "\". Make sure the filename is correct and that the file is placed in the data folder." << std::endl;
             return nullptr;
         }
     }
