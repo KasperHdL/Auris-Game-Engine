@@ -56,7 +56,7 @@ public:
         b2PolygonShape shape;
         shape.SetAsBox((numTilesX * w) * Constants::PIXELS_TO_METERS/2, (numTilesY * h) * Constants::PIXELS_TO_METERS/2);
 
-        body = Auris::Utilities::BodyStandard::getStaticBody(&shape, position, 30.0f);
+        body = Auris::Utilities::BodyStandard::getStaticBody(&shape, position, false, 30.0f);
 
         // Physics properties
         setCollisionEvents(true);
