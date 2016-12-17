@@ -4,7 +4,14 @@
 #include "Auris/Entities/Camera.hpp"
 #include "Auris/Utilities/AssetManager.hpp"
 #include "Auris/Systems/Input.hpp"
+
+#ifdef _WIN32 // Windows
+#include <SDL_mixer.h>
+#elif __linux__ // Linux
 #include <SDL2/SDL_mixer.h>
+#else
+cout << "Error: Unsupported OS" << endl;
+#endif
 
 using namespace Auris;
 

@@ -85,8 +85,8 @@ private:
     float bottom; /*!< A float value: bottom. Used to calculate the orthographic projection from */
     float right; /*!< A float value: right. Used to calculate the orthographic projection from */
     float top; /*!< A float value: top. Used to calculate the orthographic projection from */
-    float near; /*!< A float value: near. Used to calculate the orthographic projection from */
-    float far; /*!< A float value: far. Used to calculate the orthographic projection from */
+    float nearPlane; /*!< A float value: near. Used to calculate the orthographic projection from */
+    float farPlane; /*!< A float value: far. Used to calculate the orthographic projection from */
     float z; /*!< A float value: z. Used to calculate the rotation from */
 
     glm::vec3 up; /*!< A vec3 value: up. That is the up vector used to rotate the camera about */
