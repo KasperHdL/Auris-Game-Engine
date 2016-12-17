@@ -14,6 +14,7 @@
 #include "Auris/Action.hpp"
 #include "Crosshair.hpp"
 #include "Auris/Utilities/AudioPlayer.hpp"
+#include "Auris/Utilities/Timer.hpp"
 #include "Bullet.hpp"
 
 using namespace std;
@@ -29,6 +30,8 @@ public:
 
     Crosshair* crosshair;
     AudioPlayer* audioPlayer;
+
+    Timer timer;
 
     bool alive = true;
     bool canJump = true;
@@ -90,6 +93,8 @@ public:
 
         pistolShot = audioPlayer->addSound(AssetManager::getSound("pistolShot.wav"));
 
+        timer.start(0.2f);
+
         this->addChild(audioPlayer);
         this->addChild(crosshair);
     }
@@ -125,7 +130,7 @@ public:
 
             int rightTrigger = Input::getControllerAxisState(controller, SDL_CONTROLLER_AXIS_TRIGGERRIGHT);
 
-            if ((Input::getControllerButtonState(controller, SDL_CONTROLLER_BUTTON_LEFTSHOULDER) | Input::getControllerButtonState(controller, SDL_CONTROLLER_BUTTON_RIGHTSHOULDER)) & canJump) {
+            if ((Input::getControllerButtonState(controller, SDL_CONTROLLER_BUTTON_LEFTSHOULDER) || Input::getControllerButtonState(controller, SDL_CONTROLLER_BUTTON_RIGHTSHOULDER)) & canJump) {
                 applyForce(vec2(0, 1) * jumpHeight, true);
                 canJump = false;
             }
@@ -171,6 +176,8 @@ public:
                     if (canFire) {
                         audioPlayer->playSound(pistolShot);
                         fireBullet(-aimDirection-(radians(90.0f)), vec2(normalized.x, normalized.y));
+                        canFire = false;
+                        timer.reset();
                     }
                 }
             }
@@ -180,6 +187,9 @@ public:
                 die();
             }
         }
+
+        if (timer.time(deltaTime))
+            canFire = true;
     }
 
     void OnCollisionEnter(PhysicsEntity* other) {
