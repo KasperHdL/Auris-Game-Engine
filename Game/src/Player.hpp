@@ -16,6 +16,7 @@
 #include "Auris/Utilities/AudioPlayer.hpp"
 #include "Auris/Utilities/Timer.hpp"
 #include "Bullet.hpp"
+#include "Grenade.hpp"
 
 using namespace std;
 using namespace Auris;
@@ -31,19 +32,23 @@ public:
     Crosshair* crosshair;
     AudioPlayer* audioPlayer;
 
-    Timer timer;
+    Timer pistolReload;
+    Timer grenadeReload;
 
     bool alive = true;
     bool canJump = true;
     bool aiming = false;
     bool canFire = true;
+    bool canThrow = true;
+
+    vec2 aimDirection;
 
     float maxSpeed = 50;
     float jumpHeight = 8000;
     float movementSpeed = 1000;
     float crosshairOffset = 10;
     float bulletOffset = 5;
-    float aimDirection;
+    float aimRotation;
     float deltaTime;
 
     int healthPoints = 100;
@@ -93,7 +98,10 @@ public:
 
         pistolShot = audioPlayer->addSound(AssetManager::getSound("pistolShot.wav"));
 
-        timer.start(0.2f);
+        pistolReload.start(0.2f);
+        grenadeReload.start(5);
+
+        aimDirection = vec2(1, 0);
 
         this->addChild(audioPlayer);
         this->addChild(crosshair);
@@ -126,11 +134,10 @@ public:
 
             vec2 rightStick = Input::getControllerRightStickState(controller);
             rightStick = vec2(rightStick.x / 32767, rightStick.y / 32767);
-            vec2 normalized = normalize(rightStick);
 
             int rightTrigger = Input::getControllerAxisState(controller, SDL_CONTROLLER_AXIS_TRIGGERRIGHT);
 
-            if ((Input::getControllerButtonState(controller, SDL_CONTROLLER_BUTTON_LEFTSHOULDER) || Input::getControllerButtonState(controller, SDL_CONTROLLER_BUTTON_RIGHTSHOULDER)) & canJump) {
+            if ((Input::getControllerButtonState(controller, SDL_CONTROLLER_BUTTON_A)) && canJump) {
                 applyForce(vec2(0, 1) * jumpHeight, true);
                 canJump = false;
             }
@@ -150,18 +157,20 @@ public:
             }
 
             if (rightStick != vec2(0, 0)) {
-                aimDirection = (float)(atan2(rightStick.x, -rightStick.y));
-                crosshair->transform->setPosition(vec2(normalized.x*crosshairOffset, -normalized.y*crosshairOffset));
+                aimDirection = rightStick;
+
                 aiming = true;
             }
             else {
                 aiming = false;
-                crosshair->transform->setScale(vec2(-0.5, -0.5));
             }
+
+            aimRotation = (float)(atan2(aimDirection.x, -aimDirection.y));
+            vec2 normalized = normalize(aimDirection);
 
             if (aiming) {
                 float divider = 180/7;
-                float absDir = abs(degrees(aimDirection));
+                float absDir = abs(degrees(aimRotation));
                 int aim = absDir > 180-divider ? 6 :
                     absDir > 180-divider*2 ? 5 :
                     absDir > 180-divider*3 ? 4 :
@@ -171,25 +180,38 @@ public:
 
                 string sprite   = "upper_" + to_string(aim);
                 spriteSheet->setSpriteTo(upper, sprite, normalized.x < 0);
+            }
 
-                if (rightTrigger > 16000) {
-                    if (canFire) {
-                        audioPlayer->playSound(pistolShot);
-                        fireBullet(-aimDirection-(radians(90.0f)), vec2(normalized.x, normalized.y));
-                        canFire = false;
-                        timer.reset();
-                    }
+            if (rightTrigger > 16000) {
+                if (canFire) {
+                    audioPlayer->playSound(pistolShot);
+                    fireBullet(-aimRotation-(radians(90.0f)), vec2(normalized.x, normalized.y));
+                    canFire = false;
+                    pistolReload.reset();
                 }
+
+                if (canThrow) {
+
+                }
+            }
+
+            if (Input::getControllerButtonState(controller, SDL_CONTROLLER_BUTTON_RIGHTSHOULDER)) {
+
             }
 
             if (healthPoints <= 0) {
                 healthPoints = 0;
                 die();
             }
+
+            crosshair->transform->setPosition(vec2(normalized.x*crosshairOffset, -normalized.y*crosshairOffset));
         }
 
-        if (timer.time(deltaTime))
+        if (pistolReload.time(deltaTime))
             canFire = true;
+
+        if (grenadeReload.time(deltaTime))
+            canThrow = true;
     }
 
     void OnCollisionEnter(PhysicsEntity* other) {
@@ -204,6 +226,11 @@ public:
                 other->setFixedRotation(false);
                 other->setBullet(false);
             }
+        }
+
+        if (other->type == "Explosion") {
+            Grenade* grenade = (Grenade*) other;
+            healthPoints -= grenade->damage;
         }
     }
 
