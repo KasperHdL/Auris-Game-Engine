@@ -36,6 +36,8 @@ public:
         type = "Grenade";
         name = "Grenade";
 
+        this->direction = direction;
+
         sprite = RenderSystem::getSprite(this, AssetManager::getTexture("grenade.png"));
 
         b2CircleShape shape;
@@ -62,11 +64,8 @@ public:
                 shape.m_p.Set(0, 0);
                 shape.m_radius = 3;
 
-                b2FixtureDef fixtureDef;
-                fixtureDef.shape = &shape;
-                fixtureDef.isSensor = true;
+                sensor = Utilities::BodyStandard::getStaticBody(&shape, transform->getPosition(), false);
 
-                sensor->CreateFixture(&fixtureDef);
 
                 //particles->startup(1000, 3.0f);
 
