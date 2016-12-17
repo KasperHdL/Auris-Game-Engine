@@ -35,7 +35,7 @@ public:
         setCollisionEvents(true);
         setFixedRotation(true);
         setBullet(true);
-        transform->setScale(vec2(0.5, 0.5));
+        transform->setScale(vec2(0.5f, 0.5f));
         setGravity(0);
     }
 

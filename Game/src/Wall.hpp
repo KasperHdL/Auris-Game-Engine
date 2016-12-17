@@ -9,45 +9,52 @@
 using namespace Auris;
 using namespace Constants;
 
-class WallSprite : public Entity {
+class Wall : public PhysicsEntity{
 public:
     Sprite* sprite;
 
-    WallSprite(vec2 position = vec2(0, 0)) {
+    int width;
+
+    Wall(vec2 position, int numTilesX, int numTilesY):PhysicsEntity() {
         type = "Wall";
         name = "Wall";
 
-        transform->setPosition(vec3(position, 0));
+        auto tex = AssetManager::getTexture("concreteSmall.png");
 
-        std::cout << "Position: " << position.x << ", " << position.y << std::endl;
+        float w = tex->getWidth();
+        float h = tex->getHeight();
 
-        sprite = RenderSystem::getSprite(this, AssetManager::getTexture("concreteSmall.png"), nullptr, AssetManager::getTexture("concreteSmallNormal.png"));
-    }
-};
+        float nhw = -w/2;
+        float nhh = -h/2;
 
-class HorizontalWall : public PhysicsEntity{
-public:
-    vector<Sprite*> sprites;
+        //quad
+        std::vector<glm::vec3> vertices({
+            glm::vec3{ w + nhw, nhh, 0 }, 
+            glm::vec3{ w + nhw, h + nhh, 0 },
+            glm::vec3{ nhw, nhh, 0 },
 
-    int width;
+            glm::vec3{ nhw, nhh, 0 }, 
+            glm::vec3{ w + nhw, h + nhh, 0 }, 
+            glm::vec3{ nhw, h + nhh, 0 }
+        });
 
-    HorizontalWall(vec2 position = vec2(0,0)):PhysicsEntity() {
-        type = "Wall";
-        name = "HorizontalWall";
+        // Per pixel normals are used for 2D graphics, but the mesh still needs an empty normal vector
+        std::vector<glm::vec3> normals;
 
-        width = Game::instance->camera->getWidth();
+        // UVs contains the normalized texture coordinates.
 
-        for (int i = 0; i <= width; i += 32) {
-            Sprite* sprite;
+        std::vector<glm::vec2> uvs({
+            glm::vec2{ numTilesX, 0 }, glm::vec2{ numTilesX, numTilesY }, glm::vec2{ 0, 0 },
+            glm::vec2{ 0, 0 }, glm::vec2{numTilesX, numTilesY }, glm::vec2{ 0, numTilesY }
+        });
 
-            sprite = RenderSystem::getSprite(this, AssetManager::getTexture("concreteSmall.png"), nullptr, AssetManager::getTexture("concreteSmallNormal.png"));
-            sprite->offset = vec3(-width/(float)2+i-16, 0, 0);
-            sprites.push_back(sprite);
-        }
+        Auris::Mesh* mesh = new Auris::Mesh(vertices, normals, uvs ,w, h);
+
+        sprite = RenderSystem::getSprite(this,tex, mesh, AssetManager::getTexture("concreteSmallNormal.png"));
+        transform->setScale(vec2(numTilesX, numTilesY));
 
         b2PolygonShape shape;
-        shape.SetAsBox(width * PIXELS_TO_METERS/2, 64*PIXELS_TO_METERS/2);
-        cout << sprites[0]->getHeight() << endl;
+        shape.SetAsBox((numTilesX * w) * Constants::PIXELS_TO_METERS/2, (numTilesY * h) * Constants::PIXELS_TO_METERS/2);
 
         body = Auris::Utilities::BodyStandard::getStaticBody(&shape, position, 30.0f);
 
@@ -55,33 +62,6 @@ public:
         setCollisionEvents(true);
     }
 
-    ~HorizontalWall(){
-    }
-};
-
-class VerticalWall : public PhysicsEntity{
-public:
-    float height;
-
-    VerticalWall(vec2 position = vec2(0,0)):PhysicsEntity() {
-        type = "Wall";
-        name = "VerticalWall";
-
-        height = Game::instance->camera->getHeight();
-
-        b2PolygonShape shape;
-        shape.SetAsBox(32*3*PIXELS_TO_METERS/2, height * PIXELS_TO_METERS/2);
-
-        body = Auris::Utilities::BodyStandard::getStaticBody(&shape, position, 30.0f);
-
-        for (int i = 0; i <= height; i += 32) {
-            addChild(Game::instance->addEntity(make_shared<WallSprite>(vec2(32*PIXELS_TO_METERS, (-height/2) + i))));
-        }
-
-        // Physics properties
-        setCollisionEvents(true);
-    }
-
-    ~VerticalWall(){
+    ~Wall(){
     }
 };
