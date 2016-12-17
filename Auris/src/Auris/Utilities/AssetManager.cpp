@@ -11,11 +11,6 @@ std::map<std::string, Mix_Chunk*> AssetManager::sounds;
 /////////
 // Get
 
-//! Load texture file and creates Texture and returns pointer to Texture, the pointer must NOT be deleted this will be handled by the AssetManager or you can manually call freeTexture
-/*!
- * \param filename filename of the .png or .jpeg file in the data folder
- * \return SRE::Texture* pointer to the Texture (DO NOT DELETE)
- */
 SRE::Texture* AssetManager::getTexture(std::string filename, bool filterSampling){
     if(AssetManager::textures[filename] == nullptr){
         AssetManager::textures[filename] = SRE::Texture::createFromFile(getDataPath(filename).c_str(), false);
@@ -25,11 +20,6 @@ SRE::Texture* AssetManager::getTexture(std::string filename, bool filterSampling
 }
 
 
-//! Load json file and creates spritesheet and returns pointer to SpriteSheet, the pointer must NOT be deleted this will be handled by the AssetManager or you can manually call freeSpriteSheet
-/*!
- * \param filename filename of the .json file in the data folder
- * \return SpriteSheet* pointer to the SpriteSheet  (DO NOT DELETE)
- */
 SpriteSheet* AssetManager::getSpriteSheet(std::string jsonFilename, bool createFlipped, bool filterSampling){
     if(AssetManager::spritesheets[jsonFilename] == nullptr){
 
@@ -41,13 +31,6 @@ SpriteSheet* AssetManager::getSpriteSheet(std::string jsonFilename, bool createF
 
 }
 
-//! Load file and return pointer to Mix_Music, the pointer must NOT be deleted this will be handled by the AssetManager or call freeMusic
-/*!
- * \param filename filename of the .wav file in the data folder
- * \return Mix_Music* pointer to Mix_Music* to be passed to a AudioPlayer(DO NOT DELETE)
- * \sa AudioPlayer.addMusic()
- * \sa getSound()
- */
 Mix_Music* AssetManager::getMusic(std::string filename) {
     if(AssetManager::music[filename] == nullptr){
         AssetManager::music[filename] = Mix_LoadMUS(AssetManager::getDataPath(filename).c_str());
@@ -59,13 +42,6 @@ Mix_Music* AssetManager::getMusic(std::string filename) {
     return AssetManager::music[filename];
 }
 
-//! Load file and get pointer to Mix_Chunk*, the pointer must NOT be deleted this will be handled by the AssetManager or call freeSound
-/*!
- * \param filename filename of the .wav file in the data folder
- * \return Mix_Chunk* pointer to Mix_Chunk* to be passed to AudioPlayer (DO NOT DELETE)
- * \sa AudioPlayer.addSound()
- * \sa getMusic()
- */
 Mix_Chunk* AssetManager::getSound(std::string filename) {
 
     if(AssetManager::sounds[filename] == nullptr){

@@ -197,7 +197,7 @@ public:
 
     //! A shutdown method.
         /*!
-         * shuts down the particle system, meaning that it clears all the values and paremeters of each particle
+         * Shuts down the particle system, meaning that it clears all the values and paremeters of each particle
          */
     void shutdown(){
         finalPositions.clear();
@@ -250,7 +250,7 @@ public:
     //! An update method, taking 1 argument.
         /*!
          * Updates all particles in the particle system, called once per frame.
-         * \param dt a float value. The delta time.
+         * \param dt a float value. The delta time in seconds.
          * \sa draw()
         */
     void update(float dt){

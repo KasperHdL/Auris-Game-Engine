@@ -4,31 +4,60 @@
 
 
 namespace Auris{
+
+//! The Pool class that is a templete class.
+    /*! Allocates memory in pool.
+    */
 template <class T>
 class Pool{
 
-    size_t objectSize = sizeof(T);
-    T* objects;
-    bool* occupied;
+    size_t objectSize = sizeof(T);  /*!< A size_t value: objectSize. The size of the object. */
+    T* objects; /*!< A T pointer: objects. The objects. */
+    bool* occupied; /*!< A bool pointer: occupied. If the place in the pool is occupied or not. */
 
 public:
 
+    //! A begin method.
+        /*! Fetch the first object in  memory.
+         * \return T pointer. The pointer to the first adress in memory.
+        */
     T* begin() { return &objects[0]; }
+
+    //! A end method.
+        /*! Fetch the last object in  memory.
+         * \return T pointer. The pointer to the last adress in memory.
+        */
     T* end() { return &objects[capacity]; }
 
-    int count = 0;
-    int capacity;
+    int count = 0; /*!< An int value: count. The number of objects in the pool. */
+    int capacity; /*!< An int value: capacity. The capacity of the pool. */
 
+    //! The Pool contructor.
+        /*! Does nothing, but does something anyway!
+        */
     Pool(){}
+
+    //! The overloaded Pool contructor, taking 1 argument.
+        /*! Calls the initializeser of the Pool class.
+         * \param capacity an int. The capacity the pool should have.
+         * \overload Pool()
+        */
     Pool(int capacity){
         initialize(capacity);
     }
 
+    //! The Pool destructor.
+        /*! Frees all the objects and occupied objects.
+        */
     ~Pool(){
         free(objects);
         free(occupied);
     }
 
+    //! A initialize method, taking 1 argument.
+        /*! Initializes the pool, with the capacity inputted.
+         * \param capacity an int. The capacity the pool should have.
+        */
     void initialize(int capacity){
         this->capacity = capacity;
 
@@ -44,7 +73,12 @@ public:
         }
     }
 
-
+    //! An operator overload of [], taking 1 argument.
+    /*! Overload the [] so that the pool can be indexed.
+     * \param index a size_t value. The index used.
+     * \return T pointer. The object at that index, nullptr if there is no object with that index.
+     * \overload []
+     */
     T* operator [] (std::size_t index){
         if(index < 0 || index >= capacity){
             std::cout << "Index out of range, returning nullptr" << std::endl;
@@ -59,7 +93,10 @@ public:
         return &objects[index];
     }
 
-
+    //! A create method.
+        /*! Assigns a new object to the pool, and returns it
+         * \return T pointer. The object created (nullptr if there is no more space).
+        */
     T* create(){
         int index = 0;
         for(;index <= capacity;index++){
@@ -79,6 +116,10 @@ public:
         return &objects[index];
     }
 
+    //! A remove method, taking 1 argument.
+        /*! Removes an object from the pool
+         * \param ptr a T pointer. The object that should be removed.
+        */
     void remove(T* ptr){
         for(int i = 0;i < capacity;i++){
             if(occupied[i] && ptr == &objects[i]){
@@ -88,6 +129,11 @@ public:
         }
     }
 
+    //! A remove overload method, taking 1 argument.
+        /*! Removes an object from the pool
+         * \param index an int. The index of the object that should be removed.
+         * \overload remove(T* ptr)
+        */
     void remove(int index){
         occupied[index] = false;
         count--;

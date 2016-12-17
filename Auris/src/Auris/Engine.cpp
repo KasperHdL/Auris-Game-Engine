@@ -31,6 +31,7 @@ void Engine::startup(Game* game, int spritePoolCapacity){
     if( Mix_OpenAudio( 44100, MIX_DEFAULT_FORMAT, MIX_DEFAULT_CHANNELS, 1024 ) == -1 ) // Initialize SDL_mixer
         cout << SDL_GetError() << endl;
 
+    //sets the sdl attributes
     SDL_GL_SetAttribute(SDL_GL_CONTEXT_MAJOR_VERSION, 3);
     SDL_GL_SetAttribute(SDL_GL_CONTEXT_MINOR_VERSION, 1);
     SDL_GL_SetAttribute(SDL_GL_CONTEXT_PROFILE_MASK, SDL_GL_CONTEXT_PROFILE_CORE);
@@ -47,8 +48,8 @@ void Engine::startup(Game* game, int spritePoolCapacity){
     );
 
     SDL_SetWindowTitle(window,"[Au]ris Engine");
-    // Check that the window was successfully made
 
+    // Check that the window was successfully made
     if (window == NULL) {
         // In the event that the window could not be made...
         printf("Could not create window: %s\n", SDL_GetError());
@@ -59,7 +60,7 @@ void Engine::startup(Game* game, int spritePoolCapacity){
 
     renderSystem.startup(spritePoolCapacity);
 
-
+    //Makes new physics world
     world = new b2World(Convert::toB2(glm::vec2(0,0)));
 
     collisionHandler = new CollisionHandler;
@@ -72,6 +73,7 @@ void Engine::startup(Game* game, int spritePoolCapacity){
 
     Input::init(game);
 
+    //starts imgui
     debugUI = new DebugUI();
     ImGui_SRE_Init(window);
     debugUI->startup(this);
@@ -101,7 +103,7 @@ void Engine::shutdown(){
 
     debugUI->shutdown();
 
-    //! Close SDL_mixer
+    // Close SDL_mixer
     Mix_CloseAudio();
 
     // Close and destroy the window
@@ -119,18 +121,22 @@ void Engine::run(SDL_Window* window){
     float deltaTimeSec = 0;
     auto sre = SimpleRenderEngine::instance;
 
-    while (Input::quit == 0){
+    while (Input::quit == 0){ //as long as there is no SDL quit event
         LAST = NOW;
         NOW = SDL_GetPerformanceCounter();
 
         deltaTimeSec = clamp(((NOW - LAST) / (float)SDL_GetPerformanceFrequency() ),0.0f,1.0f);
 		
+        if(!debugUI->pause || debugUI->runOneStep){
+        //GAME EARLY UPDATE!
         if(debugUI->profiling) profile_Game_EarlyUpdateTimer.start();
         game->earlyUpdate(deltaTimeSec);
         if(debugUI->profiling) profile_Game_EarlyUpdateTimer.stop();
+        }
 
-        sre->clearScreen(vec4(0,0,0,1));
+        sre->clearScreen(vec4(0,0,0,1)); //background color
 
+        //INPUT UPDATE
         if(debugUI->profiling) profile_InputTimer.start();
         Input::update();
         if(debugUI->profiling) profile_InputTimer.stop();
@@ -146,7 +152,7 @@ void Engine::run(SDL_Window* window){
             game->update(deltaTimeSec);
             if(debugUI->profiling) profile_Game_UpdateTimer.stop();
 
-            // entities UPDATE
+            // ENTITIES UPDATE
             if(debugUI->profiling) profile_Entity_UpdateTimer.start();
             for(auto& el: game->newEntities)
                 game->entities.push_back(el);
@@ -155,20 +161,22 @@ void Engine::run(SDL_Window* window){
                 el->update(deltaTimeSec);
             if(debugUI->profiling) profile_Entity_UpdateTimer.stop();
 
+            //PHYSICS STEPS
             if(debugUI->profiling) profile_PhysicsTimer.start();
             world->Step(deltaTimeSec, Constants::VELOCITY_ITERATIONS, Constants::POSITION_ITERATIONS);
             if(debugUI->profiling) profile_PhysicsTimer.stop();
 
-
+            //TRANSFORM UPDATE
             if(debugUI->profiling) profile_UpdatePhysicsEntityTransformTimer.start();
             for(auto& el: game->entities)
                 el->updateTransform();
             if(debugUI->profiling) profile_UpdatePhysicsEntityTransformTimer.stop();
-        }
 
-        if(debugUI->profiling) profile_Game_LateUpdateTimer.start();
-        game->lateUpdate(deltaTimeSec);
-        if(debugUI->profiling) profile_Game_LateUpdateTimer.stop();
+            //GAME LATE UPDATE
+           if(debugUI->profiling) profile_Game_LateUpdateTimer.start();
+           game->lateUpdate(deltaTimeSec);
+           if(debugUI->profiling) profile_Game_LateUpdateTimer.stop();
+        }
 
         if(debugUI->profiling) profile_RenderTimer.start();
         //DRAW

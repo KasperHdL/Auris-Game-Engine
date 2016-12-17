@@ -51,7 +51,7 @@ public:
     //! An update method, taking 1 argument.
         /*!
          * Updates the rendersystem and draws all sprites
-         * \param dt a float value. The delta time.
+         * \param dt a float value. The delta time in seconds.
         */
     void update(float dt);
 

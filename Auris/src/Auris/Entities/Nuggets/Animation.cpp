@@ -37,12 +37,12 @@ void Animation::makeSequence(SpriteSheet* spritesheet, std::string name, bool cr
 void Animation::run(Sprite *sprite, float dt, bool getFlipped){
     frameLength = length / meshes.size();
     time += dt;
-    if (time >= frameLength) {
-        index++;
-        if (index >= meshes.size()) {
-            index = 0;
+    if (time >= frameLength) { //if more time has passed than one frame
+        index++;  // increment the index
+        if (index >= meshes.size()) { //if we have reached the end of the animation
+            index = 0; //set the index to zero
         }
-        time = glm::mod<float>(time, frameLength);
+        time = glm::mod<float>(time, frameLength); //reset the time
     }
     if(getFlipped)
         sprite->mesh = flipped_meshes[index];
