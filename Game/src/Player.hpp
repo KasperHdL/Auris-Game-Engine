@@ -125,7 +125,7 @@ public:
     }
 
     void throwGrenade(vec2 direction) {
-        auto grenade = (Grenade*) Game::instance->addEntity(make_shared<Grenade>(vec2(transform->getPosition().x*direction.x*grenadeOffset, transform->getPosition().y-direction.y*grenadeOffset), vec2(direction.x, -direction.y)));
+        auto grenade = (Grenade*) Game::instance->addEntity(make_shared<Grenade>(vec2(transform->getPosition().x+direction.x*grenadeOffset, transform->getPosition().y-direction.y*grenadeOffset), vec2(direction.x, -direction.y)));
     }
 
     void update(float deltaTime){

@@ -42,7 +42,6 @@ public:
 
     ~Bullet() {
         RenderSystem::deleteSprite(sprite);
-        Engine::instance->world->DestroyBody(body);
     }
 
     void update(float dt) {
