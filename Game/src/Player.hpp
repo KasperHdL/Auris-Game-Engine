@@ -218,7 +218,7 @@ public:
     }
 
     void OnCollisionEnter(PhysicsEntity* other) {
-        if (other->type == "Wall")
+        if (other->type == "jumpable")
             canJump = true;
 
         if (other->type == "Bullet") {
@@ -239,7 +239,7 @@ public:
     }
 
     void OnCollisionExit(PhysicsEntity* other) {
-        if (other->type == "Wall")
+        if (other->type == "jumpable")
             canJump = false;
     }
 

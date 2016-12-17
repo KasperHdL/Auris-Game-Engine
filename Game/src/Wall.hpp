@@ -15,8 +15,8 @@ public:
 
     int width;
 
-    Wall(vec2 position, int numTilesX, int numTilesY):PhysicsEntity() {
-        type = "Wall";
+    Wall(vec2 position, int numTilesX, int numTilesY, string type):PhysicsEntity() {
+        this->type = type;
         name = "Wall";
 
         auto tex = AssetManager::getTexture("concreteSmall.png");
