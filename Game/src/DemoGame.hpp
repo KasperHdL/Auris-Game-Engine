@@ -97,10 +97,13 @@ class DemoGame : public Auris::Game {
 
 
     void controllerDisconnected(int controllerID){
+        int i = 0;
         for (auto & element : players) {
             if (element->controller == controllerID) {
                 Game::destroyEntity(element);
+                players.erase(players.begin() + i);
             }
+            i++;
         }
     }
 

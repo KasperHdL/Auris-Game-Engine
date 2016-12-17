@@ -11,7 +11,7 @@ Animation::~Animation(){
     meshes.clear();
 }
 
-void Animation::addMesh(Mesh* mesh){
+void Animation::addMesh(Auris::Mesh* mesh){
     meshes.push_back(mesh);
 }
 

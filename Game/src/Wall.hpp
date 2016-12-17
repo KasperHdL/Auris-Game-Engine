@@ -9,6 +9,22 @@
 using namespace Auris;
 using namespace Constants;
 
+class WallSprite : public Entity {
+public:
+    Sprite* sprite;
+
+    WallSprite(vec2 position = vec2(0, 0)) {
+        type = "Wall";
+        name = "Wall";
+
+        transform->setPosition(vec3(position, 0));
+
+        std::cout << "Position: " << position.x << ", " << position.y << std::endl;
+
+        sprite = RenderSystem::getSprite(this, AssetManager::getTexture("concreteSmall.png"), nullptr, AssetManager::getTexture("concreteSmallNormal.png"));
+    }
+};
+
 class HorizontalWall : public PhysicsEntity{
 public:
     vector<Sprite*> sprites;
@@ -17,6 +33,7 @@ public:
 
     HorizontalWall(vec2 position = vec2(0,0)):PhysicsEntity() {
         type = "Wall";
+        name = "HorizontalWall";
 
         width = Game::instance->camera->getWidth();
 
@@ -29,7 +46,7 @@ public:
         }
 
         b2PolygonShape shape;
-        shape.SetAsBox(width * PIXELS_TO_METERS/2, sprites[0]->getHeight()*PIXELS_TO_METERS/2);
+        shape.SetAsBox(width * PIXELS_TO_METERS/2, 64*PIXELS_TO_METERS/2);
         cout << sprites[0]->getHeight() << endl;
 
         body = Auris::Utilities::BodyStandard::getStaticBody(&shape, position, 30.0f);
@@ -44,27 +61,22 @@ public:
 
 class VerticalWall : public PhysicsEntity{
 public:
-    vector<Sprite*> sprites;
-
     float height;
 
     VerticalWall(vec2 position = vec2(0,0)):PhysicsEntity() {
         type = "Wall";
+        name = "VerticalWall";
 
         height = Game::instance->camera->getHeight();
 
-        for (int i = 0; i <= height; i += 32) {
-            Sprite* sprite;
-
-            sprite = RenderSystem::getSprite(this, AssetManager::getTexture("concreteSmall.png"), nullptr, AssetManager::getTexture("concreteSmallNormal.png"));
-            sprite->offset = vec3(0, -height/2+i-16, 0);
-            sprites.push_back(sprite);
-        }
-
         b2PolygonShape shape;
-        shape.SetAsBox(sprites[0]->getWidth()*PIXELS_TO_METERS/2, height * PIXELS_TO_METERS/2);
+        shape.SetAsBox(32*3*PIXELS_TO_METERS/2, height * PIXELS_TO_METERS/2);
 
         body = Auris::Utilities::BodyStandard::getStaticBody(&shape, position, 30.0f);
+
+        for (int i = 0; i <= height; i += 32) {
+            addChild(Game::instance->addEntity(make_shared<WallSprite>(vec2(32*PIXELS_TO_METERS, (-height/2) + i))));
+        }
 
         // Physics properties
         setCollisionEvents(true);

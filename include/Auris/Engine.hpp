@@ -1,7 +1,15 @@
 #pragma once
 
-#include <SDL.h>
+#ifdef _WIN32 // Windows
+#include <SDL_mixer.h>
+#elif __linux__ // Linux
 #include <SDL2/SDL_mixer.h>
+#else
+cout << "Error: Unsupported OS" << endl;
+#endif
+
+#include <SDL.h>
+
 #define SDL_MAIN_HANDLED
 
 #include "SRE/SimpleRenderEngine.hpp"
