@@ -12,7 +12,8 @@
 #include "Auris/Utilities/AssetManager.hpp"
 #include "Auris/Entities/PhysicsEntity.hpp"
 #include "Auris/Action.hpp"
-
+#include "Crosshair.hpp"
+#include "Auris/Utilities/AudioPlayer.hpp"
 #include "Bullet.hpp"
 
 using namespace std;
@@ -26,19 +27,23 @@ public:
     Sprite* lower;
     Sprite* upper;
 
+    Crosshair* crosshair;
+    AudioPlayer* audioPlayer;
+
     bool alive = true;
     bool canJump = true;
     bool aiming = false;
-    bool canfire = true;
+    bool canFire = true;
 
     float maxSpeed = 50;
     float jumpHeight = 8000;
     float movementSpeed = 1000;
     float crosshairOffset = 10;
     float aimDirection;
+    float deltaTime;
 
     int healthPoints = 100;
-
+    int pistolShot;
     int controller;
 
     Player(vec2 position = vec2(0,0)) : PhysicsEntity(){
@@ -49,7 +54,7 @@ public:
         spriteSheet->setSpriteTo(upper, "upper_3", true);
 
         anim = RenderSystem::getAnim(this, 1.0f);
-        anim->makeSequence(spriteSheet, "lower_run");
+        anim->makeSequence(spriteSheet, "lower_run", true);
 
         lower = RenderSystem::getSprite(this);
         spriteSheet->setSpriteTo(lower, "lower_run_3");
@@ -74,6 +79,19 @@ public:
         RenderSystem::deleteSprite(upper);
     }
 
+    void init() {
+        audioPlayer = (AudioPlayer*) Game::instance->addEntity(make_shared<AudioPlayer>(Game::instance->camera, 1));
+        audioPlayer->name = audioPlayer->type + to_string(controller);
+
+        crosshair = (Crosshair*) Game::instance->addEntity(make_shared<Crosshair>());
+        crosshair->name = crosshair->type + to_string(controller);
+
+        pistolShot = audioPlayer->addSound(AssetManager::getSound("pistolShot.wav"));
+
+        this->addChild(audioPlayer);
+        this->addChild(crosshair);
+    }
+
     void setController(int controllerID){
         this->controller = controllerID;
     }
@@ -91,6 +109,7 @@ public:
     }
 
     void update(float deltaTime){
+        this->deltaTime = deltaTime;
         if (alive){
             float leftStickX = Input::getControllerAxisState(controller, SDL_CONTROLLER_AXIS_LEFTX);
             leftStickX = leftStickX/32767;
@@ -109,14 +128,14 @@ public:
             }
 
             if (leftStickX < 0)  {
-                anim->run(lower, abs(leftStickX)*deltaTime);
+                anim->run(lower, abs(leftStickX)*deltaTime, true);
                 //transform->scale = vec2(-1, 1);
                 if (getLinearVelocity()[0] > -maxSpeed)
                     applyForce(vec2(1, 0) * leftStickX * movementSpeed, true);
             }
 
             if (leftStickX > 0)  {
-                anim->run(lower, abs(leftStickX)*deltaTime);
+                anim->run(lower, abs(leftStickX)*deltaTime, false);
                 //transform->scale = vec2(1, 1);
                 if (getLinearVelocity()[0] < maxSpeed)
                     applyForce(vec2(1, 0) * leftStickX * movementSpeed, true);
@@ -125,7 +144,8 @@ public:
             if (rightStick != vec2(0, 0)) {
                 aimDirection = (float)(atan2(rightStick.x, -rightStick.y));
                 aimDirection = degrees(aimDirection);
-                getChildByType("crosshair")->transform->position = vec3(rightStick*crosshairOffset, 0);
+                vec2 normalized = normalize(rightStick);
+                getChildByType("crosshair")->transform->position = vec3(normalized.x*crosshairOffset, -normalized.y*crosshairOffset, 0);
                 aiming = true;
             }
             else
@@ -140,10 +160,16 @@ public:
                     absDir > 180-divider*4 ? 3 :
                     absDir > 180-divider*5 ? 2 :
                     absDir > 180-divider*6 ? 1 : 0;
+
                 string sprite   = "upper_" + to_string(aim);
                 spriteSheet->setSpriteTo(upper, sprite, rightStick.x < 0);
+
                 if (rightTrigger > 16000) {
-                    fireBullet(aimDirection, rightStick);
+                    if (canFire) {
+                        fireBullet(aimDirection, rightStick);
+                        audioPlayer->playSound(pistolShot);
+                        canFire = false;
+                    }
                 }
             }
         }

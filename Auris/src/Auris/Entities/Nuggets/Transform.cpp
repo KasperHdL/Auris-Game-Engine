@@ -17,8 +17,4 @@ namespace Auris{
 
         return entity->parent->transform->getGlobal() * getLocal(offset);
     }
-
-
-
-
 }

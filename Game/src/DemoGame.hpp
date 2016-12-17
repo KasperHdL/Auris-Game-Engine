@@ -18,6 +18,8 @@ class DemoGame : public Auris::Game {
 
     vector<Player*> players;
 
+    vec2 camPos;
+
     int pistolShot;
     int warSounds;
 
@@ -42,17 +44,16 @@ class DemoGame : public Auris::Game {
     void update(float dt){
         if (Input::keyDown(SDL_SCANCODE_RETURN))
             Game::destroyEntity(players[0]);
-//            audioPlayer.playSound(pistolShot);
 
-          //cout << id1 << ": " << Input::getControllerAxisState(id1,SDL_CONTROLLER_AXIS_TRIGGERRIGHT) << endl;
-          //cout << id1 << ": " << Input::getControllerButtonState(id1,SDL_CONTROLLER_BUTTON_A) << endl;
-
-          //cout << id2 << ": " << Input::getControllerAxisState(id2,SDL_CONTROLLER_AXIS_TRIGGERRIGHT) << endl;
-          //cout << id2 << ": " << Input::getControllerButtonState(id2,SDL_CONTROLLER_BUTTON_A) << endl;
-
-          //cout << id3 << ": " << Input::getControllerAxisState(id3,SDL_CONTROLLER_AXIS_TRIGGERRIGHT) << endl;
-          //cout << id3 << ": " << Input::getControllerButtonState(id3,SDL_CONTROLLER_BUTTON_A) << endl;
-
+        int i = 0;
+        for (auto & player : players) {
+            camPos += vec2(player->transform->position.x, player->transform->position.y);
+            i++;
+        }
+        if (i != 0) {
+            camPos /= i;
+            Game::camera->setPos(camPos);
+        }
     }
 
     void lateUpdate(float dt){
@@ -91,14 +92,6 @@ class DemoGame : public Auris::Game {
         player->setController(controllerID);
         player->name = player->type + to_string(controllerID);
 
-        auto audio = (AudioPlayer*) addEntity(make_shared<AudioPlayer>(Game::camera, 1));
-        audio->name = audio->type + to_string(controllerID);
-
-        auto crosshair = (Crosshair*) Game::instance->addEntity(make_shared<Crosshair>());
-        crosshair->name = crosshair->type + to_string(controllerID);
-
-        player->addChild(audio);
-        player->addChild(crosshair);
         players.push_back(player);
     }
 
