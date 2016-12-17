@@ -42,7 +42,7 @@ class Light : public Entity{
 
         //! An update method taking 1 argument.
             /*! Updates the light every frame, to be able to move the light.
-             * \param dt a float, that is the delta time.
+             * \param dt a float, that is the delta time in seconds.
             */
         void update(float dt){
             globalPosition = transform->getGlobalPosition();
@@ -64,6 +64,10 @@ class Light : public Entity{
 
         float iconScale = 10;//!< A float value, that indicates the size in pixels of the icon, can be changed in the inspector
 
+        /*! A inspectorImGui overload method.
+         * Writes light related debug information to the inspector
+         * \overload Entity::inspectorImGui()
+         */
         void inspectorImGui(){
             Entity::inspectorImGui();
             ImGui::DragFloat3("Global Position", &globalPosition.x);
@@ -79,7 +83,10 @@ class Light : public Entity{
 
         }
 
-
+        /*! A debugDraw overload method.
+         * Draws light related debug information to the screen
+         * \overload Entity::debugDraw()
+         */
         void debugDraw(){
             float scale = iconScale;
             vec2 p = transform->getGlobalPosition() * Auris::Constants::METERS_TO_PIXELS;

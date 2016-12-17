@@ -48,6 +48,7 @@ public:
     float movementSpeed = 1000;
     float crosshairOffset = 10;
     float bulletOffset = 5;
+    float grenadeOffset = 5;
     float aimRotation;
     float deltaTime;
 
@@ -103,12 +104,12 @@ public:
 
         aimDirection = vec2(1, 0);
 
-        this->addChild(audioPlayer);
-        this->addChild(crosshair);
+        addChild(audioPlayer);
+        addChild(crosshair);
     }
 
     void setController(int controllerID){
-        this->controller = controllerID;
+        controller = controllerID;
     }
 
     void die() {
@@ -121,6 +122,10 @@ public:
     void fireBullet(float rotation, vec2 direction) {
         auto bullet = (Bullet*) Game::instance->addEntity(make_shared<Bullet>(vec2(transform->getPosition().x+direction.x*bulletOffset, transform->getPosition().y-direction.y*bulletOffset), rotation, vec2(direction.x, -direction.y), this));
         bullet->player = this;
+    }
+
+    void throwGrenade(vec2 direction) {
+        auto grenade = (Grenade*) Game::instance->addEntity(make_shared<Grenade>(vec2(transform->getPosition().x+direction.x*grenadeOffset, transform->getPosition().y-direction.y*grenadeOffset), vec2(direction.x, -direction.y)));
     }
 
     void update(float deltaTime){
@@ -185,7 +190,7 @@ public:
             if (rightTrigger > 16000) {
                 if (canFire) {
                     audioPlayer->playSound(pistolShot);
-                    fireBullet(-aimRotation-(radians(90.0f)), vec2(normalized.x, normalized.y));
+                    fireBullet(-aimRotation-(radians(90.0f)), normalized);
                     canFire = false;
                     pistolReload.reset();
                 }
@@ -196,7 +201,9 @@ public:
             }
 
             if (Input::getControllerButtonState(controller, SDL_CONTROLLER_BUTTON_RIGHTSHOULDER)) {
-
+                throwGrenade(normalized);
+                canThrow = false;
+                grenadeReload.reset();
             }
 
             if (healthPoints <= 0) {
@@ -225,6 +232,7 @@ public:
                 other->setGravity(3);
                 other->setFixedRotation(false);
                 other->setBullet(false);
+                Game::instance->destroyEntity(other);
             }
         }
 

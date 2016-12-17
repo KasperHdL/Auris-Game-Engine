@@ -8,6 +8,7 @@ namespace Auris{
 
 //! The CollisionHandler class that extend the b2ContactListener from box2D
     /*! Handles all collision of the engine
+     * Extends the BeginContact and EndContact methods
     */
 class CollisionHandler : public b2ContactListener{
 

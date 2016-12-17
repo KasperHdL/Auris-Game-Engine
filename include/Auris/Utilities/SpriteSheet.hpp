@@ -34,8 +34,8 @@ class SpriteSheet{
             */
         void setSpriteTo(Sprite* sprite, std::string name, bool getFlipped = false);
 
-        std::map<std::string, Auris::Mesh*> meshes; /*!< A map of strings and mesh pointer pointer: meshes. Reference to the mesh, dependent on the string. */
-        SRE::Texture* texture; /*!< A Texture pointer: texture. Reference to the texture of the sprite. */
+        std::map<std::string, Auris::Mesh*> meshes; /*!< A map of strings and Mesh pointer pointer: meshes. Reference to the Mesh, dependent on the string. */
+        SRE::Texture* texture; /*!< A Texture pointer: texture. Reference to the Texture of the sprite. */
         SRE::Texture* normalMap = nullptr; /*!< A Texture pointer: normalMap. Reference to the normal map of the sprite (default is no normal map). */
 
 };

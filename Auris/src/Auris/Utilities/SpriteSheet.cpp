@@ -9,6 +9,7 @@ SpriteSheet::SpriteSheet(){
 
 SpriteSheet::~SpriteSheet(){
 
+    //go through everything in the map and remove it
     for(map<std::string, Auris::Mesh*>::iterator it = meshes.begin(); it != meshes.end(); ++it){
         delete it->second;
         it->second = nullptr;

@@ -39,7 +39,7 @@ public:
 
     //! Sets the parent of this entity.
         /*!
-         * \param parent an Entity pointer, that is the parent to set.
+         * \param parent an Entity pointer. The parent to set.
          */
     void setParent(Entity* parent) {
         parent->addChild(this);
@@ -47,7 +47,7 @@ public:
 
     //! Adds a child to this entity.
         /*!
-         * \param child an Entity pointer, that is the child to add.
+         * \param child an Entity pointer. The child to add.
          */
     void addChild(Entity* child) {
         this->children.push_back(child);
@@ -65,7 +65,7 @@ public:
     //! Get a child of this entity by type.
         /*!
          * \param type a string value, that is the type of child.
-         * \return Entity pointer, that is the first child of this entity that matches the string parameter.
+         * \return Entity pointer. The first child of this entity that matches the string parameter.
          */
     Entity* getChildByType(std::string type){
         for (auto & child : children)
@@ -77,7 +77,7 @@ public:
     //! Get a child of this entity by type.
         /*!
          * \param name a string value, that is the name of the child.
-         * \return Entity pointer, that is the child of this entity that matches the string parameter.
+         * \return Entity pointer. The child of this entity that matches the string parameter.
          */
     Entity* getChildByName(std::string name) {
         for (auto & child : children)
@@ -113,7 +113,7 @@ public:
         /*!
          * Used by the game programmer to add update functionality to the entity.
          * Called every frame.
-          \param deltaTime a float value, that is the current delta time.
+          \param deltaTime a float value. The current delta time in seconds.
         */
     virtual void update(float deltaTime) {}
 

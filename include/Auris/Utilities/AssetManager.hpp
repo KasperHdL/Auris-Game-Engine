@@ -21,24 +21,55 @@ namespace Auris{
     class AssetManager{
     private:
 
-        static std::map<std::string, SRE::Texture*> textures;
-        static std::map<std::string, SpriteSheet*> spritesheets;
+        static std::map<std::string, SRE::Texture*> textures; /*!< A map of string values, and Texture pointers: textures. That has a reference to all textures loaded. */
+        static std::map<std::string, SpriteSheet*> spritesheets; /*!< A map of string values, and Spritesheet pointers: spritesheets. That has a reference to all spritesheets loaded. */
 
-        static std::map<std::string, Mix_Music*> music;
-        static std::map<std::string, Mix_Chunk*> sounds;
+        static std::map<std::string, Mix_Music*> music; /*!< A map of string values, and Mix_Music pointers: music. That has a reference to all music loaded. */
+        static std::map<std::string, Mix_Chunk*> sounds; /*!< A map of string values, and Mix_Chunk pointers: sound. That has a reference to all sound loaded. */
 
+        //! A createSheet method, taking 2 arguments.
+        /*! Creates a new spritesheet, based on the parth to the json file
+         * \param  sheet a SpriteSheet pointer. An instance of the SpriteSheet to create.
+         * \param pathToJson a string value. The string to the path of the json file.
+         */
         static void createSheet(SpriteSheet* sheet, std::string pathToJson, bool createFlipped = false, bool filterSampling = false);
     public:
+
+        //! A getTexture method, taking 1 arguments.
+        /*! Gives a new Texture pointer based on the filename inputted
+         * \param  filename a string value. The name of the Texture file.
+         * \return Texture pointer. An instance of the texture loaded from the file.
+         */
         static SRE::Texture* getTexture(std::string filename, bool filterSampling = false);
+
+        /*! A getSpriteSheet method, taking 1 arguments.
+        /* Gives a new SpriteSheet pointer based on the filename inputted
+         * \param  filename a string value. The name of the SpriteSheet file.
+         * \return SpriteSheet pointer. An instance of the spritesheet loaded from the file.
+         */
         static SpriteSheet* getSpriteSheet(std::string jsonFilename, bool createFlipped = false, bool filterSampling = false);
 
+        //! A getSound method, taking 1 arguments.
+        /*! Gives a new sound pointer based on the filename inputted
+         * \param  filename a string value. The name of the sound file.
+         * \return Mix_Chunk pointer. An instance of the sound loaded from the file.
+         * \sa getMusic(std::string filename)
+         */
         static Mix_Chunk* getSound(std::string filename);
+
+        //! A getMusic method, taking 1 arguments.
+        /*! Gives a new music pointer based on the filename inputted
+         * \param  filename a string value. The name of the music file.
+         * \return Mix_Music pointer. An instance of the music loaded from the file.
+         * \sa getSound(std::string filename)
+         */
         static Mix_Music* getMusic(std::string filename);
 
-        //! Helper Function to get the datafolder
-        /*! returns the data folder path and is windows safe, it can be parsed a string which is simply appended
-         * \param optional - string which will be appended, defaults to ""
-         * \return string with path to data folder and file param
+        //! A getDataPath method, taking 0-1 argument.
+        /*! Helper Function to get the datafolder.
+         * Returns the data folder path and is windows safe, it can be parsed a string which is simply appended
+         * \param  file a string pointer. String which will be appended (default is "").
+         * \return string. The path to data folder and file param
          */
         static std::string getDataPath(const std::string &file = ""){
             //We need to choose the path separator properly based on which
