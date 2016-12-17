@@ -40,10 +40,7 @@ namespace Auris{
             }
         }
 
-        ~PhysicsEntity(){
-            //Engine::instance->world->DestroyBody(body);
-
-        }
+        ~PhysicsEntity();
 
         //! The method setCollisionEvents, taking 1 argument.
             /*! set the collision event on or off in box2D
@@ -77,6 +74,7 @@ namespace Auris{
             */
         void setRotation(float rotation) {
             body->SetTransform(body->GetPosition(), rotation);
+            transform->setRotation(rotation);
         }
      
         //! The method setAwake, taking 1 argument.

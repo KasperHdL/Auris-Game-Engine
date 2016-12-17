@@ -19,12 +19,8 @@ namespace Auris{
 
         if(entity->parent == nullptr)
             return getLocal(offset);
-
-        if(!dirty) return globalTransform;
-
-        globalTransform = entity->parent->transform->getGlobal() * getLocal(offset);
-        dirty = false;
-        return globalTransform;
+        
+        return entity->parent->transform->getGlobal() * getLocal(offset);
     }
 
     glm::vec3 Transform::getGlobalPosition(){

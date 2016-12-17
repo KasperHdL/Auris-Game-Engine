@@ -43,7 +43,6 @@ cout << "Error: Unsupported OS" << endl;
 #include "Auris/Systems/Scene.hpp"
 #include "Auris/Systems/Input.hpp"
 #include "Auris/Systems/RenderSystem.hpp"
-#include "Auris/Systems/CollisionHandler.hpp"
 
 #include "Auris/Action.hpp"
 #include "Auris/Testing/ProfilingTimer.hpp"
