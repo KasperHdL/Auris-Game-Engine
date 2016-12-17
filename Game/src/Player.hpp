@@ -100,7 +100,7 @@ public:
         pistolShot = audioPlayer->addSound(AssetManager::getSound("pistolShot.wav"));
 
         pistolReload.start(0.2f);
-        grenadeReload.start(5);
+        grenadeReload.start(5.0f);
 
         aimDirection = vec2(1, 0);
 
@@ -193,10 +193,6 @@ public:
                     fireBullet(-aimRotation-(radians(90.0f)), normalized);
                     canFire = false;
                     pistolReload.reset();
-                }
-
-                if (canThrow) {
-
                 }
             }
 

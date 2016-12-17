@@ -39,7 +39,6 @@ cout << "Error: Unsupported OS" << endl;
 
 #include "Auris/Utilities/MemoryLeakDetector.hpp"
 #include "Auris/Utilities/Convert.hpp"
-#include "Auris/Systems/CollisionHandler.hpp"
 
 #include "Auris/Systems/Scene.hpp"
 #include "Auris/Systems/Input.hpp"
