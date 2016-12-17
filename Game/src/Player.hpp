@@ -104,12 +104,12 @@ public:
 
         aimDirection = vec2(1, 0);
 
-        this->addChild(audioPlayer);
-        this->addChild(crosshair);
+        addChild(audioPlayer);
+        addChild(crosshair);
     }
 
     void setController(int controllerID){
-        this->controller = controllerID;
+        controller = controllerID;
     }
 
     void die() {
@@ -232,6 +232,7 @@ public:
                 other->setGravity(3);
                 other->setFixedRotation(false);
                 other->setBullet(false);
+                Game::instance->destroyEntity(other);
             }
         }
 

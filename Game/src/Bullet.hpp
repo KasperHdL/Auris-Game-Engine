@@ -19,6 +19,7 @@ public:
 
     Bullet(vec2 position = vec2(0, 0), float rotation = 0, vec2 direction = vec2(0,0), Player* player = nullptr) : PhysicsEntity(){
         type = "Bullet";
+        name = "Bullet";
 
         sprite = RenderSystem::getSprite(this, AssetManager::getTexture("bullet.png"));
 

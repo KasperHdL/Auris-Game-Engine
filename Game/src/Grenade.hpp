@@ -34,6 +34,9 @@ public:
 
     Grenade(vec2 position = vec2(0, 0), vec2 direction = vec2(1,0)){
         type = "Grenade";
+        name = "Grenade";
+
+        sprite = RenderSystem::getSprite(this, AssetManager::getTexture("grenade.png"));
 
         b2CircleShape shape;
         shape.m_p.Set(0, 0);
