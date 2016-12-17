@@ -40,10 +40,7 @@ namespace Auris{
             }
         }
 
-        ~PhysicsEntity(){
-            Engine::instance->world->DestroyBody(body);
-
-        }
+        ~PhysicsEntity();
 
         //! The method setCollisionEvents, taking 1 argument.
             /*! set the collision event on or off in box2D

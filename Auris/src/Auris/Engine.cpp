@@ -1,5 +1,7 @@
 #include "Auris/Engine.hpp"
 #include "Auris/Testing/DebugUI.hpp"
+#include "Auris/Systems/CollisionHandler.hpp"
+
 
 using namespace SRE;
 using namespace glm;
