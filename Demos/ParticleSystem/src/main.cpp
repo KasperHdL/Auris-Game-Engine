@@ -12,7 +12,7 @@ int main(int argc, char** argv) {
     float height = 720;
 
     Engine engine(width, height);
-    engine.startup(&game);
+    Engine::instance->startup(&game);
 
     return 0;
 }

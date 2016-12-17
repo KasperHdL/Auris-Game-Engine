@@ -12,7 +12,8 @@
 #include "Auris/Utilities/AssetManager.hpp"
 #include "Auris/Entities/PhysicsEntity.hpp"
 #include "Auris/Action.hpp"
-
+#include "Crosshair.hpp"
+#include "Auris/Utilities/AudioPlayer.hpp"
 #include "Bullet.hpp"
 
 using namespace std;
@@ -26,32 +27,39 @@ public:
     Sprite* lower;
     Sprite* upper;
 
+    Crosshair* crosshair;
+    AudioPlayer* audioPlayer;
+
     bool alive = true;
     bool canJump = true;
     bool aiming = false;
+    bool canFire = true;
 
     float maxSpeed = 50;
     float jumpHeight = 8000;
     float movementSpeed = 1000;
     float crosshairOffset = 10;
+    float bulletOffset = 5;
     float aimDirection;
+    float deltaTime;
 
     int healthPoints = 100;
-
+    int pistolShot;
     int controller;
 
     Player(vec2 position = vec2(0,0)) : PhysicsEntity(){
         type = "Player";
 
         spriteSheet = AssetManager::getSpriteSheet("player.json", true);
+
         upper = RenderSystem::getSprite(this);
         spriteSheet->setSpriteTo(upper, "upper_3", true);
 
-        anim = RenderSystem::getAnim(this, 1.0f);
-        anim->makeSequence(spriteSheet, "lower_run");
-
         lower = RenderSystem::getSprite(this);
         spriteSheet->setSpriteTo(lower, "lower_run_3");
+
+        anim = RenderSystem::getAnim(this, 1.0f);
+        anim->makeSequence(spriteSheet, "lower_run", true);
 
         upper->offset = vec3(3,8,0);
         lower->offset = vec3(3,4,0);
@@ -73,6 +81,19 @@ public:
         RenderSystem::deleteSprite(upper);
     }
 
+    void init() {
+        audioPlayer = (AudioPlayer*) Game::instance->addEntity(make_shared<AudioPlayer>(Game::instance->camera, 1));
+        audioPlayer->name = audioPlayer->type + to_string(controller);
+
+        crosshair = (Crosshair*) Game::instance->addEntity(make_shared<Crosshair>());
+        crosshair->name = crosshair->type + to_string(controller);
+
+        pistolShot = audioPlayer->addSound(AssetManager::getSound("pistolShot.wav"));
+
+        this->addChild(audioPlayer);
+        this->addChild(crosshair);
+    }
+
     void setController(int controllerID){
         this->controller = controllerID;
     }
@@ -81,19 +102,16 @@ public:
         alive = false;
         setFixedRotation(false);
         setGravity(0);
+        Game::instance->destroyEntity(crosshair);
     }
 
     void fireBullet(float rotation, vec2 direction) {
-        auto bullet = (Bullet*) Game::instance->addEntity(make_shared<Bullet>(transform->getPosition()));
-        bullet->setRotation(rotation);
-        bullet->direction = direction;
+        auto bullet = (Bullet*) Game::instance->addEntity(make_shared<Bullet>(vec2(transform->getPosition().x+direction.x*bulletOffset, transform->getPosition().y-direction.y*bulletOffset), rotation, vec2(direction.x, -direction.y), this));
+        bullet->player = this;
     }
 
-    void init() {
-
-	}
-
-    void update(float dt){
+    void update(float deltaTime){
+        this->deltaTime = deltaTime;
         if (alive){
             float leftStickX = Input::getControllerAxisState(controller, SDL_CONTROLLER_AXIS_LEFTX);
             leftStickX = leftStickX/32767;
@@ -103,6 +121,7 @@ public:
 
             vec2 rightStick = Input::getControllerRightStickState(controller);
             rightStick = vec2(rightStick.x / 32767, rightStick.y / 32767);
+            vec2 normalized = normalize(rightStick);
 
             int rightTrigger = Input::getControllerAxisState(controller, SDL_CONTROLLER_AXIS_TRIGGERRIGHT);
 
@@ -112,41 +131,53 @@ public:
             }
 
             if (leftStickX < 0)  {
-                anim->run(lower, abs(leftStickX)*dt);
-                //transform->setScale = vec2(-1, 1);
+                anim->run(lower, abs(leftStickX)*deltaTime, true);
+                //transform->scale = vec2(-1, 1);
                 if (getLinearVelocity()[0] > -maxSpeed)
                     applyForce(vec2(1, 0) * leftStickX * movementSpeed, true);
             }
 
             if (leftStickX > 0)  {
-                anim->run(lower, abs(leftStickX)*dt);
-                //transform->setScale = vec2(1, 1);
+                anim->run(lower, abs(leftStickX)*deltaTime, false);
+                //transform->scale = vec2(1, 1);
                 if (getLinearVelocity()[0] < maxSpeed)
                     applyForce(vec2(1, 0) * leftStickX * movementSpeed, true);
             }
 
             if (rightStick != vec2(0, 0)) {
                 aimDirection = (float)(atan2(rightStick.x, -rightStick.y));
-                aimDirection = degrees(aimDirection);
-                getChildByType("crosshair")->transform->getPosition() = vec3(rightStick*crosshairOffset, 0);
+                crosshair->transform->setPosition(vec2(normalized.x*crosshairOffset, -normalized.y*crosshairOffset));
                 aiming = true;
             }
-            else
+            else {
                 aiming = false;
+                crosshair->transform->setScale(vec2(-0.5, -0.5));
+            }
 
             if (aiming) {
                 float divider = 180/7;
-                int aim = abs(aimDirection) > 180-divider ? 0 :
-                    abs(aimDirection) > 180-divider*2 ? 1 :
-                    abs(aimDirection) > 180-divider*3 ? 2 :
-                    abs(aimDirection) > 180-divider*4 ? 3 :
-                    abs(aimDirection) > 180-divider*5 ? 4 :
-                    abs(aimDirection) > 180-divider*6 ? 5 : 6;
+                float absDir = abs(degrees(aimDirection));
+                int aim = absDir > 180-divider ? 6 :
+                    absDir > 180-divider*2 ? 5 :
+                    absDir > 180-divider*3 ? 4 :
+                    absDir > 180-divider*4 ? 3 :
+                    absDir > 180-divider*5 ? 2 :
+                    absDir > 180-divider*6 ? 1 : 0;
+
                 string sprite   = "upper_" + to_string(aim);
-                spriteSheet->setSpriteTo(upper, sprite, rightStick.x < 0);
+                spriteSheet->setSpriteTo(upper, sprite, normalized.x < 0);
+
                 if (rightTrigger > 16000) {
-                    fireBullet(aimDirection, rightStick);
+                    if (canFire) {
+                        audioPlayer->playSound(pistolShot);
+                        fireBullet(-aimDirection-(radians(90.0f)), vec2(normalized.x, normalized.y));
+                    }
                 }
+            }
+
+            if (healthPoints <= 0) {
+                healthPoints = 0;
+                die();
             }
         }
     }
@@ -156,15 +187,19 @@ public:
             canJump = true;
 
         if (other->type == "Bullet") {
-            healthPoints -= ((Bullet*)other)->damage;
-            other->setGravity(3);
-            other->setFixedRotation(false);
-            other->setBullet(false);
+            Bullet* bullet = (Bullet*) other;
+            if (bullet->player != this) {
+                healthPoints -= bullet->damage;
+                other->setGravity(3);
+                other->setFixedRotation(false);
+                other->setBullet(false);
+            }
         }
     }
 
     void OnCollisionExit(PhysicsEntity* other) {
-        canJump = false;
+        if (other->type == "Wall")
+            canJump = false;
     }
 
     void inspectorImGui(){

@@ -9,20 +9,28 @@
 using namespace Auris;
 using namespace Constants;
 
-class Wall : public PhysicsEntity{
+class HorizontalWall : public PhysicsEntity{
 public:
+    vector<Sprite*> sprites;
 
-    Sprite* sprite;
+    int width;
 
-    Wall(vec2 position = vec2(0,0)):PhysicsEntity() {
+    HorizontalWall(vec2 position = vec2(0,0)):PhysicsEntity() {
         type = "Wall";
 
-        SpriteSheet* spriteSheet = AssetManager::getSpriteSheet("MarioPacked.json");
-        sprite = RenderSystem::getSprite(this);
-        spriteSheet->setSpriteTo(sprite, "brick");
+        width = Game::instance->camera->getWidth();
 
-        b2PolygonShape shape; 
-        shape.SetAsBox(sprite->getWidth() * PIXELS_TO_METERS/2, sprite->getHeight() * PIXELS_TO_METERS/2); 
+        for (int i = 0; i <= width; i += 32) {
+            Sprite* sprite;
+
+            sprite = RenderSystem::getSprite(this, AssetManager::getTexture("concreteSmall.png"), nullptr, AssetManager::getTexture("concreteSmallNormal.png"));
+            sprite->offset = vec3(-width/(float)2+i-16, 0, 0);
+            sprites.push_back(sprite);
+        }
+
+        b2PolygonShape shape;
+        shape.SetAsBox(width * PIXELS_TO_METERS/2, sprites[0]->getHeight()*PIXELS_TO_METERS/2);
+        cout << sprites[0]->getHeight() << endl;
 
         body = Auris::Utilities::BodyStandard::getStaticBody(&shape, position, 30.0f);
 
@@ -30,7 +38,38 @@ public:
         setCollisionEvents(true);
     }
 
-    ~Wall(){
-        Auris::RenderSystem::deleteSprite(sprite);
+    ~HorizontalWall(){
+    }
+};
+
+class VerticalWall : public PhysicsEntity{
+public:
+    vector<Sprite*> sprites;
+
+    float height;
+
+    VerticalWall(vec2 position = vec2(0,0)):PhysicsEntity() {
+        type = "Wall";
+
+        height = Game::instance->camera->getHeight();
+
+        for (int i = 0; i <= height; i += 32) {
+            Sprite* sprite;
+
+            sprite = RenderSystem::getSprite(this, AssetManager::getTexture("concreteSmall.png"), nullptr, AssetManager::getTexture("concreteSmallNormal.png"));
+            sprite->offset = vec3(0, -height/2+i-16, 0);
+            sprites.push_back(sprite);
+        }
+
+        b2PolygonShape shape;
+        shape.SetAsBox(sprites[0]->getWidth()*PIXELS_TO_METERS/2, height * PIXELS_TO_METERS/2);
+
+        body = Auris::Utilities::BodyStandard::getStaticBody(&shape, position, 30.0f);
+
+        // Physics properties
+        setCollisionEvents(true);
+    }
+
+    ~VerticalWall(){
     }
 };

@@ -24,7 +24,11 @@ public:
     Crosshair() {
         type = "crosshair";
 
-        //sprite = RenderSystem::getSprite(this, AssetManager::getTexture("crosshair.png"));
-        transform->setScale(vec2(2,2));
+        sprite = RenderSystem::getSprite(this, AssetManager::getTexture("crosshair.png"));
+        transform->setScale(vec2(0.5, 0.5));
+    }
+
+    ~Crosshair() {
+        RenderSystem::deleteSprite(sprite);
     }
 };

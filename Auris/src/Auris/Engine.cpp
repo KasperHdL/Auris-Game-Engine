@@ -190,8 +190,6 @@ void Engine::run(SDL_Window* window){
         int index = 0;
         while (Game::instance->destroyEntities.size() > 0) {
             index = Game::instance->destroyEntities.back();
-            cout << "index: " << index << endl;
-            cout << "destroyEntities: " << Game::instance->destroyEntities[index] << endl;
             Game::instance->entities.erase(Game::instance->entities.begin() + index);
             Game::instance->destroyEntities.pop_back();
         }
