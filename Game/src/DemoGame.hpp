@@ -27,7 +27,7 @@ class DemoGame : public Auris::Game {
     void init() {
         Game::camera = new Auris::Camera(1280, 720);
         loadScene(&scene1);
-        Auris::Engine::world->SetGravity(b2Vec2(0, -9.8));
+        Engine::instance->world->SetGravity(b2Vec2(0, -9.8));
 
         controllers.resize(8);
         for (auto & element : controllers) {

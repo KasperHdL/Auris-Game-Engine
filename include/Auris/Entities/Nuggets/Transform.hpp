@@ -47,6 +47,13 @@ class Transform : public Nugget{
              * \return mat4, that is the matrix of the global transform
             */
         mat4 getGlobal(vec3 offset = vec3(0));
+        
+        //! A getGlobalPosition method
+            /*!
+             * Gets the global position of the transform
+             * \return vec3, that is the position of the global transform
+            */
+        vec3 getGlobalPosition();
 
 
 };

@@ -29,6 +29,7 @@ class Light : public Entity{
         vec3 color;/*!< A vec3 value: color. That is the color of the light */
         float range; /*!< A float value: range, that is the range of the light (0 means inifinite). */
         static int lightCount; /*!< An int value: lightCount. The total number of instances of Light*/
+        vec3 globalPosition;
 
 
         //! The light contructor taking 1-3 arguments.
@@ -44,15 +45,12 @@ class Light : public Entity{
              * \param dt a float, that is the delta time.
             */
         void update(float dt){
+            globalPosition = transform->getGlobalPosition();
             SRE::SimpleRenderEngine::instance->setLight(
                 lightNum,
                 SRE::Light(
                 (SRE::LightType)lightType,
-                {
-                    transform->position.x * Auris::Constants::METERS_TO_PIXELS,
-                    transform->position.y * Auris::Constants::METERS_TO_PIXELS,
-                    0
-                },
+                globalPosition * Constants::METERS_TO_PIXELS,
                 direction,
                 color,
                 range * Auris::Constants::METERS_TO_PIXELS
@@ -68,7 +66,7 @@ class Light : public Entity{
 
         void inspectorImGui(){
             Entity::inspectorImGui();
-            ImGui::Separator();
+            ImGui::DragFloat3("Global Position", &globalPosition.x);
 
             ImGui::Text("Light Number(channel) %d", lightNum);
             lightNum = glm::clamp<int>(lightNum, 0, 3);
@@ -84,7 +82,7 @@ class Light : public Entity{
 
         void debugDraw(){
             float scale = iconScale;
-            vec2 p = transform->position * Auris::Constants::METERS_TO_PIXELS;
+            vec2 p = transform->getGlobalPosition() * Auris::Constants::METERS_TO_PIXELS;
 
             SRE::Debug::setColor(vec4(1,1,1,1));
             SRE::Debug::drawLine(vec3(p.x - scale, p.y,0), vec3(p.x + scale, p.y,0));

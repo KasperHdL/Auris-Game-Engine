@@ -5,7 +5,7 @@ using namespace Auris;
 void DebugUI::startup(Engine* engine){
     this->e = engine;
   
-    Engine::world->SetDebugDraw(&debugDraw);
+    e->world->SetDebugDraw(&debugDraw);
     debugDraw.SetFlags(b2Draw::e_shapeBit);
 
 }
@@ -50,22 +50,24 @@ void DebugUI::update(float dt){
         ImGui::Begin("Debug Menu");
         {
             ImGui::Checkbox("Debug(F2)[this]", &debug_menu);
-            ImGui::SameLine();
-            ImGui::Checkbox("Pause(F3)", &pause);
-            if(ImGui::Button("Step One Frame(F4)")){
+            ImGui::Checkbox("Toggle Hierarchy(F3)", &toggle_hierarchy);
+            ImGui::Checkbox("Toggle Inspector(F4)", &toggle_inspector);
+            ImGui::Checkbox("Toggle Profiling inspector(F5)", &profiling);
+            ImGui::Separator();
+
+            ImGui::Checkbox("Debug Colliders(F7)", &drawColliders);
+            ImGui::Checkbox("Call DrawDebug on Entities(F8)", &drawDebug);
+
+            ImGui::Separator();
+            ImGui::Checkbox("Pause(F10)", &pause);
+            if(ImGui::Button("Step One Frame(F11)")){
                 runOneStep = true;
                 pause = true;
             }
             ImGui::SameLine();
-            ImGui::Text("Play on Hold(F5)");
+            ImGui::Text("Play on Hold(F12)");
     //          ImGui::Checkbox("Toggle Camera Controls(Arrow Keys)",&toggle_cameraControls);
-            ImGui::Checkbox("Debug Colliders(F6)", &drawColliders);
-            ImGui::Checkbox("Call DrawDebug on Entities(F7)", &drawDebug);
 
-            ImGui::Separator();
-            ImGui::Checkbox("Toggle Hierarchy", &toggle_hierarchy);
-            ImGui::Checkbox("Toggle Inspector", &toggle_inspector);
-            ImGui::Checkbox("Toggle Profiling inspector", &profiling);
         }
         ImGui::End();
     }
@@ -298,7 +300,7 @@ void DebugUI::draw(){
     }
 
     if(drawColliders){
-        Engine::world->DrawDebugData();
+        e->world->DrawDebugData();
     }
 
 

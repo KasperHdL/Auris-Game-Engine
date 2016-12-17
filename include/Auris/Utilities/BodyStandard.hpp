@@ -37,7 +37,7 @@ namespace BodyStandard{
         fixtureDef.restitution = restitution;
 
         b2Body* body;
-        body = Engine::world->CreateBody(&bodyDef);
+        body = Auris::Engine::instance->world->CreateBody(&bodyDef);
         body->CreateFixture(&fixtureDef);
 
         return body;
@@ -66,7 +66,7 @@ namespace BodyStandard{
         fixtureDef.restitution = restitution;
  
         b2Body* body;
-        body = Engine::world->CreateBody(&bodyDef);
+        body = Auris::Engine::instance->world->CreateBody(&bodyDef);
         body->CreateFixture(&fixtureDef);  
 
         return body;
