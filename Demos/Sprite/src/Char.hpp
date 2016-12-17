@@ -15,6 +15,7 @@ public: Sprite* sprite;
         type = "Character";
 
         sprite = RenderSystem::getSprite(this, AssetManager::getTexture("cartman.png"));
+        transform->setPosition(position);
 
     }
 
@@ -42,6 +43,9 @@ public:
 
         sprite = RenderSystem::getSprite(this);
         sheet->setSpriteTo(sprite, "lower_run_3");
+
+
+        transform->setPosition(position);
     }
 
     void update(float dt){

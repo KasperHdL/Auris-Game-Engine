@@ -16,10 +16,10 @@ class Guide : public Entity{
     Auris::Camera* camera;
 
     float speed = 10;
+    float lightOffset = 10;
 
     Guide():Entity(){
         name = "Lights";
-        float lightOffset = 10;
         for(int i = 0;i < 4; i++){
             lights[i] = (Auris::Light*) Game::instance->addEntity(make_shared<Auris::Light>(glm::vec2((i % 2) * lightOffset - lightOffset / 2,(i / 2) * lightOffset - lightOffset/2))); 
             addChild(lights[i]);
@@ -40,8 +40,8 @@ class Guide : public Entity{
             vel.x += speed * dt;
         }
 
-        transform->position += vec3(vel,0);
-        //camera->setPos(transform->position);
+        transform->addToPosition(vel);
+        //camera->setPos(transform->getPosition());
 
     }
 
@@ -49,10 +49,15 @@ class Guide : public Entity{
         Entity::inspectorImGui();
         ImGui::Separator();
         ImGui::DragFloat("Speed", &speed);
+        if(ImGui::DragFloat("Light Offset", &lightOffset)){
+            for(int i = 0;i < 4; i++){
+                lights[i]->transform->getPosition() = glm::vec3((i % 2) * lightOffset - lightOffset / 2,(i / 2) * lightOffset - lightOffset/2,0);
+            }
+        }
     }
 
     void debugDraw(){
-        vec3 p = transform->position * Constants::METERS_TO_PIXELS;
+        vec3 p = transform->getPositionVec3() * Constants::METERS_TO_PIXELS;
         SRE::Debug::setColor(vec4(1));
         SRE::Debug::drawLine(vec3(p - vec3(-5,0,0)), vec3(p + vec3(5,0,0)));
         SRE::Debug::drawLine(vec3(p - vec3(0,-5,0)), vec3(p + vec3(0,5,0)));

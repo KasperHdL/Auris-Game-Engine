@@ -48,8 +48,8 @@ public:
     //! Sets the pan and master volume according to the relative distance between this AudioPlayer and its listener
     void update(float deltaTime) {
         if (listener != nullptr) {
-            deltaDistanceX = 127 - (transform->position.x - listener->getPos().x)/(listener->getWidth()/254);
-            deltaDistanceY = 127 - (transform->position.y - listener->getPos().y)/(listener->getHeight()/254);
+            deltaDistanceX = 127 - (transform->getPosition().x - listener->getPos().x)/(listener->getWidth()/254);
+            deltaDistanceY = 127 - (transform->getPosition().y - listener->getPos().y)/(listener->getHeight()/254);
             pan = deltaDistanceX < 0 ? 0: deltaDistanceX > 254 ? 254 : deltaDistanceX;
             Mix_SetPanning(channel, pan, 254-pan);
 
@@ -188,7 +188,7 @@ public:
 
     void debugDraw(){
         float scale = audioIconScale;
-        vec2 p = transform->position;
+        vec2 p = transform->getPosition();
 
         // Icon
         SRE::Debug::setColor(vec4(1,1,1,1));

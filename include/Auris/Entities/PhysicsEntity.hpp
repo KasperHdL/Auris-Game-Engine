@@ -4,6 +4,7 @@
 #include "Box2D/Box2D.h"
 #include "Auris/Utilities/Convert.hpp"
 #include "glm/glm.hpp"
+#include "Auris/Engine.hpp"
 
 namespace Auris{
     using namespace glm;
@@ -12,8 +13,13 @@ namespace Auris{
     /*! Used to control physic objects.
     */
     class PhysicsEntity : public Entity{
+
+    private:
+        b2Vec2 lastPosition;
+        float lastAngle;
     public:
         b2Body* body; /*!< A b2Body pointer: body. Reference to the physics body. */
+
 
         //! The overloaded method updateTransform.
             /*! Updates the enitities transform according to the physics body.
@@ -22,8 +28,21 @@ namespace Auris{
              * \overload Entity::updateTransform()
             */
         virtual void updateTransform() {
-            transform->position = vec3(Convert::toGlm(body->GetPosition()),transform->position.z);
-            transform->rotation = body->GetAngle();
+            b2Vec2 p = body->GetPosition();
+            if(lastPosition != p){
+                transform->setPosition(Convert::toGlm(p));
+                lastPosition = p;
+            }
+            float a = body->GetAngle();
+            if(lastAngle != a){
+                transform->setRotation(a);
+                lastAngle = a;
+            }
+        }
+
+        ~PhysicsEntity(){
+            //Engine::instance->world->DestroyBody(body);
+
         }
 
         //! The method setCollisionEvents, taking 1 argument.
@@ -144,25 +163,31 @@ namespace Auris{
             */
         virtual void inspectorImGui(){
             if(ImGui::TreeNode("Physics Transform")){
-                glm::vec3 pos = transform->position;
-                float rotation = transform->rotation;
+                glm::vec3 pos = transform->getPositionVec3();
+                float rotation = transform->getRotation();
+                glm::vec2 scale = transform->getScale();
+
                 glm::vec2 vel = Convert::toGlm(body->GetLinearVelocity());
                 float rvel = body->GetAngularVelocity();
                 float mass = body->GetMass();
             
                 ImGui::DragFloat3("Position", &pos.x,0.1f);
                 ImGui::DragFloat("Rotation", &rotation,0.1f);
-
-                ImGui::DragFloat2("Scale", &transform->scale.x,0.1f);
+                ImGui::DragFloat2("Scale", &scale.x, 0.1f);
 
                 ImGui::DragFloat2("Velocity", &vel.x);
                 ImGui::DragFloat("Angular Velocity", &rvel);
                 ImGui::DragFloat("Mass", &mass);
 
-                if(pos != transform->position || rotation != transform->rotation){
+                if(pos != transform->getPositionVec3() || rotation != transform->getRotation()){
+                    transform->setPosition(pos);
+                    transform->setRotation(rotation);
                     body->SetTransform(Convert::toB2(pos), rotation);
                     setAwake(true);
                 }
+
+                if(scale != transform->getScale())
+                    transform->setScale(scale);
 
                 if(Convert::toB2(vel) != body->GetLinearVelocity())
                     body->SetLinearVelocity(Convert::toB2(vel));

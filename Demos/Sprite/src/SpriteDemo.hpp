@@ -57,10 +57,11 @@ class SpriteDemo : public Game{
     }
 
     void spawnChar(){
+        vec2 offset = glm::circularRand<float>(glm::linearRand<float>(0,radius));
         if(spawnSprite)
-            addEntity(make_shared<CharSprite>(vec2(0)));
+            addEntity(make_shared<CharSprite>(position + offset));
         if(spawnAnim)
-            addEntity(make_shared<CharAnim>(vec2(0)));
+            addEntity(make_shared<CharAnim>(position + offset));
 
     }
     
