@@ -22,9 +22,9 @@ public:
 
         for (int i = 0; i <= width; i += 32) {
             Sprite* sprite;
-            sprite->offset = vec3(-width/(float)2+i-16, 0, 0);
 
             sprite = RenderSystem::getSprite(this, AssetManager::getTexture("concreteSmall.png"), nullptr, AssetManager::getTexture("concreteSmallNormal.png"));
+            sprite->offset = vec3(-width/(float)2+i-16, 0, 0);
             sprites.push_back(sprite);
         }
 
@@ -55,9 +55,9 @@ public:
 
         for (int i = 0; i <= height; i += 32) {
             Sprite* sprite;
-            sprite->offset = vec3(0, -height/2+i-16, 0);
 
             sprite = RenderSystem::getSprite(this, AssetManager::getTexture("concreteSmall.png"), nullptr, AssetManager::getTexture("concreteSmallNormal.png"));
+            sprite->offset = vec3(0, -height/2+i-16, 0);
             sprites.push_back(sprite);
         }
 

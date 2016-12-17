@@ -46,7 +46,7 @@ class DemoGame : public Auris::Game {
         int i = 0;
         vec2 camPos;
         for (auto & player : players) {
-            camPos += vec2(player->transform->position.x*Constants::METERS_TO_PIXELS, player->transform->position.y*Constants::METERS_TO_PIXELS);
+            camPos += vec2(player->transform->getPosition().x*Constants::METERS_TO_PIXELS, player->transform->getPosition().y*Constants::METERS_TO_PIXELS);
             i++;
         }
 

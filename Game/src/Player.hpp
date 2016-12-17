@@ -106,7 +106,7 @@ public:
     }
 
     void fireBullet(float rotation, vec2 direction) {
-        auto bullet = (Bullet*) Game::instance->addEntity(make_shared<Bullet>(vec2(transform->position.x+direction.x*bulletOffset, transform->position.y-direction.y*bulletOffset), rotation, vec2(direction.x, -direction.y), this));
+        auto bullet = (Bullet*) Game::instance->addEntity(make_shared<Bullet>(vec2(transform->getPosition().x+direction.x*bulletOffset, transform->getPosition().y-direction.y*bulletOffset), rotation, vec2(direction.x, -direction.y), this));
         bullet->player = this;
     }
 
@@ -146,11 +146,13 @@ public:
 
             if (rightStick != vec2(0, 0)) {
                 aimDirection = (float)(atan2(rightStick.x, -rightStick.y));
-                crosshair->transform->position = vec3(normalized.x*crosshairOffset, -normalized.y*crosshairOffset, 0);
+                crosshair->transform->setPosition(vec2(normalized.x*crosshairOffset, -normalized.y*crosshairOffset));
                 aiming = true;
             }
-            else
+            else {
                 aiming = false;
+                crosshair->transform->setScale(vec2(-0.5, -0.5));
+            }
 
             if (aiming) {
                 float divider = 180/7;
