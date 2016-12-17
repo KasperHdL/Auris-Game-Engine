@@ -8,14 +8,14 @@ Camera::Camera(float width, float height, float near, float far){
     this->bottom = -height/2;
     this->right = width/2;
     this->top = height/2;
-    this->near = near;
-    this->far = far;
+    this->nearPlane = near;
+    this->farPlane = far;
     this->pos.x = 0;
     this->pos.y = 0;
     this->z = 0;
     this->up = glm::vec3(0,1,0);
     cam = new SRE::Camera();
-    cam->setOrthographicProjection(this->left,this->right,this->bottom,this->top,this->near,this->far);
+    cam->setOrthographicProjection(this->left,this->right,this->bottom,this->top,this->nearPlane,this->farPlane);
     SRE::SimpleRenderEngine::instance->setCamera(cam);
     updateCam();
 }
@@ -51,7 +51,7 @@ void Camera::translate(glm::vec2 amount){
 }
 
 void Camera::zoom(float amount){
-    cam->setOrthographicProjection(left*amount,right*amount,bottom*amount,top*amount,near*amount,far*amount);
+    cam->setOrthographicProjection(left*amount,right*amount,bottom*amount,top*amount,nearPlane*amount,farPlane*amount);
 }
 
 void Camera::setRotation(float z){

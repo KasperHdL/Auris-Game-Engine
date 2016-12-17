@@ -27,7 +27,7 @@ private:
         contact->SetEnabled(true);
 
         // Call their respective collision functions if they both have collision events enabled
-        if (colliderA != nullptr & colliderB != nullptr) {
+        if (colliderA != nullptr && colliderB != nullptr) {
             colliderA->OnCollisionEnter(colliderB);
             colliderB->OnCollisionEnter(colliderA);
         }
@@ -47,7 +47,7 @@ private:
         contact->SetEnabled(false);
 
         // Call their respective collision functions if they both have collision events enabled
-        if (colliderA != nullptr & colliderB != nullptr) {
+        if (colliderA != nullptr && colliderB != nullptr) {
             colliderA->OnCollisionExit(colliderB);
             colliderB->OnCollisionExit(colliderA);
         }
