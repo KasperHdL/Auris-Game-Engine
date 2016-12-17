@@ -85,7 +85,13 @@ void Engine::startup(Game* game, int spritePoolCapacity){
 }
 
 void Engine::shutdown(){
+
     game->shutdown();
+
+    game->entities.clear();
+    game->destroyEntities.clear();
+    game->newEntities.clear();
+
     Input::shutdown();
 
     delete world;

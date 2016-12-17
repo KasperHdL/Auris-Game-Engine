@@ -15,12 +15,47 @@ using namespace glm;
     */
 class Transform : public Nugget{
     public:
-        vec3 position; /*!< A vec3 value: position. The position of the transform. */
-        vec2 scale;/*!< A vec2 value: scale. The scale of the transform. */
-        float rotation; /*!< A float value: rotation. The rotation of the transform. */
 
+        vec2 getPosition(){return position;}
+        vec3 getPositionVec3(){return position;}
+        float getZ(){return position.z;}
 
-        //! The Transform constructor, taking 1 argument.
+        void addToPosition(vec2 value){addToPosition(vec3(value,0));}
+        void addToPosition(vec3 value){
+            dirty = true;
+            position += value;
+        }
+
+        void setPosition(vec2 value){setPosition(vec3(value,position.z));}
+
+        void setPosition(vec3 value){
+            dirty = true;
+            position = value;
+        }
+
+        void addToScale(vec2 value){
+            dirty = true;
+            scale += value;
+        }
+
+        void setScale(vec2 value){
+            dirty = true;
+            scale = value;
+        }
+        vec2 getScale(){return scale;}
+
+        void addToRotation(float value){
+            dirty = true;
+            rotation += value;
+        }
+
+        void setRotation(float value){
+            dirty = true;
+            rotation = value;
+        }
+        float getRotation(){return rotation;}
+
+       //! The Transform constructor, taking 1 argument.
             /*!
              * Initializes the position, scale and rotation of the transform to default values.
              * \param entity an Entity pointer, that is the entity the transform is associated with.
@@ -29,7 +64,7 @@ class Transform : public Nugget{
             position = vec3(0,0,0);
             scale = vec2(1,1);
             rotation = 0;
-        
+            dirty = true;
         }
 
         //! A getLocal method, taking 0-1 argument.
@@ -55,6 +90,15 @@ class Transform : public Nugget{
             */
         vec3 getGlobalPosition();
 
+    private:
+        bool dirty = true;
+
+        vec3 position; /*!< A vec3 value: position. The position of the transform. */
+        vec2 scale;/*!< A vec2 value: scale. The scale of the transform. */
+        float rotation; /*!< A float value: rotation. The rotation of the transform. */
+
+        mat4 localTransform;//!< A mat4 value localTransform, for optimization caching
+        mat4 globalTransform;//!< A mat4 value globalTransform, for optimization caching
 
 };
 }

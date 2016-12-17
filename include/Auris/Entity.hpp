@@ -139,9 +139,20 @@ public:
         */
     virtual void inspectorImGui(){
         if(ImGui::TreeNode("Transform")){
-            ImGui::DragFloat3("Position", &transform->position.x);
-            ImGui::DragFloat2("Scale", &transform->scale.x);
-            ImGui::DragFloat("Rotation", &transform->rotation);
+            glm::vec3 pos = transform->getPositionVec3();
+            float rot = transform->getRotation();
+            glm::vec2 scale = transform->getScale();
+
+            ImGui::DragFloat3("Position", &pos.x,0.1f);
+            ImGui::DragFloat("Rotation", &rot,0.1f);
+            ImGui::DragFloat2("Scale", &scale.x,0.1f);
+
+            if(pos != transform->getPositionVec3() || rot != transform->getRotation() || scale != transform->getScale()){
+                transform->setPosition(pos);
+                transform->setRotation(rot);
+                transform->setScale(scale);
+            }
+
             ImGui::TreePop();
         } 
     }

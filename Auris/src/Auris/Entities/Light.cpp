@@ -14,7 +14,7 @@ Light::Light(vec2 position, Type lightType, int lightNum):Entity(){
 
     lightCount = ++lightCount;
 
-    transform->position = vec3(position,0);
+    transform->setPosition(position);
     globalPosition = transform->getGlobalPosition();
 
     this->lightType = lightType;
