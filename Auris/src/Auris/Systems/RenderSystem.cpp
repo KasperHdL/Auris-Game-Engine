@@ -17,7 +17,7 @@ void RenderSystem::update(float dt){
     for(int i = 0; i < RenderSystem::spritePool.capacity;i++){
         Sprite* s = RenderSystem::spritePool[i];
         if(s != nullptr)
-            s->draw();
+            s->draw(); //draw all sprites
     }
 
 }

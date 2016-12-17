@@ -56,12 +56,12 @@ void Camera::zoom(float amount){
 
 void Camera::setRotation(float z){
     this->z = z;
-    up = glm::rotateZ(glm::vec3(0,1,0),this->z);
+    up = glm::rotateZ(glm::vec3(0,1,0),this->z); //calculate rotation from z
     updateCam();
 }
 
 void Camera::rotate(float amount){
     this->z += amount;
-    up = glm::rotateZ(up,amount);
+    up = glm::rotateZ(up,amount); //calculate rotation from amount
     updateCam();
 }

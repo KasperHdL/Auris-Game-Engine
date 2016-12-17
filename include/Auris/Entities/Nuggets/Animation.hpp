@@ -46,16 +46,16 @@ public:
 
     //! The method setSheet, taking 1 argument.
         /*!
-         * set the spritesheet of the animation
+         * Set the spritesheet of the animation
          * \param spritesheet a SpriteSheet pointer, that is the spritesheet to add
         */
     void setSheet(SpriteSheet* spritesheet);
 
     //! The method makeSequence, taking 2 arguments.
         /*!
-         * make the animation use a sequence of sprites in a spritesheet
-         * \param spritesheet a SpriteSheet pointer, that is the spritesheet to add
-         * \param name a string, that is the name of the sequence in the spritesheet
+         * Make the animation use a sequence of sprites in a spritesheet
+         * \param spritesheet a SpriteSheet pointer. The spritesheet to add
+         * \param name a string. The name of the sequence in the spritesheet
         */
     void makeSequence(SpriteSheet* spritesheet, std::string name, bool createFlipped = false);
 
