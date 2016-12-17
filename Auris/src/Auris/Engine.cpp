@@ -19,6 +19,12 @@ Engine::Engine(int width, int height){
 
     Constants::width = width;
     Constants::height = height;
+
+#if NDEBUG
+
+    std::cout << "DEBUG MODE" << std::endl;
+
+#endif
 }
 
 void Engine::startup(Game* game, int spritePoolCapacity){
