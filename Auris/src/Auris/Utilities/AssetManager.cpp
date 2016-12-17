@@ -16,9 +16,10 @@ std::map<std::string, Mix_Chunk*> AssetManager::sounds;
  * \param filename filename of the .png or .jpeg file in the data folder
  * \return SRE::Texture* pointer to the Texture (DO NOT DELETE)
  */
-SRE::Texture* AssetManager::getTexture(std::string filename){
+SRE::Texture* AssetManager::getTexture(std::string filename, bool filterSampling){
     if(AssetManager::textures[filename] == nullptr){
         AssetManager::textures[filename] = SRE::Texture::createFromFile(getDataPath(filename).c_str(), false);
+        AssetManager::textures[filename]->setFilterSampling(filterSampling);
     }
     return AssetManager::textures[filename];
 }
@@ -29,11 +30,11 @@ SRE::Texture* AssetManager::getTexture(std::string filename){
  * \param filename filename of the .json file in the data folder
  * \return SpriteSheet* pointer to the SpriteSheet  (DO NOT DELETE)
  */
-SpriteSheet* AssetManager::getSpriteSheet(std::string jsonFilename, bool createFlipped){
+SpriteSheet* AssetManager::getSpriteSheet(std::string jsonFilename, bool createFlipped, bool filterSampling){
     if(AssetManager::spritesheets[jsonFilename] == nullptr){
 
         AssetManager::spritesheets[jsonFilename] = new SpriteSheet();
-        AssetManager::createSheet(AssetManager::spritesheets[jsonFilename], jsonFilename, createFlipped);
+        AssetManager::createSheet(AssetManager::spritesheets[jsonFilename], jsonFilename, createFlipped, filterSampling);
         
     }
     return AssetManager::spritesheets[jsonFilename];
@@ -85,7 +86,7 @@ Mix_Chunk* AssetManager::getSound(std::string filename) {
 // Private Methods
 ///////////////////
 
-void AssetManager::createSheet(SpriteSheet* sheet, std::string jsonFilename, bool createFlipped){
+void AssetManager::createSheet(SpriteSheet* sheet, std::string jsonFilename, bool createFlipped, bool filterSampling){
 
         bool invertY = true;
 
@@ -102,9 +103,9 @@ void AssetManager::createSheet(SpriteSheet* sheet, std::string jsonFilename, boo
 
         for(auto & stuff : meta){
             if(stuff.first=="image"){
-                sheet->texture = getTexture(stuff.second.get<std::string>());
+                sheet->texture = getTexture(stuff.second.get<std::string>(), filterSampling);
             }if(stuff.first=="normal"){
-                sheet->normalMap = getTexture(stuff.second.get<std::string>());
+                sheet->normalMap = getTexture(stuff.second.get<std::string>(), filterSampling);
             }
         }
 

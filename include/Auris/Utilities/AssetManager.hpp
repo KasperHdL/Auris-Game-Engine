@@ -20,10 +20,10 @@ namespace Auris{
         static std::map<std::string, Mix_Music*> music;
         static std::map<std::string, Mix_Chunk*> sounds;
 
-        static void createSheet(SpriteSheet* sheet, std::string pathToJson, bool createFlipped = false);
+        static void createSheet(SpriteSheet* sheet, std::string pathToJson, bool createFlipped = false, bool filterSampling = false);
     public:
-        static SRE::Texture* getTexture(std::string filename);
-        static SpriteSheet* getSpriteSheet(std::string jsonFilename, bool createFlipped = false);
+        static SRE::Texture* getTexture(std::string filename, bool filterSampling = false);
+        static SpriteSheet* getSpriteSheet(std::string jsonFilename, bool createFlipped = false, bool filterSampling = false);
 
         static Mix_Chunk* getSound(std::string filename);
         static Mix_Music* getMusic(std::string filename);

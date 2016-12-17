@@ -84,9 +84,9 @@ public:
     void setProperties(SRE::Texture* texture,glm::vec4 color = glm::vec4(1), SRE::Texture* normalMap = nullptr, Mesh* mesh = nullptr){
         material.texture = texture;
 
-       if(mesh == nullptr)
+       if(mesh == nullptr){
             this->mesh = Mesh::createCube();
-        else
+       }else
             this->mesh = mesh;
 
         material.normalMap = normalMap;
