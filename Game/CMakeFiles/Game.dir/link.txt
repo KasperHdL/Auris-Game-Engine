@@ -1,1 +1,1 @@
-/usr/bin/c++      CMakeFiles/Game.dir/src/main.o  -o Game -rdynamic -lEngine 
+/usr/bin/c++      CMakeFiles/Game.dir/src/main.o  -o Game -rdynamic -lAuris 

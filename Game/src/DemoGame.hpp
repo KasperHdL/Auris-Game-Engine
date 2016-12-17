@@ -18,8 +18,6 @@ class DemoGame : public Auris::Game {
 
     vector<Player*> players;
 
-    vec2 camPos;
-
     int pistolShot;
     int warSounds;
 
@@ -46,10 +44,12 @@ class DemoGame : public Auris::Game {
             Game::destroyEntity(players[0]);
 
         int i = 0;
+        vec2 camPos;
         for (auto & player : players) {
-            camPos += vec2(player->transform->position.x, player->transform->position.y);
+            camPos += vec2(player->transform->position.x*Constants::METERS_TO_PIXELS, player->transform->position.y*Constants::METERS_TO_PIXELS);
             i++;
         }
+
         if (i != 0) {
             camPos /= i;
             Game::camera->setPos(camPos);

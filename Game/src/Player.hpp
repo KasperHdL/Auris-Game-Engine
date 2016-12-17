@@ -39,6 +39,7 @@ public:
     float jumpHeight = 8000;
     float movementSpeed = 1000;
     float crosshairOffset = 10;
+    float bulletOffset = 2;
     float aimDirection;
     float deltaTime;
 
@@ -50,14 +51,15 @@ public:
         type = "Player";
 
         spriteSheet = AssetManager::getSpriteSheet("player.json", true);
+
         upper = RenderSystem::getSprite(this);
         spriteSheet->setSpriteTo(upper, "upper_3", true);
 
-        anim = RenderSystem::getAnim(this, 1.0f);
-        anim->makeSequence(spriteSheet, "lower_run", true);
-
         lower = RenderSystem::getSprite(this);
         spriteSheet->setSpriteTo(lower, "lower_run_3");
+
+        anim = RenderSystem::getAnim(this, 1.0f);
+        anim->makeSequence(spriteSheet, "lower_run", true);
 
         upper->offset = vec3(3,8,0);
         lower->offset = vec3(3,4,0);
@@ -100,12 +102,14 @@ public:
         alive = false;
         setFixedRotation(false);
         setGravity(0);
+        Game::instance->destroyEntity(crosshair);
     }
 
     void fireBullet(float rotation, vec2 direction) {
         auto bullet = (Bullet*) Game::instance->addEntity(make_shared<Bullet>(transform->position));
+        bullet->player = this;
         bullet->setRotation(rotation);
-        bullet->direction = direction;
+        bullet->direction = vec2(direction.x, -direction.y);
     }
 
     void update(float deltaTime){
@@ -145,7 +149,7 @@ public:
                 aimDirection = (float)(atan2(rightStick.x, -rightStick.y));
                 aimDirection = degrees(aimDirection);
                 vec2 normalized = normalize(rightStick);
-                getChildByType("crosshair")->transform->position = vec3(normalized.x*crosshairOffset, -normalized.y*crosshairOffset, 0);
+                crosshair->transform->position = vec3(normalized.x*crosshairOffset, -normalized.y*crosshairOffset, 0);
                 aiming = true;
             }
             else
@@ -154,7 +158,7 @@ public:
             if (aiming) {
                 float divider = 180/7;
                 float absDir = abs(aimDirection);
-                int aim =  absDir > 180-divider ? 6 :
+                int aim = absDir > 180-divider ? 6 :
                     absDir > 180-divider*2 ? 5 :
                     absDir > 180-divider*3 ? 4 :
                     absDir > 180-divider*4 ? 3 :
@@ -166,11 +170,15 @@ public:
 
                 if (rightTrigger > 16000) {
                     if (canFire) {
-                        fireBullet(aimDirection, rightStick);
+                        fireBullet(aimDirection, vec2(rightStick.x, rightStick.y));
                         audioPlayer->playSound(pistolShot);
-                        canFire = false;
                     }
                 }
+            }
+
+            if (healthPoints <= 0) {
+                healthPoints = 0;
+                die();
             }
         }
     }
@@ -180,10 +188,13 @@ public:
             canJump = true;
 
         if (other->type == "Bullet") {
-            healthPoints -= ((Bullet*)other)->damage;
-            other->setGravity(3);
-            other->setFixedRotation(false);
-            other->setBullet(false);
+            Bullet* bullet = (Bullet*) other;
+            if (bullet->player != this) {
+                healthPoints -= bullet->damage;
+                other->setGravity(3);
+                other->setFixedRotation(false);
+                other->setBullet(false);
+            }
         }
     }
 
