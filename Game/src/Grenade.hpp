@@ -46,7 +46,7 @@ public:
         timer.start(explosionTime);
 
         // Physics properties
-        speed = 2000;
+        speed = 8000;
     }
 
     void update(float deltaTime) {
@@ -65,6 +65,8 @@ public:
                 b2FixtureDef fixtureDef;
                 fixtureDef.shape = &shape;
                 fixtureDef.isSensor = true;
+
+                sensor->CreateFixture(&fixtureDef);
 
                 //particles->startup(1000, 3.0f);
 
