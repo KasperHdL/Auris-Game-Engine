@@ -39,7 +39,7 @@ public:
     float jumpHeight = 8000;
     float movementSpeed = 1000;
     float crosshairOffset = 10;
-    float bulletOffset = 2;
+    float bulletOffset = 5;
     float aimDirection;
     float deltaTime;
 
@@ -106,10 +106,8 @@ public:
     }
 
     void fireBullet(float rotation, vec2 direction) {
-        auto bullet = (Bullet*) Game::instance->addEntity(make_shared<Bullet>(transform->position));
+        auto bullet = (Bullet*) Game::instance->addEntity(make_shared<Bullet>(vec2(transform->position.x+direction.x*bulletOffset, transform->position.y-direction.y*bulletOffset), rotation, vec2(direction.x, -direction.y), this));
         bullet->player = this;
-        bullet->setRotation(rotation);
-        bullet->direction = vec2(direction.x, -direction.y);
     }
 
     void update(float deltaTime){
@@ -123,6 +121,7 @@ public:
 
             vec2 rightStick = Input::getControllerRightStickState(controller);
             rightStick = vec2(rightStick.x / 32767, rightStick.y / 32767);
+            vec2 normalized = normalize(rightStick);
 
             int rightTrigger = Input::getControllerAxisState(controller, SDL_CONTROLLER_AXIS_TRIGGERRIGHT);
 
@@ -147,8 +146,6 @@ public:
 
             if (rightStick != vec2(0, 0)) {
                 aimDirection = (float)(atan2(rightStick.x, -rightStick.y));
-                aimDirection = degrees(aimDirection);
-                vec2 normalized = normalize(rightStick);
                 crosshair->transform->position = vec3(normalized.x*crosshairOffset, -normalized.y*crosshairOffset, 0);
                 aiming = true;
             }
@@ -157,7 +154,7 @@ public:
 
             if (aiming) {
                 float divider = 180/7;
-                float absDir = abs(aimDirection);
+                float absDir = abs(degrees(aimDirection));
                 int aim = absDir > 180-divider ? 6 :
                     absDir > 180-divider*2 ? 5 :
                     absDir > 180-divider*3 ? 4 :
@@ -166,12 +163,12 @@ public:
                     absDir > 180-divider*6 ? 1 : 0;
 
                 string sprite   = "upper_" + to_string(aim);
-                spriteSheet->setSpriteTo(upper, sprite, rightStick.x < 0);
+                spriteSheet->setSpriteTo(upper, sprite, normalized.x < 0);
 
                 if (rightTrigger > 16000) {
                     if (canFire) {
-                        fireBullet(aimDirection, vec2(rightStick.x, rightStick.y));
                         audioPlayer->playSound(pistolShot);
+                        fireBullet(-aimDirection-(radians(90.0f)), vec2(normalized.x, normalized.y));
                     }
                 }
             }

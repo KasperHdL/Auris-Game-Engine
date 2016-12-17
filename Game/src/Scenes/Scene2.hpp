@@ -10,7 +10,7 @@ public:
     void init(Game* game) { 
         game->addEntity(make_shared<Player>(vec2(10, 10)));
         game->addEntity(make_shared<Player>(vec2(10, 20)));
-        game->addEntity(make_shared<Wall>(vec2(10, 30)));
+        game->addEntity(make_shared<HorizontalWall>(vec2(10, 30)));
         game->addEntity(make_shared<Player>(vec2(10, 40)));
     } 
 }; 

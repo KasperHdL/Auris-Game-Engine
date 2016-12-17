@@ -9,31 +9,28 @@
 using namespace Auris;
 using namespace Constants;
 
-class Wall : public PhysicsEntity{
+class HorizontalWall : public PhysicsEntity{
 public:
-    Sprite* sprite;
     vector<Sprite*> sprites;
 
     int width;
 
-    Wall(vec2 position = vec2(0,0)):PhysicsEntity() {
+    HorizontalWall(vec2 position = vec2(0,0)):PhysicsEntity() {
         type = "Wall";
 
         width = Game::instance->camera->getWidth();
 
-        b2PolygonShape shape;
-        shape.SetAsBox(width * PIXELS_TO_METERS/2, Game::instance->camera->getWidth() * PIXELS_TO_METERS/2);
-
-        cout << "Camera width: " << width * PIXELS_TO_METERS/2;
-
-        for (int i = 0; i < width * PIXELS_TO_METERS/2; i += 2) {
+        for (int i = 0; i <= width; i += 32) {
             Sprite* sprite;
-            sprite->offset = vec3(width*PIXELS_TO_METERS/2+i, 0, 0);
+            sprite->offset = vec3(-width/(float)2+i-16, 0, 0);
 
-            sprite = RenderSystem::getSprite(this, AssetManager::getTexture("concrete.png"), nullptr, AssetManager::getTexture("concreteNormal.png"));
+            sprite = RenderSystem::getSprite(this, AssetManager::getTexture("concreteSmall.png"), nullptr, AssetManager::getTexture("concreteSmallNormal.png"));
             sprites.push_back(sprite);
-            cout << "i: " << i;
         }
+
+        b2PolygonShape shape;
+        shape.SetAsBox(width * PIXELS_TO_METERS/2, sprites[0]->getHeight()*PIXELS_TO_METERS/2);
+        cout << sprites[0]->getHeight() << endl;
 
         body = Auris::Utilities::BodyStandard::getStaticBody(&shape, position, 30.0f);
 
@@ -41,7 +38,38 @@ public:
         setCollisionEvents(true);
     }
 
-    ~Wall(){
-        Auris::RenderSystem::deleteSprite(sprite);
+    ~HorizontalWall(){
+    }
+};
+
+class VerticalWall : public PhysicsEntity{
+public:
+    vector<Sprite*> sprites;
+
+    float height;
+
+    VerticalWall(vec2 position = vec2(0,0)):PhysicsEntity() {
+        type = "Wall";
+
+        height = Game::instance->camera->getHeight();
+
+        for (int i = 0; i <= height; i += 32) {
+            Sprite* sprite;
+            sprite->offset = vec3(0, -height/2+i-16, 0);
+
+            sprite = RenderSystem::getSprite(this, AssetManager::getTexture("concreteSmall.png"), nullptr, AssetManager::getTexture("concreteSmallNormal.png"));
+            sprites.push_back(sprite);
+        }
+
+        b2PolygonShape shape;
+        shape.SetAsBox(sprites[0]->getWidth()*PIXELS_TO_METERS/2, height * PIXELS_TO_METERS/2);
+
+        body = Auris::Utilities::BodyStandard::getStaticBody(&shape, position, 30.0f);
+
+        // Physics properties
+        setCollisionEvents(true);
+    }
+
+    ~VerticalWall(){
     }
 };

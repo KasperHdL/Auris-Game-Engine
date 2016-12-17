@@ -11,13 +11,13 @@ class Bullet : public PhysicsEntity {
 public:
     int damage = 10;
 
-    vec2 direction = vec2(0,0);
+    vec2 direction;
     float speed = 10;
 
-    Player* player = nullptr;
+    Player* player;
     Sprite* sprite;
 
-    Bullet(vec2 position = vec2(0, 0)) : PhysicsEntity(){
+    Bullet(vec2 position = vec2(0, 0), float rotation = 0, vec2 direction = vec2(0,0), Player* player = nullptr) : PhysicsEntity(){
         type = "Bullet";
 
         sprite = RenderSystem::getSprite(this, AssetManager::getTexture("bullet.png"));
@@ -27,15 +27,21 @@ public:
 
         body = Auris::Utilities::BodyStandard::getDynamicBody(&shape, position);
 
+        this->direction = direction;
+        this->player = player;
+        setRotation(rotation);
+
         // Physics properties
         setCollisionEvents(true);
         setFixedRotation(true);
         setBullet(true);
+        transform->scale *= 0.5;
         setGravity(0);
     }
 
     ~Bullet() {
         RenderSystem::deleteSprite(sprite);
+        Engine::instance->world->DestroyBody(body);
     }
 
     void update(float dt) {
@@ -43,6 +49,7 @@ public:
     }
 
     void OnCollisionEnter(PhysicsEntity* other) {
-
+        if (other->type == "Wall")
+            Game::instance->destroyEntity(this);
     }
 };
