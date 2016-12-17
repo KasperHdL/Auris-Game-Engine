@@ -50,6 +50,8 @@ class DebugUI;
     */
 class Engine{
 public:
+    static Engine* instance;
+
     //! The engine contructor taking 2 arguments.
         /*!
           \param width an integer, that is the width of the window.
@@ -67,7 +69,7 @@ public:
         /*! Starts up all the engine systems
           \param game a Game pointer, that is the current game.
         */
-    void startup(Game* game);
+    void startup(Game* game, int spritePoolCapacity = 512);
 
     //! A method to shutdown the engine.
         /*! Closes down all the engine systems */
@@ -79,7 +81,7 @@ public:
         */
     void run(SDL_Window* window);
 
-    static b2World* world; /*!< A static b2World pointer: world. A reference to the physics world */
+    b2World* world; /*!< A static b2World pointer: world. A reference to the physics world */
 
     Game* game; /*!< A Game pointer: game. A reference to the current game */
 

@@ -12,7 +12,7 @@ int main(int argc, char** argv) {
     float height = 720;
 
     Auris::Engine engine(width, height);
-    engine.startup(&game);
+    engine.startup(&game, 4096);
 
     return 0;
 }

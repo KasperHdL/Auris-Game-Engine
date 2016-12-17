@@ -7,14 +7,19 @@ using namespace std;
 using namespace Auris;
 
 
-b2World* Engine::world;
+Engine* Engine::instance;
 
 Engine::Engine(int width, int height){
+    if(instance != nullptr){
+        std::cerr << "Multiple versions of Engine initialized. Only a single instance is supported." << std::endl; 
+    }
+    instance = this;
+
     Constants::width = width;
     Constants::height = height;
 }
 
-void Engine::startup(Game* game){
+void Engine::startup(Game* game, int spritePoolCapacity){
     this->game = game;
 
     if (SDL_Init(SDL_INIT_VIDEO) == -1) // Initialize SDL2
@@ -52,13 +57,13 @@ void Engine::startup(Game* game){
 
     SRE::SimpleRenderEngine r{window};
 
-    renderSystem.startup(512);
+    renderSystem.startup(spritePoolCapacity);
 
 
     world = new b2World(Convert::toB2(glm::vec2(0,0)));
 
     collisionHandler = new CollisionHandler;
-    Engine::world->SetContactListener(collisionHandler);
+    world->SetContactListener(collisionHandler);
 
     // Initialize Simple Render Engine
 
@@ -83,8 +88,7 @@ void Engine::shutdown(){
     game->shutdown();
     Input::shutdown();
 
-    delete Engine::world;
-    Engine::world = nullptr;
+    delete world;
     //delete collisionHandler;
 
     renderSystem.shutdown();
@@ -146,7 +150,7 @@ void Engine::run(SDL_Window* window){
             if(debugUI->profiling) profile_Entity_UpdateTimer.stop();
 
             if(debugUI->profiling) profile_PhysicsTimer.start();
-            Engine::world->Step(deltaTimeSec, Constants::VELOCITY_ITERATIONS, Constants::POSITION_ITERATIONS);
+            world->Step(deltaTimeSec, Constants::VELOCITY_ITERATIONS, Constants::POSITION_ITERATIONS);
             if(debugUI->profiling) profile_PhysicsTimer.stop();
 
 
