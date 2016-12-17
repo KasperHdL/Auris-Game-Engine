@@ -82,7 +82,7 @@ class Light : public Entity{
 
         void debugDraw(){
             float scale = iconScale;
-            vec2 p = transform->position * Auris::Constants::METERS_TO_PIXELS;
+            vec2 p = transform->getGlobalPosition() * Auris::Constants::METERS_TO_PIXELS;
 
             SRE::Debug::setColor(vec4(1,1,1,1));
             SRE::Debug::drawLine(vec3(p.x - scale, p.y,0), vec3(p.x + scale, p.y,0));
