@@ -41,7 +41,7 @@ namespace Auris{
         }
 
         ~PhysicsEntity(){
-            //Engine::instance->world->DestroyBody(body);
+            Engine::instance->world->DestroyBody(body);
 
         }
 
@@ -77,6 +77,7 @@ namespace Auris{
             */
         void setRotation(float rotation) {
             body->SetTransform(body->GetPosition(), rotation);
+            transform->setRotation(rotation);
         }
      
         //! The method setAwake, taking 1 argument.
