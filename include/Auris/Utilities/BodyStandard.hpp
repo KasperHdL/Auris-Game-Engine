@@ -24,7 +24,7 @@ namespace BodyStandard{
      * \return b2Body pointer. A pointer to the dynamic body created.
      * \sa PhysicsEntity::setPosition()
     */
-    static b2Body* getDynamicBody(b2Shape* shape, bool isSensor = false, float friction = 1.0f, float density = 20.0f, float restitution = 0.0f){
+    static b2Body* getDynamicBody(b2Shape* shape, bool isSensor = false, float friction = 1.0f, float density = 20.0f, float restitution = 0.0f, b2Filter* filter = nullptr){
         
         b2BodyDef bodyDef;
         bodyDef.type = b2_dynamicBody;
@@ -36,6 +36,13 @@ namespace BodyStandard{
         fixtureDef.density = density;
         fixtureDef.restitution = restitution;
         fixtureDef.isSensor = isSensor;
+
+        if(filter != nullptr){
+            fixtureDef.filter.categoryBits = filter->categoryBits;
+            fixtureDef.filter.maskBits = filter->maskBits;
+            fixtureDef.filter.groupIndex = filter->groupIndex;
+        }
+ 
 
         b2Body* body;
         body = Auris::Engine::instance->world->CreateBody(&bodyDef);
@@ -55,7 +62,7 @@ namespace BodyStandard{
          * \param restitution a float value. The restitution of the body (default is 0.0).
          * \return b2Body pointer. A pointer to the static body created.
         */
-    static b2Body* getStaticBody(b2Shape* shape, glm::vec2 position = glm::vec2(0), bool isSensor = false, float friction = 1.0f, float density = 20.0f, float restitution = 0.0f){
+    static b2Body* getStaticBody(b2Shape* shape, glm::vec2 position = glm::vec2(0), bool isSensor = false, float friction = 1.0f, float density = 20.0f, float restitution = 0.0f, b2Filter* filter = nullptr){
         b2BodyDef bodyDef; 
         bodyDef.type = b2_staticBody; 
         bodyDef.position.Set(position.x, position.y); 
@@ -66,6 +73,12 @@ namespace BodyStandard{
         fixtureDef.density = density;
         fixtureDef.restitution = restitution;
         fixtureDef.isSensor = isSensor;
+
+        if(filter != nullptr){
+            fixtureDef.filter.categoryBits = filter->categoryBits;
+            fixtureDef.filter.maskBits = filter->maskBits;
+            fixtureDef.filter.groupIndex = filter->groupIndex;
+        }
  
         b2Body* body;
         body = Auris::Engine::instance->world->CreateBody(&bodyDef);
