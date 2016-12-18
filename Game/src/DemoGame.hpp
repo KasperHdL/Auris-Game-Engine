@@ -93,13 +93,21 @@ class DemoGame : public Auris::Game {
 
     void addPlayer(int i, int controllerID){
 
+        //Bow before Mathias' cancer vector
         vec2 pos = i == 0 ? vec2(-40, -10) :
-                i == 1 ? vec2(-40, 30) :
+                i == 1 ? vec2(-50, 30) :
                 i == 2 ? vec2(40, -10) :
-                i == 3 ? vec2(40, 30):
+                i == 3 ? vec2(50, 30):
                 vec2(0, 0);
 
-        auto player = (Player*) Game::instance->addEntity(make_shared<Player>(pos));
+        //Bow before Jonas' cancer vector
+        vec4 col = i == 0 ? vec4(1,0,0,1) :
+                   i == 1 ? vec4(0,1,0,1) :
+                   i == 2 ? vec4(0,0,1,1) :
+                   i == 3 ? vec4(1,0,1,1) :
+                   vec4(1,1,1,1);
+
+        auto player = (Player*) Game::instance->addEntity(make_shared<Player>(pos,col));
         player->setController(controllerID);
         player->name = player->type + to_string(controllerID);
 
@@ -119,6 +127,28 @@ class DemoGame : public Auris::Game {
     }
 
     void imGUI(){
+    bool open = true;
+        vec2 cameraPos = vec2(camera->getPos().x,camera->getPos().y);
+        for(int i = 0; i<players.size();i++){
 
+            vec2 playerPos = players[i]->transform->getPosition();
+
+            vec2 labelPos = (cameraPos-playerPos)*Constants::METERS_TO_PIXELS;
+
+            ImGui::SetNextWindowPos(ImVec2(labelPos.x,labelPos.y));
+            ImGui::Begin("#TestLabel",&open,ImVec2(500,100),0,ImGuiWindowFlags_NoTitleBar|ImGuiWindowFlags_NoResize|ImGuiWindowFlags_NoMove|ImGuiWindowFlags_NoScrollbar|ImGuiWindowFlags_NoSavedSettings|ImGuiWindowFlags_NoInputs);
+            ImGui::Text("Hello, world!");
+            ImGui::End();
+
+            ImGui::SetNextWindowPos(ImVec2(0,0));
+            ImGui::Begin("#TestLabel",&open,ImVec2(500,100),0,ImGuiWindowFlags_NoTitleBar|ImGuiWindowFlags_NoResize|ImGuiWindowFlags_NoMove|ImGuiWindowFlags_NoScrollbar|ImGuiWindowFlags_NoSavedSettings|ImGuiWindowFlags_NoInputs);
+            ImGui::Text("Hello, world!");
+            ImGui::End();
+
+            ImGui::SetNextWindowPos(ImVec2(100,100));
+            ImGui::Begin("#TestLabel",&open,ImVec2(500,100),0,ImGuiWindowFlags_NoTitleBar|ImGuiWindowFlags_NoResize|ImGuiWindowFlags_NoMove|ImGuiWindowFlags_NoScrollbar|ImGuiWindowFlags_NoSavedSettings|ImGuiWindowFlags_NoInputs);
+            ImGui::Text("Hello, world!");
+            ImGui::End();
+        }
     }
 };

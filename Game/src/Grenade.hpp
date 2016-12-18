@@ -54,7 +54,8 @@ public:
     }
 
     void update(float deltaTime) {
-        if (explodeTimer.time(deltaTime)) {
+        explodeTimer.update(deltaTime);
+        if (explodeTimer.time()) {
             if (!hasExploded) {
                 explode();
             }
