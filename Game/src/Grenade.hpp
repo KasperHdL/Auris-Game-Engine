@@ -60,7 +60,8 @@ public:
                 explode();
             }
         }
-        if (destroyTimer.time(deltaTime) && hasExploded) {
+        destroyTimer.update(deltaTime);
+        if (destroyTimer.time() && hasExploded) {
             Game::instance->destroyEntity(this);
         }
     }
