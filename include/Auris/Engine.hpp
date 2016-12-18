@@ -84,7 +84,7 @@ public:
         /*! Starts up all the engine systems
           \param game a Game pointer, that is the current game.
         */
-    void startup(Game* game, int spritePoolCapacity = 512);
+    void startup(Game* game);
 
     //! A method to shutdown the engine.
         /*! Closes down all the engine systems */

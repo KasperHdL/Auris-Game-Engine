@@ -30,7 +30,7 @@ Engine::Engine(int width, int height){
 
 }
 
-void Engine::startup(Game* game, int spritePoolCapacity){
+void Engine::startup(Game* game){
     this->game = game;
 
     if (SDL_Init(SDL_INIT_VIDEO) == -1) // Initialize SDL2
@@ -69,7 +69,7 @@ void Engine::startup(Game* game, int spritePoolCapacity){
 
     SRE::SimpleRenderEngine r{window};
 
-    renderSystem.startup(spritePoolCapacity);
+    renderSystem.startup();
 
     //Makes new physics world
     world = new b2World(Convert::toB2(glm::vec2(0,0)));

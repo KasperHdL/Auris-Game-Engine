@@ -40,7 +40,7 @@ public:
          * Starts the rendersystem and reserve space in memeory for the sprites
          * \param reserve an int value. The amount to reserve
         */
-    void startup(int reserve);
+    void startup();
 
     //! A shutdown method.
         /*!

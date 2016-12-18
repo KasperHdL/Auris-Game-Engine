@@ -51,9 +51,9 @@ class DynamicPool{
                 for(;poolIndex < pools.size();poolIndex++){
                     if(!poolsFull[poolIndex]){
                         count++;
-                        if(pools[poolIndex]->isFull())
-                            poolsFull[poolIndex] = true;
-                        return pools[poolIndex]->create();
+                        T* obj = pools[poolIndex]->create();
+                        poolsFull[poolIndex] = pools[poolIndex]->isFull();
+                        return obj;
                     }
                 }
             }
