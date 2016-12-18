@@ -106,7 +106,7 @@ public:
     }
 
     void init() {
-        audioPlayer = (AudioPlayer*) Game::instance->addEntity(make_shared<AudioPlayer>(Game::instance->camera, this, 5));
+        audioPlayer = (AudioPlayer*) Game::instance->addEntity(make_shared<AudioPlayer>(Game::instance->camera, 5));
         audioPlayer->name = audioPlayer->type + to_string(controller);
 
         crosshair = (Crosshair*) Game::instance->addEntity(make_shared<Crosshair>());
@@ -303,10 +303,6 @@ public:
             Bullet* bullet = (Bullet*) other;
             if (bullet->player != this) {
                 healthPoints -= bullet->damage;
-                other->setGravity(3);
-                other->setFixedRotation(false);
-                other->setBullet(false);
-                Game::instance->destroyEntity(other);
             }
         }
 

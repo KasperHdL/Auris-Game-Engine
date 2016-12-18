@@ -54,7 +54,7 @@ public:
              * \param fadeDelayX a float value. The delay of the fade on the x axis (default is 0).
              * \param fadeDelayY a float value. The delay of the fade on the y axis (default is 0).
             */
-    AudioPlayer(Auris::Camera* listener = nullptr, Entity* parent = nullptr, int channels = 1, float fadeScaleX = 1.0f, float fadeScaleY = 1.0f, int fadeDelayX = 0, int fadeDelayY = 0);
+    AudioPlayer(Auris::Camera* listener = nullptr, int channels = 1, float fadeScaleX = 1.0f, float fadeScaleY = 1.0f, int fadeDelayX = 0, int fadeDelayY = 0);
 
     /*! An update method, taking 1 argument.
     /*! Sets the pan and master volume according to the relative distance between this AudioPlayer and its listener

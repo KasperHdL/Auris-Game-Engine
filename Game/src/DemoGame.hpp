@@ -32,7 +32,7 @@ class DemoGame : public Auris::Game {
         loadScene(&scene1);
         Engine::instance->world->SetGravity(b2Vec2(0, -9.8));
 
-        audioPlayer = (AudioPlayer*) addEntity(make_shared<AudioPlayer>(nullptr, nullptr, 5));
+        audioPlayer = (AudioPlayer*) addEntity(make_shared<AudioPlayer>(nullptr, 5));
         music = audioPlayer->addMusic(AssetManager::getMusic("electronicMusic.wav"), 60);
         audioPlayer->playMusic(music);
 

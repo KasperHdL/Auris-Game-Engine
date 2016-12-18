@@ -67,7 +67,8 @@ public:
     }
 
     void init() {
-        audioPlayer = (AudioPlayer*) Game::instance->addEntity(make_shared<AudioPlayer>(Game::instance->camera, this, 1));
+        audioPlayer = (AudioPlayer*) Game::instance->addEntity(make_shared<AudioPlayer>(Game::instance->camera, 1));
+        addChild(audioPlayer);
         applyForce(direction * speed, true);
         explosionSound = audioPlayer->addSound(AssetManager::getSound("expl.wav"));
     }

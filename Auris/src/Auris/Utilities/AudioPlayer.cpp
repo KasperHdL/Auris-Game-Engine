@@ -4,16 +4,13 @@ namespace Auris {
 
 int AudioPlayer::channelCount = 0;
 
-AudioPlayer::AudioPlayer(Auris::Camera* listener, Entity* parent, int channels, float fadeScaleX, float fadeScaleY, int fadeDelayX, int fadeDelayY){
+AudioPlayer::AudioPlayer(Auris::Camera* listener, int channels, float fadeScaleX, float fadeScaleY, int fadeDelayX, int fadeDelayY){
     type = "AudioPlayer";
 
     this->listener = listener;
     if (listener != nullptr) {
         drawAudioRange = true;
     }
-
-    if (parent != nullptr)
-        parent->addChild(this);
 
     this->fadeScaleX = fadeScaleX;
     this->fadeScaleY = fadeScaleY;
