@@ -12,6 +12,11 @@ int main(int argc, char** argv) {
     float height = 720;
 
     if (argc > 1) {
+        if ((string)argv[1] == "1.5") {
+            width *= 1.5f;
+            height *= 1.5f;
+        }
+
         if ((string)argv[1] == "2") {
             width *= 2;
             height *= 2;
