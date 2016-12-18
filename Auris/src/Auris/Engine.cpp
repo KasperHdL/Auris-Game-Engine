@@ -42,6 +42,9 @@ void Engine::startup(Game* game){
     if( Mix_OpenAudio( 44100, MIX_DEFAULT_FORMAT, MIX_DEFAULT_CHANNELS, 1024 ) == -1 ) // Initialize SDL_mixer
         cout << SDL_GetError() << endl;
 
+	 if(SDL_Init(SDL_INIT_GAMECONTROLLER) == -1|| SDL_Init(SDL_INIT_JOYSTICK) == -1){
+         fprintf(stderr, "Couldn't initialize controller: %s\n", SDL_GetError());
+    }
     //sets the sdl attributes
     SDL_GL_SetAttribute(SDL_GL_CONTEXT_MAJOR_VERSION, 3);
     SDL_GL_SetAttribute(SDL_GL_CONTEXT_MINOR_VERSION, 1);
