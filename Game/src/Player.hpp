@@ -90,10 +90,11 @@ public:
         //shape.m_radius = 2;
         shape.SetAsBox(((lower->getWidth()/3) * Constants::PIXELS_TO_METERS),(upper->getHeight() + lower->getHeight()-9)/3 * Constants::PIXELS_TO_METERS);
 
-        body = Auris::Utilities::BodyStandard::getDynamicBody(&shape,position);
+        body = Auris::Utilities::BodyStandard::getDynamicBody(&shape);
 
         // Physics properties
         setCollisionEvents(true);
+        setPosition(position);
         setFixedRotation(true);
         setGravity(3.0f);
         body->SetSleepingAllowed(false);

@@ -44,9 +44,11 @@ public:
         shape.m_p.Set(0, 0);
         shape.m_radius = 0.1;
 
-        body = Utilities::BodyStandard::getDynamicBody(&shape, position);
+        body = Utilities::BodyStandard::getDynamicBody(&shape);
         explodeTimer.start(explosionTime);
         destroyTimer.start(destroyTime);
+
+        setPosition(position);
 
         // Physics properties
         this->speed *= force;

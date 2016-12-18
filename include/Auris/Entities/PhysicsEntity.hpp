@@ -40,6 +40,7 @@ namespace Auris{
             }
         }
 
+
         ~PhysicsEntity();
 
         //! The method setCollisionEvents, taking 1 argument.
@@ -68,6 +69,14 @@ namespace Auris{
             body->SetFixedRotation(flag); 
         }
 
+        //! The method set Position,taking 1 argument.
+            /*! set the position of the object in box2D
+             * \param position a vec2 value. 
+            */
+        void setPosition(vec2 position) {
+            body->SetTransform(Convert::toB2(position), body->GetAngle());
+            transform->setPosition(position);
+        }
         //! The method setRotation, taking 1 argument.
             /*! set the rotation of the object in box2D
              * \param rotation a float value, that controls the rotation.

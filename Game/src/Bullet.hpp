@@ -26,7 +26,7 @@ public:
         b2PolygonShape shape;
         shape.SetAsBox(0.5f * Constants::PIXELS_TO_METERS, 0.1f * Constants::PIXELS_TO_METERS);
 
-        body = Auris::Utilities::BodyStandard::getDynamicBody(&shape, position);
+        body = Auris::Utilities::BodyStandard::getDynamicBody(&shape);
 
         this->direction = direction;
         this->player = player;
@@ -34,6 +34,7 @@ public:
 
         // Physics properties
         setCollisionEvents(true);
+        setPosition(position);
         setFixedRotation(true);
         setBullet(true);
         transform->setScale(vec2(0.5f, 0.5f));
