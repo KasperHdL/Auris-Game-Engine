@@ -37,7 +37,6 @@ cout << "Error: Unsupported OS" << endl;
 #include "Auris/Game.hpp"
 #include "Auris/Entity.hpp"
 
-#include "Auris/Utilities/MemoryLeakDetector.hpp"
 #include "Auris/Utilities/Convert.hpp"
 
 #include "Auris/Systems/Scene.hpp"
@@ -45,12 +44,18 @@ cout << "Error: Unsupported OS" << endl;
 #include "Auris/Systems/RenderSystem.hpp"
 
 #include "Auris/Action.hpp"
+
+#ifdef DEBUG
 #include "Auris/Testing/ProfilingTimer.hpp"
+#include "Auris/Utilities/MemoryLeakDetector.hpp"
+#endif
 
 
 
 namespace Auris{
+#ifdef DEBUG
 class DebugUI;
+#endif
 
 //! The game engine class
     /*! Everything happens here!
@@ -95,10 +100,11 @@ public:
     SDL_Window *window; /*!< A SDL_Window pointer: window. A reference to the current window */
 
     RenderSystem renderSystem; /*!< A Rendersystem value: renderSystem. The rendersystem of the engine */
-    DebugUI* debugUI; /*!< A DebugUI pointer: debugUI. A reference to the current engine debugUI */
+
 
     b2ContactListener* collisionHandler; /*!< A b2ContactListener pointer: collisionHandler. A reference to the box2d contactlistener, handling collision */
-
+#ifdef DEBUG
+    DebugUI* debugUI; /*!< A DebugUI pointer: debugUI. A reference to the current engine debugUI */
     ProfilingTimer profile_InputTimer; /*!< A ProfilingTimer value: profile_InputTimer. The profile timer to handle the input loop */
 
     ProfilingTimer profile_Entity_UpdateTimer; /*!< A ProfilingTimer value: profile_Entity_UpdateTimer. The profile timer to handle the entity update loop */
@@ -112,5 +118,6 @@ public:
 
     ProfilingTimer profile_RenderTimer; /*!< A ProfilingTimer value: profile_RenderTimer. The profile timer to handle the render loop */
     ProfilingTimer profile_SwapTimer; /*!< A ProfilingTimer value: profile_RenderTimer. The profile timer to handle the render loop */
+#endif
 };
 }

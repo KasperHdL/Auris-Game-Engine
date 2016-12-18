@@ -30,7 +30,7 @@ class SpriteDemo : public Game{
     
     void shutdown(){}
 
-    void drawDebugImGui(){
+    void imGui(){
         ImGui::Begin("SpriteDemo");
         ImGui::Text("Press F2 for debug menu");
 

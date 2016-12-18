@@ -1,3 +1,4 @@
+#ifdef DEBUG
 #include "Auris/Testing/DebugUI.hpp"
 #include "Auris/Engine.hpp"
 
@@ -305,3 +306,4 @@ void DebugUI::draw(){
 
 
 }
+#endif

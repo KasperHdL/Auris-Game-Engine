@@ -91,12 +91,12 @@ public:
         */
     virtual void controllerDisconnected(int controllerID){}
 
-    //! The scriptable function imGUI.
+    //! The scriptable function ImGui.
         /*!
-         * Used by the game programmer to add GUI functionality to the game with imgui.
+         * Used by the game programmer to add GUI functionality to the game with imGui.
          * Called every frame, after the old gui has been cleared.
         */
-    virtual void imGUI(){}
+    virtual void imGui(){}
 
     std::vector<std::shared_ptr<Entity>> entities; /*!< A vector value: entities, of shared pointers of Entity instances. Holds all entities of the game. */
     std::vector<int> destroyEntities; /*!< A vector value: destroyEntities, of integers. Holds the indexes of all gameobjects that are going to be destroyed this loop */

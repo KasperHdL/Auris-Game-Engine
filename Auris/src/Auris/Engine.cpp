@@ -1,12 +1,16 @@
 #include "Auris/Engine.hpp"
+
+#ifdef DEBUG
 #include "Auris/Testing/DebugUI.hpp"
+#endif
+
 #include "Auris/Systems/CollisionHandler.hpp"
 
 
+namespace Auris{
 using namespace SRE;
 using namespace glm;
 using namespace std;
-using namespace Auris;
 
 
 Engine* Engine::instance;
@@ -20,11 +24,11 @@ Engine::Engine(int width, int height){
     Constants::width = width;
     Constants::height = height;
 
-#if NDEBUG
-
-    std::cout << "DEBUG MODE" << std::endl;
+#ifdef DEBUG
+    std::cout << "Debug mode active" << std::endl;
 
 #endif
+
 }
 
 void Engine::startup(Game* game, int spritePoolCapacity){
@@ -82,9 +86,12 @@ void Engine::startup(Game* game, int spritePoolCapacity){
     Input::init(game);
 
     //starts imgui
-    debugUI = new DebugUI();
     ImGui_SRE_Init(window);
+
+#ifdef DEBUG
+    debugUI = new DebugUI();
     debugUI->startup(this);
+#endif
 
     // INIT GAME
     game->init();
@@ -109,7 +116,9 @@ void Engine::shutdown(){
 
     renderSystem.shutdown();
 
+#ifdef DEBUG
     debugUI->shutdown();
+#endif
 
     // Close SDL_mixer
     Mix_CloseAudio();
@@ -135,72 +144,95 @@ void Engine::run(SDL_Window* window){
 
         deltaTimeSec = clamp(((NOW - LAST) / (float)SDL_GetPerformanceFrequency() ),0.0f,1.0f);
 		
+#ifdef DEBUG
         if(!debugUI->pause || debugUI->runOneStep){
+            if(debugUI->profiling) profile_Game_EarlyUpdateTimer.start();
+#endif
         //GAME EARLY UPDATE!
-        if(debugUI->profiling) profile_Game_EarlyUpdateTimer.start();
-        game->earlyUpdate(deltaTimeSec);
-        if(debugUI->profiling) profile_Game_EarlyUpdateTimer.stop();
+            game->earlyUpdate(deltaTimeSec);
+#ifdef DEBUG
+            if(debugUI->profiling) profile_Game_EarlyUpdateTimer.stop();
         }
+#endif
 
         sre->clearScreen(vec4(0,0,0,1)); //background color
 
-        //INPUT UPDATE
+#ifdef DEBUG
         if(debugUI->profiling) profile_InputTimer.start();
+#endif
+        //INPUT UPDATE
         Input::update();
+#ifdef DEBUG
         if(debugUI->profiling) profile_InputTimer.stop();
+#endif
 
         ImGui_SRE_NewFrame(window);
+#ifdef DEBUG
         debugUI->update(deltaTimeSec);
+#endif
         
-        //UPDATE
+#ifdef DEBUG
         if(!debugUI->pause || debugUI->runOneStep){
-
-            // GAME UPDATE
             if(debugUI->profiling) profile_Game_UpdateTimer.start();
+#endif
+        //UPDATE
+            // GAME UPDATE
             game->update(deltaTimeSec);
+#ifdef DEBUG
             if(debugUI->profiling) profile_Game_UpdateTimer.stop();
-
-            // ENTITIES UPDATE
             if(debugUI->profiling) profile_Entity_UpdateTimer.start();
+#endif
+            // ENTITIES UPDATE
             for(auto& el: game->newEntities)
                 game->entities.push_back(el);
             game->newEntities.clear();
             for(auto& el: game->entities)
                 el->update(deltaTimeSec);
+#ifdef DEBUG
             if(debugUI->profiling) profile_Entity_UpdateTimer.stop();
-
-            //PHYSICS STEPS
             if(debugUI->profiling) profile_PhysicsTimer.start();
+#endif
+            //PHYSICS STEPS
             world->Step(deltaTimeSec, Constants::VELOCITY_ITERATIONS, Constants::POSITION_ITERATIONS);
+#ifdef DEBUG
             if(debugUI->profiling) profile_PhysicsTimer.stop();
-
-            //TRANSFORM UPDATE
             if(debugUI->profiling) profile_UpdatePhysicsEntityTransformTimer.start();
+#endif
+            //TRANSFORM UPDATE
             for(auto& el: game->entities)
                 el->updateTransform();
+#ifdef DEBUG
             if(debugUI->profiling) profile_UpdatePhysicsEntityTransformTimer.stop();
-
+            if(debugUI->profiling) profile_Game_LateUpdateTimer.start();
+#endif
             //GAME LATE UPDATE
-           if(debugUI->profiling) profile_Game_LateUpdateTimer.start();
-           game->lateUpdate(deltaTimeSec);
-           if(debugUI->profiling) profile_Game_LateUpdateTimer.stop();
+            game->lateUpdate(deltaTimeSec);
+#ifdef DEBUG
+            if(debugUI->profiling) profile_Game_LateUpdateTimer.stop();
         }
-
         if(debugUI->profiling) profile_RenderTimer.start();
+#endif
         //DRAW
         renderSystem.update(deltaTimeSec);
+#ifdef DEBUG
         if(debugUI->profiling) profile_RenderTimer.stop();
+#endif
 
-        game->imGUI();
+        game->imGui();
 
+#ifdef DEBUG
         debugUI->draw();
+#endif
         ImGui::Render();
 
 
+#ifdef DEBUG
         if(debugUI->profiling) profile_SwapTimer.start();
+#endif
         sre->swapWindow();
+#ifdef DEBUG
         if(debugUI->profiling) profile_SwapTimer.stop();
-
+#endif
         std::sort(Game::instance->destroyEntities.begin(),Game::instance->destroyEntities.end());
 
         int index = 0;
@@ -212,3 +244,4 @@ void Engine::run(SDL_Window* window){
     }
 }
 
+}
