@@ -1,7 +1,7 @@
 #include "Auris/Systems/RenderSystem.hpp"
 
 using namespace Auris;
-DynamicPool<Sprite> RenderSystem::spritePool = DynamicPool<Sprite>(64);
+DynamicPool<Sprite> RenderSystem::spritePool = DynamicPool<Sprite>(16);
 vector<shared_ptr<Animation>> RenderSystem::animations;
 
 void RenderSystem::startup(int reserve){

@@ -67,6 +67,8 @@ class DynamicPool{
         void remove(T* ptr){
             for(int i = 0;i<pools.size();i++){
                 if(pools[i]->remove(ptr)){
+                    poolsFull[i] = pools[i]->isFull();
+                    count--;
                     return;
                 }
             }
@@ -82,6 +84,8 @@ class DynamicPool{
             int internalIndex = index % poolCapacity;
 
             pools[poolIndex]->remove(internalIndex);
+            poolsFull[poolIndex] = pools[poolIndex]->isFull();
+            count--;
  
         }
 
