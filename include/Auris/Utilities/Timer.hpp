@@ -33,19 +33,33 @@ public:
        currentTime = 0;
     }
 
-    //! A time method, taking 1 argument.
+    //! A time method.
         /*!
          * Alerts if the timer has passed!
-         * \param dt a float value. The delta time in seconds
          * \return bool. If the timer has passed or not.
         */
-    bool time(float dt) {
-        currentTime += dt;
+    bool time() {
         if (currentTime > endTime){
             return true;
         }else{
             return false;
         }
+    }
+
+    //! An update method, taking 1 argument.
+        /*! Updates the timer
+         * \param dt a float value. The delta time in seconds.
+        */
+    void update(float dt){
+        currentTime += dt;
+    }
+
+    //! A getCurrentTime method.
+        /*! A method to get the current time in the timer.
+         * \return int. The current time.
+        */
+    int getCurrentTime(){
+        return (int)currentTime;
     }
 };
 }

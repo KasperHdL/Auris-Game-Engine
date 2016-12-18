@@ -50,7 +50,8 @@ public:
     }
 
     void update(float deltaTime) {
-        if (timer.time(deltaTime)) {
+        timer.update(deltaTime);
+        if (timer.time()) {
             if (!hasExploded) {
                 audioPlayer->playSound(explosion);
                 type = "Explosion";

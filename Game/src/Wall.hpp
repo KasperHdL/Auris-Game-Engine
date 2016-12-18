@@ -56,10 +56,16 @@ public:
         b2PolygonShape shape;
         shape.SetAsBox((numTilesX * w) * Constants::PIXELS_TO_METERS/2, (numTilesY * h) * Constants::PIXELS_TO_METERS/2);
 
-        body = Auris::Utilities::BodyStandard::getStaticBody(&shape, position, 30.0f);
+        body = Auris::Utilities::BodyStandard::getStaticBody(&shape, position, 0.0f);
+
+        b2PolygonShape edge;
+        edge.SetAsBox((((numTilesX * w)) * Constants::PIXELS_TO_METERS/2)-0.5f, 0.1f);
+        b2Body* upper;
+        upper = Auris::Utilities::BodyStandard::getStaticBody(&edge, vec2(position.x,position.y+1.5f), 30.0f);
 
         // Physics properties
-        setCollisionEvents(true);
+        upper->SetUserData(this);
+        //setCollisionEvents(true);
     }
 
     ~Wall(){

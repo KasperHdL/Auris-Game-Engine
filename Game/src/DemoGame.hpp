@@ -82,13 +82,21 @@ class DemoGame : public Auris::Game {
 
     void addPlayer(int i, int controllerID){
 
+        //Bow before Mathias' cancer vector
         vec2 pos = i == 0 ? vec2(-40, -10) :
-                i == 1 ? vec2(-40, 30) :
+                i == 1 ? vec2(-50, 30) :
                 i == 2 ? vec2(40, -10) :
-                i == 3 ? vec2(40, 30):
+                i == 3 ? vec2(50, 30):
                 vec2(0, 0);
 
-        auto player = (Player*) Game::instance->addEntity(make_shared<Player>(pos));
+        //Bow before Jonas' cancer vector
+        vec4 col = i == 0 ? vec4(1,0,0,1) :
+                   i == 1 ? vec4(0,1,0,1) :
+                   i == 2 ? vec4(0,0,1,1) :
+                   i == 3 ? vec4(1,0,1,1) :
+                   vec4(1,1,1,1);
+
+        auto player = (Player*) Game::instance->addEntity(make_shared<Player>(pos,col));
         player->setController(controllerID);
         player->name = player->type + to_string(controllerID);
 

@@ -18,6 +18,8 @@
 #include "Bullet.hpp"
 #include "Grenade.hpp"
 
+#include <glm/gtc/random.hpp>
+
 using namespace std;
 using namespace Auris;
 
@@ -34,9 +36,14 @@ public:
 
     Timer pistolReload;
     Timer grenadeReload;
+    Timer respawnTimer;
+    int respawnTime;
+    int respawnPoint;
+
+    float fuel = 2;
 
     bool alive = true;
-    bool canJump = true;
+    int numJumps = 0;
     bool aiming = false;
     bool canFire = true;
     bool canThrow = true;
@@ -44,7 +51,8 @@ public:
     vec2 aimDirection;
 
     float maxSpeed = 50;
-    float jumpHeight = 8000;
+    float airHandicap = 1;
+    float jumpHeight = 4000;
     float movementSpeed = 1000;
     float crosshairOffset = 10;
     float bulletOffset = 5;
@@ -56,8 +64,10 @@ public:
     int pistolShot;
     int controller;
 
-    Player(vec2 position = vec2(0,0)) : PhysicsEntity(){
+    vec4 playerColor;
+    Player(vec2 position = vec2(0,0), vec4 color = vec4(1,1,1,1)) : PhysicsEntity(){
         type = "Player";
+        playerColor = color;
 
         spriteSheet = AssetManager::getSpriteSheet("player.json", true);
 
@@ -74,6 +84,8 @@ public:
         lower->offset = vec3(3,4,0);
 
         b2PolygonShape shape;
+        //shape.m_p.Set(0,0);
+        //shape.m_radius = 2;
         shape.SetAsBox(((lower->getWidth()/3) * Constants::PIXELS_TO_METERS),(upper->getHeight() + lower->getHeight()-9)/3 * Constants::PIXELS_TO_METERS);
 
         body = Auris::Utilities::BodyStandard::getDynamicBody(&shape,position);
@@ -101,11 +113,18 @@ public:
 
         pistolReload.start(0.2f);
         grenadeReload.start(5.0f);
+        respawnTimer.start(10.0f);
 
         aimDirection = vec2(1, 0);
 
         addChild(audioPlayer);
         addChild(crosshair);
+
+        respawnPoint = glm::linearRand<int>(0,3);
+        cout << respawnPoint << endl;
+        lower->material.color = playerColor;
+        upper->material.color = playerColor;
+
     }
 
     void setController(int controllerID){
@@ -114,9 +133,33 @@ public:
 
     void die() {
         alive = false;
+        healthPoints = 0;
         setFixedRotation(false);
         setGravity(0);
-        Game::instance->destroyEntity(crosshair);
+        crosshair->transform->setScale(vec2(0,0));
+        respawnTimer.reset();
+        //Game::instance->destroyEntity(crosshair);
+    }
+
+    void respawn(){
+        alive = true;
+        healthPoints = 100;
+        //setRotation(0);
+        setFixedRotation(true);
+        setGravity(1);
+        crosshair->transform->setScale(vec2(0.5f,0.5f));
+
+        //Bow before Mathias' cancer vector
+        vec2 pos = respawnPoint == 0 ? vec2(-40, -10) :
+                respawnPoint == 1 ? vec2(-50, 30) :
+                respawnPoint == 2 ? vec2(40, -10) :
+                respawnPoint == 3 ? vec2(50, 30):
+                vec2(0, 0);
+        respawnPoint++;
+        if(respawnPoint>3)
+            respawnPoint=0;
+        body->SetTransform(Convert::toB2(pos),0.0f);
+        respawnTimer.reset();
     }
 
     void fireBullet(float rotation, vec2 direction) {
@@ -130,6 +173,9 @@ public:
 
     void update(float deltaTime){
         this->deltaTime = deltaTime;
+        pistolReload.update(deltaTime);
+        grenadeReload.update(deltaTime);
+        respawnTime = respawnTimer.getCurrentTime();
         if (alive){
             float leftStickX = Input::getControllerAxisState(controller, SDL_CONTROLLER_AXIS_LEFTX);
             leftStickX = leftStickX/32767;
@@ -142,23 +188,30 @@ public:
 
             int rightTrigger = Input::getControllerAxisState(controller, SDL_CONTROLLER_AXIS_TRIGGERRIGHT);
 
-            if ((Input::getControllerButtonState(controller, SDL_CONTROLLER_BUTTON_A)) && canJump) {
+            if ((Input::getControllerButtonState(controller, SDL_CONTROLLER_BUTTON_A)) && numJumps > 0) {
                 applyForce(vec2(0, 1) * jumpHeight, true);
-                canJump = false;
+                numJumps --;
+            }else if ((Input::getControllerButtonState(controller, SDL_CONTROLLER_BUTTON_A)) && numJumps == 0) {
+                if(fuel>0){
+                applyForce(vec2(0, 1) * (jumpHeight+7000.0f), false);
+                fuel-=deltaTime;
+                }
+            }else if(fuel<2){
+                fuel+=deltaTime;
             }
 
             if (leftStickX < 0)  {
                 anim->run(lower, abs(leftStickX)*deltaTime, true);
                 //transform->scale = vec2(-1, 1);
                 if (getLinearVelocity()[0] > -maxSpeed)
-                    applyForce(vec2(1, 0) * leftStickX * movementSpeed, true);
+                    applyForce(vec2(1, 0) * leftStickX * movementSpeed * airHandicap, true);
             }
 
             if (leftStickX > 0)  {
                 anim->run(lower, abs(leftStickX)*deltaTime, false);
                 //transform->scale = vec2(1, 1);
                 if (getLinearVelocity()[0] < maxSpeed)
-                    applyForce(vec2(1, 0) * leftStickX * movementSpeed, true);
+                    applyForce(vec2(1, 0) * leftStickX * movementSpeed * airHandicap, true);
             }
 
             if (rightStick != vec2(0, 0)) {
@@ -185,6 +238,7 @@ public:
 
                 string sprite   = "upper_" + to_string(aim);
                 spriteSheet->setSpriteTo(upper, sprite, normalized.x < 0);
+                upper->material.color = playerColor;
             }
 
             if (rightTrigger > 16000) {
@@ -203,23 +257,30 @@ public:
             }
 
             if (healthPoints <= 0) {
-                healthPoints = 0;
                 die();
             }
 
             crosshair->transform->setPosition(vec2(normalized.x*crosshairOffset, -normalized.y*crosshairOffset));
+        }else{
+            respawnTimer.update(deltaTime);
         }
 
-        if (pistolReload.time(deltaTime))
+        if(respawnTimer.time()){
+            respawn();
+        }
+
+        if (pistolReload.time())
             canFire = true;
 
-        if (grenadeReload.time(deltaTime))
+        if (grenadeReload.time())
             canThrow = true;
     }
 
     void OnCollisionEnter(PhysicsEntity* other) {
-        if (other->type == "jumpable")
-            canJump = true;
+        airHandicap = 1;
+        if (other->type == "jumpable"){
+            numJumps = 1;
+        }
 
         if (other->type == "Bullet") {
             Bullet* bullet = (Bullet*) other;
@@ -239,8 +300,9 @@ public:
     }
 
     void OnCollisionExit(PhysicsEntity* other) {
-        if (other->type == "jumpable")
-            canJump = false;
+        airHandicap = 0.1f;
+        //if (other->type == "jumpable")
+        //   canJump = false;
     }
 
     void inspectorImGui(){
@@ -248,7 +310,13 @@ public:
         ImGui::Separator();
 
         ImGui::Checkbox("Is Alive", &alive);
-        ImGui::Checkbox("Can Jump", &canJump);
+        ImGui::DragInt("Number of jumps", &numJumps);
+
+        ImGui::DragInt("Respawn time",&respawnTime);
+
+        ImGui::DragFloat("Fuel", &fuel);
+
+        ImGui::DragFloat("Airhandi", &airHandicap);
 
         ImGui::DragInt("Health Points", &healthPoints);
 
