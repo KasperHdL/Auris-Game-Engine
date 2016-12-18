@@ -91,7 +91,7 @@ public:
     }
 
     void init() {
-        audioPlayer = (AudioPlayer*) Game::instance->addEntity(make_shared<AudioPlayer>(Game::instance->camera, 1));
+        audioPlayer = (AudioPlayer*) Game::instance->addEntity(make_shared<AudioPlayer>(Game::instance->camera, this, 5));
         audioPlayer->name = audioPlayer->type + to_string(controller);
 
         crosshair = (Crosshair*) Game::instance->addEntity(make_shared<Crosshair>());

@@ -18,8 +18,11 @@ class DemoGame : public Auris::Game {
 
     vector<Player*> players;
 
+    AudioPlayer* audioPlayer;
+
     int pistolShot;
     int warSounds;
+    int music;
 
     int musicVolume = 128;
     int soundVolume = 128;
@@ -28,6 +31,10 @@ class DemoGame : public Auris::Game {
         Game::camera = new Auris::Camera(1280, 720);
         loadScene(&scene1);
         Engine::instance->world->SetGravity(b2Vec2(0, -9.8));
+
+        audioPlayer = (AudioPlayer*) addEntity(make_shared<AudioPlayer>(nullptr, nullptr, 5));
+        music = audioPlayer->addMusic(AssetManager::getMusic("electronicMusic.wav"), 60);
+        audioPlayer->playMusic(music);
 
         controllers.resize(8);
         for (auto & element : controllers) {
@@ -53,6 +60,10 @@ class DemoGame : public Auris::Game {
         if (i != 0) {
             camPos /= i;
             Game::camera->setPos(camPos);
+        }
+
+        if (Input::keyHeld(Action::m)) {
+            audioPlayer->stopMusic();
         }
     }
 

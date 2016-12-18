@@ -42,13 +42,14 @@ public:
 
         b2CircleShape shape;
         shape.m_p.Set(0, 0);
-        shape.m_radius = 1;
+        shape.m_radius = 0.2;
 
         body = Utilities::BodyStandard::getDynamicBody(&shape, position);
         timer.start(explosionTime);
 
         // Physics properties
-        speed = 8000;
+        speed = 2000;
+        setGravity(3);
     }
 
     void update(float deltaTime) {
@@ -75,7 +76,7 @@ public:
     }
 
     void init() {
-        audioPlayer = (AudioPlayer*) Game::instance->addEntity(make_shared<AudioPlayer>(Game::instance->camera, 1));
+        audioPlayer = (AudioPlayer*) Game::instance->addEntity(make_shared<AudioPlayer>(Game::instance->camera, this, 1));
         addChild(audioPlayer);
         applyForce(direction * speed, true);
         explosion = audioPlayer->addSound(AssetManager::getSound("expl.wav"));

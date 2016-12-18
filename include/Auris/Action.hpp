@@ -28,6 +28,7 @@ namespace Action{
     const SDL_Scancode d               = SDL_SCANCODE_D;
     const SDL_Scancode enter           = SDL_SCANCODE_RETURN;
     const SDL_Scancode space           = SDL_SCANCODE_SPACE;
-    const SDL_Scancode z = SDL_SCANCODE_Z;
+    const SDL_Scancode z               = SDL_SCANCODE_Z;
+    const SDL_Scancode m               = SDL_SCANCODE_M;
 }
 }
