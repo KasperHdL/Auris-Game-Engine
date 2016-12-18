@@ -18,9 +18,9 @@ namespace Action{
     const SDL_Scancode drawColliders   = SDL_SCANCODE_F7;
     const SDL_Scancode drawDebug       = SDL_SCANCODE_F8;
 
-    const SDL_Scancode pause           = SDL_SCANCODE_F10;
-    const SDL_Scancode stepOne         = SDL_SCANCODE_F11;
-    const SDL_Scancode playOnHold      = SDL_SCANCODE_F12;
+    const SDL_Scancode pause           = SDL_SCANCODE_F9;
+    const SDL_Scancode stepOne         = SDL_SCANCODE_F10;
+    const SDL_Scancode playOnHold      = SDL_SCANCODE_F11;
 
     const SDL_Scancode w               = SDL_SCANCODE_W;
     const SDL_Scancode a               = SDL_SCANCODE_A;

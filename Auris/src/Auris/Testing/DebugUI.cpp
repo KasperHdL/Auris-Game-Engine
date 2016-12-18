@@ -60,13 +60,13 @@ void DebugUI::update(float dt){
             ImGui::Checkbox("Call DrawDebug on Entities(F8)", &drawDebug);
 
             ImGui::Separator();
-            ImGui::Checkbox("Pause(F10)", &pause);
-            if(ImGui::Button("Step One Frame(F11)")){
+            ImGui::Checkbox("Pause(F9)", &pause);
+            if(ImGui::Button("Step One Frame(F10)")){
                 runOneStep = true;
                 pause = true;
             }
             ImGui::SameLine();
-            ImGui::Text("Play on Hold(F12)");
+            ImGui::Text("Play on Hold(F11)");
     //          ImGui::Checkbox("Toggle Camera Controls(Arrow Keys)",&toggle_cameraControls);
 
         }
