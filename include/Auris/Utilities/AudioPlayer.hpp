@@ -22,15 +22,18 @@ namespace Auris {
     */
 class AudioPlayer : public Entity {
 private:
+    std::vector<int> channels;
+
     std::vector<Mix_Music*> music; /*!< A vector of Mix_Music pointers: music. Instance of the music in the audioplayer. */
     std::vector<Mix_Chunk*> sounds; /*!< A vector of Mix_Chunk pointers: sounds. Instance of the sound in the audioplayer. */
 
-    int channel; /*!< An int value: channel. The channel to play the sound/music. */
+    static int channelCount; /*!< A static int value: channelCount. This is the total amount of allocated channels by SDL_mixer. */
 
+    int currentChannel; /*!< An int value: currentChannel. This is the current channel this AudioPlayer is playing on.*/
     int deltaDistanceX = 0; /*!< An int value: deltaDistanceX. The relative distance between the audio and the audio listener on the x axis. */
     int deltaDistanceY = 0; /*!< An int value: deltaDistanceY. The relative distance between the audio and the audio listener on the y axis. */
     int pan = 127; /*!< An int value: pan. How much pan the channel the audio is playing at should have. */
-    int fade = 0; /*!< An int value: face. How much face the channel the audio is playing at should have. */
+    int fade = 0; /*!< An int value: fade. How much fade the channel the audio is playing at should have. */
 
     float fadeScaleX = 1.0f; /*!< A float value: faceScaleX. The scaling on the fade on the x axis. */
     float fadeScaleY = 1.0f; /*!< A float value: faceScaleY. The scaling on the fade on the y axis. */
@@ -45,26 +48,13 @@ public:
             /*!
              * Initializes AudioPlayer to the values inputted.
              * \param listener a Camera pointer. The camera that should be the listener (default no listener, meaning global audio).
-             * \param channel an int value. The channel that the audio should play to (default is the first open channel (loses control of the audio)).
+             * \param channels an int value. The amount of channels this AudioPlayer should allocate for its use.
              * \param fadeScaleX a float value. The scale which to face by on the x axis (default is 1.0).
              * \param fadeScaleY a float value. The scale which to face by on the y axis (default is 1.0).
              * \param fadeDelayX a float value. The delay of the fade on the x axis (default is 0).
              * \param fadeDelayY a float value. The delay of the fade on the y axis (default is 0).
             */
-    AudioPlayer(Auris::Camera* listener = nullptr, int channel = -1, float fadeScaleX = 1.0f, float fadeScaleY = 1.0f, int fadeDelayX = 0, int fadeDelayY = 0) {
-        type = "AudioPlayer";
-
-        if (listener != nullptr)
-            this->listener = listener;
-
-        this->channel = channel;
-
-        this->fadeScaleX = fadeScaleX;
-        this->fadeScaleY = fadeScaleY;
-
-        this->fadeDelayX = fadeDelayX;
-        this->fadeDelayY = fadeDelayY;
-    }
+    AudioPlayer(Auris::Camera* listener = nullptr, Entity* parent = nullptr, int channels = 1, float fadeScaleX = 1.0f, float fadeScaleY = 1.0f, int fadeDelayX = 0, int fadeDelayY = 0);
 
     /*! An update method, taking 1 argument.
     /*! Sets the pan and master volume according to the relative distance between this AudioPlayer and its listener
@@ -72,10 +62,11 @@ public:
      */
     void update(float deltaTime) {
         if (listener != nullptr) {
-            deltaDistanceX = 127 - (transform->getGlobalPosition().x - listener->getPos().x)/(listener->getWidth()/254);
-            deltaDistanceY = 127 - (transform->getGlobalPosition().y - listener->getPos().y)/(listener->getHeight()/254);
+            deltaDistanceX = 127 - (transform->getGlobalPosition().x*Constants::METERS_TO_PIXELS - listener->getPos().x)/(listener->getWidth()/254);
+            deltaDistanceY = 127 - (transform->getGlobalPosition().y*Constants::METERS_TO_PIXELS - listener->getPos().y)/(listener->getHeight()/254);
             pan = deltaDistanceX < 0 ? 0: deltaDistanceX > 254 ? 254 : deltaDistanceX;
-            Mix_SetPanning(channel, pan, 254-pan);
+            for (auto & element : channels)
+                Mix_SetPanning(element, pan, 254-pan);
 
             fade = 0; // 0 is near, 255 is far
 
@@ -91,7 +82,8 @@ public:
 
             fade = fade > 255 ? 255 : fade;
 
-            Mix_SetDistance(channel, fade);
+            for (auto & element : channels)
+                Mix_SetDistance(element, fade);
         }
     }
 
@@ -107,6 +99,7 @@ public:
         music.push_back(mixMusic);
 
         Mix_VolumeMusic(volume);
+
         return music.size()-1;
     }
 
@@ -121,31 +114,33 @@ public:
         sounds.push_back(mixChunk);
 
         Mix_VolumeChunk(sounds[sounds.size()-1], volume);
+
         return sounds.size()-1;
     }
 
     /*! A playMusic method, taking 1 argument.
      * Plays the music of the AudioPlayer
      * \param index an int value. The index of the music.*/
-    void playMusic(int index){
+    void playMusic(int index, int loops = -1){
         if (music.size()-1 >= index){
             //If there is no music playing
             if( Mix_PlayingMusic() == 0 ){
-                Mix_PlayMusic( music[index], channel );
+                Mix_PlayMusic( music[index], loops);
             }
         }else{
-            std::cout << "Nullptr: No music at this index (" << index << ")." << std::endl;
+            std::cerr << "Nullptr: No music at this index (" << index << ")." << std::endl;
         }
     }
 
     /*! A playSound method, taking 1 argument.
-     * Plays the sound of the AudioPlayer
+     * Plays the sound of the AudioPlayer at the current channel.
      * \param index an int value. The index of the sound.*/
-    void playSound(int index) {
+    void playSound(int index, int loops = 0) {
         if (sounds.size()-1 >= index) {
-            Mix_PlayChannel(channel, sounds[index], 0 );
+            Mix_PlayChannel(channels[currentChannel], sounds[index], loops );
+            currentChannel = currentChannel >= channels.size() - 1 ? 0 : currentChannel+1;
         }else{
-            std::cout << "Nullptr: No sound at this index (" << index << ")." << std::endl;
+            std::cerr << "Nullptr: No sound at this index (" << index << ")." << std::endl;
         }
     }
 
@@ -189,16 +184,7 @@ public:
             Mix_VolumeChunk(sounds[index], volume);
         }
         else
-            std::cout << "Nullptr: No sound at this index (" << index << ")." << std::endl;
-    }
-
-    /*! A setChannel method, taking 1 argument.
-     * Sets the channel this AudioPlayer plays in.
-     * If music or sounds are playing, they will keep playing in the old channel.
-     * Music needs to be halted and restarted in the new channel.
-     * \param channel an int value. The new channel.*/
-    void setChannel(int channel) {
-        this->channel = channel;
+            std::cerr << "Nullptr: No sound at this index (" << index << ")." << std::endl;
     }
 
     //! The AudioPlayer destructor.
@@ -215,7 +201,7 @@ public:
     // DEBUG
     //////
 
-    bool drawAudioRange = true; /*!< A bool value: drawAudioRange. If the audio debug range should be draw. */
+    bool drawAudioRange = false; /*!< A bool value: drawAudioRange. If the audio debug range should be draw. */
     float audioIconScale = 10; /*!< A float value: audioIconScale. The scale of the debug audio icon (default is 10). */
 
     /*! A debugDraw overload method.
@@ -266,7 +252,7 @@ public:
         Entity::inspectorImGui();
         ImGui::Separator();
 
-        ImGui::Text("Channel %d", channel); 
+        ImGui::Text("Channel %d", currentChannel);
         ImGui::Text("Distance(in Fade Units)(%d,%d)", deltaDistanceX, deltaDistanceY);
         ImGui::Text("Current Fade: (%f,%f)", fade);
         ImGui::Text("Pan: %d", pan);

@@ -40,9 +40,11 @@ public:
     bool aiming = false;
     bool canFire = true;
     bool canThrow = true;
+    bool charging = false;
 
     vec2 aimDirection;
 
+    float grenadeForce = 1;
     float maxSpeed = 50;
     float jumpHeight = 8000;
     float movementSpeed = 1000;
@@ -82,6 +84,7 @@ public:
         setCollisionEvents(true);
         setFixedRotation(true);
         setGravity(3.0f);
+        body->SetSleepingAllowed(false);
     }
 
     ~Player(){
@@ -91,7 +94,7 @@ public:
     }
 
     void init() {
-        audioPlayer = (AudioPlayer*) Game::instance->addEntity(make_shared<AudioPlayer>(Game::instance->camera, 1));
+        audioPlayer = (AudioPlayer*) Game::instance->addEntity(make_shared<AudioPlayer>(Game::instance->camera, this, 5));
         audioPlayer->name = audioPlayer->type + to_string(controller);
 
         crosshair = (Crosshair*) Game::instance->addEntity(make_shared<Crosshair>());
@@ -125,7 +128,8 @@ public:
     }
 
     void throwGrenade(vec2 direction) {
-        auto grenade = (Grenade*) Game::instance->addEntity(make_shared<Grenade>(vec2(transform->getPosition().x+direction.x*grenadeOffset, transform->getPosition().y-direction.y*grenadeOffset), vec2(direction.x, -direction.y)));
+        auto grenade = (Grenade*) Game::instance->addEntity(make_shared<Grenade>(vec2(transform->getPosition().x+direction.x*grenadeOffset, transform->getPosition().y-direction.y*grenadeOffset), vec2(direction.x, -direction.y), grenadeForce));
+        grenadeForce = 1;
     }
 
     void update(float deltaTime){
@@ -197,9 +201,19 @@ public:
             }
 
             if (Input::getControllerButtonState(controller, SDL_CONTROLLER_BUTTON_RIGHTSHOULDER)) {
-                throwGrenade(normalized);
+                if (canThrow) {
+                    charging = true;
+                }
+
+                if (charging) {
+                    grenadeForce += deltaTime;
+                }
+            }
+            else if (charging) {
+                charging = false;
                 canThrow = false;
                 grenadeReload.reset();
+                throwGrenade(normalized);
             }
 
             if (healthPoints <= 0) {
@@ -234,7 +248,11 @@ public:
 
         if (other->type == "Explosion") {
             Grenade* grenade = (Grenade*) other;
-            healthPoints -= grenade->damage;
+            vec2 delta = transform->getGlobalPosition() - grenade->transform->getGlobalPosition();
+            float distance = abs(delta.x + delta.y)/grenade->explosionRadius;
+
+            healthPoints -= (int)grenade->damage*(1-distance);
+            applyForce(delta*jumpHeight*distance, true);
         }
     }
 
