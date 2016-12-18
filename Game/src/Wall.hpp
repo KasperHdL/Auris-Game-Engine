@@ -23,7 +23,7 @@ public:
         b2PolygonShape shape;
         shape.SetAsBox(width-0.5f, height/100);
 
-        body = Auris::Utilities::BodyStandard::getStaticBody(&shape, vec2(position.x,position.y-height), 3.0f);
+        body = Auris::Utilities::BodyStandard::getStaticBody(&shape, vec2(position.x,position.y-height),false, 3.0f);
 
         // Physics properties
         setCollisionEvents(true);
@@ -47,7 +47,7 @@ public:
         b2PolygonShape shape;
         shape.SetAsBox(width-0.5f, height/100);
 
-        body = Auris::Utilities::BodyStandard::getStaticBody(&shape, vec2(position.x,position.y+height), 30.0f);
+        body = Auris::Utilities::BodyStandard::getStaticBody(&shape, vec2(position.x,position.y+height),false, 30.0f);
 
         // Physics properties
         setCollisionEvents(true);

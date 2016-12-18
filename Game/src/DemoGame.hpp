@@ -47,8 +47,6 @@ class DemoGame : public Auris::Game {
     }
 
     void update(float dt){
-        if (Input::keyDown(SDL_SCANCODE_RETURN))
-            Game::destroyEntity(players[0]);
 
         int i = 0;
         vec2 camPos;
