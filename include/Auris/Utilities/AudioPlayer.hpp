@@ -138,7 +138,6 @@ public:
     void playSound(int index, int loops = 0) {
         if (sounds.size()-1 >= index) {
             Mix_PlayChannel(channels[currentChannel], sounds[index], loops );
-            std::cout << "Playing at channel " << channels[currentChannel] << std::endl;
             currentChannel = currentChannel >= channels.size() - 1 ? 0 : currentChannel+1;
         }else{
             std::cerr << "Nullptr: No sound at this index (" << index << ")." << std::endl;
@@ -202,7 +201,7 @@ public:
     // DEBUG
     //////
 
-    bool drawAudioRange = true; /*!< A bool value: drawAudioRange. If the audio debug range should be draw. */
+    bool drawAudioRange = false; /*!< A bool value: drawAudioRange. If the audio debug range should be draw. */
     float audioIconScale = 10; /*!< A float value: audioIconScale. The scale of the debug audio icon (default is 10). */
 
     /*! A debugDraw overload method.

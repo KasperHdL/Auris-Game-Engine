@@ -15,24 +15,24 @@ public:
 
     ParticleSystem* particles;
 
-    Timer timer;
-
-    b2Body* sensor;
+    Timer explodeTimer;
+    Timer destroyTimer;
 
     AudioPlayer* audioPlayer;
 
     vec2 direction;
 
-    int damage;
-    int explosion;
+    int damage = 50;
+    int explosionSound;
+    int explosionRadius = 18;
 
     float explosionTime = 3;
-    float explosionRadius;
-    float speed;
+    float destroyTime = 1;
+    float speed = 20;
 
     bool hasExploded = false;
 
-    Grenade(vec2 position = vec2(0, 0), vec2 direction = vec2(1,0)){
+    Grenade(vec2 position = vec2(0, 0), vec2 direction = vec2(1,0), float force = 1){
         type = "Grenade";
         name = "Grenade";
 
@@ -42,45 +42,54 @@ public:
 
         b2CircleShape shape;
         shape.m_p.Set(0, 0);
-        shape.m_radius = 0.2;
+        shape.m_radius = 0.1;
 
         body = Utilities::BodyStandard::getDynamicBody(&shape, position);
-        timer.start(explosionTime);
+        explodeTimer.start(explosionTime);
+        destroyTimer.start(destroyTime);
 
         // Physics properties
-        speed = 2000;
-        setGravity(3);
+        this->speed *= force;
+        setGravity(8);
     }
 
     void update(float deltaTime) {
-        if (timer.time(deltaTime)) {
+        if (explodeTimer.time(deltaTime)) {
             if (!hasExploded) {
-                audioPlayer->playSound(explosion);
-                type = "Explosion";
-
-                Engine::instance->world->DestroyBody(body);
-                RenderSystem::deleteSprite(sprite);
-
-                b2CircleShape shape;
-                shape.m_p.Set(0, 0);
-                shape.m_radius = 3;
-
-                sensor = Utilities::BodyStandard::getStaticBody(&shape, transform->getPosition(), false);
-
-
-                //particles->startup(1000, 3.0f);
-
-                hasExploded = true;
+                explode();
             }
+        }
+        if (destroyTimer.time(deltaTime) && hasExploded) {
+            Game::instance->destroyEntity(this);
         }
     }
 
     void init() {
         audioPlayer = (AudioPlayer*) Game::instance->addEntity(make_shared<AudioPlayer>(Game::instance->camera, this, 1));
-        addChild(audioPlayer);
         applyForce(direction * speed, true);
-        explosion = audioPlayer->addSound(AssetManager::getSound("expl.wav"));
+        explosionSound = audioPlayer->addSound(AssetManager::getSound("expl.wav"));
     }
 
+    void explode() {
+        audioPlayer->playSound(explosionSound);
+        type = "Explosion";
 
+        RenderSystem::deleteSprite(sprite);
+
+        b2CircleShape shape;
+        shape.m_p.Set(0, 0);
+        shape.m_radius = explosionRadius;
+
+        Engine::instance->world->DestroyBody(body);
+
+        body = Utilities::BodyStandard::getStaticBody(&shape, transform->getPosition(), true);
+
+        destroyTimer.reset();
+
+        //particles->startup(1000, 3.0f);
+
+        setCollisionEvents(true);
+
+        hasExploded = true;
+    }
 };

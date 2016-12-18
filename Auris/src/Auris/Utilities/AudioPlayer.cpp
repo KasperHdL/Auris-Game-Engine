@@ -8,6 +8,9 @@ AudioPlayer::AudioPlayer(Auris::Camera* listener, Entity* parent, int channels, 
     type = "AudioPlayer";
 
     this->listener = listener;
+    if (listener != nullptr) {
+        drawAudioRange = true;
+    }
 
     if (parent != nullptr)
         parent->addChild(this);
