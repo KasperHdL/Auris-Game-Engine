@@ -54,6 +54,9 @@ public:
         free(occupied);
     }
 
+    Pool( const Pool& other ) = delete; // non construction-copyable
+    Pool& operator=( const Pool& ) = delete; // non copyable
+
     //! A initialize method, taking 1 argument.
         /*! Initializes the pool, with the capacity inputted.
          * \param capacity an int. The capacity the pool should have.
@@ -80,6 +83,10 @@ public:
      * \overload []
      */
     T* operator [] (std::size_t index){
+        return at(index);
+    }
+
+    T* at(std::size_t index){
         if(index < 0 || index >= capacity){
             std::cout << "Index out of range, returning nullptr" << std::endl;
             return nullptr;
@@ -117,26 +124,37 @@ public:
     }
 
     //! A remove method, taking 1 argument.
-        /*! Removes an object from the pool
+        /*! Removes an object from the pool, note that this function is O(n), use remove(int index) if possible 
          * \param ptr a T pointer. The object that should be removed.
+         * \overload remove(int index)
         */
-    void remove(T* ptr){
+    bool remove(T* ptr){
         for(int i = 0;i < capacity;i++){
             if(occupied[i] && ptr == &objects[i]){
                 remove(i);
-                break;
+                return true;
             }
         }
+        return false;
     }
 
     //! A remove overload method, taking 1 argument.
-        /*! Removes an object from the pool
+        /*! Removes an object from the pool, note that his function is O(1)
          * \param index an int. The index of the object that should be removed.
          * \overload remove(T* ptr)
         */
     void remove(int index){
+        if(index < 0 || index > capacity){
+            std::cerr << "Pool remove: index out of range" << std::endl;
+            return;
+        }
         occupied[index] = false;
         count--;
+    }
+
+    bool inline isFull(){
+        return count == capacity;
+
     }
 };
 }

@@ -8,7 +8,8 @@
 
 using namespace Auris;
 class CharSprite : public Entity{
-public: Sprite* sprite;
+public:
+    Sprite* sprite;
 
     CharSprite(vec2 position, bool withTexture = true):Entity(){
         name = "Sprite";
@@ -23,6 +24,13 @@ public: Sprite* sprite;
         RenderSystem::deleteSprite(sprite);
     }
 
+    void inspectorImGui(){
+        Entity::inspectorImGui();
+        ImGui::Separator();
+        if(ImGui::Button("Destroy")){
+            Game::instance->destroyEntity(this);
+        }
+    }
 
 };
 
@@ -57,6 +65,14 @@ public:
         RenderSystem::deleteSprite(sprite);
         sheet = nullptr;
 
+    }
+
+    void inspectorImGui(){
+        Entity::inspectorImGui();
+        ImGui::Separator();
+        if(ImGui::Button("Destroy")){
+            Game::instance->destroyEntity(this);
+        }
     }
 
 };

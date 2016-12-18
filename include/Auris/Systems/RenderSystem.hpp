@@ -6,7 +6,7 @@
 #include "Auris/Entity.hpp"
 #include "Auris/Entities/Nuggets/Sprite.hpp"
 #include "Auris/Entities/Nuggets/Animation.hpp"
-#include "Auris/Utilities/Pool.hpp"
+#include "Auris/Utilities/DynamicPool.hpp"
 
 #include "Auris/Utilities/Mesh.hpp"
 #include "SRE/Texture.hpp"
@@ -20,7 +20,7 @@ using namespace std;
 class RenderSystem{
 
 public:
-    static Pool<Sprite> spritePool; /*!< A Pool of Sprite values: spritePool. The pool that all sprites are within. */
+    static DynamicPool<Sprite> spritePool; /*!< A Pool of Sprite values: spritePool. The pool that all sprites are within. */
     static vector<shared_ptr<Animation>> animations; /*!< A vector of shared pointer of Animation values: animations. The vector of all animations in the engine. */
 
     //! The RenderSystem constructor.
