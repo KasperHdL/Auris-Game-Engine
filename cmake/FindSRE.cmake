@@ -34,12 +34,18 @@ ELSE(WIN32)
 ENDIF(WIN32)
 
 IF(WIN32)
-find_library( SRE_LIBRARY
+    find_library( SRE_DEBUG_LIBRARY
         NAMES
-            SRE.a
+            SRE.lib
         PATHS
             ${SRE_LOCATION}/lib
-            DOC "The libSRE.a library")
+            DOC "The Debug libSRE.lib library")
+    find_library( SRE_RELEASE_LIBRARY
+        NAMES
+            SRE.lib
+        PATHS
+            ${SRE_LOCATION}/lib
+            DOC "The Release libSRE.lib library")
 ELSE(WIN32)
     find_library( SRE_LIBRARY
             NAMES
@@ -49,7 +55,6 @@ ELSE(WIN32)
             /usr/local/lib
             ${SRE_LOCATION}/lib
             DOC "The libSRE.a library")
-
 ENDIF(WIN32)
 
 IF(SRE_LIBRARY)
