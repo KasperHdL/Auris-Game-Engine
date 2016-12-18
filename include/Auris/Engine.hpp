@@ -64,6 +64,9 @@ class Engine{
 public:
     static Engine* instance;
 
+    float deltaTime = 0;//!< The last deltaTime calculated
+    float time = 0;//!< The accumulated deltaTime
+    
     //! The engine contructor taking 2 arguments.
         /*!
           \param width an integer, that is the width of the window.
