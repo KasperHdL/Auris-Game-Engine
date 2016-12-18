@@ -3,12 +3,15 @@
 using namespace Auris;
 DynamicPool<Sprite> RenderSystem::spritePool = DynamicPool<Sprite>(32);
 vector<shared_ptr<Animation>> RenderSystem::animations;
+vector<ParticleSystem*> RenderSystem::particleSystems;
 
 void RenderSystem::startup(){
 }
 
 void RenderSystem::shutdown(){
     RenderSystem::animations.clear();
+    for(auto& el:RenderSystem::particleSystems)
+        delete el;
 }
 
 
@@ -17,6 +20,11 @@ void RenderSystem::update(float dt){
         Sprite* s = RenderSystem::spritePool[i];
         if(s != nullptr)
             s->draw(); //draw all sprites
+    }
+
+    for(auto& el:RenderSystem::particleSystems){
+        el->update(dt);
+        el->draw();
     }
 
 }
@@ -74,11 +82,30 @@ void RenderSystem::deleteAnim(shared_ptr<Animation> ani){
         return;
     }
 
-    int index = 0;
-    for (auto& el : RenderSystem::animations){
-        if(ani == el)
-            break;
-        index++;
+    for (int i = 0;i < RenderSystem::animations.size();i++){
+        if(ani == RenderSystem::animations[i]){
+            RenderSystem::animations.erase(RenderSystem::animations.begin() + i);
+            return;
+        }
     }
-    RenderSystem::animations.erase(RenderSystem::animations.begin() + index);
 }
+
+ParticleSystem* RenderSystem::getParticleSystem(){
+    RenderSystem::particleSystems.push_back(new ParticleSystem());
+    return RenderSystem::particleSystems.back();
+}
+
+void RenderSystem::deleteParticleSystem(ParticleSystem* ps){
+    for(int i = 0; i < RenderSystem::particleSystems.size();i++){
+        if(ps == RenderSystem::particleSystems[i]){
+            RenderSystem::particleSystems.erase(RenderSystem::particleSystems.begin() + i);
+            return;
+        }
+
+
+    }
+
+}
+
+
+

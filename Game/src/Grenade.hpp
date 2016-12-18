@@ -14,13 +14,11 @@ class Grenade : public PhysicsEntity{
 public:
     Sprite* sprite;
 
-    ParticleSystem* particles;
-
     Timer explodeTimer;
     Timer destroyTimer;
 
     AudioPlayer* audioPlayer;
-    ParticleSystem particleSystem;
+    ParticleSystem* particleSystem;
 
     vec2 direction;
 
@@ -52,11 +50,16 @@ public:
 
         setPosition(position);
 
-        particleSystem.startup(150,1.0f,SRE::Texture::getWhiteTexture());
+        particleSystem = RenderSystem::getParticleSystem();
+        particleSystem->startup(150,1.0f,SRE::Texture::getWhiteTexture());
 
         // Physics properties
         this->speed *= force;
         setGravity(8);
+    }
+
+    ~Grenade(){
+        RenderSystem::deleteParticleSystem(particleSystem);
     }
 
     void update(float deltaTime) {
@@ -65,8 +68,6 @@ public:
             if (!hasExploded) {
                 explode();
             }
-            particleSystem.update(deltaTime);
-            particleSystem.draw();
         }
         destroyTimer.update(deltaTime);
         if (destroyTimer.time() && hasExploded) {
@@ -85,6 +86,25 @@ public:
         audioPlayer->playSound(explosionSound);
         type = "Explosion";
 
+        b2CircleShape shape;
+        shape.m_p.Set(0, 0);
+        shape.m_radius = explosionRadius;
+
+        //clean up sprite and old body
+        RenderSystem::deleteSprite(sprite);
+        Engine::instance->world->DestroyBody(body);
+        //create new body
+        body = Utilities::BodyStandard::getStaticBody(&shape, transform->getPosition(), true);
+
+        destroyTimer.reset();
+
+        //particles->startup(1000, 3.0f);
+
+        setCollisionEvents(true);
+
+        hasExploded = true;
+
+
         vec3 pos = transform->getGlobalPosition();
         float a = 0;
         float av = 0.5f;
@@ -99,7 +119,7 @@ public:
         for(int i = 0;i < 150;i++){
             linRand = glm::linearRand<float>(0,1);
             cirRand = vec3(glm::circularRand<float>(linRand),0);
-            particleSystem.emit(
+            particleSystem->emit(
                     pos,
                     cirRand * 20.0f,
                     linRand * 3.14f,
@@ -112,23 +132,5 @@ public:
 
 
         }
-
-        RenderSystem::deleteSprite(sprite);
-
-        b2CircleShape shape;
-        shape.m_p.Set(0, 0);
-        shape.m_radius = explosionRadius;
-
-        Engine::instance->world->DestroyBody(body);
-
-        body = Utilities::BodyStandard::getStaticBody(&shape, transform->getPosition(), true);
-
-        destroyTimer.reset();
-
-        //particles->startup(1000, 3.0f);
-
-        setCollisionEvents(true);
-
-        hasExploded = true;
     }
 };

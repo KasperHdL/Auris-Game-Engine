@@ -7,6 +7,7 @@
 #include "Auris/Entities/Nuggets/Sprite.hpp"
 #include "Auris/Entities/Nuggets/Animation.hpp"
 #include "Auris/Utilities/DynamicPool.hpp"
+#include "Auris/Systems/ParticleSystem.hpp"
 
 #include "Auris/Utilities/Mesh.hpp"
 #include "SRE/Texture.hpp"
@@ -22,6 +23,7 @@ class RenderSystem{
 public:
     static DynamicPool<Sprite> spritePool; /*!< A Pool of Sprite values: spritePool. The pool that all sprites are within. */
     static vector<shared_ptr<Animation>> animations; /*!< A vector of shared pointer of Animation values: animations. The vector of all animations in the engine. */
+    static vector<ParticleSystem*> particleSystems; /*!< A vector of shared pointer of Animation values: animations. The vector of all animations in the engine. */
 
     //! The RenderSystem constructor.
         /*!
@@ -88,5 +90,22 @@ public:
          * \param ani a shared_ptr of animation value. The animation to remove.
         */
     static void deleteAnim(shared_ptr<Animation> ani);
+
+    //! A static getParticleSystem method
+        /*!
+         * Creates a new particle system and returns it
+         * return pointer of ParticleSystem. A pointer to the particle system.
+        */
+	static ParticleSystem* getParticleSystem();
+
+    //! A static deleteParticleSystem method, taking 1 argument.
+        /*!
+         * Removes the particle system  the particlesystem vector.
+         * \param particlesystem a pointer of particlesystem value. The particle system to remove.
+        */
+    static void deleteParticleSystem(ParticleSystem* particleSystem);
+
+
+
 };
 }

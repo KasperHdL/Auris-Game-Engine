@@ -99,7 +99,7 @@ class DemoGame : public Auris::Game {
                 vec2(0, 0);
 
         //Bow before Jonas' cancer vector
-        vec4 col = i == 0 ? vec4(1,0,0,1) :
+        vec4 col = i == 0 ? vec4(1,1,1,1) :
                    i == 1 ? vec4(0,1,0,1) :
                    i == 2 ? vec4(0,0,1,1) :
                    i == 3 ? vec4(1,0,1,1) :

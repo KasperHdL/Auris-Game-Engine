@@ -142,27 +142,27 @@ public:
         spriteSheet->setSpriteTo(upper, "upper_3", true);
 
 
-        healthFrontBar = new Bar(vec2(0,2.3f),vec2(15,1),vec4(1,0,0,1));
+        healthFrontBar = new Bar(vec2(0,3.3f),vec2(15,1),vec4(1,0,0,1));
         addChild(healthFrontBar);
-        healthBackbar = new Bar(vec2(0,2.3f),vec2(15,1),vec4(1,0,0,0.5f));
+        healthBackbar = new Bar(vec2(0,3.3f),vec2(15,1),vec4(1,0,0,0.5f));
         addChild(healthBackbar);
 
-        fuelFrontBar = new Bar(vec2(0,2),vec2(15,1),vec4(0,1,1,1));
+        fuelFrontBar = new Bar(vec2(0,3.1f),vec2(15,1),vec4(0,1,1,1));
         addChild(fuelFrontBar);
-        fuelBackbar = new Bar(vec2(0,2),vec2(15,1),vec4(0,1,1,0.5f));
+        fuelBackbar = new Bar(vec2(0,3.1f),vec2(15,1),vec4(0,1,1,0.5f));
         addChild(fuelBackbar);
 
         respawnBar = new Bar(vec2(0,0),vec2(10,1),vec4(1,1,1,1));
         addChild(respawnBar);
         respawnBar->setScale(0);
 
-        grenadeUI = new GrenadeUI(vec2(3,-2),vec2(1.5f,1.5f),vec4(1,1,1,0.5f));
+        grenadeUI = new GrenadeUI(vec2(3,-2),vec2(1.5f,1.5f),vec4(1,1,1,0.75f));
 
         anim = RenderSystem::getAnim(this, 1.0f);
         anim->makeSequence(spriteSheet, "lower_run", true);
 
-        upper->offset = vec3(3,8,0);
-        lower->offset = vec3(3,4,0);
+        upper->offset = vec3(3,6,0) * Constants::PIXELS_TO_METERS;
+        lower->offset = vec3(3,4,0) * Constants::PIXELS_TO_METERS;
 
         b2PolygonShape shape;
         //shape.m_p.Set(0,0);

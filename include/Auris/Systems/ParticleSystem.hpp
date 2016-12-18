@@ -135,7 +135,6 @@ public:
         shutdown();
         delete mesh;
         mesh = nullptr;
-
     }
 
     //! A startup method, taking 2-3 arguments.
