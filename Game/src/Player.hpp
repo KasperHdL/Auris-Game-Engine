@@ -141,14 +141,14 @@ public:
         lower = RenderSystem::getSprite(this);
         spriteSheet->setSpriteTo(lower, "lower_run_3");
 
-        healthFrontBar = new Bar(vec2(0,2.3f),vec2(25,1),vec4(1,0,0,1));
+        healthFrontBar = new Bar(vec2(0,2.3f),vec2(15,1),vec4(1,0,0,1));
         addChild(healthFrontBar);
-        healthBackbar = new Bar(vec2(0,2.3f),vec2(25,1),vec4(1,0,0,0.5f));
+        healthBackbar = new Bar(vec2(0,2.3f),vec2(15,1),vec4(1,0,0,0.5f));
         addChild(healthBackbar);
 
-        fuelFrontBar = new Bar(vec2(0,2),vec2(25,1),vec4(0,1,1,1));
+        fuelFrontBar = new Bar(vec2(0,2),vec2(15,1),vec4(0,1,1,1));
         addChild(fuelFrontBar);
-        fuelBackbar = new Bar(vec2(0,2),vec2(25,1),vec4(0,1,1,0.5f));
+        fuelBackbar = new Bar(vec2(0,2),vec2(15,1),vec4(0,1,1,0.5f));
         addChild(fuelBackbar);
 
         respawnBar = new Bar(vec2(0,0),vec2(10,1),vec4(1,1,1,1));
@@ -286,7 +286,8 @@ public:
             if ((Input::getControllerButtonState(controller, SDL_CONTROLLER_BUTTON_A)) && numJumps > 0) {
                 applyForce(vec2(0, 1) * jumpHeight, true);
                 numJumps --;
-            }else if ((Input::getControllerButtonState(controller, SDL_CONTROLLER_BUTTON_A)) && numJumps == 0) {
+            }
+            if ((Input::getControllerButtonState(controller, SDL_CONTROLLER_BUTTON_LEFTSHOULDER))) {
                 if(fuel>0){
                 applyForce(vec2(0, 1) * (jumpHeight+7000.0f), false);
                 fuel-=deltaTime;
