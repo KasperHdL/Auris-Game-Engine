@@ -1,14 +1,23 @@
 cmake_minimum_required(VERSION 3.6)
 project(AurisProject CXX)
 
-set(CMAKE_EXPORT_COMPILE_COMMANDS 1)
-set(CMAKE_BUILD_TYPE Debug)
+IF(UNIX)
+    set(CMAKE_BUILD_TYPE Debug)
+    set(CMAKE_EXPORT_COMPILE_COMMANDS 1)
 
+    IF(CMAKE_BUILD_TYPE MATCHES Debug)
+        set(DEBUG_MODE TRUE)
+    ELSEIF(CMAKE_BUILD_TYPE MATCHES Release)
+        set(DEBUG_MODE FALSE)
+    ENDIF()
+ELSE(UNIX)
+    set(DEBUG_MODE TRUE)
+ENDIF(UNIX) 
 
-IF(CMAKE_BUILD_TYPE MATCHES Debug)
+IF(DEBUG_MODE)
     message("----- Debug Build -----")
     add_definitions(-DDEBUG)
-ELSEIF(CMAKE_BUILD_TYPE MATCHES Release)
+ELSE()
     message("----- Release Build -----")
 ENDIF()
 
