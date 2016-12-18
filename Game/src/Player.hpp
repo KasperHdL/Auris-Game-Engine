@@ -23,6 +23,60 @@
 using namespace std;
 using namespace Auris;
 
+class GrenadeUI : public Entity{
+public:
+
+    Sprite* sprite;
+    vec2 scale;
+    vec2 position;
+
+    GrenadeUI(vec2 position,vec2 scale, vec4 color){
+        this->scale = scale;
+        this->position = position;
+        transform->setPosition(position);
+        transform->setScale(scale);
+
+        sprite = RenderSystem::getSprite(this, AssetManager::getTexture("grenade.png"));
+
+        sprite->material.color = color;
+
+    }
+
+    void setScale(float amount){
+        vec2 temp = vec2(scale.x*amount,scale.y);
+        transform->setPosition(vec2(position.x+((temp.x-scale.x))*Constants::PIXELS_TO_METERS,position.y));
+        transform->setScale(temp);
+    }
+};
+
+
+class Bar : public Entity{
+public:
+
+    Sprite* sprite;
+    vec2 scale;
+    vec2 position;
+
+    Bar(vec2 position,vec2 scale, vec4 color){
+        this->scale = scale;
+        this->position = position;
+        transform->setPosition(position);
+        transform->setScale(scale);
+
+        sprite = RenderSystem::getSprite(this);
+
+        sprite->material.color = color;
+
+    }
+
+    void setScale(float amount){
+        vec2 temp = vec2(scale.x*amount,scale.y);
+        transform->setPosition(vec2(position.x+((temp.x-scale.x))*Constants::PIXELS_TO_METERS,position.y));
+        transform->setScale(temp);
+    }
+
+};
+
 class Player : public PhysicsEntity{
 public:
     shared_ptr<Animation> anim;
@@ -39,6 +93,14 @@ public:
     Timer respawnTimer;
     int respawnTime;
     int respawnPoint;
+
+    Bar* healthFrontBar;
+    Bar* healthBackbar;
+    Bar* fuelFrontBar;
+    Bar* fuelBackbar;
+    Bar* respawnBar;
+
+    GrenadeUI* grenadeUI;
 
     float fuel = 2;
 
@@ -79,6 +141,22 @@ public:
         upper = RenderSystem::getSprite(this);
         spriteSheet->setSpriteTo(upper, "upper_3", true);
 
+
+        healthFrontBar = new Bar(vec2(0,2.3f),vec2(15,1),vec4(1,0,0,1));
+        addChild(healthFrontBar);
+        healthBackbar = new Bar(vec2(0,2.3f),vec2(15,1),vec4(1,0,0,0.5f));
+        addChild(healthBackbar);
+
+        fuelFrontBar = new Bar(vec2(0,2),vec2(15,1),vec4(0,1,1,1));
+        addChild(fuelFrontBar);
+        fuelBackbar = new Bar(vec2(0,2),vec2(15,1),vec4(0,1,1,0.5f));
+        addChild(fuelBackbar);
+
+        respawnBar = new Bar(vec2(0,0),vec2(10,1),vec4(1,1,1,1));
+        addChild(respawnBar);
+        respawnBar->setScale(0);
+
+        grenadeUI = new GrenadeUI(vec2(3,-2),vec2(1.5f,1.5f),vec4(1,1,1,0.5f));
 
         anim = RenderSystem::getAnim(this, 1.0f);
         anim->makeSequence(spriteSheet, "lower_run", true);
@@ -124,6 +202,7 @@ public:
 
         addChild(audioPlayer);
         addChild(crosshair);
+        crosshair->addChild(grenadeUI);
 
         respawnPoint = glm::linearRand<int>(0,3);
         cout << respawnPoint << endl;
@@ -143,6 +222,10 @@ public:
         setGravity(0);
         crosshair->transform->setScale(vec2(0,0));
         respawnTimer.reset();
+        healthFrontBar->setScale(0);
+        fuelFrontBar->setScale(0);
+        healthBackbar->setScale(0);
+        fuelBackbar->setScale(0);
         //Game::instance->destroyEntity(crosshair);
     }
 
@@ -153,6 +236,8 @@ public:
         setFixedRotation(true);
         setGravity(1);
         crosshair->transform->setScale(vec2(0.5f,0.5f));
+        healthBackbar->setScale(1);
+        fuelBackbar->setScale(1);
 
         //Bow before Mathias' cancer vector
         vec2 pos = respawnPoint == 0 ? vec2(-40, -10) :
@@ -177,12 +262,18 @@ public:
         grenadeForce = 1;
     }
 
+    float map (float value, float from1, float to1, float from2, float to2) {
+        return (value - from1) / (to1 - from1) * (to2 - from2) + from2;
+    }
+
     void update(float deltaTime){
         this->deltaTime = deltaTime;
         pistolReload.update(deltaTime);
         grenadeReload.update(deltaTime);
         respawnTime = respawnTimer.getCurrentTime();
         if (alive){
+            healthFrontBar->setScale((float)healthPoints/100);
+            fuelFrontBar->setScale(map(fuel,0,2,0,1));
             float leftStickX = Input::getControllerAxisState(controller, SDL_CONTROLLER_AXIS_LEFTX);
             leftStickX = leftStickX/32767;
 
@@ -197,7 +288,8 @@ public:
             if ((Input::getControllerButtonState(controller, SDL_CONTROLLER_BUTTON_A)) && numJumps > 0) {
                 applyForce(vec2(0, 1) * jumpHeight, true);
                 numJumps --;
-            }else if ((Input::getControllerButtonState(controller, SDL_CONTROLLER_BUTTON_A)) && numJumps == 0) {
+            }
+            if ((Input::getControllerButtonState(controller, SDL_CONTROLLER_BUTTON_LEFTSHOULDER))) {
                 if(fuel>0){
                 applyForce(vec2(0, 1) * (jumpHeight+7000.0f), false);
                 fuel-=deltaTime;
@@ -278,7 +370,9 @@ public:
 
             crosshair->transform->setPosition(vec2(normalized.x*crosshairOffset, -normalized.y*crosshairOffset));
         }else{
+            healthPoints = 0;
             respawnTimer.update(deltaTime);
+            respawnBar->setScale(map((float)respawnTimer.getCurrentTime(),0,10,1,0));
         }
 
         if(respawnTimer.time()){
@@ -288,8 +382,12 @@ public:
         if (pistolReload.time())
             canFire = true;
 
-        if (grenadeReload.time())
+        if (grenadeReload.time()){
+            grenadeUI->setScale(1);
             canThrow = true;
+        }else{
+            grenadeUI->setScale(0);
+        }
     }
 
     void OnCollisionEnter(PhysicsEntity* other) {

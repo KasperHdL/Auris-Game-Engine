@@ -22,8 +22,8 @@ public:
         Game::instance->addEntity(make_shared<Wall>(vec2(-40, -20),4,1, "jumpable"));
         Game::instance->addEntity(make_shared<Wall>(vec2(40, -20),4,1, "jumpable"));
 
-        Game::instance->addEntity(make_shared<Wall>(vec2(-50, 25),5,2, "jumpable"));
-        Game::instance->addEntity(make_shared<Wall>(vec2(50, 25),5,2, "jumpable"));
+        Game::instance->addEntity(make_shared<Wall>(vec2(-50, 23),5,2, "jumpable"));
+        Game::instance->addEntity(make_shared<Wall>(vec2(50, 23),5,2, "jumpable"));
 
         Game::instance->addEntity(make_shared<Wall>(vec2(31, 10),2,1, "jumpable"));
         Game::instance->addEntity(make_shared<Wall>(vec2(-31, 10),2,1, "jumpable"));
