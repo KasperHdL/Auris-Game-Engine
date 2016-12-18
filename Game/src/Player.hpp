@@ -277,8 +277,11 @@ public:
     }
 
     void OnCollisionEnter(PhysicsEntity* other) {
-        airHandicap = 1;
-        if (other->type == "jumpable"){
+        if(other->type!="Roof"){
+          airHandicap = 1;
+        }
+
+        if (other->type == "Floor"){
             numJumps = 1;
         }
 

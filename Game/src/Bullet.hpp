@@ -49,7 +49,8 @@ public:
     }
 
     void OnCollisionEnter(PhysicsEntity* other) {
-        if (other->type == "Wall")
+        //cout<<other->type<<endl;
+        if (other->type == "Wall"||other->type=="Floor"||other->type == "Player"||other->type=="Roof")
             Game::instance->destroyEntity(this);
     }
 };

@@ -116,6 +116,28 @@ class DemoGame : public Auris::Game {
     }
 
     void imGUI(){
+    bool open = true;
+        vec2 cameraPos = vec2(camera->getPos().x,camera->getPos().y);
+        for(int i = 0; i<players.size();i++){
 
+            vec2 playerPos = players[i]->transform->getPosition();
+
+            vec2 labelPos = (cameraPos-playerPos)*Constants::METERS_TO_PIXELS;
+
+            ImGui::SetNextWindowPos(ImVec2(labelPos.x,labelPos.y));
+            ImGui::Begin("#TestLabel",&open,ImVec2(500,100),0,ImGuiWindowFlags_NoTitleBar|ImGuiWindowFlags_NoResize|ImGuiWindowFlags_NoMove|ImGuiWindowFlags_NoScrollbar|ImGuiWindowFlags_NoSavedSettings|ImGuiWindowFlags_NoInputs);
+            ImGui::Text("Hello, world!");
+            ImGui::End();
+
+            ImGui::SetNextWindowPos(ImVec2(0,0));
+            ImGui::Begin("#TestLabel",&open,ImVec2(500,100),0,ImGuiWindowFlags_NoTitleBar|ImGuiWindowFlags_NoResize|ImGuiWindowFlags_NoMove|ImGuiWindowFlags_NoScrollbar|ImGuiWindowFlags_NoSavedSettings|ImGuiWindowFlags_NoInputs);
+            ImGui::Text("Hello, world!");
+            ImGui::End();
+
+            ImGui::SetNextWindowPos(ImVec2(100,100));
+            ImGui::Begin("#TestLabel",&open,ImVec2(500,100),0,ImGuiWindowFlags_NoTitleBar|ImGuiWindowFlags_NoResize|ImGuiWindowFlags_NoMove|ImGuiWindowFlags_NoScrollbar|ImGuiWindowFlags_NoSavedSettings|ImGuiWindowFlags_NoInputs);
+            ImGui::Text("Hello, world!");
+            ImGui::End();
+        }
     }
 };

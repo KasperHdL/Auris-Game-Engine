@@ -9,6 +9,54 @@
 using namespace Auris;
 using namespace Constants;
 
+class Roof : public PhysicsEntity{
+public:
+
+    int width;
+
+    Roof(vec2 position, int numTilesX, int numTilesY, float width, float height):PhysicsEntity() {
+        type = "Roof";
+        name = "Roof";
+
+        transform->setScale(vec2(numTilesX, numTilesY));
+
+        b2PolygonShape shape;
+        shape.SetAsBox(width-0.5f, height/100);
+
+        body = Auris::Utilities::BodyStandard::getStaticBody(&shape, vec2(position.x,position.y-height), 3.0f);
+
+        // Physics properties
+        setCollisionEvents(true);
+    }
+
+    ~Roof(){
+    }
+};
+
+class Floor : public PhysicsEntity{
+public:
+
+    int width;
+
+    Floor(vec2 position, int numTilesX, int numTilesY, float width, float height):PhysicsEntity() {
+        type = "Floor";
+        name = "Floor";
+
+        transform->setScale(vec2(numTilesX, numTilesY));
+
+        b2PolygonShape shape;
+        shape.SetAsBox(width-0.5f, height/100);
+
+        body = Auris::Utilities::BodyStandard::getStaticBody(&shape, vec2(position.x,position.y+height), 30.0f);
+
+        // Physics properties
+        setCollisionEvents(true);
+    }
+
+    ~Floor(){
+    }
+};
+
 class Wall : public PhysicsEntity{
 public:
     Sprite* sprite;
@@ -16,7 +64,7 @@ public:
     int width;
 
     Wall(vec2 position, int numTilesX, int numTilesY, string type):PhysicsEntity() {
-        this->type = type;
+        this->type = "Wall";
         name = "Wall";
 
         auto tex = AssetManager::getTexture("concreteSmall.png");
@@ -29,12 +77,12 @@ public:
 
         //quad
         std::vector<glm::vec3> vertices({
-            glm::vec3{ w + nhw, nhh, 0 }, 
+            glm::vec3{ w + nhw, nhh, 0 },
             glm::vec3{ w + nhw, h + nhh, 0 },
             glm::vec3{ nhw, nhh, 0 },
 
-            glm::vec3{ nhw, nhh, 0 }, 
-            glm::vec3{ w + nhw, h + nhh, 0 }, 
+            glm::vec3{ nhw, nhh, 0 },
+            glm::vec3{ w + nhw, h + nhh, 0 },
             glm::vec3{ nhw, h + nhh, 0 }
         });
 
@@ -58,14 +106,13 @@ public:
 
         body = Auris::Utilities::BodyStandard::getStaticBody(&shape, position, 0.0f);
 
-        b2PolygonShape edge;
-        edge.SetAsBox((((numTilesX * w)) * Constants::PIXELS_TO_METERS/2)-0.5f, 0.1f);
-        b2Body* upper;
-        upper = Auris::Utilities::BodyStandard::getStaticBody(&edge, vec2(position.x,position.y+1.5f), 30.0f);
-
         // Physics properties
-        upper->SetUserData(this);
-        //setCollisionEvents(true);
+        setCollisionEvents(true);
+        Floor* floor = new Floor(position,numTilesX,numTilesY,(numTilesX * w) * Constants::PIXELS_TO_METERS/2,(numTilesY * h) * Constants::PIXELS_TO_METERS/2);
+        addChild(floor);
+
+        Roof* roof = new Roof(position,numTilesX,numTilesY,(numTilesX * w) * Constants::PIXELS_TO_METERS/2,(numTilesY * h) * Constants::PIXELS_TO_METERS/2);
+        addChild(roof);
     }
 
     ~Wall(){
