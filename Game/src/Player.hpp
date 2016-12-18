@@ -73,11 +73,12 @@ public:
 
         spriteSheet = AssetManager::getSpriteSheet("player.json", true);
 
+        lower = RenderSystem::getSprite(this);
+        spriteSheet->setSpriteTo(lower, "lower_run_3");
+
         upper = RenderSystem::getSprite(this);
         spriteSheet->setSpriteTo(upper, "upper_3", true);
 
-        lower = RenderSystem::getSprite(this);
-        spriteSheet->setSpriteTo(lower, "lower_run_3");
 
         anim = RenderSystem::getAnim(this, 1.0f);
         anim->makeSequence(spriteSheet, "lower_run", true);
