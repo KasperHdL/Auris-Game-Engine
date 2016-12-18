@@ -199,6 +199,6 @@ class Transform : public Nugget{
         float rotation; /*!< A float value: rotation. The rotation of the transform. */
 
         mat4 localTransform;//!< A mat4 value localTransform, for optimization caching
-
+        vec3 lastOffset;
 };
 }

@@ -4,10 +4,11 @@
 namespace Auris{
 
     glm::mat4 Transform::getLocal(vec3 offset) {
-        if(!dirty) return localTransform;
+        if(!dirty && lastOffset == offset) return localTransform;
+        lastOffset = offset;
 
         mat4 rz = glm::eulerAngleZ(rotation);
-        mat4 t = glm::translate(glm::mat4(1), (offset + position * Constants::METERS_TO_PIXELS));
+        mat4 t = glm::translate(glm::mat4(1), (offset + position) * Constants::METERS_TO_PIXELS);
         mat4 s = glm::scale(glm::mat4(1), vec3(scale, 1));
 
         localTransform = t * rz * s;

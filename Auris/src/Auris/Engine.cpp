@@ -157,7 +157,7 @@ void Engine::run(SDL_Window* window){
         }
 #endif
 
-        sre->clearScreen(vec4(0,0,0,1)); //background color
+        sre->clearScreen(backgroundColor); //background color
 
 #ifdef DEBUG
         if(debugUI->profiling) profile_InputTimer.start();
@@ -260,6 +260,15 @@ void Engine::run(SDL_Window* window){
             Game::instance->destroyEntities.pop_back();
         }
     }
+
+
 }
 
+void Engine::setAmbientLight(vec3 color){
+    SRE::SimpleRenderEngine::instance->setAmbientLight(color);
+}
+
+void Engine::setBackgroundColor(vec4 color){
+    backgroundColor = color;
+}
 }

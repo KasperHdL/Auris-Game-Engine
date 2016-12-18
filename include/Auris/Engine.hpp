@@ -61,6 +61,8 @@ class DebugUI;
     /*! Everything happens here!
     */
 class Engine{
+private:
+    vec4 backgroundColor = vec4(0);
 public:
     static Engine* instance;
 
@@ -103,6 +105,9 @@ public:
     SDL_Window *window; /*!< A SDL_Window pointer: window. A reference to the current window */
 
     RenderSystem renderSystem; /*!< A Rendersystem value: renderSystem. The rendersystem of the engine */
+
+    void setAmbientLight(vec3 color);
+    void setBackgroundColor(vec4 color);
 
 
     b2ContactListener* collisionHandler; /*!< A b2ContactListener pointer: collisionHandler. A reference to the box2d contactlistener, handling collision */
