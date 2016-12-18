@@ -46,19 +46,48 @@ class DemoGame : public Auris::Game {
 
     }
 
+    float map (float value, float from1, float to1, float from2, float to2) {
+        return (value - from1) / (to1 - from1) * (to2 - from2) + from2;
+    }
+
     void update(float dt){
 
-        int i = 0;
         vec2 camPos;
-        for (auto & player : players) {
-            camPos += vec2(player->transform->getPosition().x*Constants::METERS_TO_PIXELS, player->transform->getPosition().y*Constants::METERS_TO_PIXELS);
-            i++;
+        float amountOfZoom = 1;
+        if(players.size()==1){
+            camPos = players[0]->transform->getPosition();
+        }else if(players.size()>1){
+            float distx = -1;
+            float disty = -1;
+            for(int i = 0; i<players.size()-1;i++){
+
+                vec2 player1 = players[i]->transform->getPosition();
+                vec2 player2 = players[i+1]->transform->getPosition();
+
+                vec2 delta = player2 - player1;
+
+                if(distx < glm::abs(delta.x)){
+                    distx = glm::abs(delta.x);
+                    camPos.x = delta.x/2.0f+player1.x;
+                }
+
+                if(disty < glm::abs(delta.y)){
+                    disty = glm::abs(delta.y);
+                    camPos.y = delta.y/2.0f+player1.y;
+                }
+
+                //cout << distx << " , " << disty<< endl;
+                if(distx>disty){
+                   amountOfZoom = map(distx,1,90,0.4f,1);
+                }else{
+                   amountOfZoom = map(disty,1,50,0.4f,1);
+                }
+            }
         }
 
-        if (i != 0) {
-            camPos /= i;
-            Game::camera->setPos(camPos);
-        }
+        Game::camera->zoom(amountOfZoom);
+        cout << "X: " << camPos.x << " Y: " << camPos.y << endl;
+        Game::camera->setPos(camPos*Constants::METERS_TO_PIXELS);
 
         if (Input::keyHeld(Action::m)) {
             audioPlayer->stopMusic();
