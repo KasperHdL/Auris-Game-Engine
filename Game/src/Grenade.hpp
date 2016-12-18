@@ -6,6 +6,7 @@
 #include "Auris/Utilities/BodyStandard.hpp"
 #include "Auris/Utilities/Timer.hpp"
 #include "Auris/Utilities/AudioPlayer.hpp"
+#include <glm/gtc/random.hpp>
 
 using namespace Auris;
 
@@ -19,6 +20,7 @@ public:
     Timer destroyTimer;
 
     AudioPlayer* audioPlayer;
+    ParticleSystem particleSystem;
 
     vec2 direction;
 
@@ -50,6 +52,8 @@ public:
 
         setPosition(position);
 
+        particleSystem.startup(150,1.0f,SRE::Texture::getWhiteTexture());
+
         // Physics properties
         this->speed *= force;
         setGravity(8);
@@ -61,6 +65,8 @@ public:
             if (!hasExploded) {
                 explode();
             }
+            particleSystem.update(deltaTime);
+            particleSystem.draw();
         }
         destroyTimer.update(deltaTime);
         if (destroyTimer.time() && hasExploded) {
@@ -78,6 +84,34 @@ public:
     void explode() {
         audioPlayer->playSound(explosionSound);
         type = "Explosion";
+
+        vec3 pos = transform->getGlobalPosition();
+        float a = 0;
+        float av = 0.5f;
+        vec4 sc = vec4(1,0,0,1);
+        float s = 0;
+        vec4 ec = vec4(.5f,.25f,0,0);
+        float es = 1;
+
+        float linRand;
+        vec3 cirRand;
+
+        for(int i = 0;i < 150;i++){
+            linRand = glm::linearRand<float>(0,1);
+            cirRand = vec3(glm::circularRand<float>(linRand),0);
+            particleSystem.emit(
+                    pos,
+                    cirRand * 20.0f,
+                    linRand * 3.14f,
+                    av + linRand,
+                    sc + vec4(cirRand * 0.25f, 0),
+                    s,
+                    ec,
+                    es
+            );
+
+
+        }
 
         RenderSystem::deleteSprite(sprite);
 
