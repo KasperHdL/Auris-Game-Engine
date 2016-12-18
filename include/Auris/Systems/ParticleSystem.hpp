@@ -134,9 +134,7 @@ public:
     ~ParticleSystem(){
         shutdown();
         delete mesh;
-        delete texture;
         mesh = nullptr;
-        texture = nullptr;
 
     }
 
@@ -234,10 +232,10 @@ public:
     void emit(vec3 position, vec3 velocity, float angle, float angularRotation, vec4 color, float size, vec4 endColor, float endSize){
         if(startTimes[particleIndex] + particleDuration < currentTime){
             startTimes[particleIndex] = currentTime;
-            positions[particleIndex] = position;
+            positions[particleIndex] = position * Constants::METERS_TO_PIXELS;
             rotations[particleIndex] = angle;
             angularVelocities[particleIndex] = angularRotation;
-            velocities[particleIndex] = velocity;
+            velocities[particleIndex] = velocity * Constants::METERS_TO_PIXELS;
             startColors[particleIndex] = color;
             startSizes[particleIndex] = size;
             endColors[particleIndex] = endColor;
@@ -264,7 +262,7 @@ public:
 
             float p = t / particleDuration;
             float it = interpolation_acceleration.interpolate(p).y;
-            auto a = acceleration * it*it;
+            auto a = acceleration * Constants::METERS_TO_PIXELS * it*it;
             it = interpolation_velocity.interpolate(p).y * particleDuration;
             auto v = velocities[i] * it;
             auto p0 = positions[i];
