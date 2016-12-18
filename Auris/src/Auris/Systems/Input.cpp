@@ -15,11 +15,6 @@ Game* Input::game; //quit event or not
 
 void Input::init(Game* game){
     Input::game = game;
-
-    //initialize SDL gamecontrollers
-    if(SDL_Init(SDL_INIT_GAMECONTROLLER)<0){
-         fprintf(stderr, "Couldn't initialize controller: %s\n", SDL_GetError());
-    }
 }
 //This method clears all the keys that are currently stored, and then updates them to what ever keys are being manipulated this frame
 void Input::update() {
