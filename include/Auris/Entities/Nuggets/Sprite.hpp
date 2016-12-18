@@ -42,7 +42,7 @@ public:
          * \param entity an Entity pointer, that is the entity the sprite is associated with.
          * \param texture a Texture pointer, that is the texture of the sprite (default is white).
          * \param normalMap a Texture pointer, that is the normal map of the sprite (default is no normal map).
-         * \param mesh a Mesh pointer, that is the mesh of the sprite (default is cube mesh).
+         * \param mesh a Mesh pointer, that is the mesh of the sprite (default is quad mesh).
         */
     Sprite(Entity* entity, SRE::Texture* texture = nullptr, SRE::Texture* normalMap = nullptr, Mesh* mesh = nullptr):Nugget(entity){
         if(texture == nullptr)
@@ -57,7 +57,7 @@ public:
          * Initializes the mesh and the material of the sprite to values inputted.
          * \param entity an Entity pointer, that is the entity the sprite is associated with.
          * \param texture a Texture pointer, that is the texture of the sprite (default is white).
-         * \param mesh a Mesh pointer, that is the mesh of the sprite (default is cube mesh).
+         * \param mesh a Mesh pointer, that is the mesh of the sprite (default is quad mesh).
          * \overload Sprite(Entity* entity, SRE::Texture* texture = nullptr, SRE::Texture* normalMap = nullptr, Mesh* mesh = nullptr)
         */
     Sprite(Entity* entity, SRE::Texture* texture, Mesh* mesh = nullptr):Nugget(entity){
@@ -85,7 +85,7 @@ public:
         material.texture = texture;
 
        if(mesh == nullptr){
-            this->mesh = Mesh::createCube();
+            this->mesh = Mesh::createQuad();
        }else
             this->mesh = mesh;
 

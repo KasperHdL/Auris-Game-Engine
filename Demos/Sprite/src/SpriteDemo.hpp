@@ -32,7 +32,13 @@ class SpriteDemo : public Game{
 
     void imGui(){
         ImGui::Begin("SpriteDemo");
+
+#ifdef DEBUG
         ImGui::Text("Press F2 for debug menu");
+#else
+        ImGui::Text("Running in Release Mode");
+#endif
+        ImGui::Text("DeltaTime: %f", Engine::instance->deltaTime * 1000);
 
         if(ImGui::Checkbox("Spawn Animation", &spawnAnim))
             spawnSprite = !spawnSprite;

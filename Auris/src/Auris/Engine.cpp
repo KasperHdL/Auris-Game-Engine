@@ -25,7 +25,7 @@ Engine::Engine(int width, int height){
     Constants::height = height;
 
 #ifdef DEBUG
-    std::cout << "Debug mode active" << std::endl;
+    std::cout << "--[Debug mode active]--" << std::endl;
 #endif
 
 }
