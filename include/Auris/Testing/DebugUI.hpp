@@ -1,4 +1,5 @@
 #pragma once
+#ifdef DEBUG
 
 #include "Auris/Testing/DebugDraw.hpp"
 #include "Auris/Systems/Input.hpp"
@@ -122,3 +123,4 @@ public:
     void enableDebug();
 };
 }
+#endif

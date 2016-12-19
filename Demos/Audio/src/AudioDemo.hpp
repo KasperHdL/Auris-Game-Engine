@@ -69,13 +69,6 @@ public:
         soundPlayers[3]->transform->setPosition(vec2(50, 25));
         soundPlayers[4]->transform->setPosition(vec2(0, 0));
 
-        for (int i = 0; i < 5; i++) {
-            std::cout << i << ": " << std::endl;
-            for (int j = 0; i < 3; i++) {
-                std::cout << "sound: " << sounds[i][j] << std::endl;
-            }
-        }
-
         yells.resize(4);
         yells[0] = AssetManager::getSound("yell1.mp3");
         yells[1] = AssetManager::getSound("yell3.mp3");

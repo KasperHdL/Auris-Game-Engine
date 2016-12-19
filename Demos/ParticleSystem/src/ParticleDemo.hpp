@@ -26,8 +26,8 @@ class ParticleDemo : public Game {
 
     //update properties
     int numEmitParticles = 1;
-    vec3 position = vec3(500,100,0);
-    vec3 velocity = vec3(0,300,0);
+    vec3 position = vec3(50,10,0);
+    vec3 velocity = vec3(0,30,0);
     float rotation = 0;
     float angularVelocity = .5f;
     vec4 color = vec4(1,0,0,1);
@@ -37,7 +37,7 @@ class ParticleDemo : public Game {
 
     //random properties
     float random_position = 0;
-    float random_velocity = 100;
+    float random_velocity = 10;
     float random_rotation = 3.14f;
     float random_angularVelocity = 1;
     float random_color = .25f;

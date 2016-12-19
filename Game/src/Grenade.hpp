@@ -28,7 +28,7 @@ public:
 
     float explosionTime = 3;
     float destroyTime = .5f;
-    float speed = 20;
+    float speed = 2000;
 
     bool hasExploded = false;
 
@@ -47,7 +47,7 @@ public:
         b2Filter filter;
         filter.groupIndex = groupIndex;
 
-        body = Auris::Utilities::BodyStandard::getDynamicBody(&shape, false, 3.0f, 20.0f, 0.0f, &filter);
+        body = Auris::Utilities::BodyStandard::getDynamicBody(&shape, false, 1.0f, 20.0f, 0.0f, &filter);
         explodeTimer.start(explosionTime);
         destroyTimer.start(destroyTime);
 
