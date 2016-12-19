@@ -97,7 +97,7 @@ namespace Auris{
         //! The applyForce method, taking 1-3 arguments.
             /*! Applies force to the physics entity center via box2D body
              * \param force a vec2 value, that is the force that should be apllied.
-             * \param impule a bool value, that is if the force is an impulse or not (default is false).
+             * \param impulse a bool value, that is if the force is an impulse or not (default is false).
              * \param awake a bool value, that is if the box2D body can receive physics updates (default is true).
             */
         void applyForce(vec2 force, bool impulse = false, bool awake = true) { 
@@ -111,7 +111,7 @@ namespace Auris{
             /*! Applies force to the physics entity on a specific point via box2D body
              * \param force a vec2 value, that is the force that should be apllied.
              * \param point a vec2 value, that is the point where the force should be applied.
-             * \param impule a bool value, that is if the force is an impulse or not (default is false).
+             * \param impulse a bool value, that is if the force is an impulse or not (default is false).
              * \param awake a bool value, that is if the box2D body can receive physics updates (default is true).
              * \overload applyForce(vec2 force, bool impulse = false, bool awake = true)
             */

@@ -57,10 +57,11 @@ class Transform : public Nugget{
         //! Add to the position
             /*!
              * Add the value to the position
-             * \param an vec2 value, the amount to be added to the position
+             * \param a vec2 value, the amount to be added to the position
              * \overload addToPosition(vec3 value)
              */
         void addToPosition(vec2 value){addToPosition(vec3(value,0));}
+
         //! Add to the position
             /*!
              * Add the value to the position
@@ -113,6 +114,7 @@ class Transform : public Nugget{
             dirty = true;
             scale = value;
         }
+
         //! set scale
             /*!
              * set scale to the given value in both x and y
@@ -123,19 +125,19 @@ class Transform : public Nugget{
             dirty = true;
             scale = vec2(value,value);
         }
+
         //! Getter for scale
             /*!
              * get scale
              * \return a vec2 value, the scale
              * \sa setScale(vec2 value)
-             *
              */
         vec2 getScale(){return scale;}
 
         //! add to rotation
             /*!
              * add an float to the rotation
-             * \param a float value, the amount to add to rotation
+             * \param float value, the amount to add to rotation
              * \sa setRotation(float value)
              * \sa getRotation()
              */
@@ -147,7 +149,7 @@ class Transform : public Nugget{
         //! set rotation
             /*!
              * set the rotation of the transform
-             * \param a float value, the value to set rotation to
+             * \param float value, the value to set rotation to
              * \sa addToRotation(float value)
              * \sa getRotation()
              */
