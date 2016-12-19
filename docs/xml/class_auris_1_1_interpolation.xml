@@ -264,14 +264,14 @@
     <detaileddescription>
 <para>Controls and have information of all interpolation in the engine </para>    </detaileddescription>
     <collaborationgraph>
-      <node id="145">
+      <node id="159">
         <label>Auris::Interpolation</label>
         <link refid="class_auris_1_1_interpolation"/>
-        <childnode refid="146" relation="usage">
+        <childnode refid="160" relation="usage">
           <edgelabel>points</edgelabel>
         </childnode>
       </node>
-      <node id="146">
+      <node id="160">
         <label>std::vector&lt; vec2 &gt;</label>
       </node>
     </collaborationgraph>

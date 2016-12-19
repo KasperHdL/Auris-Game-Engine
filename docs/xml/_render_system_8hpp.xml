@@ -393,7 +393,7 @@
 <codeline lineno="55"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*<sp/>Updates<sp/>the<sp/>rendersystem<sp/>and<sp/>draws<sp/>all<sp/>sprites</highlight></codeline>
 <codeline lineno="56"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*<sp/>\param<sp/>dt<sp/>a<sp/>float<sp/>value.<sp/>The<sp/>delta<sp/>time<sp/>in<sp/>seconds.</highlight></codeline>
 <codeline lineno="57"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="58"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="_audio_player_8hpp_ac52ac34d9f452d759ea1ce3f8df9f682_1ac52ac34d9f452d759ea1ce3f8df9f682" kindref="member">update</ref>(</highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>dt);</highlight></codeline>
+<codeline lineno="58"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>update(</highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>dt);</highlight></codeline>
 <codeline lineno="59"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
 <codeline lineno="60"><highlight class="comment"><sp/><sp/><sp/><sp/>//!<sp/>A<sp/>static<sp/>getSrite<sp/>method,<sp/>taking<sp/>1-4<sp/>arguments.</highlight></codeline>
 <codeline lineno="61"><highlight class="comment"></highlight><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>/*!</highlight></codeline>

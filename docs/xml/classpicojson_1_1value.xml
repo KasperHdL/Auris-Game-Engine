@@ -658,53 +658,53 @@
     <detaileddescription>
     </detaileddescription>
     <collaborationgraph>
-      <node id="265">
+      <node id="279">
         <label>K</label>
       </node>
-      <node id="266">
+      <node id="280">
         <label>T</label>
       </node>
-      <node id="269">
+      <node id="283">
         <label>std::vector&lt; T &gt;</label>
-        <childnode refid="266" relation="usage">
+        <childnode refid="280" relation="usage">
           <edgelabel>elements</edgelabel>
         </childnode>
       </node>
-      <node id="264">
+      <node id="278">
         <label>std::map&lt; K, T &gt;</label>
-        <childnode refid="265" relation="usage">
+        <childnode refid="279" relation="usage">
           <edgelabel>keys</edgelabel>
         </childnode>
-        <childnode refid="266" relation="usage">
+        <childnode refid="280" relation="usage">
           <edgelabel>elements</edgelabel>
         </childnode>
       </node>
-      <node id="268">
+      <node id="282">
         <label>std::basic_string&lt; char &gt;</label>
       </node>
-      <node id="263">
+      <node id="277">
         <label>picojson::value::_storage</label>
         <link refid="unionpicojson_1_1value_1_1__storage"/>
-        <childnode refid="264" relation="usage">
+        <childnode refid="278" relation="usage">
           <edgelabel>object_</edgelabel>
         </childnode>
-        <childnode refid="267" relation="usage">
+        <childnode refid="281" relation="usage">
           <edgelabel>string_</edgelabel>
         </childnode>
-        <childnode refid="269" relation="usage">
+        <childnode refid="283" relation="usage">
           <edgelabel>array_</edgelabel>
         </childnode>
       </node>
-      <node id="262">
+      <node id="276">
         <label>picojson::value</label>
         <link refid="classpicojson_1_1value"/>
-        <childnode refid="263" relation="usage">
+        <childnode refid="277" relation="usage">
           <edgelabel>u_</edgelabel>
         </childnode>
       </node>
-      <node id="267">
+      <node id="281">
         <label>std::string</label>
-        <childnode refid="268" relation="public-inheritance">
+        <childnode refid="282" relation="public-inheritance">
         </childnode>
       </node>
     </collaborationgraph>

@@ -33,6 +33,42 @@
     <member refid="class_auris_1_1_asset_manager_a6401ef4abb8770223df38efc533bfcba_1a6401ef4abb8770223df38efc533bfcba" kind="function"><name>getMusic</name></member>
     <member refid="class_auris_1_1_asset_manager_a8bde2869efc39bb0f4a0e85004780c4c_1a8bde2869efc39bb0f4a0e85004780c4c" kind="function"><name>getDataPath</name></member>
   </compound>
+  <compound refid="class_auris_1_1_audio_player" kind="class"><name>Auris::AudioPlayer</name>
+    <member refid="class_auris_1_1_audio_player_a5e7ce165085ef8c9fc9c052a9c4490d6_1a5e7ce165085ef8c9fc9c052a9c4490d6" kind="variable"><name>channels</name></member>
+    <member refid="class_auris_1_1_audio_player_a3b551119c5c73725e55264cb64fe9564_1a3b551119c5c73725e55264cb64fe9564" kind="variable"><name>music</name></member>
+    <member refid="class_auris_1_1_audio_player_a4f2d463e9c7905b548dd0b32d61364fa_1a4f2d463e9c7905b548dd0b32d61364fa" kind="variable"><name>sounds</name></member>
+    <member refid="class_auris_1_1_audio_player_a9a0afca7e007c289ca94db3791b18b79_1a9a0afca7e007c289ca94db3791b18b79" kind="variable"><name>currentChannel</name></member>
+    <member refid="class_auris_1_1_audio_player_afd56c1d616cd4a99506becb6b5db84b0_1afd56c1d616cd4a99506becb6b5db84b0" kind="variable"><name>deltaDistanceX</name></member>
+    <member refid="class_auris_1_1_audio_player_a959a92c1c431b871488a62d7e58b5478_1a959a92c1c431b871488a62d7e58b5478" kind="variable"><name>deltaDistanceY</name></member>
+    <member refid="class_auris_1_1_audio_player_a11d27eb6142f26090b13880dac810202_1a11d27eb6142f26090b13880dac810202" kind="variable"><name>pan</name></member>
+    <member refid="class_auris_1_1_audio_player_adbdd62f382fee79c467a9c5d4186942d_1adbdd62f382fee79c467a9c5d4186942d" kind="variable"><name>fade</name></member>
+    <member refid="class_auris_1_1_audio_player_aaeea71fb5b725ea1e7d5ec26f281e104_1aaeea71fb5b725ea1e7d5ec26f281e104" kind="variable"><name>fadeScaleX</name></member>
+    <member refid="class_auris_1_1_audio_player_afd8664847907f5bef07feb0a257fa175_1afd8664847907f5bef07feb0a257fa175" kind="variable"><name>fadeScaleY</name></member>
+    <member refid="class_auris_1_1_audio_player_a649c07f1550f26bf38deb6fd28f358db_1a649c07f1550f26bf38deb6fd28f358db" kind="variable"><name>fadeDelayX</name></member>
+    <member refid="class_auris_1_1_audio_player_a321ed63521aa16330616261a46278aac_1a321ed63521aa16330616261a46278aac" kind="variable"><name>fadeDelayY</name></member>
+    <member refid="class_auris_1_1_audio_player_acd67c7992cb6399862ebdb9788c6307b_1acd67c7992cb6399862ebdb9788c6307b" kind="variable"><name>listener</name></member>
+    <member refid="class_auris_1_1_audio_player_a6801b55993242e06ed1d094c40ffea5d_1a6801b55993242e06ed1d094c40ffea5d" kind="variable"><name>channelCount</name></member>
+    <member refid="class_auris_1_1_audio_player_a76f2cce039293eede8fd10038ddd6934_1a76f2cce039293eede8fd10038ddd6934" kind="variable"><name>drawAudioRange</name></member>
+    <member refid="class_auris_1_1_audio_player_a97ccf8b50ea9900edba64eaf5f09694a_1a97ccf8b50ea9900edba64eaf5f09694a" kind="variable"><name>audioIconScale</name></member>
+    <member refid="class_auris_1_1_audio_player_a5ae6710cd367579dbce099599c989d32_1a5ae6710cd367579dbce099599c989d32" kind="function"><name>AudioPlayer</name></member>
+    <member refid="class_auris_1_1_audio_player_a664d181c07d0237803f6fad7e27eed33_1a664d181c07d0237803f6fad7e27eed33" kind="function"><name>update</name></member>
+    <member refid="class_auris_1_1_audio_player_a04d35bc3b48d1762f4a556890cf35fe6_1a04d35bc3b48d1762f4a556890cf35fe6" kind="function"><name>addMusic</name></member>
+    <member refid="class_auris_1_1_audio_player_afc04010437a1609163097a414c0683e9_1afc04010437a1609163097a414c0683e9" kind="function"><name>addSound</name></member>
+    <member refid="class_auris_1_1_audio_player_a21fa4db1dad82901c5d70cc3250a6546_1a21fa4db1dad82901c5d70cc3250a6546" kind="function"><name>playMusic</name></member>
+    <member refid="class_auris_1_1_audio_player_a43f13a131cd50948600b10c8272e24b6_1a43f13a131cd50948600b10c8272e24b6" kind="function"><name>playSound</name></member>
+    <member refid="class_auris_1_1_audio_player_afa46b37e86f2486df5ba56e0e5a2dd85_1afa46b37e86f2486df5ba56e0e5a2dd85" kind="function"><name>pauseMusic</name></member>
+    <member refid="class_auris_1_1_audio_player_a069208abdb395c5c53bf26a644bc36de_1a069208abdb395c5c53bf26a644bc36de" kind="function"><name>resumeMusic</name></member>
+    <member refid="class_auris_1_1_audio_player_a2a0a054bf0143e727f4514be7ae2bf47_1a2a0a054bf0143e727f4514be7ae2bf47" kind="function"><name>stopMusic</name></member>
+    <member refid="class_auris_1_1_audio_player_a1c956893fd48092a632347445a9cba0e_1a1c956893fd48092a632347445a9cba0e" kind="function"><name>setMusicVolume</name></member>
+    <member refid="class_auris_1_1_audio_player_a0aa098c528e1bbca96dd788b448c5dfd_1a0aa098c528e1bbca96dd788b448c5dfd" kind="function"><name>setSoundVolume</name></member>
+    <member refid="class_auris_1_1_audio_player_a71ef262f75fba7adf04e568d982bbfee_1a71ef262f75fba7adf04e568d982bbfee" kind="function"><name>setFadeScaleX</name></member>
+    <member refid="class_auris_1_1_audio_player_a4544fb691ee766b699d37e3e423a4230_1a4544fb691ee766b699d37e3e423a4230" kind="function"><name>setFadeScaleY</name></member>
+    <member refid="class_auris_1_1_audio_player_a06208dd572cb09591ca3c44818b75a7e_1a06208dd572cb09591ca3c44818b75a7e" kind="function"><name>setFadeDelayX</name></member>
+    <member refid="class_auris_1_1_audio_player_a018f9b273d6705365dcbd24516019906_1a018f9b273d6705365dcbd24516019906" kind="function"><name>setFadeDelayY</name></member>
+    <member refid="class_auris_1_1_audio_player_aedb51bfbb1bc29bd8482f9705bfc11ba_1aedb51bfbb1bc29bd8482f9705bfc11ba" kind="function"><name>~AudioPlayer</name></member>
+    <member refid="class_auris_1_1_audio_player_ac006a0972512120a74f188dde0e00b6d_1ac006a0972512120a74f188dde0e00b6d" kind="function"><name>debugDraw</name></member>
+    <member refid="class_auris_1_1_audio_player_a66285ec5a748b33926b38c4f05bd3f95_1a66285ec5a748b33926b38c4f05bd3f95" kind="function"><name>inspectorImGui</name></member>
+  </compound>
   <compound refid="class_auris_1_1_camera" kind="class"><name>Auris::Camera</name>
     <member refid="class_auris_1_1_camera_a849bcfa7d616aff60c6b127b699d5577_1a849bcfa7d616aff60c6b127b699d5577" kind="variable"><name>cam</name></member>
     <member refid="class_auris_1_1_camera_a219d801ff265340504729d8bcee9dda6_1a219d801ff265340504729d8bcee9dda6" kind="variable"><name>left</name></member>
@@ -203,8 +239,8 @@
     <member refid="class_auris_1_1_entity_aedf6a4670c5cb9e6efc5fbec2be40281_1aedf6a4670c5cb9e6efc5fbec2be40281" kind="function"><name>start</name></member>
     <member refid="class_auris_1_1_entity_a82768db86a5efc62f99e20e15d6bfe97_1a82768db86a5efc62f99e20e15d6bfe97" kind="function"><name>update</name></member>
     <member refid="class_auris_1_1_entity_a5011b41267c7ae7dcbf260e3ffb83b3b_1a5011b41267c7ae7dcbf260e3ffb83b3b" kind="function"><name>onDestruction</name></member>
-    <member refid="class_auris_1_1_entity_a880c5f29315d04c76453ab70ffe60737_1a880c5f29315d04c76453ab70ffe60737" kind="function"><name>debugDraw</name></member>
-    <member refid="class_auris_1_1_entity_a30ccf345f74230cb9c560f5bf4794b99_1a30ccf345f74230cb9c560f5bf4794b99" kind="function"><name>inspectorImGui</name></member>
+    <member refid="class_auris_1_1_entity_a73c8d32ab721f852fa7949c64fe31823_1a73c8d32ab721f852fa7949c64fe31823" kind="function"><name>debugDraw</name></member>
+    <member refid="class_auris_1_1_entity_a276ce2e133fd19ae174b3a22091845da_1a276ce2e133fd19ae174b3a22091845da" kind="function"><name>inspectorImGui</name></member>
   </compound>
   <compound refid="class_auris_1_1_game" kind="class"><name>Auris::Game</name>
     <member refid="class_auris_1_1_game_a50f15740b9fdd322e9dfacc834825beb_1a50f15740b9fdd322e9dfacc834825beb" kind="variable"><name>instance</name></member>
@@ -694,40 +730,6 @@
     <member refid="_engine_8hpp_a51f528deaaeb973f417b46a2ec36f850_1a51f528deaaeb973f417b46a2ec36f850" kind="define"><name>SDL_MAIN_HANDLED</name></member>
   </compound>
   <compound refid="_audio_player_8hpp" kind="file"><name>AudioPlayer.hpp</name>
-    <member refid="_audio_player_8hpp_ad63cb1f4bfe9e66afdffd5ae4fc5c9f1_1ad63cb1f4bfe9e66afdffd5ae4fc5c9f1" kind="variable"><name>channels</name></member>
-    <member refid="_audio_player_8hpp_ac68dc4e44d895b38007564ac8a4c40fd_1ac68dc4e44d895b38007564ac8a4c40fd" kind="variable"><name>music</name></member>
-    <member refid="_audio_player_8hpp_a0a09de49eaf498307ecf1193a2ba2ad9_1a0a09de49eaf498307ecf1193a2ba2ad9" kind="variable"><name>sounds</name></member>
-    <member refid="_audio_player_8hpp_a627c12924294173b6f8409a90e07b980_1a627c12924294173b6f8409a90e07b980" kind="variable"><name>channelCount</name></member>
-    <member refid="_audio_player_8hpp_acffa5a4edaa4baf1ea4341a8bd07c2ab_1acffa5a4edaa4baf1ea4341a8bd07c2ab" kind="variable"><name>currentChannel</name></member>
-    <member refid="_audio_player_8hpp_a82f9bee96ae329de7347cb12589a44fc_1a82f9bee96ae329de7347cb12589a44fc" kind="variable"><name>deltaDistanceX</name></member>
-    <member refid="_audio_player_8hpp_a5954d2b12816d71e9368453dafaafb64_1a5954d2b12816d71e9368453dafaafb64" kind="variable"><name>deltaDistanceY</name></member>
-    <member refid="_audio_player_8hpp_adee1aef20945156b400a92e84bbdb46b_1adee1aef20945156b400a92e84bbdb46b" kind="variable"><name>pan</name></member>
-    <member refid="_audio_player_8hpp_a616c23dc01f67f0d284044acfb160086_1a616c23dc01f67f0d284044acfb160086" kind="variable"><name>fade</name></member>
-    <member refid="_audio_player_8hpp_af49b7c8f6419a65cd1024a166339a8ae_1af49b7c8f6419a65cd1024a166339a8ae" kind="variable"><name>fadeScaleX</name></member>
-    <member refid="_audio_player_8hpp_aacfd9c51d4d11eeb7802c1b1578886ac_1aacfd9c51d4d11eeb7802c1b1578886ac" kind="variable"><name>fadeScaleY</name></member>
-    <member refid="_audio_player_8hpp_a6af36b0fb7714db28486b4fbf23ca1c8_1a6af36b0fb7714db28486b4fbf23ca1c8" kind="variable"><name>fadeDelayX</name></member>
-    <member refid="_audio_player_8hpp_ae2787a3be0d61dbab4ce128e623834a3_1ae2787a3be0d61dbab4ce128e623834a3" kind="variable"><name>fadeDelayY</name></member>
-    <member refid="_audio_player_8hpp_a4a99373aca91d99b5b9ecf6f8e30b97e_1a4a99373aca91d99b5b9ecf6f8e30b97e" kind="variable"><name>listener</name></member>
-    <member refid="_audio_player_8hpp_a0bb2dfc6324d0ac2a5f9b83148d3710c_1a0bb2dfc6324d0ac2a5f9b83148d3710c" kind="variable"><name>drawAudioRange</name></member>
-    <member refid="_audio_player_8hpp_a2b4a1455dce73e1186bbf2020a9ce002_1a2b4a1455dce73e1186bbf2020a9ce002" kind="variable"><name>audioIconScale</name></member>
-    <member refid="_audio_player_8hpp_a4e21beefadc86b8eca7304640f0db524_1a4e21beefadc86b8eca7304640f0db524" kind="function"><name>AudioPlayer</name></member>
-    <member refid="_audio_player_8hpp_ac52ac34d9f452d759ea1ce3f8df9f682_1ac52ac34d9f452d759ea1ce3f8df9f682" kind="function"><name>update</name></member>
-    <member refid="_audio_player_8hpp_af1361dd9199d249d2899a0c7e3449eb1_1af1361dd9199d249d2899a0c7e3449eb1" kind="function"><name>addMusic</name></member>
-    <member refid="_audio_player_8hpp_a507f135881e89679133b2a81d74abff2_1a507f135881e89679133b2a81d74abff2" kind="function"><name>addSound</name></member>
-    <member refid="_audio_player_8hpp_a3a878924d8438918d9769675d473b165_1a3a878924d8438918d9769675d473b165" kind="function"><name>playMusic</name></member>
-    <member refid="_audio_player_8hpp_a59b5a376b3a7b173a71220cfcd24d9d9_1a59b5a376b3a7b173a71220cfcd24d9d9" kind="function"><name>playSound</name></member>
-    <member refid="_audio_player_8hpp_a7d696a044bff4bcfdcaa78f21b4e152a_1a7d696a044bff4bcfdcaa78f21b4e152a" kind="function"><name>pauseMusic</name></member>
-    <member refid="_audio_player_8hpp_ac628f2d8f6164d6bc181f75c4ad9ef30_1ac628f2d8f6164d6bc181f75c4ad9ef30" kind="function"><name>resumeMusic</name></member>
-    <member refid="_audio_player_8hpp_a7473e9a04dc2e8f05241857d86586194_1a7473e9a04dc2e8f05241857d86586194" kind="function"><name>stopMusic</name></member>
-    <member refid="_audio_player_8hpp_ae351a6c7c79eb5cea03e910966bc37e3_1ae351a6c7c79eb5cea03e910966bc37e3" kind="function"><name>setMusicVolume</name></member>
-    <member refid="_audio_player_8hpp_afa3767ac7e3cdab51ab43cdd7ad294c6_1afa3767ac7e3cdab51ab43cdd7ad294c6" kind="function"><name>setSoundVolume</name></member>
-    <member refid="_audio_player_8hpp_a42be3a37ec7fe01679b69c17004dec32_1a42be3a37ec7fe01679b69c17004dec32" kind="function"><name>setFadeScaleX</name></member>
-    <member refid="_audio_player_8hpp_a2dd6b8849a274a8a95bb034e32adfd99_1a2dd6b8849a274a8a95bb034e32adfd99" kind="function"><name>setFadeScaleY</name></member>
-    <member refid="_audio_player_8hpp_a91417060f572c27ba818b88f36ea78cf_1a91417060f572c27ba818b88f36ea78cf" kind="function"><name>setFadeDelayX</name></member>
-    <member refid="_audio_player_8hpp_a09836476cb254a8bfd8e144c62db6b06_1a09836476cb254a8bfd8e144c62db6b06" kind="function"><name>setFadeDelayY</name></member>
-    <member refid="_audio_player_8hpp_adf3cf77acdb29518df8c24aa53c14559_1adf3cf77acdb29518df8c24aa53c14559" kind="function"><name>~AudioPlayer</name></member>
-    <member refid="_audio_player_8hpp_ad6a9ceca414d65d7701e27b39be6ef23_1ad6a9ceca414d65d7701e27b39be6ef23" kind="function"><name>debugDraw</name></member>
-    <member refid="_audio_player_8hpp_a6a2203698778ad758c38a119ffdf6b76_1a6a2203698778ad758c38a119ffdf6b76" kind="function"><name>inspectorImGui</name></member>
   </compound>
   <compound refid="_camera_8hpp" kind="file"><name>Camera.hpp</name>
   </compound>

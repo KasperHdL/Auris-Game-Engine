@@ -345,732 +345,8 @@
         <link refid="_engine_8cpp"/>
       </node>
     </invincdepgraph>
-      <sectiondef kind="var">
-      <memberdef kind="variable" id="_audio_player_8hpp_ad63cb1f4bfe9e66afdffd5ae4fc5c9f1_1ad63cb1f4bfe9e66afdffd5ae4fc5c9f1" prot="public" static="no" mutable="no">
-        <type>std::cerr&lt;&lt; &quot;Error: Unsupported OS&quot;&lt;&lt; std::endl;namespace Auris { class <ref refid="_audio_player_8hpp_a4e21beefadc86b8eca7304640f0db524_1a4e21beefadc86b8eca7304640f0db524" kindref="member">AudioPlayer</ref> :public Entity {private:std::vector&lt; int &gt;</type>
-        <definition>std::cerr&lt;&lt; &quot;Error: Unsupported OS&quot; &lt;&lt; std::endl;namespace Auris { class AudioPlayer : public Entity {private: std::vector&lt;int&gt; channels</definition>
-        <argsstring></argsstring>
-        <name>channels</name>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="Projects/GameEngine/include/Auris/Entities/AudioPlayer.hpp" line="23" column="1" bodyfile="Projects/GameEngine/include/Auris/Entities/AudioPlayer.hpp" bodystart="23" bodyend="-1"/>
-      </memberdef>
-      <memberdef kind="variable" id="_audio_player_8hpp_ac68dc4e44d895b38007564ac8a4c40fd_1ac68dc4e44d895b38007564ac8a4c40fd" prot="public" static="no" mutable="no">
-        <type>std::vector&lt; Mix_Music * &gt;</type>
-        <definition>std::vector&lt;Mix_Music*&gt; music</definition>
-        <argsstring></argsstring>
-        <name>music</name>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-<para>A vector of Mix_Music pointers: music. Instance of the music in the audioplayer. </para>        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="Projects/GameEngine/include/Auris/Entities/AudioPlayer.hpp" line="25" column="1" bodyfile="Projects/GameEngine/include/Auris/Entities/AudioPlayer.hpp" bodystart="25" bodyend="-1"/>
-      </memberdef>
-      <memberdef kind="variable" id="_audio_player_8hpp_a0a09de49eaf498307ecf1193a2ba2ad9_1a0a09de49eaf498307ecf1193a2ba2ad9" prot="public" static="no" mutable="no">
-        <type>std::vector&lt; Mix_Chunk * &gt;</type>
-        <definition>std::vector&lt;Mix_Chunk*&gt; sounds</definition>
-        <argsstring></argsstring>
-        <name>sounds</name>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-<para>A vector of Mix_Chunk pointers: sounds. Instance of the sound in the audioplayer. </para>        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="Projects/GameEngine/include/Auris/Entities/AudioPlayer.hpp" line="26" column="1" bodyfile="Projects/GameEngine/include/Auris/Entities/AudioPlayer.hpp" bodystart="26" bodyend="-1"/>
-      </memberdef>
-      <memberdef kind="variable" id="_audio_player_8hpp_a627c12924294173b6f8409a90e07b980_1a627c12924294173b6f8409a90e07b980" prot="public" static="yes" mutable="no">
-        <type>int</type>
-        <definition>int channelCount</definition>
-        <argsstring></argsstring>
-        <name>channelCount</name>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-<para>A static int value: channelCount. This is the total amount of allocated channels by SDL_mixer. </para>        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="Projects/GameEngine/include/Auris/Entities/AudioPlayer.hpp" line="28" column="1" bodyfile="Projects/GameEngine/include/Auris/Entities/AudioPlayer.hpp" bodystart="28" bodyend="-1"/>
-      </memberdef>
-      <memberdef kind="variable" id="_audio_player_8hpp_acffa5a4edaa4baf1ea4341a8bd07c2ab_1acffa5a4edaa4baf1ea4341a8bd07c2ab" prot="public" static="no" mutable="no">
-        <type>int</type>
-        <definition>int currentChannel</definition>
-        <argsstring></argsstring>
-        <name>currentChannel</name>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-<para>An int value: currentChannel. This is the current channel this AudioPlayer is playing on. </para>        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="Projects/GameEngine/include/Auris/Entities/AudioPlayer.hpp" line="30" column="1" bodyfile="Projects/GameEngine/include/Auris/Entities/AudioPlayer.hpp" bodystart="30" bodyend="-1"/>
-      </memberdef>
-      <memberdef kind="variable" id="_audio_player_8hpp_a82f9bee96ae329de7347cb12589a44fc_1a82f9bee96ae329de7347cb12589a44fc" prot="public" static="no" mutable="no">
-        <type>int</type>
-        <definition>int deltaDistanceX</definition>
-        <argsstring></argsstring>
-        <name>deltaDistanceX</name>
-        <initializer>= 0</initializer>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-<para>An int value: deltaDistanceX. The relative distance between the audio and the audio listener on the x axis. </para>        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="Projects/GameEngine/include/Auris/Entities/AudioPlayer.hpp" line="31" column="1" bodyfile="Projects/GameEngine/include/Auris/Entities/AudioPlayer.hpp" bodystart="31" bodyend="-1"/>
-      </memberdef>
-      <memberdef kind="variable" id="_audio_player_8hpp_a5954d2b12816d71e9368453dafaafb64_1a5954d2b12816d71e9368453dafaafb64" prot="public" static="no" mutable="no">
-        <type>int</type>
-        <definition>int deltaDistanceY</definition>
-        <argsstring></argsstring>
-        <name>deltaDistanceY</name>
-        <initializer>= 0</initializer>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-<para>An int value: deltaDistanceY. The relative distance between the audio and the audio listener on the y axis. </para>        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="Projects/GameEngine/include/Auris/Entities/AudioPlayer.hpp" line="32" column="1" bodyfile="Projects/GameEngine/include/Auris/Entities/AudioPlayer.hpp" bodystart="32" bodyend="-1"/>
-      </memberdef>
-      <memberdef kind="variable" id="_audio_player_8hpp_adee1aef20945156b400a92e84bbdb46b_1adee1aef20945156b400a92e84bbdb46b" prot="public" static="no" mutable="no">
-        <type>int</type>
-        <definition>int pan</definition>
-        <argsstring></argsstring>
-        <name>pan</name>
-        <initializer>= 127</initializer>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-<para>An int value: pan. How much pan the channel the audio is playing at should have. </para>        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="Projects/GameEngine/include/Auris/Entities/AudioPlayer.hpp" line="33" column="1" bodyfile="Projects/GameEngine/include/Auris/Entities/AudioPlayer.hpp" bodystart="33" bodyend="-1"/>
-      </memberdef>
-      <memberdef kind="variable" id="_audio_player_8hpp_a616c23dc01f67f0d284044acfb160086_1a616c23dc01f67f0d284044acfb160086" prot="public" static="no" mutable="no">
-        <type>int</type>
-        <definition>int fade</definition>
-        <argsstring></argsstring>
-        <name>fade</name>
-        <initializer>= 0</initializer>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-<para>An int value: fade. How much fade the channel the audio is playing at should have. </para>        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="Projects/GameEngine/include/Auris/Entities/AudioPlayer.hpp" line="34" column="1" bodyfile="Projects/GameEngine/include/Auris/Entities/AudioPlayer.hpp" bodystart="34" bodyend="-1"/>
-      </memberdef>
-      <memberdef kind="variable" id="_audio_player_8hpp_af49b7c8f6419a65cd1024a166339a8ae_1af49b7c8f6419a65cd1024a166339a8ae" prot="public" static="no" mutable="no">
-        <type>float</type>
-        <definition>float fadeScaleX</definition>
-        <argsstring></argsstring>
-        <name>fadeScaleX</name>
-        <initializer>= 1.0f</initializer>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-<para>A float value: faceScaleX. The scaling on the fade on the x axis. </para>        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="Projects/GameEngine/include/Auris/Entities/AudioPlayer.hpp" line="36" column="1" bodyfile="Projects/GameEngine/include/Auris/Entities/AudioPlayer.hpp" bodystart="36" bodyend="-1"/>
-      </memberdef>
-      <memberdef kind="variable" id="_audio_player_8hpp_aacfd9c51d4d11eeb7802c1b1578886ac_1aacfd9c51d4d11eeb7802c1b1578886ac" prot="public" static="no" mutable="no">
-        <type>float</type>
-        <definition>float fadeScaleY</definition>
-        <argsstring></argsstring>
-        <name>fadeScaleY</name>
-        <initializer>= 1.0f</initializer>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-<para>A float value: faceScaleY. The scaling on the fade on the y axis. </para>        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="Projects/GameEngine/include/Auris/Entities/AudioPlayer.hpp" line="37" column="1" bodyfile="Projects/GameEngine/include/Auris/Entities/AudioPlayer.hpp" bodystart="37" bodyend="-1"/>
-      </memberdef>
-      <memberdef kind="variable" id="_audio_player_8hpp_a6af36b0fb7714db28486b4fbf23ca1c8_1a6af36b0fb7714db28486b4fbf23ca1c8" prot="public" static="no" mutable="no">
-        <type>float</type>
-        <definition>float fadeDelayX</definition>
-        <argsstring></argsstring>
-        <name>fadeDelayX</name>
-        <initializer>= 1.0f</initializer>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-<para>A float value: faceDelayX. The delay of the fade on the x axis. </para>        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="Projects/GameEngine/include/Auris/Entities/AudioPlayer.hpp" line="38" column="1" bodyfile="Projects/GameEngine/include/Auris/Entities/AudioPlayer.hpp" bodystart="38" bodyend="-1"/>
-      </memberdef>
-      <memberdef kind="variable" id="_audio_player_8hpp_ae2787a3be0d61dbab4ce128e623834a3_1ae2787a3be0d61dbab4ce128e623834a3" prot="public" static="no" mutable="no">
-        <type>float</type>
-        <definition>float fadeDelayY</definition>
-        <argsstring></argsstring>
-        <name>fadeDelayY</name>
-        <initializer>= 1.0f</initializer>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-<para>A float value: faceDelayY. The delay of the fade on the y axis. </para>        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="Projects/GameEngine/include/Auris/Entities/AudioPlayer.hpp" line="39" column="1" bodyfile="Projects/GameEngine/include/Auris/Entities/AudioPlayer.hpp" bodystart="39" bodyend="-1"/>
-      </memberdef>
-      <memberdef kind="variable" id="_audio_player_8hpp_a4a99373aca91d99b5b9ecf6f8e30b97e_1a4a99373aca91d99b5b9ecf6f8e30b97e" prot="public" static="no" mutable="no">
-        <type><ref refid="class_auris_1_1_camera" kindref="compound">Auris::Camera</ref> *</type>
-        <definition>Auris::Camera* listener</definition>
-        <argsstring></argsstring>
-        <name>listener</name>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-<para>A Camera* pointer: listener. The camera that should listen for the audio. </para>        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="Projects/GameEngine/include/Auris/Entities/AudioPlayer.hpp" line="41" column="1" bodyfile="Projects/GameEngine/include/Auris/Entities/AudioPlayer.hpp" bodystart="41" bodyend="-1"/>
-      </memberdef>
-      <memberdef kind="variable" id="_audio_player_8hpp_a0bb2dfc6324d0ac2a5f9b83148d3710c_1a0bb2dfc6324d0ac2a5f9b83148d3710c" prot="public" static="no" mutable="no">
-        <type>bool</type>
-        <definition>bool drawAudioRange</definition>
-        <argsstring></argsstring>
-        <name>drawAudioRange</name>
-        <initializer>= false</initializer>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-<para>A bool value: drawAudioRange. If the audio debug range should be draw. </para>        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="Projects/GameEngine/include/Auris/Entities/AudioPlayer.hpp" line="234" column="1" bodyfile="Projects/GameEngine/include/Auris/Entities/AudioPlayer.hpp" bodystart="234" bodyend="-1"/>
-      </memberdef>
-      <memberdef kind="variable" id="_audio_player_8hpp_a2b4a1455dce73e1186bbf2020a9ce002_1a2b4a1455dce73e1186bbf2020a9ce002" prot="public" static="no" mutable="no">
-        <type>float</type>
-        <definition>float audioIconScale</definition>
-        <argsstring></argsstring>
-        <name>audioIconScale</name>
-        <initializer>= 10</initializer>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-<para>A float value: audioIconScale. The scale of the debug audio icon (default is 10). </para>        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="Projects/GameEngine/include/Auris/Entities/AudioPlayer.hpp" line="235" column="1" bodyfile="Projects/GameEngine/include/Auris/Entities/AudioPlayer.hpp" bodystart="235" bodyend="-1"/>
-      </memberdef>
-      </sectiondef>
-      <sectiondef kind="func">
-      <memberdef kind="function" id="_audio_player_8hpp_a4e21beefadc86b8eca7304640f0db524_1a4e21beefadc86b8eca7304640f0db524" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type></type>
-        <definition>AudioPlayer</definition>
-        <argsstring>(Auris::Camera *listener=nullptr, int channels=1, float fadeScaleX=1.0f, float fadeScaleY=1.0f, int fadeDelayX=0, int fadeDelayY=0)</argsstring>
-        <name>AudioPlayer</name>
-        <param>
-          <type><ref refid="class_auris_1_1_camera" kindref="compound">Auris::Camera</ref> *</type>
-          <declname>listener</declname>
-          <defval>nullptr</defval>
-        </param>
-        <param>
-          <type>int</type>
-          <declname>channels</declname>
-          <defval>1</defval>
-        </param>
-        <param>
-          <type>float</type>
-          <declname>fadeScaleX</declname>
-          <defval>1.0f</defval>
-        </param>
-        <param>
-          <type>float</type>
-          <declname>fadeScaleY</declname>
-          <defval>1.0f</defval>
-        </param>
-        <param>
-          <type>int</type>
-          <declname>fadeDelayX</declname>
-          <defval>0</defval>
-        </param>
-        <param>
-          <type>int</type>
-          <declname>fadeDelayY</declname>
-          <defval>0</defval>
-        </param>
-        <briefdescription>
-<para>The AudioPlayer constructor, taking 0-6 arguments. </para>        </briefdescription>
-        <detaileddescription>
-<para>Initializes AudioPlayer to the values inputted. <parameterlist kind="param"><parameteritem>
-<parameternamelist>
-<parametername>listener</parametername>
-</parameternamelist>
-<parameterdescription>
-<para>a Camera pointer. The camera that should be the listener (default no listener, meaning global audio). </para></parameterdescription>
-</parameteritem>
-<parameteritem>
-<parameternamelist>
-<parametername>channels</parametername>
-</parameternamelist>
-<parameterdescription>
-<para>an int value. The amount of channels this AudioPlayer should allocate for its use. </para></parameterdescription>
-</parameteritem>
-<parameteritem>
-<parameternamelist>
-<parametername>fadeScaleX</parametername>
-</parameternamelist>
-<parameterdescription>
-<para>a float value. The scale which to face by on the x axis (default is 1.0). </para></parameterdescription>
-</parameteritem>
-<parameteritem>
-<parameternamelist>
-<parametername>fadeScaleY</parametername>
-</parameternamelist>
-<parameterdescription>
-<para>a float value. The scale which to face by on the y axis (default is 1.0). </para></parameterdescription>
-</parameteritem>
-<parameteritem>
-<parameternamelist>
-<parametername>fadeDelayX</parametername>
-</parameternamelist>
-<parameterdescription>
-<para>a float value. The delay of the fade on the x axis (default is 0). </para></parameterdescription>
-</parameteritem>
-<parameteritem>
-<parameternamelist>
-<parametername>fadeDelayY</parametername>
-</parameternamelist>
-<parameterdescription>
-<para>a float value. The delay of the fade on the y axis (default is 0). </para></parameterdescription>
-</parameteritem>
-</parameterlist>
-</para>        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="Projects/GameEngine/include/Auris/Entities/AudioPlayer.hpp" line="55" column="1"/>
-      </memberdef>
-      <memberdef kind="function" id="_audio_player_8hpp_ac52ac34d9f452d759ea1ce3f8df9f682_1ac52ac34d9f452d759ea1ce3f8df9f682" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type>void</type>
-        <definition>void update</definition>
-        <argsstring>(float deltaTime)</argsstring>
-        <name>update</name>
-        <param>
-          <type>float</type>
-          <declname>deltaTime</declname>
-        </param>
-        <briefdescription>
-<para>An update method, taking 1 argument. </para>        </briefdescription>
-        <detaileddescription>
-<para>Sets the pan and master volume according to the relative distance between this AudioPlayer and its listener <parameterlist kind="param"><parameteritem>
-<parameternamelist>
-<parametername>deltaTime</parametername>
-</parameternamelist>
-<parameterdescription>
-<para>a float value. The delta time in seconds. </para></parameterdescription>
-</parameteritem>
-</parameterlist>
-</para>        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="Projects/GameEngine/include/Auris/Entities/AudioPlayer.hpp" line="61" column="1" bodyfile="Projects/GameEngine/include/Auris/Entities/AudioPlayer.hpp" bodystart="61" bodyend="86"/>
-      </memberdef>
-      <memberdef kind="function" id="_audio_player_8hpp_af1361dd9199d249d2899a0c7e3449eb1_1af1361dd9199d249d2899a0c7e3449eb1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type>int</type>
-        <definition>int addMusic</definition>
-        <argsstring>(Mix_Music *mixMusic, int volume=128)</argsstring>
-        <name>addMusic</name>
-        <param>
-          <type>Mix_Music *</type>
-          <declname>mixMusic</declname>
-        </param>
-        <param>
-          <type>int</type>
-          <declname>volume</declname>
-          <defval>128</defval>
-        </param>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-<para>An addMusic method, taking 1-2 arguemnts. Adds music to this AudioPlayer. <parameterlist kind="param"><parameteritem>
-<parameternamelist>
-<parametername>mixMusic</parametername>
-</parameternamelist>
-<parameterdescription>
-<para>a Mix_Music pointer. The music to add to the audioplayer. Use AssetManager::getMusic() to get the pointer. </para></parameterdescription>
-</parameteritem>
-<parameteritem>
-<parameternamelist>
-<parametername>volume</parametername>
-</parameternamelist>
-<parameterdescription>
-<para>an int value. The initial volume of that music (0-128) (default is 128). </para></parameterdescription>
-</parameteritem>
-</parameterlist>
-<simplesect kind="return"><para>int. The index of the music. Returns -1 on load error. </para></simplesect>
-<simplesect kind="see"><para><ref refid="_audio_player_8hpp_a507f135881e89679133b2a81d74abff2_1a507f135881e89679133b2a81d74abff2" kindref="member">addSound()</ref> </para></simplesect>
-<simplesect kind="see"><para>AssetManager::getMusic() </para></simplesect>
-</para>        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="Projects/GameEngine/include/Auris/Entities/AudioPlayer.hpp" line="96" column="1" bodyfile="Projects/GameEngine/include/Auris/Entities/AudioPlayer.hpp" bodystart="96" bodyend="102"/>
-      </memberdef>
-      <memberdef kind="function" id="_audio_player_8hpp_a507f135881e89679133b2a81d74abff2_1a507f135881e89679133b2a81d74abff2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type>int</type>
-        <definition>int addSound</definition>
-        <argsstring>(Mix_Chunk *mixChunk, int volume=128)</argsstring>
-        <name>addSound</name>
-        <param>
-          <type>Mix_Chunk *</type>
-          <declname>mixChunk</declname>
-        </param>
-        <param>
-          <type>int</type>
-          <declname>volume</declname>
-          <defval>128</defval>
-        </param>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-<para>An addSound method. taking 1-2 arguments. Adds a sound to this AudioPlayer. <parameterlist kind="param"><parameteritem>
-<parameternamelist>
-<parametername>mixChunk</parametername>
-</parameternamelist>
-<parameterdescription>
-<para>a Mix_Chunk pointer. The sound to add to the audioplayer. Use AssetManager::getSound() to get the pointer </para></parameterdescription>
-</parameteritem>
-<parameteritem>
-<parameternamelist>
-<parametername>volume</parametername>
-</parameternamelist>
-<parameterdescription>
-<para>an int value. The initial volume of that sound (0-128) (default is 128). </para></parameterdescription>
-</parameteritem>
-</parameterlist>
-<simplesect kind="return"><para>int The index of the sound. Returns -1 on load error. </para></simplesect>
-<simplesect kind="see"><para><ref refid="_audio_player_8hpp_af1361dd9199d249d2899a0c7e3449eb1_1af1361dd9199d249d2899a0c7e3449eb1" kindref="member">addMusic()</ref> </para></simplesect>
-<simplesect kind="see"><para>AssetManager::getSound() </para></simplesect>
-</para>        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="Projects/GameEngine/include/Auris/Entities/AudioPlayer.hpp" line="111" column="1" bodyfile="Projects/GameEngine/include/Auris/Entities/AudioPlayer.hpp" bodystart="111" bodyend="117"/>
-      </memberdef>
-      <memberdef kind="function" id="_audio_player_8hpp_a3a878924d8438918d9769675d473b165_1a3a878924d8438918d9769675d473b165" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type>void</type>
-        <definition>void playMusic</definition>
-        <argsstring>(int index, int loops=-1)</argsstring>
-        <name>playMusic</name>
-        <param>
-          <type>int</type>
-          <declname>index</declname>
-        </param>
-        <param>
-          <type>int</type>
-          <declname>loops</declname>
-          <defval>-1</defval>
-        </param>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-<para>A playMusic method, taking 1 argument. Plays the music of the AudioPlayer <parameterlist kind="param"><parameteritem>
-<parameternamelist>
-<parametername>index</parametername>
-</parameternamelist>
-<parameterdescription>
-<para>an int value. The index of the music. </para></parameterdescription>
-</parameteritem>
-<parameteritem>
-<parameternamelist>
-<parametername>loops</parametername>
-</parameternamelist>
-<parameterdescription>
-<para>an int value. Number times to loop the sound, -1 means loop indefinitely. </para></parameterdescription>
-</parameteritem>
-</parameterlist>
-</para>        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="Projects/GameEngine/include/Auris/Entities/AudioPlayer.hpp" line="124" column="1" bodyfile="Projects/GameEngine/include/Auris/Entities/AudioPlayer.hpp" bodystart="124" bodyend="137"/>
-      </memberdef>
-      <memberdef kind="function" id="_audio_player_8hpp_a59b5a376b3a7b173a71220cfcd24d9d9_1a59b5a376b3a7b173a71220cfcd24d9d9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type>void</type>
-        <definition>void playSound</definition>
-        <argsstring>(int index, int loops=0)</argsstring>
-        <name>playSound</name>
-        <param>
-          <type>int</type>
-          <declname>index</declname>
-        </param>
-        <param>
-          <type>int</type>
-          <declname>loops</declname>
-          <defval>0</defval>
-        </param>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-<para>A playSound method, taking 1 argument. Plays the sound of the AudioPlayer at the current channel. <parameterlist kind="param"><parameteritem>
-<parameternamelist>
-<parametername>index</parametername>
-</parameternamelist>
-<parameterdescription>
-<para>an int value. The index of the sound. </para></parameterdescription>
-</parameteritem>
-<parameteritem>
-<parameternamelist>
-<parametername>loops</parametername>
-</parameternamelist>
-<parameterdescription>
-<para>an int value. Number times to loop the sound, -1 means loop indefinitely. </para></parameterdescription>
-</parameteritem>
-</parameterlist>
-</para>        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="Projects/GameEngine/include/Auris/Entities/AudioPlayer.hpp" line="144" column="1" bodyfile="Projects/GameEngine/include/Auris/Entities/AudioPlayer.hpp" bodystart="144" bodyend="151"/>
-      </memberdef>
-      <memberdef kind="function" id="_audio_player_8hpp_a7d696a044bff4bcfdcaa78f21b4e152a_1a7d696a044bff4bcfdcaa78f21b4e152a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type>void</type>
-        <definition>void pauseMusic</definition>
-        <argsstring>()</argsstring>
-        <name>pauseMusic</name>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-<para>A pauseMusic method. Pauses music if music is playing </para>        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="Projects/GameEngine/include/Auris/Entities/AudioPlayer.hpp" line="156" column="1" bodyfile="Projects/GameEngine/include/Auris/Entities/AudioPlayer.hpp" bodystart="156" bodyend="159"/>
-      </memberdef>
-      <memberdef kind="function" id="_audio_player_8hpp_ac628f2d8f6164d6bc181f75c4ad9ef30_1ac628f2d8f6164d6bc181f75c4ad9ef30" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type>void</type>
-        <definition>void resumeMusic</definition>
-        <argsstring>()</argsstring>
-        <name>resumeMusic</name>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-<para>A resumeMusic method. Resumes playing music if music is paused </para>        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="Projects/GameEngine/include/Auris/Entities/AudioPlayer.hpp" line="164" column="1" bodyfile="Projects/GameEngine/include/Auris/Entities/AudioPlayer.hpp" bodystart="164" bodyend="167"/>
-      </memberdef>
-      <memberdef kind="function" id="_audio_player_8hpp_a7473e9a04dc2e8f05241857d86586194_1a7473e9a04dc2e8f05241857d86586194" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type>void</type>
-        <definition>void stopMusic</definition>
-        <argsstring>()</argsstring>
-        <name>stopMusic</name>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-<para>A stopMusic method. Stops all music playing or paused. </para>        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="Projects/GameEngine/include/Auris/Entities/AudioPlayer.hpp" line="172" column="1" bodyfile="Projects/GameEngine/include/Auris/Entities/AudioPlayer.hpp" bodystart="172" bodyend="175"/>
-      </memberdef>
-      <memberdef kind="function" id="_audio_player_8hpp_ae351a6c7c79eb5cea03e910966bc37e3_1ae351a6c7c79eb5cea03e910966bc37e3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type>void</type>
-        <definition>void setMusicVolume</definition>
-        <argsstring>(int volume)</argsstring>
-        <name>setMusicVolume</name>
-        <param>
-          <type>int</type>
-          <declname>volume</declname>
-        </param>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-<para>A setMusicVolume method, taking 1 argument. Sets volume of currently playing music. <parameterlist kind="param"><parameteritem>
-<parameternamelist>
-<parametername>volume</parametername>
-</parameternamelist>
-<parameterdescription>
-<para>an int value. The volume to set the music to. </para></parameterdescription>
-</parameteritem>
-</parameterlist>
-</para>        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="Projects/GameEngine/include/Auris/Entities/AudioPlayer.hpp" line="180" column="1" bodyfile="Projects/GameEngine/include/Auris/Entities/AudioPlayer.hpp" bodystart="180" bodyend="182"/>
-      </memberdef>
-      <memberdef kind="function" id="_audio_player_8hpp_afa3767ac7e3cdab51ab43cdd7ad294c6_1afa3767ac7e3cdab51ab43cdd7ad294c6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type>void</type>
-        <definition>void setSoundVolume</definition>
-        <argsstring>(int index, int volume)</argsstring>
-        <name>setSoundVolume</name>
-        <param>
-          <type>int</type>
-          <declname>index</declname>
-        </param>
-        <param>
-          <type>int</type>
-          <declname>volume</declname>
-        </param>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-<para>A setSoundVolume method, taking 2 arguments. Sets volume of a sound <parameterlist kind="param"><parameteritem>
-<parameternamelist>
-<parametername>index</parametername>
-</parameternamelist>
-<parameterdescription>
-<para>an int value. The index of that sound </para></parameterdescription>
-</parameteritem>
-<parameteritem>
-<parameternamelist>
-<parametername>volume</parametername>
-</parameternamelist>
-<parameterdescription>
-<para>an int value. The volume to set it to. </para></parameterdescription>
-</parameteritem>
-</parameterlist>
-</para>        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="Projects/GameEngine/include/Auris/Entities/AudioPlayer.hpp" line="188" column="1" bodyfile="Projects/GameEngine/include/Auris/Entities/AudioPlayer.hpp" bodystart="188" bodyend="194"/>
-      </memberdef>
-      <memberdef kind="function" id="_audio_player_8hpp_a42be3a37ec7fe01679b69c17004dec32_1a42be3a37ec7fe01679b69c17004dec32" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type>void</type>
-        <definition>void setFadeScaleX</definition>
-        <argsstring>(float scale)</argsstring>
-        <name>setFadeScaleX</name>
-        <param>
-          <type>float</type>
-          <declname>scale</declname>
-        </param>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-<para>A setFadeScaleX method, taking 1 argument. Sets the fade scale on the x-axis. <parameterlist kind="param"><parameteritem>
-<parameternamelist>
-<parametername>scale</parametername>
-</parameternamelist>
-<parameterdescription>
-<para>a float value. The scale to set. </para></parameterdescription>
-</parameteritem>
-</parameterlist>
-</para>        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="Projects/GameEngine/include/Auris/Entities/AudioPlayer.hpp" line="199" column="1" bodyfile="Projects/GameEngine/include/Auris/Entities/AudioPlayer.hpp" bodystart="199" bodyend="201"/>
-      </memberdef>
-      <memberdef kind="function" id="_audio_player_8hpp_a2dd6b8849a274a8a95bb034e32adfd99_1a2dd6b8849a274a8a95bb034e32adfd99" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type>void</type>
-        <definition>void setFadeScaleY</definition>
-        <argsstring>(float scale)</argsstring>
-        <name>setFadeScaleY</name>
-        <param>
-          <type>float</type>
-          <declname>scale</declname>
-        </param>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-<para>A setFadeScaleY method, taking 1 argument. Sets the fade scale on the y-axis. <parameterlist kind="param"><parameteritem>
-<parameternamelist>
-<parametername>scale</parametername>
-</parameternamelist>
-<parameterdescription>
-<para>a float value. The scale to set. </para></parameterdescription>
-</parameteritem>
-</parameterlist>
-</para>        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="Projects/GameEngine/include/Auris/Entities/AudioPlayer.hpp" line="206" column="1" bodyfile="Projects/GameEngine/include/Auris/Entities/AudioPlayer.hpp" bodystart="206" bodyend="208"/>
-      </memberdef>
-      <memberdef kind="function" id="_audio_player_8hpp_a91417060f572c27ba818b88f36ea78cf_1a91417060f572c27ba818b88f36ea78cf" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type>void</type>
-        <definition>void setFadeDelayX</definition>
-        <argsstring>(float delay)</argsstring>
-        <name>setFadeDelayX</name>
-        <param>
-          <type>float</type>
-          <declname>delay</declname>
-        </param>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-<para>A setFadeDelayX method, taking 1 argument. Sets the fade delay on the x-axis. <parameterlist kind="param"><parameteritem>
-<parameternamelist>
-<parametername>delay</parametername>
-</parameternamelist>
-<parameterdescription>
-<para>a float value. The delay to set. </para></parameterdescription>
-</parameteritem>
-</parameterlist>
-</para>        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="Projects/GameEngine/include/Auris/Entities/AudioPlayer.hpp" line="213" column="1" bodyfile="Projects/GameEngine/include/Auris/Entities/AudioPlayer.hpp" bodystart="213" bodyend="215"/>
-      </memberdef>
-      <memberdef kind="function" id="_audio_player_8hpp_a09836476cb254a8bfd8e144c62db6b06_1a09836476cb254a8bfd8e144c62db6b06" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type>void</type>
-        <definition>void setFadeDelayY</definition>
-        <argsstring>(float delay)</argsstring>
-        <name>setFadeDelayY</name>
-        <param>
-          <type>float</type>
-          <declname>delay</declname>
-        </param>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-<para>A setFadeDelayY method, taking 1 argument. Sets the fade delay on the y-axis. <parameterlist kind="param"><parameteritem>
-<parameternamelist>
-<parametername>delay</parametername>
-</parameternamelist>
-<parameterdescription>
-<para>a float value. The delay to set. </para></parameterdescription>
-</parameteritem>
-</parameterlist>
-</para>        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="Projects/GameEngine/include/Auris/Entities/AudioPlayer.hpp" line="220" column="1" bodyfile="Projects/GameEngine/include/Auris/Entities/AudioPlayer.hpp" bodystart="220" bodyend="222"/>
-      </memberdef>
-      <memberdef kind="function" id="_audio_player_8hpp_adf3cf77acdb29518df8c24aa53c14559_1adf3cf77acdb29518df8c24aa53c14559" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type></type>
-        <definition>~AudioPlayer</definition>
-        <argsstring>()</argsstring>
-        <name>~AudioPlayer</name>
-        <briefdescription>
-<para>The AudioPlayer destructor. </para>        </briefdescription>
-        <detaileddescription>
-<para>Clears all music and sounds. </para>        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="Projects/GameEngine/include/Auris/Entities/AudioPlayer.hpp" line="228" column="1" bodyfile="Projects/GameEngine/include/Auris/Entities/AudioPlayer.hpp" bodystart="228" bodyend="231"/>
-      </memberdef>
-      <memberdef kind="function" id="_audio_player_8hpp_ad6a9ceca414d65d7701e27b39be6ef23_1ad6a9ceca414d65d7701e27b39be6ef23" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type>void</type>
-        <definition>void debugDraw</definition>
-        <argsstring>()</argsstring>
-        <name>debugDraw</name>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="Projects/GameEngine/include/Auris/Entities/AudioPlayer.hpp" line="241" column="1" bodyfile="Projects/GameEngine/include/Auris/Entities/AudioPlayer.hpp" bodystart="241" bodyend="274"/>
-      </memberdef>
-      <memberdef kind="function" id="_audio_player_8hpp_a6a2203698778ad758c38a119ffdf6b76_1a6a2203698778ad758c38a119ffdf6b76" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type>void</type>
-        <definition>void inspectorImGui</definition>
-        <argsstring>()</argsstring>
-        <name>inspectorImGui</name>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="Projects/GameEngine/include/Auris/Entities/AudioPlayer.hpp" line="281" column="1" bodyfile="Projects/GameEngine/include/Auris/Entities/AudioPlayer.hpp" bodystart="281" bodyend="294"/>
-      </memberdef>
-      </sectiondef>
+    <innerclass refid="class_auris_1_1_audio_player" prot="public">Auris::AudioPlayer</innerclass>
+    <innernamespace refid="namespace_auris">Auris</innernamespace>
     <briefdescription>
     </briefdescription>
     <detaileddescription>
@@ -1087,291 +363,289 @@
 <codeline lineno="9"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;SDL_mixer.h&gt;</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="10"><highlight class="normal"></highlight><highlight class="preprocessor">#elif<sp/>__linux__<sp/>//<sp/>Linux</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="11"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;SDL2/SDL_mixer.h&gt;</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="12"><highlight class="normal"></highlight><highlight class="preprocessor">#else</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="13"><highlight class="normal">std::cerr<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;Error:<sp/>Unsupported<sp/>OS&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>std::endl;</highlight></codeline>
-<codeline lineno="14"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="15"><highlight class="normal"></highlight></codeline>
-<codeline lineno="16"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespace_auris" kindref="compound">Auris</ref><sp/>{</highlight></codeline>
-<codeline lineno="17"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
-<codeline lineno="18"><highlight class="comment">//!<sp/>The<sp/>AudioPlayer<sp/>class<sp/>that<sp/>extend<sp/>the<sp/>Entity<sp/>class</highlight></codeline>
-<codeline lineno="19"><highlight class="comment"></highlight><highlight class="comment"><sp/><sp/><sp/><sp/>/*!<sp/>Used<sp/>to<sp/>create<sp/>audio<sp/>entities,<sp/>so<sp/>that<sp/>audio<sp/>can<sp/>be<sp/>used<sp/>in<sp/>a<sp/>game</highlight></codeline>
-<codeline lineno="20"><highlight class="comment"><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="21"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="_audio_player_8hpp_a4e21beefadc86b8eca7304640f0db524_1a4e21beefadc86b8eca7304640f0db524" kindref="member">AudioPlayer</ref><sp/>:<sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/>Entity<sp/>{</highlight></codeline>
-<codeline lineno="22"><highlight class="normal"></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
-<codeline lineno="23" refid="_audio_player_8hpp_ad63cb1f4bfe9e66afdffd5ae4fc5c9f1_1ad63cb1f4bfe9e66afdffd5ae4fc5c9f1" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>std::vector&lt;int&gt;<sp/><ref refid="_audio_player_8hpp_ad63cb1f4bfe9e66afdffd5ae4fc5c9f1_1ad63cb1f4bfe9e66afdffd5ae4fc5c9f1" kindref="member">channels</ref>;</highlight></codeline>
-<codeline lineno="24"><highlight class="normal"></highlight></codeline>
-<codeline lineno="25" refid="_audio_player_8hpp_ac68dc4e44d895b38007564ac8a4c40fd_1ac68dc4e44d895b38007564ac8a4c40fd" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>std::vector&lt;Mix_Music*&gt;<sp/><ref refid="_audio_player_8hpp_ac68dc4e44d895b38007564ac8a4c40fd_1ac68dc4e44d895b38007564ac8a4c40fd" kindref="member">music</ref>;<sp/></highlight><highlight class="comment">/*!&lt;<sp/>A<sp/>vector<sp/>of<sp/>Mix_Music<sp/>pointers:<sp/>music.<sp/>Instance<sp/>of<sp/>the<sp/>music<sp/>in<sp/>the<sp/>audioplayer.<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="26" refid="_audio_player_8hpp_a0a09de49eaf498307ecf1193a2ba2ad9_1a0a09de49eaf498307ecf1193a2ba2ad9" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>std::vector&lt;Mix_Chunk*&gt;<sp/><ref refid="_audio_player_8hpp_a0a09de49eaf498307ecf1193a2ba2ad9_1a0a09de49eaf498307ecf1193a2ba2ad9" kindref="member">sounds</ref>;<sp/></highlight><highlight class="comment">/*!&lt;<sp/>A<sp/>vector<sp/>of<sp/>Mix_Chunk<sp/>pointers:<sp/>sounds.<sp/>Instance<sp/>of<sp/>the<sp/>sound<sp/>in<sp/>the<sp/>audioplayer.<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespace_auris" kindref="compound">Auris</ref><sp/>{</highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="16"><highlight class="comment">//!<sp/>The<sp/>AudioPlayer<sp/>class<sp/>that<sp/>extend<sp/>the<sp/>Entity<sp/>class</highlight></codeline>
+<codeline lineno="17"><highlight class="comment"></highlight><highlight class="comment"><sp/><sp/><sp/><sp/>/*!<sp/>Used<sp/>to<sp/>create<sp/>audio<sp/>entities,<sp/>so<sp/>that<sp/>audio<sp/>can<sp/>be<sp/>used<sp/>in<sp/>a<sp/>game</highlight></codeline>
+<codeline lineno="18"><highlight class="comment"><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="19" refid="class_auris_1_1_audio_player" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="class_auris_1_1_audio_player" kindref="compound">AudioPlayer</ref><sp/>:<sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/><ref refid="class_auris_1_1_entity" kindref="compound">Entity</ref><sp/>{</highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="21" refid="class_auris_1_1_audio_player_a5e7ce165085ef8c9fc9c052a9c4490d6_1a5e7ce165085ef8c9fc9c052a9c4490d6" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>std::vector&lt;int&gt;<sp/><ref refid="class_auris_1_1_audio_player_a5e7ce165085ef8c9fc9c052a9c4490d6_1a5e7ce165085ef8c9fc9c052a9c4490d6" kindref="member">channels</ref>;</highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight></codeline>
+<codeline lineno="23" refid="class_auris_1_1_audio_player_a3b551119c5c73725e55264cb64fe9564_1a3b551119c5c73725e55264cb64fe9564" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>std::vector&lt;Mix_Music*&gt;<sp/><ref refid="class_auris_1_1_audio_player_a3b551119c5c73725e55264cb64fe9564_1a3b551119c5c73725e55264cb64fe9564" kindref="member">music</ref>;<sp/></highlight><highlight class="comment">/*!&lt;<sp/>A<sp/>vector<sp/>of<sp/>Mix_Music<sp/>pointers:<sp/>music.<sp/>Instance<sp/>of<sp/>the<sp/>music<sp/>in<sp/>the<sp/>audioplayer.<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="24" refid="class_auris_1_1_audio_player_a4f2d463e9c7905b548dd0b32d61364fa_1a4f2d463e9c7905b548dd0b32d61364fa" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>std::vector&lt;Mix_Chunk*&gt;<sp/><ref refid="class_auris_1_1_audio_player_a4f2d463e9c7905b548dd0b32d61364fa_1a4f2d463e9c7905b548dd0b32d61364fa" kindref="member">sounds</ref>;<sp/></highlight><highlight class="comment">/*!&lt;<sp/>A<sp/>vector<sp/>of<sp/>Mix_Chunk<sp/>pointers:<sp/>sounds.<sp/>Instance<sp/>of<sp/>the<sp/>sound<sp/>in<sp/>the<sp/>audioplayer.<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight></codeline>
+<codeline lineno="26" refid="class_auris_1_1_audio_player_a6801b55993242e06ed1d094c40ffea5d_1a6801b55993242e06ed1d094c40ffea5d" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="class_auris_1_1_audio_player_a6801b55993242e06ed1d094c40ffea5d_1a6801b55993242e06ed1d094c40ffea5d" kindref="member">channelCount</ref>;<sp/></highlight><highlight class="comment">/*!&lt;<sp/>A<sp/>static<sp/>int<sp/>value:<sp/>channelCount.<sp/>This<sp/>is<sp/>the<sp/>total<sp/>amount<sp/>of<sp/>allocated<sp/>channels<sp/>by<sp/>SDL_mixer.<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="27"><highlight class="normal"></highlight></codeline>
-<codeline lineno="28" refid="_audio_player_8hpp_a627c12924294173b6f8409a90e07b980_1a627c12924294173b6f8409a90e07b980" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="_audio_player_8hpp_a627c12924294173b6f8409a90e07b980_1a627c12924294173b6f8409a90e07b980" kindref="member">channelCount</ref>;<sp/></highlight><highlight class="comment">/*!&lt;<sp/>A<sp/>static<sp/>int<sp/>value:<sp/>channelCount.<sp/>This<sp/>is<sp/>the<sp/>total<sp/>amount<sp/>of<sp/>allocated<sp/>channels<sp/>by<sp/>SDL_mixer.<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="29"><highlight class="normal"></highlight></codeline>
-<codeline lineno="30" refid="_audio_player_8hpp_acffa5a4edaa4baf1ea4341a8bd07c2ab_1acffa5a4edaa4baf1ea4341a8bd07c2ab" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="_audio_player_8hpp_acffa5a4edaa4baf1ea4341a8bd07c2ab_1acffa5a4edaa4baf1ea4341a8bd07c2ab" kindref="member">currentChannel</ref>;<sp/></highlight><highlight class="comment">/*!&lt;<sp/>An<sp/>int<sp/>value:<sp/>currentChannel.<sp/>This<sp/>is<sp/>the<sp/>current<sp/>channel<sp/>this<sp/>AudioPlayer<sp/>is<sp/>playing<sp/>on.*/</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="31" refid="_audio_player_8hpp_a82f9bee96ae329de7347cb12589a44fc_1a82f9bee96ae329de7347cb12589a44fc" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="_audio_player_8hpp_a82f9bee96ae329de7347cb12589a44fc_1a82f9bee96ae329de7347cb12589a44fc" kindref="member">deltaDistanceX</ref><sp/>=<sp/>0;<sp/></highlight><highlight class="comment">/*!&lt;<sp/>An<sp/>int<sp/>value:<sp/>deltaDistanceX.<sp/>The<sp/>relative<sp/>distance<sp/>between<sp/>the<sp/>audio<sp/>and<sp/>the<sp/>audio<sp/>listener<sp/>on<sp/>the<sp/>x<sp/>axis.<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="32" refid="_audio_player_8hpp_a5954d2b12816d71e9368453dafaafb64_1a5954d2b12816d71e9368453dafaafb64" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="_audio_player_8hpp_a5954d2b12816d71e9368453dafaafb64_1a5954d2b12816d71e9368453dafaafb64" kindref="member">deltaDistanceY</ref><sp/>=<sp/>0;<sp/></highlight><highlight class="comment">/*!&lt;<sp/>An<sp/>int<sp/>value:<sp/>deltaDistanceY.<sp/>The<sp/>relative<sp/>distance<sp/>between<sp/>the<sp/>audio<sp/>and<sp/>the<sp/>audio<sp/>listener<sp/>on<sp/>the<sp/>y<sp/>axis.<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="33" refid="_audio_player_8hpp_adee1aef20945156b400a92e84bbdb46b_1adee1aef20945156b400a92e84bbdb46b" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="_audio_player_8hpp_adee1aef20945156b400a92e84bbdb46b_1adee1aef20945156b400a92e84bbdb46b" kindref="member">pan</ref><sp/>=<sp/>127;<sp/></highlight><highlight class="comment">/*!&lt;<sp/>An<sp/>int<sp/>value:<sp/>pan.<sp/>How<sp/>much<sp/>pan<sp/>the<sp/>channel<sp/>the<sp/>audio<sp/>is<sp/>playing<sp/>at<sp/>should<sp/>have.<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="34" refid="_audio_player_8hpp_a616c23dc01f67f0d284044acfb160086_1a616c23dc01f67f0d284044acfb160086" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="_audio_player_8hpp_a616c23dc01f67f0d284044acfb160086_1a616c23dc01f67f0d284044acfb160086" kindref="member">fade</ref><sp/>=<sp/>0;<sp/></highlight><highlight class="comment">/*!&lt;<sp/>An<sp/>int<sp/>value:<sp/>fade.<sp/>How<sp/>much<sp/>fade<sp/>the<sp/>channel<sp/>the<sp/>audio<sp/>is<sp/>playing<sp/>at<sp/>should<sp/>have.<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="35"><highlight class="normal"></highlight></codeline>
-<codeline lineno="36" refid="_audio_player_8hpp_af49b7c8f6419a65cd1024a166339a8ae_1af49b7c8f6419a65cd1024a166339a8ae" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="_audio_player_8hpp_af49b7c8f6419a65cd1024a166339a8ae_1af49b7c8f6419a65cd1024a166339a8ae" kindref="member">fadeScaleX</ref><sp/>=<sp/>1.0f;<sp/></highlight><highlight class="comment">/*!&lt;<sp/>A<sp/>float<sp/>value:<sp/>faceScaleX.<sp/>The<sp/>scaling<sp/>on<sp/>the<sp/>fade<sp/>on<sp/>the<sp/>x<sp/>axis.<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="37" refid="_audio_player_8hpp_aacfd9c51d4d11eeb7802c1b1578886ac_1aacfd9c51d4d11eeb7802c1b1578886ac" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="_audio_player_8hpp_aacfd9c51d4d11eeb7802c1b1578886ac_1aacfd9c51d4d11eeb7802c1b1578886ac" kindref="member">fadeScaleY</ref><sp/>=<sp/>1.0f;<sp/></highlight><highlight class="comment">/*!&lt;<sp/>A<sp/>float<sp/>value:<sp/>faceScaleY.<sp/>The<sp/>scaling<sp/>on<sp/>the<sp/>fade<sp/>on<sp/>the<sp/>y<sp/>axis.<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="38" refid="_audio_player_8hpp_a6af36b0fb7714db28486b4fbf23ca1c8_1a6af36b0fb7714db28486b4fbf23ca1c8" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="_audio_player_8hpp_a6af36b0fb7714db28486b4fbf23ca1c8_1a6af36b0fb7714db28486b4fbf23ca1c8" kindref="member">fadeDelayX</ref><sp/>=<sp/>1.0f;<sp/></highlight><highlight class="comment">/*!&lt;<sp/>A<sp/>float<sp/>value:<sp/>faceDelayX.<sp/>The<sp/>delay<sp/>of<sp/>the<sp/>fade<sp/>on<sp/>the<sp/>x<sp/>axis.<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="39" refid="_audio_player_8hpp_ae2787a3be0d61dbab4ce128e623834a3_1ae2787a3be0d61dbab4ce128e623834a3" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="_audio_player_8hpp_ae2787a3be0d61dbab4ce128e623834a3_1ae2787a3be0d61dbab4ce128e623834a3" kindref="member">fadeDelayY</ref><sp/>=<sp/>1.0f;<sp/></highlight><highlight class="comment">/*!&lt;<sp/>A<sp/>float<sp/>value:<sp/>faceDelayY.<sp/>The<sp/>delay<sp/>of<sp/>the<sp/>fade<sp/>on<sp/>the<sp/>y<sp/>axis.<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="28" refid="class_auris_1_1_audio_player_a9a0afca7e007c289ca94db3791b18b79_1a9a0afca7e007c289ca94db3791b18b79" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="class_auris_1_1_audio_player_a9a0afca7e007c289ca94db3791b18b79_1a9a0afca7e007c289ca94db3791b18b79" kindref="member">currentChannel</ref>;<sp/></highlight><highlight class="comment">/*!&lt;<sp/>An<sp/>int<sp/>value:<sp/>currentChannel.<sp/>This<sp/>is<sp/>the<sp/>current<sp/>channel<sp/>this<sp/>AudioPlayer<sp/>is<sp/>playing<sp/>on.*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="29" refid="class_auris_1_1_audio_player_afd56c1d616cd4a99506becb6b5db84b0_1afd56c1d616cd4a99506becb6b5db84b0" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="class_auris_1_1_audio_player_afd56c1d616cd4a99506becb6b5db84b0_1afd56c1d616cd4a99506becb6b5db84b0" kindref="member">deltaDistanceX</ref><sp/>=<sp/>0;<sp/></highlight><highlight class="comment">/*!&lt;<sp/>An<sp/>int<sp/>value:<sp/>deltaDistanceX.<sp/>The<sp/>relative<sp/>distance<sp/>between<sp/>the<sp/>audio<sp/>and<sp/>the<sp/>audio<sp/>listener<sp/>on<sp/>the<sp/>x<sp/>axis.<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="30" refid="class_auris_1_1_audio_player_a959a92c1c431b871488a62d7e58b5478_1a959a92c1c431b871488a62d7e58b5478" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="class_auris_1_1_audio_player_a959a92c1c431b871488a62d7e58b5478_1a959a92c1c431b871488a62d7e58b5478" kindref="member">deltaDistanceY</ref><sp/>=<sp/>0;<sp/></highlight><highlight class="comment">/*!&lt;<sp/>An<sp/>int<sp/>value:<sp/>deltaDistanceY.<sp/>The<sp/>relative<sp/>distance<sp/>between<sp/>the<sp/>audio<sp/>and<sp/>the<sp/>audio<sp/>listener<sp/>on<sp/>the<sp/>y<sp/>axis.<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="31" refid="class_auris_1_1_audio_player_a11d27eb6142f26090b13880dac810202_1a11d27eb6142f26090b13880dac810202" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="class_auris_1_1_audio_player_a11d27eb6142f26090b13880dac810202_1a11d27eb6142f26090b13880dac810202" kindref="member">pan</ref><sp/>=<sp/>127;<sp/></highlight><highlight class="comment">/*!&lt;<sp/>An<sp/>int<sp/>value:<sp/>pan.<sp/>How<sp/>much<sp/>pan<sp/>the<sp/>channel<sp/>the<sp/>audio<sp/>is<sp/>playing<sp/>at<sp/>should<sp/>have.<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="32" refid="class_auris_1_1_audio_player_adbdd62f382fee79c467a9c5d4186942d_1adbdd62f382fee79c467a9c5d4186942d" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="class_auris_1_1_audio_player_adbdd62f382fee79c467a9c5d4186942d_1adbdd62f382fee79c467a9c5d4186942d" kindref="member">fade</ref><sp/>=<sp/>0;<sp/></highlight><highlight class="comment">/*!&lt;<sp/>An<sp/>int<sp/>value:<sp/>fade.<sp/>How<sp/>much<sp/>fade<sp/>the<sp/>channel<sp/>the<sp/>audio<sp/>is<sp/>playing<sp/>at<sp/>should<sp/>have.<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="33"><highlight class="normal"></highlight></codeline>
+<codeline lineno="34" refid="class_auris_1_1_audio_player_aaeea71fb5b725ea1e7d5ec26f281e104_1aaeea71fb5b725ea1e7d5ec26f281e104" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="class_auris_1_1_audio_player_aaeea71fb5b725ea1e7d5ec26f281e104_1aaeea71fb5b725ea1e7d5ec26f281e104" kindref="member">fadeScaleX</ref><sp/>=<sp/>1.0f;<sp/></highlight><highlight class="comment">/*!&lt;<sp/>A<sp/>float<sp/>value:<sp/>faceScaleX.<sp/>The<sp/>scaling<sp/>on<sp/>the<sp/>fade<sp/>on<sp/>the<sp/>x<sp/>axis.<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="35" refid="class_auris_1_1_audio_player_afd8664847907f5bef07feb0a257fa175_1afd8664847907f5bef07feb0a257fa175" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="class_auris_1_1_audio_player_afd8664847907f5bef07feb0a257fa175_1afd8664847907f5bef07feb0a257fa175" kindref="member">fadeScaleY</ref><sp/>=<sp/>1.0f;<sp/></highlight><highlight class="comment">/*!&lt;<sp/>A<sp/>float<sp/>value:<sp/>faceScaleY.<sp/>The<sp/>scaling<sp/>on<sp/>the<sp/>fade<sp/>on<sp/>the<sp/>y<sp/>axis.<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="36" refid="class_auris_1_1_audio_player_a649c07f1550f26bf38deb6fd28f358db_1a649c07f1550f26bf38deb6fd28f358db" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="class_auris_1_1_audio_player_a649c07f1550f26bf38deb6fd28f358db_1a649c07f1550f26bf38deb6fd28f358db" kindref="member">fadeDelayX</ref><sp/>=<sp/>1.0f;<sp/></highlight><highlight class="comment">/*!&lt;<sp/>A<sp/>float<sp/>value:<sp/>faceDelayX.<sp/>The<sp/>delay<sp/>of<sp/>the<sp/>fade<sp/>on<sp/>the<sp/>x<sp/>axis.<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="37" refid="class_auris_1_1_audio_player_a321ed63521aa16330616261a46278aac_1a321ed63521aa16330616261a46278aac" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="class_auris_1_1_audio_player_a321ed63521aa16330616261a46278aac_1a321ed63521aa16330616261a46278aac" kindref="member">fadeDelayY</ref><sp/>=<sp/>1.0f;<sp/></highlight><highlight class="comment">/*!&lt;<sp/>A<sp/>float<sp/>value:<sp/>faceDelayY.<sp/>The<sp/>delay<sp/>of<sp/>the<sp/>fade<sp/>on<sp/>the<sp/>y<sp/>axis.<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="38"><highlight class="normal"></highlight></codeline>
+<codeline lineno="39" refid="class_auris_1_1_audio_player_acd67c7992cb6399862ebdb9788c6307b_1acd67c7992cb6399862ebdb9788c6307b" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_auris_1_1_camera" kindref="compound">Auris::Camera</ref>*<sp/><ref refid="class_auris_1_1_audio_player_acd67c7992cb6399862ebdb9788c6307b_1acd67c7992cb6399862ebdb9788c6307b" kindref="member">listener</ref>;<sp/></highlight><highlight class="comment">/*!&lt;<sp/>A<sp/>Camera*<sp/>pointer:<sp/>listener.<sp/>The<sp/>camera<sp/>that<sp/>should<sp/>listen<sp/>for<sp/>the<sp/>audio.<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="40"><highlight class="normal"></highlight></codeline>
-<codeline lineno="41" refid="_audio_player_8hpp_a4a99373aca91d99b5b9ecf6f8e30b97e_1a4a99373aca91d99b5b9ecf6f8e30b97e" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_auris_1_1_camera" kindref="compound">Auris::Camera</ref>*<sp/><ref refid="_audio_player_8hpp_a4a99373aca91d99b5b9ecf6f8e30b97e_1a4a99373aca91d99b5b9ecf6f8e30b97e" kindref="member">listener</ref>;<sp/></highlight><highlight class="comment">/*!&lt;<sp/>A<sp/>Camera*<sp/>pointer:<sp/>listener.<sp/>The<sp/>camera<sp/>that<sp/>should<sp/>listen<sp/>for<sp/>the<sp/>audio.<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="42"><highlight class="normal"></highlight></codeline>
-<codeline lineno="43"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
-<codeline lineno="44"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
-<codeline lineno="45"><highlight class="comment"><sp/><sp/><sp/><sp/>//!<sp/>The<sp/>AudioPlayer<sp/>constructor,<sp/>taking<sp/>0-6<sp/>arguments.</highlight></codeline>
-<codeline lineno="46"><highlight class="comment"></highlight><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>/*!</highlight></codeline>
-<codeline lineno="47"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*<sp/>Initializes<sp/>AudioPlayer<sp/>to<sp/>the<sp/>values<sp/>inputted.</highlight></codeline>
-<codeline lineno="48"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*<sp/>\param<sp/>listener<sp/>a<sp/>Camera<sp/>pointer.<sp/>The<sp/>camera<sp/>that<sp/>should<sp/>be<sp/>the<sp/>listener<sp/>(default<sp/>no<sp/>listener,<sp/>meaning<sp/>global<sp/>audio).</highlight></codeline>
-<codeline lineno="49"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*<sp/>\param<sp/>channels<sp/>an<sp/>int<sp/>value.<sp/>The<sp/>amount<sp/>of<sp/>channels<sp/>this<sp/>AudioPlayer<sp/>should<sp/>allocate<sp/>for<sp/>its<sp/>use.</highlight></codeline>
-<codeline lineno="50"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*<sp/>\param<sp/>fadeScaleX<sp/>a<sp/>float<sp/>value.<sp/>The<sp/>scale<sp/>which<sp/>to<sp/>face<sp/>by<sp/>on<sp/>the<sp/>x<sp/>axis<sp/>(default<sp/>is<sp/>1.0).</highlight></codeline>
-<codeline lineno="51"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*<sp/>\param<sp/>fadeScaleY<sp/>a<sp/>float<sp/>value.<sp/>The<sp/>scale<sp/>which<sp/>to<sp/>face<sp/>by<sp/>on<sp/>the<sp/>y<sp/>axis<sp/>(default<sp/>is<sp/>1.0).</highlight></codeline>
-<codeline lineno="52"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*<sp/>\param<sp/>fadeDelayX<sp/>a<sp/>float<sp/>value.<sp/>The<sp/>delay<sp/>of<sp/>the<sp/>fade<sp/>on<sp/>the<sp/>x<sp/>axis<sp/>(default<sp/>is<sp/>0).</highlight></codeline>
-<codeline lineno="53"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*<sp/>\param<sp/>fadeDelayY<sp/>a<sp/>float<sp/>value.<sp/>The<sp/>delay<sp/>of<sp/>the<sp/>fade<sp/>on<sp/>the<sp/>y<sp/>axis<sp/>(default<sp/>is<sp/>0).</highlight></codeline>
-<codeline lineno="54"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="55"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="_audio_player_8hpp_a4e21beefadc86b8eca7304640f0db524_1a4e21beefadc86b8eca7304640f0db524" kindref="member">AudioPlayer</ref>(<ref refid="class_auris_1_1_camera" kindref="compound">Auris::Camera</ref>*<sp/>listener<sp/>=<sp/></highlight><highlight class="keyword">nullptr</highlight><highlight class="normal">,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>channels<sp/>=<sp/>1,<sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>fadeScaleX<sp/>=<sp/>1.0f,<sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>fadeScaleY<sp/>=<sp/>1.0f,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>fadeDelayX<sp/>=<sp/>0,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>fadeDelayY<sp/>=<sp/>0);</highlight></codeline>
-<codeline lineno="56"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
-<codeline lineno="57"><highlight class="comment"><sp/><sp/><sp/><sp/>//!<sp/>An<sp/>update<sp/>method,<sp/>taking<sp/>1<sp/>argument.</highlight></codeline>
-<codeline lineno="58"><highlight class="comment"></highlight><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>/*!<sp/>Sets<sp/>the<sp/>pan<sp/>and<sp/>master<sp/>volume<sp/>according<sp/>to<sp/>the<sp/>relative<sp/>distance<sp/>between<sp/>this<sp/>AudioPlayer<sp/>and<sp/>its<sp/>listener</highlight></codeline>
-<codeline lineno="59"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/>*<sp/>\param<sp/>deltaTime<sp/>a<sp/>float<sp/>value.<sp/>The<sp/>delta<sp/>time<sp/>in<sp/>seconds.</highlight></codeline>
-<codeline lineno="60"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="61" refid="_audio_player_8hpp_ac52ac34d9f452d759ea1ce3f8df9f682_1ac52ac34d9f452d759ea1ce3f8df9f682" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="_audio_player_8hpp_ac52ac34d9f452d759ea1ce3f8df9f682_1ac52ac34d9f452d759ea1ce3f8df9f682" kindref="member">update</ref>(</highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>deltaTime)<sp/>{</highlight></codeline>
-<codeline lineno="62"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(listener<sp/>!=<sp/></highlight><highlight class="keyword">nullptr</highlight><highlight class="normal">)<sp/>{</highlight></codeline>
-<codeline lineno="63"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>deltaDistanceX<sp/>=<sp/>127<sp/>-<sp/>(transform-&gt;getGlobalPosition().x*<ref refid="namespace_auris_1_1_constants_a559532ed3415b8ded07cdc4069dfa91c_1a559532ed3415b8ded07cdc4069dfa91c" kindref="member">Constants::METERS_TO_PIXELS</ref><sp/>-<sp/>listener-&gt;<ref refid="class_auris_1_1_camera_ae4a66cb62fa67199a6c34a2fec501054_1ae4a66cb62fa67199a6c34a2fec501054" kindref="member">getPos</ref>().x)/(listener-&gt;<ref refid="class_auris_1_1_camera_a17a09a5d85ed62c92c3c17969e4b2df3_1a17a09a5d85ed62c92c3c17969e4b2df3" kindref="member">getWidth</ref>()/254);</highlight></codeline>
-<codeline lineno="64"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>deltaDistanceY<sp/>=<sp/>127<sp/>-<sp/>(transform-&gt;getGlobalPosition().y*<ref refid="namespace_auris_1_1_constants_a559532ed3415b8ded07cdc4069dfa91c_1a559532ed3415b8ded07cdc4069dfa91c" kindref="member">Constants::METERS_TO_PIXELS</ref><sp/>-<sp/>listener-&gt;<ref refid="class_auris_1_1_camera_ae4a66cb62fa67199a6c34a2fec501054_1ae4a66cb62fa67199a6c34a2fec501054" kindref="member">getPos</ref>().y)/(listener-&gt;<ref refid="class_auris_1_1_camera_a6aa244c08427100da9e8ea5b2fa88cd8_1a6aa244c08427100da9e8ea5b2fa88cd8" kindref="member">getHeight</ref>()/254);</highlight></codeline>
-<codeline lineno="65"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>pan<sp/>=<sp/>deltaDistanceX<sp/>&lt;<sp/>0<sp/>?<sp/>0:<sp/>deltaDistanceX<sp/>&gt;<sp/>254<sp/>?<sp/>254<sp/>:<sp/><ref refid="_audio_player_8hpp_a82f9bee96ae329de7347cb12589a44fc_1a82f9bee96ae329de7347cb12589a44fc" kindref="member">deltaDistanceX</ref>;</highlight></codeline>
-<codeline lineno="66"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>&amp;<sp/>element<sp/>:<sp/>channels)</highlight></codeline>
-<codeline lineno="67"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Mix_SetPanning(element,<sp/>pan,<sp/>254-pan);</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="42"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="43"><highlight class="comment"><sp/><sp/><sp/><sp/>//!<sp/>The<sp/>AudioPlayer<sp/>constructor,<sp/>taking<sp/>0-6<sp/>arguments.</highlight></codeline>
+<codeline lineno="44"><highlight class="comment"></highlight><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>/*!</highlight></codeline>
+<codeline lineno="45"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*<sp/>Initializes<sp/>AudioPlayer<sp/>to<sp/>the<sp/>values<sp/>inputted.</highlight></codeline>
+<codeline lineno="46"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*<sp/>\param<sp/>listener<sp/>a<sp/>Camera<sp/>pointer.<sp/>The<sp/>camera<sp/>that<sp/>should<sp/>be<sp/>the<sp/>listener<sp/>(default<sp/>no<sp/>listener,<sp/>meaning<sp/>global<sp/>audio).</highlight></codeline>
+<codeline lineno="47"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*<sp/>\param<sp/>channels<sp/>an<sp/>int<sp/>value.<sp/>The<sp/>amount<sp/>of<sp/>channels<sp/>this<sp/>AudioPlayer<sp/>should<sp/>allocate<sp/>for<sp/>its<sp/>use.</highlight></codeline>
+<codeline lineno="48"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*<sp/>\param<sp/>fadeScaleX<sp/>a<sp/>float<sp/>value.<sp/>The<sp/>scale<sp/>which<sp/>to<sp/>face<sp/>by<sp/>on<sp/>the<sp/>x<sp/>axis<sp/>(default<sp/>is<sp/>1.0).</highlight></codeline>
+<codeline lineno="49"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*<sp/>\param<sp/>fadeScaleY<sp/>a<sp/>float<sp/>value.<sp/>The<sp/>scale<sp/>which<sp/>to<sp/>face<sp/>by<sp/>on<sp/>the<sp/>y<sp/>axis<sp/>(default<sp/>is<sp/>1.0).</highlight></codeline>
+<codeline lineno="50"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*<sp/>\param<sp/>fadeDelayX<sp/>a<sp/>float<sp/>value.<sp/>The<sp/>delay<sp/>of<sp/>the<sp/>fade<sp/>on<sp/>the<sp/>x<sp/>axis<sp/>(default<sp/>is<sp/>0).</highlight></codeline>
+<codeline lineno="51"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*<sp/>\param<sp/>fadeDelayY<sp/>a<sp/>float<sp/>value.<sp/>The<sp/>delay<sp/>of<sp/>the<sp/>fade<sp/>on<sp/>the<sp/>y<sp/>axis<sp/>(default<sp/>is<sp/>0).</highlight></codeline>
+<codeline lineno="52"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="53"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_auris_1_1_audio_player_a5ae6710cd367579dbce099599c989d32_1a5ae6710cd367579dbce099599c989d32" kindref="member">AudioPlayer</ref>(<ref refid="class_auris_1_1_camera" kindref="compound">Auris::Camera</ref>*<sp/>listener<sp/>=<sp/></highlight><highlight class="keyword">nullptr</highlight><highlight class="normal">,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>channels<sp/>=<sp/>1,<sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>fadeScaleX<sp/>=<sp/>1.0f,<sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>fadeScaleY<sp/>=<sp/>1.0f,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>fadeDelayX<sp/>=<sp/>0,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>fadeDelayY<sp/>=<sp/>0);</highlight></codeline>
+<codeline lineno="54"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="55"><highlight class="comment"><sp/><sp/><sp/><sp/>//!<sp/>An<sp/>update<sp/>method,<sp/>taking<sp/>1<sp/>argument.</highlight></codeline>
+<codeline lineno="56"><highlight class="comment"></highlight><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>/*!<sp/>Sets<sp/>the<sp/>pan<sp/>and<sp/>master<sp/>volume<sp/>according<sp/>to<sp/>the<sp/>relative<sp/>distance<sp/>between<sp/>this<sp/>AudioPlayer<sp/>and<sp/>its<sp/>listener</highlight></codeline>
+<codeline lineno="57"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/>*<sp/>\param<sp/>deltaTime<sp/>a<sp/>float<sp/>value.<sp/>The<sp/>delta<sp/>time<sp/>in<sp/>seconds.</highlight></codeline>
+<codeline lineno="58"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="59" refid="class_auris_1_1_audio_player_a664d181c07d0237803f6fad7e27eed33_1a664d181c07d0237803f6fad7e27eed33" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_auris_1_1_audio_player_a664d181c07d0237803f6fad7e27eed33_1a664d181c07d0237803f6fad7e27eed33" kindref="member">update</ref>(</highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>deltaTime)<sp/>{</highlight></codeline>
+<codeline lineno="60"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(listener<sp/>!=<sp/></highlight><highlight class="keyword">nullptr</highlight><highlight class="normal">)<sp/>{</highlight></codeline>
+<codeline lineno="61"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>deltaDistanceX<sp/>=<sp/>127<sp/>-<sp/>(<ref refid="class_auris_1_1_entity_a1c0579dbb2753589668621bd3e3c187b_1a1c0579dbb2753589668621bd3e3c187b" kindref="member">transform</ref>-&gt;<ref refid="class_auris_1_1_transform_ad90a1b7dfc003b686f1570ebfae0a6e8_1ad90a1b7dfc003b686f1570ebfae0a6e8" kindref="member">getGlobalPosition</ref>().x*<ref refid="namespace_auris_1_1_constants_a559532ed3415b8ded07cdc4069dfa91c_1a559532ed3415b8ded07cdc4069dfa91c" kindref="member">Constants::METERS_TO_PIXELS</ref><sp/>-<sp/>listener-&gt;<ref refid="class_auris_1_1_camera_ae4a66cb62fa67199a6c34a2fec501054_1ae4a66cb62fa67199a6c34a2fec501054" kindref="member">getPos</ref>().x)/(listener-&gt;<ref refid="class_auris_1_1_camera_a17a09a5d85ed62c92c3c17969e4b2df3_1a17a09a5d85ed62c92c3c17969e4b2df3" kindref="member">getWidth</ref>()/254);</highlight></codeline>
+<codeline lineno="62"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>deltaDistanceY<sp/>=<sp/>127<sp/>-<sp/>(<ref refid="class_auris_1_1_entity_a1c0579dbb2753589668621bd3e3c187b_1a1c0579dbb2753589668621bd3e3c187b" kindref="member">transform</ref>-&gt;<ref refid="class_auris_1_1_transform_ad90a1b7dfc003b686f1570ebfae0a6e8_1ad90a1b7dfc003b686f1570ebfae0a6e8" kindref="member">getGlobalPosition</ref>().y*<ref refid="namespace_auris_1_1_constants_a559532ed3415b8ded07cdc4069dfa91c_1a559532ed3415b8ded07cdc4069dfa91c" kindref="member">Constants::METERS_TO_PIXELS</ref><sp/>-<sp/>listener-&gt;<ref refid="class_auris_1_1_camera_ae4a66cb62fa67199a6c34a2fec501054_1ae4a66cb62fa67199a6c34a2fec501054" kindref="member">getPos</ref>().y)/(listener-&gt;<ref refid="class_auris_1_1_camera_a6aa244c08427100da9e8ea5b2fa88cd8_1a6aa244c08427100da9e8ea5b2fa88cd8" kindref="member">getHeight</ref>()/254);</highlight></codeline>
+<codeline lineno="63"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>pan<sp/>=<sp/>deltaDistanceX<sp/>&lt;<sp/>0<sp/>?<sp/>0:<sp/>deltaDistanceX<sp/>&gt;<sp/>254<sp/>?<sp/>254<sp/>:<sp/><ref refid="class_auris_1_1_audio_player_afd56c1d616cd4a99506becb6b5db84b0_1afd56c1d616cd4a99506becb6b5db84b0" kindref="member">deltaDistanceX</ref>;</highlight></codeline>
+<codeline lineno="64"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>&amp;<sp/>element<sp/>:<sp/>channels)</highlight></codeline>
+<codeline lineno="65"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Mix_SetPanning(element,<sp/>pan,<sp/>254-pan);</highlight></codeline>
+<codeline lineno="66"><highlight class="normal"></highlight></codeline>
+<codeline lineno="67"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>fade<sp/>=<sp/>0;<sp/></highlight><highlight class="comment">//<sp/>0<sp/>is<sp/>near,<sp/>255<sp/>is<sp/>far</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="68"><highlight class="normal"></highlight></codeline>
-<codeline lineno="69"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>fade<sp/>=<sp/>0;<sp/></highlight><highlight class="comment">//<sp/>0<sp/>is<sp/>near,<sp/>255<sp/>is<sp/>far</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="70"><highlight class="normal"></highlight></codeline>
-<codeline lineno="71"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(deltaDistanceX<sp/>&lt;<sp/>(127<sp/>-<sp/>fadeDelayX))</highlight></codeline>
-<codeline lineno="72"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>fade<sp/>+=<sp/>((127<sp/>-<sp/><ref refid="_audio_player_8hpp_a6af36b0fb7714db28486b4fbf23ca1c8_1a6af36b0fb7714db28486b4fbf23ca1c8" kindref="member">fadeDelayX</ref>)<sp/>-<sp/>deltaDistanceX)*<ref refid="_audio_player_8hpp_af49b7c8f6419a65cd1024a166339a8ae_1af49b7c8f6419a65cd1024a166339a8ae" kindref="member">fadeScaleX</ref>;</highlight></codeline>
-<codeline lineno="73"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(deltaDistanceX<sp/>&gt;<sp/>(127<sp/>+<sp/>fadeDelayX))</highlight></codeline>
-<codeline lineno="74"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>fade<sp/>+=<sp/>(deltaDistanceX<sp/>-<sp/>(127<sp/>+<sp/>fadeDelayX))*fadeScaleX;</highlight></codeline>
-<codeline lineno="75"><highlight class="normal"></highlight></codeline>
-<codeline lineno="76"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(deltaDistanceY<sp/>&lt;<sp/>(127<sp/>-<sp/>fadeDelayY))</highlight></codeline>
-<codeline lineno="77"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>fade<sp/>+=<sp/>((127<sp/>-<sp/>fadeDelayY)<sp/>-<sp/><ref refid="_audio_player_8hpp_a5954d2b12816d71e9368453dafaafb64_1a5954d2b12816d71e9368453dafaafb64" kindref="member">deltaDistanceY</ref>)*fadeScaleY;</highlight></codeline>
-<codeline lineno="78"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(deltaDistanceY<sp/>&gt;<sp/>(127<sp/>+<sp/>fadeDelayY))</highlight></codeline>
-<codeline lineno="79"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>fade<sp/>+=<sp/>(deltaDistanceY<sp/>-<sp/>(127<sp/>+<sp/>fadeDelayY))*fadeScaleY;</highlight></codeline>
+<codeline lineno="69"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(deltaDistanceX<sp/>&lt;<sp/>(127<sp/>-<sp/>fadeDelayX))</highlight></codeline>
+<codeline lineno="70"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>fade<sp/>+=<sp/>((127<sp/>-<sp/><ref refid="class_auris_1_1_audio_player_a649c07f1550f26bf38deb6fd28f358db_1a649c07f1550f26bf38deb6fd28f358db" kindref="member">fadeDelayX</ref>)<sp/>-<sp/>deltaDistanceX)*<ref refid="class_auris_1_1_audio_player_aaeea71fb5b725ea1e7d5ec26f281e104_1aaeea71fb5b725ea1e7d5ec26f281e104" kindref="member">fadeScaleX</ref>;</highlight></codeline>
+<codeline lineno="71"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(deltaDistanceX<sp/>&gt;<sp/>(127<sp/>+<sp/>fadeDelayX))</highlight></codeline>
+<codeline lineno="72"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>fade<sp/>+=<sp/>(deltaDistanceX<sp/>-<sp/>(127<sp/>+<sp/>fadeDelayX))*fadeScaleX;</highlight></codeline>
+<codeline lineno="73"><highlight class="normal"></highlight></codeline>
+<codeline lineno="74"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(deltaDistanceY<sp/>&lt;<sp/>(127<sp/>-<sp/>fadeDelayY))</highlight></codeline>
+<codeline lineno="75"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>fade<sp/>+=<sp/>((127<sp/>-<sp/>fadeDelayY)<sp/>-<sp/><ref refid="class_auris_1_1_audio_player_a959a92c1c431b871488a62d7e58b5478_1a959a92c1c431b871488a62d7e58b5478" kindref="member">deltaDistanceY</ref>)*fadeScaleY;</highlight></codeline>
+<codeline lineno="76"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(deltaDistanceY<sp/>&gt;<sp/>(127<sp/>+<sp/>fadeDelayY))</highlight></codeline>
+<codeline lineno="77"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>fade<sp/>+=<sp/>(deltaDistanceY<sp/>-<sp/>(127<sp/>+<sp/>fadeDelayY))*fadeScaleY;</highlight></codeline>
+<codeline lineno="78"><highlight class="normal"></highlight></codeline>
+<codeline lineno="79"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>fade<sp/>=<sp/>fade<sp/>&gt;<sp/>255<sp/>?<sp/>255<sp/>:<sp/><ref refid="class_auris_1_1_audio_player_adbdd62f382fee79c467a9c5d4186942d_1adbdd62f382fee79c467a9c5d4186942d" kindref="member">fade</ref>;</highlight></codeline>
 <codeline lineno="80"><highlight class="normal"></highlight></codeline>
-<codeline lineno="81"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>fade<sp/>=<sp/>fade<sp/>&gt;<sp/>255<sp/>?<sp/>255<sp/>:<sp/><ref refid="_audio_player_8hpp_a616c23dc01f67f0d284044acfb160086_1a616c23dc01f67f0d284044acfb160086" kindref="member">fade</ref>;</highlight></codeline>
-<codeline lineno="82"><highlight class="normal"></highlight></codeline>
-<codeline lineno="83"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>&amp;<sp/>element<sp/>:<sp/>channels)</highlight></codeline>
-<codeline lineno="84"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Mix_SetDistance(element,<sp/>fade);</highlight></codeline>
-<codeline lineno="85"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="86"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="87"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
-<codeline lineno="88"><highlight class="comment"><sp/><sp/><sp/><sp/>/*!<sp/>An<sp/>addMusic<sp/>method,<sp/>taking<sp/>1-2<sp/>arguemnts.</highlight></codeline>
-<codeline lineno="89"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*<sp/>Adds<sp/>music<sp/>to<sp/>this<sp/>AudioPlayer.</highlight></codeline>
-<codeline lineno="90"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*<sp/>\param<sp/>mixMusic<sp/>a<sp/>Mix_Music<sp/>pointer.<sp/>The<sp/>music<sp/>to<sp/>add<sp/>to<sp/>the<sp/>audioplayer.<sp/>Use<sp/>AssetManager::getMusic()<sp/>to<sp/>get<sp/>the<sp/>pointer.</highlight></codeline>
-<codeline lineno="91"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*<sp/>\param<sp/>volume<sp/>an<sp/>int<sp/>value.<sp/>The<sp/>initial<sp/>volume<sp/>of<sp/>that<sp/>music<sp/>(0-128)<sp/>(default<sp/>is<sp/>128).</highlight></codeline>
-<codeline lineno="92"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*<sp/>\return<sp/>int.<sp/>The<sp/>index<sp/>of<sp/>the<sp/>music.<sp/>Returns<sp/>-1<sp/>on<sp/>load<sp/>error.</highlight></codeline>
-<codeline lineno="93"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*<sp/>\sa<sp/>addSound()</highlight></codeline>
-<codeline lineno="94"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*<sp/>\sa<sp/>AssetManager::getMusic()</highlight></codeline>
-<codeline lineno="95"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="96" refid="_audio_player_8hpp_af1361dd9199d249d2899a0c7e3449eb1_1af1361dd9199d249d2899a0c7e3449eb1" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="_audio_player_8hpp_af1361dd9199d249d2899a0c7e3449eb1_1af1361dd9199d249d2899a0c7e3449eb1" kindref="member">addMusic</ref>(Mix_Music*<sp/>mixMusic,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>volume<sp/>=<sp/>128)<sp/>{</highlight></codeline>
-<codeline lineno="97"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>music.push_back(mixMusic);</highlight></codeline>
+<codeline lineno="81"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>&amp;<sp/>element<sp/>:<sp/>channels)</highlight></codeline>
+<codeline lineno="82"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Mix_SetDistance(element,<sp/>fade);</highlight></codeline>
+<codeline lineno="83"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="84"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="85"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="86"><highlight class="comment"><sp/><sp/><sp/><sp/>/*!<sp/>An<sp/>addMusic<sp/>method,<sp/>taking<sp/>1-2<sp/>arguemnts.</highlight></codeline>
+<codeline lineno="87"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*<sp/>Adds<sp/>music<sp/>to<sp/>this<sp/>AudioPlayer.</highlight></codeline>
+<codeline lineno="88"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*<sp/>\param<sp/>mixMusic<sp/>a<sp/>Mix_Music<sp/>pointer.<sp/>The<sp/>music<sp/>to<sp/>add<sp/>to<sp/>the<sp/>audioplayer.<sp/>Use<sp/>AssetManager::getMusic()<sp/>to<sp/>get<sp/>the<sp/>pointer.</highlight></codeline>
+<codeline lineno="89"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*<sp/>\param<sp/>volume<sp/>an<sp/>int<sp/>value.<sp/>The<sp/>initial<sp/>volume<sp/>of<sp/>that<sp/>music<sp/>(0-128)<sp/>(default<sp/>is<sp/>128).</highlight></codeline>
+<codeline lineno="90"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*<sp/>\return<sp/>int.<sp/>The<sp/>index<sp/>of<sp/>the<sp/>music.<sp/>Returns<sp/>-1<sp/>on<sp/>load<sp/>error.</highlight></codeline>
+<codeline lineno="91"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*<sp/>\sa<sp/>addSound()</highlight></codeline>
+<codeline lineno="92"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*<sp/>\sa<sp/>AssetManager::getMusic()</highlight></codeline>
+<codeline lineno="93"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="94" refid="class_auris_1_1_audio_player_a04d35bc3b48d1762f4a556890cf35fe6_1a04d35bc3b48d1762f4a556890cf35fe6" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="class_auris_1_1_audio_player_a04d35bc3b48d1762f4a556890cf35fe6_1a04d35bc3b48d1762f4a556890cf35fe6" kindref="member">addMusic</ref>(Mix_Music*<sp/>mixMusic,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>volume<sp/>=<sp/>128)<sp/>{</highlight></codeline>
+<codeline lineno="95"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>music.push_back(mixMusic);</highlight></codeline>
+<codeline lineno="96"><highlight class="normal"></highlight></codeline>
+<codeline lineno="97"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Mix_VolumeMusic(volume);</highlight></codeline>
 <codeline lineno="98"><highlight class="normal"></highlight></codeline>
-<codeline lineno="99"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Mix_VolumeMusic(volume);</highlight></codeline>
-<codeline lineno="100"><highlight class="normal"></highlight></codeline>
-<codeline lineno="101"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>music.size()-1;</highlight></codeline>
-<codeline lineno="102"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="103"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
-<codeline lineno="104"><highlight class="comment"><sp/><sp/><sp/><sp/>/*!<sp/>An<sp/>addSound<sp/>method.<sp/>taking<sp/>1-2<sp/>arguments.</highlight></codeline>
-<codeline lineno="105"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*<sp/>Adds<sp/>a<sp/>sound<sp/>to<sp/>this<sp/>AudioPlayer.</highlight></codeline>
-<codeline lineno="106"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*<sp/>\param<sp/>mixChunk<sp/>a<sp/>Mix_Chunk<sp/>pointer.<sp/>The<sp/>sound<sp/>to<sp/>add<sp/>to<sp/>the<sp/>audioplayer.<sp/>Use<sp/>AssetManager::getSound()<sp/>to<sp/>get<sp/>the<sp/>pointer</highlight></codeline>
-<codeline lineno="107"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*<sp/>\param<sp/>volume<sp/>an<sp/>int<sp/>value.<sp/>The<sp/>initial<sp/>volume<sp/>of<sp/>that<sp/>sound<sp/>(0-128)<sp/>(default<sp/>is<sp/>128).</highlight></codeline>
-<codeline lineno="108"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*<sp/>\return<sp/>int<sp/>The<sp/>index<sp/>of<sp/>the<sp/>sound.<sp/>Returns<sp/>-1<sp/>on<sp/>load<sp/>error.</highlight></codeline>
-<codeline lineno="109"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*<sp/>\sa<sp/>addMusic()</highlight></codeline>
-<codeline lineno="110"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*<sp/>\sa<sp/>AssetManager::getSound()<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="111" refid="_audio_player_8hpp_a507f135881e89679133b2a81d74abff2_1a507f135881e89679133b2a81d74abff2" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="_audio_player_8hpp_a507f135881e89679133b2a81d74abff2_1a507f135881e89679133b2a81d74abff2" kindref="member">addSound</ref>(Mix_Chunk*<sp/>mixChunk,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>volume<sp/>=<sp/>128)<sp/>{</highlight></codeline>
-<codeline lineno="112"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>sounds.push_back(mixChunk);</highlight></codeline>
+<codeline lineno="99"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>music.size()-1;</highlight></codeline>
+<codeline lineno="100"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="101"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="102"><highlight class="comment"><sp/><sp/><sp/><sp/>/*!<sp/>An<sp/>addSound<sp/>method.<sp/>taking<sp/>1-2<sp/>arguments.</highlight></codeline>
+<codeline lineno="103"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*<sp/>Adds<sp/>a<sp/>sound<sp/>to<sp/>this<sp/>AudioPlayer.</highlight></codeline>
+<codeline lineno="104"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*<sp/>\param<sp/>mixChunk<sp/>a<sp/>Mix_Chunk<sp/>pointer.<sp/>The<sp/>sound<sp/>to<sp/>add<sp/>to<sp/>the<sp/>audioplayer.<sp/>Use<sp/>AssetManager::getSound()<sp/>to<sp/>get<sp/>the<sp/>pointer</highlight></codeline>
+<codeline lineno="105"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*<sp/>\param<sp/>volume<sp/>an<sp/>int<sp/>value.<sp/>The<sp/>initial<sp/>volume<sp/>of<sp/>that<sp/>sound<sp/>(0-128)<sp/>(default<sp/>is<sp/>128).</highlight></codeline>
+<codeline lineno="106"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*<sp/>\return<sp/>int<sp/>The<sp/>index<sp/>of<sp/>the<sp/>sound.<sp/>Returns<sp/>-1<sp/>on<sp/>load<sp/>error.</highlight></codeline>
+<codeline lineno="107"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*<sp/>\sa<sp/>addMusic()</highlight></codeline>
+<codeline lineno="108"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*<sp/>\sa<sp/>AssetManager::getSound()<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="109" refid="class_auris_1_1_audio_player_afc04010437a1609163097a414c0683e9_1afc04010437a1609163097a414c0683e9" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="class_auris_1_1_audio_player_afc04010437a1609163097a414c0683e9_1afc04010437a1609163097a414c0683e9" kindref="member">addSound</ref>(Mix_Chunk*<sp/>mixChunk,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>volume<sp/>=<sp/>128)<sp/>{</highlight></codeline>
+<codeline lineno="110"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>sounds.push_back(mixChunk);</highlight></codeline>
+<codeline lineno="111"><highlight class="normal"></highlight></codeline>
+<codeline lineno="112"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Mix_VolumeChunk(sounds[sounds.size()-1],<sp/>volume);</highlight></codeline>
 <codeline lineno="113"><highlight class="normal"></highlight></codeline>
-<codeline lineno="114"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Mix_VolumeChunk(sounds[sounds.size()-1],<sp/>volume);</highlight></codeline>
-<codeline lineno="115"><highlight class="normal"></highlight></codeline>
-<codeline lineno="116"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>sounds.size()-1;</highlight></codeline>
-<codeline lineno="117"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="118"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
-<codeline lineno="119"><highlight class="comment"><sp/><sp/><sp/><sp/>/*!<sp/>A<sp/>playMusic<sp/>method,<sp/>taking<sp/>1<sp/>argument.</highlight></codeline>
-<codeline lineno="120"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*<sp/>Plays<sp/>the<sp/>music<sp/>of<sp/>the<sp/>AudioPlayer</highlight></codeline>
-<codeline lineno="121"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*<sp/>\param<sp/>index<sp/>an<sp/>int<sp/>value.<sp/>The<sp/>index<sp/>of<sp/>the<sp/>music.</highlight></codeline>
-<codeline lineno="122"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*<sp/>\param<sp/>loops<sp/>an<sp/>int<sp/>value.<sp/>Number<sp/>times<sp/>to<sp/>loop<sp/>the<sp/>sound,<sp/>-1<sp/>means<sp/>loop<sp/>indefinitely.</highlight></codeline>
-<codeline lineno="123"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="124" refid="_audio_player_8hpp_a3a878924d8438918d9769675d473b165_1a3a878924d8438918d9769675d473b165" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="_audio_player_8hpp_a3a878924d8438918d9769675d473b165_1a3a878924d8438918d9769675d473b165" kindref="member">playMusic</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>index,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>loops<sp/>=<sp/>-1){</highlight></codeline>
-<codeline lineno="125"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(music.size()-1<sp/>&gt;=<sp/>index){</highlight></codeline>
-<codeline lineno="126"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//If<sp/>there<sp/>is<sp/>no<sp/>music<sp/>playing</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="127"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(<sp/>Mix_PlayingMusic()<sp/>==<sp/>0<sp/>){</highlight></codeline>
-<codeline lineno="128"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Mix_PlayMusic(<sp/>music[index],<sp/>loops);</highlight></codeline>
-<codeline lineno="129"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="130"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
-<codeline lineno="131"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Mix_HaltMusic();</highlight></codeline>
-<codeline lineno="132"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Mix_PlayMusic(<sp/>music[index],<sp/>loops);</highlight></codeline>
-<codeline lineno="133"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="134"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight><highlight class="keywordflow">else</highlight><highlight class="normal">{</highlight></codeline>
-<codeline lineno="135"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::cerr<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;Nullptr:<sp/>No<sp/>music<sp/>at<sp/>this<sp/>index<sp/>(&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>index<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;).&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>std::endl;</highlight></codeline>
-<codeline lineno="136"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="137"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="138"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
-<codeline lineno="139"><highlight class="comment"><sp/><sp/><sp/><sp/>/*!<sp/>A<sp/>playSound<sp/>method,<sp/>taking<sp/>1<sp/>argument.</highlight></codeline>
-<codeline lineno="140"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*<sp/>Plays<sp/>the<sp/>sound<sp/>of<sp/>the<sp/>AudioPlayer<sp/>at<sp/>the<sp/>current<sp/>channel.</highlight></codeline>
-<codeline lineno="141"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*<sp/>\param<sp/>index<sp/>an<sp/>int<sp/>value.<sp/>The<sp/>index<sp/>of<sp/>the<sp/>sound.</highlight></codeline>
-<codeline lineno="142"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*<sp/>\param<sp/>loops<sp/>an<sp/>int<sp/>value.<sp/>Number<sp/>times<sp/>to<sp/>loop<sp/>the<sp/>sound,<sp/>-1<sp/>means<sp/>loop<sp/>indefinitely.</highlight></codeline>
-<codeline lineno="143"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="144" refid="_audio_player_8hpp_a59b5a376b3a7b173a71220cfcd24d9d9_1a59b5a376b3a7b173a71220cfcd24d9d9" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="_audio_player_8hpp_a59b5a376b3a7b173a71220cfcd24d9d9_1a59b5a376b3a7b173a71220cfcd24d9d9" kindref="member">playSound</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>index,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>loops<sp/>=<sp/>0)<sp/>{</highlight></codeline>
-<codeline lineno="145"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(sounds.size()-1<sp/>&gt;=<sp/>index)<sp/>{</highlight></codeline>
-<codeline lineno="146"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Mix_PlayChannel(channels[currentChannel],<sp/>sounds[index],<sp/>loops<sp/>);</highlight></codeline>
-<codeline lineno="147"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>currentChannel<sp/>=<sp/>currentChannel<sp/>&gt;=<sp/>channels.size()<sp/>-<sp/>1<sp/>?<sp/>0<sp/>:<sp/>currentChannel+1;</highlight></codeline>
-<codeline lineno="148"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight><highlight class="keywordflow">else</highlight><highlight class="normal">{</highlight></codeline>
-<codeline lineno="149"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::cerr<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;Nullptr:<sp/>No<sp/>sound<sp/>at<sp/>this<sp/>index<sp/>(&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>index<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;).&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>std::endl;</highlight></codeline>
-<codeline lineno="150"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="151"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="152"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
-<codeline lineno="153"><highlight class="comment"><sp/><sp/><sp/><sp/>/*!<sp/>A<sp/>pauseMusic<sp/>method.</highlight></codeline>
-<codeline lineno="154"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*<sp/>Pauses<sp/>music<sp/>if<sp/>music<sp/>is<sp/>playing</highlight></codeline>
-<codeline lineno="155"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="156" refid="_audio_player_8hpp_a7d696a044bff4bcfdcaa78f21b4e152a_1a7d696a044bff4bcfdcaa78f21b4e152a" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="_audio_player_8hpp_a7d696a044bff4bcfdcaa78f21b4e152a_1a7d696a044bff4bcfdcaa78f21b4e152a" kindref="member">pauseMusic</ref>()<sp/>{</highlight></codeline>
-<codeline lineno="157"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(<sp/>Mix_PlayingMusic()<sp/>==<sp/>1<sp/>)</highlight></codeline>
-<codeline lineno="158"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Mix_PauseMusic();</highlight></codeline>
-<codeline lineno="159"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="160"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
-<codeline lineno="161"><highlight class="comment"><sp/><sp/><sp/><sp/>/*!<sp/>A<sp/>resumeMusic<sp/>method.</highlight></codeline>
-<codeline lineno="162"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*<sp/>Resumes<sp/>playing<sp/>music<sp/>if<sp/>music<sp/>is<sp/>paused</highlight></codeline>
-<codeline lineno="163"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="164" refid="_audio_player_8hpp_ac628f2d8f6164d6bc181f75c4ad9ef30_1ac628f2d8f6164d6bc181f75c4ad9ef30" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="_audio_player_8hpp_ac628f2d8f6164d6bc181f75c4ad9ef30_1ac628f2d8f6164d6bc181f75c4ad9ef30" kindref="member">resumeMusic</ref>()<sp/>{</highlight></codeline>
-<codeline lineno="165"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(<sp/>Mix_PlayingMusic()<sp/>==<sp/>1<sp/>)</highlight></codeline>
-<codeline lineno="166"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Mix_ResumeMusic();</highlight></codeline>
-<codeline lineno="167"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="168"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
-<codeline lineno="169"><highlight class="comment"><sp/><sp/><sp/><sp/>/*!<sp/>A<sp/>stopMusic<sp/>method.</highlight></codeline>
-<codeline lineno="170"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*<sp/>Stops<sp/>all<sp/>music<sp/>playing<sp/>or<sp/>paused.</highlight></codeline>
-<codeline lineno="171"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="172" refid="_audio_player_8hpp_a7473e9a04dc2e8f05241857d86586194_1a7473e9a04dc2e8f05241857d86586194" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="_audio_player_8hpp_a7473e9a04dc2e8f05241857d86586194_1a7473e9a04dc2e8f05241857d86586194" kindref="member">stopMusic</ref>()<sp/>{</highlight></codeline>
-<codeline lineno="173"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(Mix_PlayingMusic()<sp/>==<sp/>1)</highlight></codeline>
-<codeline lineno="174"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Mix_HaltMusic();</highlight></codeline>
-<codeline lineno="175"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="176"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
-<codeline lineno="177"><highlight class="comment"><sp/><sp/><sp/><sp/>/*!<sp/>A<sp/>setMusicVolume<sp/>method,<sp/>taking<sp/>1<sp/>argument.</highlight></codeline>
-<codeline lineno="178"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*<sp/>Sets<sp/>volume<sp/>of<sp/>currently<sp/>playing<sp/>music.</highlight></codeline>
-<codeline lineno="179"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*<sp/>\param<sp/>volume<sp/>an<sp/>int<sp/>value.<sp/>The<sp/>volume<sp/>to<sp/>set<sp/>the<sp/>music<sp/>to.*/</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="180" refid="_audio_player_8hpp_ae351a6c7c79eb5cea03e910966bc37e3_1ae351a6c7c79eb5cea03e910966bc37e3" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="_audio_player_8hpp_ae351a6c7c79eb5cea03e910966bc37e3_1ae351a6c7c79eb5cea03e910966bc37e3" kindref="member">setMusicVolume</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>volume)<sp/>{</highlight></codeline>
-<codeline lineno="181"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Mix_VolumeMusic(volume);</highlight></codeline>
-<codeline lineno="182"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="183"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
-<codeline lineno="184"><highlight class="comment"><sp/><sp/><sp/><sp/>/*!<sp/>A<sp/>setSoundVolume<sp/>method,<sp/>taking<sp/>2<sp/>arguments.</highlight></codeline>
-<codeline lineno="185"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*<sp/>Sets<sp/>volume<sp/>of<sp/>a<sp/>sound</highlight></codeline>
-<codeline lineno="186"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*<sp/>\param<sp/>index<sp/>an<sp/>int<sp/>value.<sp/>The<sp/>index<sp/>of<sp/>that<sp/>sound</highlight></codeline>
-<codeline lineno="187"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*<sp/>\param<sp/>volume<sp/>an<sp/>int<sp/>value.<sp/>The<sp/>volume<sp/>to<sp/>set<sp/>it<sp/>to.*/</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="188" refid="_audio_player_8hpp_afa3767ac7e3cdab51ab43cdd7ad294c6_1afa3767ac7e3cdab51ab43cdd7ad294c6" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="_audio_player_8hpp_afa3767ac7e3cdab51ab43cdd7ad294c6_1afa3767ac7e3cdab51ab43cdd7ad294c6" kindref="member">setSoundVolume</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>index,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>volume)<sp/>{</highlight></codeline>
-<codeline lineno="189"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(sounds.size()-1<sp/>&gt;=<sp/>index)<sp/>{</highlight></codeline>
-<codeline lineno="190"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Mix_VolumeChunk(sounds[index],<sp/>volume);</highlight></codeline>
-<codeline lineno="191"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="192"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="193"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::cerr<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;Nullptr:<sp/>No<sp/>sound<sp/>at<sp/>this<sp/>index<sp/>(&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>index<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;).&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>std::endl;</highlight></codeline>
-<codeline lineno="194"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="195"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
-<codeline lineno="196"><highlight class="comment"><sp/><sp/><sp/><sp/>/*!<sp/>A<sp/>setFadeScaleX<sp/>method,<sp/>taking<sp/>1<sp/>argument.</highlight></codeline>
-<codeline lineno="197"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*<sp/>Sets<sp/>the<sp/>fade<sp/>scale<sp/>on<sp/>the<sp/>x-axis.</highlight></codeline>
-<codeline lineno="198"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*<sp/>\param<sp/>scale<sp/>a<sp/>float<sp/>value.<sp/>The<sp/>scale<sp/>to<sp/>set.*/</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="199" refid="_audio_player_8hpp_a42be3a37ec7fe01679b69c17004dec32_1a42be3a37ec7fe01679b69c17004dec32" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="_audio_player_8hpp_a42be3a37ec7fe01679b69c17004dec32_1a42be3a37ec7fe01679b69c17004dec32" kindref="member">setFadeScaleX</ref>(</highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>scale)<sp/>{</highlight></codeline>
-<codeline lineno="200"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>fadeScaleX<sp/>=<sp/>scale;</highlight></codeline>
-<codeline lineno="201"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="202"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
-<codeline lineno="203"><highlight class="comment"><sp/><sp/><sp/><sp/>/*!<sp/>A<sp/>setFadeScaleY<sp/>method,<sp/>taking<sp/>1<sp/>argument.</highlight></codeline>
-<codeline lineno="204"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*<sp/>Sets<sp/>the<sp/>fade<sp/>scale<sp/>on<sp/>the<sp/>y-axis.</highlight></codeline>
-<codeline lineno="205"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*<sp/>\param<sp/>scale<sp/>a<sp/>float<sp/>value.<sp/>The<sp/>scale<sp/>to<sp/>set.*/</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="206" refid="_audio_player_8hpp_a2dd6b8849a274a8a95bb034e32adfd99_1a2dd6b8849a274a8a95bb034e32adfd99" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="_audio_player_8hpp_a2dd6b8849a274a8a95bb034e32adfd99_1a2dd6b8849a274a8a95bb034e32adfd99" kindref="member">setFadeScaleY</ref>(</highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>scale)<sp/>{</highlight></codeline>
-<codeline lineno="207"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>fadeScaleY<sp/>=<sp/>scale;</highlight></codeline>
-<codeline lineno="208"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="209"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
-<codeline lineno="210"><highlight class="comment"><sp/><sp/><sp/><sp/>/*!<sp/>A<sp/>setFadeDelayX<sp/>method,<sp/>taking<sp/>1<sp/>argument.</highlight></codeline>
-<codeline lineno="211"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*<sp/>Sets<sp/>the<sp/>fade<sp/>delay<sp/>on<sp/>the<sp/>x-axis.</highlight></codeline>
-<codeline lineno="212"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*<sp/>\param<sp/>delay<sp/>a<sp/>float<sp/>value.<sp/>The<sp/>delay<sp/>to<sp/>set.*/</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="213" refid="_audio_player_8hpp_a91417060f572c27ba818b88f36ea78cf_1a91417060f572c27ba818b88f36ea78cf" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="_audio_player_8hpp_a91417060f572c27ba818b88f36ea78cf_1a91417060f572c27ba818b88f36ea78cf" kindref="member">setFadeDelayX</ref>(</highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>delay)<sp/>{</highlight></codeline>
-<codeline lineno="214"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>fadeDelayX<sp/>=<sp/>delay;</highlight></codeline>
-<codeline lineno="215"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="216"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
-<codeline lineno="217"><highlight class="comment"><sp/><sp/><sp/><sp/>/*!<sp/>A<sp/>setFadeDelayY<sp/>method,<sp/>taking<sp/>1<sp/>argument.</highlight></codeline>
-<codeline lineno="218"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*<sp/>Sets<sp/>the<sp/>fade<sp/>delay<sp/>on<sp/>the<sp/>y-axis.</highlight></codeline>
-<codeline lineno="219"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*<sp/>\param<sp/>delay<sp/>a<sp/>float<sp/>value.<sp/>The<sp/>delay<sp/>to<sp/>set.*/</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="220" refid="_audio_player_8hpp_a09836476cb254a8bfd8e144c62db6b06_1a09836476cb254a8bfd8e144c62db6b06" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="_audio_player_8hpp_a09836476cb254a8bfd8e144c62db6b06_1a09836476cb254a8bfd8e144c62db6b06" kindref="member">setFadeDelayY</ref>(</highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>delay)<sp/>{</highlight></codeline>
-<codeline lineno="221"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>fadeDelayY<sp/>=<sp/>delay;</highlight></codeline>
-<codeline lineno="222"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="223"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
-<codeline lineno="224"><highlight class="comment"><sp/><sp/><sp/><sp/>//!<sp/>The<sp/>AudioPlayer<sp/>destructor.</highlight></codeline>
-<codeline lineno="225"><highlight class="comment"></highlight><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>/*!</highlight></codeline>
-<codeline lineno="226"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*<sp/>Clears<sp/>all<sp/>music<sp/>and<sp/>sounds.</highlight></codeline>
-<codeline lineno="227"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="228" refid="_audio_player_8hpp_adf3cf77acdb29518df8c24aa53c14559_1adf3cf77acdb29518df8c24aa53c14559" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="_audio_player_8hpp_adf3cf77acdb29518df8c24aa53c14559_1adf3cf77acdb29518df8c24aa53c14559" kindref="member">~AudioPlayer</ref>(){</highlight></codeline>
-<codeline lineno="229"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>music.clear();</highlight></codeline>
-<codeline lineno="230"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>sounds.clear();</highlight></codeline>
-<codeline lineno="231"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="232"><highlight class="normal"></highlight></codeline>
-<codeline lineno="233"><highlight class="normal"></highlight></codeline>
-<codeline lineno="234" refid="_audio_player_8hpp_a0bb2dfc6324d0ac2a5f9b83148d3710c_1a0bb2dfc6324d0ac2a5f9b83148d3710c" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="_audio_player_8hpp_a0bb2dfc6324d0ac2a5f9b83148d3710c_1a0bb2dfc6324d0ac2a5f9b83148d3710c" kindref="member">drawAudioRange</ref><sp/>=<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;<sp/></highlight><highlight class="comment">/*!&lt;<sp/>A<sp/>bool<sp/>value:<sp/>drawAudioRange.<sp/>If<sp/>the<sp/>audio<sp/>debug<sp/>range<sp/>should<sp/>be<sp/>draw.<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="235" refid="_audio_player_8hpp_a2b4a1455dce73e1186bbf2020a9ce002_1a2b4a1455dce73e1186bbf2020a9ce002" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="_audio_player_8hpp_a2b4a1455dce73e1186bbf2020a9ce002_1a2b4a1455dce73e1186bbf2020a9ce002" kindref="member">audioIconScale</ref><sp/>=<sp/>10;<sp/></highlight><highlight class="comment">/*!&lt;<sp/>A<sp/>float<sp/>value:<sp/>audioIconScale.<sp/>The<sp/>scale<sp/>of<sp/>the<sp/>debug<sp/>audio<sp/>icon<sp/>(default<sp/>is<sp/>10).<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="236"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
-<codeline lineno="237"><highlight class="comment"><sp/><sp/><sp/><sp/>/*!<sp/>A<sp/>debugDraw<sp/>overload<sp/>method.</highlight></codeline>
-<codeline lineno="238"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*<sp/>Draws<sp/>sound<sp/>related<sp/>debug<sp/>information<sp/>to<sp/>the<sp/>screen</highlight></codeline>
-<codeline lineno="239"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*<sp/>\overload<sp/>Entity::debugDraw()</highlight></codeline>
-<codeline lineno="240"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="241" refid="_audio_player_8hpp_ad6a9ceca414d65d7701e27b39be6ef23_1ad6a9ceca414d65d7701e27b39be6ef23" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="_audio_player_8hpp_ad6a9ceca414d65d7701e27b39be6ef23_1ad6a9ceca414d65d7701e27b39be6ef23" kindref="member">debugDraw</ref>(){</highlight></codeline>
-<codeline lineno="242"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>scale<sp/>=<sp/><ref refid="_audio_player_8hpp_a2b4a1455dce73e1186bbf2020a9ce002_1a2b4a1455dce73e1186bbf2020a9ce002" kindref="member">audioIconScale</ref>;</highlight></codeline>
-<codeline lineno="243"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>vec2<sp/>p<sp/>=<sp/>transform-&gt;getGlobalPosition()<sp/>*<sp/><ref refid="namespace_auris_1_1_constants_a559532ed3415b8ded07cdc4069dfa91c_1a559532ed3415b8ded07cdc4069dfa91c" kindref="member">Constants::METERS_TO_PIXELS</ref>;</highlight></codeline>
-<codeline lineno="244"><highlight class="normal"></highlight></codeline>
-<codeline lineno="245"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Icon</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="246"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>SRE::Debug::setColor(vec4(1,1,1,1));</highlight></codeline>
-<codeline lineno="247"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>SRE::Debug::drawLine(vec3(p.x<sp/>-<sp/>scale,<sp/>p.y<sp/>+<sp/>scale,0),<sp/>vec3(p.x,<sp/>p.y<sp/>+<sp/>scale,0));</highlight></codeline>
-<codeline lineno="248"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>SRE::Debug::drawLine(vec3(p.x,<sp/>p.y<sp/>+<sp/>scale,0),<sp/>vec3(p.x<sp/>+<sp/>scale,<sp/>p.y<sp/>+<sp/>scale*2,0));</highlight></codeline>
-<codeline lineno="249"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>SRE::Debug::drawLine(vec3(p.x<sp/>+<sp/>scale,<sp/>p.y<sp/>+<sp/>scale<sp/>*<sp/>2,0),<sp/>vec3(p.x<sp/>+<sp/>scale,<sp/>p.y<sp/>-<sp/>scale*2,0));</highlight></codeline>
-<codeline lineno="250"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>SRE::Debug::drawLine(vec3(p.x<sp/>+<sp/>scale,<sp/>p.y<sp/>-<sp/>scale<sp/>*<sp/>2,0),<sp/>vec3(p.x,<sp/>p.y<sp/>-<sp/>scale,0));</highlight></codeline>
-<codeline lineno="251"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>SRE::Debug::drawLine(vec3(p.x<sp/>,<sp/>p.y<sp/>-<sp/>scale,0),<sp/>vec3(p.x<sp/>-<sp/>scale,<sp/>p.y<sp/>-<sp/>scale,0));</highlight></codeline>
-<codeline lineno="252"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>SRE::Debug::drawLine(vec3(p.x<sp/>-<sp/>scale,<sp/>p.y<sp/>-<sp/>scale,0),<sp/>vec3(p.x<sp/>-<sp/>scale,<sp/>p.y<sp/>+<sp/>scale,0));</highlight></codeline>
+<codeline lineno="114"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>sounds.size()-1;</highlight></codeline>
+<codeline lineno="115"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="116"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="117"><highlight class="comment"><sp/><sp/><sp/><sp/>/*!<sp/>A<sp/>playMusic<sp/>method,<sp/>taking<sp/>1<sp/>argument.</highlight></codeline>
+<codeline lineno="118"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*<sp/>Plays<sp/>the<sp/>music<sp/>of<sp/>the<sp/>AudioPlayer</highlight></codeline>
+<codeline lineno="119"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*<sp/>\param<sp/>index<sp/>an<sp/>int<sp/>value.<sp/>The<sp/>index<sp/>of<sp/>the<sp/>music.</highlight></codeline>
+<codeline lineno="120"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*<sp/>\param<sp/>loops<sp/>an<sp/>int<sp/>value.<sp/>Number<sp/>times<sp/>to<sp/>loop<sp/>the<sp/>sound,<sp/>-1<sp/>means<sp/>loop<sp/>indefinitely.</highlight></codeline>
+<codeline lineno="121"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="122" refid="class_auris_1_1_audio_player_a21fa4db1dad82901c5d70cc3250a6546_1a21fa4db1dad82901c5d70cc3250a6546" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_auris_1_1_audio_player_a21fa4db1dad82901c5d70cc3250a6546_1a21fa4db1dad82901c5d70cc3250a6546" kindref="member">playMusic</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>index,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>loops<sp/>=<sp/>-1){</highlight></codeline>
+<codeline lineno="123"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(music.size()-1<sp/>&gt;=<sp/>index){</highlight></codeline>
+<codeline lineno="124"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//If<sp/>there<sp/>is<sp/>no<sp/>music<sp/>playing</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="125"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(<sp/>Mix_PlayingMusic()<sp/>==<sp/>0<sp/>){</highlight></codeline>
+<codeline lineno="126"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Mix_PlayMusic(<sp/>music[index],<sp/>loops);</highlight></codeline>
+<codeline lineno="127"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="128"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="129"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Mix_HaltMusic();</highlight></codeline>
+<codeline lineno="130"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Mix_PlayMusic(<sp/>music[index],<sp/>loops);</highlight></codeline>
+<codeline lineno="131"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="132"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight><highlight class="keywordflow">else</highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="133"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::cerr<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;Nullptr:<sp/>No<sp/>music<sp/>at<sp/>this<sp/>index<sp/>(&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>index<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;).&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>std::endl;</highlight></codeline>
+<codeline lineno="134"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="135"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="136"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="137"><highlight class="comment"><sp/><sp/><sp/><sp/>/*!<sp/>A<sp/>playSound<sp/>method,<sp/>taking<sp/>1<sp/>argument.</highlight></codeline>
+<codeline lineno="138"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*<sp/>Plays<sp/>the<sp/>sound<sp/>of<sp/>the<sp/>AudioPlayer<sp/>at<sp/>the<sp/>current<sp/>channel.</highlight></codeline>
+<codeline lineno="139"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*<sp/>\param<sp/>index<sp/>an<sp/>int<sp/>value.<sp/>The<sp/>index<sp/>of<sp/>the<sp/>sound.</highlight></codeline>
+<codeline lineno="140"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*<sp/>\param<sp/>loops<sp/>an<sp/>int<sp/>value.<sp/>Number<sp/>times<sp/>to<sp/>loop<sp/>the<sp/>sound,<sp/>-1<sp/>means<sp/>loop<sp/>indefinitely.</highlight></codeline>
+<codeline lineno="141"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="142" refid="class_auris_1_1_audio_player_a43f13a131cd50948600b10c8272e24b6_1a43f13a131cd50948600b10c8272e24b6" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_auris_1_1_audio_player_a43f13a131cd50948600b10c8272e24b6_1a43f13a131cd50948600b10c8272e24b6" kindref="member">playSound</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>index,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>loops<sp/>=<sp/>0)<sp/>{</highlight></codeline>
+<codeline lineno="143"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(sounds.size()-1<sp/>&gt;=<sp/>index)<sp/>{</highlight></codeline>
+<codeline lineno="144"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Mix_PlayChannel(channels[currentChannel],<sp/>sounds[index],<sp/>loops<sp/>);</highlight></codeline>
+<codeline lineno="145"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>currentChannel<sp/>=<sp/>currentChannel<sp/>&gt;=<sp/>channels.size()<sp/>-<sp/>1<sp/>?<sp/>0<sp/>:<sp/>currentChannel+1;</highlight></codeline>
+<codeline lineno="146"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight><highlight class="keywordflow">else</highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="147"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::cerr<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;Nullptr:<sp/>No<sp/>sound<sp/>at<sp/>this<sp/>index<sp/>(&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>index<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;).&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>std::endl;</highlight></codeline>
+<codeline lineno="148"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="149"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="150"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="151"><highlight class="comment"><sp/><sp/><sp/><sp/>/*!<sp/>A<sp/>pauseMusic<sp/>method.</highlight></codeline>
+<codeline lineno="152"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*<sp/>Pauses<sp/>music<sp/>if<sp/>music<sp/>is<sp/>playing</highlight></codeline>
+<codeline lineno="153"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="154" refid="class_auris_1_1_audio_player_afa46b37e86f2486df5ba56e0e5a2dd85_1afa46b37e86f2486df5ba56e0e5a2dd85" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_auris_1_1_audio_player_afa46b37e86f2486df5ba56e0e5a2dd85_1afa46b37e86f2486df5ba56e0e5a2dd85" kindref="member">pauseMusic</ref>()<sp/>{</highlight></codeline>
+<codeline lineno="155"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(<sp/>Mix_PlayingMusic()<sp/>==<sp/>1<sp/>)</highlight></codeline>
+<codeline lineno="156"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Mix_PauseMusic();</highlight></codeline>
+<codeline lineno="157"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="158"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="159"><highlight class="comment"><sp/><sp/><sp/><sp/>/*!<sp/>A<sp/>resumeMusic<sp/>method.</highlight></codeline>
+<codeline lineno="160"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*<sp/>Resumes<sp/>playing<sp/>music<sp/>if<sp/>music<sp/>is<sp/>paused</highlight></codeline>
+<codeline lineno="161"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="162" refid="class_auris_1_1_audio_player_a069208abdb395c5c53bf26a644bc36de_1a069208abdb395c5c53bf26a644bc36de" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_auris_1_1_audio_player_a069208abdb395c5c53bf26a644bc36de_1a069208abdb395c5c53bf26a644bc36de" kindref="member">resumeMusic</ref>()<sp/>{</highlight></codeline>
+<codeline lineno="163"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(<sp/>Mix_PlayingMusic()<sp/>==<sp/>1<sp/>)</highlight></codeline>
+<codeline lineno="164"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Mix_ResumeMusic();</highlight></codeline>
+<codeline lineno="165"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="166"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="167"><highlight class="comment"><sp/><sp/><sp/><sp/>/*!<sp/>A<sp/>stopMusic<sp/>method.</highlight></codeline>
+<codeline lineno="168"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*<sp/>Stops<sp/>all<sp/>music<sp/>playing<sp/>or<sp/>paused.</highlight></codeline>
+<codeline lineno="169"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="170" refid="class_auris_1_1_audio_player_a2a0a054bf0143e727f4514be7ae2bf47_1a2a0a054bf0143e727f4514be7ae2bf47" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_auris_1_1_audio_player_a2a0a054bf0143e727f4514be7ae2bf47_1a2a0a054bf0143e727f4514be7ae2bf47" kindref="member">stopMusic</ref>()<sp/>{</highlight></codeline>
+<codeline lineno="171"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(Mix_PlayingMusic()<sp/>==<sp/>1)</highlight></codeline>
+<codeline lineno="172"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Mix_HaltMusic();</highlight></codeline>
+<codeline lineno="173"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="174"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="175"><highlight class="comment"><sp/><sp/><sp/><sp/>/*!<sp/>A<sp/>setMusicVolume<sp/>method,<sp/>taking<sp/>1<sp/>argument.</highlight></codeline>
+<codeline lineno="176"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*<sp/>Sets<sp/>volume<sp/>of<sp/>currently<sp/>playing<sp/>music.</highlight></codeline>
+<codeline lineno="177"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*<sp/>\param<sp/>volume<sp/>an<sp/>int<sp/>value.<sp/>The<sp/>volume<sp/>to<sp/>set<sp/>the<sp/>music<sp/>to.*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="178" refid="class_auris_1_1_audio_player_a1c956893fd48092a632347445a9cba0e_1a1c956893fd48092a632347445a9cba0e" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_auris_1_1_audio_player_a1c956893fd48092a632347445a9cba0e_1a1c956893fd48092a632347445a9cba0e" kindref="member">setMusicVolume</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>volume)<sp/>{</highlight></codeline>
+<codeline lineno="179"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Mix_VolumeMusic(volume);</highlight></codeline>
+<codeline lineno="180"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="181"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="182"><highlight class="comment"><sp/><sp/><sp/><sp/>/*!<sp/>A<sp/>setSoundVolume<sp/>method,<sp/>taking<sp/>2<sp/>arguments.</highlight></codeline>
+<codeline lineno="183"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*<sp/>Sets<sp/>volume<sp/>of<sp/>a<sp/>sound</highlight></codeline>
+<codeline lineno="184"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*<sp/>\param<sp/>index<sp/>an<sp/>int<sp/>value.<sp/>The<sp/>index<sp/>of<sp/>that<sp/>sound</highlight></codeline>
+<codeline lineno="185"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*<sp/>\param<sp/>volume<sp/>an<sp/>int<sp/>value.<sp/>The<sp/>volume<sp/>to<sp/>set<sp/>it<sp/>to.*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="186" refid="class_auris_1_1_audio_player_a0aa098c528e1bbca96dd788b448c5dfd_1a0aa098c528e1bbca96dd788b448c5dfd" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_auris_1_1_audio_player_a0aa098c528e1bbca96dd788b448c5dfd_1a0aa098c528e1bbca96dd788b448c5dfd" kindref="member">setSoundVolume</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>index,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>volume)<sp/>{</highlight></codeline>
+<codeline lineno="187"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(sounds.size()-1<sp/>&gt;=<sp/>index)<sp/>{</highlight></codeline>
+<codeline lineno="188"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Mix_VolumeChunk(sounds[index],<sp/>volume);</highlight></codeline>
+<codeline lineno="189"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="190"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="191"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::cerr<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;Nullptr:<sp/>No<sp/>sound<sp/>at<sp/>this<sp/>index<sp/>(&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>index<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;).&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>std::endl;</highlight></codeline>
+<codeline lineno="192"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="193"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="194"><highlight class="comment"><sp/><sp/><sp/><sp/>/*!<sp/>A<sp/>setFadeScaleX<sp/>method,<sp/>taking<sp/>1<sp/>argument.</highlight></codeline>
+<codeline lineno="195"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*<sp/>Sets<sp/>the<sp/>fade<sp/>scale<sp/>on<sp/>the<sp/>x-axis.</highlight></codeline>
+<codeline lineno="196"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*<sp/>\param<sp/>scale<sp/>a<sp/>float<sp/>value.<sp/>The<sp/>scale<sp/>to<sp/>set.*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="197" refid="class_auris_1_1_audio_player_a71ef262f75fba7adf04e568d982bbfee_1a71ef262f75fba7adf04e568d982bbfee" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_auris_1_1_audio_player_a71ef262f75fba7adf04e568d982bbfee_1a71ef262f75fba7adf04e568d982bbfee" kindref="member">setFadeScaleX</ref>(</highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>scale)<sp/>{</highlight></codeline>
+<codeline lineno="198"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>fadeScaleX<sp/>=<sp/>scale;</highlight></codeline>
+<codeline lineno="199"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="200"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="201"><highlight class="comment"><sp/><sp/><sp/><sp/>/*!<sp/>A<sp/>setFadeScaleY<sp/>method,<sp/>taking<sp/>1<sp/>argument.</highlight></codeline>
+<codeline lineno="202"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*<sp/>Sets<sp/>the<sp/>fade<sp/>scale<sp/>on<sp/>the<sp/>y-axis.</highlight></codeline>
+<codeline lineno="203"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*<sp/>\param<sp/>scale<sp/>a<sp/>float<sp/>value.<sp/>The<sp/>scale<sp/>to<sp/>set.*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="204" refid="class_auris_1_1_audio_player_a4544fb691ee766b699d37e3e423a4230_1a4544fb691ee766b699d37e3e423a4230" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_auris_1_1_audio_player_a4544fb691ee766b699d37e3e423a4230_1a4544fb691ee766b699d37e3e423a4230" kindref="member">setFadeScaleY</ref>(</highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>scale)<sp/>{</highlight></codeline>
+<codeline lineno="205"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>fadeScaleY<sp/>=<sp/>scale;</highlight></codeline>
+<codeline lineno="206"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="207"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="208"><highlight class="comment"><sp/><sp/><sp/><sp/>/*!<sp/>A<sp/>setFadeDelayX<sp/>method,<sp/>taking<sp/>1<sp/>argument.</highlight></codeline>
+<codeline lineno="209"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*<sp/>Sets<sp/>the<sp/>fade<sp/>delay<sp/>on<sp/>the<sp/>x-axis.</highlight></codeline>
+<codeline lineno="210"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*<sp/>\param<sp/>delay<sp/>a<sp/>float<sp/>value.<sp/>The<sp/>delay<sp/>to<sp/>set.*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="211" refid="class_auris_1_1_audio_player_a06208dd572cb09591ca3c44818b75a7e_1a06208dd572cb09591ca3c44818b75a7e" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_auris_1_1_audio_player_a06208dd572cb09591ca3c44818b75a7e_1a06208dd572cb09591ca3c44818b75a7e" kindref="member">setFadeDelayX</ref>(</highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>delay)<sp/>{</highlight></codeline>
+<codeline lineno="212"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>fadeDelayX<sp/>=<sp/>delay;</highlight></codeline>
+<codeline lineno="213"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="214"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="215"><highlight class="comment"><sp/><sp/><sp/><sp/>/*!<sp/>A<sp/>setFadeDelayY<sp/>method,<sp/>taking<sp/>1<sp/>argument.</highlight></codeline>
+<codeline lineno="216"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*<sp/>Sets<sp/>the<sp/>fade<sp/>delay<sp/>on<sp/>the<sp/>y-axis.</highlight></codeline>
+<codeline lineno="217"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*<sp/>\param<sp/>delay<sp/>a<sp/>float<sp/>value.<sp/>The<sp/>delay<sp/>to<sp/>set.*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="218" refid="class_auris_1_1_audio_player_a018f9b273d6705365dcbd24516019906_1a018f9b273d6705365dcbd24516019906" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_auris_1_1_audio_player_a018f9b273d6705365dcbd24516019906_1a018f9b273d6705365dcbd24516019906" kindref="member">setFadeDelayY</ref>(</highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>delay)<sp/>{</highlight></codeline>
+<codeline lineno="219"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>fadeDelayY<sp/>=<sp/>delay;</highlight></codeline>
+<codeline lineno="220"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="221"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="222"><highlight class="comment"><sp/><sp/><sp/><sp/>//!<sp/>The<sp/>AudioPlayer<sp/>destructor.</highlight></codeline>
+<codeline lineno="223"><highlight class="comment"></highlight><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>/*!</highlight></codeline>
+<codeline lineno="224"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*<sp/>Clears<sp/>all<sp/>music<sp/>and<sp/>sounds.</highlight></codeline>
+<codeline lineno="225"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="226" refid="class_auris_1_1_audio_player_aedb51bfbb1bc29bd8482f9705bfc11ba_1aedb51bfbb1bc29bd8482f9705bfc11ba" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_auris_1_1_audio_player_aedb51bfbb1bc29bd8482f9705bfc11ba_1aedb51bfbb1bc29bd8482f9705bfc11ba" kindref="member">~AudioPlayer</ref>(){</highlight></codeline>
+<codeline lineno="227"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>music.clear();</highlight></codeline>
+<codeline lineno="228"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>sounds.clear();</highlight></codeline>
+<codeline lineno="229"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="230"><highlight class="normal"></highlight></codeline>
+<codeline lineno="231"><highlight class="normal"></highlight></codeline>
+<codeline lineno="232" refid="class_auris_1_1_audio_player_a76f2cce039293eede8fd10038ddd6934_1a76f2cce039293eede8fd10038ddd6934" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="class_auris_1_1_audio_player_a76f2cce039293eede8fd10038ddd6934_1a76f2cce039293eede8fd10038ddd6934" kindref="member">drawAudioRange</ref><sp/>=<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;<sp/></highlight><highlight class="comment">/*!&lt;<sp/>A<sp/>bool<sp/>value:<sp/>drawAudioRange.<sp/>If<sp/>the<sp/>audio<sp/>debug<sp/>range<sp/>should<sp/>be<sp/>draw.<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="233" refid="class_auris_1_1_audio_player_a97ccf8b50ea9900edba64eaf5f09694a_1a97ccf8b50ea9900edba64eaf5f09694a" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="class_auris_1_1_audio_player_a97ccf8b50ea9900edba64eaf5f09694a_1a97ccf8b50ea9900edba64eaf5f09694a" kindref="member">audioIconScale</ref><sp/>=<sp/>10;<sp/></highlight><highlight class="comment">/*!&lt;<sp/>A<sp/>float<sp/>value:<sp/>audioIconScale.<sp/>The<sp/>scale<sp/>of<sp/>the<sp/>debug<sp/>audio<sp/>icon<sp/>(default<sp/>is<sp/>10).<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="234"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="235"><highlight class="comment"><sp/><sp/><sp/><sp/>/*!<sp/>A<sp/>debugDraw<sp/>overload<sp/>method.</highlight></codeline>
+<codeline lineno="236"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*<sp/>Draws<sp/>sound<sp/>related<sp/>debug<sp/>information<sp/>to<sp/>the<sp/>screen</highlight></codeline>
+<codeline lineno="237"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*<sp/>\overload<sp/>Entity::debugDraw()</highlight></codeline>
+<codeline lineno="238"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="239" refid="class_auris_1_1_audio_player_ac006a0972512120a74f188dde0e00b6d_1ac006a0972512120a74f188dde0e00b6d" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_auris_1_1_audio_player_ac006a0972512120a74f188dde0e00b6d_1ac006a0972512120a74f188dde0e00b6d" kindref="member">debugDraw</ref>(){</highlight></codeline>
+<codeline lineno="240"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>scale<sp/>=<sp/><ref refid="class_auris_1_1_audio_player_a97ccf8b50ea9900edba64eaf5f09694a_1a97ccf8b50ea9900edba64eaf5f09694a" kindref="member">audioIconScale</ref>;</highlight></codeline>
+<codeline lineno="241"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>vec2<sp/>p<sp/>=<sp/><ref refid="class_auris_1_1_entity_a1c0579dbb2753589668621bd3e3c187b_1a1c0579dbb2753589668621bd3e3c187b" kindref="member">transform</ref>-&gt;<ref refid="class_auris_1_1_transform_ad90a1b7dfc003b686f1570ebfae0a6e8_1ad90a1b7dfc003b686f1570ebfae0a6e8" kindref="member">getGlobalPosition</ref>()<sp/>*<sp/><ref refid="namespace_auris_1_1_constants_a559532ed3415b8ded07cdc4069dfa91c_1a559532ed3415b8ded07cdc4069dfa91c" kindref="member">Constants::METERS_TO_PIXELS</ref>;</highlight></codeline>
+<codeline lineno="242"><highlight class="normal"></highlight></codeline>
+<codeline lineno="243"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Icon</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="244"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>SRE::Debug::setColor(vec4(1,1,1,1));</highlight></codeline>
+<codeline lineno="245"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>SRE::Debug::drawLine(vec3(p.x<sp/>-<sp/>scale,<sp/>p.y<sp/>+<sp/>scale,0),<sp/>vec3(p.x,<sp/>p.y<sp/>+<sp/>scale,0));</highlight></codeline>
+<codeline lineno="246"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>SRE::Debug::drawLine(vec3(p.x,<sp/>p.y<sp/>+<sp/>scale,0),<sp/>vec3(p.x<sp/>+<sp/>scale,<sp/>p.y<sp/>+<sp/>scale*2,0));</highlight></codeline>
+<codeline lineno="247"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>SRE::Debug::drawLine(vec3(p.x<sp/>+<sp/>scale,<sp/>p.y<sp/>+<sp/>scale<sp/>*<sp/>2,0),<sp/>vec3(p.x<sp/>+<sp/>scale,<sp/>p.y<sp/>-<sp/>scale*2,0));</highlight></codeline>
+<codeline lineno="248"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>SRE::Debug::drawLine(vec3(p.x<sp/>+<sp/>scale,<sp/>p.y<sp/>-<sp/>scale<sp/>*<sp/>2,0),<sp/>vec3(p.x,<sp/>p.y<sp/>-<sp/>scale,0));</highlight></codeline>
+<codeline lineno="249"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>SRE::Debug::drawLine(vec3(p.x<sp/>,<sp/>p.y<sp/>-<sp/>scale,0),<sp/>vec3(p.x<sp/>-<sp/>scale,<sp/>p.y<sp/>-<sp/>scale,0));</highlight></codeline>
+<codeline lineno="250"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>SRE::Debug::drawLine(vec3(p.x<sp/>-<sp/>scale,<sp/>p.y<sp/>-<sp/>scale,0),<sp/>vec3(p.x<sp/>-<sp/>scale,<sp/>p.y<sp/>+<sp/>scale,0));</highlight></codeline>
+<codeline lineno="251"><highlight class="normal"></highlight></codeline>
+<codeline lineno="252"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>SRE::Debug::setColor(vec4(1,0,0,1));</highlight></codeline>
 <codeline lineno="253"><highlight class="normal"></highlight></codeline>
-<codeline lineno="254"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>SRE::Debug::setColor(vec4(1,0,0,1));</highlight></codeline>
-<codeline lineno="255"><highlight class="normal"></highlight></codeline>
-<codeline lineno="256"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(drawAudioRange)<sp/>{</highlight></codeline>
-<codeline lineno="257"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Range</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="258"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>minX<sp/>=<sp/>p.x<sp/>-<sp/>(listener-&gt;<ref refid="class_auris_1_1_camera_a17a09a5d85ed62c92c3c17969e4b2df3_1a17a09a5d85ed62c92c3c17969e4b2df3" kindref="member">getWidth</ref>()/2/<ref refid="_audio_player_8hpp_af49b7c8f6419a65cd1024a166339a8ae_1af49b7c8f6419a65cd1024a166339a8ae" kindref="member">fadeScaleX</ref>);</highlight></codeline>
-<codeline lineno="259"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>maxX<sp/>=<sp/>p.x<sp/>+<sp/>(listener-&gt;<ref refid="class_auris_1_1_camera_a17a09a5d85ed62c92c3c17969e4b2df3_1a17a09a5d85ed62c92c3c17969e4b2df3" kindref="member">getWidth</ref>()/2/<ref refid="_audio_player_8hpp_af49b7c8f6419a65cd1024a166339a8ae_1af49b7c8f6419a65cd1024a166339a8ae" kindref="member">fadeScaleX</ref>);</highlight></codeline>
-<codeline lineno="260"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>minY<sp/>=<sp/>p.y<sp/>-<sp/>(listener-&gt;<ref refid="class_auris_1_1_camera_a6aa244c08427100da9e8ea5b2fa88cd8_1a6aa244c08427100da9e8ea5b2fa88cd8" kindref="member">getHeight</ref>()/2/<ref refid="_audio_player_8hpp_aacfd9c51d4d11eeb7802c1b1578886ac_1aacfd9c51d4d11eeb7802c1b1578886ac" kindref="member">fadeScaleY</ref>);</highlight></codeline>
-<codeline lineno="261"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>maxY<sp/>=<sp/>p.y<sp/>+<sp/>(listener-&gt;<ref refid="class_auris_1_1_camera_a6aa244c08427100da9e8ea5b2fa88cd8_1a6aa244c08427100da9e8ea5b2fa88cd8" kindref="member">getHeight</ref>()/2/<ref refid="_audio_player_8hpp_aacfd9c51d4d11eeb7802c1b1578886ac_1aacfd9c51d4d11eeb7802c1b1578886ac" kindref="member">fadeScaleY</ref>);</highlight></codeline>
+<codeline lineno="254"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(drawAudioRange)<sp/>{</highlight></codeline>
+<codeline lineno="255"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Range</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="256"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>minX<sp/>=<sp/>p.x<sp/>-<sp/>(listener-&gt;<ref refid="class_auris_1_1_camera_a17a09a5d85ed62c92c3c17969e4b2df3_1a17a09a5d85ed62c92c3c17969e4b2df3" kindref="member">getWidth</ref>()/2/<ref refid="class_auris_1_1_audio_player_aaeea71fb5b725ea1e7d5ec26f281e104_1aaeea71fb5b725ea1e7d5ec26f281e104" kindref="member">fadeScaleX</ref>);</highlight></codeline>
+<codeline lineno="257"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>maxX<sp/>=<sp/>p.x<sp/>+<sp/>(listener-&gt;<ref refid="class_auris_1_1_camera_a17a09a5d85ed62c92c3c17969e4b2df3_1a17a09a5d85ed62c92c3c17969e4b2df3" kindref="member">getWidth</ref>()/2/<ref refid="class_auris_1_1_audio_player_aaeea71fb5b725ea1e7d5ec26f281e104_1aaeea71fb5b725ea1e7d5ec26f281e104" kindref="member">fadeScaleX</ref>);</highlight></codeline>
+<codeline lineno="258"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>minY<sp/>=<sp/>p.y<sp/>-<sp/>(listener-&gt;<ref refid="class_auris_1_1_camera_a6aa244c08427100da9e8ea5b2fa88cd8_1a6aa244c08427100da9e8ea5b2fa88cd8" kindref="member">getHeight</ref>()/2/<ref refid="class_auris_1_1_audio_player_afd8664847907f5bef07feb0a257fa175_1afd8664847907f5bef07feb0a257fa175" kindref="member">fadeScaleY</ref>);</highlight></codeline>
+<codeline lineno="259"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>maxY<sp/>=<sp/>p.y<sp/>+<sp/>(listener-&gt;<ref refid="class_auris_1_1_camera_a6aa244c08427100da9e8ea5b2fa88cd8_1a6aa244c08427100da9e8ea5b2fa88cd8" kindref="member">getHeight</ref>()/2/<ref refid="class_auris_1_1_audio_player_afd8664847907f5bef07feb0a257fa175_1afd8664847907f5bef07feb0a257fa175" kindref="member">fadeScaleY</ref>);</highlight></codeline>
+<codeline lineno="260"><highlight class="normal"></highlight></codeline>
+<codeline lineno="261"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>line_len<sp/>=<sp/>30;</highlight></codeline>
 <codeline lineno="262"><highlight class="normal"></highlight></codeline>
-<codeline lineno="263"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>line_len<sp/>=<sp/>30;</highlight></codeline>
-<codeline lineno="264"><highlight class="normal"></highlight></codeline>
-<codeline lineno="265"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>SRE::Debug::drawLine(vec3(minX,<sp/>p.y,0),<sp/>vec3(maxX,<sp/>p.y,0));</highlight></codeline>
-<codeline lineno="266"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>SRE::Debug::drawLine(vec3(p.x,<sp/>minY,0),<sp/>vec3(p.x,<sp/>maxY,<sp/>0));</highlight></codeline>
-<codeline lineno="267"><highlight class="normal"></highlight></codeline>
-<codeline lineno="268"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>SRE::Debug::drawLine(vec3(minX,<sp/>p.y<sp/>-<sp/>line_len,<sp/>0),<sp/>vec3(minX,<sp/>p.y<sp/>+<sp/>line_len,<sp/>0));</highlight></codeline>
-<codeline lineno="269"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>SRE::Debug::drawLine(vec3(maxX,<sp/>p.y<sp/>-<sp/>line_len,<sp/>0),<sp/>vec3(maxX,<sp/>p.y<sp/>+<sp/>line_len,<sp/>0));</highlight></codeline>
-<codeline lineno="270"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>SRE::Debug::drawLine(vec3(p.x<sp/>-<sp/>line_len,<sp/>minY,<sp/>0),<sp/>vec3(p.x<sp/>+<sp/>line_len,<sp/>minY,<sp/>0));</highlight></codeline>
-<codeline lineno="271"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>SRE::Debug::drawLine(vec3(p.x<sp/>-<sp/>line_len,<sp/>maxY,<sp/>0),<sp/>vec3(p.x<sp/>+<sp/>line_len,<sp/>maxY,<sp/>0));</highlight></codeline>
-<codeline lineno="272"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="263"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>SRE::Debug::drawLine(vec3(minX,<sp/>p.y,0),<sp/>vec3(maxX,<sp/>p.y,0));</highlight></codeline>
+<codeline lineno="264"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>SRE::Debug::drawLine(vec3(p.x,<sp/>minY,0),<sp/>vec3(p.x,<sp/>maxY,<sp/>0));</highlight></codeline>
+<codeline lineno="265"><highlight class="normal"></highlight></codeline>
+<codeline lineno="266"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>SRE::Debug::drawLine(vec3(minX,<sp/>p.y<sp/>-<sp/>line_len,<sp/>0),<sp/>vec3(minX,<sp/>p.y<sp/>+<sp/>line_len,<sp/>0));</highlight></codeline>
+<codeline lineno="267"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>SRE::Debug::drawLine(vec3(maxX,<sp/>p.y<sp/>-<sp/>line_len,<sp/>0),<sp/>vec3(maxX,<sp/>p.y<sp/>+<sp/>line_len,<sp/>0));</highlight></codeline>
+<codeline lineno="268"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>SRE::Debug::drawLine(vec3(p.x<sp/>-<sp/>line_len,<sp/>minY,<sp/>0),<sp/>vec3(p.x<sp/>+<sp/>line_len,<sp/>minY,<sp/>0));</highlight></codeline>
+<codeline lineno="269"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>SRE::Debug::drawLine(vec3(p.x<sp/>-<sp/>line_len,<sp/>maxY,<sp/>0),<sp/>vec3(p.x<sp/>+<sp/>line_len,<sp/>maxY,<sp/>0));</highlight></codeline>
+<codeline lineno="270"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="271"><highlight class="normal"></highlight></codeline>
+<codeline lineno="272"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="273"><highlight class="normal"></highlight></codeline>
-<codeline lineno="274"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="275"><highlight class="normal"></highlight></codeline>
-<codeline lineno="276"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
-<codeline lineno="277"><highlight class="comment"><sp/><sp/><sp/><sp/>/*!<sp/>A<sp/>inspectorImGui<sp/>overload<sp/>method.</highlight></codeline>
-<codeline lineno="278"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*<sp/>Writes<sp/>sound<sp/>related<sp/>debug<sp/>information<sp/>to<sp/>the<sp/>inspector</highlight></codeline>
-<codeline lineno="279"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*<sp/>\overload<sp/>Entity::inspectorImGui()</highlight></codeline>
-<codeline lineno="280"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="281" refid="_audio_player_8hpp_a6a2203698778ad758c38a119ffdf6b76_1a6a2203698778ad758c38a119ffdf6b76" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="_audio_player_8hpp_a6a2203698778ad758c38a119ffdf6b76_1a6a2203698778ad758c38a119ffdf6b76" kindref="member">inspectorImGui</ref>(){</highlight></codeline>
-<codeline lineno="282"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_auris_1_1_entity_a30ccf345f74230cb9c560f5bf4794b99_1a30ccf345f74230cb9c560f5bf4794b99" kindref="member">Entity::inspectorImGui</ref>();</highlight></codeline>
-<codeline lineno="283"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ImGui::Separator();</highlight></codeline>
-<codeline lineno="284"><highlight class="normal"></highlight></codeline>
-<codeline lineno="285"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ImGui::Text(</highlight><highlight class="stringliteral">&quot;Channel<sp/>%d&quot;</highlight><highlight class="normal">,<sp/>currentChannel);</highlight></codeline>
-<codeline lineno="286"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ImGui::Text(</highlight><highlight class="stringliteral">&quot;Distance(in<sp/>Fade<sp/>Units)(%d,%d)&quot;</highlight><highlight class="normal">,<sp/>deltaDistanceX,<sp/>deltaDistanceY);</highlight></codeline>
-<codeline lineno="287"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ImGui::Text(</highlight><highlight class="stringliteral">&quot;Current<sp/>Fade:<sp/>(%d,%d)&quot;</highlight><highlight class="normal">,<sp/>fade);</highlight></codeline>
-<codeline lineno="288"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ImGui::Text(</highlight><highlight class="stringliteral">&quot;Pan:<sp/>%d&quot;</highlight><highlight class="normal">,<sp/>pan);</highlight></codeline>
-<codeline lineno="289"><highlight class="normal"></highlight></codeline>
-<codeline lineno="290"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ImGui::Separator();</highlight></codeline>
-<codeline lineno="291"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ImGui::Checkbox(</highlight><highlight class="stringliteral">&quot;Draw<sp/>Audio<sp/>Range&quot;</highlight><highlight class="normal">,<sp/>&amp;drawAudioRange);</highlight></codeline>
-<codeline lineno="292"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ImGui::DragFloat(</highlight><highlight class="stringliteral">&quot;Audio<sp/>Icon<sp/>Scale&quot;</highlight><highlight class="normal">,<sp/>&amp;audioIconScale);</highlight></codeline>
-<codeline lineno="293"><highlight class="normal"></highlight></codeline>
-<codeline lineno="294"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="295"><highlight class="normal">};</highlight></codeline>
-<codeline lineno="296"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="274"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="275"><highlight class="comment"><sp/><sp/><sp/><sp/>/*!<sp/>A<sp/>inspectorImGui<sp/>overload<sp/>method.</highlight></codeline>
+<codeline lineno="276"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*<sp/>Writes<sp/>sound<sp/>related<sp/>debug<sp/>information<sp/>to<sp/>the<sp/>inspector</highlight></codeline>
+<codeline lineno="277"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*<sp/>\overload<sp/>Entity::inspectorImGui()</highlight></codeline>
+<codeline lineno="278"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="279" refid="class_auris_1_1_audio_player_a66285ec5a748b33926b38c4f05bd3f95_1a66285ec5a748b33926b38c4f05bd3f95" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_auris_1_1_audio_player_a66285ec5a748b33926b38c4f05bd3f95_1a66285ec5a748b33926b38c4f05bd3f95" kindref="member">inspectorImGui</ref>(){</highlight></codeline>
+<codeline lineno="280"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_auris_1_1_entity_a276ce2e133fd19ae174b3a22091845da_1a276ce2e133fd19ae174b3a22091845da" kindref="member">Entity::inspectorImGui</ref>();</highlight></codeline>
+<codeline lineno="281"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ImGui::Separator();</highlight></codeline>
+<codeline lineno="282"><highlight class="normal"></highlight></codeline>
+<codeline lineno="283"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ImGui::Text(</highlight><highlight class="stringliteral">&quot;Channel<sp/>%d&quot;</highlight><highlight class="normal">,<sp/>currentChannel);</highlight></codeline>
+<codeline lineno="284"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ImGui::Text(</highlight><highlight class="stringliteral">&quot;Distance(in<sp/>Fade<sp/>Units)(%d,%d)&quot;</highlight><highlight class="normal">,<sp/>deltaDistanceX,<sp/>deltaDistanceY);</highlight></codeline>
+<codeline lineno="285"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ImGui::Text(</highlight><highlight class="stringliteral">&quot;Current<sp/>Fade:<sp/>(%d,%d)&quot;</highlight><highlight class="normal">,<sp/>fade);</highlight></codeline>
+<codeline lineno="286"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ImGui::Text(</highlight><highlight class="stringliteral">&quot;Pan:<sp/>%d&quot;</highlight><highlight class="normal">,<sp/>pan);</highlight></codeline>
+<codeline lineno="287"><highlight class="normal"></highlight></codeline>
+<codeline lineno="288"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ImGui::Separator();</highlight></codeline>
+<codeline lineno="289"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ImGui::Checkbox(</highlight><highlight class="stringliteral">&quot;Draw<sp/>Audio<sp/>Range&quot;</highlight><highlight class="normal">,<sp/>&amp;drawAudioRange);</highlight></codeline>
+<codeline lineno="290"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ImGui::DragFloat(</highlight><highlight class="stringliteral">&quot;Audio<sp/>Icon<sp/>Scale&quot;</highlight><highlight class="normal">,<sp/>&amp;audioIconScale);</highlight></codeline>
+<codeline lineno="291"><highlight class="normal"></highlight></codeline>
+<codeline lineno="292"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="293"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="294"><highlight class="normal">}</highlight></codeline>
     </programlisting>
     <location file="Projects/GameEngine/include/Auris/Entities/AudioPlayer.hpp"/>
   </compounddef>

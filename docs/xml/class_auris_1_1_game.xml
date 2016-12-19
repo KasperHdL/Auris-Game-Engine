@@ -361,31 +361,31 @@
     <detaileddescription>
 <para>Used to create a new game of the engine. The game programmer should extend this class to create a new game. </para>    </detaileddescription>
     <collaborationgraph>
-      <node id="130">
+      <node id="144">
         <label>Auris::Game</label>
         <link refid="class_auris_1_1_game"/>
-        <childnode refid="131" relation="usage">
+        <childnode refid="145" relation="usage">
           <edgelabel>newEntities</edgelabel>
           <edgelabel>entities</edgelabel>
         </childnode>
-        <childnode refid="130" relation="usage">
+        <childnode refid="144" relation="usage">
           <edgelabel>instance</edgelabel>
         </childnode>
-        <childnode refid="132" relation="usage">
+        <childnode refid="146" relation="usage">
           <edgelabel>camera</edgelabel>
         </childnode>
-        <childnode refid="133" relation="usage">
+        <childnode refid="147" relation="usage">
           <edgelabel>destroyEntities</edgelabel>
         </childnode>
       </node>
-      <node id="132">
+      <node id="146">
         <label>Auris::Camera</label>
         <link refid="class_auris_1_1_camera"/>
       </node>
-      <node id="131">
+      <node id="145">
         <label>std::vector&lt; std::shared_ptr&lt; Auris::Entity &gt; &gt;</label>
       </node>
-      <node id="133">
+      <node id="147">
         <label>std::vector&lt; int &gt;</label>
       </node>
     </collaborationgraph>

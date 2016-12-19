@@ -72,24 +72,24 @@
     <detaileddescription>
 <para>Used to manipulate shader. </para>    </detaileddescription>
     <inheritancegraph>
-      <node id="230">
+      <node id="244">
         <label>Auris::Shader</label>
         <link refid="class_auris_1_1_shader"/>
-        <childnode refid="231" relation="public-inheritance">
+        <childnode refid="245" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="231">
+      <node id="245">
         <label>SRE::Shader</label>
       </node>
     </inheritancegraph>
     <collaborationgraph>
-      <node id="232">
+      <node id="246">
         <label>Auris::Shader</label>
         <link refid="class_auris_1_1_shader"/>
-        <childnode refid="233" relation="public-inheritance">
+        <childnode refid="247" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="233">
+      <node id="247">
         <label>SRE::Shader</label>
       </node>
     </collaborationgraph>

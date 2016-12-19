@@ -2,6 +2,7 @@
 <doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.12">
   <compounddef id="class_auris_1_1_entity" kind="class" language="C++" prot="public">
     <compoundname>Auris::Entity</compoundname>
+    <derivedcompoundref refid="class_auris_1_1_audio_player" prot="public" virt="non-virtual">Auris::AudioPlayer</derivedcompoundref>
     <derivedcompoundref refid="class_auris_1_1_light" prot="public" virt="non-virtual">Auris::Light</derivedcompoundref>
     <derivedcompoundref refid="class_auris_1_1_physics_entity" prot="public" virt="non-virtual">Auris::PhysicsEntity</derivedcompoundref>
     <includes refid="_entity_8hpp" local="no">Entity.hpp</includes>
@@ -264,6 +265,7 @@
         <argsstring>(float deltaTime)</argsstring>
         <name>update</name>
         <reimplementedby refid="class_auris_1_1_light_a1c824a51fbcb0a6c59f87172ee5fa705_1a1c824a51fbcb0a6c59f87172ee5fa705">update</reimplementedby>
+        <reimplementedby refid="class_auris_1_1_audio_player_a664d181c07d0237803f6fad7e27eed33_1a664d181c07d0237803f6fad7e27eed33">update</reimplementedby>
         <param>
           <type>float</type>
           <declname>deltaTime</declname>
@@ -297,31 +299,33 @@
         </inbodydescription>
         <location file="Projects/GameEngine/include/Auris/Entity.hpp" line="125" column="1" bodyfile="Projects/GameEngine/include/Auris/Entity.hpp" bodystart="125" bodyend="125"/>
       </memberdef>
-      <memberdef kind="function" id="class_auris_1_1_entity_a880c5f29315d04c76453ab70ffe60737_1a880c5f29315d04c76453ab70ffe60737" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+      <memberdef kind="function" id="class_auris_1_1_entity_a73c8d32ab721f852fa7949c64fe31823_1a73c8d32ab721f852fa7949c64fe31823" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
         <type>void</type>
-        <definition>Entity::debugDraw</definition>
+        <definition>virtual void Auris::Entity::debugDraw</definition>
         <argsstring>()</argsstring>
         <name>debugDraw</name>
         <reimplementedby refid="class_auris_1_1_light_a59a943d8a6d7a433a942d88270cf1231_1a59a943d8a6d7a433a942d88270cf1231">debugDraw</reimplementedby>
+        <reimplementedby refid="class_auris_1_1_audio_player_ac006a0972512120a74f188dde0e00b6d_1ac006a0972512120a74f188dde0e00b6d">debugDraw</reimplementedby>
         <briefdescription>
 <para>The scriptable function debugDraw. </para>        </briefdescription>
         <detaileddescription>
-<para>Used by the game programmer to add debugdraw functionality to the entity. Is called every frame, when the debug gui is open</para><para>This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts.</para><para>A debugDraw overload method. Draws sound related debug information to the screen </para>        </detaileddescription>
+<para>Used by the game programmer to add debugdraw functionality to the entity. Is called every frame, when the debug gui is open </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
         <location file="Projects/GameEngine/include/Auris/Entity.hpp" line="132" column="1" bodyfile="Projects/GameEngine/include/Auris/Entity.hpp" bodystart="132" bodyend="132"/>
       </memberdef>
-      <memberdef kind="function" id="class_auris_1_1_entity_a30ccf345f74230cb9c560f5bf4794b99_1a30ccf345f74230cb9c560f5bf4794b99" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+      <memberdef kind="function" id="class_auris_1_1_entity_a276ce2e133fd19ae174b3a22091845da_1a276ce2e133fd19ae174b3a22091845da" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
         <type>void</type>
-        <definition>Entity::inspectorImGui</definition>
+        <definition>virtual void Auris::Entity::inspectorImGui</definition>
         <argsstring>()</argsstring>
         <name>inspectorImGui</name>
         <reimplementedby refid="class_auris_1_1_light_a55577c72600726fd5695ed59e85ef3e9_1a55577c72600726fd5695ed59e85ef3e9">inspectorImGui</reimplementedby>
         <reimplementedby refid="class_auris_1_1_physics_entity_a3f554aeefdd19e1b985110d6003d18e2_1a3f554aeefdd19e1b985110d6003d18e2">inspectorImGui</reimplementedby>
+        <reimplementedby refid="class_auris_1_1_audio_player_a66285ec5a748b33926b38c4f05bd3f95_1a66285ec5a748b33926b38c4f05bd3f95">inspectorImGui</reimplementedby>
         <briefdescription>
 <para>The scriptable function inspectorImGui. </para>        </briefdescription>
         <detaileddescription>
-<para>Used by the game programmer to add inspector GUI functionality to the entity. Is called every frame, when the inspector gui is open The game programmer can call <ref refid="class_auris_1_1_entity_a30ccf345f74230cb9c560f5bf4794b99_1a30ccf345f74230cb9c560f5bf4794b99" kindref="member">Entity::inspectorImGui</ref> to get <ref refid="class_auris_1_1_transform" kindref="compound">Transform</ref>, Position, Scale and Rotation inspection</para><para>This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts.</para><para>A inspectorImGui overload method. Writes sound related debug information to the inspector </para>        </detaileddescription>
+<para>Used by the game programmer to add inspector GUI functionality to the entity. Is called every frame, when the inspector gui is open The game programmer can call <ref refid="class_auris_1_1_entity_a276ce2e133fd19ae174b3a22091845da_1a276ce2e133fd19ae174b3a22091845da" kindref="member">Entity::inspectorImGui</ref> to get <ref refid="class_auris_1_1_transform" kindref="compound">Transform</ref>, Position, Scale and Rotation inspection </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
         <location file="Projects/GameEngine/include/Auris/Entity.hpp" line="140" column="1" bodyfile="Projects/GameEngine/include/Auris/Entity.hpp" bodystart="140" bodyend="158"/>
@@ -332,66 +336,72 @@
     <detaileddescription>
 <para>Have basic information about entities, every entity except the camera inherents from this class </para>    </detaileddescription>
     <inheritancegraph>
-      <node id="122">
+      <node id="136">
         <label>Auris::PhysicsEntity</label>
         <link refid="class_auris_1_1_physics_entity"/>
-        <childnode refid="120" relation="public-inheritance">
+        <childnode refid="133" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="121">
+      <node id="134">
+        <label>Auris::AudioPlayer</label>
+        <link refid="class_auris_1_1_audio_player"/>
+        <childnode refid="133" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="135">
         <label>Auris::Light</label>
         <link refid="class_auris_1_1_light"/>
-        <childnode refid="120" relation="public-inheritance">
+        <childnode refid="133" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="120">
+      <node id="133">
         <label>Auris::Entity</label>
         <link refid="class_auris_1_1_entity"/>
       </node>
     </inheritancegraph>
     <collaborationgraph>
-      <node id="126">
+      <node id="140">
         <label>std::vector&lt; Auris::Entity *&gt;</label>
-        <childnode refid="123" relation="usage">
+        <childnode refid="137" relation="usage">
           <edgelabel>elements</edgelabel>
         </childnode>
       </node>
-      <node id="127">
+      <node id="141">
         <label>Auris::Transform</label>
         <link refid="class_auris_1_1_transform"/>
-        <childnode refid="128" relation="public-inheritance">
+        <childnode refid="142" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="125">
+      <node id="139">
         <label>std::basic_string&lt; char &gt;</label>
       </node>
-      <node id="128">
+      <node id="142">
         <label>Auris::Nugget</label>
         <link refid="class_auris_1_1_nugget"/>
-        <childnode refid="123" relation="usage">
+        <childnode refid="137" relation="usage">
           <edgelabel>entity</edgelabel>
         </childnode>
       </node>
-      <node id="123">
+      <node id="137">
         <label>Auris::Entity</label>
         <link refid="class_auris_1_1_entity"/>
-        <childnode refid="124" relation="usage">
+        <childnode refid="138" relation="usage">
           <edgelabel>type</edgelabel>
           <edgelabel>name</edgelabel>
         </childnode>
-        <childnode refid="126" relation="usage">
+        <childnode refid="140" relation="usage">
           <edgelabel>children</edgelabel>
         </childnode>
-        <childnode refid="123" relation="usage">
+        <childnode refid="137" relation="usage">
           <edgelabel>parent</edgelabel>
         </childnode>
-        <childnode refid="127" relation="usage">
+        <childnode refid="141" relation="usage">
           <edgelabel>transform</edgelabel>
         </childnode>
       </node>
-      <node id="124">
+      <node id="138">
         <label>std::string</label>
-        <childnode refid="125" relation="public-inheritance">
+        <childnode refid="139" relation="public-inheritance">
         </childnode>
       </node>
     </collaborationgraph>
@@ -399,13 +409,13 @@
     <listofallmembers>
       <member refid="class_auris_1_1_entity_a3b4c091e55b92a0b2950d35a3dcf60fd_1a3b4c091e55b92a0b2950d35a3dcf60fd" prot="public" virt="non-virtual"><scope>Auris::Entity</scope><name>addChild</name></member>
       <member refid="class_auris_1_1_entity_a5987efbb9fc7b0b8a986454424a0e003_1a5987efbb9fc7b0b8a986454424a0e003" prot="public" virt="non-virtual"><scope>Auris::Entity</scope><name>children</name></member>
-      <member refid="class_auris_1_1_entity_a880c5f29315d04c76453ab70ffe60737_1a880c5f29315d04c76453ab70ffe60737" prot="public" virt="virtual"><scope>Auris::Entity</scope><name>debugDraw</name></member>
+      <member refid="class_auris_1_1_entity_a73c8d32ab721f852fa7949c64fe31823_1a73c8d32ab721f852fa7949c64fe31823" prot="public" virt="virtual"><scope>Auris::Entity</scope><name>debugDraw</name></member>
       <member refid="class_auris_1_1_entity_a7164735eefd40272dae8ebe5d929fcdc_1a7164735eefd40272dae8ebe5d929fcdc" prot="public" virt="non-virtual"><scope>Auris::Entity</scope><name>Entity</name></member>
       <member refid="class_auris_1_1_entity_a7a93ca71ac6ba155796408363a198518_1a7a93ca71ac6ba155796408363a198518" prot="public" virt="non-virtual"><scope>Auris::Entity</scope><name>getChildByName</name></member>
       <member refid="class_auris_1_1_entity_a64856847ad473d4fc07f7842dcea5571_1a64856847ad473d4fc07f7842dcea5571" prot="public" virt="non-virtual"><scope>Auris::Entity</scope><name>getChildByType</name></member>
       <member refid="class_auris_1_1_entity_a60becb4bfcc5e2df9954a0487209195b_1a60becb4bfcc5e2df9954a0487209195b" prot="public" virt="non-virtual"><scope>Auris::Entity</scope><name>getParent</name></member>
       <member refid="class_auris_1_1_entity_ab7373d13451309a5994a3737140797a4_1ab7373d13451309a5994a3737140797a4" prot="public" virt="virtual"><scope>Auris::Entity</scope><name>init</name></member>
-      <member refid="class_auris_1_1_entity_a30ccf345f74230cb9c560f5bf4794b99_1a30ccf345f74230cb9c560f5bf4794b99" prot="public" virt="virtual"><scope>Auris::Entity</scope><name>inspectorImGui</name></member>
+      <member refid="class_auris_1_1_entity_a276ce2e133fd19ae174b3a22091845da_1a276ce2e133fd19ae174b3a22091845da" prot="public" virt="virtual"><scope>Auris::Entity</scope><name>inspectorImGui</name></member>
       <member refid="class_auris_1_1_entity_ad87e74abaab08d178904f82aa13c866c_1ad87e74abaab08d178904f82aa13c866c" prot="public" virt="non-virtual"><scope>Auris::Entity</scope><name>name</name></member>
       <member refid="class_auris_1_1_entity_a5011b41267c7ae7dcbf260e3ffb83b3b_1a5011b41267c7ae7dcbf260e3ffb83b3b" prot="public" virt="virtual"><scope>Auris::Entity</scope><name>onDestruction</name></member>
       <member refid="class_auris_1_1_entity_afec0c65e0063778ee9888e8747213504_1afec0c65e0063778ee9888e8747213504" prot="public" virt="non-virtual"><scope>Auris::Entity</scope><name>parent</name></member>

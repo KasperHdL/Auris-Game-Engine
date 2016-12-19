@@ -45,24 +45,24 @@
     <detaileddescription>
 <para>Handles all collision of the engine Extends the BeginContact and EndContact methods </para>    </detaileddescription>
     <inheritancegraph>
-      <node id="32">
+      <node id="45">
         <label>Auris::CollisionHandler</label>
         <link refid="class_auris_1_1_collision_handler"/>
-        <childnode refid="33" relation="public-inheritance">
+        <childnode refid="46" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="33">
+      <node id="46">
         <label>b2ContactListener</label>
       </node>
     </inheritancegraph>
     <collaborationgraph>
-      <node id="34">
+      <node id="47">
         <label>Auris::CollisionHandler</label>
         <link refid="class_auris_1_1_collision_handler"/>
-        <childnode refid="35" relation="public-inheritance">
+        <childnode refid="48" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="35">
+      <node id="48">
         <label>b2ContactListener</label>
       </node>
     </collaborationgraph>

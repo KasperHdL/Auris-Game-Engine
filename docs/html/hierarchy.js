@@ -17,6 +17,7 @@ var hierarchy =
     [ "Auris::DynamicPool< Auris::Sprite >", "class_auris_1_1_dynamic_pool.html", null ],
     [ "Auris::Engine", "class_auris_1_1_engine.html", null ],
     [ "Auris::Entity", "class_auris_1_1_entity.html", [
+      [ "Auris::AudioPlayer", "class_auris_1_1_audio_player.html", null ],
       [ "Auris::Light", "class_auris_1_1_light.html", null ],
       [ "Auris::PhysicsEntity", "class_auris_1_1_physics_entity.html", null ]
     ] ],

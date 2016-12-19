@@ -22,5 +22,5 @@ var searchData=
   ['mesh_2ehpp',['Mesh.hpp',['../_mesh_8hpp.html',1,'']]],
   ['meshes',['meshes',['../class_auris_1_1_animation_a95ccaaa24a4f0c3633fef57cc40df062.html#a95ccaaa24a4f0c3633fef57cc40df062',1,'Auris::Animation::meshes()'],['../class_auris_1_1_sprite_sheet_a1d691d3f0af24b1286882d3709957cbe.html#a1d691d3f0af24b1286882d3709957cbe',1,'Auris::SpriteSheet::meshes()']]],
   ['meters_5fto_5fpixels',['METERS_TO_PIXELS',['../namespace_auris_1_1_constants_a559532ed3415b8ded07cdc4069dfa91c.html#a559532ed3415b8ded07cdc4069dfa91c',1,'Auris::Constants']]],
-  ['music',['music',['../class_auris_1_1_asset_manager_a46b740352276485cad9ba3fe45bcc883.html#a46b740352276485cad9ba3fe45bcc883',1,'Auris::AssetManager::music()'],['../_audio_player_8hpp_ac68dc4e44d895b38007564ac8a4c40fd.html#ac68dc4e44d895b38007564ac8a4c40fd',1,'music():&#160;AudioPlayer.hpp']]]
+  ['music',['music',['../class_auris_1_1_audio_player_a3b551119c5c73725e55264cb64fe9564.html#a3b551119c5c73725e55264cb64fe9564',1,'Auris::AudioPlayer::music()'],['../class_auris_1_1_asset_manager_a46b740352276485cad9ba3fe45bcc883.html#a46b740352276485cad9ba3fe45bcc883',1,'Auris::AssetManager::music()']]]
 ];

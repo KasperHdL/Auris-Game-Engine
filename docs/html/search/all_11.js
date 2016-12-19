@@ -7,7 +7,7 @@ var searchData=
   ['rendersystem_2ecpp',['RenderSystem.cpp',['../_render_system_8cpp.html',1,'']]],
   ['rendersystem_2ehpp',['RenderSystem.hpp',['../_render_system_8hpp.html',1,'']]],
   ['reset',['reset',['../class_auris_1_1_timer_abcb00fe42d4314145ff4884c598cbf29.html#abcb00fe42d4314145ff4884c598cbf29',1,'Auris::Timer']]],
-  ['resumemusic',['resumeMusic',['../_audio_player_8hpp_ac628f2d8f6164d6bc181f75c4ad9ef30.html#ac628f2d8f6164d6bc181f75c4ad9ef30',1,'AudioPlayer.hpp']]],
+  ['resumemusic',['resumeMusic',['../class_auris_1_1_audio_player_a069208abdb395c5c53bf26a644bc36de.html#a069208abdb395c5c53bf26a644bc36de',1,'Auris::AudioPlayer']]],
   ['right',['right',['../class_auris_1_1_camera_a02f938f18898dd998136a04604c6b40e.html#a02f938f18898dd998136a04604c6b40e',1,'Auris::Camera::right()'],['../namespace_auris_1_1_action_aac05fb76b2b9c04ea7e3155eab454e61.html#aac05fb76b2b9c04ea7e3155eab454e61',1,'Auris::Action::right()']]],
   ['rotate',['rotate',['../class_auris_1_1_camera_aadfff4b1b00b8e0fcbbb4ea3313eef77.html#aadfff4b1b00b8e0fcbbb4ea3313eef77',1,'Auris::Camera']]],
   ['rotation',['rotation',['../class_auris_1_1_transform_af92006823e5d417afabc2a6c736062ac.html#af92006823e5d417afabc2a6c736062ac',1,'Auris::Transform']]],

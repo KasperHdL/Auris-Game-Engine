@@ -728,31 +728,31 @@
     <detaileddescription>
 <para>Handles all particles </para>    </detaileddescription>
     <collaborationgraph>
-      <node id="186">
+      <node id="200">
         <label>std::vector&lt; vec3 &gt;</label>
       </node>
-      <node id="187">
+      <node id="201">
         <label>std::vector&lt; float &gt;</label>
       </node>
-      <node id="184">
+      <node id="198">
         <label>std::vector&lt; vec4 &gt;</label>
       </node>
-      <node id="188">
+      <node id="202">
         <label>Auris::Interpolation</label>
         <link refid="class_auris_1_1_interpolation"/>
-        <childnode refid="185" relation="usage">
+        <childnode refid="199" relation="usage">
           <edgelabel>points</edgelabel>
         </childnode>
       </node>
-      <node id="183">
+      <node id="197">
         <label>Auris::ParticleSystem</label>
         <link refid="class_auris_1_1_particle_system"/>
-        <childnode refid="184" relation="usage">
+        <childnode refid="198" relation="usage">
           <edgelabel>startColors</edgelabel>
           <edgelabel>finalColors</edgelabel>
           <edgelabel>endColors</edgelabel>
         </childnode>
-        <childnode refid="185" relation="usage">
+        <childnode refid="199" relation="usage">
           <edgelabel>interpolationPoints_color</edgelabel>
           <edgelabel>interpolationPoints_angularVelocity</edgelabel>
           <edgelabel>interpolationPoints_acceleration</edgelabel>
@@ -760,12 +760,12 @@
           <edgelabel>interpolationPoints_velocity</edgelabel>
           <edgelabel>uvs</edgelabel>
         </childnode>
-        <childnode refid="186" relation="usage">
+        <childnode refid="200" relation="usage">
           <edgelabel>velocities</edgelabel>
           <edgelabel>finalPositions</edgelabel>
           <edgelabel>positions</edgelabel>
         </childnode>
-        <childnode refid="187" relation="usage">
+        <childnode refid="201" relation="usage">
           <edgelabel>uvSize</edgelabel>
           <edgelabel>angularVelocities</edgelabel>
           <edgelabel>finalSizes</edgelabel>
@@ -775,7 +775,7 @@
           <edgelabel>startTimes</edgelabel>
           <edgelabel>rotations</edgelabel>
         </childnode>
-        <childnode refid="188" relation="usage">
+        <childnode refid="202" relation="usage">
           <edgelabel>interpolation_color</edgelabel>
           <edgelabel>interpolation_velocity</edgelabel>
           <edgelabel>interpolation_acceleration</edgelabel>
@@ -783,7 +783,7 @@
           <edgelabel>interpolation_angularVelocity</edgelabel>
         </childnode>
       </node>
-      <node id="185">
+      <node id="199">
         <label>std::vector&lt; vec2 &gt;</label>
       </node>
     </collaborationgraph>

@@ -28,19 +28,19 @@
     <detaileddescription>
     </detaileddescription>
     <collaborationgraph>
-      <node id="150">
+      <node id="164">
         <label>std::basic_string&lt; char &gt;</label>
       </node>
-      <node id="148">
+      <node id="162">
         <label>picojson::last_error_t&lt; T &gt;</label>
         <link refid="structpicojson_1_1last__error__t"/>
-        <childnode refid="149" relation="usage">
+        <childnode refid="163" relation="usage">
           <edgelabel>s</edgelabel>
         </childnode>
       </node>
-      <node id="149">
+      <node id="163">
         <label>std::string</label>
-        <childnode refid="150" relation="public-inheritance">
+        <childnode refid="164" relation="public-inheritance">
         </childnode>
       </node>
     </collaborationgraph>

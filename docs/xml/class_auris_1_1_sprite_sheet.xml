@@ -128,25 +128,25 @@ Sets the sprite mesh to the one corresponding with the name given, if name does 
     <detaileddescription>
 <para>Used to make spritesheets </para>    </detaileddescription>
     <collaborationgraph>
-      <node id="248">
+      <node id="262">
         <label>std::map&lt; std::string, Auris::Auris::Mesh *&gt;</label>
-        <childnode refid="249" relation="usage">
+        <childnode refid="263" relation="usage">
           <edgelabel>keys</edgelabel>
         </childnode>
       </node>
-      <node id="250">
+      <node id="264">
         <label>std::basic_string&lt; char &gt;</label>
       </node>
-      <node id="247">
+      <node id="261">
         <label>Auris::SpriteSheet</label>
         <link refid="class_auris_1_1_sprite_sheet"/>
-        <childnode refid="248" relation="usage">
+        <childnode refid="262" relation="usage">
           <edgelabel>meshes</edgelabel>
         </childnode>
       </node>
-      <node id="249">
+      <node id="263">
         <label>std::string</label>
-        <childnode refid="250" relation="public-inheritance">
+        <childnode refid="264" relation="public-inheritance">
         </childnode>
       </node>
     </collaborationgraph>

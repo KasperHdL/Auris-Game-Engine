@@ -16,7 +16,7 @@ var searchData=
   ['engine_2ehpp',['Engine.hpp',['../_engine_8hpp.html',1,'']]],
   ['enter',['enter',['../namespace_auris_1_1_action_adb05b89d6caa348c96fa628eca73bc73.html#adb05b89d6caa348c96fa628eca73bc73',1,'Auris::Action']]],
   ['entities',['entities',['../class_auris_1_1_game_aa12d34ffb39447721bc30093188cfcea.html#aa12d34ffb39447721bc30093188cfcea',1,'Auris::Game']]],
-  ['entity',['entity',['../class_auris_1_1_nugget_ada3978459953aa06dfbf934c3c11371b.html#ada3978459953aa06dfbf934c3c11371b',1,'Auris::Nugget::entity()'],['../class_auris_1_1_nugget_a0518e0da58247f838fb20065adcbbcbb.html#a0518e0da58247f838fb20065adcbbcbb',1,'Auris::Nugget::entity()'],['../class_auris_1_1_entity_a7164735eefd40272dae8ebe5d929fcdc.html#a7164735eefd40272dae8ebe5d929fcdc',1,'Auris::Entity::Entity()']]],
+  ['entity',['Entity',['../class_auris_1_1_entity_a7164735eefd40272dae8ebe5d929fcdc.html#a7164735eefd40272dae8ebe5d929fcdc',1,'Auris::Entity::Entity()'],['../class_auris_1_1_nugget_ada3978459953aa06dfbf934c3c11371b.html#ada3978459953aa06dfbf934c3c11371b',1,'Auris::Nugget::entity()'],['../class_auris_1_1_nugget_a0518e0da58247f838fb20065adcbbcbb.html#a0518e0da58247f838fb20065adcbbcbb',1,'Auris::Nugget::entity()']]],
   ['entity',['Entity',['../class_auris_1_1_entity.html',1,'Auris']]],
   ['entity_2ehpp',['Entity.hpp',['../_entity_8hpp.html',1,'']]],
   ['entityinspectoropen',['entityInspectorOpen',['../class_auris_1_1_debug_u_i_adbdb5a51039324a1aa893de6a1c2288b.html#adbdb5a51039324a1aa893de6a1c2288b',1,'Auris::DebugUI']]],

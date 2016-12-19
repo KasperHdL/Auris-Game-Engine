@@ -238,60 +238,60 @@
     <detaileddescription>
     </detaileddescription>
     <collaborationgraph>
-      <node id="78">
+      <node id="91">
         <label>K</label>
       </node>
-      <node id="79">
+      <node id="92">
         <label>T</label>
       </node>
-      <node id="82">
+      <node id="95">
         <label>std::vector&lt; T &gt;</label>
-        <childnode refid="79" relation="usage">
+        <childnode refid="92" relation="usage">
           <edgelabel>elements</edgelabel>
         </childnode>
       </node>
-      <node id="77">
+      <node id="90">
         <label>std::map&lt; K, T &gt;</label>
-        <childnode refid="78" relation="usage">
+        <childnode refid="91" relation="usage">
           <edgelabel>keys</edgelabel>
         </childnode>
-        <childnode refid="79" relation="usage">
+        <childnode refid="92" relation="usage">
           <edgelabel>elements</edgelabel>
         </childnode>
       </node>
-      <node id="81">
+      <node id="94">
         <label>std::basic_string&lt; char &gt;</label>
       </node>
-      <node id="76">
+      <node id="89">
         <label>picojson::value::_storage</label>
         <link refid="unionpicojson_1_1value_1_1__storage"/>
-        <childnode refid="77" relation="usage">
+        <childnode refid="90" relation="usage">
           <edgelabel>object_</edgelabel>
         </childnode>
-        <childnode refid="80" relation="usage">
+        <childnode refid="93" relation="usage">
           <edgelabel>string_</edgelabel>
         </childnode>
-        <childnode refid="82" relation="usage">
+        <childnode refid="95" relation="usage">
           <edgelabel>array_</edgelabel>
         </childnode>
       </node>
-      <node id="74">
+      <node id="87">
         <label>picojson::default_parse_context</label>
         <link refid="classpicojson_1_1default__parse__context"/>
-        <childnode refid="75" relation="usage">
+        <childnode refid="88" relation="usage">
           <edgelabel>out_</edgelabel>
         </childnode>
       </node>
-      <node id="75">
+      <node id="88">
         <label>picojson::value</label>
         <link refid="classpicojson_1_1value"/>
-        <childnode refid="76" relation="usage">
+        <childnode refid="89" relation="usage">
           <edgelabel>u_</edgelabel>
         </childnode>
       </node>
-      <node id="80">
+      <node id="93">
         <label>std::string</label>
-        <childnode refid="81" relation="public-inheritance">
+        <childnode refid="94" relation="public-inheritance">
         </childnode>
       </node>
     </collaborationgraph>

@@ -1,7 +1,9 @@
 var dir_91b16268451be890f35426c2e0246f24 =
 [
     [ "Nuggets", "dir_52d96a03572902fd013eb34cf4294a0c.html", "dir_52d96a03572902fd013eb34cf4294a0c" ],
-    [ "AudioPlayer.hpp", "_audio_player_8hpp.html", "_audio_player_8hpp" ],
+    [ "AudioPlayer.hpp", "_audio_player_8hpp.html", [
+      [ "AudioPlayer", "class_auris_1_1_audio_player.html", "class_auris_1_1_audio_player" ]
+    ] ],
     [ "Camera.hpp", "_camera_8hpp.html", [
       [ "Camera", "class_auris_1_1_camera.html", "class_auris_1_1_camera" ]
     ] ],

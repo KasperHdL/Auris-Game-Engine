@@ -475,52 +475,52 @@
     <detaileddescription>
 <para>Handles all input of the engine Everything in the input class is static </para>    </detaileddescription>
     <collaborationgraph>
-      <node id="136">
+      <node id="150">
         <label>Auris::Game</label>
         <link refid="class_auris_1_1_game"/>
-        <childnode refid="137" relation="usage">
+        <childnode refid="151" relation="usage">
           <edgelabel>newEntities</edgelabel>
           <edgelabel>entities</edgelabel>
         </childnode>
-        <childnode refid="136" relation="usage">
+        <childnode refid="150" relation="usage">
           <edgelabel>instance</edgelabel>
         </childnode>
-        <childnode refid="138" relation="usage">
+        <childnode refid="152" relation="usage">
           <edgelabel>camera</edgelabel>
         </childnode>
-        <childnode refid="139" relation="usage">
+        <childnode refid="153" relation="usage">
           <edgelabel>destroyEntities</edgelabel>
         </childnode>
       </node>
-      <node id="141">
+      <node id="155">
         <label>std::map&lt; SDL_Scancode, bool &gt;</label>
       </node>
-      <node id="140">
+      <node id="154">
         <label>std::map&lt; SDL_JoystickID, SDL_GameController *&gt;</label>
       </node>
-      <node id="138">
+      <node id="152">
         <label>Auris::Camera</label>
         <link refid="class_auris_1_1_camera"/>
       </node>
-      <node id="137">
+      <node id="151">
         <label>std::vector&lt; std::shared_ptr&lt; Auris::Entity &gt; &gt;</label>
       </node>
-      <node id="135">
+      <node id="149">
         <label>Auris::Input</label>
         <link refid="class_auris_1_1_input"/>
-        <childnode refid="136" relation="usage">
+        <childnode refid="150" relation="usage">
           <edgelabel>game</edgelabel>
         </childnode>
-        <childnode refid="140" relation="usage">
+        <childnode refid="154" relation="usage">
           <edgelabel>ctrl</edgelabel>
         </childnode>
-        <childnode refid="141" relation="usage">
+        <childnode refid="155" relation="usage">
           <edgelabel>heldKeys</edgelabel>
           <edgelabel>downKeys</edgelabel>
           <edgelabel>upKeys</edgelabel>
         </childnode>
       </node>
-      <node id="139">
+      <node id="153">
         <label>std::vector&lt; int &gt;</label>
       </node>
     </collaborationgraph>

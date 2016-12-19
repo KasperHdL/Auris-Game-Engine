@@ -248,85 +248,85 @@ This is an overloaded member function, provided for convenience. It differs from
     <detaileddescription>
 <para>Used to give Sprites to objects </para>    </detaileddescription>
     <inheritancegraph>
-      <node id="235">
+      <node id="249">
         <label>Auris::Nugget</label>
         <link refid="class_auris_1_1_nugget"/>
       </node>
-      <node id="234">
+      <node id="248">
         <label>Auris::Sprite</label>
         <link refid="class_auris_1_1_sprite"/>
-        <childnode refid="235" relation="public-inheritance">
+        <childnode refid="249" relation="public-inheritance">
         </childnode>
       </node>
     </inheritancegraph>
     <collaborationgraph>
-      <node id="241">
+      <node id="255">
         <label>std::vector&lt; Auris::Entity *&gt;</label>
-        <childnode refid="238" relation="usage">
+        <childnode refid="252" relation="usage">
           <edgelabel>elements</edgelabel>
         </childnode>
       </node>
-      <node id="244">
+      <node id="258">
         <label>SRE::Mesh</label>
       </node>
-      <node id="242">
+      <node id="256">
         <label>Auris::Transform</label>
         <link refid="class_auris_1_1_transform"/>
-        <childnode refid="237" relation="public-inheritance">
+        <childnode refid="251" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="243">
+      <node id="257">
         <label>Auris::Mesh</label>
         <link refid="class_auris_1_1_mesh"/>
-        <childnode refid="244" relation="public-inheritance">
+        <childnode refid="258" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="240">
+      <node id="254">
         <label>std::basic_string&lt; char &gt;</label>
       </node>
-      <node id="237">
+      <node id="251">
         <label>Auris::Nugget</label>
         <link refid="class_auris_1_1_nugget"/>
-        <childnode refid="238" relation="usage">
+        <childnode refid="252" relation="usage">
           <edgelabel>entity</edgelabel>
         </childnode>
       </node>
-      <node id="245">
+      <node id="259">
         <label>Auris::Material</label>
         <link refid="class_auris_1_1_material"/>
       </node>
-      <node id="236">
+      <node id="250">
         <label>Auris::Sprite</label>
         <link refid="class_auris_1_1_sprite"/>
-        <childnode refid="237" relation="public-inheritance">
+        <childnode refid="251" relation="public-inheritance">
         </childnode>
-        <childnode refid="243" relation="usage">
+        <childnode refid="257" relation="usage">
           <edgelabel>mesh</edgelabel>
         </childnode>
-        <childnode refid="245" relation="usage">
+        <childnode refid="259" relation="usage">
           <edgelabel>material</edgelabel>
         </childnode>
       </node>
-      <node id="238">
+      <node id="252">
         <label>Auris::Entity</label>
         <link refid="class_auris_1_1_entity"/>
-        <childnode refid="239" relation="usage">
+        <childnode refid="253" relation="usage">
           <edgelabel>type</edgelabel>
           <edgelabel>name</edgelabel>
         </childnode>
-        <childnode refid="241" relation="usage">
+        <childnode refid="255" relation="usage">
           <edgelabel>children</edgelabel>
         </childnode>
-        <childnode refid="238" relation="usage">
+        <childnode refid="252" relation="usage">
           <edgelabel>parent</edgelabel>
         </childnode>
-        <childnode refid="242" relation="usage">
+        <childnode refid="256" relation="usage">
           <edgelabel>transform</edgelabel>
         </childnode>
       </node>
-      <node id="239">
+      <node id="253">
         <label>std::string</label>
-        <childnode refid="240" relation="public-inheritance">
+        <childnode refid="254" relation="public-inheritance">
         </childnode>
       </node>
     </collaborationgraph>

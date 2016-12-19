@@ -215,20 +215,20 @@
     <detaileddescription>
 <para>Allocates memory in pools dynamically allocates new pools when one is full. </para>    </detaileddescription>
     <collaborationgraph>
-      <node id="89">
+      <node id="102">
         <label>std::vector&lt; Auris::Pool&lt; T &gt; *&gt;</label>
       </node>
-      <node id="88">
+      <node id="101">
         <label>Auris::DynamicPool&lt; T &gt;</label>
         <link refid="class_auris_1_1_dynamic_pool"/>
-        <childnode refid="89" relation="usage">
+        <childnode refid="102" relation="usage">
           <edgelabel>pools</edgelabel>
         </childnode>
-        <childnode refid="90" relation="usage">
+        <childnode refid="103" relation="usage">
           <edgelabel>poolsFull</edgelabel>
         </childnode>
       </node>
-      <node id="90">
+      <node id="103">
         <label>std::vector&lt; bool &gt;</label>
       </node>
     </collaborationgraph>

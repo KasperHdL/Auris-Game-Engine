@@ -324,91 +324,91 @@
     <detaileddescription>
 <para>Controls all the sprites and animations </para>    </detaileddescription>
     <collaborationgraph>
-      <node id="213">
+      <node id="227">
         <label>std::vector&lt; Auris::Entity *&gt;</label>
-        <childnode refid="210" relation="usage">
+        <childnode refid="224" relation="usage">
           <edgelabel>elements</edgelabel>
         </childnode>
       </node>
-      <node id="223">
+      <node id="237">
         <label>std::vector&lt; vec3 &gt;</label>
       </node>
-      <node id="206">
+      <node id="220">
         <label>std::vector&lt; Auris::Pool&lt; Auris::Sprite &gt; *&gt;</label>
-        <childnode refid="207" relation="usage">
+        <childnode refid="221" relation="usage">
           <edgelabel>elements</edgelabel>
         </childnode>
       </node>
-      <node id="219">
+      <node id="233">
         <label>std::vector&lt; Auris::ParticleSystem *&gt;</label>
-        <childnode refid="220" relation="usage">
+        <childnode refid="234" relation="usage">
           <edgelabel>elements</edgelabel>
         </childnode>
       </node>
-      <node id="224">
+      <node id="238">
         <label>std::vector&lt; float &gt;</label>
       </node>
-      <node id="221">
+      <node id="235">
         <label>std::vector&lt; vec4 &gt;</label>
       </node>
-      <node id="225">
+      <node id="239">
         <label>Auris::Interpolation</label>
         <link refid="class_auris_1_1_interpolation"/>
-        <childnode refid="222" relation="usage">
+        <childnode refid="236" relation="usage">
           <edgelabel>points</edgelabel>
         </childnode>
       </node>
-      <node id="216">
+      <node id="230">
         <label>SRE::Mesh</label>
       </node>
-      <node id="214">
+      <node id="228">
         <label>Auris::Transform</label>
         <link refid="class_auris_1_1_transform"/>
-        <childnode refid="209" relation="public-inheritance">
+        <childnode refid="223" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="205">
+      <node id="219">
         <label>Auris::DynamicPool&lt; Auris::Sprite &gt;</label>
         <link refid="class_auris_1_1_dynamic_pool"/>
-        <childnode refid="206" relation="usage">
+        <childnode refid="220" relation="usage">
           <edgelabel>pools</edgelabel>
         </childnode>
-        <childnode refid="218" relation="usage">
+        <childnode refid="232" relation="usage">
           <edgelabel>poolsFull</edgelabel>
         </childnode>
       </node>
-      <node id="215">
+      <node id="229">
         <label>Auris::Mesh</label>
         <link refid="class_auris_1_1_mesh"/>
-        <childnode refid="216" relation="public-inheritance">
+        <childnode refid="230" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="204">
+      <node id="218">
         <label>std::vector&lt; shared_ptr&lt; Auris::Animation &gt; &gt;</label>
       </node>
-      <node id="212">
+      <node id="226">
         <label>std::basic_string&lt; char &gt;</label>
       </node>
-      <node id="209">
+      <node id="223">
         <label>Auris::Nugget</label>
         <link refid="class_auris_1_1_nugget"/>
-        <childnode refid="210" relation="usage">
+        <childnode refid="224" relation="usage">
           <edgelabel>entity</edgelabel>
         </childnode>
       </node>
-      <node id="217">
+      <node id="231">
         <label>Auris::Material</label>
         <link refid="class_auris_1_1_material"/>
       </node>
-      <node id="220">
+      <node id="234">
         <label>Auris::ParticleSystem</label>
         <link refid="class_auris_1_1_particle_system"/>
-        <childnode refid="221" relation="usage">
+        <childnode refid="235" relation="usage">
           <edgelabel>startColors</edgelabel>
           <edgelabel>finalColors</edgelabel>
           <edgelabel>endColors</edgelabel>
         </childnode>
-        <childnode refid="222" relation="usage">
+        <childnode refid="236" relation="usage">
           <edgelabel>interpolationPoints_color</edgelabel>
           <edgelabel>interpolationPoints_angularVelocity</edgelabel>
           <edgelabel>interpolationPoints_acceleration</edgelabel>
@@ -416,12 +416,12 @@
           <edgelabel>interpolationPoints_velocity</edgelabel>
           <edgelabel>uvs</edgelabel>
         </childnode>
-        <childnode refid="223" relation="usage">
+        <childnode refid="237" relation="usage">
           <edgelabel>velocities</edgelabel>
           <edgelabel>finalPositions</edgelabel>
           <edgelabel>positions</edgelabel>
         </childnode>
-        <childnode refid="224" relation="usage">
+        <childnode refid="238" relation="usage">
           <edgelabel>uvSize</edgelabel>
           <edgelabel>angularVelocities</edgelabel>
           <edgelabel>finalSizes</edgelabel>
@@ -431,7 +431,7 @@
           <edgelabel>startTimes</edgelabel>
           <edgelabel>rotations</edgelabel>
         </childnode>
-        <childnode refid="225" relation="usage">
+        <childnode refid="239" relation="usage">
           <edgelabel>interpolation_color</edgelabel>
           <edgelabel>interpolation_velocity</edgelabel>
           <edgelabel>interpolation_acceleration</edgelabel>
@@ -439,64 +439,64 @@
           <edgelabel>interpolation_angularVelocity</edgelabel>
         </childnode>
       </node>
-      <node id="207">
+      <node id="221">
         <label>Auris::Pool&lt; Auris::Sprite &gt;</label>
         <link refid="class_auris_1_1_pool"/>
-        <childnode refid="208" relation="usage">
+        <childnode refid="222" relation="usage">
           <edgelabel>objects</edgelabel>
         </childnode>
       </node>
-      <node id="208">
+      <node id="222">
         <label>Auris::Sprite</label>
         <link refid="class_auris_1_1_sprite"/>
-        <childnode refid="209" relation="public-inheritance">
+        <childnode refid="223" relation="public-inheritance">
         </childnode>
-        <childnode refid="215" relation="usage">
+        <childnode refid="229" relation="usage">
           <edgelabel>mesh</edgelabel>
         </childnode>
-        <childnode refid="217" relation="usage">
+        <childnode refid="231" relation="usage">
           <edgelabel>material</edgelabel>
         </childnode>
       </node>
-      <node id="222">
+      <node id="236">
         <label>std::vector&lt; vec2 &gt;</label>
       </node>
-      <node id="203">
+      <node id="217">
         <label>Auris::RenderSystem</label>
         <link refid="class_auris_1_1_render_system"/>
-        <childnode refid="204" relation="usage">
+        <childnode refid="218" relation="usage">
           <edgelabel>animations</edgelabel>
         </childnode>
-        <childnode refid="205" relation="usage">
+        <childnode refid="219" relation="usage">
           <edgelabel>spritePool</edgelabel>
         </childnode>
-        <childnode refid="219" relation="usage">
+        <childnode refid="233" relation="usage">
           <edgelabel>particleSystems</edgelabel>
         </childnode>
       </node>
-      <node id="218">
+      <node id="232">
         <label>std::vector&lt; bool &gt;</label>
       </node>
-      <node id="210">
+      <node id="224">
         <label>Auris::Entity</label>
         <link refid="class_auris_1_1_entity"/>
-        <childnode refid="211" relation="usage">
+        <childnode refid="225" relation="usage">
           <edgelabel>type</edgelabel>
           <edgelabel>name</edgelabel>
         </childnode>
-        <childnode refid="213" relation="usage">
+        <childnode refid="227" relation="usage">
           <edgelabel>children</edgelabel>
         </childnode>
-        <childnode refid="210" relation="usage">
+        <childnode refid="224" relation="usage">
           <edgelabel>parent</edgelabel>
         </childnode>
-        <childnode refid="214" relation="usage">
+        <childnode refid="228" relation="usage">
           <edgelabel>transform</edgelabel>
         </childnode>
       </node>
-      <node id="211">
+      <node id="225">
         <label>std::string</label>
-        <childnode refid="212" relation="public-inheritance">
+        <childnode refid="226" relation="public-inheritance">
         </childnode>
       </node>
     </collaborationgraph>

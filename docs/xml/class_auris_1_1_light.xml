@@ -224,11 +224,11 @@
         <definition>void Auris::Light::inspectorImGui</definition>
         <argsstring>()</argsstring>
         <name>inspectorImGui</name>
-        <reimplements refid="class_auris_1_1_entity_a30ccf345f74230cb9c560f5bf4794b99_1a30ccf345f74230cb9c560f5bf4794b99">inspectorImGui</reimplements>
+        <reimplements refid="class_auris_1_1_entity_a276ce2e133fd19ae174b3a22091845da_1a276ce2e133fd19ae174b3a22091845da">inspectorImGui</reimplements>
         <briefdescription>
 <para>The scriptable function inspectorImGui. </para>        </briefdescription>
         <detaileddescription>
-<para>Used by the game programmer to add inspector GUI functionality to the entity. Is called every frame, when the inspector gui is open The game programmer can call <ref refid="class_auris_1_1_entity_a30ccf345f74230cb9c560f5bf4794b99_1a30ccf345f74230cb9c560f5bf4794b99" kindref="member">Entity::inspectorImGui</ref> to get <ref refid="class_auris_1_1_transform" kindref="compound">Transform</ref>, Position, Scale and Rotation inspection</para><para>This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts.</para><para>A inspectorImGui overload method. Writes sound related debug information to the inspector </para>        </detaileddescription>
+<para>Used by the game programmer to add inspector GUI functionality to the entity. Is called every frame, when the inspector gui is open The game programmer can call <ref refid="class_auris_1_1_entity_a276ce2e133fd19ae174b3a22091845da_1a276ce2e133fd19ae174b3a22091845da" kindref="member">Entity::inspectorImGui</ref> to get <ref refid="class_auris_1_1_transform" kindref="compound">Transform</ref>, Position, Scale and Rotation inspection </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
         <location file="Projects/GameEngine/include/Auris/Entities/Light.hpp" line="71" column="1" bodyfile="Projects/GameEngine/include/Auris/Entities/Light.hpp" bodystart="71" bodyend="84"/>
@@ -238,11 +238,11 @@
         <definition>void Auris::Light::debugDraw</definition>
         <argsstring>()</argsstring>
         <name>debugDraw</name>
-        <reimplements refid="class_auris_1_1_entity_a880c5f29315d04c76453ab70ffe60737_1a880c5f29315d04c76453ab70ffe60737">debugDraw</reimplements>
+        <reimplements refid="class_auris_1_1_entity_a73c8d32ab721f852fa7949c64fe31823_1a73c8d32ab721f852fa7949c64fe31823">debugDraw</reimplements>
         <briefdescription>
 <para>The scriptable function debugDraw. </para>        </briefdescription>
         <detaileddescription>
-<para>Used by the game programmer to add debugdraw functionality to the entity. Is called every frame, when the debug gui is open</para><para>This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts.</para><para>A debugDraw overload method. Draws sound related debug information to the screen </para>        </detaileddescription>
+<para>Used by the game programmer to add debugdraw functionality to the entity. Is called every frame, when the debug gui is open </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
         <location file="Projects/GameEngine/include/Auris/Entities/Light.hpp" line="90" column="1" bodyfile="Projects/GameEngine/include/Auris/Entities/Light.hpp" bodystart="90" bodyend="101"/>
@@ -253,66 +253,66 @@
     <detaileddescription>
 <para>Used to control the lights. There can only be 4 rendered lights, if <ref refid="class_auris_1_1_light" kindref="compound">Light</ref> are constantly added only the four newest lights will be shown, unless you pass the lightNum argument which overrides the automatic numbering system. </para>    </detaileddescription>
     <inheritancegraph>
-      <node id="151">
+      <node id="165">
         <label>Auris::Light</label>
         <link refid="class_auris_1_1_light"/>
-        <childnode refid="152" relation="public-inheritance">
+        <childnode refid="166" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="152">
+      <node id="166">
         <label>Auris::Entity</label>
         <link refid="class_auris_1_1_entity"/>
       </node>
     </inheritancegraph>
     <collaborationgraph>
-      <node id="157">
+      <node id="171">
         <label>std::vector&lt; Auris::Entity *&gt;</label>
-        <childnode refid="154" relation="usage">
+        <childnode refid="168" relation="usage">
           <edgelabel>elements</edgelabel>
         </childnode>
       </node>
-      <node id="158">
+      <node id="172">
         <label>Auris::Transform</label>
         <link refid="class_auris_1_1_transform"/>
-        <childnode refid="159" relation="public-inheritance">
+        <childnode refid="173" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="156">
+      <node id="170">
         <label>std::basic_string&lt; char &gt;</label>
       </node>
-      <node id="159">
+      <node id="173">
         <label>Auris::Nugget</label>
         <link refid="class_auris_1_1_nugget"/>
-        <childnode refid="154" relation="usage">
+        <childnode refid="168" relation="usage">
           <edgelabel>entity</edgelabel>
         </childnode>
       </node>
-      <node id="153">
+      <node id="167">
         <label>Auris::Light</label>
         <link refid="class_auris_1_1_light"/>
-        <childnode refid="154" relation="public-inheritance">
+        <childnode refid="168" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="154">
+      <node id="168">
         <label>Auris::Entity</label>
         <link refid="class_auris_1_1_entity"/>
-        <childnode refid="155" relation="usage">
+        <childnode refid="169" relation="usage">
           <edgelabel>type</edgelabel>
           <edgelabel>name</edgelabel>
         </childnode>
-        <childnode refid="157" relation="usage">
+        <childnode refid="171" relation="usage">
           <edgelabel>children</edgelabel>
         </childnode>
-        <childnode refid="154" relation="usage">
+        <childnode refid="168" relation="usage">
           <edgelabel>parent</edgelabel>
         </childnode>
-        <childnode refid="158" relation="usage">
+        <childnode refid="172" relation="usage">
           <edgelabel>transform</edgelabel>
         </childnode>
       </node>
-      <node id="155">
+      <node id="169">
         <label>std::string</label>
-        <childnode refid="156" relation="public-inheritance">
+        <childnode refid="170" relation="public-inheritance">
         </childnode>
       </node>
     </collaborationgraph>

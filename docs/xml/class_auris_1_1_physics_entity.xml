@@ -442,7 +442,7 @@ This is an overloaded member function, provided for convenience. It differs from
         <definition>virtual void Auris::PhysicsEntity::inspectorImGui</definition>
         <argsstring>()</argsstring>
         <name>inspectorImGui</name>
-        <reimplements refid="class_auris_1_1_entity_a30ccf345f74230cb9c560f5bf4794b99_1a30ccf345f74230cb9c560f5bf4794b99">inspectorImGui</reimplements>
+        <reimplements refid="class_auris_1_1_entity_a276ce2e133fd19ae174b3a22091845da_1a276ce2e133fd19ae174b3a22091845da">inspectorImGui</reimplements>
         <briefdescription>
 <para>Called when exiting collision with another <ref refid="class_auris_1_1_physics_entity" kindref="compound">PhysicsEntity</ref>. </para>        </briefdescription>
         <detaileddescription>
@@ -457,66 +457,66 @@ This is an overloaded member function, provided for convenience. It differs from
     <detaileddescription>
 <para>Used to control physic objects. </para>    </detaileddescription>
     <inheritancegraph>
-      <node id="189">
+      <node id="203">
         <label>Auris::PhysicsEntity</label>
         <link refid="class_auris_1_1_physics_entity"/>
-        <childnode refid="190" relation="public-inheritance">
+        <childnode refid="204" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="190">
+      <node id="204">
         <label>Auris::Entity</label>
         <link refid="class_auris_1_1_entity"/>
       </node>
     </inheritancegraph>
     <collaborationgraph>
-      <node id="195">
+      <node id="209">
         <label>std::vector&lt; Auris::Entity *&gt;</label>
-        <childnode refid="192" relation="usage">
+        <childnode refid="206" relation="usage">
           <edgelabel>elements</edgelabel>
         </childnode>
       </node>
-      <node id="191">
+      <node id="205">
         <label>Auris::PhysicsEntity</label>
         <link refid="class_auris_1_1_physics_entity"/>
-        <childnode refid="192" relation="public-inheritance">
+        <childnode refid="206" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="196">
+      <node id="210">
         <label>Auris::Transform</label>
         <link refid="class_auris_1_1_transform"/>
-        <childnode refid="197" relation="public-inheritance">
+        <childnode refid="211" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="194">
+      <node id="208">
         <label>std::basic_string&lt; char &gt;</label>
       </node>
-      <node id="197">
+      <node id="211">
         <label>Auris::Nugget</label>
         <link refid="class_auris_1_1_nugget"/>
-        <childnode refid="192" relation="usage">
+        <childnode refid="206" relation="usage">
           <edgelabel>entity</edgelabel>
         </childnode>
       </node>
-      <node id="192">
+      <node id="206">
         <label>Auris::Entity</label>
         <link refid="class_auris_1_1_entity"/>
-        <childnode refid="193" relation="usage">
+        <childnode refid="207" relation="usage">
           <edgelabel>type</edgelabel>
           <edgelabel>name</edgelabel>
         </childnode>
-        <childnode refid="195" relation="usage">
+        <childnode refid="209" relation="usage">
           <edgelabel>children</edgelabel>
         </childnode>
-        <childnode refid="192" relation="usage">
+        <childnode refid="206" relation="usage">
           <edgelabel>parent</edgelabel>
         </childnode>
-        <childnode refid="196" relation="usage">
+        <childnode refid="210" relation="usage">
           <edgelabel>transform</edgelabel>
         </childnode>
       </node>
-      <node id="193">
+      <node id="207">
         <label>std::string</label>
-        <childnode refid="194" relation="public-inheritance">
+        <childnode refid="208" relation="public-inheritance">
         </childnode>
       </node>
     </collaborationgraph>
@@ -527,7 +527,7 @@ This is an overloaded member function, provided for convenience. It differs from
       <member refid="class_auris_1_1_physics_entity_afd80a0a18613e1f6ddb30b99114d9beb_1afd80a0a18613e1f6ddb30b99114d9beb" prot="public" virt="non-virtual"><scope>Auris::PhysicsEntity</scope><name>applyForce</name></member>
       <member refid="class_auris_1_1_physics_entity_a29f15330487f17e5ce40df6c60de5144_1a29f15330487f17e5ce40df6c60de5144" prot="public" virt="non-virtual"><scope>Auris::PhysicsEntity</scope><name>body</name></member>
       <member refid="class_auris_1_1_entity_a5987efbb9fc7b0b8a986454424a0e003_1a5987efbb9fc7b0b8a986454424a0e003" prot="public" virt="non-virtual"><scope>Auris::PhysicsEntity</scope><name>children</name></member>
-      <member refid="class_auris_1_1_entity_a880c5f29315d04c76453ab70ffe60737_1a880c5f29315d04c76453ab70ffe60737" prot="public" virt="virtual"><scope>Auris::PhysicsEntity</scope><name>debugDraw</name></member>
+      <member refid="class_auris_1_1_entity_a73c8d32ab721f852fa7949c64fe31823_1a73c8d32ab721f852fa7949c64fe31823" prot="public" virt="virtual"><scope>Auris::PhysicsEntity</scope><name>debugDraw</name></member>
       <member refid="class_auris_1_1_entity_a7164735eefd40272dae8ebe5d929fcdc_1a7164735eefd40272dae8ebe5d929fcdc" prot="public" virt="non-virtual"><scope>Auris::PhysicsEntity</scope><name>Entity</name></member>
       <member refid="class_auris_1_1_entity_a7a93ca71ac6ba155796408363a198518_1a7a93ca71ac6ba155796408363a198518" prot="public" virt="non-virtual"><scope>Auris::PhysicsEntity</scope><name>getChildByName</name></member>
       <member refid="class_auris_1_1_entity_a64856847ad473d4fc07f7842dcea5571_1a64856847ad473d4fc07f7842dcea5571" prot="public" virt="non-virtual"><scope>Auris::PhysicsEntity</scope><name>getChildByType</name></member>

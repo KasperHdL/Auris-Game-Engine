@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['pan',['pan',['../_audio_player_8hpp_adee1aef20945156b400a92e84bbdb46b.html#adee1aef20945156b400a92e84bbdb46b',1,'AudioPlayer.hpp']]],
+  ['pan',['pan',['../class_auris_1_1_audio_player_a11d27eb6142f26090b13880dac810202.html#a11d27eb6142f26090b13880dac810202',1,'Auris::AudioPlayer']]],
   ['parent',['parent',['../class_auris_1_1_entity_afec0c65e0063778ee9888e8747213504.html#afec0c65e0063778ee9888e8747213504',1,'Auris::Entity']]],
   ['particleduration',['particleDuration',['../class_auris_1_1_particle_system_a847bf70177f7886f29e1ea5db1c3b7ad.html#a847bf70177f7886f29e1ea5db1c3b7ad',1,'Auris::ParticleSystem']]],
   ['particleindex',['particleIndex',['../class_auris_1_1_particle_system_a29ace4c3a64d72977a28bc0d4b45ab71.html#a29ace4c3a64d72977a28bc0d4b45ab71',1,'Auris::ParticleSystem']]],

@@ -195,24 +195,24 @@
     <detaileddescription>
 <para>Used to draw debug around everything </para>    </detaileddescription>
     <inheritancegraph>
-      <node id="37">
+      <node id="50">
         <label>b2Draw</label>
       </node>
-      <node id="36">
+      <node id="49">
         <label>Auris::DebugDraw</label>
         <link refid="class_auris_1_1_debug_draw"/>
-        <childnode refid="37" relation="public-inheritance">
+        <childnode refid="50" relation="public-inheritance">
         </childnode>
       </node>
     </inheritancegraph>
     <collaborationgraph>
-      <node id="39">
+      <node id="52">
         <label>b2Draw</label>
       </node>
-      <node id="38">
+      <node id="51">
         <label>Auris::DebugDraw</label>
         <link refid="class_auris_1_1_debug_draw"/>
-        <childnode refid="39" relation="public-inheritance">
+        <childnode refid="52" relation="public-inheritance">
         </childnode>
       </node>
     </collaborationgraph>

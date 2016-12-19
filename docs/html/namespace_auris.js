@@ -3,6 +3,7 @@ var namespace_auris =
     [ "Utilities", "namespace_auris_1_1_utilities.html", null ],
     [ "Animation", "class_auris_1_1_animation.html", "class_auris_1_1_animation" ],
     [ "AssetManager", "class_auris_1_1_asset_manager.html", "class_auris_1_1_asset_manager" ],
+    [ "AudioPlayer", "class_auris_1_1_audio_player.html", "class_auris_1_1_audio_player" ],
     [ "Camera", "class_auris_1_1_camera.html", "class_auris_1_1_camera" ],
     [ "CollisionHandler", "class_auris_1_1_collision_handler.html", "class_auris_1_1_collision_handler" ],
     [ "DebugDraw", "class_auris_1_1_debug_draw.html", "class_auris_1_1_debug_draw" ],

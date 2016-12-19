@@ -19,5 +19,5 @@ var searchData=
   ['array_5f',['array_',['../unionpicojson_1_1value_1_1__storage_aeac6ef9328845f1f6402c35bb281990a.html#aeac6ef9328845f1f6402c35bb281990a',1,'picojson::value::_storage']]],
   ['arrindex',['arrIndex',['../class_auris_1_1_debug_u_i_a09c27b298bbfa243227ed23a96fb489d.html#a09c27b298bbfa243227ed23a96fb489d',1,'Auris::DebugUI']]],
   ['arrsize',['arrSize',['../class_auris_1_1_debug_u_i_a0700f99ec77929e9307fd4cf9498f792.html#a0700f99ec77929e9307fd4cf9498f792',1,'Auris::DebugUI']]],
-  ['audioiconscale',['audioIconScale',['../_audio_player_8hpp_a2b4a1455dce73e1186bbf2020a9ce002.html#a2b4a1455dce73e1186bbf2020a9ce002',1,'AudioPlayer.hpp']]]
+  ['audioiconscale',['audioIconScale',['../class_auris_1_1_audio_player_a97ccf8b50ea9900edba64eaf5f09694a.html#a97ccf8b50ea9900edba64eaf5f09694a',1,'Auris::AudioPlayer']]]
 ];

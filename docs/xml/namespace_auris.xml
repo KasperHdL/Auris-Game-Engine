@@ -4,6 +4,7 @@
     <compoundname>Auris</compoundname>
     <innerclass refid="class_auris_1_1_animation" prot="public">Auris::Animation</innerclass>
     <innerclass refid="class_auris_1_1_asset_manager" prot="public">Auris::AssetManager</innerclass>
+    <innerclass refid="class_auris_1_1_audio_player" prot="public">Auris::AudioPlayer</innerclass>
     <innerclass refid="class_auris_1_1_camera" prot="public">Auris::Camera</innerclass>
     <innerclass refid="class_auris_1_1_collision_handler" prot="public">Auris::CollisionHandler</innerclass>
     <innerclass refid="class_auris_1_1_debug_draw" prot="public">Auris::DebugDraw</innerclass>

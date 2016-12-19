@@ -1,10 +1,10 @@
 var searchData=
 [
-  ['fade',['fade',['../_audio_player_8hpp_a616c23dc01f67f0d284044acfb160086.html#a616c23dc01f67f0d284044acfb160086',1,'AudioPlayer.hpp']]],
-  ['fadedelayx',['fadeDelayX',['../_audio_player_8hpp_a6af36b0fb7714db28486b4fbf23ca1c8.html#a6af36b0fb7714db28486b4fbf23ca1c8',1,'AudioPlayer.hpp']]],
-  ['fadedelayy',['fadeDelayY',['../_audio_player_8hpp_ae2787a3be0d61dbab4ce128e623834a3.html#ae2787a3be0d61dbab4ce128e623834a3',1,'AudioPlayer.hpp']]],
-  ['fadescalex',['fadeScaleX',['../_audio_player_8hpp_af49b7c8f6419a65cd1024a166339a8ae.html#af49b7c8f6419a65cd1024a166339a8ae',1,'AudioPlayer.hpp']]],
-  ['fadescaley',['fadeScaleY',['../_audio_player_8hpp_aacfd9c51d4d11eeb7802c1b1578886ac.html#aacfd9c51d4d11eeb7802c1b1578886ac',1,'AudioPlayer.hpp']]],
+  ['fade',['fade',['../class_auris_1_1_audio_player_adbdd62f382fee79c467a9c5d4186942d.html#adbdd62f382fee79c467a9c5d4186942d',1,'Auris::AudioPlayer']]],
+  ['fadedelayx',['fadeDelayX',['../class_auris_1_1_audio_player_a649c07f1550f26bf38deb6fd28f358db.html#a649c07f1550f26bf38deb6fd28f358db',1,'Auris::AudioPlayer']]],
+  ['fadedelayy',['fadeDelayY',['../class_auris_1_1_audio_player_a321ed63521aa16330616261a46278aac.html#a321ed63521aa16330616261a46278aac',1,'Auris::AudioPlayer']]],
+  ['fadescalex',['fadeScaleX',['../class_auris_1_1_audio_player_aaeea71fb5b725ea1e7d5ec26f281e104.html#aaeea71fb5b725ea1e7d5ec26f281e104',1,'Auris::AudioPlayer']]],
+  ['fadescaley',['fadeScaleY',['../class_auris_1_1_audio_player_afd8664847907f5bef07feb0a257fa175.html#afd8664847907f5bef07feb0a257fa175',1,'Auris::AudioPlayer']]],
   ['farplane',['farPlane',['../class_auris_1_1_camera_a63358a3f77820a9f2d7a0d2d82b5355f.html#a63358a3f77820a9f2d7a0d2d82b5355f',1,'Auris::Camera']]],
   ['finalcolors',['finalColors',['../class_auris_1_1_particle_system_aff217c4e8f19e7c136d8bac7bea2b835.html#aff217c4e8f19e7c136d8bac7bea2b835',1,'Auris::ParticleSystem']]],
   ['finalpositions',['finalPositions',['../class_auris_1_1_particle_system_a7925ae32f8ed70ab998fde4897813618.html#a7925ae32f8ed70ab998fde4897813618',1,'Auris::ParticleSystem']]],

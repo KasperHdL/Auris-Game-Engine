@@ -1,7 +1,7 @@
 var searchData=
 [
   ['_7eanimation',['~Animation',['../class_auris_1_1_animation_a401b68793d4fbf48d481c030ee4b2a16.html#a401b68793d4fbf48d481c030ee4b2a16',1,'Auris::Animation']]],
-  ['_7eaudioplayer',['~AudioPlayer',['../_audio_player_8hpp_adf3cf77acdb29518df8c24aa53c14559.html#adf3cf77acdb29518df8c24aa53c14559',1,'AudioPlayer.hpp']]],
+  ['_7eaudioplayer',['~AudioPlayer',['../class_auris_1_1_audio_player_aedb51bfbb1bc29bd8482f9705bfc11ba.html#aedb51bfbb1bc29bd8482f9705bfc11ba',1,'Auris::AudioPlayer']]],
   ['_7ecamera',['~Camera',['../class_auris_1_1_camera_ad1897942d0ccf91052386388a497349f.html#ad1897942d0ccf91052386388a497349f',1,'Auris::Camera']]],
   ['_7eengine',['~Engine',['../class_auris_1_1_engine_acf488394e89c512c34aff0b6798a3383.html#acf488394e89c512c34aff0b6798a3383',1,'Auris::Engine']]],
   ['_7eentity',['~Entity',['../class_auris_1_1_entity_a242caae0bcc5ef026a11d058a524e0fc.html#a242caae0bcc5ef026a11d058a524e0fc',1,'Auris::Entity']]],
