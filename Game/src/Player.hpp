@@ -319,7 +319,7 @@ public:
                     applyForce(vec2(1, 0) * leftStickX * movementSpeed * airHandicap, true);
             }
 
-            if (rightStick != vec2(0, 0)) {
+            if (glm::length<float>(rightStick) > .1f) {
                 aimDirection = rightStick;
 
                 aiming = true;
