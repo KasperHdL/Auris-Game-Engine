@@ -35,7 +35,7 @@ class Light : public Entity{
         //! The light contructor taking 1-3 arguments.
             /*! Initializes a light with the input arguments.
              * \param position a vec2, that is the position of the light (default vec2(0,0)).
-             * \param type a Light::Type, that is the type of light (default Point).
+             * \param lightType a Light::Type, that is the type of light (default Point).
              * \param lightNum an integer, overrides the automatic numbering, There can only be 4 rendered lights.
             */
         Light(vec2 position = vec2(0,0), Type lightType = Point, int lightNum = -1);
