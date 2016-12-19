@@ -1,0 +1,27 @@
+var class_auris_1_1_transform =
+[
+    [ "Transform", "class_auris_1_1_transform_a570777d3bdad87fedf2250980d2951f7.html#a570777d3bdad87fedf2250980d2951f7", null ],
+    [ "addToPosition", "class_auris_1_1_transform_aef846b158dca091db191885972850448.html#aef846b158dca091db191885972850448", null ],
+    [ "addToPosition", "class_auris_1_1_transform_a64f7d06f0650a44479e2f370ed532f23.html#a64f7d06f0650a44479e2f370ed532f23", null ],
+    [ "addToRotation", "class_auris_1_1_transform_a23daf4d628ebc05618e00ae9dd257cbe.html#a23daf4d628ebc05618e00ae9dd257cbe", null ],
+    [ "addToScale", "class_auris_1_1_transform_af41b59913ff2c8c989e9fd7be02c80e5.html#af41b59913ff2c8c989e9fd7be02c80e5", null ],
+    [ "getGlobal", "class_auris_1_1_transform_a32ca00b2df1d13bbf2e6057470f9ae19.html#a32ca00b2df1d13bbf2e6057470f9ae19", null ],
+    [ "getGlobalPosition", "class_auris_1_1_transform_ad90a1b7dfc003b686f1570ebfae0a6e8.html#ad90a1b7dfc003b686f1570ebfae0a6e8", null ],
+    [ "getLocal", "class_auris_1_1_transform_acb3bc690af90c65eed3b368b33764d32.html#acb3bc690af90c65eed3b368b33764d32", null ],
+    [ "getPosition", "class_auris_1_1_transform_ab83f0a40c1e123c7491d668039d75099.html#ab83f0a40c1e123c7491d668039d75099", null ],
+    [ "getPositionVec3", "class_auris_1_1_transform_a956da9550bb39eba038d9a313bd06abb.html#a956da9550bb39eba038d9a313bd06abb", null ],
+    [ "getRotation", "class_auris_1_1_transform_ab502fca53ae3f8186f06de4625df015b.html#ab502fca53ae3f8186f06de4625df015b", null ],
+    [ "getScale", "class_auris_1_1_transform_a4d4308b3f4bd6b1a8a8bcdaff58d12f3.html#a4d4308b3f4bd6b1a8a8bcdaff58d12f3", null ],
+    [ "getZ", "class_auris_1_1_transform_ae3431c39df7cb9fcd828ace5305eb196.html#ae3431c39df7cb9fcd828ace5305eb196", null ],
+    [ "setPosition", "class_auris_1_1_transform_a5b53f8e89541daaade4923cc9b91d0cd.html#a5b53f8e89541daaade4923cc9b91d0cd", null ],
+    [ "setPosition", "class_auris_1_1_transform_ad432898272377ba217dd21e14cf20463.html#ad432898272377ba217dd21e14cf20463", null ],
+    [ "setRotation", "class_auris_1_1_transform_a419adc467c63de962b24d2cabf1a30e3.html#a419adc467c63de962b24d2cabf1a30e3", null ],
+    [ "setScale", "class_auris_1_1_transform_a70dd0ef78e9e168173dbbcb752939105.html#a70dd0ef78e9e168173dbbcb752939105", null ],
+    [ "setScale", "class_auris_1_1_transform_af66bf1e011435be50a2321764b617616.html#af66bf1e011435be50a2321764b617616", null ],
+    [ "dirty", "class_auris_1_1_transform_af1ea5e2815d6bad804563c73d4b38562.html#af1ea5e2815d6bad804563c73d4b38562", null ],
+    [ "lastOffset", "class_auris_1_1_transform_a41303baa3af436b3283f3c636cc21f0b.html#a41303baa3af436b3283f3c636cc21f0b", null ],
+    [ "localTransform", "class_auris_1_1_transform_a32b9e8ff70cf19cf65029b240baa2771.html#a32b9e8ff70cf19cf65029b240baa2771", null ],
+    [ "position", "class_auris_1_1_transform_a6184bd4398d0c901af426a4e7093f91b.html#a6184bd4398d0c901af426a4e7093f91b", null ],
+    [ "rotation", "class_auris_1_1_transform_af92006823e5d417afabc2a6c736062ac.html#af92006823e5d417afabc2a6c736062ac", null ],
+    [ "scale", "class_auris_1_1_transform_a3520d5ee263cb3082a99625437fa252f.html#a3520d5ee263cb3082a99625437fa252f", null ]
+];

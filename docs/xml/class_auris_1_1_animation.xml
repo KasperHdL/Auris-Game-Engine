@@ -1,0 +1,393 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.12">
+  <compounddef id="class_auris_1_1_animation" kind="class" language="C++" prot="public">
+    <compoundname>Auris::Animation</compoundname>
+    <basecompoundref refid="class_auris_1_1_nugget" prot="public" virt="non-virtual">Auris::Nugget</basecompoundref>
+    <includes refid="_animation_8hpp" local="no">Animation.hpp</includes>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="class_auris_1_1_animation_a95ccaaa24a4f0c3633fef57cc40df062_1a95ccaaa24a4f0c3633fef57cc40df062" prot="public" static="no" mutable="no">
+        <type>std::vector&lt; <ref refid="class_auris_1_1_mesh" kindref="compound">Mesh</ref> * &gt;</type>
+        <definition>std::vector&lt;Mesh*&gt; Auris::Animation::meshes</definition>
+        <argsstring></argsstring>
+        <name>meshes</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>A vector of <ref refid="class_auris_1_1_mesh" kindref="compound">Mesh</ref> pointer: meshes. Reference to all the meshes in the animation. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Projects/GameEngine/include/Auris/Entities/Nuggets/Animation.hpp" line="23" column="1" bodyfile="Projects/GameEngine/include/Auris/Entities/Nuggets/Animation.hpp" bodystart="23" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_auris_1_1_animation_a72063941bfd721f8d46c21799cb84abf_1a72063941bfd721f8d46c21799cb84abf" prot="public" static="no" mutable="no">
+        <type>std::vector&lt; <ref refid="class_auris_1_1_mesh" kindref="compound">Mesh</ref> * &gt;</type>
+        <definition>std::vector&lt;Mesh*&gt; Auris::Animation::flipped_meshes</definition>
+        <argsstring></argsstring>
+        <name>flipped_meshes</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>A vector of <ref refid="class_auris_1_1_mesh" kindref="compound">Mesh</ref> pointer: flipped_meshes. Reference to all the flipped meshes in the animation, makeSequence must be called with createFlipped = true <simplesect kind="see"><para><ref refid="class_auris_1_1_animation_a7378d481c386347ecf022265d3f147f5_1a7378d481c386347ecf022265d3f147f5" kindref="member">makeSequence()</ref> </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Projects/GameEngine/include/Auris/Entities/Nuggets/Animation.hpp" line="24" column="1" bodyfile="Projects/GameEngine/include/Auris/Entities/Nuggets/Animation.hpp" bodystart="24" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="class_auris_1_1_animation_a12184b1a8009be0427805f15311abeba_1a12184b1a8009be0427805f15311abeba" prot="private" static="no" mutable="no">
+        <type>float</type>
+        <definition>float Auris::Animation::length</definition>
+        <argsstring></argsstring>
+        <name>length</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>A float value: length. The length of the animation. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Projects/GameEngine/include/Auris/Entities/Nuggets/Animation.hpp" line="70" column="1" bodyfile="Projects/GameEngine/include/Auris/Entities/Nuggets/Animation.hpp" bodystart="70" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_auris_1_1_animation_a3099a4886d0a7e38d78458f5d7d3c660_1a3099a4886d0a7e38d78458f5d7d3c660" prot="private" static="no" mutable="no">
+        <type>float</type>
+        <definition>float Auris::Animation::frameLength</definition>
+        <argsstring></argsstring>
+        <name>frameLength</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>A float value: frameLength. The length of each frame. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Projects/GameEngine/include/Auris/Entities/Nuggets/Animation.hpp" line="71" column="1" bodyfile="Projects/GameEngine/include/Auris/Entities/Nuggets/Animation.hpp" bodystart="71" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_auris_1_1_animation_ad6faedcbbecb0304cc5bfbab9dd5e9f9_1ad6faedcbbecb0304cc5bfbab9dd5e9f9" prot="private" static="no" mutable="no">
+        <type>float</type>
+        <definition>float Auris::Animation::time</definition>
+        <argsstring></argsstring>
+        <name>time</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>A float value: time. The current animation time. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Projects/GameEngine/include/Auris/Entities/Nuggets/Animation.hpp" line="72" column="1" bodyfile="Projects/GameEngine/include/Auris/Entities/Nuggets/Animation.hpp" bodystart="72" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_auris_1_1_animation_add78e2865a03c1717c7d6f7c7be9cae5_1add78e2865a03c1717c7d6f7c7be9cae5" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int Auris::Animation::index</definition>
+        <argsstring></argsstring>
+        <name>index</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>An int value: index. The index of the current frame. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Projects/GameEngine/include/Auris/Entities/Nuggets/Animation.hpp" line="73" column="1" bodyfile="Projects/GameEngine/include/Auris/Entities/Nuggets/Animation.hpp" bodystart="73" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_auris_1_1_animation_a401b68793d4fbf48d481c030ee4b2a16_1a401b68793d4fbf48d481c030ee4b2a16" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Animation::~Animation</definition>
+        <argsstring>()</argsstring>
+        <name>~Animation</name>
+        <briefdescription>
+<para>The <ref refid="class_auris_1_1_animation" kindref="compound">Animation</ref> destructor. </para>        </briefdescription>
+        <detaileddescription>
+<para>Clears all the meshes associated with the animation </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Projects/GameEngine/include/Auris/Entities/Nuggets/Animation.hpp" line="29" column="1" bodyfile="Projects/GameEngine/Auris/src/Auris/Entities/Nuggets/Animation.cpp" bodystart="10" bodyend="12"/>
+      </memberdef>
+      <memberdef kind="function" id="class_auris_1_1_animation_af7f1c934810a9bdb4fa26df7879feda9_1af7f1c934810a9bdb4fa26df7879feda9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Animation::Animation</definition>
+        <argsstring>(Entity *entity, float length)</argsstring>
+        <name>Animation</name>
+        <param>
+          <type><ref refid="class_auris_1_1_entity" kindref="compound">Entity</ref> *</type>
+          <declname>entity</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>length</declname>
+        </param>
+        <briefdescription>
+<para>The <ref refid="class_auris_1_1_animation" kindref="compound">Animation</ref> contructor, taking 2 arguments. </para>        </briefdescription>
+        <detaileddescription>
+<para>Which saves the length of the animation and also have a reference to the entity it is associated with <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>entity</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>an <ref refid="class_auris_1_1_entity" kindref="compound">Entity</ref> pointer, that is a reference to the entity the animation is associated with. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>length</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>a float. The length of the animation. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Projects/GameEngine/include/Auris/Entities/Nuggets/Animation.hpp" line="36" column="1" bodyfile="Projects/GameEngine/Auris/src/Auris/Entities/Nuggets/Animation.cpp" bodystart="4" bodyend="8"/>
+      </memberdef>
+      <memberdef kind="function" id="class_auris_1_1_animation_a4810743b66354cf556113f4e7a49fc43_1a4810743b66354cf556113f4e7a49fc43" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Animation::addMesh</definition>
+        <argsstring>(Mesh *mesh)</argsstring>
+        <name>addMesh</name>
+        <param>
+          <type><ref refid="class_auris_1_1_mesh" kindref="compound">Mesh</ref> *</type>
+          <declname>mesh</declname>
+        </param>
+        <briefdescription>
+<para>The method addMesh, taking 1 argument. </para>        </briefdescription>
+        <detaileddescription>
+<para>Adds a mesh to the vector of all meshes <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>mesh</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>a <ref refid="class_auris_1_1_mesh" kindref="compound">Mesh</ref> pointer, that is the mesh to add </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Projects/GameEngine/include/Auris/Entities/Nuggets/Animation.hpp" line="43" column="1" bodyfile="Projects/GameEngine/Auris/src/Auris/Entities/Nuggets/Animation.cpp" bodystart="14" bodyend="16"/>
+      </memberdef>
+      <memberdef kind="function" id="class_auris_1_1_animation_ab1e642994bdf9a71a464f1b961bbd413_1ab1e642994bdf9a71a464f1b961bbd413" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Animation::setSheet</definition>
+        <argsstring>(SpriteSheet *spritesheet)</argsstring>
+        <name>setSheet</name>
+        <param>
+          <type><ref refid="class_auris_1_1_sprite_sheet" kindref="compound">SpriteSheet</ref> *</type>
+          <declname>spritesheet</declname>
+        </param>
+        <briefdescription>
+<para>The method setSheet, taking 1 argument. </para>        </briefdescription>
+        <detaileddescription>
+<para>Set the spritesheet of the animation <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>spritesheet</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>a <ref refid="class_auris_1_1_sprite_sheet" kindref="compound">SpriteSheet</ref> pointer, that is the spritesheet to add </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Projects/GameEngine/include/Auris/Entities/Nuggets/Animation.hpp" line="50" column="1" bodyfile="Projects/GameEngine/Auris/src/Auris/Entities/Nuggets/Animation.cpp" bodystart="18" bodyend="22"/>
+      </memberdef>
+      <memberdef kind="function" id="class_auris_1_1_animation_a7378d481c386347ecf022265d3f147f5_1a7378d481c386347ecf022265d3f147f5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Animation::makeSequence</definition>
+        <argsstring>(SpriteSheet *spritesheet, std::string name, bool createFlipped=false)</argsstring>
+        <name>makeSequence</name>
+        <param>
+          <type><ref refid="class_auris_1_1_sprite_sheet" kindref="compound">SpriteSheet</ref> *</type>
+          <declname>spritesheet</declname>
+        </param>
+        <param>
+          <type>std::string</type>
+          <declname>name</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>createFlipped</declname>
+          <defval>false</defval>
+        </param>
+        <briefdescription>
+<para>The method makeSequence, taking 2-3 arguments. </para>        </briefdescription>
+        <detaileddescription>
+<para>Make the animation use a sequence of sprites in a spritesheet <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>spritesheet</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>a <ref refid="class_auris_1_1_sprite_sheet" kindref="compound">SpriteSheet</ref> pointer. The spritesheet to add </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>name</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>a string. The name of the sequence in the spritesheet </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>createFlipped</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>a bool. If the sprite should be flipped or not. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Projects/GameEngine/include/Auris/Entities/Nuggets/Animation.hpp" line="59" column="1" bodyfile="Projects/GameEngine/Auris/src/Auris/Entities/Nuggets/Animation.cpp" bodystart="24" bodyend="35"/>
+      </memberdef>
+      <memberdef kind="function" id="class_auris_1_1_animation_a08875cceefe6d571f2ce6456cdf5e482_1a08875cceefe6d571f2ce6456cdf5e482" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Animation::run</definition>
+        <argsstring>(Sprite *sprite, float dt, bool getFlipped=false)</argsstring>
+        <name>run</name>
+        <param>
+          <type><ref refid="class_auris_1_1_sprite" kindref="compound">Sprite</ref> *</type>
+          <declname>sprite</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>dt</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>getFlipped</declname>
+          <defval>false</defval>
+        </param>
+        <briefdescription>
+<para>The method run, taking 2 arguments. </para>        </briefdescription>
+        <detaileddescription>
+<para>Makes the animation execute <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>sprite</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>a <ref refid="class_auris_1_1_sprite" kindref="compound">Sprite</ref> pointer, that is the sprite to add the animation to </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>dt</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>a float, that is the delta time </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>getFlipped</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>a bool. If the sprite is flipped or not. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Projects/GameEngine/include/Auris/Entities/Nuggets/Animation.hpp" line="67" column="1" bodyfile="Projects/GameEngine/Auris/src/Auris/Entities/Nuggets/Animation.cpp" bodystart="37" bodyend="51"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>The <ref refid="class_auris_1_1_animation" kindref="compound">Animation</ref> class that extend the <ref refid="class_auris_1_1_nugget" kindref="compound">Nugget</ref> class. </para>    </briefdescription>
+    <detaileddescription>
+<para>Used to make sprite animations </para>    </detaileddescription>
+    <inheritancegraph>
+      <node id="9">
+        <label>Auris::Nugget</label>
+        <link refid="class_auris_1_1_nugget"/>
+      </node>
+      <node id="8">
+        <label>Auris::Animation</label>
+        <link refid="class_auris_1_1_animation"/>
+        <childnode refid="9" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="15">
+        <label>std::vector&lt; Auris::Entity *&gt;</label>
+        <childnode refid="12" relation="usage">
+          <edgelabel>elements</edgelabel>
+        </childnode>
+      </node>
+      <node id="17">
+        <label>std::vector&lt; Auris::Mesh *&gt;</label>
+        <childnode refid="18" relation="usage">
+          <edgelabel>elements</edgelabel>
+        </childnode>
+      </node>
+      <node id="19">
+        <label>SRE::Mesh</label>
+      </node>
+      <node id="16">
+        <label>Auris::Transform</label>
+        <link refid="class_auris_1_1_transform"/>
+        <childnode refid="11" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="18">
+        <label>Auris::Mesh</label>
+        <link refid="class_auris_1_1_mesh"/>
+        <childnode refid="19" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="14">
+        <label>std::basic_string&lt; char &gt;</label>
+      </node>
+      <node id="11">
+        <label>Auris::Nugget</label>
+        <link refid="class_auris_1_1_nugget"/>
+        <childnode refid="12" relation="usage">
+          <edgelabel>entity</edgelabel>
+        </childnode>
+      </node>
+      <node id="12">
+        <label>Auris::Entity</label>
+        <link refid="class_auris_1_1_entity"/>
+        <childnode refid="13" relation="usage">
+          <edgelabel>type</edgelabel>
+          <edgelabel>name</edgelabel>
+        </childnode>
+        <childnode refid="15" relation="usage">
+          <edgelabel>children</edgelabel>
+        </childnode>
+        <childnode refid="12" relation="usage">
+          <edgelabel>parent</edgelabel>
+        </childnode>
+        <childnode refid="16" relation="usage">
+          <edgelabel>transform</edgelabel>
+        </childnode>
+      </node>
+      <node id="10">
+        <label>Auris::Animation</label>
+        <link refid="class_auris_1_1_animation"/>
+        <childnode refid="11" relation="public-inheritance">
+        </childnode>
+        <childnode refid="17" relation="usage">
+          <edgelabel>meshes</edgelabel>
+          <edgelabel>flipped_meshes</edgelabel>
+        </childnode>
+      </node>
+      <node id="13">
+        <label>std::string</label>
+        <childnode refid="14" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="Projects/GameEngine/include/Auris/Entities/Nuggets/Animation.hpp" line="20" column="1" bodyfile="Projects/GameEngine/include/Auris/Entities/Nuggets/Animation.hpp" bodystart="20" bodyend="74"/>
+    <listofallmembers>
+      <member refid="class_auris_1_1_animation_a4810743b66354cf556113f4e7a49fc43_1a4810743b66354cf556113f4e7a49fc43" prot="public" virt="non-virtual"><scope>Auris::Animation</scope><name>addMesh</name></member>
+      <member refid="class_auris_1_1_animation_af7f1c934810a9bdb4fa26df7879feda9_1af7f1c934810a9bdb4fa26df7879feda9" prot="public" virt="non-virtual"><scope>Auris::Animation</scope><name>Animation</name></member>
+      <member refid="class_auris_1_1_nugget_ada3978459953aa06dfbf934c3c11371b_1ada3978459953aa06dfbf934c3c11371b" prot="public" virt="non-virtual"><scope>Auris::Animation</scope><name>entity</name></member>
+      <member refid="class_auris_1_1_animation_a72063941bfd721f8d46c21799cb84abf_1a72063941bfd721f8d46c21799cb84abf" prot="public" virt="non-virtual"><scope>Auris::Animation</scope><name>flipped_meshes</name></member>
+      <member refid="class_auris_1_1_animation_a3099a4886d0a7e38d78458f5d7d3c660_1a3099a4886d0a7e38d78458f5d7d3c660" prot="private" virt="non-virtual"><scope>Auris::Animation</scope><name>frameLength</name></member>
+      <member refid="class_auris_1_1_animation_add78e2865a03c1717c7d6f7c7be9cae5_1add78e2865a03c1717c7d6f7c7be9cae5" prot="private" virt="non-virtual"><scope>Auris::Animation</scope><name>index</name></member>
+      <member refid="class_auris_1_1_animation_a12184b1a8009be0427805f15311abeba_1a12184b1a8009be0427805f15311abeba" prot="private" virt="non-virtual"><scope>Auris::Animation</scope><name>length</name></member>
+      <member refid="class_auris_1_1_animation_a7378d481c386347ecf022265d3f147f5_1a7378d481c386347ecf022265d3f147f5" prot="public" virt="non-virtual"><scope>Auris::Animation</scope><name>makeSequence</name></member>
+      <member refid="class_auris_1_1_animation_a95ccaaa24a4f0c3633fef57cc40df062_1a95ccaaa24a4f0c3633fef57cc40df062" prot="public" virt="non-virtual"><scope>Auris::Animation</scope><name>meshes</name></member>
+      <member refid="class_auris_1_1_nugget_aa69f1dec0d68dc98193efd3c39e254de_1aa69f1dec0d68dc98193efd3c39e254de" prot="public" virt="non-virtual"><scope>Auris::Animation</scope><name>Nugget</name></member>
+      <member refid="class_auris_1_1_animation_a08875cceefe6d571f2ce6456cdf5e482_1a08875cceefe6d571f2ce6456cdf5e482" prot="public" virt="non-virtual"><scope>Auris::Animation</scope><name>run</name></member>
+      <member refid="class_auris_1_1_animation_ab1e642994bdf9a71a464f1b961bbd413_1ab1e642994bdf9a71a464f1b961bbd413" prot="public" virt="non-virtual"><scope>Auris::Animation</scope><name>setSheet</name></member>
+      <member refid="class_auris_1_1_animation_ad6faedcbbecb0304cc5bfbab9dd5e9f9_1ad6faedcbbecb0304cc5bfbab9dd5e9f9" prot="private" virt="non-virtual"><scope>Auris::Animation</scope><name>time</name></member>
+      <member refid="class_auris_1_1_animation_a401b68793d4fbf48d481c030ee4b2a16_1a401b68793d4fbf48d481c030ee4b2a16" prot="public" virt="non-virtual"><scope>Auris::Animation</scope><name>~Animation</name></member>
+      <member refid="class_auris_1_1_nugget_aae7ccecfc83aebef8f15889921b69ba8_1aae7ccecfc83aebef8f15889921b69ba8" prot="public" virt="virtual"><scope>Auris::Animation</scope><name>~Nugget</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

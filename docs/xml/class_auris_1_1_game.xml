@@ -1,0 +1,415 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.12">
+  <compounddef id="class_auris_1_1_game" kind="class" language="C++" prot="public" abstract="yes">
+    <compoundname>Auris::Game</compoundname>
+    <includes refid="_game_8hpp" local="no">Game.hpp</includes>
+      <sectiondef kind="public-static-attrib">
+      <memberdef kind="variable" id="class_auris_1_1_game_a50f15740b9fdd322e9dfacc834825beb_1a50f15740b9fdd322e9dfacc834825beb" prot="public" static="yes" mutable="no">
+        <type><ref refid="class_auris_1_1_game" kindref="compound">Game</ref> *</type>
+        <definition>Game * Auris::Game::instance</definition>
+        <argsstring></argsstring>
+        <name>instance</name>
+        <initializer>= nullptr</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Projects/GameEngine/include/Auris/Game.hpp" line="19" column="1" bodyfile="Projects/GameEngine/include/Auris/Game.hpp" bodystart="19" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="class_auris_1_1_game_a286ba7ab481950e767bb417c7c1c4f74_1a286ba7ab481950e767bb417c7c1c4f74" prot="public" static="no" mutable="no">
+        <type><ref refid="class_auris_1_1_camera" kindref="compound">Camera</ref> *</type>
+        <definition>Camera* Auris::Game::camera</definition>
+        <argsstring></argsstring>
+        <name>camera</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>An <ref refid="class_auris_1_1_camera" kindref="compound">Auris::Camera</ref> pointer. A reference to a camera, can be used to control the game camera. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Projects/GameEngine/include/Auris/Game.hpp" line="22" column="1" bodyfile="Projects/GameEngine/include/Auris/Game.hpp" bodystart="22" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_auris_1_1_game_aa12d34ffb39447721bc30093188cfcea_1aa12d34ffb39447721bc30093188cfcea" prot="public" static="no" mutable="no">
+        <type>std::vector&lt; std::shared_ptr&lt; <ref refid="class_auris_1_1_entity" kindref="compound">Entity</ref> &gt; &gt;</type>
+        <definition>std::vector&lt;std::shared_ptr&lt;Entity&gt; &gt; Auris::Game::entities</definition>
+        <argsstring></argsstring>
+        <name>entities</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>A vector value: entities, of shared pointers of <ref refid="class_auris_1_1_entity" kindref="compound">Entity</ref> instances. Holds all entities of the game. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Projects/GameEngine/include/Auris/Game.hpp" line="101" column="1" bodyfile="Projects/GameEngine/include/Auris/Game.hpp" bodystart="101" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_auris_1_1_game_a7d0704c12f24de28646bcc2eb6944ccc_1a7d0704c12f24de28646bcc2eb6944ccc" prot="public" static="no" mutable="no">
+        <type>std::vector&lt; int &gt;</type>
+        <definition>std::vector&lt;int&gt; Auris::Game::destroyEntities</definition>
+        <argsstring></argsstring>
+        <name>destroyEntities</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>A vector value: destroyEntities, of integers. Holds the indexes of all gameobjects that are going to be destroyed this loop </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Projects/GameEngine/include/Auris/Game.hpp" line="102" column="1" bodyfile="Projects/GameEngine/include/Auris/Game.hpp" bodystart="102" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_auris_1_1_game_ae2b8f970b284875d28470703e2a5120f_1ae2b8f970b284875d28470703e2a5120f" prot="public" static="no" mutable="no">
+        <type>std::vector&lt; std::shared_ptr&lt; <ref refid="class_auris_1_1_entity" kindref="compound">Entity</ref> &gt; &gt;</type>
+        <definition>std::vector&lt;std::shared_ptr&lt;Entity&gt; &gt; Auris::Game::newEntities</definition>
+        <argsstring></argsstring>
+        <name>newEntities</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>A vector value: newEntities, of shared pointers of <ref refid="class_auris_1_1_entity" kindref="compound">Entity</ref> instances. Holds the entities that are going to be added this loop </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Projects/GameEngine/include/Auris/Game.hpp" line="103" column="1" bodyfile="Projects/GameEngine/include/Auris/Game.hpp" bodystart="103" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_auris_1_1_game_aaba6c00201f2913eb413ec3179ffe787_1aaba6c00201f2913eb413ec3179ffe787" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Auris::Game::Game</definition>
+        <argsstring>()</argsstring>
+        <name>Game</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Projects/GameEngine/include/Auris/Game.hpp" line="20" column="1" bodyfile="Projects/GameEngine/Auris/src/Auris/Game.cpp" bodystart="6" bodyend="11"/>
+      </memberdef>
+      <memberdef kind="function" id="class_auris_1_1_game_a2e991391326df5329ef43f0279bfbc99_1a2e991391326df5329ef43f0279bfbc99" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>void</type>
+        <definition>virtual void Auris::Game::init</definition>
+        <argsstring>()=0</argsstring>
+        <name>init</name>
+        <briefdescription>
+<para>The scriptable function init. </para>        </briefdescription>
+        <detaileddescription>
+<para>Used by the game programmer to add initial functionality to the game. Called upon initialization (Required to implement). </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Projects/GameEngine/include/Auris/Game.hpp" line="29" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="class_auris_1_1_game_aed175ae3d18d32eb2c8bacda61c951e9_1aed175ae3d18d32eb2c8bacda61c951e9" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>void</type>
+        <definition>virtual void Auris::Game::earlyUpdate</definition>
+        <argsstring>(float dt)=0</argsstring>
+        <name>earlyUpdate</name>
+        <param>
+          <type>float</type>
+          <declname>dt</declname>
+        </param>
+        <briefdescription>
+<para>The scriptable function earlyUpdate, taking 1 argument. </para>        </briefdescription>
+        <detaileddescription>
+<para>Used by the game programmer to add early update functionality to the game. Called every frame early in the update loop (Required to implement). <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>dt</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>a float value. The current delta time in seconds. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Projects/GameEngine/include/Auris/Game.hpp" line="37" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="class_auris_1_1_game_aa42e3e6abded33c17983933d5c91000d_1aa42e3e6abded33c17983933d5c91000d" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>void</type>
+        <definition>virtual void Auris::Game::update</definition>
+        <argsstring>(float dt)=0</argsstring>
+        <name>update</name>
+        <param>
+          <type>float</type>
+          <declname>dt</declname>
+        </param>
+        <briefdescription>
+<para>The scriptable function update, taking 1 argument. </para>        </briefdescription>
+        <detaileddescription>
+<para>Used by the game programmer to add update functionality to the game. Called every frame in the update loop (Required to implement). <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>dt</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>a float value. The current delta time in seconds. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Projects/GameEngine/include/Auris/Game.hpp" line="45" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="class_auris_1_1_game_a4e4fd46b145b4e18b508a7a3886a63e4_1a4e4fd46b145b4e18b508a7a3886a63e4" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>void</type>
+        <definition>virtual void Auris::Game::lateUpdate</definition>
+        <argsstring>(float dt)=0</argsstring>
+        <name>lateUpdate</name>
+        <param>
+          <type>float</type>
+          <declname>dt</declname>
+        </param>
+        <briefdescription>
+<para>The scriptable function lateUpdate, taking 1 argument. </para>        </briefdescription>
+        <detaileddescription>
+<para>Used by the game programmer to add late update functionality to the game. Called every frame late in the update loop (Required to implement). <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>dt</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>a float value. The current delta time in seconds. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Projects/GameEngine/include/Auris/Game.hpp" line="53" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="class_auris_1_1_game_a6ba21d302019f809918ed8b3253eafa4_1a6ba21d302019f809918ed8b3253eafa4" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type>void</type>
+        <definition>virtual void Auris::Game::drawDebugImGui</definition>
+        <argsstring>()</argsstring>
+        <name>drawDebugImGui</name>
+        <briefdescription>
+<para>The scriptable function drawDebugImGui. </para>        </briefdescription>
+        <detaileddescription>
+<para>Used by the game programmer to add debug imgui functionality to the game. Called every frame, when the engine debug imgui is drawed. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Projects/GameEngine/include/Auris/Game.hpp" line="60" column="1" bodyfile="Projects/GameEngine/include/Auris/Game.hpp" bodystart="60" bodyend="60"/>
+      </memberdef>
+      <memberdef kind="function" id="class_auris_1_1_game_a937dec67b19fab029728ad98be70a022_1a937dec67b19fab029728ad98be70a022" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>void</type>
+        <definition>virtual void Auris::Game::shutdown</definition>
+        <argsstring>()=0</argsstring>
+        <name>shutdown</name>
+        <briefdescription>
+<para>The scriptable function shutdown. </para>        </briefdescription>
+        <detaileddescription>
+<para>Used by the game programmer to add shutdowm functionality to the game. Called when the game is shutdown (Required to implement). </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Projects/GameEngine/include/Auris/Game.hpp" line="67" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="class_auris_1_1_game_aa7082a7bfd8307b2797d19a16309a67e_1aa7082a7bfd8307b2797d19a16309a67e" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type>void</type>
+        <definition>virtual void Auris::Game::controllerConnected</definition>
+        <argsstring>()</argsstring>
+        <name>controllerConnected</name>
+        <briefdescription>
+<para>The scriptable function controllerConnected. </para>        </briefdescription>
+        <detaileddescription>
+<para>Used by the game programmer to add functionality to when a controller is connected. Called when a controller is connected to the pc. <simplesect kind="see"><para><ref refid="class_auris_1_1_game_a16dd25de0c3dac4d369205628d491958_1a16dd25de0c3dac4d369205628d491958" kindref="member">controllerActivated(int controllerID)</ref> </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Projects/GameEngine/include/Auris/Game.hpp" line="75" column="1" bodyfile="Projects/GameEngine/include/Auris/Game.hpp" bodystart="75" bodyend="75"/>
+      </memberdef>
+      <memberdef kind="function" id="class_auris_1_1_game_a16dd25de0c3dac4d369205628d491958_1a16dd25de0c3dac4d369205628d491958" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type>void</type>
+        <definition>virtual void Auris::Game::controllerActivated</definition>
+        <argsstring>(int controllerID)</argsstring>
+        <name>controllerActivated</name>
+        <param>
+          <type>int</type>
+          <declname>controllerID</declname>
+        </param>
+        <briefdescription>
+<para>The scriptable function controllerActivated, taking 1 argument. </para>        </briefdescription>
+        <detaileddescription>
+<para>Used by the game programmer to add functionality to when a controller is activated. Called when a controller is activated (recognized with a button press). <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>controllerID</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>an int value, that is the controller id of the controller activated. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="see"><para><ref refid="class_auris_1_1_game_aa7082a7bfd8307b2797d19a16309a67e_1aa7082a7bfd8307b2797d19a16309a67e" kindref="member">controllerConnected()</ref> </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Projects/GameEngine/include/Auris/Game.hpp" line="84" column="1" bodyfile="Projects/GameEngine/include/Auris/Game.hpp" bodystart="84" bodyend="84"/>
+      </memberdef>
+      <memberdef kind="function" id="class_auris_1_1_game_a4c0e3d9f7b10621d7f78d253fee0f2a8_1a4c0e3d9f7b10621d7f78d253fee0f2a8" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type>void</type>
+        <definition>virtual void Auris::Game::controllerDisconnected</definition>
+        <argsstring>(int controllerID)</argsstring>
+        <name>controllerDisconnected</name>
+        <param>
+          <type>int</type>
+          <declname>controllerID</declname>
+        </param>
+        <briefdescription>
+<para>The scriptable function controllerDisconnected, taking 1 argument. </para>        </briefdescription>
+        <detaileddescription>
+<para>Used by the game programmer to functionality to when a controller is disconnected. Called when a controller is disconnected from the pc. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>controllerID</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>an int value, that is the controller id of the controller disconnected. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Projects/GameEngine/include/Auris/Game.hpp" line="92" column="1" bodyfile="Projects/GameEngine/include/Auris/Game.hpp" bodystart="92" bodyend="92"/>
+      </memberdef>
+      <memberdef kind="function" id="class_auris_1_1_game_a09ea491214cb3f885d16e8449f5a29d7_1a09ea491214cb3f885d16e8449f5a29d7" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type>void</type>
+        <definition>virtual void Auris::Game::imGui</definition>
+        <argsstring>()</argsstring>
+        <name>imGui</name>
+        <briefdescription>
+<para>The scriptable function ImGui. </para>        </briefdescription>
+        <detaileddescription>
+<para>Used by the game programmer to add GUI functionality to the game with imGui. Called every frame, after the old gui has been cleared. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Projects/GameEngine/include/Auris/Game.hpp" line="99" column="1" bodyfile="Projects/GameEngine/include/Auris/Game.hpp" bodystart="99" bodyend="99"/>
+      </memberdef>
+      <memberdef kind="function" id="class_auris_1_1_game_a07fdf70df8998018efccc60ae551dde9_1a07fdf70df8998018efccc60ae551dde9" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="class_auris_1_1_entity" kindref="compound">Entity</ref> *</type>
+        <definition>Entity* Auris::Game::addEntity</definition>
+        <argsstring>(std::shared_ptr&lt; Entity &gt; entity)</argsstring>
+        <name>addEntity</name>
+        <param>
+          <type>std::shared_ptr&lt; <ref refid="class_auris_1_1_entity" kindref="compound">Entity</ref> &gt;</type>
+          <declname>entity</declname>
+        </param>
+        <briefdescription>
+<para>A method to add enitities to the game, taking 1 argument. </para>        </briefdescription>
+        <detaileddescription>
+<para>Add the enity to the vector of all entities in the game <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>enity</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>a shared_ptr of <ref refid="class_auris_1_1_entity" kindref="compound">Entity</ref>. The entity that should be added to the game </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para><ref refid="class_auris_1_1_entity" kindref="compound">Entity</ref> pointer. The entity that was added. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Projects/GameEngine/include/Auris/Game.hpp" line="111" column="1" bodyfile="Projects/GameEngine/include/Auris/Game.hpp" bodystart="111" bodyend="115"/>
+      </memberdef>
+      <memberdef kind="function" id="class_auris_1_1_game_a753bcffedd9612af64529e661bdcb28d_1a753bcffedd9612af64529e661bdcb28d" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void Auris::Game::loadScene</definition>
+        <argsstring>(Scene *scene)</argsstring>
+        <name>loadScene</name>
+        <param>
+          <type><ref refid="class_auris_1_1_scene" kindref="compound">Scene</ref> *</type>
+          <declname>scene</declname>
+        </param>
+        <briefdescription>
+<para>A method to load a scene, taking 1 argument. </para>        </briefdescription>
+        <detaileddescription>
+<para>Loads the scene, and initialize the scene and all the enitities <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>scene</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>a <ref refid="class_auris_1_1_scene" kindref="compound">Scene</ref> pointer, that is the scene that should be loaded </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Projects/GameEngine/include/Auris/Game.hpp" line="123" column="1" bodyfile="Projects/GameEngine/include/Auris/Game.hpp" bodystart="123" bodyend="125"/>
+      </memberdef>
+      <memberdef kind="function" id="class_auris_1_1_game_aa2456e15f8e7d25228b640b940be8f9a_1aa2456e15f8e7d25228b640b940be8f9a" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void Auris::Game::destroyEntity</definition>
+        <argsstring>(Entity *entity)</argsstring>
+        <name>destroyEntity</name>
+        <param>
+          <type><ref refid="class_auris_1_1_entity" kindref="compound">Entity</ref> *</type>
+          <declname>entity</declname>
+        </param>
+        <briefdescription>
+<para>A method to destroy an entity, taking 1 argument. </para>        </briefdescription>
+        <detaileddescription>
+<para>Loops through the static vector of entities in the game and marks the entity and its children for destruction. Entities marked for destructed are removed in the last call of the <ref refid="class_auris_1_1_engine_a5ec5899526134ac2e7393b33d12b2444_1a5ec5899526134ac2e7393b33d12b2444" kindref="member">Engine::run</ref> loop. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>entity</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>an <ref refid="class_auris_1_1_entity" kindref="compound">Entity</ref> pointer, the entity to be deleted. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Projects/GameEngine/include/Auris/Game.hpp" line="135" column="1" bodyfile="Projects/GameEngine/include/Auris/Game.hpp" bodystart="135" bodyend="145"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>The game class. </para>    </briefdescription>
+    <detaileddescription>
+<para>Used to create a new game of the engine. The game programmer should extend this class to create a new game. </para>    </detaileddescription>
+    <collaborationgraph>
+      <node id="130">
+        <label>Auris::Game</label>
+        <link refid="class_auris_1_1_game"/>
+        <childnode refid="131" relation="usage">
+          <edgelabel>newEntities</edgelabel>
+          <edgelabel>entities</edgelabel>
+        </childnode>
+        <childnode refid="130" relation="usage">
+          <edgelabel>instance</edgelabel>
+        </childnode>
+        <childnode refid="132" relation="usage">
+          <edgelabel>camera</edgelabel>
+        </childnode>
+        <childnode refid="133" relation="usage">
+          <edgelabel>destroyEntities</edgelabel>
+        </childnode>
+      </node>
+      <node id="132">
+        <label>Auris::Camera</label>
+        <link refid="class_auris_1_1_camera"/>
+      </node>
+      <node id="131">
+        <label>std::vector&lt; std::shared_ptr&lt; Auris::Entity &gt; &gt;</label>
+      </node>
+      <node id="133">
+        <label>std::vector&lt; int &gt;</label>
+      </node>
+    </collaborationgraph>
+    <location file="Projects/GameEngine/include/Auris/Game.hpp" line="16" column="1" bodyfile="Projects/GameEngine/include/Auris/Game.hpp" bodystart="16" bodyend="146"/>
+    <listofallmembers>
+      <member refid="class_auris_1_1_game_a07fdf70df8998018efccc60ae551dde9_1a07fdf70df8998018efccc60ae551dde9" prot="public" virt="non-virtual"><scope>Auris::Game</scope><name>addEntity</name></member>
+      <member refid="class_auris_1_1_game_a286ba7ab481950e767bb417c7c1c4f74_1a286ba7ab481950e767bb417c7c1c4f74" prot="public" virt="non-virtual"><scope>Auris::Game</scope><name>camera</name></member>
+      <member refid="class_auris_1_1_game_a16dd25de0c3dac4d369205628d491958_1a16dd25de0c3dac4d369205628d491958" prot="public" virt="virtual"><scope>Auris::Game</scope><name>controllerActivated</name></member>
+      <member refid="class_auris_1_1_game_aa7082a7bfd8307b2797d19a16309a67e_1aa7082a7bfd8307b2797d19a16309a67e" prot="public" virt="virtual"><scope>Auris::Game</scope><name>controllerConnected</name></member>
+      <member refid="class_auris_1_1_game_a4c0e3d9f7b10621d7f78d253fee0f2a8_1a4c0e3d9f7b10621d7f78d253fee0f2a8" prot="public" virt="virtual"><scope>Auris::Game</scope><name>controllerDisconnected</name></member>
+      <member refid="class_auris_1_1_game_a7d0704c12f24de28646bcc2eb6944ccc_1a7d0704c12f24de28646bcc2eb6944ccc" prot="public" virt="non-virtual"><scope>Auris::Game</scope><name>destroyEntities</name></member>
+      <member refid="class_auris_1_1_game_aa2456e15f8e7d25228b640b940be8f9a_1aa2456e15f8e7d25228b640b940be8f9a" prot="public" virt="non-virtual"><scope>Auris::Game</scope><name>destroyEntity</name></member>
+      <member refid="class_auris_1_1_game_a6ba21d302019f809918ed8b3253eafa4_1a6ba21d302019f809918ed8b3253eafa4" prot="public" virt="virtual"><scope>Auris::Game</scope><name>drawDebugImGui</name></member>
+      <member refid="class_auris_1_1_game_aed175ae3d18d32eb2c8bacda61c951e9_1aed175ae3d18d32eb2c8bacda61c951e9" prot="public" virt="pure-virtual"><scope>Auris::Game</scope><name>earlyUpdate</name></member>
+      <member refid="class_auris_1_1_game_aa12d34ffb39447721bc30093188cfcea_1aa12d34ffb39447721bc30093188cfcea" prot="public" virt="non-virtual"><scope>Auris::Game</scope><name>entities</name></member>
+      <member refid="class_auris_1_1_game_aaba6c00201f2913eb413ec3179ffe787_1aaba6c00201f2913eb413ec3179ffe787" prot="public" virt="non-virtual"><scope>Auris::Game</scope><name>Game</name></member>
+      <member refid="class_auris_1_1_game_a09ea491214cb3f885d16e8449f5a29d7_1a09ea491214cb3f885d16e8449f5a29d7" prot="public" virt="virtual"><scope>Auris::Game</scope><name>imGui</name></member>
+      <member refid="class_auris_1_1_game_a2e991391326df5329ef43f0279bfbc99_1a2e991391326df5329ef43f0279bfbc99" prot="public" virt="pure-virtual"><scope>Auris::Game</scope><name>init</name></member>
+      <member refid="class_auris_1_1_game_a50f15740b9fdd322e9dfacc834825beb_1a50f15740b9fdd322e9dfacc834825beb" prot="public" virt="non-virtual"><scope>Auris::Game</scope><name>instance</name></member>
+      <member refid="class_auris_1_1_game_a4e4fd46b145b4e18b508a7a3886a63e4_1a4e4fd46b145b4e18b508a7a3886a63e4" prot="public" virt="pure-virtual"><scope>Auris::Game</scope><name>lateUpdate</name></member>
+      <member refid="class_auris_1_1_game_a753bcffedd9612af64529e661bdcb28d_1a753bcffedd9612af64529e661bdcb28d" prot="public" virt="non-virtual"><scope>Auris::Game</scope><name>loadScene</name></member>
+      <member refid="class_auris_1_1_game_ae2b8f970b284875d28470703e2a5120f_1ae2b8f970b284875d28470703e2a5120f" prot="public" virt="non-virtual"><scope>Auris::Game</scope><name>newEntities</name></member>
+      <member refid="class_auris_1_1_game_a937dec67b19fab029728ad98be70a022_1a937dec67b19fab029728ad98be70a022" prot="public" virt="pure-virtual"><scope>Auris::Game</scope><name>shutdown</name></member>
+      <member refid="class_auris_1_1_game_aa42e3e6abded33c17983933d5c91000d_1aa42e3e6abded33c17983933d5c91000d" prot="public" virt="pure-virtual"><scope>Auris::Game</scope><name>update</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

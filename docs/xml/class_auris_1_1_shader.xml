@@ -1,0 +1,104 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.12">
+  <compounddef id="class_auris_1_1_shader" kind="class" language="C++" prot="public">
+    <compoundname>Auris::Shader</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">Shader</basecompoundref>
+    <includes refid="_shader_8hpp" local="no">Shader.hpp</includes>
+      <sectiondef kind="private-static-attrib">
+      <memberdef kind="variable" id="class_auris_1_1_shader_a78415c16005991c0e2adce9f406097c8_1a78415c16005991c0e2adce9f406097c8" prot="private" static="yes" mutable="no">
+        <type>SRE::Shader *</type>
+        <definition>SRE::Shader * Auris::Shader::litSprite</definition>
+        <argsstring></argsstring>
+        <name>litSprite</name>
+        <initializer>= nullptr</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>A <ref refid="class_auris_1_1_shader" kindref="compound">Shader</ref> pointer: litSprite. Hold an instance of the lit sprite shader. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Projects/GameEngine/include/Auris/Utilities/Shader.hpp" line="39" column="1" bodyfile="Projects/GameEngine/include/Auris/Utilities/Shader.hpp" bodystart="39" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="class_auris_1_1_shader_aa5d2e82ef525d3d21c66fc0686f9cfe8_1aa5d2e82ef525d3d21c66fc0686f9cfe8" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="class_auris_1_1_shader" kindref="compound">Shader</ref> *</type>
+        <definition>Shader * Auris::Shader::getLitSprite</definition>
+        <argsstring>()</argsstring>
+        <name>getLitSprite</name>
+        <briefdescription>
+<para>A static getLitSprite method. </para>        </briefdescription>
+        <detaileddescription>
+<para>Creates a lit sprite shader via the SRE::Shader::CreateShader() method and returns it. <simplesect kind="return"><para><ref refid="class_auris_1_1_shader" kindref="compound">Shader</ref> pointer. The shader created. </para></simplesect>
+<simplesect kind="see"><para>SRE::Shader::CreateShader() </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Projects/GameEngine/include/Auris/Utilities/Shader.hpp" line="18" column="1" bodyfile="Projects/GameEngine/Auris/src/Auris/Utilities/Shader.cpp" bodystart="10" bodyend="96"/>
+      </memberdef>
+      <memberdef kind="function" id="class_auris_1_1_shader_ad79464bfcce8077e3850c04f396561ac_1ad79464bfcce8077e3850c04f396561ac" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="class_auris_1_1_shader" kindref="compound">Shader</ref> *</type>
+        <definition>static Shader* Auris::Shader::getUnlitSprite</definition>
+        <argsstring>()</argsstring>
+        <name>getUnlitSprite</name>
+        <briefdescription>
+<para>A static getUnlitSprite method. </para>        </briefdescription>
+        <detaileddescription>
+<para>Creates a Unlit sprite shader from the SRE::Shader::getUnlitSprite() method and returns it. <simplesect kind="return"><para><ref refid="class_auris_1_1_shader" kindref="compound">Shader</ref> pointer. The shader created. </para></simplesect>
+<simplesect kind="see"><para>SRE::Shader::getUnlitSprite() </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Projects/GameEngine/include/Auris/Utilities/Shader.hpp" line="25" column="1" bodyfile="Projects/GameEngine/include/Auris/Utilities/Shader.hpp" bodystart="25" bodyend="27"/>
+      </memberdef>
+      <memberdef kind="function" id="class_auris_1_1_shader_a439fd06813c512cabf9159702fa8aada_1a439fd06813c512cabf9159702fa8aada" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="class_auris_1_1_shader" kindref="compound">Shader</ref> *</type>
+        <definition>static Shader* Auris::Shader::getStandardParticles</definition>
+        <argsstring>()</argsstring>
+        <name>getStandardParticles</name>
+        <briefdescription>
+<para>A static getStandardParticles method. </para>        </briefdescription>
+        <detaileddescription>
+<para>Creates a standard particle shader from the SRE::Shader::getStandardParticles method and returns it. <simplesect kind="return"><para><ref refid="class_auris_1_1_shader" kindref="compound">Shader</ref> pointer. The shader created. </para></simplesect>
+<simplesect kind="see"><para>SRE::Shader::getStandardParticles() </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Projects/GameEngine/include/Auris/Utilities/Shader.hpp" line="34" column="1" bodyfile="Projects/GameEngine/include/Auris/Utilities/Shader.hpp" bodystart="34" bodyend="36"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>The <ref refid="class_auris_1_1_shader" kindref="compound">Shader</ref> class that extend the SRE::Shader class. </para>    </briefdescription>
+    <detaileddescription>
+<para>Used to manipulate shader. </para>    </detaileddescription>
+    <inheritancegraph>
+      <node id="230">
+        <label>Auris::Shader</label>
+        <link refid="class_auris_1_1_shader"/>
+        <childnode refid="231" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="231">
+        <label>SRE::Shader</label>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="232">
+        <label>Auris::Shader</label>
+        <link refid="class_auris_1_1_shader"/>
+        <childnode refid="233" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="233">
+        <label>SRE::Shader</label>
+      </node>
+    </collaborationgraph>
+    <location file="Projects/GameEngine/include/Auris/Utilities/Shader.hpp" line="10" column="1" bodyfile="Projects/GameEngine/include/Auris/Utilities/Shader.hpp" bodystart="10" bodyend="41"/>
+    <listofallmembers>
+      <member refid="class_auris_1_1_shader_aa5d2e82ef525d3d21c66fc0686f9cfe8_1aa5d2e82ef525d3d21c66fc0686f9cfe8" prot="public" virt="non-virtual"><scope>Auris::Shader</scope><name>getLitSprite</name></member>
+      <member refid="class_auris_1_1_shader_a439fd06813c512cabf9159702fa8aada_1a439fd06813c512cabf9159702fa8aada" prot="public" virt="non-virtual"><scope>Auris::Shader</scope><name>getStandardParticles</name></member>
+      <member refid="class_auris_1_1_shader_ad79464bfcce8077e3850c04f396561ac_1ad79464bfcce8077e3850c04f396561ac" prot="public" virt="non-virtual"><scope>Auris::Shader</scope><name>getUnlitSprite</name></member>
+      <member refid="class_auris_1_1_shader_a78415c16005991c0e2adce9f406097c8_1a78415c16005991c0e2adce9f406097c8" prot="private" virt="non-virtual"><scope>Auris::Shader</scope><name>litSprite</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

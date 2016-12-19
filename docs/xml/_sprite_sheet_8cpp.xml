@@ -1,0 +1,287 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.12">
+  <compounddef id="_sprite_sheet_8cpp" kind="file" language="C++">
+    <compoundname>SpriteSheet.cpp</compoundname>
+    <includes refid="_sprite_sheet_8hpp" local="yes">Auris/Utilities/SpriteSheet.hpp</includes>
+    <includes refid="_render_system_8hpp" local="yes">Auris/Systems/RenderSystem.hpp</includes>
+    <incdepgraph>
+      <node id="485">
+        <label>Auris/Constants.hpp</label>
+        <link refid="_constants_8hpp"/>
+      </node>
+      <node id="501">
+        <label>Auris/Utilities/DynamicPool.hpp</label>
+        <link refid="_dynamic_pool_8hpp"/>
+        <childnode refid="502" relation="include">
+        </childnode>
+        <childnode refid="492" relation="include">
+        </childnode>
+      </node>
+      <node id="503">
+        <label>stdlib.h</label>
+      </node>
+      <node id="500">
+        <label>Auris/Entities/Nuggets/Animation.hpp</label>
+        <link refid="_animation_8hpp"/>
+        <childnode refid="483" relation="include">
+        </childnode>
+        <childnode refid="484" relation="include">
+        </childnode>
+        <childnode refid="479" relation="include">
+        </childnode>
+        <childnode refid="490" relation="include">
+        </childnode>
+        <childnode refid="480" relation="include">
+        </childnode>
+        <childnode refid="486" relation="include">
+        </childnode>
+        <childnode refid="476" relation="include">
+        </childnode>
+        <childnode refid="494" relation="include">
+        </childnode>
+        <childnode refid="482" relation="include">
+        </childnode>
+      </node>
+      <node id="499">
+        <label>SRE/Debug.hpp</label>
+      </node>
+      <node id="479">
+        <label>SRE/Texture.hpp</label>
+      </node>
+      <node id="482">
+        <label>Auris/Entities/Nuggets/Sprite.hpp</label>
+        <link refid="_sprite_8hpp"/>
+        <childnode refid="483" relation="include">
+        </childnode>
+        <childnode refid="484" relation="include">
+        </childnode>
+        <childnode refid="479" relation="include">
+        </childnode>
+        <childnode refid="480" relation="include">
+        </childnode>
+        <childnode refid="485" relation="include">
+        </childnode>
+        <childnode refid="486" relation="include">
+        </childnode>
+        <childnode refid="488" relation="include">
+        </childnode>
+        <childnode refid="489" relation="include">
+        </childnode>
+        <childnode refid="490" relation="include">
+        </childnode>
+      </node>
+      <node id="481">
+        <label>SRE/Mesh.hpp</label>
+      </node>
+      <node id="477">
+        <label>string</label>
+      </node>
+      <node id="496">
+        <label>glm/gtx/euler_angles.hpp</label>
+      </node>
+      <node id="504">
+        <label>Auris/Systems/ParticleSystem.hpp</label>
+        <link refid="_particle_system_8hpp"/>
+        <childnode refid="483" relation="include">
+        </childnode>
+        <childnode refid="492" relation="include">
+        </childnode>
+        <childnode refid="505" relation="include">
+        </childnode>
+        <childnode refid="484" relation="include">
+        </childnode>
+        <childnode refid="487" relation="include">
+        </childnode>
+        <childnode refid="479" relation="include">
+        </childnode>
+        <childnode refid="506" relation="include">
+        </childnode>
+      </node>
+      <node id="478">
+        <label>map</label>
+      </node>
+      <node id="498">
+        <label>SRE/imgui_sre.hpp</label>
+      </node>
+      <node id="505">
+        <label>SRE/ParticleMesh.hpp</label>
+      </node>
+      <node id="506">
+        <label>Auris/Utilities/Interpolation.hpp</label>
+        <link refid="_interpolation_8hpp"/>
+        <childnode refid="492" relation="include">
+        </childnode>
+        <childnode refid="483" relation="include">
+        </childnode>
+      </node>
+      <node id="487">
+        <label>SRE/Shader.hpp</label>
+      </node>
+      <node id="492">
+        <label>vector</label>
+      </node>
+      <node id="502">
+        <label>Pool.hpp</label>
+        <link refid="_pool_8hpp"/>
+        <childnode refid="503" relation="include">
+        </childnode>
+        <childnode refid="490" relation="include">
+        </childnode>
+      </node>
+      <node id="475">
+        <label>Projects/GameEngine/Auris/src/Auris/Utilities/SpriteSheet.cpp</label>
+        <link refid="_sprite_sheet_8cpp"/>
+        <childnode refid="476" relation="include">
+        </childnode>
+        <childnode refid="491" relation="include">
+        </childnode>
+      </node>
+      <node id="476">
+        <label>Auris/Utilities/SpriteSheet.hpp</label>
+        <link refid="_sprite_sheet_8hpp"/>
+        <childnode refid="477" relation="include">
+        </childnode>
+        <childnode refid="478" relation="include">
+        </childnode>
+        <childnode refid="479" relation="include">
+        </childnode>
+        <childnode refid="480" relation="include">
+        </childnode>
+        <childnode refid="482" relation="include">
+        </childnode>
+      </node>
+      <node id="489">
+        <label>Auris/Entities/Nuggets/Material.hpp</label>
+        <link refid="_material_8hpp"/>
+        <childnode refid="479" relation="include">
+        </childnode>
+        <childnode refid="481" relation="include">
+        </childnode>
+        <childnode refid="483" relation="include">
+        </childnode>
+      </node>
+      <node id="494">
+        <label>Auris/Entity.hpp</label>
+        <link refid="_entity_8hpp"/>
+        <childnode refid="495" relation="include">
+        </childnode>
+        <childnode refid="498" relation="include">
+        </childnode>
+        <childnode refid="499" relation="include">
+        </childnode>
+        <childnode refid="477" relation="include">
+        </childnode>
+        <childnode refid="492" relation="include">
+        </childnode>
+        <childnode refid="483" relation="include">
+        </childnode>
+      </node>
+      <node id="486">
+        <label>Auris/Utilities/Shader.hpp</label>
+        <link refid="_shader_8hpp"/>
+        <childnode refid="487" relation="include">
+        </childnode>
+      </node>
+      <node id="490">
+        <label>iostream</label>
+      </node>
+      <node id="497">
+        <label>glm/gtc/matrix_transform.hpp</label>
+      </node>
+      <node id="488">
+        <label>Auris/Entities/Nugget.hpp</label>
+        <link refid="_nugget_8hpp"/>
+      </node>
+      <node id="495">
+        <label>Auris/Entities/Nuggets/Transform.hpp</label>
+        <link refid="_transform_8hpp"/>
+        <childnode refid="488" relation="include">
+        </childnode>
+        <childnode refid="485" relation="include">
+        </childnode>
+        <childnode refid="483" relation="include">
+        </childnode>
+        <childnode refid="496" relation="include">
+        </childnode>
+        <childnode refid="497" relation="include">
+        </childnode>
+      </node>
+      <node id="480">
+        <label>Auris/Utilities/Mesh.hpp</label>
+        <link refid="_mesh_8hpp"/>
+        <childnode refid="481" relation="include">
+        </childnode>
+      </node>
+      <node id="484">
+        <label>SRE/SimpleRenderEngine.hpp</label>
+      </node>
+      <node id="493">
+        <label>memory</label>
+      </node>
+      <node id="491">
+        <label>Auris/Systems/RenderSystem.hpp</label>
+        <link refid="_render_system_8hpp"/>
+        <childnode refid="492" relation="include">
+        </childnode>
+        <childnode refid="493" relation="include">
+        </childnode>
+        <childnode refid="494" relation="include">
+        </childnode>
+        <childnode refid="482" relation="include">
+        </childnode>
+        <childnode refid="500" relation="include">
+        </childnode>
+        <childnode refid="501" relation="include">
+        </childnode>
+        <childnode refid="504" relation="include">
+        </childnode>
+        <childnode refid="480" relation="include">
+        </childnode>
+        <childnode refid="479" relation="include">
+        </childnode>
+      </node>
+      <node id="483">
+        <label>glm/glm.hpp</label>
+      </node>
+    </incdepgraph>
+    <innernamespace refid="namespace_auris">Auris</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#include<sp/>&quot;<ref refid="_sprite_sheet_8hpp" kindref="compound">Auris/Utilities/SpriteSheet.hpp</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="_render_system_8hpp" kindref="compound">Auris/Systems/RenderSystem.hpp</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespace_auris" kindref="compound">Auris</ref>{</highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="keyword">using<sp/>namespace<sp/></highlight><highlight class="normal"><ref refid="namespacestd" kindref="compound">std</ref>;</highlight></codeline>
+<codeline lineno="6" refid="class_auris_1_1_sprite_sheet_aa9abdbbce748b6dec7732756e8dd892e_1aa9abdbbce748b6dec7732756e8dd892e" refkind="member"><highlight class="normal"><ref refid="class_auris_1_1_sprite_sheet_aa9abdbbce748b6dec7732756e8dd892e_1aa9abdbbce748b6dec7732756e8dd892e" kindref="member">SpriteSheet::SpriteSheet</ref>(){</highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight></codeline>
+<codeline lineno="10" refid="class_auris_1_1_sprite_sheet_ab6994da5501053ddc661bfa9e3ef1385_1ab6994da5501053ddc661bfa9e3ef1385" refkind="member"><highlight class="normal"><ref refid="class_auris_1_1_sprite_sheet_ab6994da5501053ddc661bfa9e3ef1385_1ab6994da5501053ddc661bfa9e3ef1385" kindref="member">SpriteSheet::~SpriteSheet</ref>(){</highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//go<sp/>through<sp/>everything<sp/>in<sp/>the<sp/>map<sp/>and<sp/>remove<sp/>it</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal">(map&lt;std::string,<sp/>Auris::Mesh*&gt;::iterator<sp/>it<sp/>=<sp/>meshes.begin();<sp/>it<sp/>!=<sp/>meshes.end();<sp/>++it){</highlight></codeline>
+<codeline lineno="14"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">delete</highlight><highlight class="normal"><sp/>it-&gt;second;</highlight></codeline>
+<codeline lineno="15"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>it-&gt;second<sp/>=<sp/></highlight><highlight class="keyword">nullptr</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="16"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight></codeline>
+<codeline lineno="18"><highlight class="normal"><sp/><sp/><sp/><sp/>meshes.clear();</highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight></codeline>
+<codeline lineno="20"><highlight class="normal"><sp/><sp/><sp/><sp/>texture<sp/>=<sp/></highlight><highlight class="keyword">nullptr</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="21"><highlight class="normal"><sp/><sp/><sp/><sp/>normalMap<sp/>=<sp/></highlight><highlight class="keyword">nullptr</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="22"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight></codeline>
+<codeline lineno="24" refid="class_auris_1_1_sprite_sheet_a12608e8144dc6404d13a1735294a3419_1a12608e8144dc6404d13a1735294a3419" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_auris_1_1_sprite_sheet_a12608e8144dc6404d13a1735294a3419_1a12608e8144dc6404d13a1735294a3419" kindref="member">SpriteSheet::setSpriteTo</ref>(<ref refid="class_auris_1_1_sprite" kindref="compound">Sprite</ref>*<sp/>sprite,<sp/>std::string<sp/>name,<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>getFlipped){</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(meshes[(getFlipped<sp/>?<sp/></highlight><highlight class="stringliteral">&quot;flipped_&quot;</highlight><highlight class="normal"><sp/>:<sp/></highlight><highlight class="stringliteral">&quot;&quot;</highlight><highlight class="normal">)<sp/>+<sp/>name]<sp/>==<sp/></highlight><highlight class="keyword">nullptr</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::cerr<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;Error:<sp/>Sprite<sp/>was<sp/>no<sp/>found<sp/>in<sp/>spritesheet&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>std::endl;</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight></codeline>
+<codeline lineno="28"><highlight class="normal"><sp/><sp/><sp/><sp/>sprite-&gt;<ref refid="class_auris_1_1_sprite_a44835ec226616bf06443bb2d7c697fd6_1a44835ec226616bf06443bb2d7c697fd6" kindref="member">setProperties</ref>(texture,<sp/>glm::vec4(1),<sp/>normalMap,<sp/>meshes[(getFlipped<sp/>?<sp/></highlight><highlight class="stringliteral">&quot;flipped_&quot;</highlight><highlight class="normal"><sp/>:<sp/></highlight><highlight class="stringliteral">&quot;&quot;</highlight><highlight class="normal">)<sp/>+<sp/>name]);</highlight></codeline>
+<codeline lineno="29"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight></codeline>
+<codeline lineno="31"><highlight class="normal">}</highlight></codeline>
+    </programlisting>
+    <location file="Projects/GameEngine/Auris/src/Auris/Utilities/SpriteSheet.cpp"/>
+  </compounddef>
+</doxygen>

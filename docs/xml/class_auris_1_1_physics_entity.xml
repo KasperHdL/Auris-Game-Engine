@@ -1,0 +1,563 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.12">
+  <compounddef id="class_auris_1_1_physics_entity" kind="class" language="C++" prot="public">
+    <compoundname>Auris::PhysicsEntity</compoundname>
+    <basecompoundref refid="class_auris_1_1_entity" prot="public" virt="non-virtual">Auris::Entity</basecompoundref>
+    <includes refid="_physics_entity_8hpp" local="no">PhysicsEntity.hpp</includes>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="class_auris_1_1_physics_entity_a972180c86770b81056fcab41cfba4c0e_1a972180c86770b81056fcab41cfba4c0e" prot="private" static="no" mutable="no">
+        <type>b2Vec2</type>
+        <definition>b2Vec2 Auris::PhysicsEntity::lastPosition</definition>
+        <argsstring></argsstring>
+        <name>lastPosition</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Projects/GameEngine/include/Auris/Entities/PhysicsEntity.hpp" line="18" column="1" bodyfile="Projects/GameEngine/include/Auris/Entities/PhysicsEntity.hpp" bodystart="18" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_auris_1_1_physics_entity_ab211347de6b00d587de6d5786c353025_1ab211347de6b00d587de6d5786c353025" prot="private" static="no" mutable="no">
+        <type>float</type>
+        <definition>float Auris::PhysicsEntity::lastAngle</definition>
+        <argsstring></argsstring>
+        <name>lastAngle</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Projects/GameEngine/include/Auris/Entities/PhysicsEntity.hpp" line="19" column="1" bodyfile="Projects/GameEngine/include/Auris/Entities/PhysicsEntity.hpp" bodystart="19" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="class_auris_1_1_physics_entity_a29f15330487f17e5ce40df6c60de5144_1a29f15330487f17e5ce40df6c60de5144" prot="public" static="no" mutable="no">
+        <type>b2Body *</type>
+        <definition>b2Body* Auris::PhysicsEntity::body</definition>
+        <argsstring></argsstring>
+        <name>body</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>A b2Body pointer: body. Reference to the physics body. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Projects/GameEngine/include/Auris/Entities/PhysicsEntity.hpp" line="21" column="1" bodyfile="Projects/GameEngine/include/Auris/Entities/PhysicsEntity.hpp" bodystart="21" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_auris_1_1_physics_entity_a4e4cd72f2cee82f8b108b845f202b311_1a4e4cd72f2cee82f8b108b845f202b311" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type>void</type>
+        <definition>virtual void Auris::PhysicsEntity::updateTransform</definition>
+        <argsstring>()</argsstring>
+        <name>updateTransform</name>
+        <reimplements refid="class_auris_1_1_entity_a5dd3f0c8b0c20b776989169061f4c39a_1a5dd3f0c8b0c20b776989169061f4c39a">updateTransform</reimplements>
+        <briefdescription>
+<para>The scriptable function updateTransform. </para>        </briefdescription>
+        <detaileddescription>
+<para>Updates the entities transform according to the physics body. Should not be used by the game programmer. Called every frame. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Projects/GameEngine/include/Auris/Entities/PhysicsEntity.hpp" line="30" column="1" bodyfile="Projects/GameEngine/include/Auris/Entities/PhysicsEntity.hpp" bodystart="30" bodyend="41"/>
+      </memberdef>
+      <memberdef kind="function" id="class_auris_1_1_physics_entity_a068794840d3f2eb6316812a778b01441_1a068794840d3f2eb6316812a778b01441" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Auris::PhysicsEntity::~PhysicsEntity</definition>
+        <argsstring>()</argsstring>
+        <name>~PhysicsEntity</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Projects/GameEngine/include/Auris/Entities/PhysicsEntity.hpp" line="44" column="1" bodyfile="Projects/GameEngine/Auris/src/Auris/Entities/PhysicsEntity.cpp" bodystart="4" bodyend="6"/>
+      </memberdef>
+      <memberdef kind="function" id="class_auris_1_1_physics_entity_a0ba83e579df992fce54b2f2fbd0aa922_1a0ba83e579df992fce54b2f2fbd0aa922" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void Auris::PhysicsEntity::setCollisionEvents</definition>
+        <argsstring>(bool flag)</argsstring>
+        <name>setCollisionEvents</name>
+        <param>
+          <type>bool</type>
+          <declname>flag</declname>
+        </param>
+        <briefdescription>
+<para>The method setCollisionEvents, taking 1 argument. </para>        </briefdescription>
+        <detaileddescription>
+<para>set the collision event on or off in box2D <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>flag</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>a bool value, that controls on or off (true = on). </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Projects/GameEngine/include/Auris/Entities/PhysicsEntity.hpp" line="50" column="1" bodyfile="Projects/GameEngine/include/Auris/Entities/PhysicsEntity.hpp" bodystart="50" bodyend="55"/>
+      </memberdef>
+      <memberdef kind="function" id="class_auris_1_1_physics_entity_a61062f597f3ef5a65fbab8b7ec4a13df_1a61062f597f3ef5a65fbab8b7ec4a13df" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void Auris::PhysicsEntity::setGravity</definition>
+        <argsstring>(float gravityScale)</argsstring>
+        <name>setGravity</name>
+        <param>
+          <type>float</type>
+          <declname>gravityScale</declname>
+        </param>
+        <briefdescription>
+<para>The method setGravity, taking 1 argument. </para>        </briefdescription>
+        <detaileddescription>
+<para>set the scale of gravity in box2D <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>gravityScale</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>a float value, that is the scale of the gravity. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Projects/GameEngine/include/Auris/Entities/PhysicsEntity.hpp" line="60" column="1" bodyfile="Projects/GameEngine/include/Auris/Entities/PhysicsEntity.hpp" bodystart="60" bodyend="62"/>
+      </memberdef>
+      <memberdef kind="function" id="class_auris_1_1_physics_entity_aa0bf964cdcf7f12e245e3d99d38e8465_1aa0bf964cdcf7f12e245e3d99d38e8465" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void Auris::PhysicsEntity::setFixedRotation</definition>
+        <argsstring>(bool flag)</argsstring>
+        <name>setFixedRotation</name>
+        <param>
+          <type>bool</type>
+          <declname>flag</declname>
+        </param>
+        <briefdescription>
+<para>The method setFixedRotation, taking 1 argument. </para>        </briefdescription>
+        <detaileddescription>
+<para>set the fixed rotation of the object in box2D <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>flag</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>a bool value, that controls the fixed rotation. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Projects/GameEngine/include/Auris/Entities/PhysicsEntity.hpp" line="68" column="1" bodyfile="Projects/GameEngine/include/Auris/Entities/PhysicsEntity.hpp" bodystart="68" bodyend="70"/>
+      </memberdef>
+      <memberdef kind="function" id="class_auris_1_1_physics_entity_a853247c247a26a3ecb922f4907649279_1a853247c247a26a3ecb922f4907649279" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void Auris::PhysicsEntity::setPosition</definition>
+        <argsstring>(vec2 position)</argsstring>
+        <name>setPosition</name>
+        <param>
+          <type>vec2</type>
+          <declname>position</declname>
+        </param>
+        <briefdescription>
+<para>The method set Position,taking 1 argument. </para>        </briefdescription>
+        <detaileddescription>
+<para>set the position of the object in box2D <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>position</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>a vec2 value. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Projects/GameEngine/include/Auris/Entities/PhysicsEntity.hpp" line="76" column="1" bodyfile="Projects/GameEngine/include/Auris/Entities/PhysicsEntity.hpp" bodystart="76" bodyend="79"/>
+      </memberdef>
+      <memberdef kind="function" id="class_auris_1_1_physics_entity_a480803634a9b575ac15b802955a81973_1a480803634a9b575ac15b802955a81973" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void Auris::PhysicsEntity::setRotation</definition>
+        <argsstring>(float rotation)</argsstring>
+        <name>setRotation</name>
+        <param>
+          <type>float</type>
+          <declname>rotation</declname>
+        </param>
+        <briefdescription>
+<para>The method setRotation, taking 1 argument. </para>        </briefdescription>
+        <detaileddescription>
+<para>set the rotation of the object in box2D <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>rotation</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>a float value, that controls the rotation. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Projects/GameEngine/include/Auris/Entities/PhysicsEntity.hpp" line="84" column="1" bodyfile="Projects/GameEngine/include/Auris/Entities/PhysicsEntity.hpp" bodystart="84" bodyend="87"/>
+      </memberdef>
+      <memberdef kind="function" id="class_auris_1_1_physics_entity_ace9e08b2f3f8c9f8b2c931b5835db526_1ace9e08b2f3f8c9f8b2c931b5835db526" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void Auris::PhysicsEntity::setAwake</definition>
+        <argsstring>(bool flag)</argsstring>
+        <name>setAwake</name>
+        <param>
+          <type>bool</type>
+          <declname>flag</declname>
+        </param>
+        <briefdescription>
+<para>The method setAwake, taking 1 argument. </para>        </briefdescription>
+        <detaileddescription>
+<para>sets if the box2D body should be active <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>flag</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>a bool value, that controls if the body is active. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Projects/GameEngine/include/Auris/Entities/PhysicsEntity.hpp" line="93" column="1" bodyfile="Projects/GameEngine/include/Auris/Entities/PhysicsEntity.hpp" bodystart="93" bodyend="95"/>
+      </memberdef>
+      <memberdef kind="function" id="class_auris_1_1_physics_entity_ab594f1ba3a169ad502e7ba691fad4261_1ab594f1ba3a169ad502e7ba691fad4261" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>Auris::PhysicsEntity::applyForce</definition>
+        <argsstring>(vec2 force, bool impulse=false, bool awake=true)</argsstring>
+        <name>applyForce</name>
+        <param>
+          <type>vec2</type>
+          <declname>force</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>impulse</declname>
+          <defval>false</defval>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>awake</declname>
+          <defval>true</defval>
+        </param>
+        <briefdescription>
+<para>The applyForce method, taking 1-3 arguments. </para>        </briefdescription>
+        <detaileddescription>
+<para>Applies force to the physics entity center via box2D body <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>force</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>a vec2 value, that is the force that should be apllied. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>impulse</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>a bool value, that is if the force is an impulse or not (default is false). </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>awake</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>a bool value, that is if the box2D body can receive physics updates (default is true).</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts.</para><para>Applies force to the physics entity on a specific point via box2D body <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>force</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>a vec2 value, that is the force that should be apllied. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>point</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>a vec2 value, that is the point where the force should be applied. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>impulse</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>a bool value, that is if the force is an impulse or not (default is false). </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>awake</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>a bool value, that is if the box2D body can receive physics updates (default is true). </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Projects/GameEngine/include/Auris/Entities/PhysicsEntity.hpp" line="103" column="1" bodyfile="Projects/GameEngine/include/Auris/Entities/PhysicsEntity.hpp" bodystart="103" bodyend="108"/>
+      </memberdef>
+      <memberdef kind="function" id="class_auris_1_1_physics_entity_afd80a0a18613e1f6ddb30b99114d9beb_1afd80a0a18613e1f6ddb30b99114d9beb" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void Auris::PhysicsEntity::applyForce</definition>
+        <argsstring>(vec2 force, vec2 point, bool impulse=false, bool awake=true)</argsstring>
+        <name>applyForce</name>
+        <param>
+          <type>vec2</type>
+          <declname>force</declname>
+        </param>
+        <param>
+          <type>vec2</type>
+          <declname>point</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>impulse</declname>
+          <defval>false</defval>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>awake</declname>
+          <defval>true</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Projects/GameEngine/include/Auris/Entities/PhysicsEntity.hpp" line="118" column="1" bodyfile="Projects/GameEngine/include/Auris/Entities/PhysicsEntity.hpp" bodystart="118" bodyend="123"/>
+      </memberdef>
+      <memberdef kind="function" id="class_auris_1_1_physics_entity_acd06c0b6182ea6cb009bec65f09052e5_1acd06c0b6182ea6cb009bec65f09052e5" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void Auris::PhysicsEntity::setBullet</definition>
+        <argsstring>(bool flag)</argsstring>
+        <name>setBullet</name>
+        <param>
+          <type>bool</type>
+          <declname>flag</declname>
+        </param>
+        <briefdescription>
+<para>The setBullet method, taking 1 argument. </para>        </briefdescription>
+        <detaileddescription>
+<para>Set the body to bullet physics, meaning that if the entity is moving fast it will still not clip through stuff <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>flag</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>a bool value, that is if the box2D body is a bullet. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Projects/GameEngine/include/Auris/Entities/PhysicsEntity.hpp" line="129" column="1" bodyfile="Projects/GameEngine/include/Auris/Entities/PhysicsEntity.hpp" bodystart="129" bodyend="131"/>
+      </memberdef>
+      <memberdef kind="function" id="class_auris_1_1_physics_entity_a85dea63cf6de2c8c50893bf14a7ff05c_1a85dea63cf6de2c8c50893bf14a7ff05c" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>vec2</type>
+        <definition>vec2 Auris::PhysicsEntity::getLinearVelocity</definition>
+        <argsstring>()</argsstring>
+        <name>getLinearVelocity</name>
+        <briefdescription>
+<para>The getLinearVelocity method. </para>        </briefdescription>
+        <detaileddescription>
+<para>Gets the linear velocity of the box2D body associated with the physics entity. <simplesect kind="return"><para>vec2, that is the velocity </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Projects/GameEngine/include/Auris/Entities/PhysicsEntity.hpp" line="137" column="1" bodyfile="Projects/GameEngine/include/Auris/Entities/PhysicsEntity.hpp" bodystart="137" bodyend="139"/>
+      </memberdef>
+      <memberdef kind="function" id="class_auris_1_1_physics_entity_a9fbf879169ecbe8753a853c8af1fb185_1a9fbf879169ecbe8753a853c8af1fb185" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool Auris::PhysicsEntity::isBullet</definition>
+        <argsstring>()</argsstring>
+        <name>isBullet</name>
+        <briefdescription>
+<para>The isBullet method. </para>        </briefdescription>
+        <detaileddescription>
+<para>Gets if the body is using bullet physics, so if it potentially goes so fast that it needs to not clip through objects <simplesect kind="return"><para>bool, that is if the body is bullet </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Projects/GameEngine/include/Auris/Entities/PhysicsEntity.hpp" line="145" column="1" bodyfile="Projects/GameEngine/include/Auris/Entities/PhysicsEntity.hpp" bodystart="145" bodyend="147"/>
+      </memberdef>
+      <memberdef kind="function" id="class_auris_1_1_physics_entity_a16774c95d2f33183ed247b27417e3b71_1a16774c95d2f33183ed247b27417e3b71" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type>void</type>
+        <definition>virtual void Auris::PhysicsEntity::OnCollisionEnter</definition>
+        <argsstring>(PhysicsEntity *collider)</argsstring>
+        <name>OnCollisionEnter</name>
+        <param>
+          <type><ref refid="class_auris_1_1_physics_entity" kindref="compound">PhysicsEntity</ref> *</type>
+          <declname>collider</declname>
+        </param>
+        <briefdescription>
+<para>The scriptable function onCollisionEnter. </para>        </briefdescription>
+        <detaileddescription>
+<para>Used by the game programmer to add on collision enter functionality to the physics entity. Called upon collision with another <ref refid="class_auris_1_1_physics_entity" kindref="compound">PhysicsEntity</ref> <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>collider</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>a <ref refid="class_auris_1_1_physics_entity" kindref="compound">PhysicsEntity</ref> pointer, that is the physics entity colliding with </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Projects/GameEngine/include/Auris/Entities/PhysicsEntity.hpp" line="155" column="1" bodyfile="Projects/GameEngine/include/Auris/Entities/PhysicsEntity.hpp" bodystart="155" bodyend="155"/>
+      </memberdef>
+      <memberdef kind="function" id="class_auris_1_1_physics_entity_a569617ea68ecbf6aee75152c11e16e4b_1a569617ea68ecbf6aee75152c11e16e4b" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type>void</type>
+        <definition>virtual void Auris::PhysicsEntity::OnCollisionExit</definition>
+        <argsstring>(PhysicsEntity *collider)</argsstring>
+        <name>OnCollisionExit</name>
+        <param>
+          <type><ref refid="class_auris_1_1_physics_entity" kindref="compound">PhysicsEntity</ref> *</type>
+          <declname>collider</declname>
+        </param>
+        <briefdescription>
+<para>The scriptable function onCollisionExit. </para>        </briefdescription>
+        <detaileddescription>
+<para>Used by the game programmer to add on collision exit functionality to the physics entity. Called when exiting collision with another <ref refid="class_auris_1_1_physics_entity" kindref="compound">PhysicsEntity</ref> <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>collider</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>a <ref refid="class_auris_1_1_physics_entity" kindref="compound">PhysicsEntity</ref> pointer, that is the physics entity colliding with </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Projects/GameEngine/include/Auris/Entities/PhysicsEntity.hpp" line="163" column="1" bodyfile="Projects/GameEngine/include/Auris/Entities/PhysicsEntity.hpp" bodystart="163" bodyend="163"/>
+      </memberdef>
+      <memberdef kind="function" id="class_auris_1_1_physics_entity_a3f554aeefdd19e1b985110d6003d18e2_1a3f554aeefdd19e1b985110d6003d18e2" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type>void</type>
+        <definition>virtual void Auris::PhysicsEntity::inspectorImGui</definition>
+        <argsstring>()</argsstring>
+        <name>inspectorImGui</name>
+        <reimplements refid="class_auris_1_1_entity_a30ccf345f74230cb9c560f5bf4794b99_1a30ccf345f74230cb9c560f5bf4794b99">inspectorImGui</reimplements>
+        <briefdescription>
+<para>Called when exiting collision with another <ref refid="class_auris_1_1_physics_entity" kindref="compound">PhysicsEntity</ref>. </para>        </briefdescription>
+        <detaileddescription>
+<para>The scriptable function inspectorImGui.</para><para>Used by the game programmer to add inspector GUI functionality to the entity. Is called every frame, when the inspector gui is open The game programmer can call <ref refid="class_auris_1_1_physics_entity_a3f554aeefdd19e1b985110d6003d18e2_1a3f554aeefdd19e1b985110d6003d18e2" kindref="member">PhysicsEntity::inspectorImGui</ref> to get <ref refid="class_auris_1_1_transform" kindref="compound">Transform</ref>, Position, Scale and Rotation inspection </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Projects/GameEngine/include/Auris/Entities/PhysicsEntity.hpp" line="171" column="1" bodyfile="Projects/GameEngine/include/Auris/Entities/PhysicsEntity.hpp" bodystart="171" bodyend="207"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>The <ref refid="class_auris_1_1_physics_entity" kindref="compound">PhysicsEntity</ref> class that extend the <ref refid="class_auris_1_1_entity" kindref="compound">Entity</ref> class. </para>    </briefdescription>
+    <detaileddescription>
+<para>Used to control physic objects. </para>    </detaileddescription>
+    <inheritancegraph>
+      <node id="189">
+        <label>Auris::PhysicsEntity</label>
+        <link refid="class_auris_1_1_physics_entity"/>
+        <childnode refid="190" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="190">
+        <label>Auris::Entity</label>
+        <link refid="class_auris_1_1_entity"/>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="195">
+        <label>std::vector&lt; Auris::Entity *&gt;</label>
+        <childnode refid="192" relation="usage">
+          <edgelabel>elements</edgelabel>
+        </childnode>
+      </node>
+      <node id="191">
+        <label>Auris::PhysicsEntity</label>
+        <link refid="class_auris_1_1_physics_entity"/>
+        <childnode refid="192" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="196">
+        <label>Auris::Transform</label>
+        <link refid="class_auris_1_1_transform"/>
+        <childnode refid="197" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="194">
+        <label>std::basic_string&lt; char &gt;</label>
+      </node>
+      <node id="197">
+        <label>Auris::Nugget</label>
+        <link refid="class_auris_1_1_nugget"/>
+        <childnode refid="192" relation="usage">
+          <edgelabel>entity</edgelabel>
+        </childnode>
+      </node>
+      <node id="192">
+        <label>Auris::Entity</label>
+        <link refid="class_auris_1_1_entity"/>
+        <childnode refid="193" relation="usage">
+          <edgelabel>type</edgelabel>
+          <edgelabel>name</edgelabel>
+        </childnode>
+        <childnode refid="195" relation="usage">
+          <edgelabel>children</edgelabel>
+        </childnode>
+        <childnode refid="192" relation="usage">
+          <edgelabel>parent</edgelabel>
+        </childnode>
+        <childnode refid="196" relation="usage">
+          <edgelabel>transform</edgelabel>
+        </childnode>
+      </node>
+      <node id="193">
+        <label>std::string</label>
+        <childnode refid="194" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="Projects/GameEngine/include/Auris/Entities/PhysicsEntity.hpp" line="15" column="1" bodyfile="Projects/GameEngine/include/Auris/Entities/PhysicsEntity.hpp" bodystart="15" bodyend="209"/>
+    <listofallmembers>
+      <member refid="class_auris_1_1_entity_a3b4c091e55b92a0b2950d35a3dcf60fd_1a3b4c091e55b92a0b2950d35a3dcf60fd" prot="public" virt="non-virtual"><scope>Auris::PhysicsEntity</scope><name>addChild</name></member>
+      <member refid="class_auris_1_1_physics_entity_ab594f1ba3a169ad502e7ba691fad4261_1ab594f1ba3a169ad502e7ba691fad4261" prot="public" virt="non-virtual"><scope>Auris::PhysicsEntity</scope><name>applyForce</name></member>
+      <member refid="class_auris_1_1_physics_entity_afd80a0a18613e1f6ddb30b99114d9beb_1afd80a0a18613e1f6ddb30b99114d9beb" prot="public" virt="non-virtual"><scope>Auris::PhysicsEntity</scope><name>applyForce</name></member>
+      <member refid="class_auris_1_1_physics_entity_a29f15330487f17e5ce40df6c60de5144_1a29f15330487f17e5ce40df6c60de5144" prot="public" virt="non-virtual"><scope>Auris::PhysicsEntity</scope><name>body</name></member>
+      <member refid="class_auris_1_1_entity_a5987efbb9fc7b0b8a986454424a0e003_1a5987efbb9fc7b0b8a986454424a0e003" prot="public" virt="non-virtual"><scope>Auris::PhysicsEntity</scope><name>children</name></member>
+      <member refid="class_auris_1_1_entity_a880c5f29315d04c76453ab70ffe60737_1a880c5f29315d04c76453ab70ffe60737" prot="public" virt="virtual"><scope>Auris::PhysicsEntity</scope><name>debugDraw</name></member>
+      <member refid="class_auris_1_1_entity_a7164735eefd40272dae8ebe5d929fcdc_1a7164735eefd40272dae8ebe5d929fcdc" prot="public" virt="non-virtual"><scope>Auris::PhysicsEntity</scope><name>Entity</name></member>
+      <member refid="class_auris_1_1_entity_a7a93ca71ac6ba155796408363a198518_1a7a93ca71ac6ba155796408363a198518" prot="public" virt="non-virtual"><scope>Auris::PhysicsEntity</scope><name>getChildByName</name></member>
+      <member refid="class_auris_1_1_entity_a64856847ad473d4fc07f7842dcea5571_1a64856847ad473d4fc07f7842dcea5571" prot="public" virt="non-virtual"><scope>Auris::PhysicsEntity</scope><name>getChildByType</name></member>
+      <member refid="class_auris_1_1_physics_entity_a85dea63cf6de2c8c50893bf14a7ff05c_1a85dea63cf6de2c8c50893bf14a7ff05c" prot="public" virt="non-virtual"><scope>Auris::PhysicsEntity</scope><name>getLinearVelocity</name></member>
+      <member refid="class_auris_1_1_entity_a60becb4bfcc5e2df9954a0487209195b_1a60becb4bfcc5e2df9954a0487209195b" prot="public" virt="non-virtual"><scope>Auris::PhysicsEntity</scope><name>getParent</name></member>
+      <member refid="class_auris_1_1_entity_ab7373d13451309a5994a3737140797a4_1ab7373d13451309a5994a3737140797a4" prot="public" virt="virtual"><scope>Auris::PhysicsEntity</scope><name>init</name></member>
+      <member refid="class_auris_1_1_physics_entity_a3f554aeefdd19e1b985110d6003d18e2_1a3f554aeefdd19e1b985110d6003d18e2" prot="public" virt="virtual"><scope>Auris::PhysicsEntity</scope><name>inspectorImGui</name></member>
+      <member refid="class_auris_1_1_physics_entity_a9fbf879169ecbe8753a853c8af1fb185_1a9fbf879169ecbe8753a853c8af1fb185" prot="public" virt="non-virtual"><scope>Auris::PhysicsEntity</scope><name>isBullet</name></member>
+      <member refid="class_auris_1_1_physics_entity_ab211347de6b00d587de6d5786c353025_1ab211347de6b00d587de6d5786c353025" prot="private" virt="non-virtual"><scope>Auris::PhysicsEntity</scope><name>lastAngle</name></member>
+      <member refid="class_auris_1_1_physics_entity_a972180c86770b81056fcab41cfba4c0e_1a972180c86770b81056fcab41cfba4c0e" prot="private" virt="non-virtual"><scope>Auris::PhysicsEntity</scope><name>lastPosition</name></member>
+      <member refid="class_auris_1_1_entity_ad87e74abaab08d178904f82aa13c866c_1ad87e74abaab08d178904f82aa13c866c" prot="public" virt="non-virtual"><scope>Auris::PhysicsEntity</scope><name>name</name></member>
+      <member refid="class_auris_1_1_physics_entity_a16774c95d2f33183ed247b27417e3b71_1a16774c95d2f33183ed247b27417e3b71" prot="public" virt="virtual"><scope>Auris::PhysicsEntity</scope><name>OnCollisionEnter</name></member>
+      <member refid="class_auris_1_1_physics_entity_a569617ea68ecbf6aee75152c11e16e4b_1a569617ea68ecbf6aee75152c11e16e4b" prot="public" virt="virtual"><scope>Auris::PhysicsEntity</scope><name>OnCollisionExit</name></member>
+      <member refid="class_auris_1_1_entity_a5011b41267c7ae7dcbf260e3ffb83b3b_1a5011b41267c7ae7dcbf260e3ffb83b3b" prot="public" virt="virtual"><scope>Auris::PhysicsEntity</scope><name>onDestruction</name></member>
+      <member refid="class_auris_1_1_entity_afec0c65e0063778ee9888e8747213504_1afec0c65e0063778ee9888e8747213504" prot="public" virt="non-virtual"><scope>Auris::PhysicsEntity</scope><name>parent</name></member>
+      <member refid="class_auris_1_1_physics_entity_ace9e08b2f3f8c9f8b2c931b5835db526_1ace9e08b2f3f8c9f8b2c931b5835db526" prot="public" virt="non-virtual"><scope>Auris::PhysicsEntity</scope><name>setAwake</name></member>
+      <member refid="class_auris_1_1_physics_entity_acd06c0b6182ea6cb009bec65f09052e5_1acd06c0b6182ea6cb009bec65f09052e5" prot="public" virt="non-virtual"><scope>Auris::PhysicsEntity</scope><name>setBullet</name></member>
+      <member refid="class_auris_1_1_physics_entity_a0ba83e579df992fce54b2f2fbd0aa922_1a0ba83e579df992fce54b2f2fbd0aa922" prot="public" virt="non-virtual"><scope>Auris::PhysicsEntity</scope><name>setCollisionEvents</name></member>
+      <member refid="class_auris_1_1_physics_entity_aa0bf964cdcf7f12e245e3d99d38e8465_1aa0bf964cdcf7f12e245e3d99d38e8465" prot="public" virt="non-virtual"><scope>Auris::PhysicsEntity</scope><name>setFixedRotation</name></member>
+      <member refid="class_auris_1_1_physics_entity_a61062f597f3ef5a65fbab8b7ec4a13df_1a61062f597f3ef5a65fbab8b7ec4a13df" prot="public" virt="non-virtual"><scope>Auris::PhysicsEntity</scope><name>setGravity</name></member>
+      <member refid="class_auris_1_1_entity_af8bfc68ec6368c9468484410ca919602_1af8bfc68ec6368c9468484410ca919602" prot="public" virt="non-virtual"><scope>Auris::PhysicsEntity</scope><name>setParent</name></member>
+      <member refid="class_auris_1_1_physics_entity_a853247c247a26a3ecb922f4907649279_1a853247c247a26a3ecb922f4907649279" prot="public" virt="non-virtual"><scope>Auris::PhysicsEntity</scope><name>setPosition</name></member>
+      <member refid="class_auris_1_1_physics_entity_a480803634a9b575ac15b802955a81973_1a480803634a9b575ac15b802955a81973" prot="public" virt="non-virtual"><scope>Auris::PhysicsEntity</scope><name>setRotation</name></member>
+      <member refid="class_auris_1_1_entity_aedf6a4670c5cb9e6efc5fbec2be40281_1aedf6a4670c5cb9e6efc5fbec2be40281" prot="public" virt="virtual"><scope>Auris::PhysicsEntity</scope><name>start</name></member>
+      <member refid="class_auris_1_1_entity_a1c0579dbb2753589668621bd3e3c187b_1a1c0579dbb2753589668621bd3e3c187b" prot="public" virt="non-virtual"><scope>Auris::PhysicsEntity</scope><name>transform</name></member>
+      <member refid="class_auris_1_1_entity_a3d1c31d342f6a5ae9ccd4f81503c7876_1a3d1c31d342f6a5ae9ccd4f81503c7876" prot="public" virt="non-virtual"><scope>Auris::PhysicsEntity</scope><name>type</name></member>
+      <member refid="class_auris_1_1_entity_a82768db86a5efc62f99e20e15d6bfe97_1a82768db86a5efc62f99e20e15d6bfe97" prot="public" virt="virtual"><scope>Auris::PhysicsEntity</scope><name>update</name></member>
+      <member refid="class_auris_1_1_physics_entity_a4e4cd72f2cee82f8b108b845f202b311_1a4e4cd72f2cee82f8b108b845f202b311" prot="public" virt="virtual"><scope>Auris::PhysicsEntity</scope><name>updateTransform</name></member>
+      <member refid="class_auris_1_1_entity_a242caae0bcc5ef026a11d058a524e0fc_1a242caae0bcc5ef026a11d058a524e0fc" prot="public" virt="non-virtual"><scope>Auris::PhysicsEntity</scope><name>~Entity</name></member>
+      <member refid="class_auris_1_1_physics_entity_a068794840d3f2eb6316812a778b01441_1a068794840d3f2eb6316812a778b01441" prot="public" virt="non-virtual"><scope>Auris::PhysicsEntity</scope><name>~PhysicsEntity</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

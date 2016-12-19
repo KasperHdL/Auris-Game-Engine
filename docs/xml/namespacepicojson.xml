@@ -1,0 +1,577 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.12">
+  <compounddef id="namespacepicojson" kind="namespace" language="C++">
+    <compoundname>picojson</compoundname>
+    <innerclass refid="classpicojson_1_1default__parse__context" prot="public">picojson::default_parse_context</innerclass>
+    <innerclass refid="classpicojson_1_1deny__parse__context" prot="public">picojson::deny_parse_context</innerclass>
+    <innerclass refid="classpicojson_1_1input" prot="public">picojson::input</innerclass>
+    <innerclass refid="structpicojson_1_1last__error__t" prot="public">picojson::last_error_t</innerclass>
+    <innerclass refid="structpicojson_1_1null" prot="public">picojson::null</innerclass>
+    <innerclass refid="classpicojson_1_1null__parse__context" prot="public">picojson::null_parse_context</innerclass>
+    <innerclass refid="structpicojson_1_1serialize__str__char" prot="public">picojson::serialize_str_char</innerclass>
+    <innerclass refid="classpicojson_1_1value" prot="public">picojson::value</innerclass>
+      <sectiondef kind="enum">
+      <memberdef kind="enum" id="namespacepicojson_acbcfb4072b62a8a097a2aaf7a8f8cc02_1acbcfb4072b62a8a097a2aaf7a8f8cc02" prot="public" static="no">
+        <name>@0</name>
+        <enumvalue id="namespacepicojson_acbcfb4072b62a8a097a2aaf7a8f8cc02_1acbcfb4072b62a8a097a2aaf7a8f8cc02a656199e709e1aaa684dc9b19f6d25f62" prot="public">
+          <name>null_type</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacepicojson_acbcfb4072b62a8a097a2aaf7a8f8cc02_1acbcfb4072b62a8a097a2aaf7a8f8cc02ae04a93ebe65786d1f8687430242df802" prot="public">
+          <name>boolean_type</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacepicojson_acbcfb4072b62a8a097a2aaf7a8f8cc02_1acbcfb4072b62a8a097a2aaf7a8f8cc02a258b8cac17e3039fe54eadb2f3ebde96" prot="public">
+          <name>number_type</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacepicojson_acbcfb4072b62a8a097a2aaf7a8f8cc02_1acbcfb4072b62a8a097a2aaf7a8f8cc02a3cb2900f95eb6459ee2fe4e9a111bef8" prot="public">
+          <name>string_type</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacepicojson_acbcfb4072b62a8a097a2aaf7a8f8cc02_1acbcfb4072b62a8a097a2aaf7a8f8cc02ae1ccb83543a46349939ddf8ccf75d0f2" prot="public">
+          <name>array_type</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacepicojson_acbcfb4072b62a8a097a2aaf7a8f8cc02_1acbcfb4072b62a8a097a2aaf7a8f8cc02a1fdd0252e9484bec7aea5dcb1a3f82e9" prot="public">
+          <name>object_type</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Projects/GameEngine/include/Auris/Utilities/picojson.h" line="102" column="1" bodyfile="Projects/GameEngine/include/Auris/Utilities/picojson.h" bodystart="102" bodyend="112"/>
+      </memberdef>
+      <memberdef kind="enum" id="namespacepicojson_ae3fd37cd4ad93e8b91a1dd552487eec4_1ae3fd37cd4ad93e8b91a1dd552487eec4" prot="public" static="no">
+        <name>@1</name>
+        <enumvalue id="namespacepicojson_ae3fd37cd4ad93e8b91a1dd552487eec4_1ae3fd37cd4ad93e8b91a1dd552487eec4a2aee14a2b66d94b58c64c66edd8ed9b1" prot="public">
+          <name>INDENT_WIDTH</name>
+          <initializer>= 2</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Projects/GameEngine/include/Auris/Utilities/picojson.h" line="114" column="1" bodyfile="Projects/GameEngine/include/Auris/Utilities/picojson.h" bodystart="114" bodyend="116"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="typedef">
+      <memberdef kind="typedef" id="namespacepicojson_ac1e72166adfe3d96dc58cddc7ebd536a_1ac1e72166adfe3d96dc58cddc7ebd536a" prot="public" static="no">
+        <type><ref refid="classpicojson_1_1value_adeff4fdf7ee5675eeb7686bb89233c43_1adeff4fdf7ee5675eeb7686bb89233c43" kindref="member">value::array</ref></type>
+        <definition>typedef value::array picojson::array</definition>
+        <argsstring></argsstring>
+        <name>array</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Projects/GameEngine/include/Auris/Utilities/picojson.h" line="184" column="1" bodyfile="Projects/GameEngine/include/Auris/Utilities/picojson.h" bodystart="184" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="namespacepicojson_a3e769a5e2dbffd9a9309e1dc2d67975b_1a3e769a5e2dbffd9a9309e1dc2d67975b" prot="public" static="no">
+        <type><ref refid="classpicojson_1_1value_a7d7da11d54d7b983a902d28367bda9c1_1a7d7da11d54d7b983a902d28367bda9c1" kindref="member">value::object</ref></type>
+        <definition>typedef value::object picojson::object</definition>
+        <argsstring></argsstring>
+        <name>object</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Projects/GameEngine/include/Auris/Utilities/picojson.h" line="185" column="1" bodyfile="Projects/GameEngine/include/Auris/Utilities/picojson.h" bodystart="185" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="namespacepicojson_abc2111aa71797805957a4296fdf9c66d_1abc2111aa71797805957a4296fdf9c66d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename Iter</type>
+          </param>
+        </templateparamlist>
+        <type>void</type>
+        <definition>void picojson::copy</definition>
+        <argsstring>(const std::string &amp;s, Iter oi)</argsstring>
+        <name>copy</name>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>s</declname>
+        </param>
+        <param>
+          <type>Iter</type>
+          <declname>oi</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Projects/GameEngine/include/Auris/Utilities/picojson.h" line="468" column="1" bodyfile="Projects/GameEngine/include/Auris/Utilities/picojson.h" bodystart="468" bodyend="470"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacepicojson_a11130e017d868857aeb016f5e3d29008_1a11130e017d868857aeb016f5e3d29008" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename Iter</type>
+          </param>
+        </templateparamlist>
+        <type>void</type>
+        <definition>void picojson::serialize_str</definition>
+        <argsstring>(const std::string &amp;s, Iter oi)</argsstring>
+        <name>serialize_str</name>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>s</declname>
+        </param>
+        <param>
+          <type>Iter</type>
+          <declname>oi</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Projects/GameEngine/include/Auris/Utilities/picojson.h" line="500" column="1" bodyfile="Projects/GameEngine/include/Auris/Utilities/picojson.h" bodystart="500" bodyend="505"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacepicojson_a92d4f60542bbdfe8203f10e1fcce9368_1a92d4f60542bbdfe8203f10e1fcce9368" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename Iter</type>
+          </param>
+        </templateparamlist>
+        <type>int</type>
+        <definition>int picojson::_parse_quadhex</definition>
+        <argsstring>(input&lt; Iter &gt; &amp;in)</argsstring>
+        <name>_parse_quadhex</name>
+        <param>
+          <type><ref refid="classpicojson_1_1input" kindref="compound">input</ref>&lt; Iter &gt; &amp;</type>
+          <declname>in</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Projects/GameEngine/include/Auris/Utilities/picojson.h" line="660" column="1" bodyfile="Projects/GameEngine/include/Auris/Utilities/picojson.h" bodystart="660" bodyend="679"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacepicojson_a05316c2614f3e7a4559ce1d1003eb051_1a05316c2614f3e7a4559ce1d1003eb051" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename String</type>
+          </param>
+          <param>
+            <type>typename Iter</type>
+          </param>
+        </templateparamlist>
+        <type>bool</type>
+        <definition>bool picojson::_parse_codepoint</definition>
+        <argsstring>(String &amp;out, input&lt; Iter &gt; &amp;in)</argsstring>
+        <name>_parse_codepoint</name>
+        <param>
+          <type>String &amp;</type>
+          <declname>out</declname>
+        </param>
+        <param>
+          <type><ref refid="classpicojson_1_1input" kindref="compound">input</ref>&lt; Iter &gt; &amp;</type>
+          <declname>in</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Projects/GameEngine/include/Auris/Utilities/picojson.h" line="681" column="1" bodyfile="Projects/GameEngine/include/Auris/Utilities/picojson.h" bodystart="681" bodyend="720"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacepicojson_a9a1d94feb2718129796225d77c9e8d11_1a9a1d94feb2718129796225d77c9e8d11" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename String</type>
+          </param>
+          <param>
+            <type>typename Iter</type>
+          </param>
+        </templateparamlist>
+        <type>bool</type>
+        <definition>bool picojson::_parse_string</definition>
+        <argsstring>(String &amp;out, input&lt; Iter &gt; &amp;in)</argsstring>
+        <name>_parse_string</name>
+        <param>
+          <type>String &amp;</type>
+          <declname>out</declname>
+        </param>
+        <param>
+          <type><ref refid="classpicojson_1_1input" kindref="compound">input</ref>&lt; Iter &gt; &amp;</type>
+          <declname>in</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Projects/GameEngine/include/Auris/Utilities/picojson.h" line="722" column="1" bodyfile="Projects/GameEngine/include/Auris/Utilities/picojson.h" bodystart="722" bodyend="758"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacepicojson_adcae039b132c6c96d2b2d9e786a04a88_1adcae039b132c6c96d2b2d9e786a04a88" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename Context</type>
+          </param>
+          <param>
+            <type>typename Iter</type>
+          </param>
+        </templateparamlist>
+        <type>bool</type>
+        <definition>bool picojson::_parse_array</definition>
+        <argsstring>(Context &amp;ctx, input&lt; Iter &gt; &amp;in)</argsstring>
+        <name>_parse_array</name>
+        <param>
+          <type>Context &amp;</type>
+          <declname>ctx</declname>
+        </param>
+        <param>
+          <type><ref refid="classpicojson_1_1input" kindref="compound">input</ref>&lt; Iter &gt; &amp;</type>
+          <declname>in</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Projects/GameEngine/include/Auris/Utilities/picojson.h" line="760" column="1" bodyfile="Projects/GameEngine/include/Auris/Utilities/picojson.h" bodystart="760" bodyend="775"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacepicojson_a480ed5e3461568672197a42e259a44c9_1a480ed5e3461568672197a42e259a44c9" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename Context</type>
+          </param>
+          <param>
+            <type>typename Iter</type>
+          </param>
+        </templateparamlist>
+        <type>bool</type>
+        <definition>bool picojson::_parse_object</definition>
+        <argsstring>(Context &amp;ctx, input&lt; Iter &gt; &amp;in)</argsstring>
+        <name>_parse_object</name>
+        <param>
+          <type>Context &amp;</type>
+          <declname>ctx</declname>
+        </param>
+        <param>
+          <type><ref refid="classpicojson_1_1input" kindref="compound">input</ref>&lt; Iter &gt; &amp;</type>
+          <declname>in</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Projects/GameEngine/include/Auris/Utilities/picojson.h" line="777" column="1" bodyfile="Projects/GameEngine/include/Auris/Utilities/picojson.h" bodystart="777" bodyend="796"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacepicojson_a771defe1d981b7091c2156bf4720625c_1a771defe1d981b7091c2156bf4720625c" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename Iter</type>
+          </param>
+        </templateparamlist>
+        <type>std::string</type>
+        <definition>std::string picojson::_parse_number</definition>
+        <argsstring>(input&lt; Iter &gt; &amp;in)</argsstring>
+        <name>_parse_number</name>
+        <param>
+          <type><ref refid="classpicojson_1_1input" kindref="compound">input</ref>&lt; Iter &gt; &amp;</type>
+          <declname>in</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Projects/GameEngine/include/Auris/Utilities/picojson.h" line="798" column="1" bodyfile="Projects/GameEngine/include/Auris/Utilities/picojson.h" bodystart="798" bodyend="817"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacepicojson_aed024a6a1c8d8982a38c4a7fcefde221_1aed024a6a1c8d8982a38c4a7fcefde221" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename Context</type>
+          </param>
+          <param>
+            <type>typename Iter</type>
+          </param>
+        </templateparamlist>
+        <type>bool</type>
+        <definition>bool picojson::_parse</definition>
+        <argsstring>(Context &amp;ctx, input&lt; Iter &gt; &amp;in)</argsstring>
+        <name>_parse</name>
+        <param>
+          <type>Context &amp;</type>
+          <declname>ctx</declname>
+        </param>
+        <param>
+          <type><ref refid="classpicojson_1_1input" kindref="compound">input</ref>&lt; Iter &gt; &amp;</type>
+          <declname>in</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Projects/GameEngine/include/Auris/Utilities/picojson.h" line="819" column="1" bodyfile="Projects/GameEngine/include/Auris/Utilities/picojson.h" bodystart="819" bodyend="872"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacepicojson_a3aca598f5855bc130a92a3e08a0c6ebf_1a3aca598f5855bc130a92a3e08a0c6ebf" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename Iter</type>
+          </param>
+        </templateparamlist>
+        <type>std::string</type>
+        <definition>std::string picojson::parse</definition>
+        <argsstring>(value &amp;out, Iter &amp;pos, const Iter &amp;last)</argsstring>
+        <name>parse</name>
+        <param>
+          <type><ref refid="classpicojson_1_1value" kindref="compound">value</ref> &amp;</type>
+          <declname>out</declname>
+        </param>
+        <param>
+          <type>Iter &amp;</type>
+          <declname>pos</declname>
+        </param>
+        <param>
+          <type>const Iter &amp;</type>
+          <declname>last</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Projects/GameEngine/include/Auris/Utilities/picojson.h" line="978" column="1" bodyfile="Projects/GameEngine/include/Auris/Utilities/picojson.h" bodystart="978" bodyend="982"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacepicojson_a01c0a3f35d42282ba913375737c8e259_1a01c0a3f35d42282ba913375737c8e259" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename Context</type>
+          </param>
+          <param>
+            <type>typename Iter</type>
+          </param>
+        </templateparamlist>
+        <type>Iter</type>
+        <definition>Iter picojson::_parse</definition>
+        <argsstring>(Context &amp;ctx, const Iter &amp;first, const Iter &amp;last, std::string *err)</argsstring>
+        <name>_parse</name>
+        <param>
+          <type>Context &amp;</type>
+          <declname>ctx</declname>
+        </param>
+        <param>
+          <type>const Iter &amp;</type>
+          <declname>first</declname>
+        </param>
+        <param>
+          <type>const Iter &amp;</type>
+          <declname>last</declname>
+        </param>
+        <param>
+          <type>std::string *</type>
+          <declname>err</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Projects/GameEngine/include/Auris/Utilities/picojson.h" line="984" column="1" bodyfile="Projects/GameEngine/include/Auris/Utilities/picojson.h" bodystart="984" bodyend="1000"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacepicojson_a21621c03c9c8c83dcf5bc604d1cafdf6_1a21621c03c9c8c83dcf5bc604d1cafdf6" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename Iter</type>
+          </param>
+        </templateparamlist>
+        <type>Iter</type>
+        <definition>Iter picojson::parse</definition>
+        <argsstring>(value &amp;out, const Iter &amp;first, const Iter &amp;last, std::string *err)</argsstring>
+        <name>parse</name>
+        <param>
+          <type><ref refid="classpicojson_1_1value" kindref="compound">value</ref> &amp;</type>
+          <declname>out</declname>
+        </param>
+        <param>
+          <type>const Iter &amp;</type>
+          <declname>first</declname>
+        </param>
+        <param>
+          <type>const Iter &amp;</type>
+          <declname>last</declname>
+        </param>
+        <param>
+          <type>std::string *</type>
+          <declname>err</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Projects/GameEngine/include/Auris/Utilities/picojson.h" line="1002" column="1" bodyfile="Projects/GameEngine/include/Auris/Utilities/picojson.h" bodystart="1002" bodyend="1005"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacepicojson_a522ebeba3ce386f1df0aba41ae3b7763_1a522ebeba3ce386f1df0aba41ae3b7763" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>std::string</type>
+        <definition>std::string picojson::parse</definition>
+        <argsstring>(value &amp;out, const std::string &amp;s)</argsstring>
+        <name>parse</name>
+        <param>
+          <type><ref refid="classpicojson_1_1value" kindref="compound">value</ref> &amp;</type>
+          <declname>out</declname>
+        </param>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>s</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Projects/GameEngine/include/Auris/Utilities/picojson.h" line="1007" column="1" bodyfile="Projects/GameEngine/include/Auris/Utilities/picojson.h" bodystart="1007" bodyend="1011"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacepicojson_a2ed8a3cba445c8ecbe3d6a3a3fbdabd3_1a2ed8a3cba445c8ecbe3d6a3a3fbdabd3" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>std::string</type>
+        <definition>std::string picojson::parse</definition>
+        <argsstring>(value &amp;out, std::istream &amp;is)</argsstring>
+        <name>parse</name>
+        <param>
+          <type><ref refid="classpicojson_1_1value" kindref="compound">value</ref> &amp;</type>
+          <declname>out</declname>
+        </param>
+        <param>
+          <type>std::istream &amp;</type>
+          <declname>is</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Projects/GameEngine/include/Auris/Utilities/picojson.h" line="1013" column="1" bodyfile="Projects/GameEngine/include/Auris/Utilities/picojson.h" bodystart="1013" bodyend="1018"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacepicojson_a509585c918611015ec995d4374fee4c9_1a509585c918611015ec995d4374fee4c9" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void picojson::set_last_error</definition>
+        <argsstring>(const std::string &amp;s)</argsstring>
+        <name>set_last_error</name>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>s</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Projects/GameEngine/include/Auris/Utilities/picojson.h" line="1025" column="1" bodyfile="Projects/GameEngine/include/Auris/Utilities/picojson.h" bodystart="1025" bodyend="1027"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacepicojson_a1ba78f161e46341e0c2fd705ff8b0210_1a1ba78f161e46341e0c2fd705ff8b0210" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>const std::string &amp;</type>
+        <definition>const std::string&amp; picojson::get_last_error</definition>
+        <argsstring>()</argsstring>
+        <name>get_last_error</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Projects/GameEngine/include/Auris/Utilities/picojson.h" line="1029" column="1" bodyfile="Projects/GameEngine/include/Auris/Utilities/picojson.h" bodystart="1029" bodyend="1031"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacepicojson_a498fde71ce35268547d93068d9a756be_1a498fde71ce35268547d93068d9a756be" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool picojson::operator==</definition>
+        <argsstring>(const value &amp;x, const value &amp;y)</argsstring>
+        <name>operator==</name>
+        <param>
+          <type>const <ref refid="classpicojson_1_1value" kindref="compound">value</ref> &amp;</type>
+          <declname>x</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classpicojson_1_1value" kindref="compound">value</ref> &amp;</type>
+          <declname>y</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Projects/GameEngine/include/Auris/Utilities/picojson.h" line="1033" column="1" bodyfile="Projects/GameEngine/include/Auris/Utilities/picojson.h" bodystart="1033" bodyend="1050"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacepicojson_ae46de1e9659b427ea359e7fc00dd3ff1_1ae46de1e9659b427ea359e7fc00dd3ff1" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool picojson::operator!=</definition>
+        <argsstring>(const value &amp;x, const value &amp;y)</argsstring>
+        <name>operator!=</name>
+        <param>
+          <type>const <ref refid="classpicojson_1_1value" kindref="compound">value</ref> &amp;</type>
+          <declname>x</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classpicojson_1_1value" kindref="compound">value</ref> &amp;</type>
+          <declname>y</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Projects/GameEngine/include/Auris/Utilities/picojson.h" line="1052" column="1" bodyfile="Projects/GameEngine/include/Auris/Utilities/picojson.h" bodystart="1052" bodyend="1054"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="Projects/GameEngine/include/Auris/Utilities/picojson.h" line="100" column="1"/>
+  </compounddef>
+</doxygen>

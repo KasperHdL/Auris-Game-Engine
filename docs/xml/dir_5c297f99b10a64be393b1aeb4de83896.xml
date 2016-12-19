@@ -1,0 +1,15 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.12">
+  <compounddef id="dir_5c297f99b10a64be393b1aeb4de83896" kind="dir">
+    <compoundname>Projects/MergeHppCpp/include/Auris/Testing</compoundname>
+    <innerfile refid="_debug_draw_8hpp">DebugDraw.hpp</innerfile>
+    <innerfile refid="_debug_u_i_8cpp">DebugUI.cpp</innerfile>
+    <innerfile refid="_debug_u_i_8hpp">DebugUI.hpp</innerfile>
+    <innerfile refid="_profiling_timer_8hpp">ProfilingTimer.hpp</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="Projects/MergeHppCpp/include/Auris/Testing/"/>
+  </compounddef>
+</doxygen>

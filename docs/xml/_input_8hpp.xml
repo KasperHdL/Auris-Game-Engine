@@ -1,0 +1,303 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.12">
+  <compounddef id="_input_8hpp" kind="file" language="C++">
+    <compoundname>Input.hpp</compoundname>
+    <includes local="no">SDL.h</includes>
+    <includes local="no">map</includes>
+    <includes local="yes">SRE/imgui_sre.hpp</includes>
+    <includes local="no">vector</includes>
+    <includes local="yes">glm/glm.hpp</includes>
+    <includedby refid="_engine_8hpp" local="yes">Projects/GameEngine/include/Auris/Engine.hpp</includedby>
+    <includedby refid="_audio_player_8hpp" local="yes">Projects/GameEngine/include/Auris/Entities/AudioPlayer.hpp</includedby>
+    <includedby refid="_light_8hpp" local="yes">Projects/GameEngine/include/Auris/Entities/Light.hpp</includedby>
+    <includedby refid="_debug_u_i_8hpp" local="yes">Projects/GameEngine/include/Auris/Testing/DebugUI.hpp</includedby>
+    <includedby refid="_input_8cpp" local="yes">Projects/GameEngine/Auris/src/Auris/Systems/Input.cpp</includedby>
+    <incdepgraph>
+      <node id="1106">
+        <label>SDL.h</label>
+      </node>
+      <node id="1107">
+        <label>map</label>
+      </node>
+      <node id="1108">
+        <label>SRE/imgui_sre.hpp</label>
+      </node>
+      <node id="1105">
+        <label>Projects/GameEngine/include/Auris/Systems/Input.hpp</label>
+        <link refid="_input_8hpp"/>
+        <childnode refid="1106" relation="include">
+        </childnode>
+        <childnode refid="1107" relation="include">
+        </childnode>
+        <childnode refid="1108" relation="include">
+        </childnode>
+        <childnode refid="1109" relation="include">
+        </childnode>
+        <childnode refid="1110" relation="include">
+        </childnode>
+      </node>
+      <node id="1109">
+        <label>vector</label>
+      </node>
+      <node id="1110">
+        <label>glm/glm.hpp</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="1116">
+        <label>Projects/GameEngine/Auris/src/Auris/Entities/PhysicsEntity.cpp</label>
+        <link refid="_physics_entity_8cpp"/>
+      </node>
+      <node id="1125">
+        <label>Projects/GameEngine/include/Auris/Testing/DebugUI.hpp</label>
+        <link refid="_debug_u_i_8hpp"/>
+      </node>
+      <node id="1121">
+        <label>Projects/GameEngine/include/Auris/Entities/AudioPlayer.hpp</label>
+        <link refid="_audio_player_8hpp"/>
+        <childnode refid="1112" relation="include">
+        </childnode>
+        <childnode refid="1122" relation="include">
+        </childnode>
+      </node>
+      <node id="1113">
+        <label>Projects/GameEngine/include/Auris/Entities/PhysicsEntity.hpp</label>
+        <link refid="_physics_entity_8hpp"/>
+        <childnode refid="1114" relation="include">
+        </childnode>
+        <childnode refid="1116" relation="include">
+        </childnode>
+      </node>
+      <node id="1123">
+        <label>Projects/GameEngine/include/Auris/Entities/Light.hpp</label>
+        <link refid="_light_8hpp"/>
+        <childnode refid="1112" relation="include">
+        </childnode>
+        <childnode refid="1124" relation="include">
+        </childnode>
+      </node>
+      <node id="1114">
+        <label>Projects/GameEngine/include/Auris/Systems/CollisionHandler.hpp</label>
+        <link refid="_collision_handler_8hpp"/>
+        <childnode refid="1115" relation="include">
+        </childnode>
+      </node>
+      <node id="1117">
+        <label>Projects/GameEngine/include/Auris/Game.hpp</label>
+        <link refid="_game_8hpp"/>
+        <childnode refid="1112" relation="include">
+        </childnode>
+        <childnode refid="1118" relation="include">
+        </childnode>
+        <childnode refid="1119" relation="include">
+        </childnode>
+      </node>
+      <node id="1112">
+        <label>Projects/GameEngine/include/Auris/Engine.hpp</label>
+        <link refid="_engine_8hpp"/>
+        <childnode refid="1113" relation="include">
+        </childnode>
+        <childnode refid="1117" relation="include">
+        </childnode>
+        <childnode refid="1120" relation="include">
+        </childnode>
+        <childnode refid="1115" relation="include">
+        </childnode>
+      </node>
+      <node id="1111">
+        <label>Projects/GameEngine/include/Auris/Systems/Input.hpp</label>
+        <link refid="_input_8hpp"/>
+        <childnode refid="1112" relation="include">
+        </childnode>
+        <childnode refid="1121" relation="include">
+        </childnode>
+        <childnode refid="1123" relation="include">
+        </childnode>
+        <childnode refid="1125" relation="include">
+        </childnode>
+        <childnode refid="1119" relation="include">
+        </childnode>
+      </node>
+      <node id="1120">
+        <label>Projects/GameEngine/include/Auris/Utilities/BodyStandard.hpp</label>
+        <link refid="_body_standard_8hpp"/>
+      </node>
+      <node id="1119">
+        <label>Projects/GameEngine/Auris/src/Auris/Systems/Input.cpp</label>
+        <link refid="_input_8cpp"/>
+      </node>
+      <node id="1118">
+        <label>Projects/GameEngine/Auris/src/Auris/Game.cpp</label>
+        <link refid="_game_8cpp"/>
+      </node>
+      <node id="1122">
+        <label>Projects/GameEngine/Auris/src/Auris/Entities/AudioPlayer.cpp</label>
+        <link refid="_audio_player_8cpp"/>
+      </node>
+      <node id="1115">
+        <label>Projects/GameEngine/Auris/src/Auris/Engine.cpp</label>
+        <link refid="_engine_8cpp"/>
+      </node>
+      <node id="1124">
+        <label>Projects/GameEngine/Auris/src/Auris/Entities/Light.cpp</label>
+        <link refid="_light_8cpp"/>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="class_auris_1_1_input" prot="public">Auris::Input</innerclass>
+    <innernamespace refid="namespace_auris">Auris</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#pragma<sp/>once</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;SDL.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;map&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;SRE/imgui_sre.hpp&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;vector&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;glm/glm.hpp&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespace_auris" kindref="compound">Auris</ref>{</highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal">Game;</highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="12"><highlight class="comment">//!<sp/>The<sp/>Input<sp/>class</highlight></codeline>
+<codeline lineno="13"><highlight class="comment"></highlight><highlight class="comment"><sp/><sp/><sp/><sp/>/*!<sp/>Handles<sp/>all<sp/>input<sp/>of<sp/>the<sp/>engine</highlight></codeline>
+<codeline lineno="14"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*<sp/>Everything<sp/>in<sp/>the<sp/>input<sp/>class<sp/>is<sp/>static</highlight></codeline>
+<codeline lineno="15"><highlight class="comment"><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="16" refid="class_auris_1_1_input" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="class_auris_1_1_input" kindref="compound">Input</ref>{</highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="19"><highlight class="comment"><sp/><sp/><sp/><sp/>//!<sp/>A<sp/>static<sp/>init<sp/>method,<sp/>taking<sp/>1<sp/>argument.</highlight></codeline>
+<codeline lineno="20"><highlight class="comment"></highlight><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>/*!</highlight></codeline>
+<codeline lineno="21"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*<sp/>Initializes<sp/>the<sp/>input<sp/>system,<sp/>meaning<sp/>initilizing<sp/>controllers</highlight></codeline>
+<codeline lineno="22"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*<sp/>\param<sp/>game<sp/>a<sp/>Game<sp/>pointer,<sp/>that<sp/>is<sp/>an<sp/>instance<sp/>of<sp/>the<sp/>game.</highlight></codeline>
+<codeline lineno="23"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="24"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_auris_1_1_input_ae964b6d3af50b694fe32137a2bf071bf_1ae964b6d3af50b694fe32137a2bf071bf" kindref="member">init</ref>(<ref refid="class_auris_1_1_game" kindref="compound">Game</ref>*<sp/><ref refid="class_auris_1_1_input_adaa4dcc138073a8ec372d9fddb3766b3_1adaa4dcc138073a8ec372d9fddb3766b3" kindref="member">game</ref>);</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="26"><highlight class="comment"><sp/><sp/><sp/><sp/>//!<sp/>A<sp/>static<sp/>update<sp/>method.</highlight></codeline>
+<codeline lineno="27"><highlight class="comment"></highlight><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>/*!</highlight></codeline>
+<codeline lineno="28"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*<sp/>Update<sp/>all<sp/>key<sp/>presses,<sp/>and<sp/>controller<sp/>connected/disconnected<sp/>events</highlight></codeline>
+<codeline lineno="29"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="30"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_auris_1_1_input_aa7fe26710dd863d11737bf2f6de4ad05_1aa7fe26710dd863d11737bf2f6de4ad05" kindref="member">update</ref>();</highlight></codeline>
+<codeline lineno="31"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="32"><highlight class="comment"><sp/><sp/><sp/><sp/>//!<sp/>A<sp/>static<sp/>shutdown<sp/>method.</highlight></codeline>
+<codeline lineno="33"><highlight class="comment"></highlight><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>/*!</highlight></codeline>
+<codeline lineno="34"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*<sp/>Shutdown<sp/>the<sp/>input<sp/>system,<sp/>meaning<sp/>clears<sp/>all<sp/>key<sp/>presses</highlight></codeline>
+<codeline lineno="35"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="36"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_auris_1_1_input_a38019b2111c789cfc6fff651b6ecfe19_1a38019b2111c789cfc6fff651b6ecfe19" kindref="member">shutdown</ref>();</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="38"><highlight class="comment"><sp/><sp/><sp/><sp/>//!<sp/>A<sp/>static<sp/>keyDown<sp/>method,<sp/>taking<sp/>1<sp/>argument.</highlight></codeline>
+<codeline lineno="39"><highlight class="comment"></highlight><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>/*!</highlight></codeline>
+<codeline lineno="40"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*<sp/>a<sp/>method<sp/>to<sp/>get<sp/>the<sp/>key<sp/>that<sp/>is<sp/>pressed<sp/>down</highlight></codeline>
+<codeline lineno="41"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*<sp/>\param<sp/>key<sp/>a<sp/>SDL_Scancode,<sp/>that<sp/>is<sp/>the<sp/>scancode<sp/>of<sp/>the<sp/>keyboard<sp/>key</highlight></codeline>
+<codeline lineno="42"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*<sp/>\return<sp/>bool,<sp/>the<sp/>state<sp/>of<sp/>the<sp/>key</highlight></codeline>
+<codeline lineno="43"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="44"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="class_auris_1_1_input_a213dc33decf772ef923a771679678b2e_1a213dc33decf772ef923a771679678b2e" kindref="member">keyDown</ref>(SDL_Scancode<sp/>key);</highlight></codeline>
+<codeline lineno="45"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="46"><highlight class="comment"><sp/><sp/><sp/><sp/>//!<sp/>A<sp/>static<sp/>keyUp<sp/>method,<sp/>taking<sp/>1<sp/>argument.</highlight></codeline>
+<codeline lineno="47"><highlight class="comment"></highlight><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>/*!</highlight></codeline>
+<codeline lineno="48"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*<sp/>a<sp/>method<sp/>to<sp/>get<sp/>the<sp/>key<sp/>that<sp/>is<sp/>lifted</highlight></codeline>
+<codeline lineno="49"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*<sp/>\param<sp/>key<sp/>a<sp/>SDL_Scancode,<sp/>that<sp/>is<sp/>the<sp/>scancode<sp/>of<sp/>the<sp/>keyboard<sp/>key</highlight></codeline>
+<codeline lineno="50"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*<sp/>\return<sp/>bool,<sp/>the<sp/>state<sp/>of<sp/>the<sp/>key</highlight></codeline>
+<codeline lineno="51"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="52"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="class_auris_1_1_input_a0ecc5a54bebabeead7dd5083624756f7_1a0ecc5a54bebabeead7dd5083624756f7" kindref="member">keyUp</ref>(SDL_Scancode<sp/>key);</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="54"><highlight class="comment"><sp/><sp/><sp/><sp/>//!<sp/>A<sp/>static<sp/>keyHeld<sp/>method,<sp/>taking<sp/>1<sp/>argument.</highlight></codeline>
+<codeline lineno="55"><highlight class="comment"></highlight><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>/*!</highlight></codeline>
+<codeline lineno="56"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*<sp/>a<sp/>method<sp/>to<sp/>get<sp/>the<sp/>key<sp/>that<sp/>is<sp/>currently<sp/>being<sp/>held<sp/>down</highlight></codeline>
+<codeline lineno="57"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*<sp/>\param<sp/>key<sp/>a<sp/>SDL_Scancode,<sp/>that<sp/>is<sp/>the<sp/>scancode<sp/>of<sp/>the<sp/>keyboard<sp/>key</highlight></codeline>
+<codeline lineno="58"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*<sp/>\return<sp/>bool,<sp/>the<sp/>state<sp/>of<sp/>the<sp/>key</highlight></codeline>
+<codeline lineno="59"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="60"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="class_auris_1_1_input_a0d4ba6f99c628b901acc3d75b9d1cb3c_1a0d4ba6f99c628b901acc3d75b9d1cb3c" kindref="member">keyHeld</ref>(SDL_Scancode<sp/>key);</highlight></codeline>
+<codeline lineno="61"><highlight class="normal"></highlight></codeline>
+<codeline lineno="62" refid="class_auris_1_1_input_a756c57e33cd0ff991ba76ecff4dfa8a4_1a756c57e33cd0ff991ba76ecff4dfa8a4" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="class_auris_1_1_input_a756c57e33cd0ff991ba76ecff4dfa8a4_1a756c57e33cd0ff991ba76ecff4dfa8a4" kindref="member">quit</ref>;<sp/></highlight><highlight class="comment">/*!&lt;<sp/>A<sp/>static<sp/>int<sp/>value:<sp/>quit.<sp/>Used<sp/>to<sp/>figure<sp/>out<sp/>if<sp/>the<sp/>game<sp/>is<sp/>quitted.<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="63"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="64"><highlight class="comment"><sp/><sp/><sp/><sp/>//!<sp/>A<sp/>static<sp/>getControllerButtonState<sp/>method,<sp/>taking<sp/>2<sp/>arguments.</highlight></codeline>
+<codeline lineno="65"><highlight class="comment"></highlight><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>/*!</highlight></codeline>
+<codeline lineno="66"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*<sp/>a<sp/>method<sp/>to<sp/>get<sp/>the<sp/>state<sp/>of<sp/>the<sp/>button<sp/>on<sp/>a<sp/>controller.</highlight></codeline>
+<codeline lineno="67"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*<sp/>\param<sp/>controllerID<sp/>an<sp/>int,<sp/>that<sp/>is<sp/>the<sp/>id<sp/>of<sp/>the<sp/>controller</highlight></codeline>
+<codeline lineno="68"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*<sp/>\param<sp/>button<sp/>a<sp/>SDL_GameControllerButton,<sp/>that<sp/>is<sp/>the<sp/>button<sp/>to<sp/>get<sp/>the<sp/>state<sp/>of</highlight></codeline>
+<codeline lineno="69"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*<sp/>\return<sp/>bool,<sp/>the<sp/>state<sp/>of<sp/>the<sp/>button<sp/>(true<sp/>for<sp/>pressed<sp/>down)</highlight></codeline>
+<codeline lineno="70"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="71"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="class_auris_1_1_input_afafbbc2341cc0cf58e90b5a8405dd0f9_1afafbbc2341cc0cf58e90b5a8405dd0f9" kindref="member">getControllerButtonState</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>controllerID,<sp/>SDL_GameControllerButton<sp/>button);</highlight></codeline>
+<codeline lineno="72"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="73"><highlight class="comment"><sp/><sp/><sp/><sp/>//!<sp/>A<sp/>static<sp/>getControllerAxisState<sp/>method,<sp/>taking<sp/>2<sp/>arguments.</highlight></codeline>
+<codeline lineno="74"><highlight class="comment"></highlight><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>/*!</highlight></codeline>
+<codeline lineno="75"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*<sp/>a<sp/>method<sp/>to<sp/>get<sp/>the<sp/>state<sp/>of<sp/>the<sp/>axis<sp/>on<sp/>a<sp/>controller.</highlight></codeline>
+<codeline lineno="76"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*<sp/>\param<sp/>controllerID<sp/>an<sp/>int,<sp/>that<sp/>is<sp/>the<sp/>id<sp/>of<sp/>the<sp/>controller</highlight></codeline>
+<codeline lineno="77"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*<sp/>\param<sp/>axis<sp/>a<sp/>SDL_GameControllerAxis,<sp/>that<sp/>is<sp/>the<sp/>axis<sp/>to<sp/>get<sp/>the<sp/>state<sp/>of</highlight></codeline>
+<codeline lineno="78"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*<sp/>\return<sp/>int,<sp/>the<sp/>state<sp/>of<sp/>the<sp/>Axis<sp/>(ranging<sp/>from<sp/>-32768<sp/>to<sp/>32767,<sp/>trigger<sp/>from<sp/>0<sp/>to<sp/>32767)</highlight></codeline>
+<codeline lineno="79"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="80"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="class_auris_1_1_input_ae40e9e19c66aa8c6c831653549c28b65_1ae40e9e19c66aa8c6c831653549c28b65" kindref="member">getControllerAxisState</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>controllerID,<sp/>SDL_GameControllerAxis<sp/>axis);</highlight></codeline>
+<codeline lineno="81"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="82"><highlight class="comment"><sp/><sp/><sp/><sp/>//!<sp/>A<sp/>static<sp/>getControllerLeftStickState<sp/>method,<sp/>taking<sp/>1<sp/>argument.</highlight></codeline>
+<codeline lineno="83"><highlight class="comment"></highlight><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>/*!</highlight></codeline>
+<codeline lineno="84"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*<sp/>a<sp/>method<sp/>to<sp/>get<sp/>the<sp/>state<sp/>of<sp/>the<sp/>left<sp/>stick<sp/>on<sp/>a<sp/>controller.</highlight></codeline>
+<codeline lineno="85"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*<sp/>\param<sp/>controllerID<sp/>an<sp/>int,<sp/>that<sp/>is<sp/>the<sp/>id<sp/>of<sp/>the<sp/>controller</highlight></codeline>
+<codeline lineno="86"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*<sp/>\return<sp/>vec2,<sp/>the<sp/>state<sp/>of<sp/>both<sp/>axis<sp/>of<sp/>the<sp/>left<sp/>stick<sp/>the<sp/>Axis<sp/>(ranging<sp/>from<sp/>-32768<sp/>to<sp/>32767)</highlight></codeline>
+<codeline lineno="87"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="88"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/>glm::vec2<sp/><ref refid="class_auris_1_1_input_a94da9f7546ff948cbd193d2ec02c7f58_1a94da9f7546ff948cbd193d2ec02c7f58" kindref="member">getControllerLeftStickState</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>controllerID);</highlight></codeline>
+<codeline lineno="89"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="90"><highlight class="comment"><sp/><sp/><sp/><sp/>//!<sp/>A<sp/>static<sp/>getControllerRightStickState<sp/>method,<sp/>taking<sp/>1<sp/>argument.</highlight></codeline>
+<codeline lineno="91"><highlight class="comment"></highlight><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>/*!</highlight></codeline>
+<codeline lineno="92"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*<sp/>a<sp/>method<sp/>to<sp/>get<sp/>the<sp/>state<sp/>of<sp/>the<sp/>right<sp/>stick<sp/>on<sp/>a<sp/>controller.</highlight></codeline>
+<codeline lineno="93"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*<sp/>\param<sp/>controllerID<sp/>an<sp/>int,<sp/>that<sp/>is<sp/>the<sp/>id<sp/>of<sp/>the<sp/>controller</highlight></codeline>
+<codeline lineno="94"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*<sp/>\return<sp/>vec2,<sp/>the<sp/>state<sp/>of<sp/>both<sp/>axis<sp/>of<sp/>the<sp/>right<sp/>stick<sp/>the<sp/>Axis<sp/>(ranging<sp/>from<sp/>-32768<sp/>to<sp/>32767)</highlight></codeline>
+<codeline lineno="95"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="96"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/>glm::vec2<sp/><ref refid="class_auris_1_1_input_aa396fc9486927476d8fb4a608bf6aaa0_1aa396fc9486927476d8fb4a608bf6aaa0" kindref="member">getControllerRightStickState</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>controllerID);</highlight></codeline>
+<codeline lineno="97"><highlight class="normal"></highlight></codeline>
+<codeline lineno="98"><highlight class="normal"></highlight></codeline>
+<codeline lineno="99"><highlight class="normal"></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="100"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="101"><highlight class="comment"><sp/><sp/><sp/><sp/>//!<sp/>A<sp/>static<sp/>keyUpEvent<sp/>method,<sp/>taking<sp/>1<sp/>argument.</highlight></codeline>
+<codeline lineno="102"><highlight class="comment"></highlight><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>/*!</highlight></codeline>
+<codeline lineno="103"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*<sp/>A<sp/>method<sp/>to<sp/>register<sp/>a<sp/>key<sp/>being<sp/>lifted<sp/>up<sp/>event.</highlight></codeline>
+<codeline lineno="104"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*<sp/>\param<sp/>&amp;event<sp/>an<sp/>const<sp/>SDL_Event,<sp/>that<sp/>is<sp/>the<sp/>specific<sp/>event</highlight></codeline>
+<codeline lineno="105"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="106"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_auris_1_1_input_af7975123c8e7bf107d3ffeb7e8c7ac62_1af7975123c8e7bf107d3ffeb7e8c7ac62" kindref="member">keyUpEvent</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>SDL_Event&amp;<sp/>event);</highlight></codeline>
+<codeline lineno="107"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="108"><highlight class="comment"><sp/><sp/><sp/><sp/>//!<sp/>A<sp/>static<sp/>keyUpEvent<sp/>method,<sp/>taking<sp/>1<sp/>argument.</highlight></codeline>
+<codeline lineno="109"><highlight class="comment"></highlight><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>/*!</highlight></codeline>
+<codeline lineno="110"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*<sp/>A<sp/>method<sp/>to<sp/>register<sp/>a<sp/>key<sp/>being<sp/>pressed<sp/>down<sp/>event.</highlight></codeline>
+<codeline lineno="111"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*<sp/>\param<sp/>&amp;event<sp/>an<sp/>const<sp/>SDL_Event,<sp/>that<sp/>is<sp/>the<sp/>specific<sp/>event</highlight></codeline>
+<codeline lineno="112"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="113"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_auris_1_1_input_a2bcc16ac90c1001921978e6a2c470242_1a2bcc16ac90c1001921978e6a2c470242" kindref="member">keyDownEvent</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>SDL_Event&amp;<sp/>event);</highlight></codeline>
+<codeline lineno="114"><highlight class="normal"></highlight></codeline>
+<codeline lineno="115" refid="class_auris_1_1_input_a740616067bbd7ce3f68c826403deffa2_1a740616067bbd7ce3f68c826403deffa2" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/>std::map&lt;SDL_Scancode,<sp/>bool&gt;<sp/><ref refid="class_auris_1_1_input_a740616067bbd7ce3f68c826403deffa2_1a740616067bbd7ce3f68c826403deffa2" kindref="member">heldKeys</ref>;<sp/></highlight><highlight class="comment">/*!&lt;<sp/>A<sp/>static<sp/>map<sp/>of<sp/>SDL_Scancode<sp/>and<sp/>bool:<sp/>heldKeys.<sp/>Holds<sp/>the<sp/>state<sp/>of<sp/>the<sp/>keys<sp/>currently<sp/>being<sp/>held<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="116"><highlight class="normal"></highlight></codeline>
+<codeline lineno="117" refid="class_auris_1_1_input_a10e3cca91a471e8502d805878736b27a_1a10e3cca91a471e8502d805878736b27a" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/>std::map&lt;SDL_Scancode,<sp/>bool&gt;<sp/><ref refid="class_auris_1_1_input_a10e3cca91a471e8502d805878736b27a_1a10e3cca91a471e8502d805878736b27a" kindref="member">downKeys</ref>;<sp/></highlight><highlight class="comment">/*!&lt;<sp/>A<sp/>static<sp/>map<sp/>of<sp/>SDL_Scancode<sp/>and<sp/>bool:<sp/>downKeys.<sp/>Holds<sp/>the<sp/>state<sp/>of<sp/>the<sp/>keys<sp/>that<sp/>has<sp/>been<sp/>pressed<sp/>down<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="118"><highlight class="normal"></highlight></codeline>
+<codeline lineno="119" refid="class_auris_1_1_input_a4ca82b4077078e3a5fb83cba4176d99d_1a4ca82b4077078e3a5fb83cba4176d99d" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/>std::map&lt;SDL_Scancode,<sp/>bool&gt;<sp/><ref refid="class_auris_1_1_input_a4ca82b4077078e3a5fb83cba4176d99d_1a4ca82b4077078e3a5fb83cba4176d99d" kindref="member">upKeys</ref>;<sp/></highlight><highlight class="comment">/*!&lt;<sp/>A<sp/>static<sp/>map<sp/>of<sp/>SDL_Scancode<sp/>and<sp/>bool:<sp/>upKeys.<sp/>Holds<sp/>the<sp/>state<sp/>of<sp/>the<sp/>keys<sp/>currently<sp/>that<sp/>has<sp/>been<sp/>lifted<sp/>up<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="120"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="121"><highlight class="comment"><sp/><sp/><sp/><sp/>//!<sp/>A<sp/>static<sp/>controllerAdded<sp/>method,<sp/>taking<sp/>1<sp/>argument.</highlight></codeline>
+<codeline lineno="122"><highlight class="comment"></highlight><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>/*!</highlight></codeline>
+<codeline lineno="123"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*<sp/>A<sp/>method<sp/>to<sp/>register<sp/>a<sp/>controller<sp/>being<sp/>added<sp/>event.</highlight></codeline>
+<codeline lineno="124"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*<sp/>\param<sp/>&amp;event<sp/>an<sp/>const<sp/>SDL_Event,<sp/>that<sp/>is<sp/>the<sp/>specific<sp/>event</highlight></codeline>
+<codeline lineno="125"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="126"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_auris_1_1_input_acbcc6062a1e6a37f3ceceec2d7912bd9_1acbcc6062a1e6a37f3ceceec2d7912bd9" kindref="member">controllerAdded</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>SDL_Event&amp;<sp/>event);</highlight></codeline>
+<codeline lineno="127"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="128"><highlight class="comment"><sp/><sp/><sp/><sp/>//!<sp/>A<sp/>static<sp/>initController<sp/>method,<sp/>taking<sp/>1<sp/>argument.</highlight></codeline>
+<codeline lineno="129"><highlight class="comment"></highlight><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>/*!</highlight></codeline>
+<codeline lineno="130"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*<sp/>A<sp/>method<sp/>to<sp/>register<sp/>a<sp/>controller<sp/>being<sp/>initialized<sp/>with<sp/>a<sp/>button<sp/>press<sp/>event.</highlight></codeline>
+<codeline lineno="131"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*<sp/>\param<sp/>&amp;event<sp/>an<sp/>const<sp/>SDL_Event,<sp/>that<sp/>is<sp/>the<sp/>specific<sp/>event</highlight></codeline>
+<codeline lineno="132"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="133"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_auris_1_1_input_aebd119c81182ee36a9431c8dc4bdde6f_1aebd119c81182ee36a9431c8dc4bdde6f" kindref="member">initController</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>SDL_Event&amp;<sp/>event);</highlight></codeline>
+<codeline lineno="134"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="135"><highlight class="comment"><sp/><sp/><sp/><sp/>//!<sp/>A<sp/>static<sp/>controllerRemoved<sp/>method,<sp/>taking<sp/>1<sp/>argument.</highlight></codeline>
+<codeline lineno="136"><highlight class="comment"></highlight><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>/*!</highlight></codeline>
+<codeline lineno="137"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*<sp/>A<sp/>method<sp/>to<sp/>register<sp/>a<sp/>controller<sp/>being<sp/>disconnected<sp/>event.</highlight></codeline>
+<codeline lineno="138"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*<sp/>\param<sp/>&amp;event<sp/>an<sp/>const<sp/>SDL_Event,<sp/>that<sp/>is<sp/>the<sp/>specific<sp/>event</highlight></codeline>
+<codeline lineno="139"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="140"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_auris_1_1_input_a971b8a9beaff5691d5750396fc1967e5_1a971b8a9beaff5691d5750396fc1967e5" kindref="member">controllerRemoved</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>SDL_Event&amp;<sp/>event);</highlight></codeline>
+<codeline lineno="141"><highlight class="normal"></highlight></codeline>
+<codeline lineno="142" refid="class_auris_1_1_input_aaf10b7d1bd6070dcce8728d29ab707bc_1aaf10b7d1bd6070dcce8728d29ab707bc" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/>std::map&lt;SDL_JoystickID,SDL_GameController*&gt;<sp/><ref refid="class_auris_1_1_input_aaf10b7d1bd6070dcce8728d29ab707bc_1aaf10b7d1bd6070dcce8728d29ab707bc" kindref="member">ctrl</ref>;<sp/></highlight><highlight class="comment">/*!&lt;<sp/>A<sp/>static<sp/>map<sp/>of<sp/>SDL_JoystickID<sp/>and<sp/>SDL_GameController<sp/>pointer:<sp/>ctrl.<sp/>Holds<sp/>the<sp/>id<sp/>and<sp/>their<sp/>controllers<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="143"><highlight class="normal"></highlight></codeline>
+<codeline lineno="144" refid="class_auris_1_1_input_adaa4dcc138073a8ec372d9fddb3766b3_1adaa4dcc138073a8ec372d9fddb3766b3" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/><ref refid="class_auris_1_1_game" kindref="compound">Game</ref>*<sp/><ref refid="class_auris_1_1_input_adaa4dcc138073a8ec372d9fddb3766b3_1adaa4dcc138073a8ec372d9fddb3766b3" kindref="member">game</ref>;<sp/></highlight><highlight class="comment">/*!&lt;<sp/>A<sp/>static<sp/>Game<sp/>pointer:<sp/>game.<sp/>Holds<sp/>an<sp/>instance<sp/>of<sp/>the<sp/>game<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="145"><highlight class="normal"></highlight></codeline>
+<codeline lineno="146"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="147"><highlight class="normal">}</highlight></codeline>
+    </programlisting>
+    <location file="Projects/GameEngine/include/Auris/Systems/Input.hpp"/>
+  </compounddef>
+</doxygen>

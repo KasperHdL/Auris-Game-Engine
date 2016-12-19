@@ -1,0 +1,522 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.12">
+  <compounddef id="class_auris_1_1_engine" kind="class" language="C++" prot="public">
+    <compoundname>Auris::Engine</compoundname>
+    <includes refid="_engine_8hpp" local="no">Engine.hpp</includes>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="class_auris_1_1_engine_ab4e5172c71d4bc42f6cfb89882d62e5c_1ab4e5172c71d4bc42f6cfb89882d62e5c" prot="private" static="no" mutable="no">
+        <type>vec4</type>
+        <definition>vec4 Auris::Engine::backgroundColor</definition>
+        <argsstring></argsstring>
+        <name>backgroundColor</name>
+        <initializer>= vec4(0)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Projects/GameEngine/include/Auris/Engine.hpp" line="68" column="1" bodyfile="Projects/GameEngine/include/Auris/Engine.hpp" bodystart="68" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-static-attrib">
+      <memberdef kind="variable" id="class_auris_1_1_engine_aaa6f69db59fb49db6d157e0417739398_1aaa6f69db59fb49db6d157e0417739398" prot="public" static="yes" mutable="no">
+        <type><ref refid="class_auris_1_1_engine" kindref="compound">Engine</ref> *</type>
+        <definition>Engine * Auris::Engine::instance</definition>
+        <argsstring></argsstring>
+        <name>instance</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Projects/GameEngine/include/Auris/Engine.hpp" line="70" column="1" bodyfile="Projects/GameEngine/include/Auris/Engine.hpp" bodystart="70" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="class_auris_1_1_engine_a52a915baf4affcf7445eb28623c9a05d_1a52a915baf4affcf7445eb28623c9a05d" prot="public" static="no" mutable="no">
+        <type>float</type>
+        <definition>float Auris::Engine::deltaTime</definition>
+        <argsstring></argsstring>
+        <name>deltaTime</name>
+        <initializer>= 0</initializer>
+        <briefdescription>
+<para>The last deltaTime calculated. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Projects/GameEngine/include/Auris/Engine.hpp" line="72" column="1" bodyfile="Projects/GameEngine/include/Auris/Engine.hpp" bodystart="72" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_auris_1_1_engine_a559c56ee9ea97f370d2e2438b975e8c8_1a559c56ee9ea97f370d2e2438b975e8c8" prot="public" static="no" mutable="no">
+        <type>float</type>
+        <definition>float Auris::Engine::time</definition>
+        <argsstring></argsstring>
+        <name>time</name>
+        <initializer>= 0</initializer>
+        <briefdescription>
+<para>The accumulated deltaTime. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Projects/GameEngine/include/Auris/Engine.hpp" line="73" column="1" bodyfile="Projects/GameEngine/include/Auris/Engine.hpp" bodystart="73" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_auris_1_1_engine_a6fa6f2c7735b3b4b30be89af3fd32b54_1a6fa6f2c7735b3b4b30be89af3fd32b54" prot="public" static="no" mutable="no">
+        <type>b2World *</type>
+        <definition>b2World* Auris::Engine::world</definition>
+        <argsstring></argsstring>
+        <name>world</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>A static b2World pointer: world. A reference to the physics world </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Projects/GameEngine/include/Auris/Engine.hpp" line="104" column="1" bodyfile="Projects/GameEngine/include/Auris/Engine.hpp" bodystart="104" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_auris_1_1_engine_a5c0831efd8f1f39a113ac1787f553137_1a5c0831efd8f1f39a113ac1787f553137" prot="public" static="no" mutable="no">
+        <type><ref refid="class_auris_1_1_game" kindref="compound">Game</ref> *</type>
+        <definition>Game* Auris::Engine::game</definition>
+        <argsstring></argsstring>
+        <name>game</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>A <ref refid="class_auris_1_1_game" kindref="compound">Game</ref> pointer: game. A reference to the current game </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Projects/GameEngine/include/Auris/Engine.hpp" line="106" column="1" bodyfile="Projects/GameEngine/include/Auris/Engine.hpp" bodystart="106" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_auris_1_1_engine_a2f68a61898f5309eb378a1fcb20db592_1a2f68a61898f5309eb378a1fcb20db592" prot="public" static="no" mutable="no">
+        <type>SDL_Window *</type>
+        <definition>SDL_Window* Auris::Engine::window</definition>
+        <argsstring></argsstring>
+        <name>window</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>A SDL_Window pointer: window. A reference to the current window </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Projects/GameEngine/include/Auris/Engine.hpp" line="108" column="1" bodyfile="Projects/GameEngine/include/Auris/Engine.hpp" bodystart="108" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_auris_1_1_engine_a8128b7ad1e15ca704cf37835a3ab4299_1a8128b7ad1e15ca704cf37835a3ab4299" prot="public" static="no" mutable="no">
+        <type><ref refid="class_auris_1_1_render_system" kindref="compound">RenderSystem</ref></type>
+        <definition>RenderSystem Auris::Engine::renderSystem</definition>
+        <argsstring></argsstring>
+        <name>renderSystem</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>A Rendersystem value: renderSystem. The rendersystem of the engine </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Projects/GameEngine/include/Auris/Engine.hpp" line="110" column="1" bodyfile="Projects/GameEngine/include/Auris/Engine.hpp" bodystart="110" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_auris_1_1_engine_acc8f2598304cd8693464d2d654e268d5_1acc8f2598304cd8693464d2d654e268d5" prot="public" static="no" mutable="no">
+        <type>b2ContactListener *</type>
+        <definition>b2ContactListener* Auris::Engine::collisionHandler</definition>
+        <argsstring></argsstring>
+        <name>collisionHandler</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>A b2ContactListener pointer: collisionHandler. A reference to the box2d contactlistener, handling collision </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Projects/GameEngine/include/Auris/Engine.hpp" line="116" column="1" bodyfile="Projects/GameEngine/include/Auris/Engine.hpp" bodystart="116" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_auris_1_1_engine_a88cee03d0a6a8ade0f7964fdb591a9b7_1a88cee03d0a6a8ade0f7964fdb591a9b7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Auris::Engine::Engine</definition>
+        <argsstring>(int width, int height)</argsstring>
+        <name>Engine</name>
+        <param>
+          <type>int</type>
+          <declname>width</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>height</declname>
+        </param>
+        <briefdescription>
+<para>The engine contructor taking 2 arguments. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>width</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>an integer, that is the width of the window. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>height</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>an interger, that is the height of the window. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Projects/GameEngine/include/Auris/Engine.hpp" line="80" column="1" bodyfile="Projects/GameEngine/Auris/src/Auris/Engine.cpp" bodystart="18" bodyend="31"/>
+      </memberdef>
+      <memberdef kind="function" id="class_auris_1_1_engine_acf488394e89c512c34aff0b6798a3383_1acf488394e89c512c34aff0b6798a3383" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type></type>
+        <definition>virtual Auris::Engine::~Engine</definition>
+        <argsstring>()</argsstring>
+        <name>~Engine</name>
+        <briefdescription>
+<para>The engine destructor. </para>        </briefdescription>
+        <detaileddescription>
+<para>Not used for anything, because when shutdown is run, everything is closed anyway <simplesect kind="see"><para><ref refid="class_auris_1_1_engine_aff3cd18d2f6a44c6771798957b282864_1aff3cd18d2f6a44c6771798957b282864" kindref="member">shutdown()</ref> </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Projects/GameEngine/include/Auris/Engine.hpp" line="86" column="1" bodyfile="Projects/GameEngine/include/Auris/Engine.hpp" bodystart="86" bodyend="86"/>
+      </memberdef>
+      <memberdef kind="function" id="class_auris_1_1_engine_a3362131c1b4eaa160d8e395b43273b0b_1a3362131c1b4eaa160d8e395b43273b0b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Auris::Engine::startup</definition>
+        <argsstring>(Game *game)</argsstring>
+        <name>startup</name>
+        <param>
+          <type><ref refid="class_auris_1_1_game" kindref="compound">Game</ref> *</type>
+          <declname>game</declname>
+        </param>
+        <briefdescription>
+<para>A method to startup the engine, taking 1 argument. </para>        </briefdescription>
+        <detaileddescription>
+<para>Starts up all the engine systems <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>game</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>a <ref refid="class_auris_1_1_game" kindref="compound">Game</ref> pointer, that is the current game. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Projects/GameEngine/include/Auris/Engine.hpp" line="92" column="1" bodyfile="Projects/GameEngine/Auris/src/Auris/Engine.cpp" bodystart="33" bodyend="104"/>
+      </memberdef>
+      <memberdef kind="function" id="class_auris_1_1_engine_aff3cd18d2f6a44c6771798957b282864_1aff3cd18d2f6a44c6771798957b282864" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Auris::Engine::shutdown</definition>
+        <argsstring>()</argsstring>
+        <name>shutdown</name>
+        <briefdescription>
+<para>A method to shutdown the engine. </para>        </briefdescription>
+        <detaileddescription>
+<para>Closes down all the engine systems </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Projects/GameEngine/include/Auris/Engine.hpp" line="96" column="1" bodyfile="Projects/GameEngine/Auris/src/Auris/Engine.cpp" bodystart="106" bodyend="133"/>
+      </memberdef>
+      <memberdef kind="function" id="class_auris_1_1_engine_a5ec5899526134ac2e7393b33d12b2444_1a5ec5899526134ac2e7393b33d12b2444" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Auris::Engine::run</definition>
+        <argsstring>(SDL_Window *window)</argsstring>
+        <name>run</name>
+        <param>
+          <type>SDL_Window *</type>
+          <declname>window</declname>
+        </param>
+        <briefdescription>
+<para>A method to run the engine, taking 1 argument. </para>        </briefdescription>
+        <detaileddescription>
+<para>This is the engine update, it runs once each frame <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>window</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>a SDL_Window pointer, that is the current window of the game. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Projects/GameEngine/include/Auris/Engine.hpp" line="102" column="1" bodyfile="Projects/GameEngine/Auris/src/Auris/Engine.cpp" bodystart="136" bodyend="268"/>
+      </memberdef>
+      <memberdef kind="function" id="class_auris_1_1_engine_a5b600d898db6f73807b0d05a43f470fe_1a5b600d898db6f73807b0d05a43f470fe" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Auris::Engine::setAmbientLight</definition>
+        <argsstring>(vec3 color)</argsstring>
+        <name>setAmbientLight</name>
+        <param>
+          <type>vec3</type>
+          <declname>color</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Projects/GameEngine/include/Auris/Engine.hpp" line="112" column="1" bodyfile="Projects/GameEngine/Auris/src/Auris/Engine.cpp" bodystart="270" bodyend="272"/>
+      </memberdef>
+      <memberdef kind="function" id="class_auris_1_1_engine_abb62a90dc4fe76f4c5e593d529061ea1_1abb62a90dc4fe76f4c5e593d529061ea1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Auris::Engine::setBackgroundColor</definition>
+        <argsstring>(vec4 color)</argsstring>
+        <name>setBackgroundColor</name>
+        <param>
+          <type>vec4</type>
+          <declname>color</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Projects/GameEngine/include/Auris/Engine.hpp" line="113" column="1" bodyfile="Projects/GameEngine/Auris/src/Auris/Engine.cpp" bodystart="274" bodyend="276"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>The game engine class. </para>    </briefdescription>
+    <detaileddescription>
+<para>Everything happens here! </para>    </detaileddescription>
+    <collaborationgraph>
+      <node id="107">
+        <label>std::vector&lt; Auris::Entity *&gt;</label>
+        <childnode refid="104" relation="usage">
+          <edgelabel>elements</edgelabel>
+        </childnode>
+      </node>
+      <node id="117">
+        <label>std::vector&lt; vec3 &gt;</label>
+      </node>
+      <node id="93">
+        <label>Auris::Game</label>
+        <link refid="class_auris_1_1_game"/>
+        <childnode refid="94" relation="usage">
+          <edgelabel>newEntities</edgelabel>
+          <edgelabel>entities</edgelabel>
+        </childnode>
+        <childnode refid="93" relation="usage">
+          <edgelabel>instance</edgelabel>
+        </childnode>
+        <childnode refid="95" relation="usage">
+          <edgelabel>camera</edgelabel>
+        </childnode>
+        <childnode refid="96" relation="usage">
+          <edgelabel>destroyEntities</edgelabel>
+        </childnode>
+      </node>
+      <node id="92">
+        <label>Auris::Engine</label>
+        <link refid="class_auris_1_1_engine"/>
+        <childnode refid="92" relation="usage">
+          <edgelabel>instance</edgelabel>
+        </childnode>
+        <childnode refid="93" relation="usage">
+          <edgelabel>game</edgelabel>
+        </childnode>
+        <childnode refid="97" relation="usage">
+          <edgelabel>renderSystem</edgelabel>
+        </childnode>
+      </node>
+      <node id="100">
+        <label>std::vector&lt; Auris::Pool&lt; Auris::Sprite &gt; *&gt;</label>
+        <childnode refid="101" relation="usage">
+          <edgelabel>elements</edgelabel>
+        </childnode>
+      </node>
+      <node id="113">
+        <label>std::vector&lt; Auris::ParticleSystem *&gt;</label>
+        <childnode refid="114" relation="usage">
+          <edgelabel>elements</edgelabel>
+        </childnode>
+      </node>
+      <node id="118">
+        <label>std::vector&lt; float &gt;</label>
+      </node>
+      <node id="115">
+        <label>std::vector&lt; vec4 &gt;</label>
+      </node>
+      <node id="119">
+        <label>Auris::Interpolation</label>
+        <link refid="class_auris_1_1_interpolation"/>
+        <childnode refid="116" relation="usage">
+          <edgelabel>points</edgelabel>
+        </childnode>
+      </node>
+      <node id="110">
+        <label>SRE::Mesh</label>
+      </node>
+      <node id="108">
+        <label>Auris::Transform</label>
+        <link refid="class_auris_1_1_transform"/>
+        <childnode refid="103" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="99">
+        <label>Auris::DynamicPool&lt; Auris::Sprite &gt;</label>
+        <link refid="class_auris_1_1_dynamic_pool"/>
+        <childnode refid="100" relation="usage">
+          <edgelabel>pools</edgelabel>
+        </childnode>
+        <childnode refid="112" relation="usage">
+          <edgelabel>poolsFull</edgelabel>
+        </childnode>
+      </node>
+      <node id="109">
+        <label>Auris::Mesh</label>
+        <link refid="class_auris_1_1_mesh"/>
+        <childnode refid="110" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="98">
+        <label>std::vector&lt; shared_ptr&lt; Auris::Animation &gt; &gt;</label>
+      </node>
+      <node id="106">
+        <label>std::basic_string&lt; char &gt;</label>
+      </node>
+      <node id="95">
+        <label>Auris::Camera</label>
+        <link refid="class_auris_1_1_camera"/>
+      </node>
+      <node id="103">
+        <label>Auris::Nugget</label>
+        <link refid="class_auris_1_1_nugget"/>
+        <childnode refid="104" relation="usage">
+          <edgelabel>entity</edgelabel>
+        </childnode>
+      </node>
+      <node id="111">
+        <label>Auris::Material</label>
+        <link refid="class_auris_1_1_material"/>
+      </node>
+      <node id="114">
+        <label>Auris::ParticleSystem</label>
+        <link refid="class_auris_1_1_particle_system"/>
+        <childnode refid="115" relation="usage">
+          <edgelabel>startColors</edgelabel>
+          <edgelabel>finalColors</edgelabel>
+          <edgelabel>endColors</edgelabel>
+        </childnode>
+        <childnode refid="116" relation="usage">
+          <edgelabel>interpolationPoints_color</edgelabel>
+          <edgelabel>interpolationPoints_angularVelocity</edgelabel>
+          <edgelabel>interpolationPoints_acceleration</edgelabel>
+          <edgelabel>interpolationPoints_size</edgelabel>
+          <edgelabel>interpolationPoints_velocity</edgelabel>
+          <edgelabel>uvs</edgelabel>
+        </childnode>
+        <childnode refid="117" relation="usage">
+          <edgelabel>velocities</edgelabel>
+          <edgelabel>finalPositions</edgelabel>
+          <edgelabel>positions</edgelabel>
+        </childnode>
+        <childnode refid="118" relation="usage">
+          <edgelabel>uvSize</edgelabel>
+          <edgelabel>angularVelocities</edgelabel>
+          <edgelabel>finalSizes</edgelabel>
+          <edgelabel>endSizes</edgelabel>
+          <edgelabel>startSizes</edgelabel>
+          <edgelabel>finalRotation</edgelabel>
+          <edgelabel>startTimes</edgelabel>
+          <edgelabel>rotations</edgelabel>
+        </childnode>
+        <childnode refid="119" relation="usage">
+          <edgelabel>interpolation_color</edgelabel>
+          <edgelabel>interpolation_velocity</edgelabel>
+          <edgelabel>interpolation_acceleration</edgelabel>
+          <edgelabel>interpolation_size</edgelabel>
+          <edgelabel>interpolation_angularVelocity</edgelabel>
+        </childnode>
+      </node>
+      <node id="101">
+        <label>Auris::Pool&lt; Auris::Sprite &gt;</label>
+        <link refid="class_auris_1_1_pool"/>
+        <childnode refid="102" relation="usage">
+          <edgelabel>objects</edgelabel>
+        </childnode>
+      </node>
+      <node id="102">
+        <label>Auris::Sprite</label>
+        <link refid="class_auris_1_1_sprite"/>
+        <childnode refid="103" relation="public-inheritance">
+        </childnode>
+        <childnode refid="109" relation="usage">
+          <edgelabel>mesh</edgelabel>
+        </childnode>
+        <childnode refid="111" relation="usage">
+          <edgelabel>material</edgelabel>
+        </childnode>
+      </node>
+      <node id="116">
+        <label>std::vector&lt; vec2 &gt;</label>
+      </node>
+      <node id="97">
+        <label>Auris::RenderSystem</label>
+        <link refid="class_auris_1_1_render_system"/>
+        <childnode refid="98" relation="usage">
+          <edgelabel>animations</edgelabel>
+        </childnode>
+        <childnode refid="99" relation="usage">
+          <edgelabel>spritePool</edgelabel>
+        </childnode>
+        <childnode refid="113" relation="usage">
+          <edgelabel>particleSystems</edgelabel>
+        </childnode>
+      </node>
+      <node id="112">
+        <label>std::vector&lt; bool &gt;</label>
+      </node>
+      <node id="104">
+        <label>Auris::Entity</label>
+        <link refid="class_auris_1_1_entity"/>
+        <childnode refid="105" relation="usage">
+          <edgelabel>type</edgelabel>
+          <edgelabel>name</edgelabel>
+        </childnode>
+        <childnode refid="107" relation="usage">
+          <edgelabel>children</edgelabel>
+        </childnode>
+        <childnode refid="104" relation="usage">
+          <edgelabel>parent</edgelabel>
+        </childnode>
+        <childnode refid="108" relation="usage">
+          <edgelabel>transform</edgelabel>
+        </childnode>
+      </node>
+      <node id="94">
+        <label>std::vector&lt; std::shared_ptr&lt; Auris::Entity &gt; &gt;</label>
+      </node>
+      <node id="96">
+        <label>std::vector&lt; int &gt;</label>
+      </node>
+      <node id="105">
+        <label>std::string</label>
+        <childnode refid="106" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="Projects/GameEngine/include/Auris/Engine.hpp" line="66" column="1" bodyfile="Projects/GameEngine/include/Auris/Engine.hpp" bodystart="66" bodyend="133"/>
+    <listofallmembers>
+      <member refid="class_auris_1_1_engine_ab4e5172c71d4bc42f6cfb89882d62e5c_1ab4e5172c71d4bc42f6cfb89882d62e5c" prot="private" virt="non-virtual"><scope>Auris::Engine</scope><name>backgroundColor</name></member>
+      <member refid="class_auris_1_1_engine_acc8f2598304cd8693464d2d654e268d5_1acc8f2598304cd8693464d2d654e268d5" prot="public" virt="non-virtual"><scope>Auris::Engine</scope><name>collisionHandler</name></member>
+      <member refid="class_auris_1_1_engine_a52a915baf4affcf7445eb28623c9a05d_1a52a915baf4affcf7445eb28623c9a05d" prot="public" virt="non-virtual"><scope>Auris::Engine</scope><name>deltaTime</name></member>
+      <member refid="class_auris_1_1_engine_a88cee03d0a6a8ade0f7964fdb591a9b7_1a88cee03d0a6a8ade0f7964fdb591a9b7" prot="public" virt="non-virtual"><scope>Auris::Engine</scope><name>Engine</name></member>
+      <member refid="class_auris_1_1_engine_a5c0831efd8f1f39a113ac1787f553137_1a5c0831efd8f1f39a113ac1787f553137" prot="public" virt="non-virtual"><scope>Auris::Engine</scope><name>game</name></member>
+      <member refid="class_auris_1_1_engine_aaa6f69db59fb49db6d157e0417739398_1aaa6f69db59fb49db6d157e0417739398" prot="public" virt="non-virtual"><scope>Auris::Engine</scope><name>instance</name></member>
+      <member refid="class_auris_1_1_engine_a8128b7ad1e15ca704cf37835a3ab4299_1a8128b7ad1e15ca704cf37835a3ab4299" prot="public" virt="non-virtual"><scope>Auris::Engine</scope><name>renderSystem</name></member>
+      <member refid="class_auris_1_1_engine_a5ec5899526134ac2e7393b33d12b2444_1a5ec5899526134ac2e7393b33d12b2444" prot="public" virt="non-virtual"><scope>Auris::Engine</scope><name>run</name></member>
+      <member refid="class_auris_1_1_engine_a5b600d898db6f73807b0d05a43f470fe_1a5b600d898db6f73807b0d05a43f470fe" prot="public" virt="non-virtual"><scope>Auris::Engine</scope><name>setAmbientLight</name></member>
+      <member refid="class_auris_1_1_engine_abb62a90dc4fe76f4c5e593d529061ea1_1abb62a90dc4fe76f4c5e593d529061ea1" prot="public" virt="non-virtual"><scope>Auris::Engine</scope><name>setBackgroundColor</name></member>
+      <member refid="class_auris_1_1_engine_aff3cd18d2f6a44c6771798957b282864_1aff3cd18d2f6a44c6771798957b282864" prot="public" virt="non-virtual"><scope>Auris::Engine</scope><name>shutdown</name></member>
+      <member refid="class_auris_1_1_engine_a3362131c1b4eaa160d8e395b43273b0b_1a3362131c1b4eaa160d8e395b43273b0b" prot="public" virt="non-virtual"><scope>Auris::Engine</scope><name>startup</name></member>
+      <member refid="class_auris_1_1_engine_a559c56ee9ea97f370d2e2438b975e8c8_1a559c56ee9ea97f370d2e2438b975e8c8" prot="public" virt="non-virtual"><scope>Auris::Engine</scope><name>time</name></member>
+      <member refid="class_auris_1_1_engine_a2f68a61898f5309eb378a1fcb20db592_1a2f68a61898f5309eb378a1fcb20db592" prot="public" virt="non-virtual"><scope>Auris::Engine</scope><name>window</name></member>
+      <member refid="class_auris_1_1_engine_a6fa6f2c7735b3b4b30be89af3fd32b54_1a6fa6f2c7735b3b4b30be89af3fd32b54" prot="public" virt="non-virtual"><scope>Auris::Engine</scope><name>world</name></member>
+      <member refid="class_auris_1_1_engine_acf488394e89c512c34aff0b6798a3383_1acf488394e89c512c34aff0b6798a3383" prot="public" virt="virtual"><scope>Auris::Engine</scope><name>~Engine</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

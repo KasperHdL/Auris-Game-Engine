@@ -1,0 +1,55 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.12">
+  <compounddef id="structpicojson_1_1serialize__str__char" kind="struct" language="C++" prot="public">
+    <compoundname>picojson::serialize_str_char</compoundname>
+    <includes refid="picojson_8h" local="no">picojson.h</includes>
+    <templateparamlist>
+      <param>
+        <type>typename Iter</type>
+      </param>
+    </templateparamlist>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structpicojson_1_1serialize__str__char_a1abb88801c571a903ef9e3a21388b944_1a1abb88801c571a903ef9e3a21388b944" prot="public" static="no" mutable="no">
+        <type>Iter</type>
+        <definition>Iter picojson::serialize_str_char&lt; Iter &gt;::oi</definition>
+        <argsstring></argsstring>
+        <name>oi</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Projects/GameEngine/include/Auris/Utilities/picojson.h" line="474" column="1" bodyfile="Projects/GameEngine/include/Auris/Utilities/picojson.h" bodystart="474" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="structpicojson_1_1serialize__str__char_acea559bf2510abf0c3735b02e080308f_1acea559bf2510abf0c3735b02e080308f" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void picojson::serialize_str_char&lt; Iter &gt;::operator()</definition>
+        <argsstring>(char c)</argsstring>
+        <name>operator()</name>
+        <param>
+          <type>char</type>
+          <declname>c</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Projects/GameEngine/include/Auris/Utilities/picojson.h" line="475" column="1" bodyfile="Projects/GameEngine/include/Auris/Utilities/picojson.h" bodystart="475" bodyend="497"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="Projects/GameEngine/include/Auris/Utilities/picojson.h" line="473" column="1" bodyfile="Projects/GameEngine/include/Auris/Utilities/picojson.h" bodystart="473" bodyend="498"/>
+    <listofallmembers>
+      <member refid="structpicojson_1_1serialize__str__char_a1abb88801c571a903ef9e3a21388b944_1a1abb88801c571a903ef9e3a21388b944" prot="public" virt="non-virtual"><scope>picojson::serialize_str_char</scope><name>oi</name></member>
+      <member refid="structpicojson_1_1serialize__str__char_acea559bf2510abf0c3735b02e080308f_1acea559bf2510abf0c3735b02e080308f" prot="public" virt="non-virtual"><scope>picojson::serialize_str_char</scope><name>operator()</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

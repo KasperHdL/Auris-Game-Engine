@@ -1,0 +1,17 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.12">
+  <compounddef id="dir_91b16268451be890f35426c2e0246f24" kind="dir">
+    <compoundname>Projects/GameEngine/include/Auris/Entities</compoundname>
+    <innerdir refid="dir_52d96a03572902fd013eb34cf4294a0c">Projects/GameEngine/include/Auris/Entities/Nuggets</innerdir>
+    <innerfile refid="_audio_player_8hpp">AudioPlayer.hpp</innerfile>
+    <innerfile refid="_camera_8hpp">Camera.hpp</innerfile>
+    <innerfile refid="_light_8hpp">Light.hpp</innerfile>
+    <innerfile refid="_nugget_8hpp">Nugget.hpp</innerfile>
+    <innerfile refid="_physics_entity_8hpp">PhysicsEntity.hpp</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="Projects/GameEngine/include/Auris/Entities/"/>
+  </compounddef>
+</doxygen>

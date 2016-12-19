@@ -1,0 +1,130 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.12">
+  <compounddef id="unionpicojson_1_1value_1_1__storage" kind="union" language="C++" prot="public">
+    <compoundname>picojson::value::_storage</compoundname>
+    <includes refid="picojson_8h" local="no">picojson.h</includes>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="unionpicojson_1_1value_1_1__storage_a612a1a8ceb65bdd2e8f09eb33074ba0b_1a612a1a8ceb65bdd2e8f09eb33074ba0b" prot="public" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool picojson::value::_storage::boolean_</definition>
+        <argsstring></argsstring>
+        <name>boolean_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Projects/GameEngine/include/Auris/Utilities/picojson.h" line="125" column="1" bodyfile="Projects/GameEngine/include/Auris/Utilities/picojson.h" bodystart="125" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="unionpicojson_1_1value_1_1__storage_a4fc799f222c28156f943a891e510e438_1a4fc799f222c28156f943a891e510e438" prot="public" static="no" mutable="no">
+        <type>double</type>
+        <definition>double picojson::value::_storage::number_</definition>
+        <argsstring></argsstring>
+        <name>number_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Projects/GameEngine/include/Auris/Utilities/picojson.h" line="126" column="1" bodyfile="Projects/GameEngine/include/Auris/Utilities/picojson.h" bodystart="126" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="unionpicojson_1_1value_1_1__storage_a9ec5aa5b86bbef81b15697c936f58736_1a9ec5aa5b86bbef81b15697c936f58736" prot="public" static="no" mutable="no">
+        <type>std::string *</type>
+        <definition>std::string* picojson::value::_storage::string_</definition>
+        <argsstring></argsstring>
+        <name>string_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Projects/GameEngine/include/Auris/Utilities/picojson.h" line="130" column="1" bodyfile="Projects/GameEngine/include/Auris/Utilities/picojson.h" bodystart="130" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="unionpicojson_1_1value_1_1__storage_aeac6ef9328845f1f6402c35bb281990a_1aeac6ef9328845f1f6402c35bb281990a" prot="public" static="no" mutable="no">
+        <type><ref refid="classpicojson_1_1value_adeff4fdf7ee5675eeb7686bb89233c43_1adeff4fdf7ee5675eeb7686bb89233c43" kindref="member">array</ref> *</type>
+        <definition>array* picojson::value::_storage::array_</definition>
+        <argsstring></argsstring>
+        <name>array_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Projects/GameEngine/include/Auris/Utilities/picojson.h" line="131" column="1" bodyfile="Projects/GameEngine/include/Auris/Utilities/picojson.h" bodystart="131" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="unionpicojson_1_1value_1_1__storage_ad1feb283e78999609c7a27be95e5f4df_1ad1feb283e78999609c7a27be95e5f4df" prot="public" static="no" mutable="no">
+        <type><ref refid="classpicojson_1_1value_a7d7da11d54d7b983a902d28367bda9c1_1a7d7da11d54d7b983a902d28367bda9c1" kindref="member">object</ref> *</type>
+        <definition>object* picojson::value::_storage::object_</definition>
+        <argsstring></argsstring>
+        <name>object_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Projects/GameEngine/include/Auris/Utilities/picojson.h" line="132" column="1" bodyfile="Projects/GameEngine/include/Auris/Utilities/picojson.h" bodystart="132" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="3">
+        <label>K</label>
+      </node>
+      <node id="4">
+        <label>T</label>
+      </node>
+      <node id="7">
+        <label>std::vector&lt; T &gt;</label>
+        <childnode refid="4" relation="usage">
+          <edgelabel>elements</edgelabel>
+        </childnode>
+      </node>
+      <node id="2">
+        <label>std::map&lt; K, T &gt;</label>
+        <childnode refid="3" relation="usage">
+          <edgelabel>keys</edgelabel>
+        </childnode>
+        <childnode refid="4" relation="usage">
+          <edgelabel>elements</edgelabel>
+        </childnode>
+      </node>
+      <node id="6">
+        <label>std::basic_string&lt; char &gt;</label>
+      </node>
+      <node id="1">
+        <label>picojson::value::_storage</label>
+        <link refid="unionpicojson_1_1value_1_1__storage"/>
+        <childnode refid="2" relation="usage">
+          <edgelabel>object_</edgelabel>
+        </childnode>
+        <childnode refid="5" relation="usage">
+          <edgelabel>string_</edgelabel>
+        </childnode>
+        <childnode refid="7" relation="usage">
+          <edgelabel>array_</edgelabel>
+        </childnode>
+      </node>
+      <node id="5">
+        <label>std::string</label>
+        <childnode refid="6" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="Projects/GameEngine/include/Auris/Utilities/picojson.h" line="124" column="1" bodyfile="Projects/GameEngine/include/Auris/Utilities/picojson.h" bodystart="124" bodyend="133"/>
+    <listofallmembers>
+      <member refid="unionpicojson_1_1value_1_1__storage_aeac6ef9328845f1f6402c35bb281990a_1aeac6ef9328845f1f6402c35bb281990a" prot="public" virt="non-virtual"><scope>picojson::value::_storage</scope><name>array_</name></member>
+      <member refid="unionpicojson_1_1value_1_1__storage_a612a1a8ceb65bdd2e8f09eb33074ba0b_1a612a1a8ceb65bdd2e8f09eb33074ba0b" prot="public" virt="non-virtual"><scope>picojson::value::_storage</scope><name>boolean_</name></member>
+      <member refid="unionpicojson_1_1value_1_1__storage_a4fc799f222c28156f943a891e510e438_1a4fc799f222c28156f943a891e510e438" prot="public" virt="non-virtual"><scope>picojson::value::_storage</scope><name>number_</name></member>
+      <member refid="unionpicojson_1_1value_1_1__storage_ad1feb283e78999609c7a27be95e5f4df_1ad1feb283e78999609c7a27be95e5f4df" prot="public" virt="non-virtual"><scope>picojson::value::_storage</scope><name>object_</name></member>
+      <member refid="unionpicojson_1_1value_1_1__storage_a9ec5aa5b86bbef81b15697c936f58736_1a9ec5aa5b86bbef81b15697c936f58736" prot="public" virt="non-virtual"><scope>picojson::value::_storage</scope><name>string_</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

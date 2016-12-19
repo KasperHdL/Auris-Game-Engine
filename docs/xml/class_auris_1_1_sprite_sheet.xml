@@ -1,0 +1,163 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.12">
+  <compounddef id="class_auris_1_1_sprite_sheet" kind="class" language="C++" prot="public">
+    <compoundname>Auris::SpriteSheet</compoundname>
+    <includes refid="_sprite_sheet_8hpp" local="no">SpriteSheet.hpp</includes>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="class_auris_1_1_sprite_sheet_a1d691d3f0af24b1286882d3709957cbe_1a1d691d3f0af24b1286882d3709957cbe" prot="public" static="no" mutable="no">
+        <type>std::map&lt; std::string, <ref refid="class_auris_1_1_mesh" kindref="compound">Auris::Mesh</ref> * &gt;</type>
+        <definition>std::map&lt;std::string, Auris::Mesh*&gt; Auris::SpriteSheet::meshes</definition>
+        <argsstring></argsstring>
+        <name>meshes</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>A map of strings and <ref refid="class_auris_1_1_mesh" kindref="compound">Mesh</ref> pointer pointer: meshes. Reference to the <ref refid="class_auris_1_1_mesh" kindref="compound">Mesh</ref>, dependent on the string. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Projects/GameEngine/include/Auris/Utilities/SpriteSheet.hpp" line="38" column="1" bodyfile="Projects/GameEngine/include/Auris/Utilities/SpriteSheet.hpp" bodystart="38" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_auris_1_1_sprite_sheet_aca13e24dd6ec02dab5185938c2fe0200_1aca13e24dd6ec02dab5185938c2fe0200" prot="public" static="no" mutable="no">
+        <type>SRE::Texture *</type>
+        <definition>SRE::Texture* Auris::SpriteSheet::texture</definition>
+        <argsstring></argsstring>
+        <name>texture</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>A Texture pointer: texture. Reference to the Texture of the sprite. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Projects/GameEngine/include/Auris/Utilities/SpriteSheet.hpp" line="39" column="1" bodyfile="Projects/GameEngine/include/Auris/Utilities/SpriteSheet.hpp" bodystart="39" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_auris_1_1_sprite_sheet_a8a653eddf6cfef5c61e6a6be483af018_1a8a653eddf6cfef5c61e6a6be483af018" prot="public" static="no" mutable="no">
+        <type>SRE::Texture *</type>
+        <definition>SRE::Texture* Auris::SpriteSheet::normalMap</definition>
+        <argsstring></argsstring>
+        <name>normalMap</name>
+        <initializer>= nullptr</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>A Texture pointer: normalMap. Reference to the normal map of the sprite (default is no normal map). </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Projects/GameEngine/include/Auris/Utilities/SpriteSheet.hpp" line="40" column="1" bodyfile="Projects/GameEngine/include/Auris/Utilities/SpriteSheet.hpp" bodystart="40" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_auris_1_1_sprite_sheet_aa9abdbbce748b6dec7732756e8dd892e_1aa9abdbbce748b6dec7732756e8dd892e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Auris::SpriteSheet::SpriteSheet</definition>
+        <argsstring>()</argsstring>
+        <name>SpriteSheet</name>
+        <briefdescription>
+<para>The Spritesheet constructor. </para>        </briefdescription>
+        <detaileddescription>
+<para>Does nothing </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Projects/GameEngine/include/Auris/Utilities/SpriteSheet.hpp" line="22" column="1" bodyfile="Projects/GameEngine/Auris/src/Auris/Utilities/SpriteSheet.cpp" bodystart="6" bodyend="8"/>
+      </memberdef>
+      <memberdef kind="function" id="class_auris_1_1_sprite_sheet_ab6994da5501053ddc661bfa9e3ef1385_1ab6994da5501053ddc661bfa9e3ef1385" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Auris::SpriteSheet::~SpriteSheet</definition>
+        <argsstring>()</argsstring>
+        <name>~SpriteSheet</name>
+        <briefdescription>
+<para>The Spritesheet destructor. </para>        </briefdescription>
+        <detaileddescription>
+<para>Clear all meshes, textures and normal maps </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Projects/GameEngine/include/Auris/Utilities/SpriteSheet.hpp" line="27" column="1" bodyfile="Projects/GameEngine/Auris/src/Auris/Utilities/SpriteSheet.cpp" bodystart="10" bodyend="22"/>
+      </memberdef>
+      <memberdef kind="function" id="class_auris_1_1_sprite_sheet_a12608e8144dc6404d13a1735294a3419_1a12608e8144dc6404d13a1735294a3419" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Auris::SpriteSheet::setSpriteTo</definition>
+        <argsstring>(Sprite *sprite, std::string name, bool getFlipped=false)</argsstring>
+        <name>setSpriteTo</name>
+        <param>
+          <type><ref refid="class_auris_1_1_sprite" kindref="compound">Sprite</ref> *</type>
+          <declname>sprite</declname>
+        </param>
+        <param>
+          <type>std::string</type>
+          <declname>name</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>getFlipped</declname>
+          <defval>false</defval>
+        </param>
+        <briefdescription>
+<para>A setSpriteTo method, taking 2 arguments. The <ref refid="class_auris_1_1_sprite" kindref="compound">Sprite</ref> passed must be initialized. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="see"><para><ref refid="class_auris_1_1_render_system_a65b93e5f315c78ddf2298e65f692b165_1a65b93e5f315c78ddf2298e65f692b165" kindref="member">RenderSystem::getSprite()</ref></para></simplesect>
+Sets the sprite mesh to the one corresponding with the name given, if name does not exist then it prints an error <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>sprite</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>an <ref refid="class_auris_1_1_sprite" kindref="compound">Sprite</ref> pointer, which mesh will change to correspond with the given name of the spritesheet frame </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>name</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>a String value, that is the name of the sprite </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>getFlipped</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>a bool value. Set the sprite to be flipped or not </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="see"><para><ref refid="class_auris_1_1_render_system_a65b93e5f315c78ddf2298e65f692b165_1a65b93e5f315c78ddf2298e65f692b165" kindref="member">RenderSystem::getSprite()</ref> </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Projects/GameEngine/include/Auris/Utilities/SpriteSheet.hpp" line="36" column="1" bodyfile="Projects/GameEngine/Auris/src/Auris/Utilities/SpriteSheet.cpp" bodystart="24" bodyend="29"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>The Spritesheet class. </para>    </briefdescription>
+    <detaileddescription>
+<para>Used to make spritesheets </para>    </detaileddescription>
+    <collaborationgraph>
+      <node id="248">
+        <label>std::map&lt; std::string, Auris::Auris::Mesh *&gt;</label>
+        <childnode refid="249" relation="usage">
+          <edgelabel>keys</edgelabel>
+        </childnode>
+      </node>
+      <node id="250">
+        <label>std::basic_string&lt; char &gt;</label>
+      </node>
+      <node id="247">
+        <label>Auris::SpriteSheet</label>
+        <link refid="class_auris_1_1_sprite_sheet"/>
+        <childnode refid="248" relation="usage">
+          <edgelabel>meshes</edgelabel>
+        </childnode>
+      </node>
+      <node id="249">
+        <label>std::string</label>
+        <childnode refid="250" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="Projects/GameEngine/include/Auris/Utilities/SpriteSheet.hpp" line="16" column="1" bodyfile="Projects/GameEngine/include/Auris/Utilities/SpriteSheet.hpp" bodystart="16" bodyend="42"/>
+    <listofallmembers>
+      <member refid="class_auris_1_1_sprite_sheet_a1d691d3f0af24b1286882d3709957cbe_1a1d691d3f0af24b1286882d3709957cbe" prot="public" virt="non-virtual"><scope>Auris::SpriteSheet</scope><name>meshes</name></member>
+      <member refid="class_auris_1_1_sprite_sheet_a8a653eddf6cfef5c61e6a6be483af018_1a8a653eddf6cfef5c61e6a6be483af018" prot="public" virt="non-virtual"><scope>Auris::SpriteSheet</scope><name>normalMap</name></member>
+      <member refid="class_auris_1_1_sprite_sheet_a12608e8144dc6404d13a1735294a3419_1a12608e8144dc6404d13a1735294a3419" prot="public" virt="non-virtual"><scope>Auris::SpriteSheet</scope><name>setSpriteTo</name></member>
+      <member refid="class_auris_1_1_sprite_sheet_aa9abdbbce748b6dec7732756e8dd892e_1aa9abdbbce748b6dec7732756e8dd892e" prot="public" virt="non-virtual"><scope>Auris::SpriteSheet</scope><name>SpriteSheet</name></member>
+      <member refid="class_auris_1_1_sprite_sheet_aca13e24dd6ec02dab5185938c2fe0200_1aca13e24dd6ec02dab5185938c2fe0200" prot="public" virt="non-virtual"><scope>Auris::SpriteSheet</scope><name>texture</name></member>
+      <member refid="class_auris_1_1_sprite_sheet_ab6994da5501053ddc661bfa9e3ef1385_1ab6994da5501053ddc661bfa9e3ef1385" prot="public" virt="non-virtual"><scope>Auris::SpriteSheet</scope><name>~SpriteSheet</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

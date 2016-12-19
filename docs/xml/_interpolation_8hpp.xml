@@ -1,0 +1,284 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.12">
+  <compounddef id="_interpolation_8hpp" kind="file" language="C++">
+    <compoundname>Interpolation.hpp</compoundname>
+    <includes local="no">vector</includes>
+    <includes local="yes">glm/glm.hpp</includes>
+    <includedby refid="_particle_system_8hpp" local="yes">Projects/GameEngine/include/Auris/Systems/ParticleSystem.hpp</includedby>
+    <incdepgraph>
+      <node id="1370">
+        <label>Projects/GameEngine/include/Auris/Utilities/Interpolation.hpp</label>
+        <link refid="_interpolation_8hpp"/>
+        <childnode refid="1371" relation="include">
+        </childnode>
+        <childnode refid="1372" relation="include">
+        </childnode>
+      </node>
+      <node id="1371">
+        <label>vector</label>
+      </node>
+      <node id="1372">
+        <label>glm/glm.hpp</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="1380">
+        <label>Projects/GameEngine/Auris/src/Auris/Entities/PhysicsEntity.cpp</label>
+        <link refid="_physics_entity_8cpp"/>
+      </node>
+      <node id="1377">
+        <label>Projects/GameEngine/include/Auris/Entities/PhysicsEntity.hpp</label>
+        <link refid="_physics_entity_8hpp"/>
+        <childnode refid="1378" relation="include">
+        </childnode>
+        <childnode refid="1380" relation="include">
+        </childnode>
+      </node>
+      <node id="1378">
+        <label>Projects/GameEngine/include/Auris/Systems/CollisionHandler.hpp</label>
+        <link refid="_collision_handler_8hpp"/>
+        <childnode refid="1379" relation="include">
+        </childnode>
+      </node>
+      <node id="1381">
+        <label>Projects/GameEngine/include/Auris/Game.hpp</label>
+        <link refid="_game_8hpp"/>
+        <childnode refid="1376" relation="include">
+        </childnode>
+        <childnode refid="1382" relation="include">
+        </childnode>
+        <childnode refid="1383" relation="include">
+        </childnode>
+      </node>
+      <node id="1376">
+        <label>Projects/GameEngine/include/Auris/Engine.hpp</label>
+        <link refid="_engine_8hpp"/>
+        <childnode refid="1377" relation="include">
+        </childnode>
+        <childnode refid="1381" relation="include">
+        </childnode>
+        <childnode refid="1384" relation="include">
+        </childnode>
+        <childnode refid="1379" relation="include">
+        </childnode>
+      </node>
+      <node id="1374">
+        <label>Projects/GameEngine/include/Auris/Systems/ParticleSystem.hpp</label>
+        <link refid="_particle_system_8hpp"/>
+        <childnode refid="1375" relation="include">
+        </childnode>
+      </node>
+      <node id="1384">
+        <label>Projects/GameEngine/include/Auris/Utilities/BodyStandard.hpp</label>
+        <link refid="_body_standard_8hpp"/>
+      </node>
+      <node id="1383">
+        <label>Projects/GameEngine/Auris/src/Auris/Systems/Input.cpp</label>
+        <link refid="_input_8cpp"/>
+      </node>
+      <node id="1373">
+        <label>Projects/GameEngine/include/Auris/Utilities/Interpolation.hpp</label>
+        <link refid="_interpolation_8hpp"/>
+        <childnode refid="1374" relation="include">
+        </childnode>
+      </node>
+      <node id="1382">
+        <label>Projects/GameEngine/Auris/src/Auris/Game.cpp</label>
+        <link refid="_game_8cpp"/>
+      </node>
+      <node id="1379">
+        <label>Projects/GameEngine/Auris/src/Auris/Engine.cpp</label>
+        <link refid="_engine_8cpp"/>
+      </node>
+      <node id="1387">
+        <label>Projects/GameEngine/Auris/src/Auris/Utilities/SpriteSheet.cpp</label>
+        <link refid="_sprite_sheet_8cpp"/>
+      </node>
+      <node id="1385">
+        <label>Projects/GameEngine/Auris/src/Auris/Entities/Nuggets/Sprite.cpp</label>
+        <link refid="_sprite_8cpp"/>
+      </node>
+      <node id="1386">
+        <label>Projects/GameEngine/Auris/src/Auris/Systems/RenderSystem.cpp</label>
+        <link refid="_render_system_8cpp"/>
+      </node>
+      <node id="1375">
+        <label>Projects/GameEngine/include/Auris/Systems/RenderSystem.hpp</label>
+        <link refid="_render_system_8hpp"/>
+        <childnode refid="1376" relation="include">
+        </childnode>
+        <childnode refid="1385" relation="include">
+        </childnode>
+        <childnode refid="1386" relation="include">
+        </childnode>
+        <childnode refid="1387" relation="include">
+        </childnode>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="class_auris_1_1_interpolation" prot="public">Auris::Interpolation</innerclass>
+    <innernamespace refid="namespace_auris">Auris</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#pragma<sp/>once</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;vector&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;glm/glm.hpp&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespace_auris" kindref="compound">Auris</ref>{</highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="8"><highlight class="comment">//!<sp/>An<sp/>enum<sp/>class<sp/>of<sp/>InterpolationType.</highlight></codeline>
+<codeline lineno="9"><highlight class="comment"></highlight><highlight class="comment">/*!<sp/>That<sp/>holds<sp/>information<sp/>about<sp/>the<sp/>type<sp/>of<sp/>interpolation.</highlight></codeline>
+<codeline lineno="10"><highlight class="comment"><sp/>*<sp/>Linear,<sp/>Bezier,<sp/>Hermite,<sp/>CatmullRom<sp/>and<sp/>BSpline.</highlight></codeline>
+<codeline lineno="11"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="12" refid="namespace_auris_a283c85dda8b6763292a1c3120c6b5c4f_1a283c85dda8b6763292a1c3120c6b5c4f" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">enum<sp/>class</highlight><highlight class="normal"><sp/><ref refid="namespace_auris_a283c85dda8b6763292a1c3120c6b5c4f_1a283c85dda8b6763292a1c3120c6b5c4f" kindref="member">InterpolationType</ref>{</highlight></codeline>
+<codeline lineno="13"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="namespace_auris_a283c85dda8b6763292a1c3120c6b5c4f_1a283c85dda8b6763292a1c3120c6b5c4fa32a843da6ea40ab3b17a3421ccdf671b" kindref="member">Linear</ref>,</highlight></codeline>
+<codeline lineno="14"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="namespace_auris_a283c85dda8b6763292a1c3120c6b5c4f_1a283c85dda8b6763292a1c3120c6b5c4fa31aa08a905ffdb74542a88cb7320c69d" kindref="member">Bezier</ref>,</highlight></codeline>
+<codeline lineno="15"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="namespace_auris_a283c85dda8b6763292a1c3120c6b5c4f_1a283c85dda8b6763292a1c3120c6b5c4fa70457be66a37fd77955ebfb026c57a24" kindref="member">Hermite</ref>,</highlight></codeline>
+<codeline lineno="16"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="namespace_auris_a283c85dda8b6763292a1c3120c6b5c4f_1a283c85dda8b6763292a1c3120c6b5c4faf944f585a3a2c251e655527a1e81cff7" kindref="member">CatmullRom</ref>,</highlight></codeline>
+<codeline lineno="17"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="namespace_auris_a283c85dda8b6763292a1c3120c6b5c4f_1a283c85dda8b6763292a1c3120c6b5c4fa828ce1e5157657c1792f0503c2d430db" kindref="member">BSpline</ref></highlight></codeline>
+<codeline lineno="18"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight><highlight class="keyword">using<sp/>namespace<sp/></highlight><highlight class="normal"><ref refid="namespaceglm" kindref="compound">glm</ref>;</highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="22"><highlight class="comment">//!<sp/>The<sp/>Interpolation<sp/>class.</highlight></codeline>
+<codeline lineno="23"><highlight class="comment"></highlight><highlight class="comment"><sp/><sp/><sp/><sp/>/*!<sp/>Controls<sp/>and<sp/>have<sp/>information<sp/>of<sp/>all<sp/>interpolation<sp/>in<sp/>the<sp/>engine</highlight></codeline>
+<codeline lineno="24"><highlight class="comment"><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="25" refid="class_auris_1_1_interpolation" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="class_auris_1_1_interpolation" kindref="compound">Interpolation</ref>{</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="28"><highlight class="comment"><sp/><sp/><sp/><sp/>//!<sp/>The<sp/>Interpolation<sp/>contructor,<sp/>taking<sp/>1<sp/>argument.</highlight></codeline>
+<codeline lineno="29"><highlight class="comment"></highlight><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>/*!<sp/>Saves<sp/>the<sp/>points<sp/>to<sp/>interpolate<sp/>between,<sp/>and<sp/>set<sp/>the<sp/>initial<sp/>type<sp/>to<sp/>Linear.</highlight></codeline>
+<codeline lineno="30"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*<sp/>\param<sp/>points<sp/>a<sp/>vector<sp/>of<sp/>vec2<sp/>values.<sp/>The<sp/>points<sp/>to<sp/>interpolate<sp/>between.</highlight></codeline>
+<codeline lineno="31"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="32" refid="class_auris_1_1_interpolation_a6e1025a9c6517d484328e5867053bc49_1a6e1025a9c6517d484328e5867053bc49" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_auris_1_1_interpolation_a6e1025a9c6517d484328e5867053bc49_1a6e1025a9c6517d484328e5867053bc49" kindref="member">Interpolation</ref>(std::vector&lt;vec2&gt;<sp/>*points)<sp/>:points(points)<sp/>{</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>interpolationType<sp/>=<sp/><ref refid="namespace_auris_a283c85dda8b6763292a1c3120c6b5c4f_1a283c85dda8b6763292a1c3120c6b5c4fa32a843da6ea40ab3b17a3421ccdf671b" kindref="member">InterpolationType::Linear</ref>;</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="35"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="36"><highlight class="comment"><sp/><sp/><sp/><sp/>//!<sp/>A<sp/>setInterpolation<sp/>method,<sp/>taking<sp/>1<sp/>argument.</highlight></codeline>
+<codeline lineno="37"><highlight class="comment"></highlight><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>/*!<sp/>Set<sp/>what<sp/>interpolation<sp/>mode<sp/>should<sp/>be<sp/>used.</highlight></codeline>
+<codeline lineno="38"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*<sp/>\param<sp/>i<sp/>an<sp/>Interpolation::InterpolationType.<sp/>The<sp/>interpolation<sp/>type<sp/>to<sp/>set.</highlight></codeline>
+<codeline lineno="39"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*<sp/>\sa<sp/>Interpolation::InterpolationType</highlight></codeline>
+<codeline lineno="40"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="41" refid="class_auris_1_1_interpolation_ae086af1e1c3596161c03ec63125d607f_1ae086af1e1c3596161c03ec63125d607f" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_auris_1_1_interpolation_ae086af1e1c3596161c03ec63125d607f_1ae086af1e1c3596161c03ec63125d607f" kindref="member">setInterpolation</ref>(<ref refid="namespace_auris_a283c85dda8b6763292a1c3120c6b5c4f_1a283c85dda8b6763292a1c3120c6b5c4f" kindref="member">InterpolationType</ref><sp/>i)<sp/>{<sp/>interpolationType<sp/>=<sp/>i;<sp/>}</highlight></codeline>
+<codeline lineno="42"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="43"><highlight class="comment"><sp/><sp/><sp/><sp/>//!<sp/>A<sp/>getInterpolation<sp/>method.</highlight></codeline>
+<codeline lineno="44"><highlight class="comment"></highlight><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>/*!<sp/>Get<sp/>what<sp/>interpolation<sp/>mode<sp/>is<sp/>used.</highlight></codeline>
+<codeline lineno="45"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*<sp/>\return<sp/>Interpolation::InterpolationType.<sp/>The<sp/>interpolation<sp/>used.</highlight></codeline>
+<codeline lineno="46"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*<sp/>\sa<sp/>Interpolation::InterpolationType</highlight></codeline>
+<codeline lineno="47"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="48" refid="class_auris_1_1_interpolation_abd6bb878768a12480ab064ccbef1186a_1abd6bb878768a12480ab064ccbef1186a" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="namespace_auris_a283c85dda8b6763292a1c3120c6b5c4f_1a283c85dda8b6763292a1c3120c6b5c4f" kindref="member">InterpolationType</ref><sp/><ref refid="class_auris_1_1_interpolation_abd6bb878768a12480ab064ccbef1186a_1abd6bb878768a12480ab064ccbef1186a" kindref="member">getInterpolationType</ref>()<sp/>{<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>interpolationType;<sp/>}</highlight></codeline>
+<codeline lineno="49"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="50"><highlight class="comment"><sp/><sp/><sp/><sp/>//!<sp/>A<sp/>interpolate<sp/>method,<sp/>taking<sp/>1<sp/>argument.</highlight></codeline>
+<codeline lineno="51"><highlight class="comment"></highlight><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>/*!<sp/>Interpolates,<sp/>based<sp/>on<sp/>the<sp/>Interpolation::InterpolationType</highlight></codeline>
+<codeline lineno="52"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*<sp/>\param<sp/>t<sp/>a<sp/>float<sp/>value.<sp/>The<sp/>time.</highlight></codeline>
+<codeline lineno="53"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*<sp/>\sa<sp/>Interpolation::InterpolationType</highlight></codeline>
+<codeline lineno="54"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="55" refid="class_auris_1_1_interpolation_ad02e8e3d94a5210fac89071e848d0f3d_1ad02e8e3d94a5210fac89071e848d0f3d" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>glm::vec2<sp/><ref refid="class_auris_1_1_interpolation_ad02e8e3d94a5210fac89071e848d0f3d_1ad02e8e3d94a5210fac89071e848d0f3d" kindref="member">interpolate</ref>(</highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>t)<sp/>{<sp/></highlight></codeline>
+<codeline lineno="56"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">switch</highlight><highlight class="normal"><sp/>(interpolationType){<sp/></highlight></codeline>
+<codeline lineno="57"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/><ref refid="namespace_auris_a283c85dda8b6763292a1c3120c6b5c4f_1a283c85dda8b6763292a1c3120c6b5c4fa31aa08a905ffdb74542a88cb7320c69d" kindref="member">InterpolationType::Bezier</ref>:</highlight></codeline>
+<codeline lineno="58"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>cubicBezier(t);</highlight></codeline>
+<codeline lineno="59"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/><ref refid="namespace_auris_a283c85dda8b6763292a1c3120c6b5c4f_1a283c85dda8b6763292a1c3120c6b5c4faf944f585a3a2c251e655527a1e81cff7" kindref="member">InterpolationType::CatmullRom</ref>:</highlight></codeline>
+<codeline lineno="60"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>catmullRom(t);</highlight></codeline>
+<codeline lineno="61"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/><ref refid="namespace_auris_a283c85dda8b6763292a1c3120c6b5c4f_1a283c85dda8b6763292a1c3120c6b5c4fa70457be66a37fd77955ebfb026c57a24" kindref="member">InterpolationType::Hermite</ref>:</highlight></codeline>
+<codeline lineno="62"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>hermite(t);</highlight></codeline>
+<codeline lineno="63"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/><ref refid="namespace_auris_a283c85dda8b6763292a1c3120c6b5c4f_1a283c85dda8b6763292a1c3120c6b5c4fa828ce1e5157657c1792f0503c2d430db" kindref="member">InterpolationType::BSpline</ref>:</highlight></codeline>
+<codeline lineno="64"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>bspline(t);</highlight></codeline>
+<codeline lineno="65"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">default</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="66"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>linear(t);</highlight></codeline>
+<codeline lineno="67"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="68"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="69"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="70" refid="class_auris_1_1_interpolation_a9704c9ec94fbb614d9a31b14f0bc85b2_1a9704c9ec94fbb614d9a31b14f0bc85b2" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="namespace_auris_a283c85dda8b6763292a1c3120c6b5c4f_1a283c85dda8b6763292a1c3120c6b5c4f" kindref="member">InterpolationType</ref><sp/><ref refid="class_auris_1_1_interpolation_a9704c9ec94fbb614d9a31b14f0bc85b2_1a9704c9ec94fbb614d9a31b14f0bc85b2" kindref="member">interpolationType</ref>;<sp/></highlight><highlight class="comment">/*!&lt;<sp/>An<sp/>Interpolation::InterpolationType<sp/>value:<sp/>interpolationType.<sp/>The<sp/>interpolation<sp/>type.<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="71"><highlight class="normal"></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="72" refid="class_auris_1_1_interpolation_ac0356ce6f374a3d022f4bc1eb5eaf2e3_1ac0356ce6f374a3d022f4bc1eb5eaf2e3" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>std::vector&lt;vec2&gt;<sp/>*<ref refid="class_auris_1_1_interpolation_ac0356ce6f374a3d022f4bc1eb5eaf2e3_1ac0356ce6f374a3d022f4bc1eb5eaf2e3" kindref="member">points</ref>;<sp/></highlight><highlight class="comment">/*!&lt;<sp/>A<sp/>vector<sp/>of<sp/>vec2<sp/>pointers:<sp/>points.<sp/>The<sp/>points<sp/>to<sp/>interpolate<sp/>between.<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="73"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="74"><highlight class="comment"><sp/><sp/><sp/><sp/>//!<sp/>A<sp/>linear<sp/>method,<sp/>taking<sp/>1<sp/>argument.</highlight></codeline>
+<codeline lineno="75"><highlight class="comment"></highlight><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>/*!<sp/>Linear<sp/>interpolation</highlight></codeline>
+<codeline lineno="76"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*<sp/>\param<sp/>t<sp/>a<sp/>float<sp/>value.<sp/>The<sp/>time.</highlight></codeline>
+<codeline lineno="77"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*<sp/>\sa<sp/>interpolate()</highlight></codeline>
+<codeline lineno="78"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="79" refid="class_auris_1_1_interpolation_ac937e2b9a1455ded4b5454f7bcd17615_1ac937e2b9a1455ded4b5454f7bcd17615" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>glm::vec2<sp/><ref refid="class_auris_1_1_interpolation_ac937e2b9a1455ded4b5454f7bcd17615_1ac937e2b9a1455ded4b5454f7bcd17615" kindref="member">linear</ref>(</highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>t)<sp/>{</highlight></codeline>
+<codeline lineno="80"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::vector&lt;vec2&gt;<sp/>&amp;points<sp/>=<sp/>*(this-&gt;points);</highlight></codeline>
+<codeline lineno="81"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>(1-t)*<sp/>points[0]<sp/>+</highlight></codeline>
+<codeline lineno="82"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>t<sp/>*<sp/>points[1];</highlight></codeline>
+<codeline lineno="83"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="84"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="85"><highlight class="comment"><sp/><sp/><sp/><sp/>//!<sp/>A<sp/>cubicBezier<sp/>method,<sp/>taking<sp/>1<sp/>argument.</highlight></codeline>
+<codeline lineno="86"><highlight class="comment"></highlight><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>/*!<sp/>Cubic<sp/>Bezier<sp/>interpolation</highlight></codeline>
+<codeline lineno="87"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*<sp/>\param<sp/>t<sp/>a<sp/>float<sp/>value.<sp/>The<sp/>time.</highlight></codeline>
+<codeline lineno="88"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*<sp/>\sa<sp/>interpolate()</highlight></codeline>
+<codeline lineno="89"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="90" refid="class_auris_1_1_interpolation_a3eb11deac5882c0c0b2c2c6d965ac392_1a3eb11deac5882c0c0b2c2c6d965ac392" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>glm::vec2<sp/><ref refid="class_auris_1_1_interpolation_a3eb11deac5882c0c0b2c2c6d965ac392_1a3eb11deac5882c0c0b2c2c6d965ac392" kindref="member">cubicBezier</ref>(</highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>t)<sp/>{</highlight></codeline>
+<codeline lineno="91"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::vector&lt;vec2&gt;<sp/>&amp;points<sp/>=<sp/>*(this-&gt;points);</highlight></codeline>
+<codeline lineno="92"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">float</highlight><highlight class="normal">)pow(1-t,3)<sp/>*<sp/>points[0]<sp/>+</highlight></codeline>
+<codeline lineno="93"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>3*(float)pow(1-t,2)*t<sp/>*<sp/>points[1]<sp/>+</highlight></codeline>
+<codeline lineno="94"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>3*(1-t)*t*t<sp/>*<sp/>points[2]<sp/>+</highlight></codeline>
+<codeline lineno="95"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(</highlight><highlight class="keywordtype">float</highlight><highlight class="normal">)pow(t,3)<sp/>*<sp/>points[3];</highlight></codeline>
+<codeline lineno="96"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="97"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="98"><highlight class="comment"><sp/><sp/><sp/><sp/>//!<sp/>A<sp/>hermite<sp/>method,<sp/>taking<sp/>1<sp/>argument.</highlight></codeline>
+<codeline lineno="99"><highlight class="comment"></highlight><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>/*!<sp/>Hermite<sp/>interpolation</highlight></codeline>
+<codeline lineno="100"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*<sp/>\param<sp/>t<sp/>a<sp/>float<sp/>value.<sp/>The<sp/>time.</highlight></codeline>
+<codeline lineno="101"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*<sp/>\sa<sp/>interpolate()</highlight></codeline>
+<codeline lineno="102"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="103" refid="class_auris_1_1_interpolation_ace8f39e9589dd63dd4bf74a983d0f9b9_1ace8f39e9589dd63dd4bf74a983d0f9b9" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>glm::vec2<sp/><ref refid="class_auris_1_1_interpolation_ace8f39e9589dd63dd4bf74a983d0f9b9_1ace8f39e9589dd63dd4bf74a983d0f9b9" kindref="member">hermite</ref>(</highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>t)<sp/>{</highlight></codeline>
+<codeline lineno="104"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::vector&lt;vec2&gt;<sp/>&amp;points<sp/>=<sp/>*(this-&gt;points);</highlight></codeline>
+<codeline lineno="105"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>t2<sp/>=<sp/>t*t;</highlight></codeline>
+<codeline lineno="106"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>t3<sp/>=<sp/>t2*t;</highlight></codeline>
+<codeline lineno="107"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>a0<sp/>=<sp/>1-(3*t2)+(2*t3);</highlight></codeline>
+<codeline lineno="108"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>a1<sp/>=<sp/>(3*t2)+(-2*t3);</highlight></codeline>
+<codeline lineno="109"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>b0<sp/>=<sp/>t-(2*t2)+t3;</highlight></codeline>
+<codeline lineno="110"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>b1<sp/>=<sp/>-t2+t3;</highlight></codeline>
+<codeline lineno="111"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>tangentWeight<sp/>=<sp/>3;</highlight></codeline>
+<codeline lineno="112"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>a0<sp/>*<sp/>points[0]<sp/>+</highlight></codeline>
+<codeline lineno="113"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>a1*<sp/>points[1]<sp/>+</highlight></codeline>
+<codeline lineno="114"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>b0<sp/>*<sp/>(points[2]-points[0])*tangentWeight<sp/>+</highlight></codeline>
+<codeline lineno="115"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>b1<sp/>*<sp/>(points[3]-points[1])*tangentWeight;</highlight></codeline>
+<codeline lineno="116"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="117"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="118"><highlight class="comment"><sp/><sp/><sp/><sp/>//!<sp/>A<sp/>catmullRom<sp/>method,<sp/>taking<sp/>1<sp/>argument.</highlight></codeline>
+<codeline lineno="119"><highlight class="comment"></highlight><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>/*!<sp/>Catmull<sp/>Rom<sp/>interpolation</highlight></codeline>
+<codeline lineno="120"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*<sp/>\param<sp/>t<sp/>a<sp/>float<sp/>value.<sp/>The<sp/>time.</highlight></codeline>
+<codeline lineno="121"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*<sp/>\sa<sp/>interpolate()</highlight></codeline>
+<codeline lineno="122"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="123" refid="class_auris_1_1_interpolation_af527817ab83925a78e920ef2eed871c7_1af527817ab83925a78e920ef2eed871c7" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>glm::vec2<sp/><ref refid="class_auris_1_1_interpolation_af527817ab83925a78e920ef2eed871c7_1af527817ab83925a78e920ef2eed871c7" kindref="member">catmullRom</ref>(</highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>t)<sp/>{</highlight></codeline>
+<codeline lineno="124"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::vector&lt;vec2&gt;<sp/>&amp;points<sp/>=<sp/>*(this-&gt;points);</highlight></codeline>
+<codeline lineno="125"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>t2<sp/>=<sp/>t*t;</highlight></codeline>
+<codeline lineno="126"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>t3<sp/>=<sp/>t2*t;</highlight></codeline>
+<codeline lineno="127"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>a0<sp/>=<sp/>-0.5f*t<sp/>+<sp/>t2<sp/>-<sp/>0.5f*t3;</highlight></codeline>
+<codeline lineno="128"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>a1<sp/>=<sp/>1<sp/>-<sp/>2.5f*t2<sp/>+<sp/>1.5f*t3;</highlight></codeline>
+<codeline lineno="129"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>a2<sp/>=<sp/>0.5f*t<sp/>+<sp/>2*t2<sp/>-1.5f*t3;</highlight></codeline>
+<codeline lineno="130"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>a3<sp/>=<sp/>-0.5f*t2<sp/>+<sp/>0.5f*t3;</highlight></codeline>
+<codeline lineno="131"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>a0<sp/>*<sp/>points[0]<sp/>+</highlight></codeline>
+<codeline lineno="132"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>a1*<sp/>points[1]<sp/>+</highlight></codeline>
+<codeline lineno="133"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>a2<sp/>*<sp/>points[2]<sp/>+<sp/></highlight></codeline>
+<codeline lineno="134"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>a3<sp/>*<sp/>points[3];</highlight></codeline>
+<codeline lineno="135"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="136"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="137"><highlight class="comment"><sp/><sp/><sp/><sp/>//!<sp/>A<sp/>bspline<sp/>method,<sp/>taking<sp/>1<sp/>argument.</highlight></codeline>
+<codeline lineno="138"><highlight class="comment"></highlight><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>/*!<sp/>B<sp/>spline<sp/>interpolation</highlight></codeline>
+<codeline lineno="139"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*<sp/>\param<sp/>t<sp/>a<sp/>float<sp/>value.<sp/>The<sp/>time.</highlight></codeline>
+<codeline lineno="140"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*<sp/>\sa<sp/>interpolate()</highlight></codeline>
+<codeline lineno="141"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="142" refid="class_auris_1_1_interpolation_aaf33a962e7e54c2ff293de6e12e780f2_1aaf33a962e7e54c2ff293de6e12e780f2" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>glm::vec2<sp/><ref refid="class_auris_1_1_interpolation_aaf33a962e7e54c2ff293de6e12e780f2_1aaf33a962e7e54c2ff293de6e12e780f2" kindref="member">bspline</ref>(</highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>t)<sp/>{</highlight></codeline>
+<codeline lineno="143"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::vector&lt;vec2&gt;<sp/>&amp;points<sp/>=<sp/>*(this-&gt;points);</highlight></codeline>
+<codeline lineno="144"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>t2<sp/>=<sp/>t*t;</highlight></codeline>
+<codeline lineno="145"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>t3<sp/>=<sp/>t2*t;</highlight></codeline>
+<codeline lineno="146"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>a0<sp/>=<sp/>1<sp/>-3*t<sp/>+<sp/>3*t2<sp/>-<sp/>t3;</highlight></codeline>
+<codeline lineno="147"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>a1<sp/>=<sp/>4<sp/>-<sp/>6*t2<sp/>+<sp/>3*t3;</highlight></codeline>
+<codeline lineno="148"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>a2<sp/>=<sp/>1+3*t<sp/>+<sp/>3*t2<sp/>-3*t3;</highlight></codeline>
+<codeline lineno="149"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>a3<sp/>=<sp/>t3;</highlight></codeline>
+<codeline lineno="150"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>(a0<sp/>*<sp/>points[0]<sp/>+</highlight></codeline>
+<codeline lineno="151"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>a1*<sp/>points[1]<sp/>+</highlight></codeline>
+<codeline lineno="152"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>a2<sp/>*<sp/>points[2]<sp/>+</highlight></codeline>
+<codeline lineno="153"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>a3<sp/>*<sp/>points[3])*(1/6.0f);</highlight></codeline>
+<codeline lineno="154"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="155"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="156"><highlight class="normal">}</highlight></codeline>
+    </programlisting>
+    <location file="Projects/GameEngine/include/Auris/Utilities/Interpolation.hpp"/>
+  </compounddef>
+</doxygen>

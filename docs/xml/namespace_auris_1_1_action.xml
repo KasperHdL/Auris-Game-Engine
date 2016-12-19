@@ -1,0 +1,321 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.12">
+  <compounddef id="namespace_auris_1_1_action" kind="namespace" language="C++">
+    <compoundname>Auris::Action</compoundname>
+      <sectiondef kind="var">
+      <memberdef kind="variable" id="namespace_auris_1_1_action_a6912aa738395f3b47d92ee5b94fa643b_1a6912aa738395f3b47d92ee5b94fa643b" prot="public" static="no" mutable="no">
+        <type>const SDL_Scancode</type>
+        <definition>const SDL_Scancode Auris::Action::up</definition>
+        <argsstring></argsstring>
+        <name>up</name>
+        <initializer>= SDL_SCANCODE_UP</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Projects/GameEngine/include/Auris/Action.hpp" line="7" column="1" bodyfile="Projects/GameEngine/include/Auris/Action.hpp" bodystart="7" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespace_auris_1_1_action_a3da2daa4191ccfeb4be6df2582f06de4_1a3da2daa4191ccfeb4be6df2582f06de4" prot="public" static="no" mutable="no">
+        <type>const SDL_Scancode</type>
+        <definition>const SDL_Scancode Auris::Action::down</definition>
+        <argsstring></argsstring>
+        <name>down</name>
+        <initializer>= SDL_SCANCODE_DOWN</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Projects/GameEngine/include/Auris/Action.hpp" line="8" column="1" bodyfile="Projects/GameEngine/include/Auris/Action.hpp" bodystart="8" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespace_auris_1_1_action_aa9bfa8587496aa26a6d3f8b88033c902_1aa9bfa8587496aa26a6d3f8b88033c902" prot="public" static="no" mutable="no">
+        <type>const SDL_Scancode</type>
+        <definition>const SDL_Scancode Auris::Action::left</definition>
+        <argsstring></argsstring>
+        <name>left</name>
+        <initializer>= SDL_SCANCODE_LEFT</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Projects/GameEngine/include/Auris/Action.hpp" line="9" column="1" bodyfile="Projects/GameEngine/include/Auris/Action.hpp" bodystart="9" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespace_auris_1_1_action_aac05fb76b2b9c04ea7e3155eab454e61_1aac05fb76b2b9c04ea7e3155eab454e61" prot="public" static="no" mutable="no">
+        <type>const SDL_Scancode</type>
+        <definition>const SDL_Scancode Auris::Action::right</definition>
+        <argsstring></argsstring>
+        <name>right</name>
+        <initializer>= SDL_SCANCODE_RIGHT</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Projects/GameEngine/include/Auris/Action.hpp" line="10" column="1" bodyfile="Projects/GameEngine/include/Auris/Action.hpp" bodystart="10" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespace_auris_1_1_action_add30606cadad34e554480a1b6e4cac19_1add30606cadad34e554480a1b6e4cac19" prot="public" static="no" mutable="no">
+        <type>const SDL_Scancode</type>
+        <definition>const SDL_Scancode Auris::Action::quit</definition>
+        <argsstring></argsstring>
+        <name>quit</name>
+        <initializer>= SDL_SCANCODE_ESCAPE</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Projects/GameEngine/include/Auris/Action.hpp" line="11" column="1" bodyfile="Projects/GameEngine/include/Auris/Action.hpp" bodystart="11" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespace_auris_1_1_action_ac05867c1c68c0ad0298a096d0f81fa87_1ac05867c1c68c0ad0298a096d0f81fa87" prot="public" static="no" mutable="no">
+        <type>const SDL_Scancode</type>
+        <definition>const SDL_Scancode Auris::Action::debug_menu</definition>
+        <argsstring></argsstring>
+        <name>debug_menu</name>
+        <initializer>= SDL_SCANCODE_F2</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Projects/GameEngine/include/Auris/Action.hpp" line="13" column="1" bodyfile="Projects/GameEngine/include/Auris/Action.hpp" bodystart="13" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespace_auris_1_1_action_aa584678e93559c4cab3af719f5e41c74_1aa584678e93559c4cab3af719f5e41c74" prot="public" static="no" mutable="no">
+        <type>const SDL_Scancode</type>
+        <definition>const SDL_Scancode Auris::Action::toggleInspector</definition>
+        <argsstring></argsstring>
+        <name>toggleInspector</name>
+        <initializer>= SDL_SCANCODE_F3</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Projects/GameEngine/include/Auris/Action.hpp" line="14" column="1" bodyfile="Projects/GameEngine/include/Auris/Action.hpp" bodystart="14" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespace_auris_1_1_action_aa0d21f9b53bacb6c23692dfaa84fc176_1aa0d21f9b53bacb6c23692dfaa84fc176" prot="public" static="no" mutable="no">
+        <type>const SDL_Scancode</type>
+        <definition>const SDL_Scancode Auris::Action::toggleHierarchy</definition>
+        <argsstring></argsstring>
+        <name>toggleHierarchy</name>
+        <initializer>= SDL_SCANCODE_F4</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Projects/GameEngine/include/Auris/Action.hpp" line="15" column="1" bodyfile="Projects/GameEngine/include/Auris/Action.hpp" bodystart="15" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespace_auris_1_1_action_a6cb4eb9fe6a867c4a90a46f65c63a60d_1a6cb4eb9fe6a867c4a90a46f65c63a60d" prot="public" static="no" mutable="no">
+        <type>const SDL_Scancode</type>
+        <definition>const SDL_Scancode Auris::Action::toggleProfiler</definition>
+        <argsstring></argsstring>
+        <name>toggleProfiler</name>
+        <initializer>= SDL_SCANCODE_F5</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Projects/GameEngine/include/Auris/Action.hpp" line="16" column="1" bodyfile="Projects/GameEngine/include/Auris/Action.hpp" bodystart="16" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespace_auris_1_1_action_a9d1780de0f47ea2dabe1e67d742c1504_1a9d1780de0f47ea2dabe1e67d742c1504" prot="public" static="no" mutable="no">
+        <type>const SDL_Scancode</type>
+        <definition>const SDL_Scancode Auris::Action::drawColliders</definition>
+        <argsstring></argsstring>
+        <name>drawColliders</name>
+        <initializer>= SDL_SCANCODE_F7</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Projects/GameEngine/include/Auris/Action.hpp" line="18" column="1" bodyfile="Projects/GameEngine/include/Auris/Action.hpp" bodystart="18" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespace_auris_1_1_action_a2bad7973741f592491487420f1b9b392_1a2bad7973741f592491487420f1b9b392" prot="public" static="no" mutable="no">
+        <type>const SDL_Scancode</type>
+        <definition>const SDL_Scancode Auris::Action::drawDebug</definition>
+        <argsstring></argsstring>
+        <name>drawDebug</name>
+        <initializer>= SDL_SCANCODE_F8</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Projects/GameEngine/include/Auris/Action.hpp" line="19" column="1" bodyfile="Projects/GameEngine/include/Auris/Action.hpp" bodystart="19" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespace_auris_1_1_action_a9c2f14f3526554c4fd177e44c4522529_1a9c2f14f3526554c4fd177e44c4522529" prot="public" static="no" mutable="no">
+        <type>const SDL_Scancode</type>
+        <definition>const SDL_Scancode Auris::Action::pause</definition>
+        <argsstring></argsstring>
+        <name>pause</name>
+        <initializer>= SDL_SCANCODE_F9</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Projects/GameEngine/include/Auris/Action.hpp" line="21" column="1" bodyfile="Projects/GameEngine/include/Auris/Action.hpp" bodystart="21" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespace_auris_1_1_action_a4036588b134329fa98e91e8a89307538_1a4036588b134329fa98e91e8a89307538" prot="public" static="no" mutable="no">
+        <type>const SDL_Scancode</type>
+        <definition>const SDL_Scancode Auris::Action::stepOne</definition>
+        <argsstring></argsstring>
+        <name>stepOne</name>
+        <initializer>= SDL_SCANCODE_F10</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Projects/GameEngine/include/Auris/Action.hpp" line="22" column="1" bodyfile="Projects/GameEngine/include/Auris/Action.hpp" bodystart="22" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespace_auris_1_1_action_aa523137817d5ac3d616575db979132bb_1aa523137817d5ac3d616575db979132bb" prot="public" static="no" mutable="no">
+        <type>const SDL_Scancode</type>
+        <definition>const SDL_Scancode Auris::Action::playOnHold</definition>
+        <argsstring></argsstring>
+        <name>playOnHold</name>
+        <initializer>= SDL_SCANCODE_F11</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Projects/GameEngine/include/Auris/Action.hpp" line="23" column="1" bodyfile="Projects/GameEngine/include/Auris/Action.hpp" bodystart="23" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespace_auris_1_1_action_a2bc6c1ac7c3f75fbd41aae651cfc45a3_1a2bc6c1ac7c3f75fbd41aae651cfc45a3" prot="public" static="no" mutable="no">
+        <type>const SDL_Scancode</type>
+        <definition>const SDL_Scancode Auris::Action::w</definition>
+        <argsstring></argsstring>
+        <name>w</name>
+        <initializer>= SDL_SCANCODE_W</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Projects/GameEngine/include/Auris/Action.hpp" line="25" column="1" bodyfile="Projects/GameEngine/include/Auris/Action.hpp" bodystart="25" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespace_auris_1_1_action_aa9f830168ef21bb79153b3ea1b6e536a_1aa9f830168ef21bb79153b3ea1b6e536a" prot="public" static="no" mutable="no">
+        <type>const SDL_Scancode</type>
+        <definition>const SDL_Scancode Auris::Action::a</definition>
+        <argsstring></argsstring>
+        <name>a</name>
+        <initializer>= SDL_SCANCODE_A</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Projects/GameEngine/include/Auris/Action.hpp" line="26" column="1" bodyfile="Projects/GameEngine/include/Auris/Action.hpp" bodystart="26" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespace_auris_1_1_action_afbe1cd6358dcb3cf41253731310f79df_1afbe1cd6358dcb3cf41253731310f79df" prot="public" static="no" mutable="no">
+        <type>const SDL_Scancode</type>
+        <definition>const SDL_Scancode Auris::Action::s</definition>
+        <argsstring></argsstring>
+        <name>s</name>
+        <initializer>= SDL_SCANCODE_S</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Projects/GameEngine/include/Auris/Action.hpp" line="27" column="1" bodyfile="Projects/GameEngine/include/Auris/Action.hpp" bodystart="27" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespace_auris_1_1_action_aeb2f944fddaeb6eb29ccb51fc44f946a_1aeb2f944fddaeb6eb29ccb51fc44f946a" prot="public" static="no" mutable="no">
+        <type>const SDL_Scancode</type>
+        <definition>const SDL_Scancode Auris::Action::d</definition>
+        <argsstring></argsstring>
+        <name>d</name>
+        <initializer>= SDL_SCANCODE_D</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Projects/GameEngine/include/Auris/Action.hpp" line="28" column="1" bodyfile="Projects/GameEngine/include/Auris/Action.hpp" bodystart="28" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespace_auris_1_1_action_adb05b89d6caa348c96fa628eca73bc73_1adb05b89d6caa348c96fa628eca73bc73" prot="public" static="no" mutable="no">
+        <type>const SDL_Scancode</type>
+        <definition>const SDL_Scancode Auris::Action::enter</definition>
+        <argsstring></argsstring>
+        <name>enter</name>
+        <initializer>= SDL_SCANCODE_RETURN</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Projects/GameEngine/include/Auris/Action.hpp" line="29" column="1" bodyfile="Projects/GameEngine/include/Auris/Action.hpp" bodystart="29" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespace_auris_1_1_action_af13454e337977c5b209ecae0fa19f777_1af13454e337977c5b209ecae0fa19f777" prot="public" static="no" mutable="no">
+        <type>const SDL_Scancode</type>
+        <definition>const SDL_Scancode Auris::Action::space</definition>
+        <argsstring></argsstring>
+        <name>space</name>
+        <initializer>= SDL_SCANCODE_SPACE</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Projects/GameEngine/include/Auris/Action.hpp" line="30" column="1" bodyfile="Projects/GameEngine/include/Auris/Action.hpp" bodystart="30" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespace_auris_1_1_action_af1b5812b2ab0caedd8957192716651de_1af1b5812b2ab0caedd8957192716651de" prot="public" static="no" mutable="no">
+        <type>const SDL_Scancode</type>
+        <definition>const SDL_Scancode Auris::Action::z</definition>
+        <argsstring></argsstring>
+        <name>z</name>
+        <initializer>= SDL_SCANCODE_Z</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Projects/GameEngine/include/Auris/Action.hpp" line="31" column="1" bodyfile="Projects/GameEngine/include/Auris/Action.hpp" bodystart="31" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespace_auris_1_1_action_a775601cedd60f4ece8de0d630a067862_1a775601cedd60f4ece8de0d630a067862" prot="public" static="no" mutable="no">
+        <type>const SDL_Scancode</type>
+        <definition>const SDL_Scancode Auris::Action::m</definition>
+        <argsstring></argsstring>
+        <name>m</name>
+        <initializer>= SDL_SCANCODE_M</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Projects/GameEngine/include/Auris/Action.hpp" line="32" column="1" bodyfile="Projects/GameEngine/include/Auris/Action.hpp" bodystart="32" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>A namespace for scancodes. </para>    </briefdescription>
+    <detaileddescription>
+<para>If you need more actions it is possible to extend them yourself </para>    </detaileddescription>
+    <location file="Projects/GameEngine/include/Auris/Action.hpp" line="6" column="1"/>
+  </compounddef>
+</doxygen>

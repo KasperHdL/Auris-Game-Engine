@@ -1,0 +1,18 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.12">
+  <compounddef id="dir_43bd2ad9e2151c04d8e20f6d20a1226d" kind="dir">
+    <compoundname>Projects/MergeHppCpp/include/Auris/Systems</compoundname>
+    <innerfile refid="_collision_handler_8hpp">CollisionHandler.hpp</innerfile>
+    <innerfile refid="_input_8cpp">Input.cpp</innerfile>
+    <innerfile refid="_input_8hpp">Input.hpp</innerfile>
+    <innerfile refid="_particle_system_8hpp">ParticleSystem.hpp</innerfile>
+    <innerfile refid="_render_system_8cpp">RenderSystem.cpp</innerfile>
+    <innerfile refid="_render_system_8hpp">RenderSystem.hpp</innerfile>
+    <innerfile refid="_scene_8hpp">Scene.hpp</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="Projects/MergeHppCpp/include/Auris/Systems/"/>
+  </compounddef>
+</doxygen>

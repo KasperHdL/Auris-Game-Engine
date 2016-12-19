@@ -1,0 +1,430 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.12">
+  <compounddef id="class_auris_1_1_camera" kind="class" language="C++" prot="public">
+    <compoundname>Auris::Camera</compoundname>
+    <includes refid="_camera_8hpp" local="no">Camera.hpp</includes>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="class_auris_1_1_camera_a849bcfa7d616aff60c6b127b699d5577_1a849bcfa7d616aff60c6b127b699d5577" prot="private" static="no" mutable="no">
+        <type>SRE::Camera *</type>
+        <definition>SRE::Camera* Auris::Camera::cam</definition>
+        <argsstring></argsstring>
+        <name>cam</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>A <ref refid="class_auris_1_1_camera" kindref="compound">Camera</ref> pointer: cam. A reference to the SimpleRenderEngine <ref refid="class_auris_1_1_camera" kindref="compound">Camera</ref> </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Projects/GameEngine/include/Auris/Entities/Camera.hpp" line="83" column="1" bodyfile="Projects/GameEngine/include/Auris/Entities/Camera.hpp" bodystart="83" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_auris_1_1_camera_a219d801ff265340504729d8bcee9dda6_1a219d801ff265340504729d8bcee9dda6" prot="private" static="no" mutable="no">
+        <type>float</type>
+        <definition>float Auris::Camera::left</definition>
+        <argsstring></argsstring>
+        <name>left</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>A float value: left. Used to calculate the orthographic projection from </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Projects/GameEngine/include/Auris/Entities/Camera.hpp" line="84" column="1" bodyfile="Projects/GameEngine/include/Auris/Entities/Camera.hpp" bodystart="84" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_auris_1_1_camera_af2465fd360861b8450e0518ac3663d29_1af2465fd360861b8450e0518ac3663d29" prot="private" static="no" mutable="no">
+        <type>float</type>
+        <definition>float Auris::Camera::bottom</definition>
+        <argsstring></argsstring>
+        <name>bottom</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>A float value: bottom. Used to calculate the orthographic projection from </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Projects/GameEngine/include/Auris/Entities/Camera.hpp" line="85" column="1" bodyfile="Projects/GameEngine/include/Auris/Entities/Camera.hpp" bodystart="85" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_auris_1_1_camera_a02f938f18898dd998136a04604c6b40e_1a02f938f18898dd998136a04604c6b40e" prot="private" static="no" mutable="no">
+        <type>float</type>
+        <definition>float Auris::Camera::right</definition>
+        <argsstring></argsstring>
+        <name>right</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>A float value: right. Used to calculate the orthographic projection from </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Projects/GameEngine/include/Auris/Entities/Camera.hpp" line="86" column="1" bodyfile="Projects/GameEngine/include/Auris/Entities/Camera.hpp" bodystart="86" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_auris_1_1_camera_a7ce8e00aa452467d274f80ceaae6cf98_1a7ce8e00aa452467d274f80ceaae6cf98" prot="private" static="no" mutable="no">
+        <type>float</type>
+        <definition>float Auris::Camera::top</definition>
+        <argsstring></argsstring>
+        <name>top</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>A float value: top. Used to calculate the orthographic projection from </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Projects/GameEngine/include/Auris/Entities/Camera.hpp" line="87" column="1" bodyfile="Projects/GameEngine/include/Auris/Entities/Camera.hpp" bodystart="87" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_auris_1_1_camera_afffa68c96f86d19a7561a862fdeda141_1afffa68c96f86d19a7561a862fdeda141" prot="private" static="no" mutable="no">
+        <type>float</type>
+        <definition>float Auris::Camera::nearPlane</definition>
+        <argsstring></argsstring>
+        <name>nearPlane</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>A float value: near. Used to calculate the orthographic projection from </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Projects/GameEngine/include/Auris/Entities/Camera.hpp" line="88" column="1" bodyfile="Projects/GameEngine/include/Auris/Entities/Camera.hpp" bodystart="88" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_auris_1_1_camera_a63358a3f77820a9f2d7a0d2d82b5355f_1a63358a3f77820a9f2d7a0d2d82b5355f" prot="private" static="no" mutable="no">
+        <type>float</type>
+        <definition>float Auris::Camera::farPlane</definition>
+        <argsstring></argsstring>
+        <name>farPlane</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>A float value: far. Used to calculate the orthographic projection from </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Projects/GameEngine/include/Auris/Entities/Camera.hpp" line="89" column="1" bodyfile="Projects/GameEngine/include/Auris/Entities/Camera.hpp" bodystart="89" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_auris_1_1_camera_a8f25fabcac83e3a7b723275c395747f8_1a8f25fabcac83e3a7b723275c395747f8" prot="private" static="no" mutable="no">
+        <type>float</type>
+        <definition>float Auris::Camera::z</definition>
+        <argsstring></argsstring>
+        <name>z</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>A float value: z. Used to calculate the rotation from </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Projects/GameEngine/include/Auris/Entities/Camera.hpp" line="90" column="1" bodyfile="Projects/GameEngine/include/Auris/Entities/Camera.hpp" bodystart="90" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_auris_1_1_camera_ab47d622e1a3580cf91c3ed83ac3ed644_1ab47d622e1a3580cf91c3ed83ac3ed644" prot="private" static="no" mutable="no">
+        <type>glm::vec3</type>
+        <definition>glm::vec3 Auris::Camera::up</definition>
+        <argsstring></argsstring>
+        <name>up</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>A vec3 value: up. That is the up vector used to rotate the camera about </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Projects/GameEngine/include/Auris/Entities/Camera.hpp" line="92" column="1" bodyfile="Projects/GameEngine/include/Auris/Entities/Camera.hpp" bodystart="92" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_auris_1_1_camera_a6dfc5e32a215929f413255a0cf852d11_1a6dfc5e32a215929f413255a0cf852d11" prot="private" static="no" mutable="no">
+        <type>glm::vec2</type>
+        <definition>glm::vec2 Auris::Camera::pos</definition>
+        <argsstring></argsstring>
+        <name>pos</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>A vec2 value: pos. That is the position of the camera </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Projects/GameEngine/include/Auris/Entities/Camera.hpp" line="93" column="1" bodyfile="Projects/GameEngine/include/Auris/Entities/Camera.hpp" bodystart="93" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_auris_1_1_camera_a806e1d73fe6e0a07b0fd85819e818792_1a806e1d73fe6e0a07b0fd85819e818792" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Camera::Camera</definition>
+        <argsstring>(float width, float height, float near=-1, float far=1)</argsstring>
+        <name>Camera</name>
+        <param>
+          <type>float</type>
+          <declname>width</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>height</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>near</declname>
+          <defval>-1</defval>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>far</declname>
+          <defval>1</defval>
+        </param>
+        <briefdescription>
+<para>The camera constructor, taking 2-4 arguments. </para>        </briefdescription>
+        <detaileddescription>
+<para>Calculates the orthographic projection based on the arguments, and also centers the position of the camera. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>width</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>a float, that is the width of the camera. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>height</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>a float, that is the height of the camera. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>near</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>a float, that is the near clipping plane (default is -1). </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>far</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>a float, that is the far clipping plane (default is 1). </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Projects/GameEngine/include/Auris/Entities/Camera.hpp" line="21" column="1" bodyfile="Projects/GameEngine/Auris/src/Auris/Entities/Camera.cpp" bodystart="6" bodyend="21"/>
+      </memberdef>
+      <memberdef kind="function" id="class_auris_1_1_camera_ad1897942d0ccf91052386388a497349f_1ad1897942d0ccf91052386388a497349f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Camera::~Camera</definition>
+        <argsstring>()</argsstring>
+        <name>~Camera</name>
+        <briefdescription>
+<para>The camera destructor. </para>        </briefdescription>
+        <detaileddescription>
+<para>Deletes the <ref refid="class_auris_1_1_camera" kindref="compound">Camera</ref> pointer. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Projects/GameEngine/include/Auris/Entities/Camera.hpp" line="26" column="1" bodyfile="Projects/GameEngine/Auris/src/Auris/Entities/Camera.cpp" bodystart="23" bodyend="25"/>
+      </memberdef>
+      <memberdef kind="function" id="class_auris_1_1_camera_a975ede219aed9ae4b52d4050aee37dc5_1a975ede219aed9ae4b52d4050aee37dc5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Camera::setPos</definition>
+        <argsstring>(glm::vec2 pos)</argsstring>
+        <name>setPos</name>
+        <param>
+          <type>glm::vec2</type>
+          <declname>pos</declname>
+        </param>
+        <briefdescription>
+<para>A method to set the position, taking 1 argument. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>pos</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>a vec2, that is the position to set the camera. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Projects/GameEngine/include/Auris/Entities/Camera.hpp" line="31" column="1" bodyfile="Projects/GameEngine/Auris/src/Auris/Entities/Camera.cpp" bodystart="31" bodyend="34"/>
+      </memberdef>
+      <memberdef kind="function" id="class_auris_1_1_camera_ae4a66cb62fa67199a6c34a2fec501054_1ae4a66cb62fa67199a6c34a2fec501054" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>glm::vec2</type>
+        <definition>glm::vec2 Camera::getPos</definition>
+        <argsstring>()</argsstring>
+        <name>getPos</name>
+        <briefdescription>
+<para>A method to get the position. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>a vec2, that is the position of the camera. </para></simplesect>
+<simplesect kind="see"><para><ref refid="class_auris_1_1_camera_a07a6e5caa5cfdb0529008a10f29fe770_1a07a6e5caa5cfdb0529008a10f29fe770" kindref="member">translate()</ref> </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Projects/GameEngine/include/Auris/Entities/Camera.hpp" line="38" column="1" bodyfile="Projects/GameEngine/Auris/src/Auris/Entities/Camera.cpp" bodystart="36" bodyend="38"/>
+      </memberdef>
+      <memberdef kind="function" id="class_auris_1_1_camera_a17a09a5d85ed62c92c3c17969e4b2df3_1a17a09a5d85ed62c92c3c17969e4b2df3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>float</type>
+        <definition>float Camera::getWidth</definition>
+        <argsstring>()</argsstring>
+        <name>getWidth</name>
+        <briefdescription>
+<para>A method to get the width. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>a float, that is the width of the camera. </para></simplesect>
+<simplesect kind="see"><para><ref refid="class_auris_1_1_camera_a6aa244c08427100da9e8ea5b2fa88cd8_1a6aa244c08427100da9e8ea5b2fa88cd8" kindref="member">getHeight()</ref> </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Projects/GameEngine/include/Auris/Entities/Camera.hpp" line="45" column="1" bodyfile="Projects/GameEngine/Auris/src/Auris/Entities/Camera.cpp" bodystart="40" bodyend="42"/>
+      </memberdef>
+      <memberdef kind="function" id="class_auris_1_1_camera_a6aa244c08427100da9e8ea5b2fa88cd8_1a6aa244c08427100da9e8ea5b2fa88cd8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>float</type>
+        <definition>float Camera::getHeight</definition>
+        <argsstring>()</argsstring>
+        <name>getHeight</name>
+        <briefdescription>
+<para>A method to get the height. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>a float, that is the height of the camera. </para></simplesect>
+<simplesect kind="see"><para><ref refid="class_auris_1_1_camera_a17a09a5d85ed62c92c3c17969e4b2df3_1a17a09a5d85ed62c92c3c17969e4b2df3" kindref="member">getWidth()</ref> </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Projects/GameEngine/include/Auris/Entities/Camera.hpp" line="52" column="1" bodyfile="Projects/GameEngine/Auris/src/Auris/Entities/Camera.cpp" bodystart="44" bodyend="46"/>
+      </memberdef>
+      <memberdef kind="function" id="class_auris_1_1_camera_a5d116ecd6cbffc7dd7642ad9b3fc2687_1a5d116ecd6cbffc7dd7642ad9b3fc2687" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Camera::setRotation</definition>
+        <argsstring>(float z)</argsstring>
+        <name>setRotation</name>
+        <param>
+          <type>float</type>
+          <declname>z</declname>
+        </param>
+        <briefdescription>
+<para>A method to set the rotation, taking 1 argument. </para>        </briefdescription>
+        <detaileddescription>
+<para>Calculates the rotation of the camera based on the argument inputted. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>z</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>a float value, that is the rotation to set the camera. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="see"><para><ref refid="class_auris_1_1_camera_aadfff4b1b00b8e0fcbbb4ea3313eef77_1aadfff4b1b00b8e0fcbbb4ea3313eef77" kindref="member">rotate()</ref> </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Projects/GameEngine/include/Auris/Entities/Camera.hpp" line="59" column="1" bodyfile="Projects/GameEngine/Auris/src/Auris/Entities/Camera.cpp" bodystart="57" bodyend="61"/>
+      </memberdef>
+      <memberdef kind="function" id="class_auris_1_1_camera_a07a6e5caa5cfdb0529008a10f29fe770_1a07a6e5caa5cfdb0529008a10f29fe770" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Camera::translate</definition>
+        <argsstring>(glm::vec2 amount)</argsstring>
+        <name>translate</name>
+        <param>
+          <type>glm::vec2</type>
+          <declname>amount</declname>
+        </param>
+        <briefdescription>
+<para>A method to translate the camera, taking 1 argument. </para>        </briefdescription>
+        <detaileddescription>
+<para>Moves the camera the amount of input. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>amount</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>a vec2 value, that is the amount to move the camera. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="see"><para><ref refid="class_auris_1_1_camera_a975ede219aed9ae4b52d4050aee37dc5_1a975ede219aed9ae4b52d4050aee37dc5" kindref="member">setPos()</ref>. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Projects/GameEngine/include/Auris/Entities/Camera.hpp" line="66" column="1" bodyfile="Projects/GameEngine/Auris/src/Auris/Entities/Camera.cpp" bodystart="48" bodyend="51"/>
+      </memberdef>
+      <memberdef kind="function" id="class_auris_1_1_camera_aadfff4b1b00b8e0fcbbb4ea3313eef77_1aadfff4b1b00b8e0fcbbb4ea3313eef77" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Camera::rotate</definition>
+        <argsstring>(float amount)</argsstring>
+        <name>rotate</name>
+        <param>
+          <type>float</type>
+          <declname>amount</declname>
+        </param>
+        <briefdescription>
+<para>A method to rotate the camera, taking 1 argument. </para>        </briefdescription>
+        <detaileddescription>
+<para>Rotates the camera the amount of input. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>amount</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>a float value, that is the amount to rotate the camera. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="see"><para><ref refid="class_auris_1_1_camera_a5d116ecd6cbffc7dd7642ad9b3fc2687_1a5d116ecd6cbffc7dd7642ad9b3fc2687" kindref="member">setRotation()</ref>. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Projects/GameEngine/include/Auris/Entities/Camera.hpp" line="73" column="1" bodyfile="Projects/GameEngine/Auris/src/Auris/Entities/Camera.cpp" bodystart="63" bodyend="67"/>
+      </memberdef>
+      <memberdef kind="function" id="class_auris_1_1_camera_af11ea6aa19e613e01fe7e58e5f36da26_1af11ea6aa19e613e01fe7e58e5f36da26" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Camera::zoom</definition>
+        <argsstring>(float amount)</argsstring>
+        <name>zoom</name>
+        <param>
+          <type>float</type>
+          <declname>amount</declname>
+        </param>
+        <briefdescription>
+<para>A method to zoom the camera, taking 1 argument. </para>        </briefdescription>
+        <detaileddescription>
+<para>Zooms the camera the amount of input. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>amount</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>a float value, that is the amount to zoom the camera (can be both positive and negative). </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Projects/GameEngine/include/Auris/Entities/Camera.hpp" line="79" column="1" bodyfile="Projects/GameEngine/Auris/src/Auris/Entities/Camera.cpp" bodystart="53" bodyend="55"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="class_auris_1_1_camera_aa8dab5324684dabc8c352faf88ea2d67_1aa8dab5324684dabc8c352faf88ea2d67" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Camera::updateCam</definition>
+        <argsstring>()</argsstring>
+        <name>updateCam</name>
+        <briefdescription>
+<para>A method to update the camera. </para>        </briefdescription>
+        <detaileddescription>
+<para>Updates the camera via the lookAt function in SimpleRenderEngine. Does this after every change that has happend. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Projects/GameEngine/include/Auris/Entities/Camera.hpp" line="99" column="1" bodyfile="Projects/GameEngine/Auris/src/Auris/Entities/Camera.cpp" bodystart="27" bodyend="29"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>The camera class. </para>    </briefdescription>
+    <detaileddescription>
+<para>To control the current camera of the game </para>    </detaileddescription>
+    <location file="Projects/GameEngine/include/Auris/Entities/Camera.hpp" line="10" column="1" bodyfile="Projects/GameEngine/include/Auris/Entities/Camera.hpp" bodystart="10" bodyend="101"/>
+    <listofallmembers>
+      <member refid="class_auris_1_1_camera_af2465fd360861b8450e0518ac3663d29_1af2465fd360861b8450e0518ac3663d29" prot="private" virt="non-virtual"><scope>Auris::Camera</scope><name>bottom</name></member>
+      <member refid="class_auris_1_1_camera_a849bcfa7d616aff60c6b127b699d5577_1a849bcfa7d616aff60c6b127b699d5577" prot="private" virt="non-virtual"><scope>Auris::Camera</scope><name>cam</name></member>
+      <member refid="class_auris_1_1_camera_a806e1d73fe6e0a07b0fd85819e818792_1a806e1d73fe6e0a07b0fd85819e818792" prot="public" virt="non-virtual"><scope>Auris::Camera</scope><name>Camera</name></member>
+      <member refid="class_auris_1_1_camera_a63358a3f77820a9f2d7a0d2d82b5355f_1a63358a3f77820a9f2d7a0d2d82b5355f" prot="private" virt="non-virtual"><scope>Auris::Camera</scope><name>farPlane</name></member>
+      <member refid="class_auris_1_1_camera_a6aa244c08427100da9e8ea5b2fa88cd8_1a6aa244c08427100da9e8ea5b2fa88cd8" prot="public" virt="non-virtual"><scope>Auris::Camera</scope><name>getHeight</name></member>
+      <member refid="class_auris_1_1_camera_ae4a66cb62fa67199a6c34a2fec501054_1ae4a66cb62fa67199a6c34a2fec501054" prot="public" virt="non-virtual"><scope>Auris::Camera</scope><name>getPos</name></member>
+      <member refid="class_auris_1_1_camera_a17a09a5d85ed62c92c3c17969e4b2df3_1a17a09a5d85ed62c92c3c17969e4b2df3" prot="public" virt="non-virtual"><scope>Auris::Camera</scope><name>getWidth</name></member>
+      <member refid="class_auris_1_1_camera_a219d801ff265340504729d8bcee9dda6_1a219d801ff265340504729d8bcee9dda6" prot="private" virt="non-virtual"><scope>Auris::Camera</scope><name>left</name></member>
+      <member refid="class_auris_1_1_camera_afffa68c96f86d19a7561a862fdeda141_1afffa68c96f86d19a7561a862fdeda141" prot="private" virt="non-virtual"><scope>Auris::Camera</scope><name>nearPlane</name></member>
+      <member refid="class_auris_1_1_camera_a6dfc5e32a215929f413255a0cf852d11_1a6dfc5e32a215929f413255a0cf852d11" prot="private" virt="non-virtual"><scope>Auris::Camera</scope><name>pos</name></member>
+      <member refid="class_auris_1_1_camera_a02f938f18898dd998136a04604c6b40e_1a02f938f18898dd998136a04604c6b40e" prot="private" virt="non-virtual"><scope>Auris::Camera</scope><name>right</name></member>
+      <member refid="class_auris_1_1_camera_aadfff4b1b00b8e0fcbbb4ea3313eef77_1aadfff4b1b00b8e0fcbbb4ea3313eef77" prot="public" virt="non-virtual"><scope>Auris::Camera</scope><name>rotate</name></member>
+      <member refid="class_auris_1_1_camera_a975ede219aed9ae4b52d4050aee37dc5_1a975ede219aed9ae4b52d4050aee37dc5" prot="public" virt="non-virtual"><scope>Auris::Camera</scope><name>setPos</name></member>
+      <member refid="class_auris_1_1_camera_a5d116ecd6cbffc7dd7642ad9b3fc2687_1a5d116ecd6cbffc7dd7642ad9b3fc2687" prot="public" virt="non-virtual"><scope>Auris::Camera</scope><name>setRotation</name></member>
+      <member refid="class_auris_1_1_camera_a7ce8e00aa452467d274f80ceaae6cf98_1a7ce8e00aa452467d274f80ceaae6cf98" prot="private" virt="non-virtual"><scope>Auris::Camera</scope><name>top</name></member>
+      <member refid="class_auris_1_1_camera_a07a6e5caa5cfdb0529008a10f29fe770_1a07a6e5caa5cfdb0529008a10f29fe770" prot="public" virt="non-virtual"><scope>Auris::Camera</scope><name>translate</name></member>
+      <member refid="class_auris_1_1_camera_ab47d622e1a3580cf91c3ed83ac3ed644_1ab47d622e1a3580cf91c3ed83ac3ed644" prot="private" virt="non-virtual"><scope>Auris::Camera</scope><name>up</name></member>
+      <member refid="class_auris_1_1_camera_aa8dab5324684dabc8c352faf88ea2d67_1aa8dab5324684dabc8c352faf88ea2d67" prot="private" virt="non-virtual"><scope>Auris::Camera</scope><name>updateCam</name></member>
+      <member refid="class_auris_1_1_camera_a8f25fabcac83e3a7b723275c395747f8_1a8f25fabcac83e3a7b723275c395747f8" prot="private" virt="non-virtual"><scope>Auris::Camera</scope><name>z</name></member>
+      <member refid="class_auris_1_1_camera_af11ea6aa19e613e01fe7e58e5f36da26_1af11ea6aa19e613e01fe7e58e5f36da26" prot="public" virt="non-virtual"><scope>Auris::Camera</scope><name>zoom</name></member>
+      <member refid="class_auris_1_1_camera_ad1897942d0ccf91052386388a497349f_1ad1897942d0ccf91052386388a497349f" prot="public" virt="non-virtual"><scope>Auris::Camera</scope><name>~Camera</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

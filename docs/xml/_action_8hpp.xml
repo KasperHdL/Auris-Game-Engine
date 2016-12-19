@@ -1,0 +1,126 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.12">
+  <compounddef id="_action_8hpp" kind="file" language="C++">
+    <compoundname>Action.hpp</compoundname>
+    <includes local="yes">SDL.h</includes>
+    <includedby refid="_engine_8hpp" local="yes">Projects/GameEngine/include/Auris/Engine.hpp</includedby>
+    <incdepgraph>
+      <node id="509">
+        <label>SDL.h</label>
+      </node>
+      <node id="508">
+        <label>Projects/GameEngine/include/Auris/Action.hpp</label>
+        <link refid="_action_8hpp"/>
+        <childnode refid="509" relation="include">
+        </childnode>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="515">
+        <label>Projects/GameEngine/Auris/src/Auris/Entities/PhysicsEntity.cpp</label>
+        <link refid="_physics_entity_8cpp"/>
+      </node>
+      <node id="512">
+        <label>Projects/GameEngine/include/Auris/Entities/PhysicsEntity.hpp</label>
+        <link refid="_physics_entity_8hpp"/>
+        <childnode refid="513" relation="include">
+        </childnode>
+        <childnode refid="515" relation="include">
+        </childnode>
+      </node>
+      <node id="513">
+        <label>Projects/GameEngine/include/Auris/Systems/CollisionHandler.hpp</label>
+        <link refid="_collision_handler_8hpp"/>
+        <childnode refid="514" relation="include">
+        </childnode>
+      </node>
+      <node id="516">
+        <label>Projects/GameEngine/include/Auris/Game.hpp</label>
+        <link refid="_game_8hpp"/>
+        <childnode refid="511" relation="include">
+        </childnode>
+        <childnode refid="517" relation="include">
+        </childnode>
+        <childnode refid="518" relation="include">
+        </childnode>
+      </node>
+      <node id="511">
+        <label>Projects/GameEngine/include/Auris/Engine.hpp</label>
+        <link refid="_engine_8hpp"/>
+        <childnode refid="512" relation="include">
+        </childnode>
+        <childnode refid="516" relation="include">
+        </childnode>
+        <childnode refid="519" relation="include">
+        </childnode>
+        <childnode refid="514" relation="include">
+        </childnode>
+      </node>
+      <node id="519">
+        <label>Projects/GameEngine/include/Auris/Utilities/BodyStandard.hpp</label>
+        <link refid="_body_standard_8hpp"/>
+      </node>
+      <node id="518">
+        <label>Projects/GameEngine/Auris/src/Auris/Systems/Input.cpp</label>
+        <link refid="_input_8cpp"/>
+      </node>
+      <node id="517">
+        <label>Projects/GameEngine/Auris/src/Auris/Game.cpp</label>
+        <link refid="_game_8cpp"/>
+      </node>
+      <node id="514">
+        <label>Projects/GameEngine/Auris/src/Auris/Engine.cpp</label>
+        <link refid="_engine_8cpp"/>
+      </node>
+      <node id="510">
+        <label>Projects/GameEngine/include/Auris/Action.hpp</label>
+        <link refid="_action_8hpp"/>
+        <childnode refid="511" relation="include">
+        </childnode>
+      </node>
+    </invincdepgraph>
+    <innernamespace refid="namespace_auris">Auris</innernamespace>
+    <innernamespace refid="namespace_auris_1_1_action">Auris::Action</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#pragma<sp/>once</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;SDL.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3" refid="namespace_auris" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespace_auris" kindref="compound">Auris</ref>{</highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="4"><highlight class="comment">//!<sp/>A<sp/>namespace<sp/>for<sp/>scancodes</highlight></codeline>
+<codeline lineno="5"><highlight class="comment"></highlight><highlight class="comment">/*!<sp/>If<sp/>you<sp/>need<sp/>more<sp/>actions<sp/>it<sp/>is<sp/>possible<sp/>to<sp/>extend<sp/>them<sp/>yourself*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6" refid="namespace_auris_1_1_action" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal">Action{</highlight></codeline>
+<codeline lineno="7" refid="namespace_auris_1_1_action_a6912aa738395f3b47d92ee5b94fa643b_1a6912aa738395f3b47d92ee5b94fa643b" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>SDL_Scancode<sp/><ref refid="namespace_auris_1_1_action_a6912aa738395f3b47d92ee5b94fa643b_1a6912aa738395f3b47d92ee5b94fa643b" kindref="member">up</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>SDL_SCANCODE_UP;</highlight></codeline>
+<codeline lineno="8" refid="namespace_auris_1_1_action_a3da2daa4191ccfeb4be6df2582f06de4_1a3da2daa4191ccfeb4be6df2582f06de4" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>SDL_Scancode<sp/><ref refid="namespace_auris_1_1_action_a3da2daa4191ccfeb4be6df2582f06de4_1a3da2daa4191ccfeb4be6df2582f06de4" kindref="member">down</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>SDL_SCANCODE_DOWN;</highlight></codeline>
+<codeline lineno="9" refid="namespace_auris_1_1_action_aa9bfa8587496aa26a6d3f8b88033c902_1aa9bfa8587496aa26a6d3f8b88033c902" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>SDL_Scancode<sp/><ref refid="namespace_auris_1_1_action_aa9bfa8587496aa26a6d3f8b88033c902_1aa9bfa8587496aa26a6d3f8b88033c902" kindref="member">left</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>SDL_SCANCODE_LEFT;</highlight></codeline>
+<codeline lineno="10" refid="namespace_auris_1_1_action_aac05fb76b2b9c04ea7e3155eab454e61_1aac05fb76b2b9c04ea7e3155eab454e61" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>SDL_Scancode<sp/><ref refid="namespace_auris_1_1_action_aac05fb76b2b9c04ea7e3155eab454e61_1aac05fb76b2b9c04ea7e3155eab454e61" kindref="member">right</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>SDL_SCANCODE_RIGHT;</highlight></codeline>
+<codeline lineno="11" refid="namespace_auris_1_1_action_add30606cadad34e554480a1b6e4cac19_1add30606cadad34e554480a1b6e4cac19" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>SDL_Scancode<sp/><ref refid="namespace_auris_1_1_action_add30606cadad34e554480a1b6e4cac19_1add30606cadad34e554480a1b6e4cac19" kindref="member">quit</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>SDL_SCANCODE_ESCAPE;</highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight></codeline>
+<codeline lineno="13" refid="namespace_auris_1_1_action_ac05867c1c68c0ad0298a096d0f81fa87_1ac05867c1c68c0ad0298a096d0f81fa87" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>SDL_Scancode<sp/><ref refid="namespace_auris_1_1_action_ac05867c1c68c0ad0298a096d0f81fa87_1ac05867c1c68c0ad0298a096d0f81fa87" kindref="member">debug_menu</ref><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>SDL_SCANCODE_F2;</highlight></codeline>
+<codeline lineno="14" refid="namespace_auris_1_1_action_aa584678e93559c4cab3af719f5e41c74_1aa584678e93559c4cab3af719f5e41c74" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>SDL_Scancode<sp/><ref refid="namespace_auris_1_1_action_aa584678e93559c4cab3af719f5e41c74_1aa584678e93559c4cab3af719f5e41c74" kindref="member">toggleInspector</ref><sp/>=<sp/>SDL_SCANCODE_F3;</highlight></codeline>
+<codeline lineno="15" refid="namespace_auris_1_1_action_aa0d21f9b53bacb6c23692dfaa84fc176_1aa0d21f9b53bacb6c23692dfaa84fc176" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>SDL_Scancode<sp/><ref refid="namespace_auris_1_1_action_aa0d21f9b53bacb6c23692dfaa84fc176_1aa0d21f9b53bacb6c23692dfaa84fc176" kindref="member">toggleHierarchy</ref><sp/>=<sp/>SDL_SCANCODE_F4;</highlight></codeline>
+<codeline lineno="16" refid="namespace_auris_1_1_action_a6cb4eb9fe6a867c4a90a46f65c63a60d_1a6cb4eb9fe6a867c4a90a46f65c63a60d" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>SDL_Scancode<sp/><ref refid="namespace_auris_1_1_action_a6cb4eb9fe6a867c4a90a46f65c63a60d_1a6cb4eb9fe6a867c4a90a46f65c63a60d" kindref="member">toggleProfiler</ref><sp/><sp/>=<sp/>SDL_SCANCODE_F5;</highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight></codeline>
+<codeline lineno="18" refid="namespace_auris_1_1_action_a9d1780de0f47ea2dabe1e67d742c1504_1a9d1780de0f47ea2dabe1e67d742c1504" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>SDL_Scancode<sp/><ref refid="namespace_auris_1_1_action_a9d1780de0f47ea2dabe1e67d742c1504_1a9d1780de0f47ea2dabe1e67d742c1504" kindref="member">drawColliders</ref><sp/><sp/><sp/>=<sp/>SDL_SCANCODE_F7;</highlight></codeline>
+<codeline lineno="19" refid="namespace_auris_1_1_action_a2bad7973741f592491487420f1b9b392_1a2bad7973741f592491487420f1b9b392" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>SDL_Scancode<sp/><ref refid="namespace_auris_1_1_action_a2bad7973741f592491487420f1b9b392_1a2bad7973741f592491487420f1b9b392" kindref="member">drawDebug</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>SDL_SCANCODE_F8;</highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight></codeline>
+<codeline lineno="21" refid="namespace_auris_1_1_action_a9c2f14f3526554c4fd177e44c4522529_1a9c2f14f3526554c4fd177e44c4522529" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>SDL_Scancode<sp/><ref refid="namespace_auris_1_1_action_a9c2f14f3526554c4fd177e44c4522529_1a9c2f14f3526554c4fd177e44c4522529" kindref="member">pause</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>SDL_SCANCODE_F9;</highlight></codeline>
+<codeline lineno="22" refid="namespace_auris_1_1_action_a4036588b134329fa98e91e8a89307538_1a4036588b134329fa98e91e8a89307538" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>SDL_Scancode<sp/><ref refid="namespace_auris_1_1_action_a4036588b134329fa98e91e8a89307538_1a4036588b134329fa98e91e8a89307538" kindref="member">stepOne</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>SDL_SCANCODE_F10;</highlight></codeline>
+<codeline lineno="23" refid="namespace_auris_1_1_action_aa523137817d5ac3d616575db979132bb_1aa523137817d5ac3d616575db979132bb" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>SDL_Scancode<sp/><ref refid="namespace_auris_1_1_action_aa523137817d5ac3d616575db979132bb_1aa523137817d5ac3d616575db979132bb" kindref="member">playOnHold</ref><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>SDL_SCANCODE_F11;</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight></codeline>
+<codeline lineno="25" refid="namespace_auris_1_1_action_a2bc6c1ac7c3f75fbd41aae651cfc45a3_1a2bc6c1ac7c3f75fbd41aae651cfc45a3" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>SDL_Scancode<sp/><ref refid="namespace_auris_1_1_action_a2bc6c1ac7c3f75fbd41aae651cfc45a3_1a2bc6c1ac7c3f75fbd41aae651cfc45a3" kindref="member">w</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>SDL_SCANCODE_W;</highlight></codeline>
+<codeline lineno="26" refid="namespace_auris_1_1_action_aa9f830168ef21bb79153b3ea1b6e536a_1aa9f830168ef21bb79153b3ea1b6e536a" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>SDL_Scancode<sp/><ref refid="namespace_auris_1_1_action_aa9f830168ef21bb79153b3ea1b6e536a_1aa9f830168ef21bb79153b3ea1b6e536a" kindref="member">a</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>SDL_SCANCODE_A;</highlight></codeline>
+<codeline lineno="27" refid="namespace_auris_1_1_action_afbe1cd6358dcb3cf41253731310f79df_1afbe1cd6358dcb3cf41253731310f79df" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>SDL_Scancode<sp/><ref refid="namespace_auris_1_1_action_afbe1cd6358dcb3cf41253731310f79df_1afbe1cd6358dcb3cf41253731310f79df" kindref="member">s</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>SDL_SCANCODE_S;</highlight></codeline>
+<codeline lineno="28" refid="namespace_auris_1_1_action_aeb2f944fddaeb6eb29ccb51fc44f946a_1aeb2f944fddaeb6eb29ccb51fc44f946a" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>SDL_Scancode<sp/><ref refid="namespace_auris_1_1_action_aeb2f944fddaeb6eb29ccb51fc44f946a_1aeb2f944fddaeb6eb29ccb51fc44f946a" kindref="member">d</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>SDL_SCANCODE_D;</highlight></codeline>
+<codeline lineno="29" refid="namespace_auris_1_1_action_adb05b89d6caa348c96fa628eca73bc73_1adb05b89d6caa348c96fa628eca73bc73" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>SDL_Scancode<sp/><ref refid="namespace_auris_1_1_action_adb05b89d6caa348c96fa628eca73bc73_1adb05b89d6caa348c96fa628eca73bc73" kindref="member">enter</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>SDL_SCANCODE_RETURN;</highlight></codeline>
+<codeline lineno="30" refid="namespace_auris_1_1_action_af13454e337977c5b209ecae0fa19f777_1af13454e337977c5b209ecae0fa19f777" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>SDL_Scancode<sp/><ref refid="namespace_auris_1_1_action_af13454e337977c5b209ecae0fa19f777_1af13454e337977c5b209ecae0fa19f777" kindref="member">space</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>SDL_SCANCODE_SPACE;</highlight></codeline>
+<codeline lineno="31" refid="namespace_auris_1_1_action_af1b5812b2ab0caedd8957192716651de_1af1b5812b2ab0caedd8957192716651de" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>SDL_Scancode<sp/><ref refid="namespace_auris_1_1_action_af1b5812b2ab0caedd8957192716651de_1af1b5812b2ab0caedd8957192716651de" kindref="member">z</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>SDL_SCANCODE_Z;</highlight></codeline>
+<codeline lineno="32" refid="namespace_auris_1_1_action_a775601cedd60f4ece8de0d630a067862_1a775601cedd60f4ece8de0d630a067862" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>SDL_Scancode<sp/><ref refid="namespace_auris_1_1_action_a775601cedd60f4ece8de0d630a067862_1a775601cedd60f4ece8de0d630a067862" kindref="member">m</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>SDL_SCANCODE_M;</highlight></codeline>
+<codeline lineno="33"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="34"><highlight class="normal">}</highlight></codeline>
+    </programlisting>
+    <location file="Projects/GameEngine/include/Auris/Action.hpp"/>
+  </compounddef>
+</doxygen>

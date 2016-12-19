@@ -1,0 +1,38 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.12">
+  <compounddef id="class_auris_1_1_scene" kind="class" language="C++" prot="public">
+    <compoundname>Auris::Scene</compoundname>
+    <includes refid="_scene_8hpp" local="no">Scene.hpp</includes>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_auris_1_1_scene_aa74144c32b75b28314c52b7e32ae1eef_1aa74144c32b75b28314c52b7e32ae1eef" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type>void</type>
+        <definition>virtual void Auris::Scene::init</definition>
+        <argsstring>()</argsstring>
+        <name>init</name>
+        <briefdescription>
+<para>An init method, taking 1 argument. </para>        </briefdescription>
+        <detaileddescription>
+<para>init in the scene is run when the game it initilized The game programmer can use this to create new scenes in the game <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>game</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>a <ref refid="class_auris_1_1_game" kindref="compound">Game</ref> Pointer. An instance of the game. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Projects/GameEngine/include/Auris/Systems/Scene.hpp" line="17" column="1" bodyfile="Projects/GameEngine/include/Auris/Systems/Scene.hpp" bodystart="17" bodyend="17"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>The scene class. </para>    </briefdescription>
+    <detaileddescription>
+<para>Used to create scenes in the game </para>    </detaileddescription>
+    <location file="Projects/GameEngine/include/Auris/Systems/Scene.hpp" line="9" column="1" bodyfile="Projects/GameEngine/include/Auris/Systems/Scene.hpp" bodystart="9" bodyend="18"/>
+    <listofallmembers>
+      <member refid="class_auris_1_1_scene_aa74144c32b75b28314c52b7e32ae1eef_1aa74144c32b75b28314c52b7e32ae1eef" prot="public" virt="virtual"><scope>Auris::Scene</scope><name>init</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

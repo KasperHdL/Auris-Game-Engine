@@ -1,0 +1,222 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.12">
+  <compounddef id="_camera_8hpp" kind="file" language="C++">
+    <compoundname>Camera.hpp</compoundname>
+    <includes local="yes">SRE/Camera.hpp</includes>
+    <includes local="yes">SRE/SimpleRenderEngine.hpp</includes>
+    <includedby refid="_audio_player_8hpp" local="yes">Projects/GameEngine/include/Auris/Entities/AudioPlayer.hpp</includedby>
+    <includedby refid="_game_8hpp" local="yes">Projects/GameEngine/include/Auris/Game.hpp</includedby>
+    <includedby refid="_camera_8cpp" local="yes">Projects/GameEngine/Auris/src/Auris/Entities/Camera.cpp</includedby>
+    <incdepgraph>
+      <node id="673">
+        <label>Projects/GameEngine/include/Auris/Entities/Camera.hpp</label>
+        <link refid="_camera_8hpp"/>
+        <childnode refid="674" relation="include">
+        </childnode>
+        <childnode refid="675" relation="include">
+        </childnode>
+      </node>
+      <node id="674">
+        <label>SRE/Camera.hpp</label>
+      </node>
+      <node id="675">
+        <label>SRE/SimpleRenderEngine.hpp</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="682">
+        <label>Projects/GameEngine/Auris/src/Auris/Entities/PhysicsEntity.cpp</label>
+        <link refid="_physics_entity_8cpp"/>
+      </node>
+      <node id="677">
+        <label>Projects/GameEngine/include/Auris/Entities/AudioPlayer.hpp</label>
+        <link refid="_audio_player_8hpp"/>
+        <childnode refid="678" relation="include">
+        </childnode>
+        <childnode refid="687" relation="include">
+        </childnode>
+      </node>
+      <node id="679">
+        <label>Projects/GameEngine/include/Auris/Entities/PhysicsEntity.hpp</label>
+        <link refid="_physics_entity_8hpp"/>
+        <childnode refid="680" relation="include">
+        </childnode>
+        <childnode refid="682" relation="include">
+        </childnode>
+      </node>
+      <node id="680">
+        <label>Projects/GameEngine/include/Auris/Systems/CollisionHandler.hpp</label>
+        <link refid="_collision_handler_8hpp"/>
+        <childnode refid="681" relation="include">
+        </childnode>
+      </node>
+      <node id="676">
+        <label>Projects/GameEngine/include/Auris/Entities/Camera.hpp</label>
+        <link refid="_camera_8hpp"/>
+        <childnode refid="677" relation="include">
+        </childnode>
+        <childnode refid="683" relation="include">
+        </childnode>
+        <childnode refid="688" relation="include">
+        </childnode>
+      </node>
+      <node id="683">
+        <label>Projects/GameEngine/include/Auris/Game.hpp</label>
+        <link refid="_game_8hpp"/>
+        <childnode refid="678" relation="include">
+        </childnode>
+        <childnode refid="684" relation="include">
+        </childnode>
+        <childnode refid="685" relation="include">
+        </childnode>
+      </node>
+      <node id="678">
+        <label>Projects/GameEngine/include/Auris/Engine.hpp</label>
+        <link refid="_engine_8hpp"/>
+        <childnode refid="679" relation="include">
+        </childnode>
+        <childnode refid="683" relation="include">
+        </childnode>
+        <childnode refid="686" relation="include">
+        </childnode>
+        <childnode refid="681" relation="include">
+        </childnode>
+      </node>
+      <node id="686">
+        <label>Projects/GameEngine/include/Auris/Utilities/BodyStandard.hpp</label>
+        <link refid="_body_standard_8hpp"/>
+      </node>
+      <node id="685">
+        <label>Projects/GameEngine/Auris/src/Auris/Systems/Input.cpp</label>
+        <link refid="_input_8cpp"/>
+      </node>
+      <node id="684">
+        <label>Projects/GameEngine/Auris/src/Auris/Game.cpp</label>
+        <link refid="_game_8cpp"/>
+      </node>
+      <node id="687">
+        <label>Projects/GameEngine/Auris/src/Auris/Entities/AudioPlayer.cpp</label>
+        <link refid="_audio_player_8cpp"/>
+      </node>
+      <node id="681">
+        <label>Projects/GameEngine/Auris/src/Auris/Engine.cpp</label>
+        <link refid="_engine_8cpp"/>
+      </node>
+      <node id="688">
+        <label>Projects/GameEngine/Auris/src/Auris/Entities/Camera.cpp</label>
+        <link refid="_camera_8cpp"/>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="class_auris_1_1_camera" prot="public">Auris::Camera</innerclass>
+    <innernamespace refid="namespace_auris">Auris</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#pragma<sp/>once</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;SRE/Camera.hpp&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;SRE/SimpleRenderEngine.hpp&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespace_auris" kindref="compound">Auris</ref>{</highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="7"><highlight class="comment">//!<sp/>The<sp/>camera<sp/>class</highlight></codeline>
+<codeline lineno="8"><highlight class="comment"></highlight><highlight class="comment"><sp/><sp/><sp/><sp/>/*!<sp/>To<sp/>control<sp/>the<sp/>current<sp/>camera<sp/>of<sp/>the<sp/>game</highlight></codeline>
+<codeline lineno="9"><highlight class="comment"><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="10" refid="class_auris_1_1_camera" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="class_auris_1_1_camera" kindref="compound">Camera</ref>{</highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="13"><highlight class="comment"><sp/><sp/><sp/><sp/>//!<sp/>The<sp/>camera<sp/>constructor,<sp/>taking<sp/>2-4<sp/>arguments</highlight></codeline>
+<codeline lineno="14"><highlight class="comment"></highlight><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/>/*!</highlight></codeline>
+<codeline lineno="15"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*<sp/>Calculates<sp/>the<sp/>orthographic<sp/>projection<sp/>based<sp/>on<sp/>the<sp/>arguments,<sp/>and<sp/>also<sp/>centers<sp/>the<sp/>position<sp/>of<sp/>the<sp/>camera.</highlight></codeline>
+<codeline lineno="16"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*<sp/>\param<sp/>width<sp/>a<sp/>float,<sp/>that<sp/>is<sp/>the<sp/>width<sp/>of<sp/>the<sp/>camera.</highlight></codeline>
+<codeline lineno="17"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*<sp/>\param<sp/>height<sp/>a<sp/>float,<sp/>that<sp/>is<sp/>the<sp/>height<sp/>of<sp/>the<sp/>camera.</highlight></codeline>
+<codeline lineno="18"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*<sp/>\param<sp/>near<sp/>a<sp/>float,<sp/>that<sp/>is<sp/>the<sp/>near<sp/>clipping<sp/>plane<sp/>(default<sp/>is<sp/>-1).</highlight></codeline>
+<codeline lineno="19"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*<sp/>\param<sp/>far<sp/>a<sp/>float,<sp/>that<sp/>is<sp/>the<sp/>far<sp/>clipping<sp/>plane<sp/>(default<sp/>is<sp/>1).</highlight></codeline>
+<codeline lineno="20"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="21"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_auris_1_1_camera_a806e1d73fe6e0a07b0fd85819e818792_1a806e1d73fe6e0a07b0fd85819e818792" kindref="member">Camera</ref>(</highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="namespace_auris_1_1_constants_abb26e3b2db53291f1b7649cb92b309e5_1abb26e3b2db53291f1b7649cb92b309e5" kindref="member">width</ref>,<sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="namespace_auris_1_1_constants_ab1f513ab0d733d7c9af6299344630187_1ab1f513ab0d733d7c9af6299344630187" kindref="member">height</ref>,<sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>near=-1,<sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>far=1);</highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="23"><highlight class="comment"><sp/><sp/><sp/><sp/>//!<sp/>The<sp/>camera<sp/>destructor.</highlight></codeline>
+<codeline lineno="24"><highlight class="comment"></highlight><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>/*!<sp/>Deletes<sp/>the<sp/>Camera<sp/>pointer.</highlight></codeline>
+<codeline lineno="25"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="26"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_auris_1_1_camera_ad1897942d0ccf91052386388a497349f_1ad1897942d0ccf91052386388a497349f" kindref="member">~Camera</ref>();</highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="27"><highlight class="comment"><sp/><sp/><sp/><sp/>//!<sp/>A<sp/>method<sp/>to<sp/>set<sp/>the<sp/>position,<sp/>taking<sp/>1<sp/>argument.</highlight></codeline>
+<codeline lineno="28"><highlight class="comment"></highlight><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>/*!</highlight></codeline>
+<codeline lineno="29"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*<sp/>\param<sp/>pos<sp/>a<sp/>vec2,<sp/>that<sp/>is<sp/>the<sp/>position<sp/>to<sp/>set<sp/>the<sp/>camera.</highlight></codeline>
+<codeline lineno="30"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="31"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_auris_1_1_camera_a975ede219aed9ae4b52d4050aee37dc5_1a975ede219aed9ae4b52d4050aee37dc5" kindref="member">setPos</ref>(glm::vec2<sp/><ref refid="class_auris_1_1_camera_a6dfc5e32a215929f413255a0cf852d11_1a6dfc5e32a215929f413255a0cf852d11" kindref="member">pos</ref>);</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="33"><highlight class="comment"><sp/><sp/><sp/><sp/>//!<sp/>A<sp/>method<sp/>to<sp/>get<sp/>the<sp/>position.</highlight></codeline>
+<codeline lineno="34"><highlight class="comment"></highlight><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>/*!</highlight></codeline>
+<codeline lineno="35"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*<sp/>\return<sp/>a<sp/>vec2,<sp/>that<sp/>is<sp/>the<sp/>position<sp/>of<sp/>the<sp/>camera.</highlight></codeline>
+<codeline lineno="36"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*<sp/>\sa<sp/>translate()</highlight></codeline>
+<codeline lineno="37"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="38"><highlight class="normal"><sp/><sp/><sp/><sp/>glm::vec2<sp/><ref refid="class_auris_1_1_camera_ae4a66cb62fa67199a6c34a2fec501054_1ae4a66cb62fa67199a6c34a2fec501054" kindref="member">getPos</ref>();</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="40"><highlight class="comment"><sp/><sp/><sp/><sp/>//!<sp/>A<sp/>method<sp/>to<sp/>get<sp/>the<sp/>width.</highlight></codeline>
+<codeline lineno="41"><highlight class="comment"></highlight><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>/*!</highlight></codeline>
+<codeline lineno="42"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*<sp/>\return<sp/>a<sp/>float,<sp/>that<sp/>is<sp/>the<sp/>width<sp/>of<sp/>the<sp/>camera.</highlight></codeline>
+<codeline lineno="43"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*<sp/>\sa<sp/>getHeight()</highlight></codeline>
+<codeline lineno="44"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="class_auris_1_1_camera_a17a09a5d85ed62c92c3c17969e4b2df3_1a17a09a5d85ed62c92c3c17969e4b2df3" kindref="member">getWidth</ref>();</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="47"><highlight class="comment"><sp/><sp/><sp/><sp/>//!<sp/>A<sp/>method<sp/>to<sp/>get<sp/>the<sp/>height.</highlight></codeline>
+<codeline lineno="48"><highlight class="comment"></highlight><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>/*!</highlight></codeline>
+<codeline lineno="49"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*<sp/>\return<sp/>a<sp/>float,<sp/>that<sp/>is<sp/>the<sp/>height<sp/>of<sp/>the<sp/>camera.</highlight></codeline>
+<codeline lineno="50"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*<sp/>\sa<sp/>getWidth()</highlight></codeline>
+<codeline lineno="51"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="52"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="class_auris_1_1_camera_a6aa244c08427100da9e8ea5b2fa88cd8_1a6aa244c08427100da9e8ea5b2fa88cd8" kindref="member">getHeight</ref>();</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="54"><highlight class="comment"><sp/><sp/><sp/><sp/>//!<sp/>A<sp/>method<sp/>to<sp/>set<sp/>the<sp/>rotation,<sp/>taking<sp/>1<sp/>argument.</highlight></codeline>
+<codeline lineno="55"><highlight class="comment"></highlight><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>/*!<sp/>Calculates<sp/>the<sp/>rotation<sp/>of<sp/>the<sp/>camera<sp/>based<sp/>on<sp/>the<sp/>argument<sp/>inputted.</highlight></codeline>
+<codeline lineno="56"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*<sp/>\param<sp/>z<sp/>a<sp/>float<sp/>value,<sp/>that<sp/>is<sp/>the<sp/>rotation<sp/>to<sp/>set<sp/>the<sp/>camera.</highlight></codeline>
+<codeline lineno="57"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*<sp/>\sa<sp/>rotate()</highlight></codeline>
+<codeline lineno="58"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="59"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_auris_1_1_camera_a5d116ecd6cbffc7dd7642ad9b3fc2687_1a5d116ecd6cbffc7dd7642ad9b3fc2687" kindref="member">setRotation</ref>(</highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="class_auris_1_1_camera_a8f25fabcac83e3a7b723275c395747f8_1a8f25fabcac83e3a7b723275c395747f8" kindref="member">z</ref>);</highlight></codeline>
+<codeline lineno="60"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="61"><highlight class="comment"><sp/><sp/><sp/><sp/>//!<sp/>A<sp/>method<sp/>to<sp/>translate<sp/>the<sp/>camera,<sp/>taking<sp/>1<sp/>argument.</highlight></codeline>
+<codeline lineno="62"><highlight class="comment"></highlight><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>/*!<sp/>Moves<sp/>the<sp/>camera<sp/>the<sp/>amount<sp/>of<sp/>input.</highlight></codeline>
+<codeline lineno="63"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*<sp/>\param<sp/>amount<sp/>a<sp/>vec2<sp/>value,<sp/>that<sp/>is<sp/>the<sp/>amount<sp/>to<sp/>move<sp/>the<sp/>camera.</highlight></codeline>
+<codeline lineno="64"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*<sp/>\sa<sp/>setPos().</highlight></codeline>
+<codeline lineno="65"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="66"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_auris_1_1_camera_a07a6e5caa5cfdb0529008a10f29fe770_1a07a6e5caa5cfdb0529008a10f29fe770" kindref="member">translate</ref>(glm::vec2<sp/>amount);</highlight></codeline>
+<codeline lineno="67"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="68"><highlight class="comment"><sp/><sp/><sp/><sp/>//!<sp/>A<sp/>method<sp/>to<sp/>rotate<sp/>the<sp/>camera,<sp/>taking<sp/>1<sp/>argument.</highlight></codeline>
+<codeline lineno="69"><highlight class="comment"></highlight><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>/*!<sp/>Rotates<sp/>the<sp/>camera<sp/>the<sp/>amount<sp/>of<sp/>input.</highlight></codeline>
+<codeline lineno="70"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*<sp/>\param<sp/>amount<sp/>a<sp/>float<sp/>value,<sp/>that<sp/>is<sp/>the<sp/>amount<sp/>to<sp/>rotate<sp/>the<sp/>camera.</highlight></codeline>
+<codeline lineno="71"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*<sp/>\sa<sp/>setRotation().</highlight></codeline>
+<codeline lineno="72"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="73"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_auris_1_1_camera_aadfff4b1b00b8e0fcbbb4ea3313eef77_1aadfff4b1b00b8e0fcbbb4ea3313eef77" kindref="member">rotate</ref>(</highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>amount);</highlight></codeline>
+<codeline lineno="74"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="75"><highlight class="comment"><sp/><sp/><sp/><sp/>//!<sp/>A<sp/>method<sp/>to<sp/>zoom<sp/>the<sp/>camera,<sp/>taking<sp/>1<sp/>argument.</highlight></codeline>
+<codeline lineno="76"><highlight class="comment"></highlight><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>/*!<sp/>Zooms<sp/>the<sp/>camera<sp/>the<sp/>amount<sp/>of<sp/>input.</highlight></codeline>
+<codeline lineno="77"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*<sp/>\param<sp/>amount<sp/>a<sp/>float<sp/>value,<sp/>that<sp/>is<sp/>the<sp/>amount<sp/>to<sp/>zoom<sp/>the<sp/>camera<sp/>(can<sp/>be<sp/>both<sp/>positive<sp/>and<sp/>negative).</highlight></codeline>
+<codeline lineno="78"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="79"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_auris_1_1_camera_af11ea6aa19e613e01fe7e58e5f36da26_1af11ea6aa19e613e01fe7e58e5f36da26" kindref="member">zoom</ref>(</highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>amount);</highlight></codeline>
+<codeline lineno="80"><highlight class="normal"></highlight></codeline>
+<codeline lineno="81"><highlight class="normal"></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="82"><highlight class="normal"></highlight></codeline>
+<codeline lineno="83" refid="class_auris_1_1_camera_a849bcfa7d616aff60c6b127b699d5577_1a849bcfa7d616aff60c6b127b699d5577" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>SRE::Camera*<sp/><ref refid="class_auris_1_1_camera_a849bcfa7d616aff60c6b127b699d5577_1a849bcfa7d616aff60c6b127b699d5577" kindref="member">cam</ref>;<sp/></highlight><highlight class="comment">/*!&lt;<sp/>A<sp/>Camera<sp/>pointer:<sp/>cam.<sp/>A<sp/>reference<sp/>to<sp/>the<sp/>SimpleRenderEngine<sp/>Camera<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="84" refid="class_auris_1_1_camera_a219d801ff265340504729d8bcee9dda6_1a219d801ff265340504729d8bcee9dda6" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="class_auris_1_1_camera_a219d801ff265340504729d8bcee9dda6_1a219d801ff265340504729d8bcee9dda6" kindref="member">left</ref>;<sp/></highlight><highlight class="comment">/*!&lt;<sp/>A<sp/>float<sp/>value:<sp/>left.<sp/>Used<sp/>to<sp/>calculate<sp/>the<sp/>orthographic<sp/>projection<sp/>from<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="85" refid="class_auris_1_1_camera_af2465fd360861b8450e0518ac3663d29_1af2465fd360861b8450e0518ac3663d29" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="class_auris_1_1_camera_af2465fd360861b8450e0518ac3663d29_1af2465fd360861b8450e0518ac3663d29" kindref="member">bottom</ref>;<sp/></highlight><highlight class="comment">/*!&lt;<sp/>A<sp/>float<sp/>value:<sp/>bottom.<sp/>Used<sp/>to<sp/>calculate<sp/>the<sp/>orthographic<sp/>projection<sp/>from<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="86" refid="class_auris_1_1_camera_a02f938f18898dd998136a04604c6b40e_1a02f938f18898dd998136a04604c6b40e" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="class_auris_1_1_camera_a02f938f18898dd998136a04604c6b40e_1a02f938f18898dd998136a04604c6b40e" kindref="member">right</ref>;<sp/></highlight><highlight class="comment">/*!&lt;<sp/>A<sp/>float<sp/>value:<sp/>right.<sp/>Used<sp/>to<sp/>calculate<sp/>the<sp/>orthographic<sp/>projection<sp/>from<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="87" refid="class_auris_1_1_camera_a7ce8e00aa452467d274f80ceaae6cf98_1a7ce8e00aa452467d274f80ceaae6cf98" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="class_auris_1_1_camera_a7ce8e00aa452467d274f80ceaae6cf98_1a7ce8e00aa452467d274f80ceaae6cf98" kindref="member">top</ref>;<sp/></highlight><highlight class="comment">/*!&lt;<sp/>A<sp/>float<sp/>value:<sp/>top.<sp/>Used<sp/>to<sp/>calculate<sp/>the<sp/>orthographic<sp/>projection<sp/>from<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="88" refid="class_auris_1_1_camera_afffa68c96f86d19a7561a862fdeda141_1afffa68c96f86d19a7561a862fdeda141" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="class_auris_1_1_camera_afffa68c96f86d19a7561a862fdeda141_1afffa68c96f86d19a7561a862fdeda141" kindref="member">nearPlane</ref>;<sp/></highlight><highlight class="comment">/*!&lt;<sp/>A<sp/>float<sp/>value:<sp/>near.<sp/>Used<sp/>to<sp/>calculate<sp/>the<sp/>orthographic<sp/>projection<sp/>from<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="89" refid="class_auris_1_1_camera_a63358a3f77820a9f2d7a0d2d82b5355f_1a63358a3f77820a9f2d7a0d2d82b5355f" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="class_auris_1_1_camera_a63358a3f77820a9f2d7a0d2d82b5355f_1a63358a3f77820a9f2d7a0d2d82b5355f" kindref="member">farPlane</ref>;<sp/></highlight><highlight class="comment">/*!&lt;<sp/>A<sp/>float<sp/>value:<sp/>far.<sp/>Used<sp/>to<sp/>calculate<sp/>the<sp/>orthographic<sp/>projection<sp/>from<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="90" refid="class_auris_1_1_camera_a8f25fabcac83e3a7b723275c395747f8_1a8f25fabcac83e3a7b723275c395747f8" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="class_auris_1_1_camera_a8f25fabcac83e3a7b723275c395747f8_1a8f25fabcac83e3a7b723275c395747f8" kindref="member">z</ref>;<sp/></highlight><highlight class="comment">/*!&lt;<sp/>A<sp/>float<sp/>value:<sp/>z.<sp/>Used<sp/>to<sp/>calculate<sp/>the<sp/>rotation<sp/>from<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="91"><highlight class="normal"></highlight></codeline>
+<codeline lineno="92" refid="class_auris_1_1_camera_ab47d622e1a3580cf91c3ed83ac3ed644_1ab47d622e1a3580cf91c3ed83ac3ed644" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>glm::vec3<sp/><ref refid="class_auris_1_1_camera_ab47d622e1a3580cf91c3ed83ac3ed644_1ab47d622e1a3580cf91c3ed83ac3ed644" kindref="member">up</ref>;<sp/></highlight><highlight class="comment">/*!&lt;<sp/>A<sp/>vec3<sp/>value:<sp/>up.<sp/>That<sp/>is<sp/>the<sp/>up<sp/>vector<sp/>used<sp/>to<sp/>rotate<sp/>the<sp/>camera<sp/>about<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="93" refid="class_auris_1_1_camera_a6dfc5e32a215929f413255a0cf852d11_1a6dfc5e32a215929f413255a0cf852d11" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>glm::vec2<sp/><ref refid="class_auris_1_1_camera_a6dfc5e32a215929f413255a0cf852d11_1a6dfc5e32a215929f413255a0cf852d11" kindref="member">pos</ref>;<sp/></highlight><highlight class="comment">/*!&lt;<sp/>A<sp/>vec2<sp/>value:<sp/>pos.<sp/>That<sp/>is<sp/>the<sp/>position<sp/>of<sp/>the<sp/>camera<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="94"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="95"><highlight class="comment"><sp/><sp/><sp/><sp/>//!<sp/>A<sp/>method<sp/>to<sp/>update<sp/>the<sp/>camera.</highlight></codeline>
+<codeline lineno="96"><highlight class="comment"></highlight><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>/*!<sp/>Updates<sp/>the<sp/>camera<sp/>via<sp/>the<sp/>lookAt<sp/>function<sp/>in<sp/>SimpleRenderEngine.</highlight></codeline>
+<codeline lineno="97"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*<sp/>Does<sp/>this<sp/>after<sp/>every<sp/>change<sp/>that<sp/>has<sp/>happend.</highlight></codeline>
+<codeline lineno="98"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="99"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_auris_1_1_camera_aa8dab5324684dabc8c352faf88ea2d67_1aa8dab5324684dabc8c352faf88ea2d67" kindref="member">updateCam</ref>();</highlight></codeline>
+<codeline lineno="100"><highlight class="normal"></highlight></codeline>
+<codeline lineno="101"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="102"><highlight class="normal">}</highlight></codeline>
+    </programlisting>
+    <location file="Projects/GameEngine/include/Auris/Entities/Camera.hpp"/>
+  </compounddef>
+</doxygen>

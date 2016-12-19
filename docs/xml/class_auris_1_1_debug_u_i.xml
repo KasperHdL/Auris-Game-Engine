@@ -1,0 +1,1031 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.12">
+  <compounddef id="class_auris_1_1_debug_u_i" kind="class" language="C++" prot="public">
+    <compoundname>Auris::DebugUI</compoundname>
+    <includes refid="_debug_u_i_8hpp" local="no">DebugUI.hpp</includes>
+      <sectiondef kind="private-type">
+      <memberdef kind="enum" id="class_auris_1_1_debug_u_i_aceb9f5e93258cdeca5927defefbab68f_1aceb9f5e93258cdeca5927defefbab68f" prot="private" static="no">
+        <name>InspectorMode</name>
+        <enumvalue id="class_auris_1_1_debug_u_i_aceb9f5e93258cdeca5927defefbab68f_1aceb9f5e93258cdeca5927defefbab68fa101b3ba64ba30aeb9e7764579205e640" prot="private">
+          <name>Closed</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="class_auris_1_1_debug_u_i_aceb9f5e93258cdeca5927defefbab68f_1aceb9f5e93258cdeca5927defefbab68fa41290f78ff9ee396de7a44ba034fac5d" prot="private">
+          <name>Open</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+<para>An enum of <ref refid="class_auris_1_1_debug_u_i_aceb9f5e93258cdeca5927defefbab68f_1aceb9f5e93258cdeca5927defefbab68f" kindref="member">DebugUI::InspectorMode</ref>. </para>        </briefdescription>
+        <detaileddescription>
+<para>That holds information about in which mode of inspector. Close and Open </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Projects/GameEngine/include/Auris/Testing/DebugUI.hpp" line="73" column="1" bodyfile="Projects/GameEngine/include/Auris/Testing/DebugUI.hpp" bodystart="73" bodyend="77"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="class_auris_1_1_debug_u_i_a58c81695547a6a7ec99bae32a11010d9_1a58c81695547a6a7ec99bae32a11010d9" prot="private" static="no" mutable="no">
+        <type><ref refid="class_auris_1_1_engine" kindref="compound">Engine</ref> *</type>
+        <definition>Engine* Auris::DebugUI::e</definition>
+        <argsstring></argsstring>
+        <name>e</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>An <ref refid="class_auris_1_1_engine" kindref="compound">Engine</ref> pointer: e. An instance of the engine. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Projects/GameEngine/include/Auris/Testing/DebugUI.hpp" line="16" column="1" bodyfile="Projects/GameEngine/include/Auris/Testing/DebugUI.hpp" bodystart="16" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_auris_1_1_debug_u_i_a7b1da7a9540a289eee6677e6fde4a86d_1a7b1da7a9540a289eee6677e6fde4a86d" prot="private" static="no" mutable="no">
+        <type><ref refid="class_auris_1_1_debug_draw" kindref="compound">DebugDraw</ref></type>
+        <definition>DebugDraw Auris::DebugUI::debugDraw</definition>
+        <argsstring></argsstring>
+        <name>debugDraw</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>A <ref refid="class_auris_1_1_debug_draw" kindref="compound">DebugDraw</ref> value: debugDraw. The <ref refid="class_auris_1_1_debug_draw" kindref="compound">DebugDraw</ref> object, used to draw stuff. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Projects/GameEngine/include/Auris/Testing/DebugUI.hpp" line="19" column="1" bodyfile="Projects/GameEngine/include/Auris/Testing/DebugUI.hpp" bodystart="19" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_auris_1_1_debug_u_i_a45390cceb0347d4d5ed77bd5bf129824_1a45390cceb0347d4d5ed77bd5bf129824" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool Auris::DebugUI::drawDebug</definition>
+        <argsstring></argsstring>
+        <name>drawDebug</name>
+        <initializer>= false</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>A bool value: drawDebug. Will call drawDebug on entities </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Projects/GameEngine/include/Auris/Testing/DebugUI.hpp" line="21" column="1" bodyfile="Projects/GameEngine/include/Auris/Testing/DebugUI.hpp" bodystart="21" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_auris_1_1_debug_u_i_a4eb7e998d05f2ea711cdc954f4065369_1a4eb7e998d05f2ea711cdc954f4065369" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool Auris::DebugUI::drawColliders</definition>
+        <argsstring></argsstring>
+        <name>drawColliders</name>
+        <initializer>= false</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>A bool value: drawColliders. Will draw box2d <ref refid="class_auris_1_1_debug_draw" kindref="compound">DebugDraw</ref> </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Projects/GameEngine/include/Auris/Testing/DebugUI.hpp" line="22" column="1" bodyfile="Projects/GameEngine/include/Auris/Testing/DebugUI.hpp" bodystart="22" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_auris_1_1_debug_u_i_a09c27b298bbfa243227ed23a96fb489d_1a09c27b298bbfa243227ed23a96fb489d" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int Auris::DebugUI::arrIndex</definition>
+        <argsstring></argsstring>
+        <name>arrIndex</name>
+        <initializer>= 0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>An int value: arrIndex. Index of the array </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Projects/GameEngine/include/Auris/Testing/DebugUI.hpp" line="26" column="1" bodyfile="Projects/GameEngine/include/Auris/Testing/DebugUI.hpp" bodystart="26" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_auris_1_1_debug_u_i_af6479419a04f630c7f11fa25039ea952_1af6479419a04f630c7f11fa25039ea952" prot="private" static="no" mutable="no">
+        <type>float</type>
+        <definition>float Auris::DebugUI::arr_deltaTime[arrSize]</definition>
+        <argsstring>[arrSize]</argsstring>
+        <name>arr_deltaTime</name>
+        <initializer>= {}</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>A float array: arr_deltaTime. Array for delta time </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Projects/GameEngine/include/Auris/Testing/DebugUI.hpp" line="29" column="1" bodyfile="Projects/GameEngine/include/Auris/Testing/DebugUI.hpp" bodystart="29" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_auris_1_1_debug_u_i_ae3b3bee56cdbcb9b6da9dbfbd29f8355_1ae3b3bee56cdbcb9b6da9dbfbd29f8355" prot="private" static="no" mutable="no">
+        <type>float</type>
+        <definition>float Auris::DebugUI::max_deltaTime</definition>
+        <argsstring></argsstring>
+        <name>max_deltaTime</name>
+        <initializer>= 0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>A float value: max_deltaTime. Max of delta time </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Projects/GameEngine/include/Auris/Testing/DebugUI.hpp" line="30" column="1" bodyfile="Projects/GameEngine/include/Auris/Testing/DebugUI.hpp" bodystart="30" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_auris_1_1_debug_u_i_ab6fcde9fad71baf734e2431cd7e4a6fe_1ab6fcde9fad71baf734e2431cd7e4a6fe" prot="private" static="no" mutable="no">
+        <type>float</type>
+        <definition>float Auris::DebugUI::arr_virtMem[arrSize]</definition>
+        <argsstring>[arrSize]</argsstring>
+        <name>arr_virtMem</name>
+        <initializer>= {}</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>A float array: arr_virtMem. Array for virtual memory </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Projects/GameEngine/include/Auris/Testing/DebugUI.hpp" line="33" column="1" bodyfile="Projects/GameEngine/include/Auris/Testing/DebugUI.hpp" bodystart="33" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_auris_1_1_debug_u_i_af3cff3f47252c248a95d56ddc3286154_1af3cff3f47252c248a95d56ddc3286154" prot="private" static="no" mutable="no">
+        <type>float</type>
+        <definition>float Auris::DebugUI::max_virtMem</definition>
+        <argsstring></argsstring>
+        <name>max_virtMem</name>
+        <initializer>= 0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>A float value: max_virtMem. Max of virtual memory </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Projects/GameEngine/include/Auris/Testing/DebugUI.hpp" line="34" column="1" bodyfile="Projects/GameEngine/include/Auris/Testing/DebugUI.hpp" bodystart="34" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_auris_1_1_debug_u_i_aed67c17d4c8eaf3ff48c9fcc9b29d2c9_1aed67c17d4c8eaf3ff48c9fcc9b29d2c9" prot="private" static="no" mutable="no">
+        <type>float</type>
+        <definition>float Auris::DebugUI::arr_physMem[arrSize]</definition>
+        <argsstring>[arrSize]</argsstring>
+        <name>arr_physMem</name>
+        <initializer>= {}</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>A float array: arr_physMem. Array for physical memory </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Projects/GameEngine/include/Auris/Testing/DebugUI.hpp" line="36" column="1" bodyfile="Projects/GameEngine/include/Auris/Testing/DebugUI.hpp" bodystart="36" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_auris_1_1_debug_u_i_ad10d2c2c01855cd5bc108915843b8ca2_1ad10d2c2c01855cd5bc108915843b8ca2" prot="private" static="no" mutable="no">
+        <type>float</type>
+        <definition>float Auris::DebugUI::max_physMem</definition>
+        <argsstring></argsstring>
+        <name>max_physMem</name>
+        <initializer>= 0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>A float value: max_physMem. Max of physical memory </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Projects/GameEngine/include/Auris/Testing/DebugUI.hpp" line="37" column="1" bodyfile="Projects/GameEngine/include/Auris/Testing/DebugUI.hpp" bodystart="37" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_auris_1_1_debug_u_i_a2e52eab3fff2ea2769288f3729983801_1a2e52eab3fff2ea2769288f3729983801" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int Auris::DebugUI::max_renderSprites</definition>
+        <argsstring></argsstring>
+        <name>max_renderSprites</name>
+        <initializer>= 0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>A float value: max_renderSprites. Max of rendered sprites </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Projects/GameEngine/include/Auris/Testing/DebugUI.hpp" line="39" column="1" bodyfile="Projects/GameEngine/include/Auris/Testing/DebugUI.hpp" bodystart="39" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_auris_1_1_debug_u_i_ad7e1d304ea15aa59fb9006e9287cdce9_1ad7e1d304ea15aa59fb9006e9287cdce9" prot="private" static="no" mutable="no">
+        <type>float</type>
+        <definition>float Auris::DebugUI::arr_profInput[arrSize]</definition>
+        <argsstring>[arrSize]</argsstring>
+        <name>arr_profInput</name>
+        <initializer>= {}</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>A float array: arr_profInput. Array for profiling input loop </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Projects/GameEngine/include/Auris/Testing/DebugUI.hpp" line="43" column="1" bodyfile="Projects/GameEngine/include/Auris/Testing/DebugUI.hpp" bodystart="43" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_auris_1_1_debug_u_i_a95e0c78823ae0729fb48e3d0994f724b_1a95e0c78823ae0729fb48e3d0994f724b" prot="private" static="no" mutable="no">
+        <type>float</type>
+        <definition>float Auris::DebugUI::arr_profEntityUpdate[arrSize]</definition>
+        <argsstring>[arrSize]</argsstring>
+        <name>arr_profEntityUpdate</name>
+        <initializer>= {}</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>A float array: arr_EnitityUpdate. Array for profiling <ref refid="class_auris_1_1_entity" kindref="compound">Entity</ref> update loop </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Projects/GameEngine/include/Auris/Testing/DebugUI.hpp" line="44" column="1" bodyfile="Projects/GameEngine/include/Auris/Testing/DebugUI.hpp" bodystart="44" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_auris_1_1_debug_u_i_a093e769a9d5cdf5f08b8857fb75838c4_1a093e769a9d5cdf5f08b8857fb75838c4" prot="private" static="no" mutable="no">
+        <type>float</type>
+        <definition>float Auris::DebugUI::arr_profGEarlyUpdate[arrSize]</definition>
+        <argsstring>[arrSize]</argsstring>
+        <name>arr_profGEarlyUpdate</name>
+        <initializer>= {}</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>A float array: arr_profGEarlyUpdate. Array for profiling the game early update loop </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Projects/GameEngine/include/Auris/Testing/DebugUI.hpp" line="45" column="1" bodyfile="Projects/GameEngine/include/Auris/Testing/DebugUI.hpp" bodystart="45" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_auris_1_1_debug_u_i_a61cdeb164873b3a71c0efa967c020771_1a61cdeb164873b3a71c0efa967c020771" prot="private" static="no" mutable="no">
+        <type>float</type>
+        <definition>float Auris::DebugUI::arr_profGUpdate[arrSize]</definition>
+        <argsstring>[arrSize]</argsstring>
+        <name>arr_profGUpdate</name>
+        <initializer>= {}</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>A float array: arr_profGUpdate. Array for profiling the game update loop </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Projects/GameEngine/include/Auris/Testing/DebugUI.hpp" line="46" column="1" bodyfile="Projects/GameEngine/include/Auris/Testing/DebugUI.hpp" bodystart="46" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_auris_1_1_debug_u_i_ae4251e8e6d4fd1913b45524034a26dbb_1ae4251e8e6d4fd1913b45524034a26dbb" prot="private" static="no" mutable="no">
+        <type>float</type>
+        <definition>float Auris::DebugUI::arr_profGLateUpdate[arrSize]</definition>
+        <argsstring>[arrSize]</argsstring>
+        <name>arr_profGLateUpdate</name>
+        <initializer>= {}</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>A float array: arr_profGLateUpdate. Array for profiling the game late update loop </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Projects/GameEngine/include/Auris/Testing/DebugUI.hpp" line="47" column="1" bodyfile="Projects/GameEngine/include/Auris/Testing/DebugUI.hpp" bodystart="47" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_auris_1_1_debug_u_i_a5a1f0835bc83297339fa25fcf9fc7826_1a5a1f0835bc83297339fa25fcf9fc7826" prot="private" static="no" mutable="no">
+        <type>float</type>
+        <definition>float Auris::DebugUI::arr_profPhysics[arrSize]</definition>
+        <argsstring>[arrSize]</argsstring>
+        <name>arr_profPhysics</name>
+        <initializer>= {}</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>A float array: arr_profPhysics. Array for profiling physics loop </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Projects/GameEngine/include/Auris/Testing/DebugUI.hpp" line="48" column="1" bodyfile="Projects/GameEngine/include/Auris/Testing/DebugUI.hpp" bodystart="48" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_auris_1_1_debug_u_i_aba9c23ccbcfe62ef09240c7974ce46c2_1aba9c23ccbcfe62ef09240c7974ce46c2" prot="private" static="no" mutable="no">
+        <type>float</type>
+        <definition>float Auris::DebugUI::arr_profUpdateTransform[arrSize]</definition>
+        <argsstring>[arrSize]</argsstring>
+        <name>arr_profUpdateTransform</name>
+        <initializer>= {}</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>A float array: arr_profUpdateTransform. Array for profiling transform update loop </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Projects/GameEngine/include/Auris/Testing/DebugUI.hpp" line="49" column="1" bodyfile="Projects/GameEngine/include/Auris/Testing/DebugUI.hpp" bodystart="49" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_auris_1_1_debug_u_i_a15d6c4f3fc46f2dd3f22214c753bb526_1a15d6c4f3fc46f2dd3f22214c753bb526" prot="private" static="no" mutable="no">
+        <type>float</type>
+        <definition>float Auris::DebugUI::arr_profRender[arrSize]</definition>
+        <argsstring>[arrSize]</argsstring>
+        <name>arr_profRender</name>
+        <initializer>= {}</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>A float array: arr_profRender. Array for profiling render loop </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Projects/GameEngine/include/Auris/Testing/DebugUI.hpp" line="50" column="1" bodyfile="Projects/GameEngine/include/Auris/Testing/DebugUI.hpp" bodystart="50" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_auris_1_1_debug_u_i_a7c839e346703b4017a49dfe89bded6ba_1a7c839e346703b4017a49dfe89bded6ba" prot="private" static="no" mutable="no">
+        <type>float</type>
+        <definition>float Auris::DebugUI::arr_profSwap[arrSize]</definition>
+        <argsstring>[arrSize]</argsstring>
+        <name>arr_profSwap</name>
+        <initializer>= {}</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>A float array: arr_profRender. Array for profiling render loop </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Projects/GameEngine/include/Auris/Testing/DebugUI.hpp" line="51" column="1" bodyfile="Projects/GameEngine/include/Auris/Testing/DebugUI.hpp" bodystart="51" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_auris_1_1_debug_u_i_a1233513d7f7ef9f765008462bda94bd9_1a1233513d7f7ef9f765008462bda94bd9" prot="private" static="no" mutable="no">
+        <type>double</type>
+        <definition>double Auris::DebugUI::sum_dt</definition>
+        <argsstring></argsstring>
+        <name>sum_dt</name>
+        <initializer>= 0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Projects/GameEngine/include/Auris/Testing/DebugUI.hpp" line="54" column="1" bodyfile="Projects/GameEngine/include/Auris/Testing/DebugUI.hpp" bodystart="54" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_auris_1_1_debug_u_i_aeecf784cf0ae1d205ff3da8ebc504273_1aeecf784cf0ae1d205ff3da8ebc504273" prot="private" static="no" mutable="no">
+        <type>double</type>
+        <definition>double Auris::DebugUI::sum_input</definition>
+        <argsstring></argsstring>
+        <name>sum_input</name>
+        <initializer>= 0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Projects/GameEngine/include/Auris/Testing/DebugUI.hpp" line="55" column="1" bodyfile="Projects/GameEngine/include/Auris/Testing/DebugUI.hpp" bodystart="55" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_auris_1_1_debug_u_i_a902c1ed3c3b711b78b5d507c73a403f2_1a902c1ed3c3b711b78b5d507c73a403f2" prot="private" static="no" mutable="no">
+        <type>double</type>
+        <definition>double Auris::DebugUI::sum_entUpdate</definition>
+        <argsstring></argsstring>
+        <name>sum_entUpdate</name>
+        <initializer>= 0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Projects/GameEngine/include/Auris/Testing/DebugUI.hpp" line="56" column="1" bodyfile="Projects/GameEngine/include/Auris/Testing/DebugUI.hpp" bodystart="56" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_auris_1_1_debug_u_i_a803850129df8d5f398abb5d7602f208a_1a803850129df8d5f398abb5d7602f208a" prot="private" static="no" mutable="no">
+        <type>double</type>
+        <definition>double Auris::DebugUI::sum_gEarlyUpdate</definition>
+        <argsstring></argsstring>
+        <name>sum_gEarlyUpdate</name>
+        <initializer>= 0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Projects/GameEngine/include/Auris/Testing/DebugUI.hpp" line="57" column="1" bodyfile="Projects/GameEngine/include/Auris/Testing/DebugUI.hpp" bodystart="57" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_auris_1_1_debug_u_i_a64fbd4096cd2e25dfd9548b89cb9a960_1a64fbd4096cd2e25dfd9548b89cb9a960" prot="private" static="no" mutable="no">
+        <type>double</type>
+        <definition>double Auris::DebugUI::sum_gUpdate</definition>
+        <argsstring></argsstring>
+        <name>sum_gUpdate</name>
+        <initializer>= 0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Projects/GameEngine/include/Auris/Testing/DebugUI.hpp" line="58" column="1" bodyfile="Projects/GameEngine/include/Auris/Testing/DebugUI.hpp" bodystart="58" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_auris_1_1_debug_u_i_aa8781f655c0bc30b11a91120367ee555_1aa8781f655c0bc30b11a91120367ee555" prot="private" static="no" mutable="no">
+        <type>double</type>
+        <definition>double Auris::DebugUI::sum_gLateUpdate</definition>
+        <argsstring></argsstring>
+        <name>sum_gLateUpdate</name>
+        <initializer>= 0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Projects/GameEngine/include/Auris/Testing/DebugUI.hpp" line="59" column="1" bodyfile="Projects/GameEngine/include/Auris/Testing/DebugUI.hpp" bodystart="59" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_auris_1_1_debug_u_i_af74206317d66b0f402f3939de864542c_1af74206317d66b0f402f3939de864542c" prot="private" static="no" mutable="no">
+        <type>double</type>
+        <definition>double Auris::DebugUI::sum_physics</definition>
+        <argsstring></argsstring>
+        <name>sum_physics</name>
+        <initializer>= 0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Projects/GameEngine/include/Auris/Testing/DebugUI.hpp" line="60" column="1" bodyfile="Projects/GameEngine/include/Auris/Testing/DebugUI.hpp" bodystart="60" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_auris_1_1_debug_u_i_ae4e6766094c8c2758459e950d5184b56_1ae4e6766094c8c2758459e950d5184b56" prot="private" static="no" mutable="no">
+        <type>double</type>
+        <definition>double Auris::DebugUI::sum_updateTransform</definition>
+        <argsstring></argsstring>
+        <name>sum_updateTransform</name>
+        <initializer>= 0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Projects/GameEngine/include/Auris/Testing/DebugUI.hpp" line="61" column="1" bodyfile="Projects/GameEngine/include/Auris/Testing/DebugUI.hpp" bodystart="61" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_auris_1_1_debug_u_i_af9e1048ab94363915d299c44f1fc46ca_1af9e1048ab94363915d299c44f1fc46ca" prot="private" static="no" mutable="no">
+        <type>double</type>
+        <definition>double Auris::DebugUI::sum_render</definition>
+        <argsstring></argsstring>
+        <name>sum_render</name>
+        <initializer>= 0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Projects/GameEngine/include/Auris/Testing/DebugUI.hpp" line="62" column="1" bodyfile="Projects/GameEngine/include/Auris/Testing/DebugUI.hpp" bodystart="62" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_auris_1_1_debug_u_i_a975fed2dc2c9111474047cc5857e51ed_1a975fed2dc2c9111474047cc5857e51ed" prot="private" static="no" mutable="no">
+        <type>double</type>
+        <definition>double Auris::DebugUI::sum_swap</definition>
+        <argsstring></argsstring>
+        <name>sum_swap</name>
+        <initializer>= 0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Projects/GameEngine/include/Auris/Testing/DebugUI.hpp" line="63" column="1" bodyfile="Projects/GameEngine/include/Auris/Testing/DebugUI.hpp" bodystart="63" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_auris_1_1_debug_u_i_ae9688f96126a955e716f8dcaf8cd1279_1ae9688f96126a955e716f8dcaf8cd1279" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool Auris::DebugUI::toggle_inspector</definition>
+        <argsstring></argsstring>
+        <name>toggle_inspector</name>
+        <initializer>= false</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>A bool value: toggle_inspector. Toggle the inspector view </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Projects/GameEngine/include/Auris/Testing/DebugUI.hpp" line="66" column="1" bodyfile="Projects/GameEngine/include/Auris/Testing/DebugUI.hpp" bodystart="66" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_auris_1_1_debug_u_i_a1634f184b1e90424aaa4b12c32d41e93_1a1634f184b1e90424aaa4b12c32d41e93" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool Auris::DebugUI::toggle_hierarchy</definition>
+        <argsstring></argsstring>
+        <name>toggle_hierarchy</name>
+        <initializer>= false</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>A bool value: toggle_hierarchy. Toggle the hierarchy view </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Projects/GameEngine/include/Auris/Testing/DebugUI.hpp" line="67" column="1" bodyfile="Projects/GameEngine/include/Auris/Testing/DebugUI.hpp" bodystart="67" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_auris_1_1_debug_u_i_adbdb5a51039324a1aa893de6a1c2288b_1adbdb5a51039324a1aa893de6a1c2288b" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool Auris::DebugUI::entityInspectorOpen[entityInspectorOpenSize]</definition>
+        <argsstring>[entityInspectorOpenSize]</argsstring>
+        <name>entityInspectorOpen</name>
+        <initializer>= {false}</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>A bool value: entityInspectorOpen. If the entity inspector is open or not </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Projects/GameEngine/include/Auris/Testing/DebugUI.hpp" line="80" column="1" bodyfile="Projects/GameEngine/include/Auris/Testing/DebugUI.hpp" bodystart="80" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_auris_1_1_debug_u_i_ae744c2111e0f2b3703d45e8b4ed89a19_1ae744c2111e0f2b3703d45e8b4ed89a19" prot="private" static="no" mutable="no">
+        <type><ref refid="class_auris_1_1_memory_leak_detector" kindref="compound">MemoryLeakDetector</ref></type>
+        <definition>MemoryLeakDetector Auris::DebugUI::memLeakDet</definition>
+        <argsstring></argsstring>
+        <name>memLeakDet</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>A MemeoryLeadDetector value: menLeadDet. Used for the detection of memory leaks </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Projects/GameEngine/include/Auris/Testing/DebugUI.hpp" line="82" column="1" bodyfile="Projects/GameEngine/include/Auris/Testing/DebugUI.hpp" bodystart="82" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="friend">
+      <memberdef kind="friend" id="class_auris_1_1_debug_u_i_a3e1914489e4bed4f9f23cdeab34a43dc_1a3e1914489e4bed4f9f23cdeab34a43dc" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>friend class</type>
+        <definition>friend class Engine</definition>
+        <argsstring></argsstring>
+        <name>Engine</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Projects/GameEngine/include/Auris/Testing/DebugUI.hpp" line="17" column="1" bodyfile="Projects/GameEngine/include/Auris/Testing/DebugUI.hpp" bodystart="17" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-static-attrib">
+      <memberdef kind="variable" id="class_auris_1_1_debug_u_i_a0700f99ec77929e9307fd4cf9498f792_1a0700f99ec77929e9307fd4cf9498f792" prot="private" static="yes" mutable="no">
+        <type>const int</type>
+        <definition>const int Auris::DebugUI::arrSize</definition>
+        <argsstring></argsstring>
+        <name>arrSize</name>
+        <initializer>= 600</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>A static constant int value: arrSize. Size of the array </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Projects/GameEngine/include/Auris/Testing/DebugUI.hpp" line="27" column="1" bodyfile="Projects/GameEngine/include/Auris/Testing/DebugUI.hpp" bodystart="27" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_auris_1_1_debug_u_i_a0624a417f09d2c4d4a1934ec22aa3f89_1a0624a417f09d2c4d4a1934ec22aa3f89" prot="private" static="yes" mutable="no">
+        <type>const int</type>
+        <definition>const int Auris::DebugUI::entityInspectorOpenSize</definition>
+        <argsstring></argsstring>
+        <name>entityInspectorOpenSize</name>
+        <initializer>= 1024</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>A static constant int value: entityInspectorOpenSize. The size of the entity inspector on open </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Projects/GameEngine/include/Auris/Testing/DebugUI.hpp" line="79" column="1" bodyfile="Projects/GameEngine/include/Auris/Testing/DebugUI.hpp" bodystart="79" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="class_auris_1_1_debug_u_i_a43c02e836081291f1d23e820dfc15618_1a43c02e836081291f1d23e820dfc15618" prot="public" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool Auris::DebugUI::debug_menu</definition>
+        <argsstring></argsstring>
+        <name>debug_menu</name>
+        <initializer>= false</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>A bool value: debug_menu. Turn on or off debug_menu </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Projects/GameEngine/include/Auris/Testing/DebugUI.hpp" line="86" column="1" bodyfile="Projects/GameEngine/include/Auris/Testing/DebugUI.hpp" bodystart="86" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_auris_1_1_debug_u_i_a77426ccf5b80733cecfb238ab23712c0_1a77426ccf5b80733cecfb238ab23712c0" prot="public" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool Auris::DebugUI::pause</definition>
+        <argsstring></argsstring>
+        <name>pause</name>
+        <initializer>= false</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>A bool value: pause. Pause the engine (is read by the engine) <simplesect kind="see"><para><ref refid="class_auris_1_1_engine_a5ec5899526134ac2e7393b33d12b2444_1a5ec5899526134ac2e7393b33d12b2444" kindref="member">Auris::Engine::run</ref> </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Projects/GameEngine/include/Auris/Testing/DebugUI.hpp" line="87" column="1" bodyfile="Projects/GameEngine/include/Auris/Testing/DebugUI.hpp" bodystart="87" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_auris_1_1_debug_u_i_a06aa5dd04078e6dbd7bfc161ff92580a_1a06aa5dd04078e6dbd7bfc161ff92580a" prot="public" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool Auris::DebugUI::runOneStep</definition>
+        <argsstring></argsstring>
+        <name>runOneStep</name>
+        <initializer>= false</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>A bool value: runOneStep. Run one frame and pause </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Projects/GameEngine/include/Auris/Testing/DebugUI.hpp" line="88" column="1" bodyfile="Projects/GameEngine/include/Auris/Testing/DebugUI.hpp" bodystart="88" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_auris_1_1_debug_u_i_a589f591bab136d30e9c4c8970002134d_1a589f591bab136d30e9c4c8970002134d" prot="public" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool Auris::DebugUI::profiling</definition>
+        <argsstring></argsstring>
+        <name>profiling</name>
+        <initializer>= false</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>A bool value: profiling. Run profiling in engine update loop </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Projects/GameEngine/include/Auris/Testing/DebugUI.hpp" line="89" column="1" bodyfile="Projects/GameEngine/include/Auris/Testing/DebugUI.hpp" bodystart="89" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_auris_1_1_debug_u_i_ae056825725a8f9faee62c0fd056b2511_1ae056825725a8f9faee62c0fd056b2511" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>Auris::DebugUI::DebugUI</definition>
+        <argsstring>()</argsstring>
+        <name>DebugUI</name>
+        <briefdescription>
+<para>The <ref refid="class_auris_1_1_debug_u_i" kindref="compound">DebugUI</ref> constructor. </para>        </briefdescription>
+        <detaileddescription>
+<para>Does nothing. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Projects/GameEngine/include/Auris/Testing/DebugUI.hpp" line="95" column="1" bodyfile="Projects/GameEngine/include/Auris/Testing/DebugUI.hpp" bodystart="95" bodyend="95"/>
+      </memberdef>
+      <memberdef kind="function" id="class_auris_1_1_debug_u_i_ac02561a452b34fd3e90a05ad56bd0e77_1ac02561a452b34fd3e90a05ad56bd0e77" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Auris::DebugUI::startup</definition>
+        <argsstring>(Engine *engine)</argsstring>
+        <name>startup</name>
+        <param>
+          <type><ref refid="class_auris_1_1_engine" kindref="compound">Engine</ref> *</type>
+          <declname>engine</declname>
+        </param>
+        <briefdescription>
+<para>A startup method, taking 1 argument. </para>        </briefdescription>
+        <detaileddescription>
+<para>Initializes the <ref refid="class_auris_1_1_debug_u_i" kindref="compound">DebugUI</ref>, starts ImGui and sets required keys for debug input <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>engine</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>an <ref refid="class_auris_1_1_engine" kindref="compound">Engine</ref> pointer. An instance of the <ref refid="class_auris_1_1_engine" kindref="compound">Engine</ref>. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Projects/GameEngine/include/Auris/Testing/DebugUI.hpp" line="101" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="class_auris_1_1_debug_u_i_a55721d81d07eb094846c9bfb0120a493_1a55721d81d07eb094846c9bfb0120a493" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Auris::DebugUI::shutdown</definition>
+        <argsstring>()</argsstring>
+        <name>shutdown</name>
+        <briefdescription>
+<para>A shutdown method. </para>        </briefdescription>
+        <detaileddescription>
+<para>Does nothing. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Projects/GameEngine/include/Auris/Testing/DebugUI.hpp" line="106" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="class_auris_1_1_debug_u_i_adeca731d467806979c6ed45a6d586ab0_1adeca731d467806979c6ed45a6d586ab0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Auris::DebugUI::update</definition>
+        <argsstring>(float dt)</argsstring>
+        <name>update</name>
+        <param>
+          <type>float</type>
+          <declname>dt</declname>
+        </param>
+        <briefdescription>
+<para>An update method, taking 1 argument. </para>        </briefdescription>
+        <detaileddescription>
+<para>updates ImGui, saves deltatime and memory. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>dt</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>a float value. The delta time in seconds. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Projects/GameEngine/include/Auris/Testing/DebugUI.hpp" line="112" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="class_auris_1_1_debug_u_i_a5db71be46fc6df383b91b8a5f05be6c2_1a5db71be46fc6df383b91b8a5f05be6c2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Auris::DebugUI::draw</definition>
+        <argsstring>()</argsstring>
+        <name>draw</name>
+        <briefdescription>
+<para>A draw method. </para>        </briefdescription>
+        <detaileddescription>
+<para>calls debugdraw on entities and draws box2d debug if drawdebug and draw colliders is enabled respectively. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Projects/GameEngine/include/Auris/Testing/DebugUI.hpp" line="117" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="class_auris_1_1_debug_u_i_a93e292a3dc23de65e757b8cf74d5d14e_1a93e292a3dc23de65e757b8cf74d5d14e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Auris::DebugUI::enableDebug</definition>
+        <argsstring>()</argsstring>
+        <name>enableDebug</name>
+        <briefdescription>
+<para>A method for enabling debug drawing from outside this class. </para>        </briefdescription>
+        <detaileddescription>
+<para>sets drawDebug to true; </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Projects/GameEngine/include/Auris/Testing/DebugUI.hpp" line="122" column="1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>The <ref refid="class_auris_1_1_debug_u_i" kindref="compound">DebugUI</ref> class. </para>    </briefdescription>
+    <detaileddescription>
+<para>Allows the <ref refid="class_auris_1_1_engine" kindref="compound">Engine</ref> to draw an Debug overlay to show debug information for the engine. </para>    </detaileddescription>
+    <collaborationgraph>
+      <node id="57">
+        <label>std::vector&lt; Auris::Entity *&gt;</label>
+        <childnode refid="54" relation="usage">
+          <edgelabel>elements</edgelabel>
+        </childnode>
+      </node>
+      <node id="67">
+        <label>std::vector&lt; vec3 &gt;</label>
+      </node>
+      <node id="43">
+        <label>Auris::Game</label>
+        <link refid="class_auris_1_1_game"/>
+        <childnode refid="44" relation="usage">
+          <edgelabel>newEntities</edgelabel>
+          <edgelabel>entities</edgelabel>
+        </childnode>
+        <childnode refid="43" relation="usage">
+          <edgelabel>instance</edgelabel>
+        </childnode>
+        <childnode refid="45" relation="usage">
+          <edgelabel>camera</edgelabel>
+        </childnode>
+        <childnode refid="46" relation="usage">
+          <edgelabel>destroyEntities</edgelabel>
+        </childnode>
+      </node>
+      <node id="72">
+        <label>b2Draw</label>
+      </node>
+      <node id="42">
+        <label>Auris::Engine</label>
+        <link refid="class_auris_1_1_engine"/>
+        <childnode refid="42" relation="usage">
+          <edgelabel>instance</edgelabel>
+        </childnode>
+        <childnode refid="43" relation="usage">
+          <edgelabel>game</edgelabel>
+        </childnode>
+        <childnode refid="47" relation="usage">
+          <edgelabel>renderSystem</edgelabel>
+        </childnode>
+      </node>
+      <node id="50">
+        <label>std::vector&lt; Auris::Pool&lt; Auris::Sprite &gt; *&gt;</label>
+        <childnode refid="51" relation="usage">
+          <edgelabel>elements</edgelabel>
+        </childnode>
+      </node>
+      <node id="63">
+        <label>std::vector&lt; Auris::ParticleSystem *&gt;</label>
+        <childnode refid="64" relation="usage">
+          <edgelabel>elements</edgelabel>
+        </childnode>
+      </node>
+      <node id="68">
+        <label>std::vector&lt; float &gt;</label>
+      </node>
+      <node id="65">
+        <label>std::vector&lt; vec4 &gt;</label>
+      </node>
+      <node id="69">
+        <label>Auris::Interpolation</label>
+        <link refid="class_auris_1_1_interpolation"/>
+        <childnode refid="66" relation="usage">
+          <edgelabel>points</edgelabel>
+        </childnode>
+      </node>
+      <node id="60">
+        <label>SRE::Mesh</label>
+      </node>
+      <node id="58">
+        <label>Auris::Transform</label>
+        <link refid="class_auris_1_1_transform"/>
+        <childnode refid="53" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="49">
+        <label>Auris::DynamicPool&lt; Auris::Sprite &gt;</label>
+        <link refid="class_auris_1_1_dynamic_pool"/>
+        <childnode refid="50" relation="usage">
+          <edgelabel>pools</edgelabel>
+        </childnode>
+        <childnode refid="62" relation="usage">
+          <edgelabel>poolsFull</edgelabel>
+        </childnode>
+      </node>
+      <node id="59">
+        <label>Auris::Mesh</label>
+        <link refid="class_auris_1_1_mesh"/>
+        <childnode refid="60" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="71">
+        <label>Auris::DebugDraw</label>
+        <link refid="class_auris_1_1_debug_draw"/>
+        <childnode refid="72" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="48">
+        <label>std::vector&lt; shared_ptr&lt; Auris::Animation &gt; &gt;</label>
+      </node>
+      <node id="56">
+        <label>std::basic_string&lt; char &gt;</label>
+      </node>
+      <node id="45">
+        <label>Auris::Camera</label>
+        <link refid="class_auris_1_1_camera"/>
+      </node>
+      <node id="53">
+        <label>Auris::Nugget</label>
+        <link refid="class_auris_1_1_nugget"/>
+        <childnode refid="54" relation="usage">
+          <edgelabel>entity</edgelabel>
+        </childnode>
+      </node>
+      <node id="61">
+        <label>Auris::Material</label>
+        <link refid="class_auris_1_1_material"/>
+      </node>
+      <node id="64">
+        <label>Auris::ParticleSystem</label>
+        <link refid="class_auris_1_1_particle_system"/>
+        <childnode refid="65" relation="usage">
+          <edgelabel>startColors</edgelabel>
+          <edgelabel>finalColors</edgelabel>
+          <edgelabel>endColors</edgelabel>
+        </childnode>
+        <childnode refid="66" relation="usage">
+          <edgelabel>interpolationPoints_color</edgelabel>
+          <edgelabel>interpolationPoints_angularVelocity</edgelabel>
+          <edgelabel>interpolationPoints_acceleration</edgelabel>
+          <edgelabel>interpolationPoints_size</edgelabel>
+          <edgelabel>interpolationPoints_velocity</edgelabel>
+          <edgelabel>uvs</edgelabel>
+        </childnode>
+        <childnode refid="67" relation="usage">
+          <edgelabel>velocities</edgelabel>
+          <edgelabel>finalPositions</edgelabel>
+          <edgelabel>positions</edgelabel>
+        </childnode>
+        <childnode refid="68" relation="usage">
+          <edgelabel>uvSize</edgelabel>
+          <edgelabel>angularVelocities</edgelabel>
+          <edgelabel>finalSizes</edgelabel>
+          <edgelabel>endSizes</edgelabel>
+          <edgelabel>startSizes</edgelabel>
+          <edgelabel>finalRotation</edgelabel>
+          <edgelabel>startTimes</edgelabel>
+          <edgelabel>rotations</edgelabel>
+        </childnode>
+        <childnode refid="69" relation="usage">
+          <edgelabel>interpolation_color</edgelabel>
+          <edgelabel>interpolation_velocity</edgelabel>
+          <edgelabel>interpolation_acceleration</edgelabel>
+          <edgelabel>interpolation_size</edgelabel>
+          <edgelabel>interpolation_angularVelocity</edgelabel>
+        </childnode>
+      </node>
+      <node id="70">
+        <label>Auris::MemoryLeakDetector</label>
+        <link refid="class_auris_1_1_memory_leak_detector"/>
+      </node>
+      <node id="51">
+        <label>Auris::Pool&lt; Auris::Sprite &gt;</label>
+        <link refid="class_auris_1_1_pool"/>
+        <childnode refid="52" relation="usage">
+          <edgelabel>objects</edgelabel>
+        </childnode>
+      </node>
+      <node id="41">
+        <label>Auris::DebugUI</label>
+        <link refid="class_auris_1_1_debug_u_i"/>
+        <childnode refid="42" relation="usage">
+          <edgelabel>e</edgelabel>
+        </childnode>
+        <childnode refid="70" relation="usage">
+          <edgelabel>memLeakDet</edgelabel>
+        </childnode>
+        <childnode refid="71" relation="usage">
+          <edgelabel>debugDraw</edgelabel>
+        </childnode>
+      </node>
+      <node id="52">
+        <label>Auris::Sprite</label>
+        <link refid="class_auris_1_1_sprite"/>
+        <childnode refid="53" relation="public-inheritance">
+        </childnode>
+        <childnode refid="59" relation="usage">
+          <edgelabel>mesh</edgelabel>
+        </childnode>
+        <childnode refid="61" relation="usage">
+          <edgelabel>material</edgelabel>
+        </childnode>
+      </node>
+      <node id="66">
+        <label>std::vector&lt; vec2 &gt;</label>
+      </node>
+      <node id="47">
+        <label>Auris::RenderSystem</label>
+        <link refid="class_auris_1_1_render_system"/>
+        <childnode refid="48" relation="usage">
+          <edgelabel>animations</edgelabel>
+        </childnode>
+        <childnode refid="49" relation="usage">
+          <edgelabel>spritePool</edgelabel>
+        </childnode>
+        <childnode refid="63" relation="usage">
+          <edgelabel>particleSystems</edgelabel>
+        </childnode>
+      </node>
+      <node id="62">
+        <label>std::vector&lt; bool &gt;</label>
+      </node>
+      <node id="54">
+        <label>Auris::Entity</label>
+        <link refid="class_auris_1_1_entity"/>
+        <childnode refid="55" relation="usage">
+          <edgelabel>type</edgelabel>
+          <edgelabel>name</edgelabel>
+        </childnode>
+        <childnode refid="57" relation="usage">
+          <edgelabel>children</edgelabel>
+        </childnode>
+        <childnode refid="54" relation="usage">
+          <edgelabel>parent</edgelabel>
+        </childnode>
+        <childnode refid="58" relation="usage">
+          <edgelabel>transform</edgelabel>
+        </childnode>
+      </node>
+      <node id="44">
+        <label>std::vector&lt; std::shared_ptr&lt; Auris::Entity &gt; &gt;</label>
+      </node>
+      <node id="46">
+        <label>std::vector&lt; int &gt;</label>
+      </node>
+      <node id="55">
+        <label>std::string</label>
+        <childnode refid="56" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="Projects/GameEngine/include/Auris/Testing/DebugUI.hpp" line="14" column="1" bodyfile="Projects/GameEngine/include/Auris/Testing/DebugUI.hpp" bodystart="14" bodyend="123"/>
+    <listofallmembers>
+      <member refid="class_auris_1_1_debug_u_i_af6479419a04f630c7f11fa25039ea952_1af6479419a04f630c7f11fa25039ea952" prot="private" virt="non-virtual"><scope>Auris::DebugUI</scope><name>arr_deltaTime</name></member>
+      <member refid="class_auris_1_1_debug_u_i_aed67c17d4c8eaf3ff48c9fcc9b29d2c9_1aed67c17d4c8eaf3ff48c9fcc9b29d2c9" prot="private" virt="non-virtual"><scope>Auris::DebugUI</scope><name>arr_physMem</name></member>
+      <member refid="class_auris_1_1_debug_u_i_a95e0c78823ae0729fb48e3d0994f724b_1a95e0c78823ae0729fb48e3d0994f724b" prot="private" virt="non-virtual"><scope>Auris::DebugUI</scope><name>arr_profEntityUpdate</name></member>
+      <member refid="class_auris_1_1_debug_u_i_a093e769a9d5cdf5f08b8857fb75838c4_1a093e769a9d5cdf5f08b8857fb75838c4" prot="private" virt="non-virtual"><scope>Auris::DebugUI</scope><name>arr_profGEarlyUpdate</name></member>
+      <member refid="class_auris_1_1_debug_u_i_ae4251e8e6d4fd1913b45524034a26dbb_1ae4251e8e6d4fd1913b45524034a26dbb" prot="private" virt="non-virtual"><scope>Auris::DebugUI</scope><name>arr_profGLateUpdate</name></member>
+      <member refid="class_auris_1_1_debug_u_i_a61cdeb164873b3a71c0efa967c020771_1a61cdeb164873b3a71c0efa967c020771" prot="private" virt="non-virtual"><scope>Auris::DebugUI</scope><name>arr_profGUpdate</name></member>
+      <member refid="class_auris_1_1_debug_u_i_ad7e1d304ea15aa59fb9006e9287cdce9_1ad7e1d304ea15aa59fb9006e9287cdce9" prot="private" virt="non-virtual"><scope>Auris::DebugUI</scope><name>arr_profInput</name></member>
+      <member refid="class_auris_1_1_debug_u_i_a5a1f0835bc83297339fa25fcf9fc7826_1a5a1f0835bc83297339fa25fcf9fc7826" prot="private" virt="non-virtual"><scope>Auris::DebugUI</scope><name>arr_profPhysics</name></member>
+      <member refid="class_auris_1_1_debug_u_i_a15d6c4f3fc46f2dd3f22214c753bb526_1a15d6c4f3fc46f2dd3f22214c753bb526" prot="private" virt="non-virtual"><scope>Auris::DebugUI</scope><name>arr_profRender</name></member>
+      <member refid="class_auris_1_1_debug_u_i_a7c839e346703b4017a49dfe89bded6ba_1a7c839e346703b4017a49dfe89bded6ba" prot="private" virt="non-virtual"><scope>Auris::DebugUI</scope><name>arr_profSwap</name></member>
+      <member refid="class_auris_1_1_debug_u_i_aba9c23ccbcfe62ef09240c7974ce46c2_1aba9c23ccbcfe62ef09240c7974ce46c2" prot="private" virt="non-virtual"><scope>Auris::DebugUI</scope><name>arr_profUpdateTransform</name></member>
+      <member refid="class_auris_1_1_debug_u_i_ab6fcde9fad71baf734e2431cd7e4a6fe_1ab6fcde9fad71baf734e2431cd7e4a6fe" prot="private" virt="non-virtual"><scope>Auris::DebugUI</scope><name>arr_virtMem</name></member>
+      <member refid="class_auris_1_1_debug_u_i_a09c27b298bbfa243227ed23a96fb489d_1a09c27b298bbfa243227ed23a96fb489d" prot="private" virt="non-virtual"><scope>Auris::DebugUI</scope><name>arrIndex</name></member>
+      <member refid="class_auris_1_1_debug_u_i_a0700f99ec77929e9307fd4cf9498f792_1a0700f99ec77929e9307fd4cf9498f792" prot="private" virt="non-virtual"><scope>Auris::DebugUI</scope><name>arrSize</name></member>
+      <member refid="class_auris_1_1_debug_u_i_aceb9f5e93258cdeca5927defefbab68f_1aceb9f5e93258cdeca5927defefbab68fa101b3ba64ba30aeb9e7764579205e640" prot="private" virt="non-virtual"><scope>Auris::DebugUI</scope><name>Closed</name></member>
+      <member refid="class_auris_1_1_debug_u_i_a43c02e836081291f1d23e820dfc15618_1a43c02e836081291f1d23e820dfc15618" prot="public" virt="non-virtual"><scope>Auris::DebugUI</scope><name>debug_menu</name></member>
+      <member refid="class_auris_1_1_debug_u_i_a7b1da7a9540a289eee6677e6fde4a86d_1a7b1da7a9540a289eee6677e6fde4a86d" prot="private" virt="non-virtual"><scope>Auris::DebugUI</scope><name>debugDraw</name></member>
+      <member refid="class_auris_1_1_debug_u_i_ae056825725a8f9faee62c0fd056b2511_1ae056825725a8f9faee62c0fd056b2511" prot="public" virt="non-virtual"><scope>Auris::DebugUI</scope><name>DebugUI</name></member>
+      <member refid="class_auris_1_1_debug_u_i_a5db71be46fc6df383b91b8a5f05be6c2_1a5db71be46fc6df383b91b8a5f05be6c2" prot="public" virt="non-virtual"><scope>Auris::DebugUI</scope><name>draw</name></member>
+      <member refid="class_auris_1_1_debug_u_i_a4eb7e998d05f2ea711cdc954f4065369_1a4eb7e998d05f2ea711cdc954f4065369" prot="private" virt="non-virtual"><scope>Auris::DebugUI</scope><name>drawColliders</name></member>
+      <member refid="class_auris_1_1_debug_u_i_a45390cceb0347d4d5ed77bd5bf129824_1a45390cceb0347d4d5ed77bd5bf129824" prot="private" virt="non-virtual"><scope>Auris::DebugUI</scope><name>drawDebug</name></member>
+      <member refid="class_auris_1_1_debug_u_i_a58c81695547a6a7ec99bae32a11010d9_1a58c81695547a6a7ec99bae32a11010d9" prot="private" virt="non-virtual"><scope>Auris::DebugUI</scope><name>e</name></member>
+      <member refid="class_auris_1_1_debug_u_i_a93e292a3dc23de65e757b8cf74d5d14e_1a93e292a3dc23de65e757b8cf74d5d14e" prot="public" virt="non-virtual"><scope>Auris::DebugUI</scope><name>enableDebug</name></member>
+      <member refid="class_auris_1_1_debug_u_i_a3e1914489e4bed4f9f23cdeab34a43dc_1a3e1914489e4bed4f9f23cdeab34a43dc" prot="private" virt="non-virtual"><scope>Auris::DebugUI</scope><name>Engine</name></member>
+      <member refid="class_auris_1_1_debug_u_i_adbdb5a51039324a1aa893de6a1c2288b_1adbdb5a51039324a1aa893de6a1c2288b" prot="private" virt="non-virtual"><scope>Auris::DebugUI</scope><name>entityInspectorOpen</name></member>
+      <member refid="class_auris_1_1_debug_u_i_a0624a417f09d2c4d4a1934ec22aa3f89_1a0624a417f09d2c4d4a1934ec22aa3f89" prot="private" virt="non-virtual"><scope>Auris::DebugUI</scope><name>entityInspectorOpenSize</name></member>
+      <member refid="class_auris_1_1_debug_u_i_aceb9f5e93258cdeca5927defefbab68f_1aceb9f5e93258cdeca5927defefbab68f" prot="private" virt="non-virtual"><scope>Auris::DebugUI</scope><name>InspectorMode</name></member>
+      <member refid="class_auris_1_1_debug_u_i_ae3b3bee56cdbcb9b6da9dbfbd29f8355_1ae3b3bee56cdbcb9b6da9dbfbd29f8355" prot="private" virt="non-virtual"><scope>Auris::DebugUI</scope><name>max_deltaTime</name></member>
+      <member refid="class_auris_1_1_debug_u_i_ad10d2c2c01855cd5bc108915843b8ca2_1ad10d2c2c01855cd5bc108915843b8ca2" prot="private" virt="non-virtual"><scope>Auris::DebugUI</scope><name>max_physMem</name></member>
+      <member refid="class_auris_1_1_debug_u_i_a2e52eab3fff2ea2769288f3729983801_1a2e52eab3fff2ea2769288f3729983801" prot="private" virt="non-virtual"><scope>Auris::DebugUI</scope><name>max_renderSprites</name></member>
+      <member refid="class_auris_1_1_debug_u_i_af3cff3f47252c248a95d56ddc3286154_1af3cff3f47252c248a95d56ddc3286154" prot="private" virt="non-virtual"><scope>Auris::DebugUI</scope><name>max_virtMem</name></member>
+      <member refid="class_auris_1_1_debug_u_i_ae744c2111e0f2b3703d45e8b4ed89a19_1ae744c2111e0f2b3703d45e8b4ed89a19" prot="private" virt="non-virtual"><scope>Auris::DebugUI</scope><name>memLeakDet</name></member>
+      <member refid="class_auris_1_1_debug_u_i_aceb9f5e93258cdeca5927defefbab68f_1aceb9f5e93258cdeca5927defefbab68fa41290f78ff9ee396de7a44ba034fac5d" prot="private" virt="non-virtual"><scope>Auris::DebugUI</scope><name>Open</name></member>
+      <member refid="class_auris_1_1_debug_u_i_a77426ccf5b80733cecfb238ab23712c0_1a77426ccf5b80733cecfb238ab23712c0" prot="public" virt="non-virtual"><scope>Auris::DebugUI</scope><name>pause</name></member>
+      <member refid="class_auris_1_1_debug_u_i_a589f591bab136d30e9c4c8970002134d_1a589f591bab136d30e9c4c8970002134d" prot="public" virt="non-virtual"><scope>Auris::DebugUI</scope><name>profiling</name></member>
+      <member refid="class_auris_1_1_debug_u_i_a06aa5dd04078e6dbd7bfc161ff92580a_1a06aa5dd04078e6dbd7bfc161ff92580a" prot="public" virt="non-virtual"><scope>Auris::DebugUI</scope><name>runOneStep</name></member>
+      <member refid="class_auris_1_1_debug_u_i_a55721d81d07eb094846c9bfb0120a493_1a55721d81d07eb094846c9bfb0120a493" prot="public" virt="non-virtual"><scope>Auris::DebugUI</scope><name>shutdown</name></member>
+      <member refid="class_auris_1_1_debug_u_i_ac02561a452b34fd3e90a05ad56bd0e77_1ac02561a452b34fd3e90a05ad56bd0e77" prot="public" virt="non-virtual"><scope>Auris::DebugUI</scope><name>startup</name></member>
+      <member refid="class_auris_1_1_debug_u_i_a1233513d7f7ef9f765008462bda94bd9_1a1233513d7f7ef9f765008462bda94bd9" prot="private" virt="non-virtual"><scope>Auris::DebugUI</scope><name>sum_dt</name></member>
+      <member refid="class_auris_1_1_debug_u_i_a902c1ed3c3b711b78b5d507c73a403f2_1a902c1ed3c3b711b78b5d507c73a403f2" prot="private" virt="non-virtual"><scope>Auris::DebugUI</scope><name>sum_entUpdate</name></member>
+      <member refid="class_auris_1_1_debug_u_i_a803850129df8d5f398abb5d7602f208a_1a803850129df8d5f398abb5d7602f208a" prot="private" virt="non-virtual"><scope>Auris::DebugUI</scope><name>sum_gEarlyUpdate</name></member>
+      <member refid="class_auris_1_1_debug_u_i_aa8781f655c0bc30b11a91120367ee555_1aa8781f655c0bc30b11a91120367ee555" prot="private" virt="non-virtual"><scope>Auris::DebugUI</scope><name>sum_gLateUpdate</name></member>
+      <member refid="class_auris_1_1_debug_u_i_a64fbd4096cd2e25dfd9548b89cb9a960_1a64fbd4096cd2e25dfd9548b89cb9a960" prot="private" virt="non-virtual"><scope>Auris::DebugUI</scope><name>sum_gUpdate</name></member>
+      <member refid="class_auris_1_1_debug_u_i_aeecf784cf0ae1d205ff3da8ebc504273_1aeecf784cf0ae1d205ff3da8ebc504273" prot="private" virt="non-virtual"><scope>Auris::DebugUI</scope><name>sum_input</name></member>
+      <member refid="class_auris_1_1_debug_u_i_af74206317d66b0f402f3939de864542c_1af74206317d66b0f402f3939de864542c" prot="private" virt="non-virtual"><scope>Auris::DebugUI</scope><name>sum_physics</name></member>
+      <member refid="class_auris_1_1_debug_u_i_af9e1048ab94363915d299c44f1fc46ca_1af9e1048ab94363915d299c44f1fc46ca" prot="private" virt="non-virtual"><scope>Auris::DebugUI</scope><name>sum_render</name></member>
+      <member refid="class_auris_1_1_debug_u_i_a975fed2dc2c9111474047cc5857e51ed_1a975fed2dc2c9111474047cc5857e51ed" prot="private" virt="non-virtual"><scope>Auris::DebugUI</scope><name>sum_swap</name></member>
+      <member refid="class_auris_1_1_debug_u_i_ae4e6766094c8c2758459e950d5184b56_1ae4e6766094c8c2758459e950d5184b56" prot="private" virt="non-virtual"><scope>Auris::DebugUI</scope><name>sum_updateTransform</name></member>
+      <member refid="class_auris_1_1_debug_u_i_a1634f184b1e90424aaa4b12c32d41e93_1a1634f184b1e90424aaa4b12c32d41e93" prot="private" virt="non-virtual"><scope>Auris::DebugUI</scope><name>toggle_hierarchy</name></member>
+      <member refid="class_auris_1_1_debug_u_i_ae9688f96126a955e716f8dcaf8cd1279_1ae9688f96126a955e716f8dcaf8cd1279" prot="private" virt="non-virtual"><scope>Auris::DebugUI</scope><name>toggle_inspector</name></member>
+      <member refid="class_auris_1_1_debug_u_i_adeca731d467806979c6ed45a6d586ab0_1adeca731d467806979c6ed45a6d586ab0" prot="public" virt="non-virtual"><scope>Auris::DebugUI</scope><name>update</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

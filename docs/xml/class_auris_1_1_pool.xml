@@ -1,0 +1,354 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.12">
+  <compounddef id="class_auris_1_1_pool" kind="class" language="C++" prot="public">
+    <compoundname>Auris::Pool</compoundname>
+    <includes refid="_pool_8hpp" local="no">Pool.hpp</includes>
+    <templateparamlist>
+      <param>
+        <type>class</type>
+        <declname>T</declname>
+        <defname>T</defname>
+      </param>
+    </templateparamlist>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="class_auris_1_1_pool_a44a0d07bf46a11ff31f11ce5441a47bd_1a44a0d07bf46a11ff31f11ce5441a47bd" prot="private" static="no" mutable="no">
+        <type>size_t</type>
+        <definition>size_t Auris::Pool&lt; T &gt;::objectSize</definition>
+        <argsstring></argsstring>
+        <name>objectSize</name>
+        <initializer>= sizeof(T)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>A size_t value: objectSize. The size of the object. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Projects/GameEngine/include/Auris/Utilities/Pool.hpp" line="14" column="1" bodyfile="Projects/GameEngine/include/Auris/Utilities/Pool.hpp" bodystart="14" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_auris_1_1_pool_a4461fc4c6c6de88e88f8cf93b4ac91c8_1a4461fc4c6c6de88e88f8cf93b4ac91c8" prot="private" static="no" mutable="no">
+        <type>T *</type>
+        <definition>T* Auris::Pool&lt; T &gt;::objects</definition>
+        <argsstring></argsstring>
+        <name>objects</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>A T pointer: objects. The objects. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Projects/GameEngine/include/Auris/Utilities/Pool.hpp" line="15" column="1" bodyfile="Projects/GameEngine/include/Auris/Utilities/Pool.hpp" bodystart="15" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_auris_1_1_pool_af1c9dd3d26f7b15b59411eed3170b22b_1af1c9dd3d26f7b15b59411eed3170b22b" prot="private" static="no" mutable="no">
+        <type>bool *</type>
+        <definition>bool* Auris::Pool&lt; T &gt;::occupied</definition>
+        <argsstring></argsstring>
+        <name>occupied</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>A bool pointer: occupied. If the place in the pool is occupied or not. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Projects/GameEngine/include/Auris/Utilities/Pool.hpp" line="16" column="1" bodyfile="Projects/GameEngine/include/Auris/Utilities/Pool.hpp" bodystart="16" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="class_auris_1_1_pool_a859207c9a4bde5490e678e78c1fa2002_1a859207c9a4bde5490e678e78c1fa2002" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int Auris::Pool&lt; T &gt;::count</definition>
+        <argsstring></argsstring>
+        <name>count</name>
+        <initializer>= 0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>An int value: count. The number of objects in the pool. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Projects/GameEngine/include/Auris/Utilities/Pool.hpp" line="32" column="1" bodyfile="Projects/GameEngine/include/Auris/Utilities/Pool.hpp" bodystart="32" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_auris_1_1_pool_a65c222f6cc33ca26cb0534a9599d85aa_1a65c222f6cc33ca26cb0534a9599d85aa" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int Auris::Pool&lt; T &gt;::capacity</definition>
+        <argsstring></argsstring>
+        <name>capacity</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>An int value: capacity. The capacity of the pool. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Projects/GameEngine/include/Auris/Utilities/Pool.hpp" line="33" column="1" bodyfile="Projects/GameEngine/include/Auris/Utilities/Pool.hpp" bodystart="33" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_auris_1_1_pool_a9b061a8bcc95f5b243d1e366f2087e81_1a9b061a8bcc95f5b243d1e366f2087e81" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>T *</type>
+        <definition>T* Auris::Pool&lt; T &gt;::begin</definition>
+        <argsstring>()</argsstring>
+        <name>begin</name>
+        <briefdescription>
+<para>A begin method. </para>        </briefdescription>
+        <detaileddescription>
+<para>Fetch the first object in memory. <simplesect kind="return"><para>T pointer. The pointer to the first adress in memory. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Projects/GameEngine/include/Auris/Utilities/Pool.hpp" line="24" column="1" bodyfile="Projects/GameEngine/include/Auris/Utilities/Pool.hpp" bodystart="24" bodyend="24"/>
+      </memberdef>
+      <memberdef kind="function" id="class_auris_1_1_pool_afe700442d9b6e8a4905fe72efb2269e4_1afe700442d9b6e8a4905fe72efb2269e4" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>T *</type>
+        <definition>T* Auris::Pool&lt; T &gt;::end</definition>
+        <argsstring>()</argsstring>
+        <name>end</name>
+        <briefdescription>
+<para>A end method. </para>        </briefdescription>
+        <detaileddescription>
+<para>Fetch the last object in memory. <simplesect kind="return"><para>T pointer. The pointer to the last adress in memory. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Projects/GameEngine/include/Auris/Utilities/Pool.hpp" line="30" column="1" bodyfile="Projects/GameEngine/include/Auris/Utilities/Pool.hpp" bodystart="30" bodyend="30"/>
+      </memberdef>
+      <memberdef kind="function" id="class_auris_1_1_pool_afa1422b62e08d3cb166da2a145dea10a_1afa1422b62e08d3cb166da2a145dea10a" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>Auris::Pool&lt; T &gt;::Pool</definition>
+        <argsstring>()</argsstring>
+        <name>Pool</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts.</para><para>Calls the initializeser of the <ref refid="class_auris_1_1_pool" kindref="compound">Pool</ref> class. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>capacity</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>an int. The capacity the pool should have. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Projects/GameEngine/include/Auris/Utilities/Pool.hpp" line="39" column="1" bodyfile="Projects/GameEngine/include/Auris/Utilities/Pool.hpp" bodystart="39" bodyend="39"/>
+      </memberdef>
+      <memberdef kind="function" id="class_auris_1_1_pool_a5c4a010047bf0eeee939ee7f490cb611_1a5c4a010047bf0eeee939ee7f490cb611" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>Auris::Pool&lt; T &gt;::Pool</definition>
+        <argsstring>(int capacity)</argsstring>
+        <name>Pool</name>
+        <param>
+          <type>int</type>
+          <declname>capacity</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Projects/GameEngine/include/Auris/Utilities/Pool.hpp" line="46" column="1" bodyfile="Projects/GameEngine/include/Auris/Utilities/Pool.hpp" bodystart="46" bodyend="48"/>
+      </memberdef>
+      <memberdef kind="function" id="class_auris_1_1_pool_ad73193aea203594b5e431d6587228a66_1ad73193aea203594b5e431d6587228a66" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>Auris::Pool&lt; T &gt;::~Pool</definition>
+        <argsstring>()</argsstring>
+        <name>~Pool</name>
+        <briefdescription>
+<para>The <ref refid="class_auris_1_1_pool" kindref="compound">Pool</ref> destructor. </para>        </briefdescription>
+        <detaileddescription>
+<para>Frees all the objects and occupied objects. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Projects/GameEngine/include/Auris/Utilities/Pool.hpp" line="53" column="1" bodyfile="Projects/GameEngine/include/Auris/Utilities/Pool.hpp" bodystart="53" bodyend="56"/>
+      </memberdef>
+      <memberdef kind="function" id="class_auris_1_1_pool_adc56dc807b0fb309fbd676e4cc731772_1adc56dc807b0fb309fbd676e4cc731772" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Auris::Pool&lt; T &gt;::Pool</definition>
+        <argsstring>(const Pool &amp;other)=delete</argsstring>
+        <name>Pool</name>
+        <param>
+          <type>const <ref refid="class_auris_1_1_pool" kindref="compound">Pool</ref> &amp;</type>
+          <declname>other</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Projects/GameEngine/include/Auris/Utilities/Pool.hpp" line="58" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="class_auris_1_1_pool_abfb078167e0d4f3dc04830d2e830b01d_1abfb078167e0d4f3dc04830d2e830b01d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="class_auris_1_1_pool" kindref="compound">Pool</ref> &amp;</type>
+        <definition>Pool&amp; Auris::Pool&lt; T &gt;::operator=</definition>
+        <argsstring>(const Pool &amp;)=delete</argsstring>
+        <name>operator=</name>
+        <param>
+          <type>const <ref refid="class_auris_1_1_pool" kindref="compound">Pool</ref> &amp;</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Projects/GameEngine/include/Auris/Utilities/Pool.hpp" line="59" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="class_auris_1_1_pool_ab1cbc1dede87fcfc2ff7de01f0fcdcf0_1ab1cbc1dede87fcfc2ff7de01f0fcdcf0" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void Auris::Pool&lt; T &gt;::initialize</definition>
+        <argsstring>(int capacity)</argsstring>
+        <name>initialize</name>
+        <param>
+          <type>int</type>
+          <declname>capacity</declname>
+        </param>
+        <briefdescription>
+<para>A initialize method, taking 1 argument. </para>        </briefdescription>
+        <detaileddescription>
+<para>Initializes the pool, with the capacity inputted. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>capacity</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>an int. The capacity the pool should have. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Projects/GameEngine/include/Auris/Utilities/Pool.hpp" line="65" column="1" bodyfile="Projects/GameEngine/include/Auris/Utilities/Pool.hpp" bodystart="65" bodyend="78"/>
+      </memberdef>
+      <memberdef kind="function" id="class_auris_1_1_pool_a6cc5631bfc985f98a56ccf91fd5c79c0_1a6cc5631bfc985f98a56ccf91fd5c79c0" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>T *</type>
+        <definition>T* Auris::Pool&lt; T &gt;::operator[]</definition>
+        <argsstring>(std::size_t index)</argsstring>
+        <name>operator[]</name>
+        <param>
+          <type>std::size_t</type>
+          <declname>index</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Projects/GameEngine/include/Auris/Utilities/Pool.hpp" line="86" column="1" bodyfile="Projects/GameEngine/include/Auris/Utilities/Pool.hpp" bodystart="86" bodyend="88"/>
+      </memberdef>
+      <memberdef kind="function" id="class_auris_1_1_pool_a2d439bab0e96a5538e20fdeece3e7090_1a2d439bab0e96a5538e20fdeece3e7090" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>T *</type>
+        <definition>Auris::Pool&lt; T &gt;::at</definition>
+        <argsstring>(std::size_t index)</argsstring>
+        <name>at</name>
+        <param>
+          <type>std::size_t</type>
+          <declname>index</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts.</para><para>Overload the [] so that the pool can be indexed. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>index</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>a size_t value. The index used. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>T pointer. The object at that index, nullptr if there is no object with that index. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Projects/GameEngine/include/Auris/Utilities/Pool.hpp" line="97" column="1" bodyfile="Projects/GameEngine/include/Auris/Utilities/Pool.hpp" bodystart="97" bodyend="109"/>
+      </memberdef>
+      <memberdef kind="function" id="class_auris_1_1_pool_a07625e57ce7547bf76a9a2da27b75f33_1a07625e57ce7547bf76a9a2da27b75f33" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>T *</type>
+        <definition>T* Auris::Pool&lt; T &gt;::create</definition>
+        <argsstring>()</argsstring>
+        <name>create</name>
+        <briefdescription>
+<para>A create method. </para>        </briefdescription>
+        <detaileddescription>
+<para>Assigns a new object to the pool, and returns it <simplesect kind="return"><para>T pointer. The object created (nullptr if there is no more space). </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Projects/GameEngine/include/Auris/Utilities/Pool.hpp" line="115" column="1" bodyfile="Projects/GameEngine/include/Auris/Utilities/Pool.hpp" bodystart="115" bodyend="132"/>
+      </memberdef>
+      <memberdef kind="function" id="class_auris_1_1_pool_a7b47e50dae61ecb1d75e7f7982f7436e_1a7b47e50dae61ecb1d75e7f7982f7436e" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool Auris::Pool&lt; T &gt;::remove</definition>
+        <argsstring>(T *ptr)</argsstring>
+        <name>remove</name>
+        <param>
+          <type>T *</type>
+          <declname>ptr</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Projects/GameEngine/include/Auris/Utilities/Pool.hpp" line="139" column="1" bodyfile="Projects/GameEngine/include/Auris/Utilities/Pool.hpp" bodystart="139" bodyend="147"/>
+      </memberdef>
+      <memberdef kind="function" id="class_auris_1_1_pool_a8a9c6b78eccb3f0c067b53b6931662a7_1a8a9c6b78eccb3f0c067b53b6931662a7" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void Auris::Pool&lt; T &gt;::remove</definition>
+        <argsstring>(int index)</argsstring>
+        <name>remove</name>
+        <param>
+          <type>int</type>
+          <declname>index</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Projects/GameEngine/include/Auris/Utilities/Pool.hpp" line="154" column="1" bodyfile="Projects/GameEngine/include/Auris/Utilities/Pool.hpp" bodystart="154" bodyend="161"/>
+      </memberdef>
+      <memberdef kind="function" id="class_auris_1_1_pool_a6ef1db8e8ba213cde0488ad26e5beebf_1a6ef1db8e8ba213cde0488ad26e5beebf" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool Auris::Pool&lt; T &gt;::isFull</definition>
+        <argsstring>()</argsstring>
+        <name>isFull</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Projects/GameEngine/include/Auris/Utilities/Pool.hpp" line="163" column="1" bodyfile="Projects/GameEngine/include/Auris/Utilities/Pool.hpp" bodystart="163" bodyend="166"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>The <ref refid="class_auris_1_1_pool" kindref="compound">Pool</ref> class that is a templete class. </para>    </briefdescription>
+    <detaileddescription>
+<para>Allocates memory in pool. </para>    </detaileddescription>
+    <location file="Projects/GameEngine/include/Auris/Utilities/Pool.hpp" line="12" column="1" bodyfile="Projects/GameEngine/include/Auris/Utilities/Pool.hpp" bodystart="12" bodyend="167"/>
+    <listofallmembers>
+      <member refid="class_auris_1_1_pool_a2d439bab0e96a5538e20fdeece3e7090_1a2d439bab0e96a5538e20fdeece3e7090" prot="public" virt="non-virtual"><scope>Auris::Pool</scope><name>at</name></member>
+      <member refid="class_auris_1_1_pool_a9b061a8bcc95f5b243d1e366f2087e81_1a9b061a8bcc95f5b243d1e366f2087e81" prot="public" virt="non-virtual"><scope>Auris::Pool</scope><name>begin</name></member>
+      <member refid="class_auris_1_1_pool_a65c222f6cc33ca26cb0534a9599d85aa_1a65c222f6cc33ca26cb0534a9599d85aa" prot="public" virt="non-virtual"><scope>Auris::Pool</scope><name>capacity</name></member>
+      <member refid="class_auris_1_1_pool_a859207c9a4bde5490e678e78c1fa2002_1a859207c9a4bde5490e678e78c1fa2002" prot="public" virt="non-virtual"><scope>Auris::Pool</scope><name>count</name></member>
+      <member refid="class_auris_1_1_pool_a07625e57ce7547bf76a9a2da27b75f33_1a07625e57ce7547bf76a9a2da27b75f33" prot="public" virt="non-virtual"><scope>Auris::Pool</scope><name>create</name></member>
+      <member refid="class_auris_1_1_pool_afe700442d9b6e8a4905fe72efb2269e4_1afe700442d9b6e8a4905fe72efb2269e4" prot="public" virt="non-virtual"><scope>Auris::Pool</scope><name>end</name></member>
+      <member refid="class_auris_1_1_pool_ab1cbc1dede87fcfc2ff7de01f0fcdcf0_1ab1cbc1dede87fcfc2ff7de01f0fcdcf0" prot="public" virt="non-virtual"><scope>Auris::Pool</scope><name>initialize</name></member>
+      <member refid="class_auris_1_1_pool_a6ef1db8e8ba213cde0488ad26e5beebf_1a6ef1db8e8ba213cde0488ad26e5beebf" prot="public" virt="non-virtual"><scope>Auris::Pool</scope><name>isFull</name></member>
+      <member refid="class_auris_1_1_pool_a4461fc4c6c6de88e88f8cf93b4ac91c8_1a4461fc4c6c6de88e88f8cf93b4ac91c8" prot="private" virt="non-virtual"><scope>Auris::Pool</scope><name>objects</name></member>
+      <member refid="class_auris_1_1_pool_a44a0d07bf46a11ff31f11ce5441a47bd_1a44a0d07bf46a11ff31f11ce5441a47bd" prot="private" virt="non-virtual"><scope>Auris::Pool</scope><name>objectSize</name></member>
+      <member refid="class_auris_1_1_pool_af1c9dd3d26f7b15b59411eed3170b22b_1af1c9dd3d26f7b15b59411eed3170b22b" prot="private" virt="non-virtual"><scope>Auris::Pool</scope><name>occupied</name></member>
+      <member refid="class_auris_1_1_pool_abfb078167e0d4f3dc04830d2e830b01d_1abfb078167e0d4f3dc04830d2e830b01d" prot="public" virt="non-virtual"><scope>Auris::Pool</scope><name>operator=</name></member>
+      <member refid="class_auris_1_1_pool_a6cc5631bfc985f98a56ccf91fd5c79c0_1a6cc5631bfc985f98a56ccf91fd5c79c0" prot="public" virt="non-virtual"><scope>Auris::Pool</scope><name>operator[]</name></member>
+      <member refid="class_auris_1_1_pool_afa1422b62e08d3cb166da2a145dea10a_1afa1422b62e08d3cb166da2a145dea10a" prot="public" virt="non-virtual"><scope>Auris::Pool</scope><name>Pool</name></member>
+      <member refid="class_auris_1_1_pool_a5c4a010047bf0eeee939ee7f490cb611_1a5c4a010047bf0eeee939ee7f490cb611" prot="public" virt="non-virtual"><scope>Auris::Pool</scope><name>Pool</name></member>
+      <member refid="class_auris_1_1_pool_adc56dc807b0fb309fbd676e4cc731772_1adc56dc807b0fb309fbd676e4cc731772" prot="public" virt="non-virtual"><scope>Auris::Pool</scope><name>Pool</name></member>
+      <member refid="class_auris_1_1_pool_a7b47e50dae61ecb1d75e7f7982f7436e_1a7b47e50dae61ecb1d75e7f7982f7436e" prot="public" virt="non-virtual"><scope>Auris::Pool</scope><name>remove</name></member>
+      <member refid="class_auris_1_1_pool_a8a9c6b78eccb3f0c067b53b6931662a7_1a8a9c6b78eccb3f0c067b53b6931662a7" prot="public" virt="non-virtual"><scope>Auris::Pool</scope><name>remove</name></member>
+      <member refid="class_auris_1_1_pool_ad73193aea203594b5e431d6587228a66_1ad73193aea203594b5e431d6587228a66" prot="public" virt="non-virtual"><scope>Auris::Pool</scope><name>~Pool</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

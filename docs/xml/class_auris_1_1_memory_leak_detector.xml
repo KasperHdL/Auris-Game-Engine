@@ -1,0 +1,252 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.12">
+  <compounddef id="class_auris_1_1_memory_leak_detector" kind="class" language="C++" prot="public">
+    <compoundname>Auris::MemoryLeakDetector</compoundname>
+    <includes refid="_memory_leak_detector_8hpp" local="no">MemoryLeakDetector.hpp</includes>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="class_auris_1_1_memory_leak_detector_a30996607eab293636a9a5028cf643962_1a30996607eab293636a9a5028cf643962" prot="public" static="no" mutable="no">
+        <type>double</type>
+        <definition>double Auris::MemoryLeakDetector::highWaterMarkVirt</definition>
+        <argsstring></argsstring>
+        <name>highWaterMarkVirt</name>
+        <initializer>= 0.0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>A double value: highWaterMarkVirt. The highest value the virtual memory have had. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Projects/GameEngine/include/Auris/Utilities/MemoryLeakDetector.hpp" line="65" column="1" bodyfile="Projects/GameEngine/include/Auris/Utilities/MemoryLeakDetector.hpp" bodystart="65" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_auris_1_1_memory_leak_detector_a6b4c1d19ec908784bdc1ae8dc83779fc_1a6b4c1d19ec908784bdc1ae8dc83779fc" prot="public" static="no" mutable="no">
+        <type>double</type>
+        <definition>double Auris::MemoryLeakDetector::highWaterMarkPhys</definition>
+        <argsstring></argsstring>
+        <name>highWaterMarkPhys</name>
+        <initializer>= 0.0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>A double value: highWaterMarkPhys. The highest value the physical memory have had. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Projects/GameEngine/include/Auris/Utilities/MemoryLeakDetector.hpp" line="66" column="1" bodyfile="Projects/GameEngine/include/Auris/Utilities/MemoryLeakDetector.hpp" bodystart="66" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_auris_1_1_memory_leak_detector_a25b8d96adee5cd5d75783d38d7e30f2d_1a25b8d96adee5cd5d75783d38d7e30f2d" prot="public" static="no" mutable="no">
+        <type>double</type>
+        <definition>double Auris::MemoryLeakDetector::virtRising</definition>
+        <argsstring></argsstring>
+        <name>virtRising</name>
+        <initializer>= 0.0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>A double value: virtRising. The current value the virtual memory have. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Projects/GameEngine/include/Auris/Utilities/MemoryLeakDetector.hpp" line="67" column="1" bodyfile="Projects/GameEngine/include/Auris/Utilities/MemoryLeakDetector.hpp" bodystart="67" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_auris_1_1_memory_leak_detector_a33f26fdb086c79ea4d212a3c88e399c5_1a33f26fdb086c79ea4d212a3c88e399c5" prot="public" static="no" mutable="no">
+        <type>double</type>
+        <definition>double Auris::MemoryLeakDetector::physRising</definition>
+        <argsstring></argsstring>
+        <name>physRising</name>
+        <initializer>= 0.0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>A double value: physRising. The current value the physical memory have. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Projects/GameEngine/include/Auris/Utilities/MemoryLeakDetector.hpp" line="68" column="1" bodyfile="Projects/GameEngine/include/Auris/Utilities/MemoryLeakDetector.hpp" bodystart="68" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_auris_1_1_memory_leak_detector_a49c4331f6a68c0198f0a94b419212d61_1a49c4331f6a68c0198f0a94b419212d61" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>double</type>
+        <definition>double Auris::MemoryLeakDetector::getTotalVirtMem</definition>
+        <argsstring>()</argsstring>
+        <name>getTotalVirtMem</name>
+        <briefdescription>
+<para>A getTotalVirtMem method. </para>        </briefdescription>
+        <detaileddescription>
+<para>Gets the total virtual memory available. <simplesect kind="return"><para>double. The total virtual memory available. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Projects/GameEngine/include/Auris/Utilities/MemoryLeakDetector.hpp" line="74" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="class_auris_1_1_memory_leak_detector_aed75f81ee1bbae1467701bb3857c5e4e_1aed75f81ee1bbae1467701bb3857c5e4e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>double</type>
+        <definition>double Auris::MemoryLeakDetector::getVirtMemUsed</definition>
+        <argsstring>()</argsstring>
+        <name>getVirtMemUsed</name>
+        <briefdescription>
+<para>A getVirtMemUsed method. </para>        </briefdescription>
+        <detaileddescription>
+<para>Gets the virtual memory used by the computer. <simplesect kind="return"><para>double. The used virtual memory by the computer. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Projects/GameEngine/include/Auris/Utilities/MemoryLeakDetector.hpp" line="80" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="class_auris_1_1_memory_leak_detector_a4e948bcedd82f887eb375787bef877e2_1a4e948bcedd82f887eb375787bef877e2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>double</type>
+        <definition>double Auris::MemoryLeakDetector::getVirtMemUsedByMe</definition>
+        <argsstring>()</argsstring>
+        <name>getVirtMemUsedByMe</name>
+        <briefdescription>
+<para>A getVirtMemUsedByMe method. </para>        </briefdescription>
+        <detaileddescription>
+<para>Gets the virtual memory used by the engine. <simplesect kind="return"><para>double. The used virtual memory by the engine. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Projects/GameEngine/include/Auris/Utilities/MemoryLeakDetector.hpp" line="86" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="class_auris_1_1_memory_leak_detector_a4b94e59c5062876fc8fa8eaea11eec12_1a4b94e59c5062876fc8fa8eaea11eec12" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>double</type>
+        <definition>double Auris::MemoryLeakDetector::getTotalPhysMem</definition>
+        <argsstring>()</argsstring>
+        <name>getTotalPhysMem</name>
+        <briefdescription>
+<para>A getTotalPhysMem method. </para>        </briefdescription>
+        <detaileddescription>
+<para>Gets the total physical memory available. <simplesect kind="return"><para>double. The total physical memory available. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Projects/GameEngine/include/Auris/Utilities/MemoryLeakDetector.hpp" line="92" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="class_auris_1_1_memory_leak_detector_af10c92f9fb06d2faecdd3dc9cfa5ad02_1af10c92f9fb06d2faecdd3dc9cfa5ad02" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>double</type>
+        <definition>double Auris::MemoryLeakDetector::getPhysMemUsed</definition>
+        <argsstring>()</argsstring>
+        <name>getPhysMemUsed</name>
+        <briefdescription>
+<para>A getPhysMemUsed method. </para>        </briefdescription>
+        <detaileddescription>
+<para>Gets the physical memory used by the computer. <simplesect kind="return"><para>double. The used physical memory by the computer. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Projects/GameEngine/include/Auris/Utilities/MemoryLeakDetector.hpp" line="98" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="class_auris_1_1_memory_leak_detector_a7878ed0c41d428118e5a40b6062421a1_1a7878ed0c41d428118e5a40b6062421a1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>double</type>
+        <definition>double Auris::MemoryLeakDetector::getPhysMemUsedByMe</definition>
+        <argsstring>()</argsstring>
+        <name>getPhysMemUsedByMe</name>
+        <briefdescription>
+<para>A getPhysMemUsedByMe method. </para>        </briefdescription>
+        <detaileddescription>
+<para>Gets the physical memory used by the engine. <simplesect kind="return"><para>double. The used physical memory by the engine. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Projects/GameEngine/include/Auris/Utilities/MemoryLeakDetector.hpp" line="104" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="class_auris_1_1_memory_leak_detector_a0bc4479f1aec3bf9d17a7caaa1ad9781_1a0bc4479f1aec3bf9d17a7caaa1ad9781" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>double</type>
+        <definition>double Auris::MemoryLeakDetector::getCurrentTotalCPUValue</definition>
+        <argsstring>()</argsstring>
+        <name>getCurrentTotalCPUValue</name>
+        <briefdescription>
+<para>A getCurrentTotalCPUValue method. </para>        </briefdescription>
+        <detaileddescription>
+<para>Gets the total cpu available. <simplesect kind="return"><para>double. The total cpu available. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Projects/GameEngine/include/Auris/Utilities/MemoryLeakDetector.hpp" line="110" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="class_auris_1_1_memory_leak_detector_adf90e3006466df24745910badc7045b1_1adf90e3006466df24745910badc7045b1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>double</type>
+        <definition>double Auris::MemoryLeakDetector::getCurrentProcessCPUValue</definition>
+        <argsstring>()</argsstring>
+        <name>getCurrentProcessCPUValue</name>
+        <briefdescription>
+<para>A getCurrentProcessCPUValue method. </para>        </briefdescription>
+        <detaileddescription>
+<para>Gets the cpu used by the engine. <simplesect kind="return"><para>double. The cpu used by the engine. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Projects/GameEngine/include/Auris/Utilities/MemoryLeakDetector.hpp" line="116" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="class_auris_1_1_memory_leak_detector_a73b7c5eff1b7894973d777fb81434000_1a73b7c5eff1b7894973d777fb81434000" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void MemoryLeakDetector::leakDetect</definition>
+        <argsstring>(float dt)</argsstring>
+        <name>leakDetect</name>
+        <param>
+          <type>float</type>
+          <declname>dt</declname>
+        </param>
+        <briefdescription>
+<para>A leakDetect method, taking 1 argument. </para>        </briefdescription>
+        <detaileddescription>
+<para>Detects if there is a leak happening. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>dt</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>a float value. The delta time in seconds. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Projects/GameEngine/include/Auris/Utilities/MemoryLeakDetector.hpp" line="122" column="1" bodyfile="Projects/GameEngine/Auris/src/Auris/Utilities/MemoryLeakDetector.cpp" bodystart="107" bodyend="134"/>
+      </memberdef>
+      <memberdef kind="function" id="class_auris_1_1_memory_leak_detector_a1fb75585369cacf4d9588ba4dd949f13_1a1fb75585369cacf4d9588ba4dd949f13" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>MemoryLeakDetector::MemoryLeakDetector</definition>
+        <argsstring>()</argsstring>
+        <name>MemoryLeakDetector</name>
+        <briefdescription>
+<para>The MemoryLeadDetector constructor. </para>        </briefdescription>
+        <detaileddescription>
+<para>Does nothing. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Projects/GameEngine/include/Auris/Utilities/MemoryLeakDetector.hpp" line="128" column="1" bodyfile="Projects/GameEngine/Auris/src/Auris/Utilities/MemoryLeakDetector.cpp" bodystart="4" bodyend="105"/>
+      </memberdef>
+      <memberdef kind="function" id="class_auris_1_1_memory_leak_detector_aad8aa347134ca7f0c82f188150df8ba7_1aad8aa347134ca7f0c82f188150df8ba7" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>Auris::MemoryLeakDetector::~MemoryLeakDetector</definition>
+        <argsstring>()</argsstring>
+        <name>~MemoryLeakDetector</name>
+        <briefdescription>
+<para>The MemoryLeadDetector destructor. </para>        </briefdescription>
+        <detaileddescription>
+<para>Does nothing. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Projects/GameEngine/include/Auris/Utilities/MemoryLeakDetector.hpp" line="134" column="1" bodyfile="Projects/GameEngine/include/Auris/Utilities/MemoryLeakDetector.hpp" bodystart="134" bodyend="134"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>The MemoryLeadDetector class. </para>    </briefdescription>
+    <detaileddescription>
+<para>Detects if there are memory leaks in the engine. </para>    </detaileddescription>
+    <location file="Projects/GameEngine/include/Auris/Utilities/MemoryLeakDetector.hpp" line="62" column="1" bodyfile="Projects/GameEngine/include/Auris/Utilities/MemoryLeakDetector.hpp" bodystart="62" bodyend="185"/>
+    <listofallmembers>
+      <member refid="class_auris_1_1_memory_leak_detector_adf90e3006466df24745910badc7045b1_1adf90e3006466df24745910badc7045b1" prot="public" virt="non-virtual"><scope>Auris::MemoryLeakDetector</scope><name>getCurrentProcessCPUValue</name></member>
+      <member refid="class_auris_1_1_memory_leak_detector_a0bc4479f1aec3bf9d17a7caaa1ad9781_1a0bc4479f1aec3bf9d17a7caaa1ad9781" prot="public" virt="non-virtual"><scope>Auris::MemoryLeakDetector</scope><name>getCurrentTotalCPUValue</name></member>
+      <member refid="class_auris_1_1_memory_leak_detector_af10c92f9fb06d2faecdd3dc9cfa5ad02_1af10c92f9fb06d2faecdd3dc9cfa5ad02" prot="public" virt="non-virtual"><scope>Auris::MemoryLeakDetector</scope><name>getPhysMemUsed</name></member>
+      <member refid="class_auris_1_1_memory_leak_detector_a7878ed0c41d428118e5a40b6062421a1_1a7878ed0c41d428118e5a40b6062421a1" prot="public" virt="non-virtual"><scope>Auris::MemoryLeakDetector</scope><name>getPhysMemUsedByMe</name></member>
+      <member refid="class_auris_1_1_memory_leak_detector_a4b94e59c5062876fc8fa8eaea11eec12_1a4b94e59c5062876fc8fa8eaea11eec12" prot="public" virt="non-virtual"><scope>Auris::MemoryLeakDetector</scope><name>getTotalPhysMem</name></member>
+      <member refid="class_auris_1_1_memory_leak_detector_a49c4331f6a68c0198f0a94b419212d61_1a49c4331f6a68c0198f0a94b419212d61" prot="public" virt="non-virtual"><scope>Auris::MemoryLeakDetector</scope><name>getTotalVirtMem</name></member>
+      <member refid="class_auris_1_1_memory_leak_detector_aed75f81ee1bbae1467701bb3857c5e4e_1aed75f81ee1bbae1467701bb3857c5e4e" prot="public" virt="non-virtual"><scope>Auris::MemoryLeakDetector</scope><name>getVirtMemUsed</name></member>
+      <member refid="class_auris_1_1_memory_leak_detector_a4e948bcedd82f887eb375787bef877e2_1a4e948bcedd82f887eb375787bef877e2" prot="public" virt="non-virtual"><scope>Auris::MemoryLeakDetector</scope><name>getVirtMemUsedByMe</name></member>
+      <member refid="class_auris_1_1_memory_leak_detector_a6b4c1d19ec908784bdc1ae8dc83779fc_1a6b4c1d19ec908784bdc1ae8dc83779fc" prot="public" virt="non-virtual"><scope>Auris::MemoryLeakDetector</scope><name>highWaterMarkPhys</name></member>
+      <member refid="class_auris_1_1_memory_leak_detector_a30996607eab293636a9a5028cf643962_1a30996607eab293636a9a5028cf643962" prot="public" virt="non-virtual"><scope>Auris::MemoryLeakDetector</scope><name>highWaterMarkVirt</name></member>
+      <member refid="class_auris_1_1_memory_leak_detector_a73b7c5eff1b7894973d777fb81434000_1a73b7c5eff1b7894973d777fb81434000" prot="public" virt="non-virtual"><scope>Auris::MemoryLeakDetector</scope><name>leakDetect</name></member>
+      <member refid="class_auris_1_1_memory_leak_detector_a1fb75585369cacf4d9588ba4dd949f13_1a1fb75585369cacf4d9588ba4dd949f13" prot="public" virt="non-virtual"><scope>Auris::MemoryLeakDetector</scope><name>MemoryLeakDetector</name></member>
+      <member refid="class_auris_1_1_memory_leak_detector_a33f26fdb086c79ea4d212a3c88e399c5_1a33f26fdb086c79ea4d212a3c88e399c5" prot="public" virt="non-virtual"><scope>Auris::MemoryLeakDetector</scope><name>physRising</name></member>
+      <member refid="class_auris_1_1_memory_leak_detector_a25b8d96adee5cd5d75783d38d7e30f2d_1a25b8d96adee5cd5d75783d38d7e30f2d" prot="public" virt="non-virtual"><scope>Auris::MemoryLeakDetector</scope><name>virtRising</name></member>
+      <member refid="class_auris_1_1_memory_leak_detector_aad8aa347134ca7f0c82f188150df8ba7_1aad8aa347134ca7f0c82f188150df8ba7" prot="public" virt="non-virtual"><scope>Auris::MemoryLeakDetector</scope><name>~MemoryLeakDetector</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

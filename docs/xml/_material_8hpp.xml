@@ -1,0 +1,207 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.12">
+  <compounddef id="_material_8hpp" kind="file" language="C++">
+    <compoundname>Material.hpp</compoundname>
+    <includes local="yes">SRE/Texture.hpp</includes>
+    <includes local="yes">SRE/Mesh.hpp</includes>
+    <includes local="yes">glm/glm.hpp</includes>
+    <includedby refid="_sprite_8hpp" local="yes">Projects/GameEngine/include/Auris/Entities/Nuggets/Sprite.hpp</includedby>
+    <incdepgraph>
+      <node id="783">
+        <label>SRE/Texture.hpp</label>
+      </node>
+      <node id="784">
+        <label>SRE/Mesh.hpp</label>
+      </node>
+      <node id="782">
+        <label>Projects/GameEngine/include/Auris/Entities/Nuggets/Material.hpp</label>
+        <link refid="_material_8hpp"/>
+        <childnode refid="783" relation="include">
+        </childnode>
+        <childnode refid="784" relation="include">
+        </childnode>
+        <childnode refid="785" relation="include">
+        </childnode>
+      </node>
+      <node id="785">
+        <label>glm/glm.hpp</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="794">
+        <label>Projects/GameEngine/Auris/src/Auris/Entities/PhysicsEntity.cpp</label>
+        <link refid="_physics_entity_8cpp"/>
+      </node>
+      <node id="805">
+        <label>Projects/GameEngine/include/Auris/Entities/AudioPlayer.hpp</label>
+        <link refid="_audio_player_8hpp"/>
+        <childnode refid="790" relation="include">
+        </childnode>
+        <childnode refid="806" relation="include">
+        </childnode>
+      </node>
+      <node id="788">
+        <label>Projects/GameEngine/include/Auris/Entities/Nuggets/Animation.hpp</label>
+        <link refid="_animation_8hpp"/>
+        <childnode refid="789" relation="include">
+        </childnode>
+        <childnode refid="802" relation="include">
+        </childnode>
+      </node>
+      <node id="791">
+        <label>Projects/GameEngine/include/Auris/Entities/PhysicsEntity.hpp</label>
+        <link refid="_physics_entity_8hpp"/>
+        <childnode refid="792" relation="include">
+        </childnode>
+        <childnode refid="794" relation="include">
+        </childnode>
+      </node>
+      <node id="787">
+        <label>Projects/GameEngine/include/Auris/Entities/Nuggets/Sprite.hpp</label>
+        <link refid="_sprite_8hpp"/>
+        <childnode refid="788" relation="include">
+        </childnode>
+        <childnode refid="789" relation="include">
+        </childnode>
+        <childnode refid="803" relation="include">
+        </childnode>
+        <childnode refid="799" relation="include">
+        </childnode>
+      </node>
+      <node id="792">
+        <label>Projects/GameEngine/include/Auris/Systems/CollisionHandler.hpp</label>
+        <link refid="_collision_handler_8hpp"/>
+        <childnode refid="793" relation="include">
+        </childnode>
+      </node>
+      <node id="795">
+        <label>Projects/GameEngine/include/Auris/Game.hpp</label>
+        <link refid="_game_8hpp"/>
+        <childnode refid="790" relation="include">
+        </childnode>
+        <childnode refid="796" relation="include">
+        </childnode>
+        <childnode refid="797" relation="include">
+        </childnode>
+      </node>
+      <node id="790">
+        <label>Projects/GameEngine/include/Auris/Engine.hpp</label>
+        <link refid="_engine_8hpp"/>
+        <childnode refid="791" relation="include">
+        </childnode>
+        <childnode refid="795" relation="include">
+        </childnode>
+        <childnode refid="798" relation="include">
+        </childnode>
+        <childnode refid="793" relation="include">
+        </childnode>
+      </node>
+      <node id="802">
+        <label>Projects/GameEngine/Auris/src/Auris/Entities/Nuggets/Animation.cpp</label>
+        <link refid="_animation_8cpp"/>
+      </node>
+      <node id="798">
+        <label>Projects/GameEngine/include/Auris/Utilities/BodyStandard.hpp</label>
+        <link refid="_body_standard_8hpp"/>
+      </node>
+      <node id="797">
+        <label>Projects/GameEngine/Auris/src/Auris/Systems/Input.cpp</label>
+        <link refid="_input_8cpp"/>
+      </node>
+      <node id="796">
+        <label>Projects/GameEngine/Auris/src/Auris/Game.cpp</label>
+        <link refid="_game_8cpp"/>
+      </node>
+      <node id="806">
+        <label>Projects/GameEngine/Auris/src/Auris/Entities/AudioPlayer.cpp</label>
+        <link refid="_audio_player_8cpp"/>
+      </node>
+      <node id="807">
+        <label>Projects/GameEngine/Auris/src/Auris/Utilities/AssetManager.cpp</label>
+        <link refid="_asset_manager_8cpp"/>
+      </node>
+      <node id="793">
+        <label>Projects/GameEngine/Auris/src/Auris/Engine.cpp</label>
+        <link refid="_engine_8cpp"/>
+      </node>
+      <node id="801">
+        <label>Projects/GameEngine/Auris/src/Auris/Utilities/SpriteSheet.cpp</label>
+        <link refid="_sprite_sheet_8cpp"/>
+      </node>
+      <node id="799">
+        <label>Projects/GameEngine/Auris/src/Auris/Entities/Nuggets/Sprite.cpp</label>
+        <link refid="_sprite_8cpp"/>
+      </node>
+      <node id="803">
+        <label>Projects/GameEngine/include/Auris/Utilities/SpriteSheet.hpp</label>
+        <link refid="_sprite_sheet_8hpp"/>
+        <childnode refid="788" relation="include">
+        </childnode>
+        <childnode refid="804" relation="include">
+        </childnode>
+        <childnode refid="801" relation="include">
+        </childnode>
+      </node>
+      <node id="786">
+        <label>Projects/GameEngine/include/Auris/Entities/Nuggets/Material.hpp</label>
+        <link refid="_material_8hpp"/>
+        <childnode refid="787" relation="include">
+        </childnode>
+      </node>
+      <node id="804">
+        <label>Projects/GameEngine/include/Auris/Utilities/AssetManager.hpp</label>
+        <link refid="_asset_manager_8hpp"/>
+        <childnode refid="790" relation="include">
+        </childnode>
+        <childnode refid="805" relation="include">
+        </childnode>
+        <childnode refid="807" relation="include">
+        </childnode>
+      </node>
+      <node id="800">
+        <label>Projects/GameEngine/Auris/src/Auris/Systems/RenderSystem.cpp</label>
+        <link refid="_render_system_8cpp"/>
+      </node>
+      <node id="789">
+        <label>Projects/GameEngine/include/Auris/Systems/RenderSystem.hpp</label>
+        <link refid="_render_system_8hpp"/>
+        <childnode refid="790" relation="include">
+        </childnode>
+        <childnode refid="799" relation="include">
+        </childnode>
+        <childnode refid="800" relation="include">
+        </childnode>
+        <childnode refid="801" relation="include">
+        </childnode>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="class_auris_1_1_material" prot="public">Auris::Material</innerclass>
+    <innernamespace refid="namespace_auris">Auris</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#pragma<sp/>once</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;SRE/Texture.hpp&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;SRE/Mesh.hpp&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;glm/glm.hpp&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespace_auris" kindref="compound">Auris</ref>{</highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="9"><highlight class="comment">//!<sp/>The<sp/>Material<sp/>class</highlight></codeline>
+<codeline lineno="10"><highlight class="comment"></highlight><highlight class="comment"><sp/><sp/><sp/><sp/>/*!<sp/>To<sp/>hold<sp/>all<sp/>material<sp/>related<sp/>stuff</highlight></codeline>
+<codeline lineno="11"><highlight class="comment"><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="12" refid="class_auris_1_1_material" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="class_auris_1_1_material" kindref="compound">Material</ref>{</highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="14" refid="class_auris_1_1_material_a14b9380d6cb7076f012dbbfb49d2c21d_1a14b9380d6cb7076f012dbbfb49d2c21d" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>SRE::Texture*<sp/><ref refid="class_auris_1_1_material_a14b9380d6cb7076f012dbbfb49d2c21d_1a14b9380d6cb7076f012dbbfb49d2c21d" kindref="member">texture</ref>;<sp/></highlight><highlight class="comment">/*!&lt;<sp/>A<sp/>Texture<sp/>pointer:<sp/>texture.<sp/>Texture<sp/>of<sp/>the<sp/>material.<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="15" refid="class_auris_1_1_material_aa27a99dfd17cf3e36620b77b1360ad4c_1aa27a99dfd17cf3e36620b77b1360ad4c" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>SRE::Texture*<sp/><ref refid="class_auris_1_1_material_aa27a99dfd17cf3e36620b77b1360ad4c_1aa27a99dfd17cf3e36620b77b1360ad4c" kindref="member">normalMap</ref><sp/>=<sp/></highlight><highlight class="keyword">nullptr</highlight><highlight class="normal">;<sp/></highlight><highlight class="comment">/*!&lt;<sp/>A<sp/>Texture<sp/>pointer:<sp/>normalMap.<sp/>Normalmap<sp/>of<sp/>the<sp/>material<sp/>(default<sp/>is<sp/>nullptr).<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="16" refid="class_auris_1_1_material_aec978779559ff90f21f625dcc0c576e6_1aec978779559ff90f21f625dcc0c576e6" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>SRE::Shader*<sp/><ref refid="class_auris_1_1_material_aec978779559ff90f21f625dcc0c576e6_1aec978779559ff90f21f625dcc0c576e6" kindref="member">shader</ref>;<sp/></highlight><highlight class="comment">/*!&lt;<sp/>A<sp/>Shader<sp/>pointer:<sp/>shader.<sp/>Shader<sp/>of<sp/>the<sp/>material.<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="17" refid="class_auris_1_1_material_a3e280fab69a33ab5599c536ab4da388e_1a3e280fab69a33ab5599c536ab4da388e" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>glm::vec4<sp/><ref refid="class_auris_1_1_material_a3e280fab69a33ab5599c536ab4da388e_1a3e280fab69a33ab5599c536ab4da388e" kindref="member">color</ref>;<sp/></highlight><highlight class="comment">/*!&lt;<sp/>A<sp/>vec4<sp/>value:<sp/>color.<sp/>Color<sp/>of<sp/>the<sp/>material.<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="18"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="19"><highlight class="normal">}</highlight></codeline>
+    </programlisting>
+    <location file="Projects/GameEngine/include/Auris/Entities/Nuggets/Material.hpp"/>
+  </compounddef>
+</doxygen>

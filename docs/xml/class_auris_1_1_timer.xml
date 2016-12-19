@@ -1,0 +1,142 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.12">
+  <compounddef id="class_auris_1_1_timer" kind="class" language="C++" prot="public">
+    <compoundname>Auris::Timer</compoundname>
+    <includes refid="_timer_8hpp" local="no">Timer.hpp</includes>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="class_auris_1_1_timer_a2ebaa8143c6a093bb8a28560e0e03c7a_1a2ebaa8143c6a093bb8a28560e0e03c7a" prot="private" static="no" mutable="no">
+        <type>float</type>
+        <definition>float Auris::Timer::currentTime</definition>
+        <argsstring></argsstring>
+        <name>currentTime</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>A float value: currentTime. The current time of the timer. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Projects/GameEngine/include/Auris/Utilities/Timer.hpp" line="13" column="1" bodyfile="Projects/GameEngine/include/Auris/Utilities/Timer.hpp" bodystart="13" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_auris_1_1_timer_a610a1f185154e3e8b23e7a473fad550d_1a610a1f185154e3e8b23e7a473fad550d" prot="private" static="no" mutable="no">
+        <type>float</type>
+        <definition>float Auris::Timer::endTime</definition>
+        <argsstring></argsstring>
+        <name>endTime</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>A float value: endTime. The end time of the timer. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Projects/GameEngine/include/Auris/Utilities/Timer.hpp" line="14" column="1" bodyfile="Projects/GameEngine/include/Auris/Utilities/Timer.hpp" bodystart="14" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_auris_1_1_timer_abcb00fe42d4314145ff4884c598cbf29_1abcb00fe42d4314145ff4884c598cbf29" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void Auris::Timer::reset</definition>
+        <argsstring>()</argsstring>
+        <name>reset</name>
+        <briefdescription>
+<para>A reset method. </para>        </briefdescription>
+        <detaileddescription>
+<para>Reset the current timer back to 0. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Projects/GameEngine/include/Auris/Utilities/Timer.hpp" line="22" column="1" bodyfile="Projects/GameEngine/include/Auris/Utilities/Timer.hpp" bodystart="22" bodyend="24"/>
+      </memberdef>
+      <memberdef kind="function" id="class_auris_1_1_timer_a1d18ada87b0a16128f2642ff2c7edf2e_1a1d18ada87b0a16128f2642ff2c7edf2e" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void Auris::Timer::start</definition>
+        <argsstring>(float time)</argsstring>
+        <name>start</name>
+        <param>
+          <type>float</type>
+          <declname>time</declname>
+        </param>
+        <briefdescription>
+<para>A start method, taking 1 argument. </para>        </briefdescription>
+        <detaileddescription>
+<para>Start the timer, with the value inputted <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>time</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>a float value. The time, the timer should go to. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Projects/GameEngine/include/Auris/Utilities/Timer.hpp" line="31" column="1" bodyfile="Projects/GameEngine/include/Auris/Utilities/Timer.hpp" bodystart="31" bodyend="34"/>
+      </memberdef>
+      <memberdef kind="function" id="class_auris_1_1_timer_a1f11e1fac311acff3d491705810e554d_1a1f11e1fac311acff3d491705810e554d" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool Auris::Timer::time</definition>
+        <argsstring>()</argsstring>
+        <name>time</name>
+        <briefdescription>
+<para>A time method. </para>        </briefdescription>
+        <detaileddescription>
+<para>Alerts if the timer has passed! <simplesect kind="return"><para>bool. If the timer has passed or not. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Projects/GameEngine/include/Auris/Utilities/Timer.hpp" line="41" column="1" bodyfile="Projects/GameEngine/include/Auris/Utilities/Timer.hpp" bodystart="41" bodyend="47"/>
+      </memberdef>
+      <memberdef kind="function" id="class_auris_1_1_timer_af77546d67e7b6ea6aacef2c0ae2424b3_1af77546d67e7b6ea6aacef2c0ae2424b3" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void Auris::Timer::update</definition>
+        <argsstring>(float dt)</argsstring>
+        <name>update</name>
+        <param>
+          <type>float</type>
+          <declname>dt</declname>
+        </param>
+        <briefdescription>
+<para>An update method, taking 1 argument. </para>        </briefdescription>
+        <detaileddescription>
+<para>Updates the timer <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>dt</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>a float value. The delta time in seconds. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Projects/GameEngine/include/Auris/Utilities/Timer.hpp" line="53" column="1" bodyfile="Projects/GameEngine/include/Auris/Utilities/Timer.hpp" bodystart="53" bodyend="55"/>
+      </memberdef>
+      <memberdef kind="function" id="class_auris_1_1_timer_a174ee1e4cfecb34dfa40bb4677010c2b_1a174ee1e4cfecb34dfa40bb4677010c2b" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>int</type>
+        <definition>int Auris::Timer::getCurrentTime</definition>
+        <argsstring>()</argsstring>
+        <name>getCurrentTime</name>
+        <briefdescription>
+<para>A getCurrentTime method. </para>        </briefdescription>
+        <detaileddescription>
+<para>A method to get the current time in the timer. <simplesect kind="return"><para>int. The current time. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Projects/GameEngine/include/Auris/Utilities/Timer.hpp" line="61" column="1" bodyfile="Projects/GameEngine/include/Auris/Utilities/Timer.hpp" bodystart="61" bodyend="63"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>The <ref refid="class_auris_1_1_timer" kindref="compound">Timer</ref> class. </para>    </briefdescription>
+    <detaileddescription>
+<para>Used to make a timer, if you need it </para>    </detaileddescription>
+    <location file="Projects/GameEngine/include/Auris/Utilities/Timer.hpp" line="10" column="1" bodyfile="Projects/GameEngine/include/Auris/Utilities/Timer.hpp" bodystart="10" bodyend="64"/>
+    <listofallmembers>
+      <member refid="class_auris_1_1_timer_a2ebaa8143c6a093bb8a28560e0e03c7a_1a2ebaa8143c6a093bb8a28560e0e03c7a" prot="private" virt="non-virtual"><scope>Auris::Timer</scope><name>currentTime</name></member>
+      <member refid="class_auris_1_1_timer_a610a1f185154e3e8b23e7a473fad550d_1a610a1f185154e3e8b23e7a473fad550d" prot="private" virt="non-virtual"><scope>Auris::Timer</scope><name>endTime</name></member>
+      <member refid="class_auris_1_1_timer_a174ee1e4cfecb34dfa40bb4677010c2b_1a174ee1e4cfecb34dfa40bb4677010c2b" prot="public" virt="non-virtual"><scope>Auris::Timer</scope><name>getCurrentTime</name></member>
+      <member refid="class_auris_1_1_timer_abcb00fe42d4314145ff4884c598cbf29_1abcb00fe42d4314145ff4884c598cbf29" prot="public" virt="non-virtual"><scope>Auris::Timer</scope><name>reset</name></member>
+      <member refid="class_auris_1_1_timer_a1d18ada87b0a16128f2642ff2c7edf2e_1a1d18ada87b0a16128f2642ff2c7edf2e" prot="public" virt="non-virtual"><scope>Auris::Timer</scope><name>start</name></member>
+      <member refid="class_auris_1_1_timer_a1f11e1fac311acff3d491705810e554d_1a1f11e1fac311acff3d491705810e554d" prot="public" virt="non-virtual"><scope>Auris::Timer</scope><name>time</name></member>
+      <member refid="class_auris_1_1_timer_af77546d67e7b6ea6aacef2c0ae2424b3_1af77546d67e7b6ea6aacef2c0ae2424b3" prot="public" virt="non-virtual"><scope>Auris::Timer</scope><name>update</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

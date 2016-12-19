@@ -1,0 +1,293 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.12">
+  <compounddef id="class_auris_1_1_interpolation" kind="class" language="C++" prot="public">
+    <compoundname>Auris::Interpolation</compoundname>
+    <includes refid="_interpolation_8hpp" local="no">Interpolation.hpp</includes>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="class_auris_1_1_interpolation_a9704c9ec94fbb614d9a31b14f0bc85b2_1a9704c9ec94fbb614d9a31b14f0bc85b2" prot="public" static="no" mutable="no">
+        <type><ref refid="namespace_auris_a283c85dda8b6763292a1c3120c6b5c4f_1a283c85dda8b6763292a1c3120c6b5c4f" kindref="member">InterpolationType</ref></type>
+        <definition>InterpolationType Auris::Interpolation::interpolationType</definition>
+        <argsstring></argsstring>
+        <name>interpolationType</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>An Interpolation::InterpolationType value: interpolationType. The interpolation type. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Projects/GameEngine/include/Auris/Utilities/Interpolation.hpp" line="70" column="1" bodyfile="Projects/GameEngine/include/Auris/Utilities/Interpolation.hpp" bodystart="70" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="class_auris_1_1_interpolation_ac0356ce6f374a3d022f4bc1eb5eaf2e3_1ac0356ce6f374a3d022f4bc1eb5eaf2e3" prot="private" static="no" mutable="no">
+        <type>std::vector&lt; vec2 &gt; *</type>
+        <definition>std::vector&lt;vec2&gt;* Auris::Interpolation::points</definition>
+        <argsstring></argsstring>
+        <name>points</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>A vector of vec2 pointers: points. The points to interpolate between. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Projects/GameEngine/include/Auris/Utilities/Interpolation.hpp" line="72" column="1" bodyfile="Projects/GameEngine/include/Auris/Utilities/Interpolation.hpp" bodystart="72" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_auris_1_1_interpolation_a6e1025a9c6517d484328e5867053bc49_1a6e1025a9c6517d484328e5867053bc49" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>Auris::Interpolation::Interpolation</definition>
+        <argsstring>(std::vector&lt; vec2 &gt; *points)</argsstring>
+        <name>Interpolation</name>
+        <param>
+          <type>std::vector&lt; vec2 &gt; *</type>
+          <declname>points</declname>
+        </param>
+        <briefdescription>
+<para>The <ref refid="class_auris_1_1_interpolation" kindref="compound">Interpolation</ref> contructor, taking 1 argument. </para>        </briefdescription>
+        <detaileddescription>
+<para>Saves the points to interpolate between, and set the initial type to Linear. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>points</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>a vector of vec2 values. The points to interpolate between. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Projects/GameEngine/include/Auris/Utilities/Interpolation.hpp" line="32" column="1" bodyfile="Projects/GameEngine/include/Auris/Utilities/Interpolation.hpp" bodystart="32" bodyend="34"/>
+      </memberdef>
+      <memberdef kind="function" id="class_auris_1_1_interpolation_ae086af1e1c3596161c03ec63125d607f_1ae086af1e1c3596161c03ec63125d607f" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void Auris::Interpolation::setInterpolation</definition>
+        <argsstring>(InterpolationType i)</argsstring>
+        <name>setInterpolation</name>
+        <param>
+          <type><ref refid="namespace_auris_a283c85dda8b6763292a1c3120c6b5c4f_1a283c85dda8b6763292a1c3120c6b5c4f" kindref="member">InterpolationType</ref></type>
+          <declname>i</declname>
+        </param>
+        <briefdescription>
+<para>A setInterpolation method, taking 1 argument. </para>        </briefdescription>
+        <detaileddescription>
+<para>Set what interpolation mode should be used. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>i</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>an Interpolation::InterpolationType. The interpolation type to set. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="see"><para>Interpolation::InterpolationType </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Projects/GameEngine/include/Auris/Utilities/Interpolation.hpp" line="41" column="1" bodyfile="Projects/GameEngine/include/Auris/Utilities/Interpolation.hpp" bodystart="41" bodyend="41"/>
+      </memberdef>
+      <memberdef kind="function" id="class_auris_1_1_interpolation_abd6bb878768a12480ab064ccbef1186a_1abd6bb878768a12480ab064ccbef1186a" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="namespace_auris_a283c85dda8b6763292a1c3120c6b5c4f_1a283c85dda8b6763292a1c3120c6b5c4f" kindref="member">InterpolationType</ref></type>
+        <definition>InterpolationType Auris::Interpolation::getInterpolationType</definition>
+        <argsstring>()</argsstring>
+        <name>getInterpolationType</name>
+        <briefdescription>
+<para>A getInterpolation method. </para>        </briefdescription>
+        <detaileddescription>
+<para>Get what interpolation mode is used. <simplesect kind="return"><para>Interpolation::InterpolationType. The interpolation used. </para></simplesect>
+<simplesect kind="see"><para>Interpolation::InterpolationType </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Projects/GameEngine/include/Auris/Utilities/Interpolation.hpp" line="48" column="1" bodyfile="Projects/GameEngine/include/Auris/Utilities/Interpolation.hpp" bodystart="48" bodyend="48"/>
+      </memberdef>
+      <memberdef kind="function" id="class_auris_1_1_interpolation_ad02e8e3d94a5210fac89071e848d0f3d_1ad02e8e3d94a5210fac89071e848d0f3d" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>glm::vec2</type>
+        <definition>glm::vec2 Auris::Interpolation::interpolate</definition>
+        <argsstring>(float t)</argsstring>
+        <name>interpolate</name>
+        <param>
+          <type>float</type>
+          <declname>t</declname>
+        </param>
+        <briefdescription>
+<para>A interpolate method, taking 1 argument. </para>        </briefdescription>
+        <detaileddescription>
+<para>Interpolates, based on the Interpolation::InterpolationType <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>t</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>a float value. The time. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="see"><para>Interpolation::InterpolationType </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Projects/GameEngine/include/Auris/Utilities/Interpolation.hpp" line="55" column="1" bodyfile="Projects/GameEngine/include/Auris/Utilities/Interpolation.hpp" bodystart="55" bodyend="69"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="class_auris_1_1_interpolation_ac937e2b9a1455ded4b5454f7bcd17615_1ac937e2b9a1455ded4b5454f7bcd17615" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>glm::vec2</type>
+        <definition>glm::vec2 Auris::Interpolation::linear</definition>
+        <argsstring>(float t)</argsstring>
+        <name>linear</name>
+        <param>
+          <type>float</type>
+          <declname>t</declname>
+        </param>
+        <briefdescription>
+<para>A linear method, taking 1 argument. </para>        </briefdescription>
+        <detaileddescription>
+<para>Linear interpolation <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>t</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>a float value. The time. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="see"><para><ref refid="class_auris_1_1_interpolation_ad02e8e3d94a5210fac89071e848d0f3d_1ad02e8e3d94a5210fac89071e848d0f3d" kindref="member">interpolate()</ref> </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Projects/GameEngine/include/Auris/Utilities/Interpolation.hpp" line="79" column="1" bodyfile="Projects/GameEngine/include/Auris/Utilities/Interpolation.hpp" bodystart="79" bodyend="83"/>
+      </memberdef>
+      <memberdef kind="function" id="class_auris_1_1_interpolation_a3eb11deac5882c0c0b2c2c6d965ac392_1a3eb11deac5882c0c0b2c2c6d965ac392" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>glm::vec2</type>
+        <definition>glm::vec2 Auris::Interpolation::cubicBezier</definition>
+        <argsstring>(float t)</argsstring>
+        <name>cubicBezier</name>
+        <param>
+          <type>float</type>
+          <declname>t</declname>
+        </param>
+        <briefdescription>
+<para>A cubicBezier method, taking 1 argument. </para>        </briefdescription>
+        <detaileddescription>
+<para>Cubic Bezier interpolation <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>t</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>a float value. The time. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="see"><para><ref refid="class_auris_1_1_interpolation_ad02e8e3d94a5210fac89071e848d0f3d_1ad02e8e3d94a5210fac89071e848d0f3d" kindref="member">interpolate()</ref> </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Projects/GameEngine/include/Auris/Utilities/Interpolation.hpp" line="90" column="1" bodyfile="Projects/GameEngine/include/Auris/Utilities/Interpolation.hpp" bodystart="90" bodyend="96"/>
+      </memberdef>
+      <memberdef kind="function" id="class_auris_1_1_interpolation_ace8f39e9589dd63dd4bf74a983d0f9b9_1ace8f39e9589dd63dd4bf74a983d0f9b9" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>glm::vec2</type>
+        <definition>glm::vec2 Auris::Interpolation::hermite</definition>
+        <argsstring>(float t)</argsstring>
+        <name>hermite</name>
+        <param>
+          <type>float</type>
+          <declname>t</declname>
+        </param>
+        <briefdescription>
+<para>A hermite method, taking 1 argument. </para>        </briefdescription>
+        <detaileddescription>
+<para>Hermite interpolation <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>t</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>a float value. The time. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="see"><para><ref refid="class_auris_1_1_interpolation_ad02e8e3d94a5210fac89071e848d0f3d_1ad02e8e3d94a5210fac89071e848d0f3d" kindref="member">interpolate()</ref> </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Projects/GameEngine/include/Auris/Utilities/Interpolation.hpp" line="103" column="1" bodyfile="Projects/GameEngine/include/Auris/Utilities/Interpolation.hpp" bodystart="103" bodyend="116"/>
+      </memberdef>
+      <memberdef kind="function" id="class_auris_1_1_interpolation_af527817ab83925a78e920ef2eed871c7_1af527817ab83925a78e920ef2eed871c7" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>glm::vec2</type>
+        <definition>glm::vec2 Auris::Interpolation::catmullRom</definition>
+        <argsstring>(float t)</argsstring>
+        <name>catmullRom</name>
+        <param>
+          <type>float</type>
+          <declname>t</declname>
+        </param>
+        <briefdescription>
+<para>A catmullRom method, taking 1 argument. </para>        </briefdescription>
+        <detaileddescription>
+<para>Catmull Rom interpolation <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>t</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>a float value. The time. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="see"><para><ref refid="class_auris_1_1_interpolation_ad02e8e3d94a5210fac89071e848d0f3d_1ad02e8e3d94a5210fac89071e848d0f3d" kindref="member">interpolate()</ref> </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Projects/GameEngine/include/Auris/Utilities/Interpolation.hpp" line="123" column="1" bodyfile="Projects/GameEngine/include/Auris/Utilities/Interpolation.hpp" bodystart="123" bodyend="135"/>
+      </memberdef>
+      <memberdef kind="function" id="class_auris_1_1_interpolation_aaf33a962e7e54c2ff293de6e12e780f2_1aaf33a962e7e54c2ff293de6e12e780f2" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>glm::vec2</type>
+        <definition>glm::vec2 Auris::Interpolation::bspline</definition>
+        <argsstring>(float t)</argsstring>
+        <name>bspline</name>
+        <param>
+          <type>float</type>
+          <declname>t</declname>
+        </param>
+        <briefdescription>
+<para>A bspline method, taking 1 argument. </para>        </briefdescription>
+        <detaileddescription>
+<para>B spline interpolation <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>t</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>a float value. The time. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="see"><para><ref refid="class_auris_1_1_interpolation_ad02e8e3d94a5210fac89071e848d0f3d_1ad02e8e3d94a5210fac89071e848d0f3d" kindref="member">interpolate()</ref> </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Projects/GameEngine/include/Auris/Utilities/Interpolation.hpp" line="142" column="1" bodyfile="Projects/GameEngine/include/Auris/Utilities/Interpolation.hpp" bodystart="142" bodyend="154"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>The <ref refid="class_auris_1_1_interpolation" kindref="compound">Interpolation</ref> class. </para>    </briefdescription>
+    <detaileddescription>
+<para>Controls and have information of all interpolation in the engine </para>    </detaileddescription>
+    <collaborationgraph>
+      <node id="145">
+        <label>Auris::Interpolation</label>
+        <link refid="class_auris_1_1_interpolation"/>
+        <childnode refid="146" relation="usage">
+          <edgelabel>points</edgelabel>
+        </childnode>
+      </node>
+      <node id="146">
+        <label>std::vector&lt; vec2 &gt;</label>
+      </node>
+    </collaborationgraph>
+    <location file="Projects/GameEngine/include/Auris/Utilities/Interpolation.hpp" line="25" column="1" bodyfile="Projects/GameEngine/include/Auris/Utilities/Interpolation.hpp" bodystart="25" bodyend="155"/>
+    <listofallmembers>
+      <member refid="class_auris_1_1_interpolation_aaf33a962e7e54c2ff293de6e12e780f2_1aaf33a962e7e54c2ff293de6e12e780f2" prot="private" virt="non-virtual"><scope>Auris::Interpolation</scope><name>bspline</name></member>
+      <member refid="class_auris_1_1_interpolation_af527817ab83925a78e920ef2eed871c7_1af527817ab83925a78e920ef2eed871c7" prot="private" virt="non-virtual"><scope>Auris::Interpolation</scope><name>catmullRom</name></member>
+      <member refid="class_auris_1_1_interpolation_a3eb11deac5882c0c0b2c2c6d965ac392_1a3eb11deac5882c0c0b2c2c6d965ac392" prot="private" virt="non-virtual"><scope>Auris::Interpolation</scope><name>cubicBezier</name></member>
+      <member refid="class_auris_1_1_interpolation_abd6bb878768a12480ab064ccbef1186a_1abd6bb878768a12480ab064ccbef1186a" prot="public" virt="non-virtual"><scope>Auris::Interpolation</scope><name>getInterpolationType</name></member>
+      <member refid="class_auris_1_1_interpolation_ace8f39e9589dd63dd4bf74a983d0f9b9_1ace8f39e9589dd63dd4bf74a983d0f9b9" prot="private" virt="non-virtual"><scope>Auris::Interpolation</scope><name>hermite</name></member>
+      <member refid="class_auris_1_1_interpolation_ad02e8e3d94a5210fac89071e848d0f3d_1ad02e8e3d94a5210fac89071e848d0f3d" prot="public" virt="non-virtual"><scope>Auris::Interpolation</scope><name>interpolate</name></member>
+      <member refid="class_auris_1_1_interpolation_a6e1025a9c6517d484328e5867053bc49_1a6e1025a9c6517d484328e5867053bc49" prot="public" virt="non-virtual"><scope>Auris::Interpolation</scope><name>Interpolation</name></member>
+      <member refid="class_auris_1_1_interpolation_a9704c9ec94fbb614d9a31b14f0bc85b2_1a9704c9ec94fbb614d9a31b14f0bc85b2" prot="public" virt="non-virtual"><scope>Auris::Interpolation</scope><name>interpolationType</name></member>
+      <member refid="class_auris_1_1_interpolation_ac937e2b9a1455ded4b5454f7bcd17615_1ac937e2b9a1455ded4b5454f7bcd17615" prot="private" virt="non-virtual"><scope>Auris::Interpolation</scope><name>linear</name></member>
+      <member refid="class_auris_1_1_interpolation_ac0356ce6f374a3d022f4bc1eb5eaf2e3_1ac0356ce6f374a3d022f4bc1eb5eaf2e3" prot="private" virt="non-virtual"><scope>Auris::Interpolation</scope><name>points</name></member>
+      <member refid="class_auris_1_1_interpolation_ae086af1e1c3596161c03ec63125d607f_1ae086af1e1c3596161c03ec63125d607f" prot="public" virt="non-virtual"><scope>Auris::Interpolation</scope><name>setInterpolation</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

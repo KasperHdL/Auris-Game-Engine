@@ -1,0 +1,146 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.12">
+  <compounddef id="_light_8cpp" kind="file" language="C++">
+    <compoundname>Light.cpp</compoundname>
+    <includes refid="_light_8hpp" local="yes">Auris/Entities/Light.hpp</includes>
+    <incdepgraph>
+      <node id="120">
+        <label>Auris/Constants.hpp</label>
+        <link refid="_constants_8hpp"/>
+      </node>
+      <node id="130">
+        <label>SDL.h</label>
+      </node>
+      <node id="125">
+        <label>SRE/Debug.hpp</label>
+      </node>
+      <node id="116">
+        <label>Auris/Entities/Light.hpp</label>
+        <link refid="_light_8hpp"/>
+        <childnode refid="117" relation="include">
+        </childnode>
+        <childnode refid="128" relation="include">
+        </childnode>
+        <childnode refid="129" relation="include">
+        </childnode>
+        <childnode refid="120" relation="include">
+        </childnode>
+        <childnode refid="121" relation="include">
+        </childnode>
+      </node>
+      <node id="126">
+        <label>string</label>
+      </node>
+      <node id="122">
+        <label>glm/gtx/euler_angles.hpp</label>
+      </node>
+      <node id="131">
+        <label>map</label>
+      </node>
+      <node id="124">
+        <label>SRE/imgui_sre.hpp</label>
+      </node>
+      <node id="129">
+        <label>Auris/Systems/Input.hpp</label>
+        <link refid="_input_8hpp"/>
+        <childnode refid="130" relation="include">
+        </childnode>
+        <childnode refid="131" relation="include">
+        </childnode>
+        <childnode refid="124" relation="include">
+        </childnode>
+        <childnode refid="127" relation="include">
+        </childnode>
+        <childnode refid="121" relation="include">
+        </childnode>
+      </node>
+      <node id="127">
+        <label>vector</label>
+      </node>
+      <node id="117">
+        <label>Auris/Entity.hpp</label>
+        <link refid="_entity_8hpp"/>
+        <childnode refid="118" relation="include">
+        </childnode>
+        <childnode refid="124" relation="include">
+        </childnode>
+        <childnode refid="125" relation="include">
+        </childnode>
+        <childnode refid="126" relation="include">
+        </childnode>
+        <childnode refid="127" relation="include">
+        </childnode>
+        <childnode refid="121" relation="include">
+        </childnode>
+      </node>
+      <node id="123">
+        <label>glm/gtc/matrix_transform.hpp</label>
+      </node>
+      <node id="119">
+        <label>Auris/Entities/Nugget.hpp</label>
+        <link refid="_nugget_8hpp"/>
+      </node>
+      <node id="118">
+        <label>Auris/Entities/Nuggets/Transform.hpp</label>
+        <link refid="_transform_8hpp"/>
+        <childnode refid="119" relation="include">
+        </childnode>
+        <childnode refid="120" relation="include">
+        </childnode>
+        <childnode refid="121" relation="include">
+        </childnode>
+        <childnode refid="122" relation="include">
+        </childnode>
+        <childnode refid="123" relation="include">
+        </childnode>
+      </node>
+      <node id="115">
+        <label>Projects/GameEngine/Auris/src/Auris/Entities/Light.cpp</label>
+        <link refid="_light_8cpp"/>
+        <childnode refid="116" relation="include">
+        </childnode>
+      </node>
+      <node id="128">
+        <label>SRE/SimpleRenderEngine.hpp</label>
+      </node>
+      <node id="121">
+        <label>glm/glm.hpp</label>
+      </node>
+    </incdepgraph>
+    <innernamespace refid="namespace_auris">Auris</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#include<sp/>&quot;<ref refid="_light_8hpp" kindref="compound">Auris/Entities/Light.hpp</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespace_auris" kindref="compound">Auris</ref>{</highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="class_auris_1_1_light_a292f5384a1c147ca91c8527c0a07d7e7_1a292f5384a1c147ca91c8527c0a07d7e7" kindref="member">Light::lightCount</ref><sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight></codeline>
+<codeline lineno="6" refid="class_auris_1_1_light_aac06b337febf59a402541ada7cd50402_1aac06b337febf59a402541ada7cd50402" refkind="member"><highlight class="normal"><ref refid="class_auris_1_1_light_aac06b337febf59a402541ada7cd50402_1aac06b337febf59a402541ada7cd50402" kindref="member">Light::Light</ref>(vec2<sp/>position,<sp/><ref refid="class_auris_1_1_light_ab6c8c1b7b2f39af91f666a75f046a431_1ab6c8c1b7b2f39af91f666a75f046a431" kindref="member">Type</ref><sp/>lightType,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>lightNum):<ref refid="class_auris_1_1_entity" kindref="compound">Entity</ref>(){</highlight></codeline>
+<codeline lineno="7"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(lightNum<sp/>&lt;<sp/>0<sp/>||<sp/>lightNum<sp/>&gt;<sp/>3)</highlight></codeline>
+<codeline lineno="8"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>this-&gt;lightNum<sp/>=<sp/><ref refid="class_auris_1_1_light_a292f5384a1c147ca91c8527c0a07d7e7_1a292f5384a1c147ca91c8527c0a07d7e7" kindref="member">lightCount</ref><sp/>%<sp/>4;</highlight></codeline>
+<codeline lineno="9"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>this-&gt;lightNum<sp/>=<sp/><ref refid="class_auris_1_1_light_af3367f08d55a216b65463fb8970851f8_1af3367f08d55a216b65463fb8970851f8" kindref="member">lightNum</ref>;</highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_auris_1_1_entity_ad87e74abaab08d178904f82aa13c866c_1ad87e74abaab08d178904f82aa13c866c" kindref="member">name</ref><sp/>=<sp/></highlight><highlight class="stringliteral">&quot;Light<sp/>&quot;</highlight><highlight class="normal"><sp/>+<sp/>std::to_string(<ref refid="class_auris_1_1_light_a292f5384a1c147ca91c8527c0a07d7e7_1a292f5384a1c147ca91c8527c0a07d7e7" kindref="member">lightCount</ref>);</highlight></codeline>
+<codeline lineno="13"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_auris_1_1_entity_a3d1c31d342f6a5ae9ccd4f81503c7876_1a3d1c31d342f6a5ae9ccd4f81503c7876" kindref="member">type</ref><sp/>=<sp/></highlight><highlight class="stringliteral">&quot;Light&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_auris_1_1_light_a292f5384a1c147ca91c8527c0a07d7e7_1a292f5384a1c147ca91c8527c0a07d7e7" kindref="member">lightCount</ref><sp/>=<sp/>++<ref refid="class_auris_1_1_light_a292f5384a1c147ca91c8527c0a07d7e7_1a292f5384a1c147ca91c8527c0a07d7e7" kindref="member">lightCount</ref>;</highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_auris_1_1_entity_a1c0579dbb2753589668621bd3e3c187b_1a1c0579dbb2753589668621bd3e3c187b" kindref="member">transform</ref>-&gt;<ref refid="class_auris_1_1_transform_a5b53f8e89541daaade4923cc9b91d0cd_1a5b53f8e89541daaade4923cc9b91d0cd" kindref="member">setPosition</ref>(position);</highlight></codeline>
+<codeline lineno="18"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_auris_1_1_light_a230cfb13b002fd3cdd22e1c0f7a2ffb8_1a230cfb13b002fd3cdd22e1c0f7a2ffb8" kindref="member">globalPosition</ref><sp/>=<sp/><ref refid="class_auris_1_1_entity_a1c0579dbb2753589668621bd3e3c187b_1a1c0579dbb2753589668621bd3e3c187b" kindref="member">transform</ref>-&gt;<ref refid="class_auris_1_1_transform_ad90a1b7dfc003b686f1570ebfae0a6e8_1ad90a1b7dfc003b686f1570ebfae0a6e8" kindref="member">getGlobalPosition</ref>();</highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight></codeline>
+<codeline lineno="20"><highlight class="normal"><sp/><sp/><sp/><sp/>this-&gt;lightType<sp/>=<sp/><ref refid="class_auris_1_1_light_a8b02097be824066f61c7a120c875b6ca_1a8b02097be824066f61c7a120c875b6ca" kindref="member">lightType</ref>;</highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight></codeline>
+<codeline lineno="22"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_auris_1_1_light_a3539b3f4f273f10e1d1ede00877bed10_1a3539b3f4f273f10e1d1ede00877bed10" kindref="member">direction</ref><sp/>=<sp/>vec3(0);</highlight></codeline>
+<codeline lineno="23"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_auris_1_1_light_a8a1068019b9835fd1c3046d7f9a6df10_1a8a1068019b9835fd1c3046d7f9a6df10" kindref="member">color</ref><sp/>=<sp/>vec3(1);</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_auris_1_1_light_a9e6e88f02c3e4f2dcaabc598a767a307_1a9e6e88f02c3e4f2dcaabc598a767a307" kindref="member">range</ref><sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="25"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight></codeline>
+<codeline lineno="27"><highlight class="normal">}</highlight></codeline>
+    </programlisting>
+    <location file="Projects/GameEngine/Auris/src/Auris/Entities/Light.cpp"/>
+  </compounddef>
+</doxygen>

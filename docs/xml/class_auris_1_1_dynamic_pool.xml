@@ -1,0 +1,252 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.12">
+  <compounddef id="class_auris_1_1_dynamic_pool" kind="class" language="C++" prot="public">
+    <compoundname>Auris::DynamicPool</compoundname>
+    <includes refid="_dynamic_pool_8hpp" local="no">DynamicPool.hpp</includes>
+    <templateparamlist>
+      <param>
+        <type>class</type>
+        <declname>T</declname>
+        <defname>T</defname>
+      </param>
+    </templateparamlist>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="class_auris_1_1_dynamic_pool_a7ea7612537519d9cfada25cf83950a1f_1a7ea7612537519d9cfada25cf83950a1f" prot="private" static="no" mutable="no">
+        <type>size_t</type>
+        <definition>size_t Auris::DynamicPool&lt; T &gt;::objectSize</definition>
+        <argsstring></argsstring>
+        <name>objectSize</name>
+        <initializer>= sizeof(T)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>A size_t value: objectSize. The size of the object. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Projects/GameEngine/include/Auris/Utilities/DynamicPool.hpp" line="13" column="1" bodyfile="Projects/GameEngine/include/Auris/Utilities/DynamicPool.hpp" bodystart="13" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_auris_1_1_dynamic_pool_a839bdb0b4f5dbd9254393456114c8246_1a839bdb0b4f5dbd9254393456114c8246" prot="private" static="no" mutable="no">
+        <type>std::vector&lt; <ref refid="class_auris_1_1_pool" kindref="compound">Pool</ref>&lt; T &gt; * &gt;</type>
+        <definition>std::vector&lt;Pool&lt;T&gt;*&gt; Auris::DynamicPool&lt; T &gt;::pools</definition>
+        <argsstring></argsstring>
+        <name>pools</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Projects/GameEngine/include/Auris/Utilities/DynamicPool.hpp" line="14" column="1" bodyfile="Projects/GameEngine/include/Auris/Utilities/DynamicPool.hpp" bodystart="14" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_auris_1_1_dynamic_pool_ad848f1d97bd2038f410993757b94171a_1ad848f1d97bd2038f410993757b94171a" prot="private" static="no" mutable="no">
+        <type>std::vector&lt; bool &gt;</type>
+        <definition>std::vector&lt;bool&gt; Auris::DynamicPool&lt; T &gt;::poolsFull</definition>
+        <argsstring></argsstring>
+        <name>poolsFull</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Projects/GameEngine/include/Auris/Utilities/DynamicPool.hpp" line="15" column="1" bodyfile="Projects/GameEngine/include/Auris/Utilities/DynamicPool.hpp" bodystart="15" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="class_auris_1_1_dynamic_pool_a8ac09bd12032879b76a2e97da091829d_1a8ac09bd12032879b76a2e97da091829d" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int Auris::DynamicPool&lt; T &gt;::count</definition>
+        <argsstring></argsstring>
+        <name>count</name>
+        <initializer>= 0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>An int value: count. The number of objects in the dynamic pool. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Projects/GameEngine/include/Auris/Utilities/DynamicPool.hpp" line="27" column="1" bodyfile="Projects/GameEngine/include/Auris/Utilities/DynamicPool.hpp" bodystart="27" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_auris_1_1_dynamic_pool_a18034e619330493ecf5d9f6ec10febda_1a18034e619330493ecf5d9f6ec10febda" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int Auris::DynamicPool&lt; T &gt;::poolCapacity</definition>
+        <argsstring></argsstring>
+        <name>poolCapacity</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>An int value: poolCapacity. The capacity of the pool. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Projects/GameEngine/include/Auris/Utilities/DynamicPool.hpp" line="28" column="1" bodyfile="Projects/GameEngine/include/Auris/Utilities/DynamicPool.hpp" bodystart="28" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_auris_1_1_dynamic_pool_ab5549b8a5174f492ad4e1fb2c62128eb_1ab5549b8a5174f492ad4e1fb2c62128eb" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int Auris::DynamicPool&lt; T &gt;::capacity</definition>
+        <argsstring></argsstring>
+        <name>capacity</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>An int value: capacity. The capacity of the dynamicpool. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Projects/GameEngine/include/Auris/Utilities/DynamicPool.hpp" line="29" column="1" bodyfile="Projects/GameEngine/include/Auris/Utilities/DynamicPool.hpp" bodystart="29" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="class_auris_1_1_dynamic_pool_ac816c3fe7b1c5ca35aeff25f43355ce8_1ac816c3fe7b1c5ca35aeff25f43355ce8" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void Auris::DynamicPool&lt; T &gt;::createPool</definition>
+        <argsstring>()</argsstring>
+        <name>createPool</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Projects/GameEngine/include/Auris/Utilities/DynamicPool.hpp" line="17" column="1" bodyfile="Projects/GameEngine/include/Auris/Utilities/DynamicPool.hpp" bodystart="17" bodyend="23"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_auris_1_1_dynamic_pool_aaa696d1fc624643c706ae4fbc627b930_1aaa696d1fc624643c706ae4fbc627b930" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>Auris::DynamicPool&lt; T &gt;::DynamicPool</definition>
+        <argsstring>()</argsstring>
+        <name>DynamicPool</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Projects/GameEngine/include/Auris/Utilities/DynamicPool.hpp" line="31" column="1" bodyfile="Projects/GameEngine/include/Auris/Utilities/DynamicPool.hpp" bodystart="31" bodyend="31"/>
+      </memberdef>
+      <memberdef kind="function" id="class_auris_1_1_dynamic_pool_a2a04099b78beadf9226f04beb76d3e64_1a2a04099b78beadf9226f04beb76d3e64" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>Auris::DynamicPool&lt; T &gt;::DynamicPool</definition>
+        <argsstring>(int poolCapacity, int numPoolsReserved=1)</argsstring>
+        <name>DynamicPool</name>
+        <param>
+          <type>int</type>
+          <declname>poolCapacity</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>numPoolsReserved</declname>
+          <defval>1</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Projects/GameEngine/include/Auris/Utilities/DynamicPool.hpp" line="33" column="1" bodyfile="Projects/GameEngine/include/Auris/Utilities/DynamicPool.hpp" bodystart="33" bodyend="38"/>
+      </memberdef>
+      <memberdef kind="function" id="class_auris_1_1_dynamic_pool_aef5ac89c86b8143547193394fe787e67_1aef5ac89c86b8143547193394fe787e67" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>T *</type>
+        <definition>T* Auris::DynamicPool&lt; T &gt;::operator[]</definition>
+        <argsstring>(std::size_t index)</argsstring>
+        <name>operator[]</name>
+        <param>
+          <type>std::size_t</type>
+          <declname>index</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Projects/GameEngine/include/Auris/Utilities/DynamicPool.hpp" line="41" column="1" bodyfile="Projects/GameEngine/include/Auris/Utilities/DynamicPool.hpp" bodystart="41" bodyend="46"/>
+      </memberdef>
+      <memberdef kind="function" id="class_auris_1_1_dynamic_pool_a429ac5b049fbe8e246ab0cb491fa5f6c_1a429ac5b049fbe8e246ab0cb491fa5f6c" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>T *</type>
+        <definition>T* Auris::DynamicPool&lt; T &gt;::create</definition>
+        <argsstring>()</argsstring>
+        <name>create</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Projects/GameEngine/include/Auris/Utilities/DynamicPool.hpp" line="48" column="1" bodyfile="Projects/GameEngine/include/Auris/Utilities/DynamicPool.hpp" bodystart="48" bodyend="65"/>
+      </memberdef>
+      <memberdef kind="function" id="class_auris_1_1_dynamic_pool_a89608815c54eda08be1abd5a6da0134c_1a89608815c54eda08be1abd5a6da0134c" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void Auris::DynamicPool&lt; T &gt;::remove</definition>
+        <argsstring>(T *ptr)</argsstring>
+        <name>remove</name>
+        <param>
+          <type>T *</type>
+          <declname>ptr</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Projects/GameEngine/include/Auris/Utilities/DynamicPool.hpp" line="67" column="1" bodyfile="Projects/GameEngine/include/Auris/Utilities/DynamicPool.hpp" bodystart="67" bodyend="76"/>
+      </memberdef>
+      <memberdef kind="function" id="class_auris_1_1_dynamic_pool_acd329f2e6e09038ed3800a6fa6d8cd07_1acd329f2e6e09038ed3800a6fa6d8cd07" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void Auris::DynamicPool&lt; T &gt;::remove</definition>
+        <argsstring>(int index)</argsstring>
+        <name>remove</name>
+        <param>
+          <type>int</type>
+          <declname>index</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Projects/GameEngine/include/Auris/Utilities/DynamicPool.hpp" line="78" column="1" bodyfile="Projects/GameEngine/include/Auris/Utilities/DynamicPool.hpp" bodystart="78" bodyend="90"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>The Dynamic <ref refid="class_auris_1_1_pool" kindref="compound">Pool</ref> class that is a templete class. </para>    </briefdescription>
+    <detaileddescription>
+<para>Allocates memory in pools dynamically allocates new pools when one is full. </para>    </detaileddescription>
+    <collaborationgraph>
+      <node id="89">
+        <label>std::vector&lt; Auris::Pool&lt; T &gt; *&gt;</label>
+      </node>
+      <node id="88">
+        <label>Auris::DynamicPool&lt; T &gt;</label>
+        <link refid="class_auris_1_1_dynamic_pool"/>
+        <childnode refid="89" relation="usage">
+          <edgelabel>pools</edgelabel>
+        </childnode>
+        <childnode refid="90" relation="usage">
+          <edgelabel>poolsFull</edgelabel>
+        </childnode>
+      </node>
+      <node id="90">
+        <label>std::vector&lt; bool &gt;</label>
+      </node>
+    </collaborationgraph>
+    <location file="Projects/GameEngine/include/Auris/Utilities/DynamicPool.hpp" line="11" column="1" bodyfile="Projects/GameEngine/include/Auris/Utilities/DynamicPool.hpp" bodystart="11" bodyend="92"/>
+    <listofallmembers>
+      <member refid="class_auris_1_1_dynamic_pool_ab5549b8a5174f492ad4e1fb2c62128eb_1ab5549b8a5174f492ad4e1fb2c62128eb" prot="public" virt="non-virtual"><scope>Auris::DynamicPool</scope><name>capacity</name></member>
+      <member refid="class_auris_1_1_dynamic_pool_a8ac09bd12032879b76a2e97da091829d_1a8ac09bd12032879b76a2e97da091829d" prot="public" virt="non-virtual"><scope>Auris::DynamicPool</scope><name>count</name></member>
+      <member refid="class_auris_1_1_dynamic_pool_a429ac5b049fbe8e246ab0cb491fa5f6c_1a429ac5b049fbe8e246ab0cb491fa5f6c" prot="public" virt="non-virtual"><scope>Auris::DynamicPool</scope><name>create</name></member>
+      <member refid="class_auris_1_1_dynamic_pool_ac816c3fe7b1c5ca35aeff25f43355ce8_1ac816c3fe7b1c5ca35aeff25f43355ce8" prot="private" virt="non-virtual"><scope>Auris::DynamicPool</scope><name>createPool</name></member>
+      <member refid="class_auris_1_1_dynamic_pool_aaa696d1fc624643c706ae4fbc627b930_1aaa696d1fc624643c706ae4fbc627b930" prot="public" virt="non-virtual"><scope>Auris::DynamicPool</scope><name>DynamicPool</name></member>
+      <member refid="class_auris_1_1_dynamic_pool_a2a04099b78beadf9226f04beb76d3e64_1a2a04099b78beadf9226f04beb76d3e64" prot="public" virt="non-virtual"><scope>Auris::DynamicPool</scope><name>DynamicPool</name></member>
+      <member refid="class_auris_1_1_dynamic_pool_a7ea7612537519d9cfada25cf83950a1f_1a7ea7612537519d9cfada25cf83950a1f" prot="private" virt="non-virtual"><scope>Auris::DynamicPool</scope><name>objectSize</name></member>
+      <member refid="class_auris_1_1_dynamic_pool_aef5ac89c86b8143547193394fe787e67_1aef5ac89c86b8143547193394fe787e67" prot="public" virt="non-virtual"><scope>Auris::DynamicPool</scope><name>operator[]</name></member>
+      <member refid="class_auris_1_1_dynamic_pool_a18034e619330493ecf5d9f6ec10febda_1a18034e619330493ecf5d9f6ec10febda" prot="public" virt="non-virtual"><scope>Auris::DynamicPool</scope><name>poolCapacity</name></member>
+      <member refid="class_auris_1_1_dynamic_pool_a839bdb0b4f5dbd9254393456114c8246_1a839bdb0b4f5dbd9254393456114c8246" prot="private" virt="non-virtual"><scope>Auris::DynamicPool</scope><name>pools</name></member>
+      <member refid="class_auris_1_1_dynamic_pool_ad848f1d97bd2038f410993757b94171a_1ad848f1d97bd2038f410993757b94171a" prot="private" virt="non-virtual"><scope>Auris::DynamicPool</scope><name>poolsFull</name></member>
+      <member refid="class_auris_1_1_dynamic_pool_a89608815c54eda08be1abd5a6da0134c_1a89608815c54eda08be1abd5a6da0134c" prot="public" virt="non-virtual"><scope>Auris::DynamicPool</scope><name>remove</name></member>
+      <member refid="class_auris_1_1_dynamic_pool_acd329f2e6e09038ed3800a6fa6d8cd07_1acd329f2e6e09038ed3800a6fa6d8cd07" prot="public" virt="non-virtual"><scope>Auris::DynamicPool</scope><name>remove</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

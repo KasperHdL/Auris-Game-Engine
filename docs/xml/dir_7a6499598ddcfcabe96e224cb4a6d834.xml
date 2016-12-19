@@ -1,0 +1,12 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.12">
+  <compounddef id="dir_7a6499598ddcfcabe96e224cb4a6d834" kind="dir">
+    <compoundname>Projects</compoundname>
+    <innerdir refid="dir_3cea731025ba02b2935e5e15a527eb69">Projects/GameEngine</innerdir>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="Projects/"/>
+  </compounddef>
+</doxygen>

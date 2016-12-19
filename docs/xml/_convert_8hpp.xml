@@ -1,0 +1,133 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.12">
+  <compounddef id="_convert_8hpp" kind="file" language="C++">
+    <compoundname>Convert.hpp</compoundname>
+    <includes local="yes">glm/glm.hpp</includes>
+    <includes local="yes">Box2D/Box2D.h</includes>
+    <includedby refid="_engine_8hpp" local="yes">Projects/GameEngine/include/Auris/Engine.hpp</includedby>
+    <includedby refid="_physics_entity_8hpp" local="yes">Projects/GameEngine/include/Auris/Entities/PhysicsEntity.hpp</includedby>
+    <incdepgraph>
+      <node id="1338">
+        <label>Projects/GameEngine/include/Auris/Utilities/Convert.hpp</label>
+        <link refid="_convert_8hpp"/>
+        <childnode refid="1339" relation="include">
+        </childnode>
+        <childnode refid="1340" relation="include">
+        </childnode>
+      </node>
+      <node id="1340">
+        <label>Box2D/Box2D.h</label>
+      </node>
+      <node id="1339">
+        <label>glm/glm.hpp</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="1341">
+        <label>Projects/GameEngine/include/Auris/Utilities/Convert.hpp</label>
+        <link refid="_convert_8hpp"/>
+        <childnode refid="1342" relation="include">
+        </childnode>
+        <childnode refid="1343" relation="include">
+        </childnode>
+      </node>
+      <node id="1346">
+        <label>Projects/GameEngine/Auris/src/Auris/Entities/PhysicsEntity.cpp</label>
+        <link refid="_physics_entity_8cpp"/>
+      </node>
+      <node id="1343">
+        <label>Projects/GameEngine/include/Auris/Entities/PhysicsEntity.hpp</label>
+        <link refid="_physics_entity_8hpp"/>
+        <childnode refid="1344" relation="include">
+        </childnode>
+        <childnode refid="1346" relation="include">
+        </childnode>
+      </node>
+      <node id="1344">
+        <label>Projects/GameEngine/include/Auris/Systems/CollisionHandler.hpp</label>
+        <link refid="_collision_handler_8hpp"/>
+        <childnode refid="1345" relation="include">
+        </childnode>
+      </node>
+      <node id="1347">
+        <label>Projects/GameEngine/include/Auris/Game.hpp</label>
+        <link refid="_game_8hpp"/>
+        <childnode refid="1342" relation="include">
+        </childnode>
+        <childnode refid="1348" relation="include">
+        </childnode>
+        <childnode refid="1349" relation="include">
+        </childnode>
+      </node>
+      <node id="1342">
+        <label>Projects/GameEngine/include/Auris/Engine.hpp</label>
+        <link refid="_engine_8hpp"/>
+        <childnode refid="1343" relation="include">
+        </childnode>
+        <childnode refid="1347" relation="include">
+        </childnode>
+        <childnode refid="1350" relation="include">
+        </childnode>
+        <childnode refid="1345" relation="include">
+        </childnode>
+      </node>
+      <node id="1350">
+        <label>Projects/GameEngine/include/Auris/Utilities/BodyStandard.hpp</label>
+        <link refid="_body_standard_8hpp"/>
+      </node>
+      <node id="1349">
+        <label>Projects/GameEngine/Auris/src/Auris/Systems/Input.cpp</label>
+        <link refid="_input_8cpp"/>
+      </node>
+      <node id="1348">
+        <label>Projects/GameEngine/Auris/src/Auris/Game.cpp</label>
+        <link refid="_game_8cpp"/>
+      </node>
+      <node id="1345">
+        <label>Projects/GameEngine/Auris/src/Auris/Engine.cpp</label>
+        <link refid="_engine_8cpp"/>
+      </node>
+    </invincdepgraph>
+    <innernamespace refid="namespace_auris">Auris</innernamespace>
+    <innernamespace refid="namespace_auris_1_1_convert">Auris::Convert</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#pragma<sp/>once</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;glm/glm.hpp&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;Box2D/Box2D.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespace_auris" kindref="compound">Auris</ref>{</highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="8"><highlight class="comment">//!<sp/>A<sp/>Convert<sp/>namespace</highlight></codeline>
+<codeline lineno="9"><highlight class="comment"></highlight><highlight class="comment"><sp/><sp/><sp/><sp/>/*!<sp/>Used<sp/>for<sp/>converting<sp/>between<sp/>glm<sp/>and<sp/>box2D</highlight></codeline>
+<codeline lineno="10"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*<sp/>vec2<sp/>to<sp/>b2Vec2<sp/>and<sp/>vice<sp/>versa</highlight></codeline>
+<codeline lineno="11"><highlight class="comment"><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="12" refid="namespace_auris_1_1_convert" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal">Convert{</highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="14"><highlight class="comment">//!<sp/>An<sp/>inline<sp/>toGlm<sp/>method,<sp/>taking<sp/>1<sp/>arguments.</highlight></codeline>
+<codeline lineno="15"><highlight class="comment"></highlight><highlight class="comment"><sp/><sp/><sp/><sp/>/*!<sp/>Converts<sp/>from<sp/>b2Vec<sp/>to<sp/>vec2</highlight></codeline>
+<codeline lineno="16"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*<sp/>\param<sp/>v<sp/>a<sp/>constant<sp/>b2Vec2<sp/>pointer.<sp/>The<sp/>b2Vec2<sp/>value<sp/>to<sp/>be<sp/>converted<sp/>to<sp/>vec2.</highlight></codeline>
+<codeline lineno="17"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*<sp/>\return<sp/>vec2.<sp/>The<sp/>vec2<sp/>that<sp/>the<sp/>b2Vec2<sp/>has<sp/>been<sp/>converted<sp/>to.</highlight></codeline>
+<codeline lineno="18"><highlight class="comment"><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="19" refid="namespace_auris_1_1_convert_aac4203b20ae9e01d44d93feb9210327e_1aac4203b20ae9e01d44d93feb9210327e" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">inline</highlight><highlight class="normal"><sp/>glm::vec2<sp/><ref refid="namespace_auris_1_1_convert_aac4203b20ae9e01d44d93feb9210327e_1aac4203b20ae9e01d44d93feb9210327e" kindref="member">toGlm</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>b2Vec2<sp/>&amp;v)<sp/>{</highlight></codeline>
+<codeline lineno="20"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>glm::vec2(v.x,<sp/>v.y);</highlight></codeline>
+<codeline lineno="21"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="23"><highlight class="comment"><sp/><sp/><sp/><sp/>//!<sp/>An<sp/>inline<sp/>toB2<sp/>method,<sp/>taking<sp/>1<sp/>arguments.</highlight></codeline>
+<codeline lineno="24"><highlight class="comment"></highlight><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>/*!<sp/>Converts<sp/>from<sp/>vec2<sp/>to<sp/>b2Vec2</highlight></codeline>
+<codeline lineno="25"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*<sp/>\param<sp/>v<sp/>a<sp/>constant<sp/>vec2<sp/>value.<sp/>The<sp/>vec2<sp/>value<sp/>to<sp/>be<sp/>converted<sp/>to<sp/>b2Vec2.</highlight></codeline>
+<codeline lineno="26"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*<sp/>\return<sp/>b2Vec2.<sp/>The<sp/>b2Vec2<sp/>that<sp/>the<sp/>vec2<sp/>has<sp/>been<sp/>converted<sp/>to.</highlight></codeline>
+<codeline lineno="27"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="28" refid="namespace_auris_1_1_convert_af926368a18838264e46dc3c29d738a68_1af926368a18838264e46dc3c29d738a68" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">inline</highlight><highlight class="normal"><sp/>b2Vec2<sp/><ref refid="namespace_auris_1_1_convert_af926368a18838264e46dc3c29d738a68_1af926368a18838264e46dc3c29d738a68" kindref="member">toB2</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>glm::vec2<sp/>v){</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>b2Vec2(v.x,v.y);</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="31"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="32"><highlight class="normal">}</highlight></codeline>
+    </programlisting>
+    <location file="Projects/GameEngine/include/Auris/Utilities/Convert.hpp"/>
+  </compounddef>
+</doxygen>

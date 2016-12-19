@@ -1,0 +1,842 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygenindex xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="index.xsd" version="1.8.12">
+  <compound refid="unionpicojson_1_1value_1_1__storage" kind="union"><name>picojson::value::_storage</name>
+    <member refid="unionpicojson_1_1value_1_1__storage_a612a1a8ceb65bdd2e8f09eb33074ba0b_1a612a1a8ceb65bdd2e8f09eb33074ba0b" kind="variable"><name>boolean_</name></member>
+    <member refid="unionpicojson_1_1value_1_1__storage_a4fc799f222c28156f943a891e510e438_1a4fc799f222c28156f943a891e510e438" kind="variable"><name>number_</name></member>
+    <member refid="unionpicojson_1_1value_1_1__storage_a9ec5aa5b86bbef81b15697c936f58736_1a9ec5aa5b86bbef81b15697c936f58736" kind="variable"><name>string_</name></member>
+    <member refid="unionpicojson_1_1value_1_1__storage_aeac6ef9328845f1f6402c35bb281990a_1aeac6ef9328845f1f6402c35bb281990a" kind="variable"><name>array_</name></member>
+    <member refid="unionpicojson_1_1value_1_1__storage_ad1feb283e78999609c7a27be95e5f4df_1ad1feb283e78999609c7a27be95e5f4df" kind="variable"><name>object_</name></member>
+  </compound>
+  <compound refid="class_auris_1_1_animation" kind="class"><name>Auris::Animation</name>
+    <member refid="class_auris_1_1_animation_a95ccaaa24a4f0c3633fef57cc40df062_1a95ccaaa24a4f0c3633fef57cc40df062" kind="variable"><name>meshes</name></member>
+    <member refid="class_auris_1_1_animation_a72063941bfd721f8d46c21799cb84abf_1a72063941bfd721f8d46c21799cb84abf" kind="variable"><name>flipped_meshes</name></member>
+    <member refid="class_auris_1_1_animation_a12184b1a8009be0427805f15311abeba_1a12184b1a8009be0427805f15311abeba" kind="variable"><name>length</name></member>
+    <member refid="class_auris_1_1_animation_a3099a4886d0a7e38d78458f5d7d3c660_1a3099a4886d0a7e38d78458f5d7d3c660" kind="variable"><name>frameLength</name></member>
+    <member refid="class_auris_1_1_animation_ad6faedcbbecb0304cc5bfbab9dd5e9f9_1ad6faedcbbecb0304cc5bfbab9dd5e9f9" kind="variable"><name>time</name></member>
+    <member refid="class_auris_1_1_animation_add78e2865a03c1717c7d6f7c7be9cae5_1add78e2865a03c1717c7d6f7c7be9cae5" kind="variable"><name>index</name></member>
+    <member refid="class_auris_1_1_animation_a401b68793d4fbf48d481c030ee4b2a16_1a401b68793d4fbf48d481c030ee4b2a16" kind="function"><name>~Animation</name></member>
+    <member refid="class_auris_1_1_animation_af7f1c934810a9bdb4fa26df7879feda9_1af7f1c934810a9bdb4fa26df7879feda9" kind="function"><name>Animation</name></member>
+    <member refid="class_auris_1_1_animation_a4810743b66354cf556113f4e7a49fc43_1a4810743b66354cf556113f4e7a49fc43" kind="function"><name>addMesh</name></member>
+    <member refid="class_auris_1_1_animation_ab1e642994bdf9a71a464f1b961bbd413_1ab1e642994bdf9a71a464f1b961bbd413" kind="function"><name>setSheet</name></member>
+    <member refid="class_auris_1_1_animation_a7378d481c386347ecf022265d3f147f5_1a7378d481c386347ecf022265d3f147f5" kind="function"><name>makeSequence</name></member>
+    <member refid="class_auris_1_1_animation_a08875cceefe6d571f2ce6456cdf5e482_1a08875cceefe6d571f2ce6456cdf5e482" kind="function"><name>run</name></member>
+  </compound>
+  <compound refid="class_auris_1_1_asset_manager" kind="class"><name>Auris::AssetManager</name>
+    <member refid="class_auris_1_1_asset_manager_ac47cbdd59e8523b07f9671b3dbafc02a_1ac47cbdd59e8523b07f9671b3dbafc02a" kind="variable"><name>textures</name></member>
+    <member refid="class_auris_1_1_asset_manager_a4000c6c36f36f65b1c482197f41428b1_1a4000c6c36f36f65b1c482197f41428b1" kind="variable"><name>spritesheets</name></member>
+    <member refid="class_auris_1_1_asset_manager_a46b740352276485cad9ba3fe45bcc883_1a46b740352276485cad9ba3fe45bcc883" kind="variable"><name>music</name></member>
+    <member refid="class_auris_1_1_asset_manager_afb15d7b3bab17597791c02bb7d821003_1afb15d7b3bab17597791c02bb7d821003" kind="variable"><name>sounds</name></member>
+    <member refid="class_auris_1_1_asset_manager_a7cfd748a5d960ef106d48be8c5c7f5fe_1a7cfd748a5d960ef106d48be8c5c7f5fe" kind="function"><name>createSheet</name></member>
+    <member refid="class_auris_1_1_asset_manager_a595b95ace9ae5f2828edf0d981af6ba5_1a595b95ace9ae5f2828edf0d981af6ba5" kind="function"><name>getTexture</name></member>
+    <member refid="class_auris_1_1_asset_manager_a74d949aa60184a06851621995586fa2a_1a74d949aa60184a06851621995586fa2a" kind="function"><name>getSpriteSheet</name></member>
+    <member refid="class_auris_1_1_asset_manager_aa417ba9bbbdf2c675e03aa51a22d5c36_1aa417ba9bbbdf2c675e03aa51a22d5c36" kind="function"><name>getSound</name></member>
+    <member refid="class_auris_1_1_asset_manager_a6401ef4abb8770223df38efc533bfcba_1a6401ef4abb8770223df38efc533bfcba" kind="function"><name>getMusic</name></member>
+    <member refid="class_auris_1_1_asset_manager_a8bde2869efc39bb0f4a0e85004780c4c_1a8bde2869efc39bb0f4a0e85004780c4c" kind="function"><name>getDataPath</name></member>
+  </compound>
+  <compound refid="class_auris_1_1_camera" kind="class"><name>Auris::Camera</name>
+    <member refid="class_auris_1_1_camera_a849bcfa7d616aff60c6b127b699d5577_1a849bcfa7d616aff60c6b127b699d5577" kind="variable"><name>cam</name></member>
+    <member refid="class_auris_1_1_camera_a219d801ff265340504729d8bcee9dda6_1a219d801ff265340504729d8bcee9dda6" kind="variable"><name>left</name></member>
+    <member refid="class_auris_1_1_camera_af2465fd360861b8450e0518ac3663d29_1af2465fd360861b8450e0518ac3663d29" kind="variable"><name>bottom</name></member>
+    <member refid="class_auris_1_1_camera_a02f938f18898dd998136a04604c6b40e_1a02f938f18898dd998136a04604c6b40e" kind="variable"><name>right</name></member>
+    <member refid="class_auris_1_1_camera_a7ce8e00aa452467d274f80ceaae6cf98_1a7ce8e00aa452467d274f80ceaae6cf98" kind="variable"><name>top</name></member>
+    <member refid="class_auris_1_1_camera_afffa68c96f86d19a7561a862fdeda141_1afffa68c96f86d19a7561a862fdeda141" kind="variable"><name>nearPlane</name></member>
+    <member refid="class_auris_1_1_camera_a63358a3f77820a9f2d7a0d2d82b5355f_1a63358a3f77820a9f2d7a0d2d82b5355f" kind="variable"><name>farPlane</name></member>
+    <member refid="class_auris_1_1_camera_a8f25fabcac83e3a7b723275c395747f8_1a8f25fabcac83e3a7b723275c395747f8" kind="variable"><name>z</name></member>
+    <member refid="class_auris_1_1_camera_ab47d622e1a3580cf91c3ed83ac3ed644_1ab47d622e1a3580cf91c3ed83ac3ed644" kind="variable"><name>up</name></member>
+    <member refid="class_auris_1_1_camera_a6dfc5e32a215929f413255a0cf852d11_1a6dfc5e32a215929f413255a0cf852d11" kind="variable"><name>pos</name></member>
+    <member refid="class_auris_1_1_camera_a806e1d73fe6e0a07b0fd85819e818792_1a806e1d73fe6e0a07b0fd85819e818792" kind="function"><name>Camera</name></member>
+    <member refid="class_auris_1_1_camera_ad1897942d0ccf91052386388a497349f_1ad1897942d0ccf91052386388a497349f" kind="function"><name>~Camera</name></member>
+    <member refid="class_auris_1_1_camera_a975ede219aed9ae4b52d4050aee37dc5_1a975ede219aed9ae4b52d4050aee37dc5" kind="function"><name>setPos</name></member>
+    <member refid="class_auris_1_1_camera_ae4a66cb62fa67199a6c34a2fec501054_1ae4a66cb62fa67199a6c34a2fec501054" kind="function"><name>getPos</name></member>
+    <member refid="class_auris_1_1_camera_a17a09a5d85ed62c92c3c17969e4b2df3_1a17a09a5d85ed62c92c3c17969e4b2df3" kind="function"><name>getWidth</name></member>
+    <member refid="class_auris_1_1_camera_a6aa244c08427100da9e8ea5b2fa88cd8_1a6aa244c08427100da9e8ea5b2fa88cd8" kind="function"><name>getHeight</name></member>
+    <member refid="class_auris_1_1_camera_a5d116ecd6cbffc7dd7642ad9b3fc2687_1a5d116ecd6cbffc7dd7642ad9b3fc2687" kind="function"><name>setRotation</name></member>
+    <member refid="class_auris_1_1_camera_a07a6e5caa5cfdb0529008a10f29fe770_1a07a6e5caa5cfdb0529008a10f29fe770" kind="function"><name>translate</name></member>
+    <member refid="class_auris_1_1_camera_aadfff4b1b00b8e0fcbbb4ea3313eef77_1aadfff4b1b00b8e0fcbbb4ea3313eef77" kind="function"><name>rotate</name></member>
+    <member refid="class_auris_1_1_camera_af11ea6aa19e613e01fe7e58e5f36da26_1af11ea6aa19e613e01fe7e58e5f36da26" kind="function"><name>zoom</name></member>
+    <member refid="class_auris_1_1_camera_aa8dab5324684dabc8c352faf88ea2d67_1aa8dab5324684dabc8c352faf88ea2d67" kind="function"><name>updateCam</name></member>
+  </compound>
+  <compound refid="class_auris_1_1_collision_handler" kind="class"><name>Auris::CollisionHandler</name>
+    <member refid="class_auris_1_1_collision_handler_a7eda9e6b5248a414562fa8826d0ce393_1a7eda9e6b5248a414562fa8826d0ce393" kind="function"><name>BeginContact</name></member>
+    <member refid="class_auris_1_1_collision_handler_a9e0c04723de162bbad63979b5f821815_1a9e0c04723de162bbad63979b5f821815" kind="function"><name>EndContact</name></member>
+  </compound>
+  <compound refid="class_auris_1_1_debug_draw" kind="class"><name>Auris::DebugDraw</name>
+    <member refid="class_auris_1_1_debug_draw_ae3827fd7865c0ebadc73a8487dbb838a_1ae3827fd7865c0ebadc73a8487dbb838a" kind="function"><name>DebugDraw</name></member>
+    <member refid="class_auris_1_1_debug_draw_ac53198cd27b6bfcde2d9fec3dcaed524_1ac53198cd27b6bfcde2d9fec3dcaed524" kind="function"><name>DrawPolygon</name></member>
+    <member refid="class_auris_1_1_debug_draw_a9a5712b341027108f3cb5372dfae6495_1a9a5712b341027108f3cb5372dfae6495" kind="function"><name>DrawSolidPolygon</name></member>
+    <member refid="class_auris_1_1_debug_draw_a6f6f5f1ff454b5574a6f7cc240dd1593_1a6f6f5f1ff454b5574a6f7cc240dd1593" kind="function"><name>DrawCircle</name></member>
+    <member refid="class_auris_1_1_debug_draw_a49d8dda48bc78a0c110cc48ae17e1613_1a49d8dda48bc78a0c110cc48ae17e1613" kind="function"><name>DrawSolidCircle</name></member>
+    <member refid="class_auris_1_1_debug_draw_a5f1da34de4ab565c172a7ca878712b8a_1a5f1da34de4ab565c172a7ca878712b8a" kind="function"><name>DrawSegment</name></member>
+    <member refid="class_auris_1_1_debug_draw_ab211401eb4ee8804fba9673e4c8a2ca5_1ab211401eb4ee8804fba9673e4c8a2ca5" kind="function"><name>DrawTransform</name></member>
+    <member refid="class_auris_1_1_debug_draw_a0f65afa0118fe89204066c4e06c52468_1a0f65afa0118fe89204066c4e06c52468" kind="function"><name>DrawPoint</name></member>
+  </compound>
+  <compound refid="class_auris_1_1_debug_u_i" kind="class"><name>Auris::DebugUI</name>
+    <member refid="class_auris_1_1_debug_u_i_aceb9f5e93258cdeca5927defefbab68f_1aceb9f5e93258cdeca5927defefbab68f" kind="enum"><name>InspectorMode</name></member>
+    <member refid="class_auris_1_1_debug_u_i_aceb9f5e93258cdeca5927defefbab68f_1aceb9f5e93258cdeca5927defefbab68fa101b3ba64ba30aeb9e7764579205e640" kind="enumvalue"><name>Closed</name></member>
+    <member refid="class_auris_1_1_debug_u_i_aceb9f5e93258cdeca5927defefbab68f_1aceb9f5e93258cdeca5927defefbab68fa41290f78ff9ee396de7a44ba034fac5d" kind="enumvalue"><name>Open</name></member>
+    <member refid="class_auris_1_1_debug_u_i_a58c81695547a6a7ec99bae32a11010d9_1a58c81695547a6a7ec99bae32a11010d9" kind="variable"><name>e</name></member>
+    <member refid="class_auris_1_1_debug_u_i_a7b1da7a9540a289eee6677e6fde4a86d_1a7b1da7a9540a289eee6677e6fde4a86d" kind="variable"><name>debugDraw</name></member>
+    <member refid="class_auris_1_1_debug_u_i_a45390cceb0347d4d5ed77bd5bf129824_1a45390cceb0347d4d5ed77bd5bf129824" kind="variable"><name>drawDebug</name></member>
+    <member refid="class_auris_1_1_debug_u_i_a4eb7e998d05f2ea711cdc954f4065369_1a4eb7e998d05f2ea711cdc954f4065369" kind="variable"><name>drawColliders</name></member>
+    <member refid="class_auris_1_1_debug_u_i_a09c27b298bbfa243227ed23a96fb489d_1a09c27b298bbfa243227ed23a96fb489d" kind="variable"><name>arrIndex</name></member>
+    <member refid="class_auris_1_1_debug_u_i_af6479419a04f630c7f11fa25039ea952_1af6479419a04f630c7f11fa25039ea952" kind="variable"><name>arr_deltaTime</name></member>
+    <member refid="class_auris_1_1_debug_u_i_ae3b3bee56cdbcb9b6da9dbfbd29f8355_1ae3b3bee56cdbcb9b6da9dbfbd29f8355" kind="variable"><name>max_deltaTime</name></member>
+    <member refid="class_auris_1_1_debug_u_i_ab6fcde9fad71baf734e2431cd7e4a6fe_1ab6fcde9fad71baf734e2431cd7e4a6fe" kind="variable"><name>arr_virtMem</name></member>
+    <member refid="class_auris_1_1_debug_u_i_af3cff3f47252c248a95d56ddc3286154_1af3cff3f47252c248a95d56ddc3286154" kind="variable"><name>max_virtMem</name></member>
+    <member refid="class_auris_1_1_debug_u_i_aed67c17d4c8eaf3ff48c9fcc9b29d2c9_1aed67c17d4c8eaf3ff48c9fcc9b29d2c9" kind="variable"><name>arr_physMem</name></member>
+    <member refid="class_auris_1_1_debug_u_i_ad10d2c2c01855cd5bc108915843b8ca2_1ad10d2c2c01855cd5bc108915843b8ca2" kind="variable"><name>max_physMem</name></member>
+    <member refid="class_auris_1_1_debug_u_i_a2e52eab3fff2ea2769288f3729983801_1a2e52eab3fff2ea2769288f3729983801" kind="variable"><name>max_renderSprites</name></member>
+    <member refid="class_auris_1_1_debug_u_i_ad7e1d304ea15aa59fb9006e9287cdce9_1ad7e1d304ea15aa59fb9006e9287cdce9" kind="variable"><name>arr_profInput</name></member>
+    <member refid="class_auris_1_1_debug_u_i_a95e0c78823ae0729fb48e3d0994f724b_1a95e0c78823ae0729fb48e3d0994f724b" kind="variable"><name>arr_profEntityUpdate</name></member>
+    <member refid="class_auris_1_1_debug_u_i_a093e769a9d5cdf5f08b8857fb75838c4_1a093e769a9d5cdf5f08b8857fb75838c4" kind="variable"><name>arr_profGEarlyUpdate</name></member>
+    <member refid="class_auris_1_1_debug_u_i_a61cdeb164873b3a71c0efa967c020771_1a61cdeb164873b3a71c0efa967c020771" kind="variable"><name>arr_profGUpdate</name></member>
+    <member refid="class_auris_1_1_debug_u_i_ae4251e8e6d4fd1913b45524034a26dbb_1ae4251e8e6d4fd1913b45524034a26dbb" kind="variable"><name>arr_profGLateUpdate</name></member>
+    <member refid="class_auris_1_1_debug_u_i_a5a1f0835bc83297339fa25fcf9fc7826_1a5a1f0835bc83297339fa25fcf9fc7826" kind="variable"><name>arr_profPhysics</name></member>
+    <member refid="class_auris_1_1_debug_u_i_aba9c23ccbcfe62ef09240c7974ce46c2_1aba9c23ccbcfe62ef09240c7974ce46c2" kind="variable"><name>arr_profUpdateTransform</name></member>
+    <member refid="class_auris_1_1_debug_u_i_a15d6c4f3fc46f2dd3f22214c753bb526_1a15d6c4f3fc46f2dd3f22214c753bb526" kind="variable"><name>arr_profRender</name></member>
+    <member refid="class_auris_1_1_debug_u_i_a7c839e346703b4017a49dfe89bded6ba_1a7c839e346703b4017a49dfe89bded6ba" kind="variable"><name>arr_profSwap</name></member>
+    <member refid="class_auris_1_1_debug_u_i_a1233513d7f7ef9f765008462bda94bd9_1a1233513d7f7ef9f765008462bda94bd9" kind="variable"><name>sum_dt</name></member>
+    <member refid="class_auris_1_1_debug_u_i_aeecf784cf0ae1d205ff3da8ebc504273_1aeecf784cf0ae1d205ff3da8ebc504273" kind="variable"><name>sum_input</name></member>
+    <member refid="class_auris_1_1_debug_u_i_a902c1ed3c3b711b78b5d507c73a403f2_1a902c1ed3c3b711b78b5d507c73a403f2" kind="variable"><name>sum_entUpdate</name></member>
+    <member refid="class_auris_1_1_debug_u_i_a803850129df8d5f398abb5d7602f208a_1a803850129df8d5f398abb5d7602f208a" kind="variable"><name>sum_gEarlyUpdate</name></member>
+    <member refid="class_auris_1_1_debug_u_i_a64fbd4096cd2e25dfd9548b89cb9a960_1a64fbd4096cd2e25dfd9548b89cb9a960" kind="variable"><name>sum_gUpdate</name></member>
+    <member refid="class_auris_1_1_debug_u_i_aa8781f655c0bc30b11a91120367ee555_1aa8781f655c0bc30b11a91120367ee555" kind="variable"><name>sum_gLateUpdate</name></member>
+    <member refid="class_auris_1_1_debug_u_i_af74206317d66b0f402f3939de864542c_1af74206317d66b0f402f3939de864542c" kind="variable"><name>sum_physics</name></member>
+    <member refid="class_auris_1_1_debug_u_i_ae4e6766094c8c2758459e950d5184b56_1ae4e6766094c8c2758459e950d5184b56" kind="variable"><name>sum_updateTransform</name></member>
+    <member refid="class_auris_1_1_debug_u_i_af9e1048ab94363915d299c44f1fc46ca_1af9e1048ab94363915d299c44f1fc46ca" kind="variable"><name>sum_render</name></member>
+    <member refid="class_auris_1_1_debug_u_i_a975fed2dc2c9111474047cc5857e51ed_1a975fed2dc2c9111474047cc5857e51ed" kind="variable"><name>sum_swap</name></member>
+    <member refid="class_auris_1_1_debug_u_i_ae9688f96126a955e716f8dcaf8cd1279_1ae9688f96126a955e716f8dcaf8cd1279" kind="variable"><name>toggle_inspector</name></member>
+    <member refid="class_auris_1_1_debug_u_i_a1634f184b1e90424aaa4b12c32d41e93_1a1634f184b1e90424aaa4b12c32d41e93" kind="variable"><name>toggle_hierarchy</name></member>
+    <member refid="class_auris_1_1_debug_u_i_adbdb5a51039324a1aa893de6a1c2288b_1adbdb5a51039324a1aa893de6a1c2288b" kind="variable"><name>entityInspectorOpen</name></member>
+    <member refid="class_auris_1_1_debug_u_i_ae744c2111e0f2b3703d45e8b4ed89a19_1ae744c2111e0f2b3703d45e8b4ed89a19" kind="variable"><name>memLeakDet</name></member>
+    <member refid="class_auris_1_1_debug_u_i_a3e1914489e4bed4f9f23cdeab34a43dc_1a3e1914489e4bed4f9f23cdeab34a43dc" kind="friend"><name>Engine</name></member>
+    <member refid="class_auris_1_1_debug_u_i_a0700f99ec77929e9307fd4cf9498f792_1a0700f99ec77929e9307fd4cf9498f792" kind="variable"><name>arrSize</name></member>
+    <member refid="class_auris_1_1_debug_u_i_a0624a417f09d2c4d4a1934ec22aa3f89_1a0624a417f09d2c4d4a1934ec22aa3f89" kind="variable"><name>entityInspectorOpenSize</name></member>
+    <member refid="class_auris_1_1_debug_u_i_a43c02e836081291f1d23e820dfc15618_1a43c02e836081291f1d23e820dfc15618" kind="variable"><name>debug_menu</name></member>
+    <member refid="class_auris_1_1_debug_u_i_a77426ccf5b80733cecfb238ab23712c0_1a77426ccf5b80733cecfb238ab23712c0" kind="variable"><name>pause</name></member>
+    <member refid="class_auris_1_1_debug_u_i_a06aa5dd04078e6dbd7bfc161ff92580a_1a06aa5dd04078e6dbd7bfc161ff92580a" kind="variable"><name>runOneStep</name></member>
+    <member refid="class_auris_1_1_debug_u_i_a589f591bab136d30e9c4c8970002134d_1a589f591bab136d30e9c4c8970002134d" kind="variable"><name>profiling</name></member>
+    <member refid="class_auris_1_1_debug_u_i_ae056825725a8f9faee62c0fd056b2511_1ae056825725a8f9faee62c0fd056b2511" kind="function"><name>DebugUI</name></member>
+    <member refid="class_auris_1_1_debug_u_i_ac02561a452b34fd3e90a05ad56bd0e77_1ac02561a452b34fd3e90a05ad56bd0e77" kind="function"><name>startup</name></member>
+    <member refid="class_auris_1_1_debug_u_i_a55721d81d07eb094846c9bfb0120a493_1a55721d81d07eb094846c9bfb0120a493" kind="function"><name>shutdown</name></member>
+    <member refid="class_auris_1_1_debug_u_i_adeca731d467806979c6ed45a6d586ab0_1adeca731d467806979c6ed45a6d586ab0" kind="function"><name>update</name></member>
+    <member refid="class_auris_1_1_debug_u_i_a5db71be46fc6df383b91b8a5f05be6c2_1a5db71be46fc6df383b91b8a5f05be6c2" kind="function"><name>draw</name></member>
+    <member refid="class_auris_1_1_debug_u_i_a93e292a3dc23de65e757b8cf74d5d14e_1a93e292a3dc23de65e757b8cf74d5d14e" kind="function"><name>enableDebug</name></member>
+  </compound>
+  <compound refid="classpicojson_1_1default__parse__context" kind="class"><name>picojson::default_parse_context</name>
+    <member refid="classpicojson_1_1default__parse__context_a89547d73da32e470068649e54646ff19_1a89547d73da32e470068649e54646ff19" kind="variable"><name>out_</name></member>
+    <member refid="classpicojson_1_1default__parse__context_ad326572abe85f9d05dc23be4cf76ff3c_1ad326572abe85f9d05dc23be4cf76ff3c" kind="function"><name>default_parse_context</name></member>
+    <member refid="classpicojson_1_1default__parse__context_a2d852ba1f0b115c89378fcb5f10580b5_1a2d852ba1f0b115c89378fcb5f10580b5" kind="function"><name>set_null</name></member>
+    <member refid="classpicojson_1_1default__parse__context_ae1935ef455fc2bed9195426cfee5713a_1ae1935ef455fc2bed9195426cfee5713a" kind="function"><name>set_bool</name></member>
+    <member refid="classpicojson_1_1default__parse__context_a9b2046a9cb6d66aad835b84ffda20b86_1a9b2046a9cb6d66aad835b84ffda20b86" kind="function"><name>set_number</name></member>
+    <member refid="classpicojson_1_1default__parse__context_a476c7d30a5cf382b48201ec64585c2f3_1a476c7d30a5cf382b48201ec64585c2f3" kind="function"><name>parse_string</name></member>
+    <member refid="classpicojson_1_1default__parse__context_a5c355f843ceacde134997f5bbbda1d23_1a5c355f843ceacde134997f5bbbda1d23" kind="function"><name>parse_array_start</name></member>
+    <member refid="classpicojson_1_1default__parse__context_a5f65224e655633b20c1f8c5967c153bb_1a5f65224e655633b20c1f8c5967c153bb" kind="function"><name>parse_array_item</name></member>
+    <member refid="classpicojson_1_1default__parse__context_aa6ac46d87d620377429438675ba9fab2_1aa6ac46d87d620377429438675ba9fab2" kind="function"><name>parse_array_stop</name></member>
+    <member refid="classpicojson_1_1default__parse__context_a54eba00b93ce4cdaf8b2acac4ef3e046_1a54eba00b93ce4cdaf8b2acac4ef3e046" kind="function"><name>parse_object_start</name></member>
+    <member refid="classpicojson_1_1default__parse__context_adf71929b098e4f4b5c32222af149655a_1adf71929b098e4f4b5c32222af149655a" kind="function"><name>parse_object_item</name></member>
+    <member refid="classpicojson_1_1default__parse__context_a3cb9b8ff9ef041406d90ef3d1b864a6d_1a3cb9b8ff9ef041406d90ef3d1b864a6d" kind="function"><name>default_parse_context</name></member>
+    <member refid="classpicojson_1_1default__parse__context_a7c756597c2cb21eafeaccdfe1b9b1eb9_1a7c756597c2cb21eafeaccdfe1b9b1eb9" kind="function"><name>operator=</name></member>
+  </compound>
+  <compound refid="classpicojson_1_1deny__parse__context" kind="class"><name>picojson::deny_parse_context</name>
+    <member refid="classpicojson_1_1deny__parse__context_abadde692be9f70942cb31799292c2ad9_1abadde692be9f70942cb31799292c2ad9" kind="function"><name>set_null</name></member>
+    <member refid="classpicojson_1_1deny__parse__context_afc6a05e76120dd884da1ec4c8964f7b5_1afc6a05e76120dd884da1ec4c8964f7b5" kind="function"><name>set_bool</name></member>
+    <member refid="classpicojson_1_1deny__parse__context_aec324fbb7fea546b6e0673724873e1e1_1aec324fbb7fea546b6e0673724873e1e1" kind="function"><name>set_number</name></member>
+    <member refid="classpicojson_1_1deny__parse__context_a2000b3dcc1fb70a4c795e834f9d3122f_1a2000b3dcc1fb70a4c795e834f9d3122f" kind="function"><name>parse_string</name></member>
+    <member refid="classpicojson_1_1deny__parse__context_afbe65c8c2b2ada93595587432189d20f_1afbe65c8c2b2ada93595587432189d20f" kind="function"><name>parse_array_start</name></member>
+    <member refid="classpicojson_1_1deny__parse__context_ae15be8ad932ec02751870e962e9d34bf_1ae15be8ad932ec02751870e962e9d34bf" kind="function"><name>parse_array_item</name></member>
+    <member refid="classpicojson_1_1deny__parse__context_ab284d5b0ee0e8df122d7e842a8d8e0b9_1ab284d5b0ee0e8df122d7e842a8d8e0b9" kind="function"><name>parse_array_stop</name></member>
+    <member refid="classpicojson_1_1deny__parse__context_a344343a42dca7a25057e35077e517fbf_1a344343a42dca7a25057e35077e517fbf" kind="function"><name>parse_object_start</name></member>
+    <member refid="classpicojson_1_1deny__parse__context_a08a8add290a938e71285f7b72a24b91c_1a08a8add290a938e71285f7b72a24b91c" kind="function"><name>parse_object_item</name></member>
+  </compound>
+  <compound refid="structpicojson_1_1null__parse__context_1_1dummy__str" kind="struct"><name>picojson::null_parse_context::dummy_str</name>
+    <member refid="structpicojson_1_1null__parse__context_1_1dummy__str_ac2b5c5eca1014b268b4c5a2a87d8923c_1ac2b5c5eca1014b268b4c5a2a87d8923c" kind="function"><name>push_back</name></member>
+  </compound>
+  <compound refid="class_auris_1_1_dynamic_pool" kind="class"><name>Auris::DynamicPool</name>
+    <member refid="class_auris_1_1_dynamic_pool_a7ea7612537519d9cfada25cf83950a1f_1a7ea7612537519d9cfada25cf83950a1f" kind="variable"><name>objectSize</name></member>
+    <member refid="class_auris_1_1_dynamic_pool_a839bdb0b4f5dbd9254393456114c8246_1a839bdb0b4f5dbd9254393456114c8246" kind="variable"><name>pools</name></member>
+    <member refid="class_auris_1_1_dynamic_pool_ad848f1d97bd2038f410993757b94171a_1ad848f1d97bd2038f410993757b94171a" kind="variable"><name>poolsFull</name></member>
+    <member refid="class_auris_1_1_dynamic_pool_a8ac09bd12032879b76a2e97da091829d_1a8ac09bd12032879b76a2e97da091829d" kind="variable"><name>count</name></member>
+    <member refid="class_auris_1_1_dynamic_pool_a18034e619330493ecf5d9f6ec10febda_1a18034e619330493ecf5d9f6ec10febda" kind="variable"><name>poolCapacity</name></member>
+    <member refid="class_auris_1_1_dynamic_pool_ab5549b8a5174f492ad4e1fb2c62128eb_1ab5549b8a5174f492ad4e1fb2c62128eb" kind="variable"><name>capacity</name></member>
+    <member refid="class_auris_1_1_dynamic_pool_ac816c3fe7b1c5ca35aeff25f43355ce8_1ac816c3fe7b1c5ca35aeff25f43355ce8" kind="function"><name>createPool</name></member>
+    <member refid="class_auris_1_1_dynamic_pool_aaa696d1fc624643c706ae4fbc627b930_1aaa696d1fc624643c706ae4fbc627b930" kind="function"><name>DynamicPool</name></member>
+    <member refid="class_auris_1_1_dynamic_pool_a2a04099b78beadf9226f04beb76d3e64_1a2a04099b78beadf9226f04beb76d3e64" kind="function"><name>DynamicPool</name></member>
+    <member refid="class_auris_1_1_dynamic_pool_aef5ac89c86b8143547193394fe787e67_1aef5ac89c86b8143547193394fe787e67" kind="function"><name>operator[]</name></member>
+    <member refid="class_auris_1_1_dynamic_pool_a429ac5b049fbe8e246ab0cb491fa5f6c_1a429ac5b049fbe8e246ab0cb491fa5f6c" kind="function"><name>create</name></member>
+    <member refid="class_auris_1_1_dynamic_pool_a89608815c54eda08be1abd5a6da0134c_1a89608815c54eda08be1abd5a6da0134c" kind="function"><name>remove</name></member>
+    <member refid="class_auris_1_1_dynamic_pool_acd329f2e6e09038ed3800a6fa6d8cd07_1acd329f2e6e09038ed3800a6fa6d8cd07" kind="function"><name>remove</name></member>
+  </compound>
+  <compound refid="class_auris_1_1_engine" kind="class"><name>Auris::Engine</name>
+    <member refid="class_auris_1_1_engine_ab4e5172c71d4bc42f6cfb89882d62e5c_1ab4e5172c71d4bc42f6cfb89882d62e5c" kind="variable"><name>backgroundColor</name></member>
+    <member refid="class_auris_1_1_engine_aaa6f69db59fb49db6d157e0417739398_1aaa6f69db59fb49db6d157e0417739398" kind="variable"><name>instance</name></member>
+    <member refid="class_auris_1_1_engine_a52a915baf4affcf7445eb28623c9a05d_1a52a915baf4affcf7445eb28623c9a05d" kind="variable"><name>deltaTime</name></member>
+    <member refid="class_auris_1_1_engine_a559c56ee9ea97f370d2e2438b975e8c8_1a559c56ee9ea97f370d2e2438b975e8c8" kind="variable"><name>time</name></member>
+    <member refid="class_auris_1_1_engine_a6fa6f2c7735b3b4b30be89af3fd32b54_1a6fa6f2c7735b3b4b30be89af3fd32b54" kind="variable"><name>world</name></member>
+    <member refid="class_auris_1_1_engine_a5c0831efd8f1f39a113ac1787f553137_1a5c0831efd8f1f39a113ac1787f553137" kind="variable"><name>game</name></member>
+    <member refid="class_auris_1_1_engine_a2f68a61898f5309eb378a1fcb20db592_1a2f68a61898f5309eb378a1fcb20db592" kind="variable"><name>window</name></member>
+    <member refid="class_auris_1_1_engine_a8128b7ad1e15ca704cf37835a3ab4299_1a8128b7ad1e15ca704cf37835a3ab4299" kind="variable"><name>renderSystem</name></member>
+    <member refid="class_auris_1_1_engine_acc8f2598304cd8693464d2d654e268d5_1acc8f2598304cd8693464d2d654e268d5" kind="variable"><name>collisionHandler</name></member>
+    <member refid="class_auris_1_1_engine_a88cee03d0a6a8ade0f7964fdb591a9b7_1a88cee03d0a6a8ade0f7964fdb591a9b7" kind="function"><name>Engine</name></member>
+    <member refid="class_auris_1_1_engine_acf488394e89c512c34aff0b6798a3383_1acf488394e89c512c34aff0b6798a3383" kind="function"><name>~Engine</name></member>
+    <member refid="class_auris_1_1_engine_a3362131c1b4eaa160d8e395b43273b0b_1a3362131c1b4eaa160d8e395b43273b0b" kind="function"><name>startup</name></member>
+    <member refid="class_auris_1_1_engine_aff3cd18d2f6a44c6771798957b282864_1aff3cd18d2f6a44c6771798957b282864" kind="function"><name>shutdown</name></member>
+    <member refid="class_auris_1_1_engine_a5ec5899526134ac2e7393b33d12b2444_1a5ec5899526134ac2e7393b33d12b2444" kind="function"><name>run</name></member>
+    <member refid="class_auris_1_1_engine_a5b600d898db6f73807b0d05a43f470fe_1a5b600d898db6f73807b0d05a43f470fe" kind="function"><name>setAmbientLight</name></member>
+    <member refid="class_auris_1_1_engine_abb62a90dc4fe76f4c5e593d529061ea1_1abb62a90dc4fe76f4c5e593d529061ea1" kind="function"><name>setBackgroundColor</name></member>
+  </compound>
+  <compound refid="class_auris_1_1_entity" kind="class"><name>Auris::Entity</name>
+    <member refid="class_auris_1_1_entity_a3d1c31d342f6a5ae9ccd4f81503c7876_1a3d1c31d342f6a5ae9ccd4f81503c7876" kind="variable"><name>type</name></member>
+    <member refid="class_auris_1_1_entity_ad87e74abaab08d178904f82aa13c866c_1ad87e74abaab08d178904f82aa13c866c" kind="variable"><name>name</name></member>
+    <member refid="class_auris_1_1_entity_afec0c65e0063778ee9888e8747213504_1afec0c65e0063778ee9888e8747213504" kind="variable"><name>parent</name></member>
+    <member refid="class_auris_1_1_entity_a5987efbb9fc7b0b8a986454424a0e003_1a5987efbb9fc7b0b8a986454424a0e003" kind="variable"><name>children</name></member>
+    <member refid="class_auris_1_1_entity_a1c0579dbb2753589668621bd3e3c187b_1a1c0579dbb2753589668621bd3e3c187b" kind="variable"><name>transform</name></member>
+    <member refid="class_auris_1_1_entity_a7164735eefd40272dae8ebe5d929fcdc_1a7164735eefd40272dae8ebe5d929fcdc" kind="function"><name>Entity</name></member>
+    <member refid="class_auris_1_1_entity_a242caae0bcc5ef026a11d058a524e0fc_1a242caae0bcc5ef026a11d058a524e0fc" kind="function"><name>~Entity</name></member>
+    <member refid="class_auris_1_1_entity_af8bfc68ec6368c9468484410ca919602_1af8bfc68ec6368c9468484410ca919602" kind="function"><name>setParent</name></member>
+    <member refid="class_auris_1_1_entity_a3b4c091e55b92a0b2950d35a3dcf60fd_1a3b4c091e55b92a0b2950d35a3dcf60fd" kind="function"><name>addChild</name></member>
+    <member refid="class_auris_1_1_entity_a60becb4bfcc5e2df9954a0487209195b_1a60becb4bfcc5e2df9954a0487209195b" kind="function"><name>getParent</name></member>
+    <member refid="class_auris_1_1_entity_a64856847ad473d4fc07f7842dcea5571_1a64856847ad473d4fc07f7842dcea5571" kind="function"><name>getChildByType</name></member>
+    <member refid="class_auris_1_1_entity_a7a93ca71ac6ba155796408363a198518_1a7a93ca71ac6ba155796408363a198518" kind="function"><name>getChildByName</name></member>
+    <member refid="class_auris_1_1_entity_a5dd3f0c8b0c20b776989169061f4c39a_1a5dd3f0c8b0c20b776989169061f4c39a" kind="function"><name>updateTransform</name></member>
+    <member refid="class_auris_1_1_entity_ab7373d13451309a5994a3737140797a4_1ab7373d13451309a5994a3737140797a4" kind="function"><name>init</name></member>
+    <member refid="class_auris_1_1_entity_aedf6a4670c5cb9e6efc5fbec2be40281_1aedf6a4670c5cb9e6efc5fbec2be40281" kind="function"><name>start</name></member>
+    <member refid="class_auris_1_1_entity_a82768db86a5efc62f99e20e15d6bfe97_1a82768db86a5efc62f99e20e15d6bfe97" kind="function"><name>update</name></member>
+    <member refid="class_auris_1_1_entity_a5011b41267c7ae7dcbf260e3ffb83b3b_1a5011b41267c7ae7dcbf260e3ffb83b3b" kind="function"><name>onDestruction</name></member>
+    <member refid="class_auris_1_1_entity_a880c5f29315d04c76453ab70ffe60737_1a880c5f29315d04c76453ab70ffe60737" kind="function"><name>debugDraw</name></member>
+    <member refid="class_auris_1_1_entity_a30ccf345f74230cb9c560f5bf4794b99_1a30ccf345f74230cb9c560f5bf4794b99" kind="function"><name>inspectorImGui</name></member>
+  </compound>
+  <compound refid="class_auris_1_1_game" kind="class"><name>Auris::Game</name>
+    <member refid="class_auris_1_1_game_a50f15740b9fdd322e9dfacc834825beb_1a50f15740b9fdd322e9dfacc834825beb" kind="variable"><name>instance</name></member>
+    <member refid="class_auris_1_1_game_a286ba7ab481950e767bb417c7c1c4f74_1a286ba7ab481950e767bb417c7c1c4f74" kind="variable"><name>camera</name></member>
+    <member refid="class_auris_1_1_game_aa12d34ffb39447721bc30093188cfcea_1aa12d34ffb39447721bc30093188cfcea" kind="variable"><name>entities</name></member>
+    <member refid="class_auris_1_1_game_a7d0704c12f24de28646bcc2eb6944ccc_1a7d0704c12f24de28646bcc2eb6944ccc" kind="variable"><name>destroyEntities</name></member>
+    <member refid="class_auris_1_1_game_ae2b8f970b284875d28470703e2a5120f_1ae2b8f970b284875d28470703e2a5120f" kind="variable"><name>newEntities</name></member>
+    <member refid="class_auris_1_1_game_aaba6c00201f2913eb413ec3179ffe787_1aaba6c00201f2913eb413ec3179ffe787" kind="function"><name>Game</name></member>
+    <member refid="class_auris_1_1_game_a2e991391326df5329ef43f0279bfbc99_1a2e991391326df5329ef43f0279bfbc99" kind="function"><name>init</name></member>
+    <member refid="class_auris_1_1_game_aed175ae3d18d32eb2c8bacda61c951e9_1aed175ae3d18d32eb2c8bacda61c951e9" kind="function"><name>earlyUpdate</name></member>
+    <member refid="class_auris_1_1_game_aa42e3e6abded33c17983933d5c91000d_1aa42e3e6abded33c17983933d5c91000d" kind="function"><name>update</name></member>
+    <member refid="class_auris_1_1_game_a4e4fd46b145b4e18b508a7a3886a63e4_1a4e4fd46b145b4e18b508a7a3886a63e4" kind="function"><name>lateUpdate</name></member>
+    <member refid="class_auris_1_1_game_a6ba21d302019f809918ed8b3253eafa4_1a6ba21d302019f809918ed8b3253eafa4" kind="function"><name>drawDebugImGui</name></member>
+    <member refid="class_auris_1_1_game_a937dec67b19fab029728ad98be70a022_1a937dec67b19fab029728ad98be70a022" kind="function"><name>shutdown</name></member>
+    <member refid="class_auris_1_1_game_aa7082a7bfd8307b2797d19a16309a67e_1aa7082a7bfd8307b2797d19a16309a67e" kind="function"><name>controllerConnected</name></member>
+    <member refid="class_auris_1_1_game_a16dd25de0c3dac4d369205628d491958_1a16dd25de0c3dac4d369205628d491958" kind="function"><name>controllerActivated</name></member>
+    <member refid="class_auris_1_1_game_a4c0e3d9f7b10621d7f78d253fee0f2a8_1a4c0e3d9f7b10621d7f78d253fee0f2a8" kind="function"><name>controllerDisconnected</name></member>
+    <member refid="class_auris_1_1_game_a09ea491214cb3f885d16e8449f5a29d7_1a09ea491214cb3f885d16e8449f5a29d7" kind="function"><name>imGui</name></member>
+    <member refid="class_auris_1_1_game_a07fdf70df8998018efccc60ae551dde9_1a07fdf70df8998018efccc60ae551dde9" kind="function"><name>addEntity</name></member>
+    <member refid="class_auris_1_1_game_a753bcffedd9612af64529e661bdcb28d_1a753bcffedd9612af64529e661bdcb28d" kind="function"><name>loadScene</name></member>
+    <member refid="class_auris_1_1_game_aa2456e15f8e7d25228b640b940be8f9a_1aa2456e15f8e7d25228b640b940be8f9a" kind="function"><name>destroyEntity</name></member>
+  </compound>
+  <compound refid="class_auris_1_1_input" kind="class"><name>Auris::Input</name>
+    <member refid="class_auris_1_1_input_a756c57e33cd0ff991ba76ecff4dfa8a4_1a756c57e33cd0ff991ba76ecff4dfa8a4" kind="variable"><name>quit</name></member>
+    <member refid="class_auris_1_1_input_a740616067bbd7ce3f68c826403deffa2_1a740616067bbd7ce3f68c826403deffa2" kind="variable"><name>heldKeys</name></member>
+    <member refid="class_auris_1_1_input_a10e3cca91a471e8502d805878736b27a_1a10e3cca91a471e8502d805878736b27a" kind="variable"><name>downKeys</name></member>
+    <member refid="class_auris_1_1_input_a4ca82b4077078e3a5fb83cba4176d99d_1a4ca82b4077078e3a5fb83cba4176d99d" kind="variable"><name>upKeys</name></member>
+    <member refid="class_auris_1_1_input_aaf10b7d1bd6070dcce8728d29ab707bc_1aaf10b7d1bd6070dcce8728d29ab707bc" kind="variable"><name>ctrl</name></member>
+    <member refid="class_auris_1_1_input_adaa4dcc138073a8ec372d9fddb3766b3_1adaa4dcc138073a8ec372d9fddb3766b3" kind="variable"><name>game</name></member>
+    <member refid="class_auris_1_1_input_ae964b6d3af50b694fe32137a2bf071bf_1ae964b6d3af50b694fe32137a2bf071bf" kind="function"><name>init</name></member>
+    <member refid="class_auris_1_1_input_aa7fe26710dd863d11737bf2f6de4ad05_1aa7fe26710dd863d11737bf2f6de4ad05" kind="function"><name>update</name></member>
+    <member refid="class_auris_1_1_input_a38019b2111c789cfc6fff651b6ecfe19_1a38019b2111c789cfc6fff651b6ecfe19" kind="function"><name>shutdown</name></member>
+    <member refid="class_auris_1_1_input_a213dc33decf772ef923a771679678b2e_1a213dc33decf772ef923a771679678b2e" kind="function"><name>keyDown</name></member>
+    <member refid="class_auris_1_1_input_a0ecc5a54bebabeead7dd5083624756f7_1a0ecc5a54bebabeead7dd5083624756f7" kind="function"><name>keyUp</name></member>
+    <member refid="class_auris_1_1_input_a0d4ba6f99c628b901acc3d75b9d1cb3c_1a0d4ba6f99c628b901acc3d75b9d1cb3c" kind="function"><name>keyHeld</name></member>
+    <member refid="class_auris_1_1_input_afafbbc2341cc0cf58e90b5a8405dd0f9_1afafbbc2341cc0cf58e90b5a8405dd0f9" kind="function"><name>getControllerButtonState</name></member>
+    <member refid="class_auris_1_1_input_ae40e9e19c66aa8c6c831653549c28b65_1ae40e9e19c66aa8c6c831653549c28b65" kind="function"><name>getControllerAxisState</name></member>
+    <member refid="class_auris_1_1_input_a94da9f7546ff948cbd193d2ec02c7f58_1a94da9f7546ff948cbd193d2ec02c7f58" kind="function"><name>getControllerLeftStickState</name></member>
+    <member refid="class_auris_1_1_input_aa396fc9486927476d8fb4a608bf6aaa0_1aa396fc9486927476d8fb4a608bf6aaa0" kind="function"><name>getControllerRightStickState</name></member>
+    <member refid="class_auris_1_1_input_af7975123c8e7bf107d3ffeb7e8c7ac62_1af7975123c8e7bf107d3ffeb7e8c7ac62" kind="function"><name>keyUpEvent</name></member>
+    <member refid="class_auris_1_1_input_a2bcc16ac90c1001921978e6a2c470242_1a2bcc16ac90c1001921978e6a2c470242" kind="function"><name>keyDownEvent</name></member>
+    <member refid="class_auris_1_1_input_acbcc6062a1e6a37f3ceceec2d7912bd9_1acbcc6062a1e6a37f3ceceec2d7912bd9" kind="function"><name>controllerAdded</name></member>
+    <member refid="class_auris_1_1_input_aebd119c81182ee36a9431c8dc4bdde6f_1aebd119c81182ee36a9431c8dc4bdde6f" kind="function"><name>initController</name></member>
+    <member refid="class_auris_1_1_input_a971b8a9beaff5691d5750396fc1967e5_1a971b8a9beaff5691d5750396fc1967e5" kind="function"><name>controllerRemoved</name></member>
+  </compound>
+  <compound refid="classpicojson_1_1input" kind="class"><name>picojson::input</name>
+    <member refid="classpicojson_1_1input_afb97b3422a91d0f3388527a5999c8174_1afb97b3422a91d0f3388527a5999c8174" kind="variable"><name>cur_</name></member>
+    <member refid="classpicojson_1_1input_acb4fd4c90d1b0db37bc32ccae16361ab_1acb4fd4c90d1b0db37bc32ccae16361ab" kind="variable"><name>end_</name></member>
+    <member refid="classpicojson_1_1input_af07464e7d4f25b902d65d8f8ee79b8a6_1af07464e7d4f25b902d65d8f8ee79b8a6" kind="variable"><name>consumed_</name></member>
+    <member refid="classpicojson_1_1input_a7bbb41c7f78ffc19d3219e38c2858b74_1a7bbb41c7f78ffc19d3219e38c2858b74" kind="variable"><name>line_</name></member>
+    <member refid="classpicojson_1_1input_ab1ca217622d921118707de9e9011a62f_1ab1ca217622d921118707de9e9011a62f" kind="function"><name>input</name></member>
+    <member refid="classpicojson_1_1input_a3e8ba0b09a989efa0dc583096984ea8e_1a3e8ba0b09a989efa0dc583096984ea8e" kind="function"><name>getc</name></member>
+    <member refid="classpicojson_1_1input_a96ccc244e73b2ab87ded38c98e98d573_1a96ccc244e73b2ab87ded38c98e98d573" kind="function"><name>ungetc</name></member>
+    <member refid="classpicojson_1_1input_ab2933aa5b68e73877fd331b925f4bf40_1ab2933aa5b68e73877fd331b925f4bf40" kind="function"><name>cur</name></member>
+    <member refid="classpicojson_1_1input_a5852aded6d48e28542f23fe0083a51fa_1a5852aded6d48e28542f23fe0083a51fa" kind="function"><name>line</name></member>
+    <member refid="classpicojson_1_1input_aa83aefe87374a5e24ab8c8e80fef4aa4_1aa83aefe87374a5e24ab8c8e80fef4aa4" kind="function"><name>skip_ws</name></member>
+    <member refid="classpicojson_1_1input_a14c29e99d9c9aa8cdbb46178c434d663_1a14c29e99d9c9aa8cdbb46178c434d663" kind="function"><name>expect</name></member>
+    <member refid="classpicojson_1_1input_ad15f360122daf49ddf7a2a8591fa4364_1ad15f360122daf49ddf7a2a8591fa4364" kind="function"><name>match</name></member>
+  </compound>
+  <compound refid="class_auris_1_1_interpolation" kind="class"><name>Auris::Interpolation</name>
+    <member refid="class_auris_1_1_interpolation_a9704c9ec94fbb614d9a31b14f0bc85b2_1a9704c9ec94fbb614d9a31b14f0bc85b2" kind="variable"><name>interpolationType</name></member>
+    <member refid="class_auris_1_1_interpolation_ac0356ce6f374a3d022f4bc1eb5eaf2e3_1ac0356ce6f374a3d022f4bc1eb5eaf2e3" kind="variable"><name>points</name></member>
+    <member refid="class_auris_1_1_interpolation_a6e1025a9c6517d484328e5867053bc49_1a6e1025a9c6517d484328e5867053bc49" kind="function"><name>Interpolation</name></member>
+    <member refid="class_auris_1_1_interpolation_ae086af1e1c3596161c03ec63125d607f_1ae086af1e1c3596161c03ec63125d607f" kind="function"><name>setInterpolation</name></member>
+    <member refid="class_auris_1_1_interpolation_abd6bb878768a12480ab064ccbef1186a_1abd6bb878768a12480ab064ccbef1186a" kind="function"><name>getInterpolationType</name></member>
+    <member refid="class_auris_1_1_interpolation_ad02e8e3d94a5210fac89071e848d0f3d_1ad02e8e3d94a5210fac89071e848d0f3d" kind="function"><name>interpolate</name></member>
+    <member refid="class_auris_1_1_interpolation_ac937e2b9a1455ded4b5454f7bcd17615_1ac937e2b9a1455ded4b5454f7bcd17615" kind="function"><name>linear</name></member>
+    <member refid="class_auris_1_1_interpolation_a3eb11deac5882c0c0b2c2c6d965ac392_1a3eb11deac5882c0c0b2c2c6d965ac392" kind="function"><name>cubicBezier</name></member>
+    <member refid="class_auris_1_1_interpolation_ace8f39e9589dd63dd4bf74a983d0f9b9_1ace8f39e9589dd63dd4bf74a983d0f9b9" kind="function"><name>hermite</name></member>
+    <member refid="class_auris_1_1_interpolation_af527817ab83925a78e920ef2eed871c7_1af527817ab83925a78e920ef2eed871c7" kind="function"><name>catmullRom</name></member>
+    <member refid="class_auris_1_1_interpolation_aaf33a962e7e54c2ff293de6e12e780f2_1aaf33a962e7e54c2ff293de6e12e780f2" kind="function"><name>bspline</name></member>
+  </compound>
+  <compound refid="structpicojson_1_1last__error__t" kind="struct"><name>picojson::last_error_t</name>
+    <member refid="structpicojson_1_1last__error__t_a270361f4321424bfd800c36607bf0411_1a270361f4321424bfd800c36607bf0411" kind="variable"><name>s</name></member>
+  </compound>
+  <compound refid="class_auris_1_1_light" kind="class"><name>Auris::Light</name>
+    <member refid="class_auris_1_1_light_ab6c8c1b7b2f39af91f666a75f046a431_1ab6c8c1b7b2f39af91f666a75f046a431" kind="enum"><name>Type</name></member>
+    <member refid="class_auris_1_1_light_ab6c8c1b7b2f39af91f666a75f046a431_1ab6c8c1b7b2f39af91f666a75f046a431a38687ce40230b7509ccd5f4d72e00cd0" kind="enumvalue"><name>Point</name></member>
+    <member refid="class_auris_1_1_light_ab6c8c1b7b2f39af91f666a75f046a431_1ab6c8c1b7b2f39af91f666a75f046a431a9ada0dc3b374546103af1ee4706940a1" kind="enumvalue"><name>Directional</name></member>
+    <member refid="class_auris_1_1_light_a3539b3f4f273f10e1d1ede00877bed10_1a3539b3f4f273f10e1d1ede00877bed10" kind="variable"><name>direction</name></member>
+    <member refid="class_auris_1_1_light_a8a1068019b9835fd1c3046d7f9a6df10_1a8a1068019b9835fd1c3046d7f9a6df10" kind="variable"><name>color</name></member>
+    <member refid="class_auris_1_1_light_a9e6e88f02c3e4f2dcaabc598a767a307_1a9e6e88f02c3e4f2dcaabc598a767a307" kind="variable"><name>range</name></member>
+    <member refid="class_auris_1_1_light_a230cfb13b002fd3cdd22e1c0f7a2ffb8_1a230cfb13b002fd3cdd22e1c0f7a2ffb8" kind="variable"><name>globalPosition</name></member>
+    <member refid="class_auris_1_1_light_ae59d34b6180e50ccd99e9589ff13612f_1ae59d34b6180e50ccd99e9589ff13612f" kind="variable"><name>iconScale</name></member>
+    <member refid="class_auris_1_1_light_a292f5384a1c147ca91c8527c0a07d7e7_1a292f5384a1c147ca91c8527c0a07d7e7" kind="variable"><name>lightCount</name></member>
+    <member refid="class_auris_1_1_light_af3367f08d55a216b65463fb8970851f8_1af3367f08d55a216b65463fb8970851f8" kind="variable"><name>lightNum</name></member>
+    <member refid="class_auris_1_1_light_a8b02097be824066f61c7a120c875b6ca_1a8b02097be824066f61c7a120c875b6ca" kind="variable"><name>lightType</name></member>
+    <member refid="class_auris_1_1_light_aac06b337febf59a402541ada7cd50402_1aac06b337febf59a402541ada7cd50402" kind="function"><name>Light</name></member>
+    <member refid="class_auris_1_1_light_a1c824a51fbcb0a6c59f87172ee5fa705_1a1c824a51fbcb0a6c59f87172ee5fa705" kind="function"><name>update</name></member>
+    <member refid="class_auris_1_1_light_a55577c72600726fd5695ed59e85ef3e9_1a55577c72600726fd5695ed59e85ef3e9" kind="function"><name>inspectorImGui</name></member>
+    <member refid="class_auris_1_1_light_a59a943d8a6d7a433a942d88270cf1231_1a59a943d8a6d7a433a942d88270cf1231" kind="function"><name>debugDraw</name></member>
+  </compound>
+  <compound refid="class_auris_1_1_material" kind="class"><name>Auris::Material</name>
+    <member refid="class_auris_1_1_material_a14b9380d6cb7076f012dbbfb49d2c21d_1a14b9380d6cb7076f012dbbfb49d2c21d" kind="variable"><name>texture</name></member>
+    <member refid="class_auris_1_1_material_aa27a99dfd17cf3e36620b77b1360ad4c_1aa27a99dfd17cf3e36620b77b1360ad4c" kind="variable"><name>normalMap</name></member>
+    <member refid="class_auris_1_1_material_aec978779559ff90f21f625dcc0c576e6_1aec978779559ff90f21f625dcc0c576e6" kind="variable"><name>shader</name></member>
+    <member refid="class_auris_1_1_material_a3e280fab69a33ab5599c536ab4da388e_1a3e280fab69a33ab5599c536ab4da388e" kind="variable"><name>color</name></member>
+  </compound>
+  <compound refid="class_auris_1_1_memory_leak_detector" kind="class"><name>Auris::MemoryLeakDetector</name>
+    <member refid="class_auris_1_1_memory_leak_detector_a30996607eab293636a9a5028cf643962_1a30996607eab293636a9a5028cf643962" kind="variable"><name>highWaterMarkVirt</name></member>
+    <member refid="class_auris_1_1_memory_leak_detector_a6b4c1d19ec908784bdc1ae8dc83779fc_1a6b4c1d19ec908784bdc1ae8dc83779fc" kind="variable"><name>highWaterMarkPhys</name></member>
+    <member refid="class_auris_1_1_memory_leak_detector_a25b8d96adee5cd5d75783d38d7e30f2d_1a25b8d96adee5cd5d75783d38d7e30f2d" kind="variable"><name>virtRising</name></member>
+    <member refid="class_auris_1_1_memory_leak_detector_a33f26fdb086c79ea4d212a3c88e399c5_1a33f26fdb086c79ea4d212a3c88e399c5" kind="variable"><name>physRising</name></member>
+    <member refid="class_auris_1_1_memory_leak_detector_a49c4331f6a68c0198f0a94b419212d61_1a49c4331f6a68c0198f0a94b419212d61" kind="function"><name>getTotalVirtMem</name></member>
+    <member refid="class_auris_1_1_memory_leak_detector_aed75f81ee1bbae1467701bb3857c5e4e_1aed75f81ee1bbae1467701bb3857c5e4e" kind="function"><name>getVirtMemUsed</name></member>
+    <member refid="class_auris_1_1_memory_leak_detector_a4e948bcedd82f887eb375787bef877e2_1a4e948bcedd82f887eb375787bef877e2" kind="function"><name>getVirtMemUsedByMe</name></member>
+    <member refid="class_auris_1_1_memory_leak_detector_a4b94e59c5062876fc8fa8eaea11eec12_1a4b94e59c5062876fc8fa8eaea11eec12" kind="function"><name>getTotalPhysMem</name></member>
+    <member refid="class_auris_1_1_memory_leak_detector_af10c92f9fb06d2faecdd3dc9cfa5ad02_1af10c92f9fb06d2faecdd3dc9cfa5ad02" kind="function"><name>getPhysMemUsed</name></member>
+    <member refid="class_auris_1_1_memory_leak_detector_a7878ed0c41d428118e5a40b6062421a1_1a7878ed0c41d428118e5a40b6062421a1" kind="function"><name>getPhysMemUsedByMe</name></member>
+    <member refid="class_auris_1_1_memory_leak_detector_a0bc4479f1aec3bf9d17a7caaa1ad9781_1a0bc4479f1aec3bf9d17a7caaa1ad9781" kind="function"><name>getCurrentTotalCPUValue</name></member>
+    <member refid="class_auris_1_1_memory_leak_detector_adf90e3006466df24745910badc7045b1_1adf90e3006466df24745910badc7045b1" kind="function"><name>getCurrentProcessCPUValue</name></member>
+    <member refid="class_auris_1_1_memory_leak_detector_a73b7c5eff1b7894973d777fb81434000_1a73b7c5eff1b7894973d777fb81434000" kind="function"><name>leakDetect</name></member>
+    <member refid="class_auris_1_1_memory_leak_detector_a1fb75585369cacf4d9588ba4dd949f13_1a1fb75585369cacf4d9588ba4dd949f13" kind="function"><name>MemoryLeakDetector</name></member>
+    <member refid="class_auris_1_1_memory_leak_detector_aad8aa347134ca7f0c82f188150df8ba7_1aad8aa347134ca7f0c82f188150df8ba7" kind="function"><name>~MemoryLeakDetector</name></member>
+  </compound>
+  <compound refid="class_auris_1_1_mesh" kind="class"><name>Auris::Mesh</name>
+    <member refid="class_auris_1_1_mesh_a61b58c5c8f3d2f18b39080b49f3368e7_1a61b58c5c8f3d2f18b39080b49f3368e7" kind="variable"><name>width</name></member>
+    <member refid="class_auris_1_1_mesh_a47763cfc3787b626cda0a79e4d254a26_1a47763cfc3787b626cda0a79e4d254a26" kind="variable"><name>height</name></member>
+    <member refid="class_auris_1_1_mesh_a62b30f6a6641956ef2c3c28813e80d9c_1a62b30f6a6641956ef2c3c28813e80d9c" kind="function"><name>Mesh</name></member>
+    <member refid="class_auris_1_1_mesh_a149a5abcd5967b010313caf33a1678c0_1a149a5abcd5967b010313caf33a1678c0" kind="function"><name>createCube</name></member>
+    <member refid="class_auris_1_1_mesh_ab999d4ec93fc6a65ae4841645c16b5a9_1ab999d4ec93fc6a65ae4841645c16b5a9" kind="function"><name>createSphere</name></member>
+    <member refid="class_auris_1_1_mesh_a05d51a915fd65bee73853fb17175a70c_1a05d51a915fd65bee73853fb17175a70c" kind="function"><name>createQuad</name></member>
+  </compound>
+  <compound refid="class_auris_1_1_nugget" kind="class"><name>Auris::Nugget</name>
+    <member refid="class_auris_1_1_nugget_ada3978459953aa06dfbf934c3c11371b_1ada3978459953aa06dfbf934c3c11371b" kind="variable"><name>entity</name></member>
+    <member refid="class_auris_1_1_nugget_a0518e0da58247f838fb20065adcbbcbb_1a0518e0da58247f838fb20065adcbbcbb" kind="friend"><name>entity</name></member>
+    <member refid="class_auris_1_1_nugget_aa69f1dec0d68dc98193efd3c39e254de_1aa69f1dec0d68dc98193efd3c39e254de" kind="function"><name>Nugget</name></member>
+    <member refid="class_auris_1_1_nugget_aae7ccecfc83aebef8f15889921b69ba8_1aae7ccecfc83aebef8f15889921b69ba8" kind="function"><name>~Nugget</name></member>
+  </compound>
+  <compound refid="structpicojson_1_1null" kind="struct"><name>picojson::null</name>
+  </compound>
+  <compound refid="classpicojson_1_1null__parse__context" kind="class"><name>picojson::null_parse_context</name>
+    <member refid="classpicojson_1_1null__parse__context_a6dfac8641478f0d861ff8d5f063984ef_1a6dfac8641478f0d861ff8d5f063984ef" kind="function"><name>null_parse_context</name></member>
+    <member refid="classpicojson_1_1null__parse__context_ad142ddadd513e41324f8d0515a19df2c_1ad142ddadd513e41324f8d0515a19df2c" kind="function"><name>set_null</name></member>
+    <member refid="classpicojson_1_1null__parse__context_aa77397f08cf7859fabc04e9e4460b93a_1aa77397f08cf7859fabc04e9e4460b93a" kind="function"><name>set_bool</name></member>
+    <member refid="classpicojson_1_1null__parse__context_aeb8326108d42615b1b04cf82d510040c_1aeb8326108d42615b1b04cf82d510040c" kind="function"><name>set_number</name></member>
+    <member refid="classpicojson_1_1null__parse__context_aab2c7dee1eb5b477370832811cd40d14_1aab2c7dee1eb5b477370832811cd40d14" kind="function"><name>parse_string</name></member>
+    <member refid="classpicojson_1_1null__parse__context_ae78f8991e157a85b7ce0fb36f9a5f628_1ae78f8991e157a85b7ce0fb36f9a5f628" kind="function"><name>parse_array_start</name></member>
+    <member refid="classpicojson_1_1null__parse__context_a6623f92117dd6dc7bca60e9e9463a1a0_1a6623f92117dd6dc7bca60e9e9463a1a0" kind="function"><name>parse_array_item</name></member>
+    <member refid="classpicojson_1_1null__parse__context_a8a763b600c17c5db42aee9afb2d2551d_1a8a763b600c17c5db42aee9afb2d2551d" kind="function"><name>parse_array_stop</name></member>
+    <member refid="classpicojson_1_1null__parse__context_a95c208456592c33d53548fa88b831c7c_1a95c208456592c33d53548fa88b831c7c" kind="function"><name>parse_object_start</name></member>
+    <member refid="classpicojson_1_1null__parse__context_a97c4b81a984ea473fe56e09aed7b9ca6_1a97c4b81a984ea473fe56e09aed7b9ca6" kind="function"><name>parse_object_item</name></member>
+    <member refid="classpicojson_1_1null__parse__context_a170b6aad7ab73435a588f9513ceefe02_1a170b6aad7ab73435a588f9513ceefe02" kind="function"><name>null_parse_context</name></member>
+    <member refid="classpicojson_1_1null__parse__context_a3b3c5ed831ffa5bdfed9086ed6e57e29_1a3b3c5ed831ffa5bdfed9086ed6e57e29" kind="function"><name>operator=</name></member>
+  </compound>
+  <compound refid="class_auris_1_1_particle_system" kind="class"><name>Auris::ParticleSystem</name>
+    <member refid="class_auris_1_1_particle_system_a7925ae32f8ed70ab998fde4897813618_1a7925ae32f8ed70ab998fde4897813618" kind="variable"><name>finalPositions</name></member>
+    <member refid="class_auris_1_1_particle_system_aff217c4e8f19e7c136d8bac7bea2b835_1aff217c4e8f19e7c136d8bac7bea2b835" kind="variable"><name>finalColors</name></member>
+    <member refid="class_auris_1_1_particle_system_a109ff429108b817243f63e7f4452fe8e_1a109ff429108b817243f63e7f4452fe8e" kind="variable"><name>finalSizes</name></member>
+    <member refid="class_auris_1_1_particle_system_a05dbc021200431bf2f0bd9bf79031660_1a05dbc021200431bf2f0bd9bf79031660" kind="variable"><name>finalRotation</name></member>
+    <member refid="class_auris_1_1_particle_system_a7c82e0ac493d574ae975a7ae4acf3e73_1a7c82e0ac493d574ae975a7ae4acf3e73" kind="variable"><name>positions</name></member>
+    <member refid="class_auris_1_1_particle_system_a5973a04e7951938451b4c56afce56c9a_1a5973a04e7951938451b4c56afce56c9a" kind="variable"><name>velocities</name></member>
+    <member refid="class_auris_1_1_particle_system_a67428290d2fbe9f6ea6dc35800c3bb17_1a67428290d2fbe9f6ea6dc35800c3bb17" kind="variable"><name>rotations</name></member>
+    <member refid="class_auris_1_1_particle_system_a41970139473651d5c46eae87318958b5_1a41970139473651d5c46eae87318958b5" kind="variable"><name>angularVelocities</name></member>
+    <member refid="class_auris_1_1_particle_system_abc9b43cb384a0029fb24840c0869f4c3_1abc9b43cb384a0029fb24840c0869f4c3" kind="variable"><name>startColors</name></member>
+    <member refid="class_auris_1_1_particle_system_a5b009b410f36311984c37524a21a7a32_1a5b009b410f36311984c37524a21a7a32" kind="variable"><name>startSizes</name></member>
+    <member refid="class_auris_1_1_particle_system_ac598794b9c735bcb1de1524153c4a56d_1ac598794b9c735bcb1de1524153c4a56d" kind="variable"><name>endColors</name></member>
+    <member refid="class_auris_1_1_particle_system_ae68135a3faf56a015fdc569ef36cb396_1ae68135a3faf56a015fdc569ef36cb396" kind="variable"><name>endSizes</name></member>
+    <member refid="class_auris_1_1_particle_system_acb7cce379fdee2d5b647eeb86060fe7b_1acb7cce379fdee2d5b647eeb86060fe7b" kind="variable"><name>startTimes</name></member>
+    <member refid="class_auris_1_1_particle_system_ad5baaa06132bb8a96588abcd4fe55c04_1ad5baaa06132bb8a96588abcd4fe55c04" kind="variable"><name>currentTime</name></member>
+    <member refid="class_auris_1_1_particle_system_a847bf70177f7886f29e1ea5db1c3b7ad_1a847bf70177f7886f29e1ea5db1c3b7ad" kind="variable"><name>particleDuration</name></member>
+    <member refid="class_auris_1_1_particle_system_a5fdb71102e77ef964810afc41738f66b_1a5fdb71102e77ef964810afc41738f66b" kind="variable"><name>texture</name></member>
+    <member refid="class_auris_1_1_particle_system_a81a41ed315e695e7c02fbc799a806a90_1a81a41ed315e695e7c02fbc799a806a90" kind="variable"><name>mesh</name></member>
+    <member refid="class_auris_1_1_particle_system_a4074a1c6540ac434b3f16fe7d75a1d26_1a4074a1c6540ac434b3f16fe7d75a1d26" kind="variable"><name>shader</name></member>
+    <member refid="class_auris_1_1_particle_system_a5e460d7104a942ca9d8a84eb2e9e9a7b_1a5e460d7104a942ca9d8a84eb2e9e9a7b" kind="variable"><name>uvs</name></member>
+    <member refid="class_auris_1_1_particle_system_a242fa5e34c0364041c8d2dc87a8c23b2_1a242fa5e34c0364041c8d2dc87a8c23b2" kind="variable"><name>uvSize</name></member>
+    <member refid="class_auris_1_1_particle_system_a861dcdabfe81654abedac8e5bac2cb03_1a861dcdabfe81654abedac8e5bac2cb03" kind="variable"><name>timeScale</name></member>
+    <member refid="class_auris_1_1_particle_system_a8834c94ffd24406aa0faa7dec3ee7407_1a8834c94ffd24406aa0faa7dec3ee7407" kind="variable"><name>acceleration</name></member>
+    <member refid="class_auris_1_1_particle_system_a29ace4c3a64d72977a28bc0d4b45ab71_1a29ace4c3a64d72977a28bc0d4b45ab71" kind="variable"><name>particleIndex</name></member>
+    <member refid="class_auris_1_1_particle_system_a69b2c0beb11d55f53af67a8afdb5c554_1a69b2c0beb11d55f53af67a8afdb5c554" kind="variable"><name>interpolationPoints_acceleration</name></member>
+    <member refid="class_auris_1_1_particle_system_af902ef3b0bdfb07e663ae0e7971cefac_1af902ef3b0bdfb07e663ae0e7971cefac" kind="variable"><name>interpolationPoints_velocity</name></member>
+    <member refid="class_auris_1_1_particle_system_accb3daadb767315a1b0688ecc4c655eb_1accb3daadb767315a1b0688ecc4c655eb" kind="variable"><name>interpolationPoints_angularVelocity</name></member>
+    <member refid="class_auris_1_1_particle_system_ad8c36499df4bb77aa9a12e6c1768b34d_1ad8c36499df4bb77aa9a12e6c1768b34d" kind="variable"><name>interpolationPoints_color</name></member>
+    <member refid="class_auris_1_1_particle_system_ad918a58749226268c585107f8c0b4079_1ad918a58749226268c585107f8c0b4079" kind="variable"><name>interpolationPoints_size</name></member>
+    <member refid="class_auris_1_1_particle_system_a1527299187453700ebca254c95f1b119_1a1527299187453700ebca254c95f1b119" kind="variable"><name>interpolation_acceleration</name></member>
+    <member refid="class_auris_1_1_particle_system_a68f280a7dcab9843baa124330777e3a9_1a68f280a7dcab9843baa124330777e3a9" kind="variable"><name>interpolation_velocity</name></member>
+    <member refid="class_auris_1_1_particle_system_ac263b655f0e8be2e182fe9b3b54ea3ab_1ac263b655f0e8be2e182fe9b3b54ea3ab" kind="variable"><name>interpolation_angularVelocity</name></member>
+    <member refid="class_auris_1_1_particle_system_a8155f9adb89fdf10fb4dfaf1fed59e08_1a8155f9adb89fdf10fb4dfaf1fed59e08" kind="variable"><name>interpolation_color</name></member>
+    <member refid="class_auris_1_1_particle_system_a569937091c61617631f2e733cf72caa3_1a569937091c61617631f2e733cf72caa3" kind="variable"><name>interpolation_size</name></member>
+    <member refid="class_auris_1_1_particle_system_af3fb2bfb6e0e8a0394976c1bbe5349ab_1af3fb2bfb6e0e8a0394976c1bbe5349ab" kind="function"><name>lerpColor</name></member>
+    <member refid="class_auris_1_1_particle_system_a08c95e7d1396020e7d003d1792e88dba_1a08c95e7d1396020e7d003d1792e88dba" kind="function"><name>ParticleSystem</name></member>
+    <member refid="class_auris_1_1_particle_system_a7cfd960a7b0fb5f1d5b6c7978a334325_1a7cfd960a7b0fb5f1d5b6c7978a334325" kind="function"><name>~ParticleSystem</name></member>
+    <member refid="class_auris_1_1_particle_system_a1ba4c47dde45b65221f6d7de62dd0528_1a1ba4c47dde45b65221f6d7de62dd0528" kind="function"><name>startup</name></member>
+    <member refid="class_auris_1_1_particle_system_aa8ce8db22d3bf700cb8d5e295ef83814_1aa8ce8db22d3bf700cb8d5e295ef83814" kind="function"><name>shutdown</name></member>
+    <member refid="class_auris_1_1_particle_system_ae4fcf7b09a7f76f539e879c53dad562d_1ae4fcf7b09a7f76f539e879c53dad562d" kind="function"><name>emit</name></member>
+    <member refid="class_auris_1_1_particle_system_a99219cac5f067fb6a7d6bba434b1703f_1a99219cac5f067fb6a7d6bba434b1703f" kind="function"><name>update</name></member>
+    <member refid="class_auris_1_1_particle_system_af4860e3dac197f53fdb835d8c60b4321_1af4860e3dac197f53fdb835d8c60b4321" kind="function"><name>draw</name></member>
+  </compound>
+  <compound refid="class_auris_1_1_physics_entity" kind="class"><name>Auris::PhysicsEntity</name>
+    <member refid="class_auris_1_1_physics_entity_a972180c86770b81056fcab41cfba4c0e_1a972180c86770b81056fcab41cfba4c0e" kind="variable"><name>lastPosition</name></member>
+    <member refid="class_auris_1_1_physics_entity_ab211347de6b00d587de6d5786c353025_1ab211347de6b00d587de6d5786c353025" kind="variable"><name>lastAngle</name></member>
+    <member refid="class_auris_1_1_physics_entity_a29f15330487f17e5ce40df6c60de5144_1a29f15330487f17e5ce40df6c60de5144" kind="variable"><name>body</name></member>
+    <member refid="class_auris_1_1_physics_entity_a4e4cd72f2cee82f8b108b845f202b311_1a4e4cd72f2cee82f8b108b845f202b311" kind="function"><name>updateTransform</name></member>
+    <member refid="class_auris_1_1_physics_entity_a068794840d3f2eb6316812a778b01441_1a068794840d3f2eb6316812a778b01441" kind="function"><name>~PhysicsEntity</name></member>
+    <member refid="class_auris_1_1_physics_entity_a0ba83e579df992fce54b2f2fbd0aa922_1a0ba83e579df992fce54b2f2fbd0aa922" kind="function"><name>setCollisionEvents</name></member>
+    <member refid="class_auris_1_1_physics_entity_a61062f597f3ef5a65fbab8b7ec4a13df_1a61062f597f3ef5a65fbab8b7ec4a13df" kind="function"><name>setGravity</name></member>
+    <member refid="class_auris_1_1_physics_entity_aa0bf964cdcf7f12e245e3d99d38e8465_1aa0bf964cdcf7f12e245e3d99d38e8465" kind="function"><name>setFixedRotation</name></member>
+    <member refid="class_auris_1_1_physics_entity_a853247c247a26a3ecb922f4907649279_1a853247c247a26a3ecb922f4907649279" kind="function"><name>setPosition</name></member>
+    <member refid="class_auris_1_1_physics_entity_a480803634a9b575ac15b802955a81973_1a480803634a9b575ac15b802955a81973" kind="function"><name>setRotation</name></member>
+    <member refid="class_auris_1_1_physics_entity_ace9e08b2f3f8c9f8b2c931b5835db526_1ace9e08b2f3f8c9f8b2c931b5835db526" kind="function"><name>setAwake</name></member>
+    <member refid="class_auris_1_1_physics_entity_ab594f1ba3a169ad502e7ba691fad4261_1ab594f1ba3a169ad502e7ba691fad4261" kind="function"><name>applyForce</name></member>
+    <member refid="class_auris_1_1_physics_entity_afd80a0a18613e1f6ddb30b99114d9beb_1afd80a0a18613e1f6ddb30b99114d9beb" kind="function"><name>applyForce</name></member>
+    <member refid="class_auris_1_1_physics_entity_acd06c0b6182ea6cb009bec65f09052e5_1acd06c0b6182ea6cb009bec65f09052e5" kind="function"><name>setBullet</name></member>
+    <member refid="class_auris_1_1_physics_entity_a85dea63cf6de2c8c50893bf14a7ff05c_1a85dea63cf6de2c8c50893bf14a7ff05c" kind="function"><name>getLinearVelocity</name></member>
+    <member refid="class_auris_1_1_physics_entity_a9fbf879169ecbe8753a853c8af1fb185_1a9fbf879169ecbe8753a853c8af1fb185" kind="function"><name>isBullet</name></member>
+    <member refid="class_auris_1_1_physics_entity_a16774c95d2f33183ed247b27417e3b71_1a16774c95d2f33183ed247b27417e3b71" kind="function"><name>OnCollisionEnter</name></member>
+    <member refid="class_auris_1_1_physics_entity_a569617ea68ecbf6aee75152c11e16e4b_1a569617ea68ecbf6aee75152c11e16e4b" kind="function"><name>OnCollisionExit</name></member>
+    <member refid="class_auris_1_1_physics_entity_a3f554aeefdd19e1b985110d6003d18e2_1a3f554aeefdd19e1b985110d6003d18e2" kind="function"><name>inspectorImGui</name></member>
+  </compound>
+  <compound refid="class_auris_1_1_pool" kind="class"><name>Auris::Pool</name>
+    <member refid="class_auris_1_1_pool_a44a0d07bf46a11ff31f11ce5441a47bd_1a44a0d07bf46a11ff31f11ce5441a47bd" kind="variable"><name>objectSize</name></member>
+    <member refid="class_auris_1_1_pool_a4461fc4c6c6de88e88f8cf93b4ac91c8_1a4461fc4c6c6de88e88f8cf93b4ac91c8" kind="variable"><name>objects</name></member>
+    <member refid="class_auris_1_1_pool_af1c9dd3d26f7b15b59411eed3170b22b_1af1c9dd3d26f7b15b59411eed3170b22b" kind="variable"><name>occupied</name></member>
+    <member refid="class_auris_1_1_pool_a859207c9a4bde5490e678e78c1fa2002_1a859207c9a4bde5490e678e78c1fa2002" kind="variable"><name>count</name></member>
+    <member refid="class_auris_1_1_pool_a65c222f6cc33ca26cb0534a9599d85aa_1a65c222f6cc33ca26cb0534a9599d85aa" kind="variable"><name>capacity</name></member>
+    <member refid="class_auris_1_1_pool_a9b061a8bcc95f5b243d1e366f2087e81_1a9b061a8bcc95f5b243d1e366f2087e81" kind="function"><name>begin</name></member>
+    <member refid="class_auris_1_1_pool_afe700442d9b6e8a4905fe72efb2269e4_1afe700442d9b6e8a4905fe72efb2269e4" kind="function"><name>end</name></member>
+    <member refid="class_auris_1_1_pool_afa1422b62e08d3cb166da2a145dea10a_1afa1422b62e08d3cb166da2a145dea10a" kind="function"><name>Pool</name></member>
+    <member refid="class_auris_1_1_pool_a5c4a010047bf0eeee939ee7f490cb611_1a5c4a010047bf0eeee939ee7f490cb611" kind="function"><name>Pool</name></member>
+    <member refid="class_auris_1_1_pool_ad73193aea203594b5e431d6587228a66_1ad73193aea203594b5e431d6587228a66" kind="function"><name>~Pool</name></member>
+    <member refid="class_auris_1_1_pool_adc56dc807b0fb309fbd676e4cc731772_1adc56dc807b0fb309fbd676e4cc731772" kind="function"><name>Pool</name></member>
+    <member refid="class_auris_1_1_pool_abfb078167e0d4f3dc04830d2e830b01d_1abfb078167e0d4f3dc04830d2e830b01d" kind="function"><name>operator=</name></member>
+    <member refid="class_auris_1_1_pool_ab1cbc1dede87fcfc2ff7de01f0fcdcf0_1ab1cbc1dede87fcfc2ff7de01f0fcdcf0" kind="function"><name>initialize</name></member>
+    <member refid="class_auris_1_1_pool_a6cc5631bfc985f98a56ccf91fd5c79c0_1a6cc5631bfc985f98a56ccf91fd5c79c0" kind="function"><name>operator[]</name></member>
+    <member refid="class_auris_1_1_pool_a2d439bab0e96a5538e20fdeece3e7090_1a2d439bab0e96a5538e20fdeece3e7090" kind="function"><name>at</name></member>
+    <member refid="class_auris_1_1_pool_a07625e57ce7547bf76a9a2da27b75f33_1a07625e57ce7547bf76a9a2da27b75f33" kind="function"><name>create</name></member>
+    <member refid="class_auris_1_1_pool_a7b47e50dae61ecb1d75e7f7982f7436e_1a7b47e50dae61ecb1d75e7f7982f7436e" kind="function"><name>remove</name></member>
+    <member refid="class_auris_1_1_pool_a8a9c6b78eccb3f0c067b53b6931662a7_1a8a9c6b78eccb3f0c067b53b6931662a7" kind="function"><name>remove</name></member>
+    <member refid="class_auris_1_1_pool_a6ef1db8e8ba213cde0488ad26e5beebf_1a6ef1db8e8ba213cde0488ad26e5beebf" kind="function"><name>isFull</name></member>
+  </compound>
+  <compound refid="class_auris_1_1_profiling_timer" kind="class"><name>Auris::ProfilingTimer</name>
+    <member refid="class_auris_1_1_profiling_timer_a417e1c5465a86e3183dd1107dd552a84_1a417e1c5465a86e3183dd1107dd552a84" kind="variable"><name>startStamp</name></member>
+    <member refid="class_auris_1_1_profiling_timer_ab74646ed840923b575a2b29d8043a0d8_1ab74646ed840923b575a2b29d8043a0d8" kind="variable"><name>length</name></member>
+    <member refid="class_auris_1_1_profiling_timer_aa8113266fe7367134a6cbbcef2e10e4c_1aa8113266fe7367134a6cbbcef2e10e4c" kind="function"><name>start</name></member>
+    <member refid="class_auris_1_1_profiling_timer_a92353a7d5398022c1a6cc88c58de4fd2_1a92353a7d5398022c1a6cc88c58de4fd2" kind="function"><name>stop</name></member>
+    <member refid="class_auris_1_1_profiling_timer_ac08144f24cabdf04b31de33fbaa62a91_1ac08144f24cabdf04b31de33fbaa62a91" kind="function"><name>getStartTime</name></member>
+  </compound>
+  <compound refid="class_auris_1_1_render_system" kind="class"><name>Auris::RenderSystem</name>
+    <member refid="class_auris_1_1_render_system_a33dddcaba281565ebbeca3c40a89cfab_1a33dddcaba281565ebbeca3c40a89cfab" kind="variable"><name>spritePool</name></member>
+    <member refid="class_auris_1_1_render_system_ab781a7fd761dd076a542ebe58f9e9b39_1ab781a7fd761dd076a542ebe58f9e9b39" kind="variable"><name>animations</name></member>
+    <member refid="class_auris_1_1_render_system_adb8f7f9d42f1606a3a82badad8d77e29_1adb8f7f9d42f1606a3a82badad8d77e29" kind="variable"><name>particleSystems</name></member>
+    <member refid="class_auris_1_1_render_system_a5dcb80404c061a53aecef2d1c5c1517e_1a5dcb80404c061a53aecef2d1c5c1517e" kind="function"><name>RenderSystem</name></member>
+    <member refid="class_auris_1_1_render_system_adff727922bf5bc2d3c31e07f31d0473c_1adff727922bf5bc2d3c31e07f31d0473c" kind="function"><name>~RenderSystem</name></member>
+    <member refid="class_auris_1_1_render_system_a7080c63dd102eadfed3e8a6abb275c79_1a7080c63dd102eadfed3e8a6abb275c79" kind="function"><name>startup</name></member>
+    <member refid="class_auris_1_1_render_system_af985136f29598fd3c3d44b22a3a0a3e1_1af985136f29598fd3c3d44b22a3a0a3e1" kind="function"><name>shutdown</name></member>
+    <member refid="class_auris_1_1_render_system_afb009d35f665d789a68adfd22e0b4dec_1afb009d35f665d789a68adfd22e0b4dec" kind="function"><name>update</name></member>
+    <member refid="class_auris_1_1_render_system_a65b93e5f315c78ddf2298e65f692b165_1a65b93e5f315c78ddf2298e65f692b165" kind="function"><name>getSprite</name></member>
+    <member refid="class_auris_1_1_render_system_ab7503f64f3b9429d3eea66fb310dd5fe_1ab7503f64f3b9429d3eea66fb310dd5fe" kind="function"><name>deleteSprite</name></member>
+    <member refid="class_auris_1_1_render_system_aef06ebebda9dbba67d48a4560699dd13_1aef06ebebda9dbba67d48a4560699dd13" kind="function"><name>getAnim</name></member>
+    <member refid="class_auris_1_1_render_system_a368c682e1ba774b5401350885e85f44f_1a368c682e1ba774b5401350885e85f44f" kind="function"><name>deleteAnim</name></member>
+    <member refid="class_auris_1_1_render_system_a8e09b3ffd3f5160a7c39ba53340fa284_1a8e09b3ffd3f5160a7c39ba53340fa284" kind="function"><name>getParticleSystem</name></member>
+    <member refid="class_auris_1_1_render_system_a6ae0f9e265d703b3838f402e88f8dcd4_1a6ae0f9e265d703b3838f402e88f8dcd4" kind="function"><name>deleteParticleSystem</name></member>
+  </compound>
+  <compound refid="class_auris_1_1_scene" kind="class"><name>Auris::Scene</name>
+    <member refid="class_auris_1_1_scene_aa74144c32b75b28314c52b7e32ae1eef_1aa74144c32b75b28314c52b7e32ae1eef" kind="function"><name>init</name></member>
+  </compound>
+  <compound refid="structpicojson_1_1serialize__str__char" kind="struct"><name>picojson::serialize_str_char</name>
+    <member refid="structpicojson_1_1serialize__str__char_a1abb88801c571a903ef9e3a21388b944_1a1abb88801c571a903ef9e3a21388b944" kind="variable"><name>oi</name></member>
+    <member refid="structpicojson_1_1serialize__str__char_acea559bf2510abf0c3735b02e080308f_1acea559bf2510abf0c3735b02e080308f" kind="function"><name>operator()</name></member>
+  </compound>
+  <compound refid="class_auris_1_1_shader" kind="class"><name>Auris::Shader</name>
+    <member refid="class_auris_1_1_shader_a78415c16005991c0e2adce9f406097c8_1a78415c16005991c0e2adce9f406097c8" kind="variable"><name>litSprite</name></member>
+    <member refid="class_auris_1_1_shader_aa5d2e82ef525d3d21c66fc0686f9cfe8_1aa5d2e82ef525d3d21c66fc0686f9cfe8" kind="function"><name>getLitSprite</name></member>
+    <member refid="class_auris_1_1_shader_ad79464bfcce8077e3850c04f396561ac_1ad79464bfcce8077e3850c04f396561ac" kind="function"><name>getUnlitSprite</name></member>
+    <member refid="class_auris_1_1_shader_a439fd06813c512cabf9159702fa8aada_1a439fd06813c512cabf9159702fa8aada" kind="function"><name>getStandardParticles</name></member>
+  </compound>
+  <compound refid="class_auris_1_1_sprite" kind="class"><name>Auris::Sprite</name>
+    <member refid="class_auris_1_1_sprite_a58b323c473af348c1acfef452f8215c4_1a58b323c473af348c1acfef452f8215c4" kind="variable"><name>mesh</name></member>
+    <member refid="class_auris_1_1_sprite_a5c98603661d77fe739fe1a6c0fb94e47_1a5c98603661d77fe739fe1a6c0fb94e47" kind="variable"><name>material</name></member>
+    <member refid="class_auris_1_1_sprite_a6d3f50c4d7b6d769cbf6c212ed868639_1a6d3f50c4d7b6d769cbf6c212ed868639" kind="variable"><name>offset</name></member>
+    <member refid="class_auris_1_1_sprite_a564601ca4ab75681bc6d74acc8199d42_1a564601ca4ab75681bc6d74acc8199d42" kind="function"><name>draw</name></member>
+    <member refid="class_auris_1_1_sprite_a8accab430f9d90ae5117b57d67e32b84_1a8accab430f9d90ae5117b57d67e32b84" kind="function"><name>~Sprite</name></member>
+    <member refid="class_auris_1_1_sprite_afa787e7d12d14a221fe2502b7fe13064_1afa787e7d12d14a221fe2502b7fe13064" kind="function"><name>Sprite</name></member>
+    <member refid="class_auris_1_1_sprite_adeba77ed877b893d6f582f60d06b12e2_1adeba77ed877b893d6f582f60d06b12e2" kind="function"><name>Sprite</name></member>
+    <member refid="class_auris_1_1_sprite_a34694bcf2bd86e52506218b9356fae38_1a34694bcf2bd86e52506218b9356fae38" kind="function"><name>getWidth</name></member>
+    <member refid="class_auris_1_1_sprite_a10edcc7d8de2940aff96eed0f94e15ea_1a10edcc7d8de2940aff96eed0f94e15ea" kind="function"><name>getHeight</name></member>
+    <member refid="class_auris_1_1_sprite_a44835ec226616bf06443bb2d7c697fd6_1a44835ec226616bf06443bb2d7c697fd6" kind="function"><name>setProperties</name></member>
+  </compound>
+  <compound refid="class_auris_1_1_sprite_sheet" kind="class"><name>Auris::SpriteSheet</name>
+    <member refid="class_auris_1_1_sprite_sheet_a1d691d3f0af24b1286882d3709957cbe_1a1d691d3f0af24b1286882d3709957cbe" kind="variable"><name>meshes</name></member>
+    <member refid="class_auris_1_1_sprite_sheet_aca13e24dd6ec02dab5185938c2fe0200_1aca13e24dd6ec02dab5185938c2fe0200" kind="variable"><name>texture</name></member>
+    <member refid="class_auris_1_1_sprite_sheet_a8a653eddf6cfef5c61e6a6be483af018_1a8a653eddf6cfef5c61e6a6be483af018" kind="variable"><name>normalMap</name></member>
+    <member refid="class_auris_1_1_sprite_sheet_aa9abdbbce748b6dec7732756e8dd892e_1aa9abdbbce748b6dec7732756e8dd892e" kind="function"><name>SpriteSheet</name></member>
+    <member refid="class_auris_1_1_sprite_sheet_ab6994da5501053ddc661bfa9e3ef1385_1ab6994da5501053ddc661bfa9e3ef1385" kind="function"><name>~SpriteSheet</name></member>
+    <member refid="class_auris_1_1_sprite_sheet_a12608e8144dc6404d13a1735294a3419_1a12608e8144dc6404d13a1735294a3419" kind="function"><name>setSpriteTo</name></member>
+  </compound>
+  <compound refid="class_auris_1_1_timer" kind="class"><name>Auris::Timer</name>
+    <member refid="class_auris_1_1_timer_a2ebaa8143c6a093bb8a28560e0e03c7a_1a2ebaa8143c6a093bb8a28560e0e03c7a" kind="variable"><name>currentTime</name></member>
+    <member refid="class_auris_1_1_timer_a610a1f185154e3e8b23e7a473fad550d_1a610a1f185154e3e8b23e7a473fad550d" kind="variable"><name>endTime</name></member>
+    <member refid="class_auris_1_1_timer_abcb00fe42d4314145ff4884c598cbf29_1abcb00fe42d4314145ff4884c598cbf29" kind="function"><name>reset</name></member>
+    <member refid="class_auris_1_1_timer_a1d18ada87b0a16128f2642ff2c7edf2e_1a1d18ada87b0a16128f2642ff2c7edf2e" kind="function"><name>start</name></member>
+    <member refid="class_auris_1_1_timer_a1f11e1fac311acff3d491705810e554d_1a1f11e1fac311acff3d491705810e554d" kind="function"><name>time</name></member>
+    <member refid="class_auris_1_1_timer_af77546d67e7b6ea6aacef2c0ae2424b3_1af77546d67e7b6ea6aacef2c0ae2424b3" kind="function"><name>update</name></member>
+    <member refid="class_auris_1_1_timer_a174ee1e4cfecb34dfa40bb4677010c2b_1a174ee1e4cfecb34dfa40bb4677010c2b" kind="function"><name>getCurrentTime</name></member>
+  </compound>
+  <compound refid="class_auris_1_1_transform" kind="class"><name>Auris::Transform</name>
+    <member refid="class_auris_1_1_transform_af1ea5e2815d6bad804563c73d4b38562_1af1ea5e2815d6bad804563c73d4b38562" kind="variable"><name>dirty</name></member>
+    <member refid="class_auris_1_1_transform_a6184bd4398d0c901af426a4e7093f91b_1a6184bd4398d0c901af426a4e7093f91b" kind="variable"><name>position</name></member>
+    <member refid="class_auris_1_1_transform_a3520d5ee263cb3082a99625437fa252f_1a3520d5ee263cb3082a99625437fa252f" kind="variable"><name>scale</name></member>
+    <member refid="class_auris_1_1_transform_af92006823e5d417afabc2a6c736062ac_1af92006823e5d417afabc2a6c736062ac" kind="variable"><name>rotation</name></member>
+    <member refid="class_auris_1_1_transform_a32b9e8ff70cf19cf65029b240baa2771_1a32b9e8ff70cf19cf65029b240baa2771" kind="variable"><name>localTransform</name></member>
+    <member refid="class_auris_1_1_transform_a41303baa3af436b3283f3c636cc21f0b_1a41303baa3af436b3283f3c636cc21f0b" kind="variable"><name>lastOffset</name></member>
+    <member refid="class_auris_1_1_transform_ad90a1b7dfc003b686f1570ebfae0a6e8_1ad90a1b7dfc003b686f1570ebfae0a6e8" kind="function"><name>getGlobalPosition</name></member>
+    <member refid="class_auris_1_1_transform_ab83f0a40c1e123c7491d668039d75099_1ab83f0a40c1e123c7491d668039d75099" kind="function"><name>getPosition</name></member>
+    <member refid="class_auris_1_1_transform_a956da9550bb39eba038d9a313bd06abb_1a956da9550bb39eba038d9a313bd06abb" kind="function"><name>getPositionVec3</name></member>
+    <member refid="class_auris_1_1_transform_ae3431c39df7cb9fcd828ace5305eb196_1ae3431c39df7cb9fcd828ace5305eb196" kind="function"><name>getZ</name></member>
+    <member refid="class_auris_1_1_transform_aef846b158dca091db191885972850448_1aef846b158dca091db191885972850448" kind="function"><name>addToPosition</name></member>
+    <member refid="class_auris_1_1_transform_a64f7d06f0650a44479e2f370ed532f23_1a64f7d06f0650a44479e2f370ed532f23" kind="function"><name>addToPosition</name></member>
+    <member refid="class_auris_1_1_transform_a5b53f8e89541daaade4923cc9b91d0cd_1a5b53f8e89541daaade4923cc9b91d0cd" kind="function"><name>setPosition</name></member>
+    <member refid="class_auris_1_1_transform_ad432898272377ba217dd21e14cf20463_1ad432898272377ba217dd21e14cf20463" kind="function"><name>setPosition</name></member>
+    <member refid="class_auris_1_1_transform_af41b59913ff2c8c989e9fd7be02c80e5_1af41b59913ff2c8c989e9fd7be02c80e5" kind="function"><name>addToScale</name></member>
+    <member refid="class_auris_1_1_transform_a70dd0ef78e9e168173dbbcb752939105_1a70dd0ef78e9e168173dbbcb752939105" kind="function"><name>setScale</name></member>
+    <member refid="class_auris_1_1_transform_af66bf1e011435be50a2321764b617616_1af66bf1e011435be50a2321764b617616" kind="function"><name>setScale</name></member>
+    <member refid="class_auris_1_1_transform_a4d4308b3f4bd6b1a8a8bcdaff58d12f3_1a4d4308b3f4bd6b1a8a8bcdaff58d12f3" kind="function"><name>getScale</name></member>
+    <member refid="class_auris_1_1_transform_a23daf4d628ebc05618e00ae9dd257cbe_1a23daf4d628ebc05618e00ae9dd257cbe" kind="function"><name>addToRotation</name></member>
+    <member refid="class_auris_1_1_transform_a419adc467c63de962b24d2cabf1a30e3_1a419adc467c63de962b24d2cabf1a30e3" kind="function"><name>setRotation</name></member>
+    <member refid="class_auris_1_1_transform_ab502fca53ae3f8186f06de4625df015b_1ab502fca53ae3f8186f06de4625df015b" kind="function"><name>getRotation</name></member>
+    <member refid="class_auris_1_1_transform_a570777d3bdad87fedf2250980d2951f7_1a570777d3bdad87fedf2250980d2951f7" kind="function"><name>Transform</name></member>
+    <member refid="class_auris_1_1_transform_acb3bc690af90c65eed3b368b33764d32_1acb3bc690af90c65eed3b368b33764d32" kind="function"><name>getLocal</name></member>
+    <member refid="class_auris_1_1_transform_a32ca00b2df1d13bbf2e6057470f9ae19_1a32ca00b2df1d13bbf2e6057470f9ae19" kind="function"><name>getGlobal</name></member>
+  </compound>
+  <compound refid="classpicojson_1_1value" kind="class"><name>picojson::value</name>
+    <member refid="classpicojson_1_1value_adeff4fdf7ee5675eeb7686bb89233c43_1adeff4fdf7ee5675eeb7686bb89233c43" kind="typedef"><name>array</name></member>
+    <member refid="classpicojson_1_1value_a7d7da11d54d7b983a902d28367bda9c1_1a7d7da11d54d7b983a902d28367bda9c1" kind="typedef"><name>object</name></member>
+    <member refid="classpicojson_1_1value_af77ae4525a20f6fce6ea9ff1c4709312_1af77ae4525a20f6fce6ea9ff1c4709312" kind="variable"><name>type_</name></member>
+    <member refid="classpicojson_1_1value_aa7948fe10fcbc19ab9c8dee5e5099f77_1aa7948fe10fcbc19ab9c8dee5e5099f77" kind="variable"><name>u_</name></member>
+    <member refid="classpicojson_1_1value_a445f8d1b335e7bcad6abd6c310b44c75_1a445f8d1b335e7bcad6abd6c310b44c75" kind="function"><name>value</name></member>
+    <member refid="classpicojson_1_1value_acd1d55ac7333a3e482e469b3d99fdf6e_1acd1d55ac7333a3e482e469b3d99fdf6e" kind="function"><name>value</name></member>
+    <member refid="classpicojson_1_1value_a43d8a33c3dbea0c5853bef4577a0d10e_1a43d8a33c3dbea0c5853bef4577a0d10e" kind="function"><name>value</name></member>
+    <member refid="classpicojson_1_1value_af19f6d5889d90e77e76af05aacaba321_1af19f6d5889d90e77e76af05aacaba321" kind="function"><name>value</name></member>
+    <member refid="classpicojson_1_1value_aa4841f2dd8deeaffca7a225075b88da9_1aa4841f2dd8deeaffca7a225075b88da9" kind="function"><name>value</name></member>
+    <member refid="classpicojson_1_1value_a729e8f01d9bb4686daac82d0d3295afe_1a729e8f01d9bb4686daac82d0d3295afe" kind="function"><name>value</name></member>
+    <member refid="classpicojson_1_1value_a2b6beb88edf85e213893b805b354c87e_1a2b6beb88edf85e213893b805b354c87e" kind="function"><name>value</name></member>
+    <member refid="classpicojson_1_1value_a94f324d88fd16c1338fc9a228ec3dc3c_1a94f324d88fd16c1338fc9a228ec3dc3c" kind="function"><name>value</name></member>
+    <member refid="classpicojson_1_1value_ae56da06e2b438f4425300a218150398d_1ae56da06e2b438f4425300a218150398d" kind="function"><name>value</name></member>
+    <member refid="classpicojson_1_1value_aa75329d73af82b8a7daab1905f8609d0_1aa75329d73af82b8a7daab1905f8609d0" kind="function"><name>~value</name></member>
+    <member refid="classpicojson_1_1value_a89a827eee72398d3678509cdd65c777d_1a89a827eee72398d3678509cdd65c777d" kind="function"><name>value</name></member>
+    <member refid="classpicojson_1_1value_acc5e4506e6a793af5132983573f9da6a_1acc5e4506e6a793af5132983573f9da6a" kind="function"><name>operator=</name></member>
+    <member refid="classpicojson_1_1value_a6e3ac589ed811603ef9dadc6f91c737d_1a6e3ac589ed811603ef9dadc6f91c737d" kind="function"><name>swap</name></member>
+    <member refid="classpicojson_1_1value_afd038ffc8a714c5d2f4b59adaaaca4ce_1afd038ffc8a714c5d2f4b59adaaaca4ce" kind="function"><name>is</name></member>
+    <member refid="classpicojson_1_1value_a6a1099de1eb4f070445dc3eadb843a92_1a6a1099de1eb4f070445dc3eadb843a92" kind="function"><name>get</name></member>
+    <member refid="classpicojson_1_1value_a94f71153b3d14df524397a5cafcef2fc_1a94f71153b3d14df524397a5cafcef2fc" kind="function"><name>get</name></member>
+    <member refid="classpicojson_1_1value_a5349fff183e52146f2835d7fa0a10358_1a5349fff183e52146f2835d7fa0a10358" kind="function"><name>set</name></member>
+    <member refid="classpicojson_1_1value_a389873791af4898a52edc12b967a543f_1a389873791af4898a52edc12b967a543f" kind="function"><name>evaluate_as_boolean</name></member>
+    <member refid="classpicojson_1_1value_a6070daccb2b8cb44e6ab62137b2f5a9d_1a6070daccb2b8cb44e6ab62137b2f5a9d" kind="function"><name>get</name></member>
+    <member refid="classpicojson_1_1value_aafe8fe780ae3b149bb7bd353e39d6f29_1aafe8fe780ae3b149bb7bd353e39d6f29" kind="function"><name>get</name></member>
+    <member refid="classpicojson_1_1value_adf5edc5f70df6a5ebe78bb32c2ba3e91_1adf5edc5f70df6a5ebe78bb32c2ba3e91" kind="function"><name>get</name></member>
+    <member refid="classpicojson_1_1value_a72f3216a2536e4e088e70b0f1617fc11_1a72f3216a2536e4e088e70b0f1617fc11" kind="function"><name>get</name></member>
+    <member refid="classpicojson_1_1value_a2d694ee5607fe8ff865fb39c92ef8bdb_1a2d694ee5607fe8ff865fb39c92ef8bdb" kind="function"><name>contains</name></member>
+    <member refid="classpicojson_1_1value_a67fed7e1effed5c14fdb7f912f933842_1a67fed7e1effed5c14fdb7f912f933842" kind="function"><name>contains</name></member>
+    <member refid="classpicojson_1_1value_a005099b2865752cf31b7ced33bd85f59_1a005099b2865752cf31b7ced33bd85f59" kind="function"><name>to_str</name></member>
+    <member refid="classpicojson_1_1value_a23664084ed4a8ecbfda901484de34bbc_1a23664084ed4a8ecbfda901484de34bbc" kind="function"><name>serialize</name></member>
+    <member refid="classpicojson_1_1value_ad5fa91c040826e85855678db9258238d_1ad5fa91c040826e85855678db9258238d" kind="function"><name>serialize</name></member>
+    <member refid="classpicojson_1_1value_a0b3fb432ea49151f8787026e8f8c0801_1a0b3fb432ea49151f8787026e8f8c0801" kind="function"><name>is</name></member>
+    <member refid="classpicojson_1_1value_a70073bc82941e0d7ba30fd01c0c56720_1a70073bc82941e0d7ba30fd01c0c56720" kind="function"><name>value</name></member>
+    <member refid="classpicojson_1_1value_afb9b2e37050a713bc4756eabb8227780_1afb9b2e37050a713bc4756eabb8227780" kind="function"><name>_serialize</name></member>
+    <member refid="classpicojson_1_1value_accd2fdc154dde2b4d5f56f81d9e4d24f_1accd2fdc154dde2b4d5f56f81d9e4d24f" kind="function"><name>_serialize</name></member>
+    <member refid="classpicojson_1_1value_a7131a933821181b71855c73665e8b5fd_1a7131a933821181b71855c73665e8b5fd" kind="function"><name>clear</name></member>
+    <member refid="classpicojson_1_1value_a77e7010130044c72b8e9151d4d2d9828_1a77e7010130044c72b8e9151d4d2d9828" kind="function"><name>_indent</name></member>
+  </compound>
+  <compound refid="namespace_auris" kind="namespace"><name>Auris</name>
+    <member refid="namespace_auris_a283c85dda8b6763292a1c3120c6b5c4f_1a283c85dda8b6763292a1c3120c6b5c4f" kind="enum"><name>InterpolationType</name></member>
+    <member refid="namespace_auris_a283c85dda8b6763292a1c3120c6b5c4f_1a283c85dda8b6763292a1c3120c6b5c4fa32a843da6ea40ab3b17a3421ccdf671b" kind="enumvalue"><name>Linear</name></member>
+    <member refid="namespace_auris_a283c85dda8b6763292a1c3120c6b5c4f_1a283c85dda8b6763292a1c3120c6b5c4fa31aa08a905ffdb74542a88cb7320c69d" kind="enumvalue"><name>Bezier</name></member>
+    <member refid="namespace_auris_a283c85dda8b6763292a1c3120c6b5c4f_1a283c85dda8b6763292a1c3120c6b5c4fa70457be66a37fd77955ebfb026c57a24" kind="enumvalue"><name>Hermite</name></member>
+    <member refid="namespace_auris_a283c85dda8b6763292a1c3120c6b5c4f_1a283c85dda8b6763292a1c3120c6b5c4faf944f585a3a2c251e655527a1e81cff7" kind="enumvalue"><name>CatmullRom</name></member>
+    <member refid="namespace_auris_a283c85dda8b6763292a1c3120c6b5c4f_1a283c85dda8b6763292a1c3120c6b5c4fa828ce1e5157657c1792f0503c2d430db" kind="enumvalue"><name>BSpline</name></member>
+    <member refid="namespace_auris_a0e5de4a121d48b7b72da65c9443f651a_1a0e5de4a121d48b7b72da65c9443f651a" kind="variable"><name>MB_DIVIDER</name></member>
+  </compound>
+  <compound refid="namespace_auris_1_1_action" kind="namespace"><name>Auris::Action</name>
+    <member refid="namespace_auris_1_1_action_a6912aa738395f3b47d92ee5b94fa643b_1a6912aa738395f3b47d92ee5b94fa643b" kind="variable"><name>up</name></member>
+    <member refid="namespace_auris_1_1_action_a3da2daa4191ccfeb4be6df2582f06de4_1a3da2daa4191ccfeb4be6df2582f06de4" kind="variable"><name>down</name></member>
+    <member refid="namespace_auris_1_1_action_aa9bfa8587496aa26a6d3f8b88033c902_1aa9bfa8587496aa26a6d3f8b88033c902" kind="variable"><name>left</name></member>
+    <member refid="namespace_auris_1_1_action_aac05fb76b2b9c04ea7e3155eab454e61_1aac05fb76b2b9c04ea7e3155eab454e61" kind="variable"><name>right</name></member>
+    <member refid="namespace_auris_1_1_action_add30606cadad34e554480a1b6e4cac19_1add30606cadad34e554480a1b6e4cac19" kind="variable"><name>quit</name></member>
+    <member refid="namespace_auris_1_1_action_ac05867c1c68c0ad0298a096d0f81fa87_1ac05867c1c68c0ad0298a096d0f81fa87" kind="variable"><name>debug_menu</name></member>
+    <member refid="namespace_auris_1_1_action_aa584678e93559c4cab3af719f5e41c74_1aa584678e93559c4cab3af719f5e41c74" kind="variable"><name>toggleInspector</name></member>
+    <member refid="namespace_auris_1_1_action_aa0d21f9b53bacb6c23692dfaa84fc176_1aa0d21f9b53bacb6c23692dfaa84fc176" kind="variable"><name>toggleHierarchy</name></member>
+    <member refid="namespace_auris_1_1_action_a6cb4eb9fe6a867c4a90a46f65c63a60d_1a6cb4eb9fe6a867c4a90a46f65c63a60d" kind="variable"><name>toggleProfiler</name></member>
+    <member refid="namespace_auris_1_1_action_a9d1780de0f47ea2dabe1e67d742c1504_1a9d1780de0f47ea2dabe1e67d742c1504" kind="variable"><name>drawColliders</name></member>
+    <member refid="namespace_auris_1_1_action_a2bad7973741f592491487420f1b9b392_1a2bad7973741f592491487420f1b9b392" kind="variable"><name>drawDebug</name></member>
+    <member refid="namespace_auris_1_1_action_a9c2f14f3526554c4fd177e44c4522529_1a9c2f14f3526554c4fd177e44c4522529" kind="variable"><name>pause</name></member>
+    <member refid="namespace_auris_1_1_action_a4036588b134329fa98e91e8a89307538_1a4036588b134329fa98e91e8a89307538" kind="variable"><name>stepOne</name></member>
+    <member refid="namespace_auris_1_1_action_aa523137817d5ac3d616575db979132bb_1aa523137817d5ac3d616575db979132bb" kind="variable"><name>playOnHold</name></member>
+    <member refid="namespace_auris_1_1_action_a2bc6c1ac7c3f75fbd41aae651cfc45a3_1a2bc6c1ac7c3f75fbd41aae651cfc45a3" kind="variable"><name>w</name></member>
+    <member refid="namespace_auris_1_1_action_aa9f830168ef21bb79153b3ea1b6e536a_1aa9f830168ef21bb79153b3ea1b6e536a" kind="variable"><name>a</name></member>
+    <member refid="namespace_auris_1_1_action_afbe1cd6358dcb3cf41253731310f79df_1afbe1cd6358dcb3cf41253731310f79df" kind="variable"><name>s</name></member>
+    <member refid="namespace_auris_1_1_action_aeb2f944fddaeb6eb29ccb51fc44f946a_1aeb2f944fddaeb6eb29ccb51fc44f946a" kind="variable"><name>d</name></member>
+    <member refid="namespace_auris_1_1_action_adb05b89d6caa348c96fa628eca73bc73_1adb05b89d6caa348c96fa628eca73bc73" kind="variable"><name>enter</name></member>
+    <member refid="namespace_auris_1_1_action_af13454e337977c5b209ecae0fa19f777_1af13454e337977c5b209ecae0fa19f777" kind="variable"><name>space</name></member>
+    <member refid="namespace_auris_1_1_action_af1b5812b2ab0caedd8957192716651de_1af1b5812b2ab0caedd8957192716651de" kind="variable"><name>z</name></member>
+    <member refid="namespace_auris_1_1_action_a775601cedd60f4ece8de0d630a067862_1a775601cedd60f4ece8de0d630a067862" kind="variable"><name>m</name></member>
+  </compound>
+  <compound refid="namespace_auris_1_1_constants" kind="namespace"><name>Auris::Constants</name>
+    <member refid="namespace_auris_1_1_constants_a559532ed3415b8ded07cdc4069dfa91c_1a559532ed3415b8ded07cdc4069dfa91c" kind="variable"><name>METERS_TO_PIXELS</name></member>
+    <member refid="namespace_auris_1_1_constants_a60345f173d3491692e156e08321606a7_1a60345f173d3491692e156e08321606a7" kind="variable"><name>PIXELS_TO_METERS</name></member>
+    <member refid="namespace_auris_1_1_constants_a63baa076c3f1435bf1cb75da6691d3e3_1a63baa076c3f1435bf1cb75da6691d3e3" kind="variable"><name>VELOCITY_ITERATIONS</name></member>
+    <member refid="namespace_auris_1_1_constants_a55b0d1b116c0f6bae44efc8ade94c723_1a55b0d1b116c0f6bae44efc8ade94c723" kind="variable"><name>POSITION_ITERATIONS</name></member>
+    <member refid="namespace_auris_1_1_constants_abb26e3b2db53291f1b7649cb92b309e5_1abb26e3b2db53291f1b7649cb92b309e5" kind="variable"><name>width</name></member>
+    <member refid="namespace_auris_1_1_constants_ab1f513ab0d733d7c9af6299344630187_1ab1f513ab0d733d7c9af6299344630187" kind="variable"><name>height</name></member>
+  </compound>
+  <compound refid="namespace_auris_1_1_convert" kind="namespace"><name>Auris::Convert</name>
+    <member refid="namespace_auris_1_1_convert_aac4203b20ae9e01d44d93feb9210327e_1aac4203b20ae9e01d44d93feb9210327e" kind="function"><name>toGlm</name></member>
+    <member refid="namespace_auris_1_1_convert_af926368a18838264e46dc3c29d738a68_1af926368a18838264e46dc3c29d738a68" kind="function"><name>toB2</name></member>
+  </compound>
+  <compound refid="namespace_auris_1_1_utilities" kind="namespace"><name>Auris::Utilities</name>
+  </compound>
+  <compound refid="namespace_auris_1_1_utilities_1_1_body_standard" kind="namespace"><name>Auris::Utilities::BodyStandard</name>
+    <member refid="namespace_auris_1_1_utilities_1_1_body_standard_aa066f28f8ed7dc9b7a80d73743660953_1aa066f28f8ed7dc9b7a80d73743660953" kind="function"><name>getDynamicBody</name></member>
+    <member refid="namespace_auris_1_1_utilities_1_1_body_standard_a8132a4e3c83555fbc4a6bb83b7a6e9b6_1a8132a4e3c83555fbc4a6bb83b7a6e9b6" kind="function"><name>getStaticBody</name></member>
+  </compound>
+  <compound refid="namespaceglm" kind="namespace"><name>glm</name>
+  </compound>
+  <compound refid="namespacepicojson" kind="namespace"><name>picojson</name>
+    <member refid="namespacepicojson_acbcfb4072b62a8a097a2aaf7a8f8cc02_1acbcfb4072b62a8a097a2aaf7a8f8cc02" kind="enum"><name>@0</name></member>
+    <member refid="namespacepicojson_acbcfb4072b62a8a097a2aaf7a8f8cc02_1acbcfb4072b62a8a097a2aaf7a8f8cc02a656199e709e1aaa684dc9b19f6d25f62" kind="enumvalue"><name>null_type</name></member>
+    <member refid="namespacepicojson_acbcfb4072b62a8a097a2aaf7a8f8cc02_1acbcfb4072b62a8a097a2aaf7a8f8cc02ae04a93ebe65786d1f8687430242df802" kind="enumvalue"><name>boolean_type</name></member>
+    <member refid="namespacepicojson_acbcfb4072b62a8a097a2aaf7a8f8cc02_1acbcfb4072b62a8a097a2aaf7a8f8cc02a258b8cac17e3039fe54eadb2f3ebde96" kind="enumvalue"><name>number_type</name></member>
+    <member refid="namespacepicojson_acbcfb4072b62a8a097a2aaf7a8f8cc02_1acbcfb4072b62a8a097a2aaf7a8f8cc02a3cb2900f95eb6459ee2fe4e9a111bef8" kind="enumvalue"><name>string_type</name></member>
+    <member refid="namespacepicojson_acbcfb4072b62a8a097a2aaf7a8f8cc02_1acbcfb4072b62a8a097a2aaf7a8f8cc02ae1ccb83543a46349939ddf8ccf75d0f2" kind="enumvalue"><name>array_type</name></member>
+    <member refid="namespacepicojson_acbcfb4072b62a8a097a2aaf7a8f8cc02_1acbcfb4072b62a8a097a2aaf7a8f8cc02a1fdd0252e9484bec7aea5dcb1a3f82e9" kind="enumvalue"><name>object_type</name></member>
+    <member refid="namespacepicojson_ae3fd37cd4ad93e8b91a1dd552487eec4_1ae3fd37cd4ad93e8b91a1dd552487eec4" kind="enum"><name>@1</name></member>
+    <member refid="namespacepicojson_ae3fd37cd4ad93e8b91a1dd552487eec4_1ae3fd37cd4ad93e8b91a1dd552487eec4a2aee14a2b66d94b58c64c66edd8ed9b1" kind="enumvalue"><name>INDENT_WIDTH</name></member>
+    <member refid="namespacepicojson_ac1e72166adfe3d96dc58cddc7ebd536a_1ac1e72166adfe3d96dc58cddc7ebd536a" kind="typedef"><name>array</name></member>
+    <member refid="namespacepicojson_a3e769a5e2dbffd9a9309e1dc2d67975b_1a3e769a5e2dbffd9a9309e1dc2d67975b" kind="typedef"><name>object</name></member>
+    <member refid="namespacepicojson_abc2111aa71797805957a4296fdf9c66d_1abc2111aa71797805957a4296fdf9c66d" kind="function"><name>copy</name></member>
+    <member refid="namespacepicojson_a11130e017d868857aeb016f5e3d29008_1a11130e017d868857aeb016f5e3d29008" kind="function"><name>serialize_str</name></member>
+    <member refid="namespacepicojson_a92d4f60542bbdfe8203f10e1fcce9368_1a92d4f60542bbdfe8203f10e1fcce9368" kind="function"><name>_parse_quadhex</name></member>
+    <member refid="namespacepicojson_a05316c2614f3e7a4559ce1d1003eb051_1a05316c2614f3e7a4559ce1d1003eb051" kind="function"><name>_parse_codepoint</name></member>
+    <member refid="namespacepicojson_a9a1d94feb2718129796225d77c9e8d11_1a9a1d94feb2718129796225d77c9e8d11" kind="function"><name>_parse_string</name></member>
+    <member refid="namespacepicojson_adcae039b132c6c96d2b2d9e786a04a88_1adcae039b132c6c96d2b2d9e786a04a88" kind="function"><name>_parse_array</name></member>
+    <member refid="namespacepicojson_a480ed5e3461568672197a42e259a44c9_1a480ed5e3461568672197a42e259a44c9" kind="function"><name>_parse_object</name></member>
+    <member refid="namespacepicojson_a771defe1d981b7091c2156bf4720625c_1a771defe1d981b7091c2156bf4720625c" kind="function"><name>_parse_number</name></member>
+    <member refid="namespacepicojson_aed024a6a1c8d8982a38c4a7fcefde221_1aed024a6a1c8d8982a38c4a7fcefde221" kind="function"><name>_parse</name></member>
+    <member refid="namespacepicojson_a3aca598f5855bc130a92a3e08a0c6ebf_1a3aca598f5855bc130a92a3e08a0c6ebf" kind="function"><name>parse</name></member>
+    <member refid="namespacepicojson_a01c0a3f35d42282ba913375737c8e259_1a01c0a3f35d42282ba913375737c8e259" kind="function"><name>_parse</name></member>
+    <member refid="namespacepicojson_a21621c03c9c8c83dcf5bc604d1cafdf6_1a21621c03c9c8c83dcf5bc604d1cafdf6" kind="function"><name>parse</name></member>
+    <member refid="namespacepicojson_a522ebeba3ce386f1df0aba41ae3b7763_1a522ebeba3ce386f1df0aba41ae3b7763" kind="function"><name>parse</name></member>
+    <member refid="namespacepicojson_a2ed8a3cba445c8ecbe3d6a3a3fbdabd3_1a2ed8a3cba445c8ecbe3d6a3a3fbdabd3" kind="function"><name>parse</name></member>
+    <member refid="namespacepicojson_a509585c918611015ec995d4374fee4c9_1a509585c918611015ec995d4374fee4c9" kind="function"><name>set_last_error</name></member>
+    <member refid="namespacepicojson_a1ba78f161e46341e0c2fd705ff8b0210_1a1ba78f161e46341e0c2fd705ff8b0210" kind="function"><name>get_last_error</name></member>
+    <member refid="namespacepicojson_a498fde71ce35268547d93068d9a756be_1a498fde71ce35268547d93068d9a756be" kind="function"><name>operator==</name></member>
+    <member refid="namespacepicojson_ae46de1e9659b427ea359e7fc00dd3ff1_1ae46de1e9659b427ea359e7fc00dd3ff1" kind="function"><name>operator!=</name></member>
+  </compound>
+  <compound refid="namespace_s_r_e" kind="namespace"><name>SRE</name>
+  </compound>
+  <compound refid="namespacestd" kind="namespace"><name>std</name>
+    <member refid="picojson_8h_abb7e41c7063536ff6eeee4bb5f66de6c_1abb7e41c7063536ff6eeee4bb5f66de6c" kind="function"><name>swap</name></member>
+  </compound>
+  <compound refid="_engine_8cpp" kind="file"><name>Engine.cpp</name>
+  </compound>
+  <compound refid="_audio_player_8cpp" kind="file"><name>AudioPlayer.cpp</name>
+  </compound>
+  <compound refid="_camera_8cpp" kind="file"><name>Camera.cpp</name>
+  </compound>
+  <compound refid="_light_8cpp" kind="file"><name>Light.cpp</name>
+  </compound>
+  <compound refid="_animation_8cpp" kind="file"><name>Animation.cpp</name>
+  </compound>
+  <compound refid="_sprite_8cpp" kind="file"><name>Sprite.cpp</name>
+  </compound>
+  <compound refid="_transform_8cpp" kind="file"><name>Transform.cpp</name>
+  </compound>
+  <compound refid="_physics_entity_8cpp" kind="file"><name>PhysicsEntity.cpp</name>
+  </compound>
+  <compound refid="_game_8cpp" kind="file"><name>Game.cpp</name>
+  </compound>
+  <compound refid="_input_8cpp" kind="file"><name>Input.cpp</name>
+  </compound>
+  <compound refid="_render_system_8cpp" kind="file"><name>RenderSystem.cpp</name>
+  </compound>
+  <compound refid="_debug_u_i_8cpp" kind="file"><name>DebugUI.cpp</name>
+  </compound>
+  <compound refid="_asset_manager_8cpp" kind="file"><name>AssetManager.cpp</name>
+  </compound>
+  <compound refid="_memory_leak_detector_8cpp" kind="file"><name>MemoryLeakDetector.cpp</name>
+  </compound>
+  <compound refid="_shader_8cpp" kind="file"><name>Shader.cpp</name>
+  </compound>
+  <compound refid="_sprite_sheet_8cpp" kind="file"><name>SpriteSheet.cpp</name>
+  </compound>
+  <compound refid="_action_8hpp" kind="file"><name>Action.hpp</name>
+  </compound>
+  <compound refid="_constants_8hpp" kind="file"><name>Constants.hpp</name>
+  </compound>
+  <compound refid="_engine_8hpp" kind="file"><name>Engine.hpp</name>
+    <member refid="_engine_8hpp_a51f528deaaeb973f417b46a2ec36f850_1a51f528deaaeb973f417b46a2ec36f850" kind="define"><name>SDL_MAIN_HANDLED</name></member>
+  </compound>
+  <compound refid="_audio_player_8hpp" kind="file"><name>AudioPlayer.hpp</name>
+    <member refid="_audio_player_8hpp_ad63cb1f4bfe9e66afdffd5ae4fc5c9f1_1ad63cb1f4bfe9e66afdffd5ae4fc5c9f1" kind="variable"><name>channels</name></member>
+    <member refid="_audio_player_8hpp_ac68dc4e44d895b38007564ac8a4c40fd_1ac68dc4e44d895b38007564ac8a4c40fd" kind="variable"><name>music</name></member>
+    <member refid="_audio_player_8hpp_a0a09de49eaf498307ecf1193a2ba2ad9_1a0a09de49eaf498307ecf1193a2ba2ad9" kind="variable"><name>sounds</name></member>
+    <member refid="_audio_player_8hpp_a627c12924294173b6f8409a90e07b980_1a627c12924294173b6f8409a90e07b980" kind="variable"><name>channelCount</name></member>
+    <member refid="_audio_player_8hpp_acffa5a4edaa4baf1ea4341a8bd07c2ab_1acffa5a4edaa4baf1ea4341a8bd07c2ab" kind="variable"><name>currentChannel</name></member>
+    <member refid="_audio_player_8hpp_a82f9bee96ae329de7347cb12589a44fc_1a82f9bee96ae329de7347cb12589a44fc" kind="variable"><name>deltaDistanceX</name></member>
+    <member refid="_audio_player_8hpp_a5954d2b12816d71e9368453dafaafb64_1a5954d2b12816d71e9368453dafaafb64" kind="variable"><name>deltaDistanceY</name></member>
+    <member refid="_audio_player_8hpp_adee1aef20945156b400a92e84bbdb46b_1adee1aef20945156b400a92e84bbdb46b" kind="variable"><name>pan</name></member>
+    <member refid="_audio_player_8hpp_a616c23dc01f67f0d284044acfb160086_1a616c23dc01f67f0d284044acfb160086" kind="variable"><name>fade</name></member>
+    <member refid="_audio_player_8hpp_af49b7c8f6419a65cd1024a166339a8ae_1af49b7c8f6419a65cd1024a166339a8ae" kind="variable"><name>fadeScaleX</name></member>
+    <member refid="_audio_player_8hpp_aacfd9c51d4d11eeb7802c1b1578886ac_1aacfd9c51d4d11eeb7802c1b1578886ac" kind="variable"><name>fadeScaleY</name></member>
+    <member refid="_audio_player_8hpp_a6af36b0fb7714db28486b4fbf23ca1c8_1a6af36b0fb7714db28486b4fbf23ca1c8" kind="variable"><name>fadeDelayX</name></member>
+    <member refid="_audio_player_8hpp_ae2787a3be0d61dbab4ce128e623834a3_1ae2787a3be0d61dbab4ce128e623834a3" kind="variable"><name>fadeDelayY</name></member>
+    <member refid="_audio_player_8hpp_a4a99373aca91d99b5b9ecf6f8e30b97e_1a4a99373aca91d99b5b9ecf6f8e30b97e" kind="variable"><name>listener</name></member>
+    <member refid="_audio_player_8hpp_a0bb2dfc6324d0ac2a5f9b83148d3710c_1a0bb2dfc6324d0ac2a5f9b83148d3710c" kind="variable"><name>drawAudioRange</name></member>
+    <member refid="_audio_player_8hpp_a2b4a1455dce73e1186bbf2020a9ce002_1a2b4a1455dce73e1186bbf2020a9ce002" kind="variable"><name>audioIconScale</name></member>
+    <member refid="_audio_player_8hpp_a4e21beefadc86b8eca7304640f0db524_1a4e21beefadc86b8eca7304640f0db524" kind="function"><name>AudioPlayer</name></member>
+    <member refid="_audio_player_8hpp_ac52ac34d9f452d759ea1ce3f8df9f682_1ac52ac34d9f452d759ea1ce3f8df9f682" kind="function"><name>update</name></member>
+    <member refid="_audio_player_8hpp_af1361dd9199d249d2899a0c7e3449eb1_1af1361dd9199d249d2899a0c7e3449eb1" kind="function"><name>addMusic</name></member>
+    <member refid="_audio_player_8hpp_a507f135881e89679133b2a81d74abff2_1a507f135881e89679133b2a81d74abff2" kind="function"><name>addSound</name></member>
+    <member refid="_audio_player_8hpp_a3a878924d8438918d9769675d473b165_1a3a878924d8438918d9769675d473b165" kind="function"><name>playMusic</name></member>
+    <member refid="_audio_player_8hpp_a59b5a376b3a7b173a71220cfcd24d9d9_1a59b5a376b3a7b173a71220cfcd24d9d9" kind="function"><name>playSound</name></member>
+    <member refid="_audio_player_8hpp_a7d696a044bff4bcfdcaa78f21b4e152a_1a7d696a044bff4bcfdcaa78f21b4e152a" kind="function"><name>pauseMusic</name></member>
+    <member refid="_audio_player_8hpp_ac628f2d8f6164d6bc181f75c4ad9ef30_1ac628f2d8f6164d6bc181f75c4ad9ef30" kind="function"><name>resumeMusic</name></member>
+    <member refid="_audio_player_8hpp_a7473e9a04dc2e8f05241857d86586194_1a7473e9a04dc2e8f05241857d86586194" kind="function"><name>stopMusic</name></member>
+    <member refid="_audio_player_8hpp_ae351a6c7c79eb5cea03e910966bc37e3_1ae351a6c7c79eb5cea03e910966bc37e3" kind="function"><name>setMusicVolume</name></member>
+    <member refid="_audio_player_8hpp_afa3767ac7e3cdab51ab43cdd7ad294c6_1afa3767ac7e3cdab51ab43cdd7ad294c6" kind="function"><name>setSoundVolume</name></member>
+    <member refid="_audio_player_8hpp_a42be3a37ec7fe01679b69c17004dec32_1a42be3a37ec7fe01679b69c17004dec32" kind="function"><name>setFadeScaleX</name></member>
+    <member refid="_audio_player_8hpp_a2dd6b8849a274a8a95bb034e32adfd99_1a2dd6b8849a274a8a95bb034e32adfd99" kind="function"><name>setFadeScaleY</name></member>
+    <member refid="_audio_player_8hpp_a91417060f572c27ba818b88f36ea78cf_1a91417060f572c27ba818b88f36ea78cf" kind="function"><name>setFadeDelayX</name></member>
+    <member refid="_audio_player_8hpp_a09836476cb254a8bfd8e144c62db6b06_1a09836476cb254a8bfd8e144c62db6b06" kind="function"><name>setFadeDelayY</name></member>
+    <member refid="_audio_player_8hpp_adf3cf77acdb29518df8c24aa53c14559_1adf3cf77acdb29518df8c24aa53c14559" kind="function"><name>~AudioPlayer</name></member>
+    <member refid="_audio_player_8hpp_ad6a9ceca414d65d7701e27b39be6ef23_1ad6a9ceca414d65d7701e27b39be6ef23" kind="function"><name>debugDraw</name></member>
+    <member refid="_audio_player_8hpp_a6a2203698778ad758c38a119ffdf6b76_1a6a2203698778ad758c38a119ffdf6b76" kind="function"><name>inspectorImGui</name></member>
+  </compound>
+  <compound refid="_camera_8hpp" kind="file"><name>Camera.hpp</name>
+  </compound>
+  <compound refid="_light_8hpp" kind="file"><name>Light.hpp</name>
+  </compound>
+  <compound refid="_nugget_8hpp" kind="file"><name>Nugget.hpp</name>
+  </compound>
+  <compound refid="_animation_8hpp" kind="file"><name>Animation.hpp</name>
+  </compound>
+  <compound refid="_material_8hpp" kind="file"><name>Material.hpp</name>
+  </compound>
+  <compound refid="_sprite_8hpp" kind="file"><name>Sprite.hpp</name>
+  </compound>
+  <compound refid="_transform_8hpp" kind="file"><name>Transform.hpp</name>
+  </compound>
+  <compound refid="_physics_entity_8hpp" kind="file"><name>PhysicsEntity.hpp</name>
+  </compound>
+  <compound refid="_entity_8hpp" kind="file"><name>Entity.hpp</name>
+  </compound>
+  <compound refid="_game_8hpp" kind="file"><name>Game.hpp</name>
+  </compound>
+  <compound refid="_collision_handler_8hpp" kind="file"><name>CollisionHandler.hpp</name>
+  </compound>
+  <compound refid="_input_8hpp" kind="file"><name>Input.hpp</name>
+  </compound>
+  <compound refid="_particle_system_8hpp" kind="file"><name>ParticleSystem.hpp</name>
+  </compound>
+  <compound refid="_render_system_8hpp" kind="file"><name>RenderSystem.hpp</name>
+  </compound>
+  <compound refid="_scene_8hpp" kind="file"><name>Scene.hpp</name>
+  </compound>
+  <compound refid="_debug_draw_8hpp" kind="file"><name>DebugDraw.hpp</name>
+  </compound>
+  <compound refid="_debug_u_i_8hpp" kind="file"><name>DebugUI.hpp</name>
+  </compound>
+  <compound refid="_profiling_timer_8hpp" kind="file"><name>ProfilingTimer.hpp</name>
+  </compound>
+  <compound refid="_asset_manager_8hpp" kind="file"><name>AssetManager.hpp</name>
+  </compound>
+  <compound refid="_body_standard_8hpp" kind="file"><name>BodyStandard.hpp</name>
+  </compound>
+  <compound refid="_convert_8hpp" kind="file"><name>Convert.hpp</name>
+  </compound>
+  <compound refid="_dynamic_pool_8hpp" kind="file"><name>DynamicPool.hpp</name>
+  </compound>
+  <compound refid="_interpolation_8hpp" kind="file"><name>Interpolation.hpp</name>
+  </compound>
+  <compound refid="_memory_leak_detector_8hpp" kind="file"><name>MemoryLeakDetector.hpp</name>
+  </compound>
+  <compound refid="_mesh_8hpp" kind="file"><name>Mesh.hpp</name>
+  </compound>
+  <compound refid="picojson_8h" kind="file"><name>picojson.h</name>
+    <member refid="picojson_8h_ade694cad769bf17244011bde5b4cb928_1ade694cad769bf17244011bde5b4cb928" kind="define"><name>PICOJSON_USE_RVALUE_REFERENCE</name></member>
+    <member refid="picojson_8h_af6a3a9b85d5640d11e7c94ae3c7716d7_1af6a3a9b85d5640d11e7c94ae3c7716d7" kind="define"><name>PICOJSON_USE_LOCALE</name></member>
+    <member refid="picojson_8h_a0746b522f9bb442b3c2994dfd63a9d02_1a0746b522f9bb442b3c2994dfd63a9d02" kind="define"><name>PICOJSON_ASSERT</name></member>
+    <member refid="picojson_8h_a770571e12ff9370899184528f4b4626d_1a770571e12ff9370899184528f4b4626d" kind="define"><name>SNPRINTF</name></member>
+    <member refid="picojson_8h_a0831cc4953114e0949ccd6e2b8478e99_1a0831cc4953114e0949ccd6e2b8478e99" kind="define"><name>INIT</name></member>
+    <member refid="picojson_8h_ad4d0f823143fdfb63c59633d1603c7f3_1ad4d0f823143fdfb63c59633d1603c7f3" kind="define"><name>DEINIT</name></member>
+    <member refid="picojson_8h_a0831cc4953114e0949ccd6e2b8478e99_1a0831cc4953114e0949ccd6e2b8478e99" kind="define"><name>INIT</name></member>
+    <member refid="picojson_8h_a3786a4dad1b9709bb21424781ae17a4e_1a3786a4dad1b9709bb21424781ae17a4e" kind="define"><name>IS</name></member>
+    <member refid="picojson_8h_a503e08234fb7234faecc7041b404efe7_1a503e08234fb7234faecc7041b404efe7" kind="define"><name>GET</name></member>
+    <member refid="picojson_8h_a7b0b8784d785e03ff739e18b6e32316c_1a7b0b8784d785e03ff739e18b6e32316c" kind="define"><name>SET</name></member>
+    <member refid="picojson_8h_a339491d48190a5857a36d35499b14c3e_1a339491d48190a5857a36d35499b14c3e" kind="define"><name>MAP</name></member>
+    <member refid="picojson_8h_a8ab2c07aeb623ac6858c8b6705a5a87a_1a8ab2c07aeb623ac6858c8b6705a5a87a" kind="define"><name>MAP</name></member>
+    <member refid="picojson_8h_a3e51233ac757c87bf81904f7cf7b3d30_1a3e51233ac757c87bf81904f7cf7b3d30" kind="define"><name>IS</name></member>
+    <member refid="picojson_8h_af6b970af4f337ef1075f08f17784a23a_1af6b970af4f337ef1075f08f17784a23a" kind="define"><name>PICOJSON_CMP</name></member>
+    <member refid="picojson_8h_acfc95c2071e57351861cfb83e1ed6491_1acfc95c2071e57351861cfb83e1ed6491" kind="function"><name>operator&gt;&gt;</name></member>
+    <member refid="picojson_8h_ae000f94f3fb356f344328397f609928d_1ae000f94f3fb356f344328397f609928d" kind="function"><name>operator&lt;&lt;</name></member>
+  </compound>
+  <compound refid="_pool_8hpp" kind="file"><name>Pool.hpp</name>
+  </compound>
+  <compound refid="_shader_8hpp" kind="file"><name>Shader.hpp</name>
+  </compound>
+  <compound refid="_sprite_sheet_8hpp" kind="file"><name>SpriteSheet.hpp</name>
+  </compound>
+  <compound refid="_timer_8hpp" kind="file"><name>Timer.hpp</name>
+  </compound>
+  <compound refid="dir_510c3edf8fb208e766c8207df66c8983" kind="dir"><name>Projects/GameEngine/Auris</name>
+  </compound>
+  <compound refid="dir_773cbb0460c69b44d78e950541c17893" kind="dir"><name>Projects/GameEngine/Auris/src/Auris</name>
+  </compound>
+  <compound refid="dir_e7570ed25e150278040efdb7703cf1c4" kind="dir"><name>Projects/GameEngine/include/Auris</name>
+  </compound>
+  <compound refid="dir_c3f82afd33e45701eb900ffd07485dea" kind="dir"><name>Projects/GameEngine/Auris/src/Auris/Entities</name>
+  </compound>
+  <compound refid="dir_91b16268451be890f35426c2e0246f24" kind="dir"><name>Projects/GameEngine/include/Auris/Entities</name>
+  </compound>
+  <compound refid="dir_3cea731025ba02b2935e5e15a527eb69" kind="dir"><name>Projects/GameEngine</name>
+  </compound>
+  <compound refid="dir_ad4183b49321eaaf4186adc499cef52e" kind="dir"><name>Projects/GameEngine/include</name>
+  </compound>
+  <compound refid="dir_52d96a03572902fd013eb34cf4294a0c" kind="dir"><name>Projects/GameEngine/include/Auris/Entities/Nuggets</name>
+  </compound>
+  <compound refid="dir_05c1416e2ac5aaba5bd86c9f96921ca0" kind="dir"><name>Projects/GameEngine/Auris/src/Auris/Entities/Nuggets</name>
+  </compound>
+  <compound refid="dir_7a6499598ddcfcabe96e224cb4a6d834" kind="dir"><name>Projects</name>
+  </compound>
+  <compound refid="dir_db9279fda29de54ce88dc871a485a7aa" kind="dir"><name>Projects/GameEngine/Auris/src</name>
+  </compound>
+  <compound refid="dir_25df0ae62c74710d906db1eaa22d6bf3" kind="dir"><name>Projects/GameEngine/Auris/src/Auris/Systems</name>
+  </compound>
+  <compound refid="dir_ae0ed18ad17442b81460ea330e5058e6" kind="dir"><name>Projects/GameEngine/include/Auris/Systems</name>
+  </compound>
+  <compound refid="dir_835e89e5bef57cd1580ac07ab046f288" kind="dir"><name>Projects/GameEngine/include/Auris/Testing</name>
+  </compound>
+  <compound refid="dir_fd2ee00490f47b30e2d0cc348b2a924e" kind="dir"><name>Projects/GameEngine/Auris/src/Auris/Testing</name>
+  </compound>
+  <compound refid="dir_3b7f37ef6bd8a2ad4a30b070d3c3afd8" kind="dir"><name>Projects/GameEngine/Auris/src/Auris/Utilities</name>
+  </compound>
+  <compound refid="dir_3619dac44c82cec6e712bbc539213093" kind="dir"><name>Projects/GameEngine/include/Auris/Utilities</name>
+  </compound>
+</doxygenindex>

@@ -1,0 +1,17 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.12">
+  <compounddef id="dir_773cbb0460c69b44d78e950541c17893" kind="dir">
+    <compoundname>Projects/GameEngine/Auris/src/Auris</compoundname>
+    <innerdir refid="dir_c3f82afd33e45701eb900ffd07485dea">Projects/GameEngine/Auris/src/Auris/Entities</innerdir>
+    <innerdir refid="dir_25df0ae62c74710d906db1eaa22d6bf3">Projects/GameEngine/Auris/src/Auris/Systems</innerdir>
+    <innerdir refid="dir_fd2ee00490f47b30e2d0cc348b2a924e">Projects/GameEngine/Auris/src/Auris/Testing</innerdir>
+    <innerdir refid="dir_3b7f37ef6bd8a2ad4a30b070d3c3afd8">Projects/GameEngine/Auris/src/Auris/Utilities</innerdir>
+    <innerfile refid="_engine_8cpp">Engine.cpp</innerfile>
+    <innerfile refid="_game_8cpp">Game.cpp</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="Projects/GameEngine/Auris/src/Auris/"/>
+  </compounddef>
+</doxygen>

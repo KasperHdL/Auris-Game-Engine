@@ -1,0 +1,16 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.12">
+  <compounddef id="dir_ae0ed18ad17442b81460ea330e5058e6" kind="dir">
+    <compoundname>Projects/GameEngine/include/Auris/Systems</compoundname>
+    <innerfile refid="_collision_handler_8hpp">CollisionHandler.hpp</innerfile>
+    <innerfile refid="_input_8hpp">Input.hpp</innerfile>
+    <innerfile refid="_particle_system_8hpp">ParticleSystem.hpp</innerfile>
+    <innerfile refid="_render_system_8hpp">RenderSystem.hpp</innerfile>
+    <innerfile refid="_scene_8hpp">Scene.hpp</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="Projects/GameEngine/include/Auris/Systems/"/>
+  </compounddef>
+</doxygen>

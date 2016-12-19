@@ -1,0 +1,106 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.12">
+  <compounddef id="namespace_auris" kind="namespace" language="C++">
+    <compoundname>Auris</compoundname>
+    <innerclass refid="class_auris_1_1_animation" prot="public">Auris::Animation</innerclass>
+    <innerclass refid="class_auris_1_1_asset_manager" prot="public">Auris::AssetManager</innerclass>
+    <innerclass refid="class_auris_1_1_camera" prot="public">Auris::Camera</innerclass>
+    <innerclass refid="class_auris_1_1_collision_handler" prot="public">Auris::CollisionHandler</innerclass>
+    <innerclass refid="class_auris_1_1_debug_draw" prot="public">Auris::DebugDraw</innerclass>
+    <innerclass refid="class_auris_1_1_debug_u_i" prot="public">Auris::DebugUI</innerclass>
+    <innerclass refid="class_auris_1_1_dynamic_pool" prot="public">Auris::DynamicPool</innerclass>
+    <innerclass refid="class_auris_1_1_engine" prot="public">Auris::Engine</innerclass>
+    <innerclass refid="class_auris_1_1_entity" prot="public">Auris::Entity</innerclass>
+    <innerclass refid="class_auris_1_1_game" prot="public">Auris::Game</innerclass>
+    <innerclass refid="class_auris_1_1_input" prot="public">Auris::Input</innerclass>
+    <innerclass refid="class_auris_1_1_interpolation" prot="public">Auris::Interpolation</innerclass>
+    <innerclass refid="class_auris_1_1_light" prot="public">Auris::Light</innerclass>
+    <innerclass refid="class_auris_1_1_material" prot="public">Auris::Material</innerclass>
+    <innerclass refid="class_auris_1_1_memory_leak_detector" prot="public">Auris::MemoryLeakDetector</innerclass>
+    <innerclass refid="class_auris_1_1_mesh" prot="public">Auris::Mesh</innerclass>
+    <innerclass refid="class_auris_1_1_nugget" prot="public">Auris::Nugget</innerclass>
+    <innerclass refid="class_auris_1_1_particle_system" prot="public">Auris::ParticleSystem</innerclass>
+    <innerclass refid="class_auris_1_1_physics_entity" prot="public">Auris::PhysicsEntity</innerclass>
+    <innerclass refid="class_auris_1_1_pool" prot="public">Auris::Pool</innerclass>
+    <innerclass refid="class_auris_1_1_profiling_timer" prot="public">Auris::ProfilingTimer</innerclass>
+    <innerclass refid="class_auris_1_1_render_system" prot="public">Auris::RenderSystem</innerclass>
+    <innerclass refid="class_auris_1_1_scene" prot="public">Auris::Scene</innerclass>
+    <innerclass refid="class_auris_1_1_shader" prot="public">Auris::Shader</innerclass>
+    <innerclass refid="class_auris_1_1_sprite" prot="public">Auris::Sprite</innerclass>
+    <innerclass refid="class_auris_1_1_sprite_sheet" prot="public">Auris::SpriteSheet</innerclass>
+    <innerclass refid="class_auris_1_1_timer" prot="public">Auris::Timer</innerclass>
+    <innerclass refid="class_auris_1_1_transform" prot="public">Auris::Transform</innerclass>
+    <innernamespace refid="namespace_auris_1_1_action">Auris::Action</innernamespace>
+    <innernamespace refid="namespace_auris_1_1_constants">Auris::Constants</innernamespace>
+    <innernamespace refid="namespace_auris_1_1_convert">Auris::Convert</innernamespace>
+    <innernamespace refid="namespace_auris_1_1_utilities">Auris::Utilities</innernamespace>
+      <sectiondef kind="enum">
+      <memberdef kind="enum" id="namespace_auris_a283c85dda8b6763292a1c3120c6b5c4f_1a283c85dda8b6763292a1c3120c6b5c4f" prot="public" static="no">
+        <name>InterpolationType</name>
+        <enumvalue id="namespace_auris_a283c85dda8b6763292a1c3120c6b5c4f_1a283c85dda8b6763292a1c3120c6b5c4fa32a843da6ea40ab3b17a3421ccdf671b" prot="public">
+          <name>Linear</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespace_auris_a283c85dda8b6763292a1c3120c6b5c4f_1a283c85dda8b6763292a1c3120c6b5c4fa31aa08a905ffdb74542a88cb7320c69d" prot="public">
+          <name>Bezier</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespace_auris_a283c85dda8b6763292a1c3120c6b5c4f_1a283c85dda8b6763292a1c3120c6b5c4fa70457be66a37fd77955ebfb026c57a24" prot="public">
+          <name>Hermite</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespace_auris_a283c85dda8b6763292a1c3120c6b5c4f_1a283c85dda8b6763292a1c3120c6b5c4faf944f585a3a2c251e655527a1e81cff7" prot="public">
+          <name>CatmullRom</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespace_auris_a283c85dda8b6763292a1c3120c6b5c4f_1a283c85dda8b6763292a1c3120c6b5c4fa828ce1e5157657c1792f0503c2d430db" prot="public">
+          <name>BSpline</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+<para>An enum class of InterpolationType. </para>        </briefdescription>
+        <detaileddescription>
+<para>That holds information about the type of interpolation. Linear, Bezier, Hermite, CatmullRom and BSpline. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Projects/GameEngine/include/Auris/Utilities/Interpolation.hpp" line="12" column="1" bodyfile="Projects/GameEngine/include/Auris/Utilities/Interpolation.hpp" bodystart="12" bodyend="18"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="var">
+      <memberdef kind="variable" id="namespace_auris_a0e5de4a121d48b7b72da65c9443f651a_1a0e5de4a121d48b7b72da65c9443f651a" prot="public" static="yes" mutable="no">
+        <type>float</type>
+        <definition>float Auris::MB_DIVIDER</definition>
+        <argsstring></argsstring>
+        <name>MB_DIVIDER</name>
+        <initializer>= 1024 * 1024</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Projects/GameEngine/include/Auris/Utilities/MemoryLeakDetector.hpp" line="55" column="1" bodyfile="Projects/GameEngine/include/Auris/Utilities/MemoryLeakDetector.hpp" bodystart="55" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>The <ref refid="class_auris_1_1_animation" kindref="compound">Animation</ref> class that extend the <ref refid="class_auris_1_1_nugget" kindref="compound">Nugget</ref> class. </para>    </briefdescription>
+    <detaileddescription>
+<para>Used to make sprite animations </para>    </detaileddescription>
+    <location file="Projects/GameEngine/include/Auris/Action.hpp" line="3" column="1"/>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,552 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.12">
+  <compounddef id="class_auris_1_1_input" kind="class" language="C++" prot="public">
+    <compoundname>Auris::Input</compoundname>
+    <includes refid="_input_8hpp" local="no">Input.hpp</includes>
+      <sectiondef kind="public-static-attrib">
+      <memberdef kind="variable" id="class_auris_1_1_input_a756c57e33cd0ff991ba76ecff4dfa8a4_1a756c57e33cd0ff991ba76ecff4dfa8a4" prot="public" static="yes" mutable="no">
+        <type>int</type>
+        <definition>int Input::quit</definition>
+        <argsstring></argsstring>
+        <name>quit</name>
+        <initializer>= 0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>A static int value: quit. Used to figure out if the game is quitted. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Projects/GameEngine/include/Auris/Systems/Input.hpp" line="62" column="1" bodyfile="Projects/GameEngine/include/Auris/Systems/Input.hpp" bodystart="62" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-static-attrib">
+      <memberdef kind="variable" id="class_auris_1_1_input_a740616067bbd7ce3f68c826403deffa2_1a740616067bbd7ce3f68c826403deffa2" prot="private" static="yes" mutable="no">
+        <type>std::map&lt; SDL_Scancode, bool &gt;</type>
+        <definition>std::map&lt; SDL_Scancode, bool &gt; Input::heldKeys</definition>
+        <argsstring></argsstring>
+        <name>heldKeys</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>A static map of SDL_Scancode and bool: heldKeys. Holds the state of the keys currently being held </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Projects/GameEngine/include/Auris/Systems/Input.hpp" line="115" column="1" bodyfile="Projects/GameEngine/include/Auris/Systems/Input.hpp" bodystart="115" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_auris_1_1_input_a10e3cca91a471e8502d805878736b27a_1a10e3cca91a471e8502d805878736b27a" prot="private" static="yes" mutable="no">
+        <type>std::map&lt; SDL_Scancode, bool &gt;</type>
+        <definition>std::map&lt; SDL_Scancode, bool &gt; Input::downKeys</definition>
+        <argsstring></argsstring>
+        <name>downKeys</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>A static map of SDL_Scancode and bool: downKeys. Holds the state of the keys that has been pressed down </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Projects/GameEngine/include/Auris/Systems/Input.hpp" line="117" column="1" bodyfile="Projects/GameEngine/include/Auris/Systems/Input.hpp" bodystart="117" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_auris_1_1_input_a4ca82b4077078e3a5fb83cba4176d99d_1a4ca82b4077078e3a5fb83cba4176d99d" prot="private" static="yes" mutable="no">
+        <type>std::map&lt; SDL_Scancode, bool &gt;</type>
+        <definition>std::map&lt; SDL_Scancode, bool &gt; Input::upKeys</definition>
+        <argsstring></argsstring>
+        <name>upKeys</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>A static map of SDL_Scancode and bool: upKeys. Holds the state of the keys currently that has been lifted up </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Projects/GameEngine/include/Auris/Systems/Input.hpp" line="119" column="1" bodyfile="Projects/GameEngine/include/Auris/Systems/Input.hpp" bodystart="119" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_auris_1_1_input_aaf10b7d1bd6070dcce8728d29ab707bc_1aaf10b7d1bd6070dcce8728d29ab707bc" prot="private" static="yes" mutable="no">
+        <type>std::map&lt; SDL_JoystickID, SDL_GameController * &gt;</type>
+        <definition>std::map&lt; SDL_JoystickID, SDL_GameController * &gt; Input::ctrl</definition>
+        <argsstring></argsstring>
+        <name>ctrl</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>A static map of SDL_JoystickID and SDL_GameController pointer: ctrl. Holds the id and their controllers </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Projects/GameEngine/include/Auris/Systems/Input.hpp" line="142" column="1" bodyfile="Projects/GameEngine/include/Auris/Systems/Input.hpp" bodystart="142" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_auris_1_1_input_adaa4dcc138073a8ec372d9fddb3766b3_1adaa4dcc138073a8ec372d9fddb3766b3" prot="private" static="yes" mutable="no">
+        <type><ref refid="class_auris_1_1_game" kindref="compound">Game</ref> *</type>
+        <definition>Game * Input::game</definition>
+        <argsstring></argsstring>
+        <name>game</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>A static <ref refid="class_auris_1_1_game" kindref="compound">Game</ref> pointer: game. Holds an instance of the game </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Projects/GameEngine/include/Auris/Systems/Input.hpp" line="144" column="1" bodyfile="Projects/GameEngine/include/Auris/Systems/Input.hpp" bodystart="144" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="class_auris_1_1_input_ae964b6d3af50b694fe32137a2bf071bf_1ae964b6d3af50b694fe32137a2bf071bf" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Input::init</definition>
+        <argsstring>(Game *game)</argsstring>
+        <name>init</name>
+        <param>
+          <type><ref refid="class_auris_1_1_game" kindref="compound">Game</ref> *</type>
+          <declname>game</declname>
+        </param>
+        <briefdescription>
+<para>A static init method, taking 1 argument. </para>        </briefdescription>
+        <detaileddescription>
+<para>Initializes the input system, meaning initilizing controllers <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>game</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>a <ref refid="class_auris_1_1_game" kindref="compound">Game</ref> pointer, that is an instance of the game. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Projects/GameEngine/include/Auris/Systems/Input.hpp" line="24" column="1" bodyfile="Projects/GameEngine/Auris/src/Auris/Systems/Input.cpp" bodystart="16" bodyend="18"/>
+      </memberdef>
+      <memberdef kind="function" id="class_auris_1_1_input_aa7fe26710dd863d11737bf2f6de4ad05_1aa7fe26710dd863d11737bf2f6de4ad05" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Input::update</definition>
+        <argsstring>()</argsstring>
+        <name>update</name>
+        <briefdescription>
+<para>A static update method. </para>        </briefdescription>
+        <detaileddescription>
+<para>Update all key presses, and controller connected/disconnected events </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Projects/GameEngine/include/Auris/Systems/Input.hpp" line="30" column="1" bodyfile="Projects/GameEngine/Auris/src/Auris/Systems/Input.cpp" bodystart="20" bodyend="58"/>
+      </memberdef>
+      <memberdef kind="function" id="class_auris_1_1_input_a38019b2111c789cfc6fff651b6ecfe19_1a38019b2111c789cfc6fff651b6ecfe19" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Input::shutdown</definition>
+        <argsstring>()</argsstring>
+        <name>shutdown</name>
+        <briefdescription>
+<para>A static shutdown method. </para>        </briefdescription>
+        <detaileddescription>
+<para>Shutdown the input system, meaning clears all key presses </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Projects/GameEngine/include/Auris/Systems/Input.hpp" line="36" column="1" bodyfile="Projects/GameEngine/Auris/src/Auris/Systems/Input.cpp" bodystart="60" bodyend="69"/>
+      </memberdef>
+      <memberdef kind="function" id="class_auris_1_1_input_a213dc33decf772ef923a771679678b2e_1a213dc33decf772ef923a771679678b2e" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool Input::keyDown</definition>
+        <argsstring>(SDL_Scancode key)</argsstring>
+        <name>keyDown</name>
+        <param>
+          <type>SDL_Scancode</type>
+          <declname>key</declname>
+        </param>
+        <briefdescription>
+<para>A static keyDown method, taking 1 argument. </para>        </briefdescription>
+        <detaileddescription>
+<para>a method to get the key that is pressed down <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>key</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>a SDL_Scancode, that is the scancode of the keyboard key </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>bool, the state of the key </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Projects/GameEngine/include/Auris/Systems/Input.hpp" line="44" column="1" bodyfile="Projects/GameEngine/Auris/src/Auris/Systems/Input.cpp" bodystart="84" bodyend="86"/>
+      </memberdef>
+      <memberdef kind="function" id="class_auris_1_1_input_a0ecc5a54bebabeead7dd5083624756f7_1a0ecc5a54bebabeead7dd5083624756f7" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool Input::keyUp</definition>
+        <argsstring>(SDL_Scancode key)</argsstring>
+        <name>keyUp</name>
+        <param>
+          <type>SDL_Scancode</type>
+          <declname>key</declname>
+        </param>
+        <briefdescription>
+<para>A static keyUp method, taking 1 argument. </para>        </briefdescription>
+        <detaileddescription>
+<para>a method to get the key that is lifted <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>key</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>a SDL_Scancode, that is the scancode of the keyboard key </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>bool, the state of the key </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Projects/GameEngine/include/Auris/Systems/Input.hpp" line="52" column="1" bodyfile="Projects/GameEngine/Auris/src/Auris/Systems/Input.cpp" bodystart="88" bodyend="90"/>
+      </memberdef>
+      <memberdef kind="function" id="class_auris_1_1_input_a0d4ba6f99c628b901acc3d75b9d1cb3c_1a0d4ba6f99c628b901acc3d75b9d1cb3c" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool Input::keyHeld</definition>
+        <argsstring>(SDL_Scancode key)</argsstring>
+        <name>keyHeld</name>
+        <param>
+          <type>SDL_Scancode</type>
+          <declname>key</declname>
+        </param>
+        <briefdescription>
+<para>A static keyHeld method, taking 1 argument. </para>        </briefdescription>
+        <detaileddescription>
+<para>a method to get the key that is currently being held down <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>key</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>a SDL_Scancode, that is the scancode of the keyboard key </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>bool, the state of the key </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Projects/GameEngine/include/Auris/Systems/Input.hpp" line="60" column="1" bodyfile="Projects/GameEngine/Auris/src/Auris/Systems/Input.cpp" bodystart="92" bodyend="94"/>
+      </memberdef>
+      <memberdef kind="function" id="class_auris_1_1_input_afafbbc2341cc0cf58e90b5a8405dd0f9_1afafbbc2341cc0cf58e90b5a8405dd0f9" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool Input::getControllerButtonState</definition>
+        <argsstring>(int controllerID, SDL_GameControllerButton button)</argsstring>
+        <name>getControllerButtonState</name>
+        <param>
+          <type>int</type>
+          <declname>controllerID</declname>
+        </param>
+        <param>
+          <type>SDL_GameControllerButton</type>
+          <declname>button</declname>
+        </param>
+        <briefdescription>
+<para>A static getControllerButtonState method, taking 2 arguments. </para>        </briefdescription>
+        <detaileddescription>
+<para>a method to get the state of the button on a controller. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>controllerID</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>an int, that is the id of the controller </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>button</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>a SDL_GameControllerButton, that is the button to get the state of </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>bool, the state of the button (true for pressed down) </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Projects/GameEngine/include/Auris/Systems/Input.hpp" line="71" column="1" bodyfile="Projects/GameEngine/Auris/src/Auris/Systems/Input.cpp" bodystart="135" bodyend="137"/>
+      </memberdef>
+      <memberdef kind="function" id="class_auris_1_1_input_ae40e9e19c66aa8c6c831653549c28b65_1ae40e9e19c66aa8c6c831653549c28b65" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int Input::getControllerAxisState</definition>
+        <argsstring>(int controllerID, SDL_GameControllerAxis axis)</argsstring>
+        <name>getControllerAxisState</name>
+        <param>
+          <type>int</type>
+          <declname>controllerID</declname>
+        </param>
+        <param>
+          <type>SDL_GameControllerAxis</type>
+          <declname>axis</declname>
+        </param>
+        <briefdescription>
+<para>A static getControllerAxisState method, taking 2 arguments. </para>        </briefdescription>
+        <detaileddescription>
+<para>a method to get the state of the axis on a controller. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>controllerID</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>an int, that is the id of the controller </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>axis</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>a SDL_GameControllerAxis, that is the axis to get the state of </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>int, the state of the Axis (ranging from -32768 to 32767, trigger from 0 to 32767) </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Projects/GameEngine/include/Auris/Systems/Input.hpp" line="80" column="1" bodyfile="Projects/GameEngine/Auris/src/Auris/Systems/Input.cpp" bodystart="139" bodyend="141"/>
+      </memberdef>
+      <memberdef kind="function" id="class_auris_1_1_input_a94da9f7546ff948cbd193d2ec02c7f58_1a94da9f7546ff948cbd193d2ec02c7f58" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>glm::vec2</type>
+        <definition>glm::vec2 Input::getControllerLeftStickState</definition>
+        <argsstring>(int controllerID)</argsstring>
+        <name>getControllerLeftStickState</name>
+        <param>
+          <type>int</type>
+          <declname>controllerID</declname>
+        </param>
+        <briefdescription>
+<para>A static getControllerLeftStickState method, taking 1 argument. </para>        </briefdescription>
+        <detaileddescription>
+<para>a method to get the state of the left stick on a controller. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>controllerID</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>an int, that is the id of the controller </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>vec2, the state of both axis of the left stick the Axis (ranging from -32768 to 32767) </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Projects/GameEngine/include/Auris/Systems/Input.hpp" line="88" column="1" bodyfile="Projects/GameEngine/Auris/src/Auris/Systems/Input.cpp" bodystart="127" bodyend="129"/>
+      </memberdef>
+      <memberdef kind="function" id="class_auris_1_1_input_aa396fc9486927476d8fb4a608bf6aaa0_1aa396fc9486927476d8fb4a608bf6aaa0" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>glm::vec2</type>
+        <definition>glm::vec2 Input::getControllerRightStickState</definition>
+        <argsstring>(int controllerID)</argsstring>
+        <name>getControllerRightStickState</name>
+        <param>
+          <type>int</type>
+          <declname>controllerID</declname>
+        </param>
+        <briefdescription>
+<para>A static getControllerRightStickState method, taking 1 argument. </para>        </briefdescription>
+        <detaileddescription>
+<para>a method to get the state of the right stick on a controller. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>controllerID</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>an int, that is the id of the controller </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>vec2, the state of both axis of the right stick the Axis (ranging from -32768 to 32767) </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Projects/GameEngine/include/Auris/Systems/Input.hpp" line="96" column="1" bodyfile="Projects/GameEngine/Auris/src/Auris/Systems/Input.cpp" bodystart="131" bodyend="133"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-static-func">
+      <memberdef kind="function" id="class_auris_1_1_input_af7975123c8e7bf107d3ffeb7e8c7ac62_1af7975123c8e7bf107d3ffeb7e8c7ac62" prot="private" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Input::keyUpEvent</definition>
+        <argsstring>(const SDL_Event &amp;event)</argsstring>
+        <name>keyUpEvent</name>
+        <param>
+          <type>const SDL_Event &amp;</type>
+          <declname>event</declname>
+        </param>
+        <briefdescription>
+<para>A static keyUpEvent method, taking 1 argument. </para>        </briefdescription>
+        <detaileddescription>
+<para>A method to register a key being lifted up event. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>&amp;event</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>an const SDL_Event, that is the specific event </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Projects/GameEngine/include/Auris/Systems/Input.hpp" line="106" column="1" bodyfile="Projects/GameEngine/Auris/src/Auris/Systems/Input.cpp" bodystart="78" bodyend="81"/>
+      </memberdef>
+      <memberdef kind="function" id="class_auris_1_1_input_a2bcc16ac90c1001921978e6a2c470242_1a2bcc16ac90c1001921978e6a2c470242" prot="private" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Input::keyDownEvent</definition>
+        <argsstring>(const SDL_Event &amp;event)</argsstring>
+        <name>keyDownEvent</name>
+        <param>
+          <type>const SDL_Event &amp;</type>
+          <declname>event</declname>
+        </param>
+        <briefdescription>
+<para>A static keyUpEvent method, taking 1 argument. </para>        </briefdescription>
+        <detaileddescription>
+<para>A method to register a key being pressed down event. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>&amp;event</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>an const SDL_Event, that is the specific event </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Projects/GameEngine/include/Auris/Systems/Input.hpp" line="113" column="1" bodyfile="Projects/GameEngine/Auris/src/Auris/Systems/Input.cpp" bodystart="72" bodyend="75"/>
+      </memberdef>
+      <memberdef kind="function" id="class_auris_1_1_input_acbcc6062a1e6a37f3ceceec2d7912bd9_1acbcc6062a1e6a37f3ceceec2d7912bd9" prot="private" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Input::controllerAdded</definition>
+        <argsstring>(const SDL_Event &amp;event)</argsstring>
+        <name>controllerAdded</name>
+        <param>
+          <type>const SDL_Event &amp;</type>
+          <declname>event</declname>
+        </param>
+        <briefdescription>
+<para>A static controllerAdded method, taking 1 argument. </para>        </briefdescription>
+        <detaileddescription>
+<para>A method to register a controller being added event. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>&amp;event</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>an const SDL_Event, that is the specific event </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Projects/GameEngine/include/Auris/Systems/Input.hpp" line="126" column="1" bodyfile="Projects/GameEngine/Auris/src/Auris/Systems/Input.cpp" bodystart="96" bodyend="106"/>
+      </memberdef>
+      <memberdef kind="function" id="class_auris_1_1_input_aebd119c81182ee36a9431c8dc4bdde6f_1aebd119c81182ee36a9431c8dc4bdde6f" prot="private" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Input::initController</definition>
+        <argsstring>(const SDL_Event &amp;event)</argsstring>
+        <name>initController</name>
+        <param>
+          <type>const SDL_Event &amp;</type>
+          <declname>event</declname>
+        </param>
+        <briefdescription>
+<para>A static initController method, taking 1 argument. </para>        </briefdescription>
+        <detaileddescription>
+<para>A method to register a controller being initialized with a button press event. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>&amp;event</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>an const SDL_Event, that is the specific event </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Projects/GameEngine/include/Auris/Systems/Input.hpp" line="133" column="1" bodyfile="Projects/GameEngine/Auris/src/Auris/Systems/Input.cpp" bodystart="108" bodyend="115"/>
+      </memberdef>
+      <memberdef kind="function" id="class_auris_1_1_input_a971b8a9beaff5691d5750396fc1967e5_1a971b8a9beaff5691d5750396fc1967e5" prot="private" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Input::controllerRemoved</definition>
+        <argsstring>(const SDL_Event &amp;event)</argsstring>
+        <name>controllerRemoved</name>
+        <param>
+          <type>const SDL_Event &amp;</type>
+          <declname>event</declname>
+        </param>
+        <briefdescription>
+<para>A static controllerRemoved method, taking 1 argument. </para>        </briefdescription>
+        <detaileddescription>
+<para>A method to register a controller being disconnected event. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>&amp;event</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>an const SDL_Event, that is the specific event </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Projects/GameEngine/include/Auris/Systems/Input.hpp" line="140" column="1" bodyfile="Projects/GameEngine/Auris/src/Auris/Systems/Input.cpp" bodystart="117" bodyend="125"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>The <ref refid="class_auris_1_1_input" kindref="compound">Input</ref> class. </para>    </briefdescription>
+    <detaileddescription>
+<para>Handles all input of the engine Everything in the input class is static </para>    </detaileddescription>
+    <collaborationgraph>
+      <node id="136">
+        <label>Auris::Game</label>
+        <link refid="class_auris_1_1_game"/>
+        <childnode refid="137" relation="usage">
+          <edgelabel>newEntities</edgelabel>
+          <edgelabel>entities</edgelabel>
+        </childnode>
+        <childnode refid="136" relation="usage">
+          <edgelabel>instance</edgelabel>
+        </childnode>
+        <childnode refid="138" relation="usage">
+          <edgelabel>camera</edgelabel>
+        </childnode>
+        <childnode refid="139" relation="usage">
+          <edgelabel>destroyEntities</edgelabel>
+        </childnode>
+      </node>
+      <node id="141">
+        <label>std::map&lt; SDL_Scancode, bool &gt;</label>
+      </node>
+      <node id="140">
+        <label>std::map&lt; SDL_JoystickID, SDL_GameController *&gt;</label>
+      </node>
+      <node id="138">
+        <label>Auris::Camera</label>
+        <link refid="class_auris_1_1_camera"/>
+      </node>
+      <node id="137">
+        <label>std::vector&lt; std::shared_ptr&lt; Auris::Entity &gt; &gt;</label>
+      </node>
+      <node id="135">
+        <label>Auris::Input</label>
+        <link refid="class_auris_1_1_input"/>
+        <childnode refid="136" relation="usage">
+          <edgelabel>game</edgelabel>
+        </childnode>
+        <childnode refid="140" relation="usage">
+          <edgelabel>ctrl</edgelabel>
+        </childnode>
+        <childnode refid="141" relation="usage">
+          <edgelabel>heldKeys</edgelabel>
+          <edgelabel>downKeys</edgelabel>
+          <edgelabel>upKeys</edgelabel>
+        </childnode>
+      </node>
+      <node id="139">
+        <label>std::vector&lt; int &gt;</label>
+      </node>
+    </collaborationgraph>
+    <location file="Projects/GameEngine/include/Auris/Systems/Input.hpp" line="16" column="1" bodyfile="Projects/GameEngine/include/Auris/Systems/Input.hpp" bodystart="16" bodyend="146"/>
+    <listofallmembers>
+      <member refid="class_auris_1_1_input_acbcc6062a1e6a37f3ceceec2d7912bd9_1acbcc6062a1e6a37f3ceceec2d7912bd9" prot="private" virt="non-virtual"><scope>Auris::Input</scope><name>controllerAdded</name></member>
+      <member refid="class_auris_1_1_input_a971b8a9beaff5691d5750396fc1967e5_1a971b8a9beaff5691d5750396fc1967e5" prot="private" virt="non-virtual"><scope>Auris::Input</scope><name>controllerRemoved</name></member>
+      <member refid="class_auris_1_1_input_aaf10b7d1bd6070dcce8728d29ab707bc_1aaf10b7d1bd6070dcce8728d29ab707bc" prot="private" virt="non-virtual"><scope>Auris::Input</scope><name>ctrl</name></member>
+      <member refid="class_auris_1_1_input_a10e3cca91a471e8502d805878736b27a_1a10e3cca91a471e8502d805878736b27a" prot="private" virt="non-virtual"><scope>Auris::Input</scope><name>downKeys</name></member>
+      <member refid="class_auris_1_1_input_adaa4dcc138073a8ec372d9fddb3766b3_1adaa4dcc138073a8ec372d9fddb3766b3" prot="private" virt="non-virtual"><scope>Auris::Input</scope><name>game</name></member>
+      <member refid="class_auris_1_1_input_ae40e9e19c66aa8c6c831653549c28b65_1ae40e9e19c66aa8c6c831653549c28b65" prot="public" virt="non-virtual"><scope>Auris::Input</scope><name>getControllerAxisState</name></member>
+      <member refid="class_auris_1_1_input_afafbbc2341cc0cf58e90b5a8405dd0f9_1afafbbc2341cc0cf58e90b5a8405dd0f9" prot="public" virt="non-virtual"><scope>Auris::Input</scope><name>getControllerButtonState</name></member>
+      <member refid="class_auris_1_1_input_a94da9f7546ff948cbd193d2ec02c7f58_1a94da9f7546ff948cbd193d2ec02c7f58" prot="public" virt="non-virtual"><scope>Auris::Input</scope><name>getControllerLeftStickState</name></member>
+      <member refid="class_auris_1_1_input_aa396fc9486927476d8fb4a608bf6aaa0_1aa396fc9486927476d8fb4a608bf6aaa0" prot="public" virt="non-virtual"><scope>Auris::Input</scope><name>getControllerRightStickState</name></member>
+      <member refid="class_auris_1_1_input_a740616067bbd7ce3f68c826403deffa2_1a740616067bbd7ce3f68c826403deffa2" prot="private" virt="non-virtual"><scope>Auris::Input</scope><name>heldKeys</name></member>
+      <member refid="class_auris_1_1_input_ae964b6d3af50b694fe32137a2bf071bf_1ae964b6d3af50b694fe32137a2bf071bf" prot="public" virt="non-virtual"><scope>Auris::Input</scope><name>init</name></member>
+      <member refid="class_auris_1_1_input_aebd119c81182ee36a9431c8dc4bdde6f_1aebd119c81182ee36a9431c8dc4bdde6f" prot="private" virt="non-virtual"><scope>Auris::Input</scope><name>initController</name></member>
+      <member refid="class_auris_1_1_input_a213dc33decf772ef923a771679678b2e_1a213dc33decf772ef923a771679678b2e" prot="public" virt="non-virtual"><scope>Auris::Input</scope><name>keyDown</name></member>
+      <member refid="class_auris_1_1_input_a2bcc16ac90c1001921978e6a2c470242_1a2bcc16ac90c1001921978e6a2c470242" prot="private" virt="non-virtual"><scope>Auris::Input</scope><name>keyDownEvent</name></member>
+      <member refid="class_auris_1_1_input_a0d4ba6f99c628b901acc3d75b9d1cb3c_1a0d4ba6f99c628b901acc3d75b9d1cb3c" prot="public" virt="non-virtual"><scope>Auris::Input</scope><name>keyHeld</name></member>
+      <member refid="class_auris_1_1_input_a0ecc5a54bebabeead7dd5083624756f7_1a0ecc5a54bebabeead7dd5083624756f7" prot="public" virt="non-virtual"><scope>Auris::Input</scope><name>keyUp</name></member>
+      <member refid="class_auris_1_1_input_af7975123c8e7bf107d3ffeb7e8c7ac62_1af7975123c8e7bf107d3ffeb7e8c7ac62" prot="private" virt="non-virtual"><scope>Auris::Input</scope><name>keyUpEvent</name></member>
+      <member refid="class_auris_1_1_input_a756c57e33cd0ff991ba76ecff4dfa8a4_1a756c57e33cd0ff991ba76ecff4dfa8a4" prot="public" virt="non-virtual"><scope>Auris::Input</scope><name>quit</name></member>
+      <member refid="class_auris_1_1_input_a38019b2111c789cfc6fff651b6ecfe19_1a38019b2111c789cfc6fff651b6ecfe19" prot="public" virt="non-virtual"><scope>Auris::Input</scope><name>shutdown</name></member>
+      <member refid="class_auris_1_1_input_aa7fe26710dd863d11737bf2f6de4ad05_1aa7fe26710dd863d11737bf2f6de4ad05" prot="public" virt="non-virtual"><scope>Auris::Input</scope><name>update</name></member>
+      <member refid="class_auris_1_1_input_a4ca82b4077078e3a5fb83cba4176d99d_1a4ca82b4077078e3a5fb83cba4176d99d" prot="private" virt="non-virtual"><scope>Auris::Input</scope><name>upKeys</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

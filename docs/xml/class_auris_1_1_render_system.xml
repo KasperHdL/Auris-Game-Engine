@@ -1,0 +1,521 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.12">
+  <compounddef id="class_auris_1_1_render_system" kind="class" language="C++" prot="public">
+    <compoundname>Auris::RenderSystem</compoundname>
+    <includes refid="_render_system_8hpp" local="no">RenderSystem.hpp</includes>
+      <sectiondef kind="public-static-attrib">
+      <memberdef kind="variable" id="class_auris_1_1_render_system_a33dddcaba281565ebbeca3c40a89cfab_1a33dddcaba281565ebbeca3c40a89cfab" prot="public" static="yes" mutable="no">
+        <type><ref refid="class_auris_1_1_dynamic_pool" kindref="compound">DynamicPool</ref>&lt; <ref refid="class_auris_1_1_sprite" kindref="compound">Sprite</ref> &gt;</type>
+        <definition>DynamicPool&lt; Sprite &gt; RenderSystem::spritePool</definition>
+        <argsstring></argsstring>
+        <name>spritePool</name>
+        <initializer>= <ref refid="class_auris_1_1_dynamic_pool" kindref="compound">DynamicPool</ref>&lt;<ref refid="class_auris_1_1_sprite" kindref="compound">Sprite</ref>&gt;(32)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>A <ref refid="class_auris_1_1_pool" kindref="compound">Pool</ref> of <ref refid="class_auris_1_1_sprite" kindref="compound">Sprite</ref> values: spritePool. The pool that all sprites are within. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Projects/GameEngine/include/Auris/Systems/RenderSystem.hpp" line="24" column="1" bodyfile="Projects/GameEngine/include/Auris/Systems/RenderSystem.hpp" bodystart="24" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_auris_1_1_render_system_ab781a7fd761dd076a542ebe58f9e9b39_1ab781a7fd761dd076a542ebe58f9e9b39" prot="public" static="yes" mutable="no">
+        <type>vector&lt; shared_ptr&lt; <ref refid="class_auris_1_1_animation" kindref="compound">Animation</ref> &gt; &gt;</type>
+        <definition>vector&lt; shared_ptr&lt; Animation &gt; &gt; RenderSystem::animations</definition>
+        <argsstring></argsstring>
+        <name>animations</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>A vector of shared pointer of <ref refid="class_auris_1_1_animation" kindref="compound">Animation</ref> values: animations. The vector of all animations in the engine. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Projects/GameEngine/include/Auris/Systems/RenderSystem.hpp" line="25" column="1" bodyfile="Projects/GameEngine/include/Auris/Systems/RenderSystem.hpp" bodystart="25" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_auris_1_1_render_system_adb8f7f9d42f1606a3a82badad8d77e29_1adb8f7f9d42f1606a3a82badad8d77e29" prot="public" static="yes" mutable="no">
+        <type>vector&lt; <ref refid="class_auris_1_1_particle_system" kindref="compound">ParticleSystem</ref> * &gt;</type>
+        <definition>vector&lt; ParticleSystem * &gt; RenderSystem::particleSystems</definition>
+        <argsstring></argsstring>
+        <name>particleSystems</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>A vector of shared pointer of <ref refid="class_auris_1_1_animation" kindref="compound">Animation</ref> values: animations. The vector of all animations in the engine. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Projects/GameEngine/include/Auris/Systems/RenderSystem.hpp" line="26" column="1" bodyfile="Projects/GameEngine/include/Auris/Systems/RenderSystem.hpp" bodystart="26" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_auris_1_1_render_system_a5dcb80404c061a53aecef2d1c5c1517e_1a5dcb80404c061a53aecef2d1c5c1517e" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>Auris::RenderSystem::RenderSystem</definition>
+        <argsstring>()</argsstring>
+        <name>RenderSystem</name>
+        <briefdescription>
+<para>The <ref refid="class_auris_1_1_render_system" kindref="compound">RenderSystem</ref> constructor. </para>        </briefdescription>
+        <detaileddescription>
+<para>Does nothing. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Projects/GameEngine/include/Auris/Systems/RenderSystem.hpp" line="32" column="1" bodyfile="Projects/GameEngine/include/Auris/Systems/RenderSystem.hpp" bodystart="32" bodyend="32"/>
+      </memberdef>
+      <memberdef kind="function" id="class_auris_1_1_render_system_adff727922bf5bc2d3c31e07f31d0473c_1adff727922bf5bc2d3c31e07f31d0473c" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>Auris::RenderSystem::~RenderSystem</definition>
+        <argsstring>()</argsstring>
+        <name>~RenderSystem</name>
+        <briefdescription>
+<para>The <ref refid="class_auris_1_1_render_system" kindref="compound">RenderSystem</ref> destructor. </para>        </briefdescription>
+        <detaileddescription>
+<para>Does nothing. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Projects/GameEngine/include/Auris/Systems/RenderSystem.hpp" line="38" column="1" bodyfile="Projects/GameEngine/include/Auris/Systems/RenderSystem.hpp" bodystart="38" bodyend="38"/>
+      </memberdef>
+      <memberdef kind="function" id="class_auris_1_1_render_system_a7080c63dd102eadfed3e8a6abb275c79_1a7080c63dd102eadfed3e8a6abb275c79" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void RenderSystem::startup</definition>
+        <argsstring>()</argsstring>
+        <name>startup</name>
+        <briefdescription>
+<para>A startup method, taking 1 argument. </para>        </briefdescription>
+        <detaileddescription>
+<para>Starts the rendersystem and reserve space in memeory for the sprites <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>reserve</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>an int value. The amount to reserve </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Projects/GameEngine/include/Auris/Systems/RenderSystem.hpp" line="45" column="1" bodyfile="Projects/GameEngine/Auris/src/Auris/Systems/RenderSystem.cpp" bodystart="8" bodyend="9"/>
+      </memberdef>
+      <memberdef kind="function" id="class_auris_1_1_render_system_af985136f29598fd3c3d44b22a3a0a3e1_1af985136f29598fd3c3d44b22a3a0a3e1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void RenderSystem::shutdown</definition>
+        <argsstring>()</argsstring>
+        <name>shutdown</name>
+        <briefdescription>
+<para>A shutdown method. </para>        </briefdescription>
+        <detaileddescription>
+<para>Shuts down the rendersystem and clears the animations </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Projects/GameEngine/include/Auris/Systems/RenderSystem.hpp" line="51" column="1" bodyfile="Projects/GameEngine/Auris/src/Auris/Systems/RenderSystem.cpp" bodystart="11" bodyend="15"/>
+      </memberdef>
+      <memberdef kind="function" id="class_auris_1_1_render_system_afb009d35f665d789a68adfd22e0b4dec_1afb009d35f665d789a68adfd22e0b4dec" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void RenderSystem::update</definition>
+        <argsstring>(float dt)</argsstring>
+        <name>update</name>
+        <param>
+          <type>float</type>
+          <declname>dt</declname>
+        </param>
+        <briefdescription>
+<para>An update method, taking 1 argument. </para>        </briefdescription>
+        <detaileddescription>
+<para>Updates the rendersystem and draws all sprites <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>dt</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>a float value. The delta time in seconds. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Projects/GameEngine/include/Auris/Systems/RenderSystem.hpp" line="58" column="1" bodyfile="Projects/GameEngine/Auris/src/Auris/Systems/RenderSystem.cpp" bodystart="18" bodyend="30"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="class_auris_1_1_render_system_a65b93e5f315c78ddf2298e65f692b165_1a65b93e5f315c78ddf2298e65f692b165" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="class_auris_1_1_sprite" kindref="compound">Sprite</ref> *</type>
+        <definition>Sprite * RenderSystem::getSprite</definition>
+        <argsstring>(Entity *entity, SRE::Texture *texture=nullptr, Auris::Mesh *mesh=nullptr, SRE::Texture *normalMap=nullptr)</argsstring>
+        <name>getSprite</name>
+        <param>
+          <type><ref refid="class_auris_1_1_entity" kindref="compound">Entity</ref> *</type>
+          <declname>entity</declname>
+        </param>
+        <param>
+          <type>SRE::Texture *</type>
+          <declname>texture</declname>
+          <defval>nullptr</defval>
+        </param>
+        <param>
+          <type><ref refid="class_auris_1_1_mesh" kindref="compound">Auris::Mesh</ref> *</type>
+          <declname>mesh</declname>
+          <defval>nullptr</defval>
+        </param>
+        <param>
+          <type>SRE::Texture *</type>
+          <declname>normalMap</declname>
+          <defval>nullptr</defval>
+        </param>
+        <briefdescription>
+<para>A static getSrite method, taking 1-4 arguments. </para>        </briefdescription>
+        <detaileddescription>
+<para>Creates a new sprite and returns it <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>entity</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>an <ref refid="class_auris_1_1_entity" kindref="compound">Entity</ref> pointer. The <ref refid="class_auris_1_1_entity" kindref="compound">Entity</ref> that needs the sprite. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>texture</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>a Texture pointer. The texture of the sprite (default is white texture). </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>mesh</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>a <ref refid="class_auris_1_1_mesh" kindref="compound">Mesh</ref> pointer. The mesh of the sprite (default is quad mesh). </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>normalMap</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>a Texture pointer. The normal map of the the sprite (default is no normal map). return <ref refid="class_auris_1_1_sprite" kindref="compound">Sprite</ref>. The sprite created. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Projects/GameEngine/include/Auris/Systems/RenderSystem.hpp" line="69" column="1" bodyfile="Projects/GameEngine/Auris/src/Auris/Systems/RenderSystem.cpp" bodystart="32" bodyend="67"/>
+      </memberdef>
+      <memberdef kind="function" id="class_auris_1_1_render_system_ab7503f64f3b9429d3eea66fb310dd5fe_1ab7503f64f3b9429d3eea66fb310dd5fe" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void RenderSystem::deleteSprite</definition>
+        <argsstring>(Sprite *sprite)</argsstring>
+        <name>deleteSprite</name>
+        <param>
+          <type><ref refid="class_auris_1_1_sprite" kindref="compound">Sprite</ref> *</type>
+          <declname>sprite</declname>
+        </param>
+        <briefdescription>
+<para>A static deleteSprite method, taking 1 argument. </para>        </briefdescription>
+        <detaileddescription>
+<para>Removes the sprite from the sprite pool <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>sprite</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>a <ref refid="class_auris_1_1_sprite" kindref="compound">Sprite</ref> pointer. The <ref refid="class_auris_1_1_sprite" kindref="compound">Sprite</ref> to remove. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Projects/GameEngine/include/Auris/Systems/RenderSystem.hpp" line="76" column="1" bodyfile="Projects/GameEngine/Auris/src/Auris/Systems/RenderSystem.cpp" bodystart="75" bodyend="77"/>
+      </memberdef>
+      <memberdef kind="function" id="class_auris_1_1_render_system_aef06ebebda9dbba67d48a4560699dd13_1aef06ebebda9dbba67d48a4560699dd13" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>shared_ptr&lt; <ref refid="class_auris_1_1_animation" kindref="compound">Animation</ref> &gt;</type>
+        <definition>shared_ptr&lt; Animation &gt; RenderSystem::getAnim</definition>
+        <argsstring>(Entity *entity, float length)</argsstring>
+        <name>getAnim</name>
+        <param>
+          <type><ref refid="class_auris_1_1_entity" kindref="compound">Entity</ref> *</type>
+          <declname>entity</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>length</declname>
+        </param>
+        <briefdescription>
+<para>A static getAnim method, taking 2 arguments. </para>        </briefdescription>
+        <detaileddescription>
+<para>Creates a new animation and returns it <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>entity</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>an <ref refid="class_auris_1_1_entity" kindref="compound">Entity</ref> pointer. The <ref refid="class_auris_1_1_entity" kindref="compound">Entity</ref> that needs the animation. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>length</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>a float value. The length of the animation return shared_ptr of <ref refid="class_auris_1_1_animation" kindref="compound">Animation</ref>. A shared pointer to the animation. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Projects/GameEngine/include/Auris/Systems/RenderSystem.hpp" line="85" column="1" bodyfile="Projects/GameEngine/Auris/src/Auris/Systems/RenderSystem.cpp" bodystart="69" bodyend="73"/>
+      </memberdef>
+      <memberdef kind="function" id="class_auris_1_1_render_system_a368c682e1ba774b5401350885e85f44f_1a368c682e1ba774b5401350885e85f44f" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void RenderSystem::deleteAnim</definition>
+        <argsstring>(shared_ptr&lt; Animation &gt; ani)</argsstring>
+        <name>deleteAnim</name>
+        <param>
+          <type>shared_ptr&lt; <ref refid="class_auris_1_1_animation" kindref="compound">Animation</ref> &gt;</type>
+          <declname>ani</declname>
+        </param>
+        <briefdescription>
+<para>A static deleteAnim method, taking 1 argument. </para>        </briefdescription>
+        <detaileddescription>
+<para>Removes the animation from the animation vector. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>ani</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>a shared_ptr of animation value. The animation to remove. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Projects/GameEngine/include/Auris/Systems/RenderSystem.hpp" line="92" column="1" bodyfile="Projects/GameEngine/Auris/src/Auris/Systems/RenderSystem.cpp" bodystart="79" bodyend="91"/>
+      </memberdef>
+      <memberdef kind="function" id="class_auris_1_1_render_system_a8e09b3ffd3f5160a7c39ba53340fa284_1a8e09b3ffd3f5160a7c39ba53340fa284" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="class_auris_1_1_particle_system" kindref="compound">ParticleSystem</ref> *</type>
+        <definition>ParticleSystem * RenderSystem::getParticleSystem</definition>
+        <argsstring>()</argsstring>
+        <name>getParticleSystem</name>
+        <briefdescription>
+<para>A static getParticleSystem method. </para>        </briefdescription>
+        <detaileddescription>
+<para>Creates a new particle system and returns it return pointer of <ref refid="class_auris_1_1_particle_system" kindref="compound">ParticleSystem</ref>. A pointer to the particle system. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Projects/GameEngine/include/Auris/Systems/RenderSystem.hpp" line="99" column="1" bodyfile="Projects/GameEngine/Auris/src/Auris/Systems/RenderSystem.cpp" bodystart="93" bodyend="96"/>
+      </memberdef>
+      <memberdef kind="function" id="class_auris_1_1_render_system_a6ae0f9e265d703b3838f402e88f8dcd4_1a6ae0f9e265d703b3838f402e88f8dcd4" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void RenderSystem::deleteParticleSystem</definition>
+        <argsstring>(ParticleSystem *particleSystem)</argsstring>
+        <name>deleteParticleSystem</name>
+        <param>
+          <type><ref refid="class_auris_1_1_particle_system" kindref="compound">ParticleSystem</ref> *</type>
+          <declname>particleSystem</declname>
+        </param>
+        <briefdescription>
+<para>A static deleteParticleSystem method, taking 1 argument. </para>        </briefdescription>
+        <detaileddescription>
+<para>Removes the particle system the particlesystem vector. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>particlesystem</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>a pointer of particlesystem value. The particle system to remove. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Projects/GameEngine/include/Auris/Systems/RenderSystem.hpp" line="106" column="1" bodyfile="Projects/GameEngine/Auris/src/Auris/Systems/RenderSystem.cpp" bodystart="98" bodyend="108"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>The <ref refid="class_auris_1_1_render_system" kindref="compound">RenderSystem</ref> class. </para>    </briefdescription>
+    <detaileddescription>
+<para>Controls all the sprites and animations </para>    </detaileddescription>
+    <collaborationgraph>
+      <node id="213">
+        <label>std::vector&lt; Auris::Entity *&gt;</label>
+        <childnode refid="210" relation="usage">
+          <edgelabel>elements</edgelabel>
+        </childnode>
+      </node>
+      <node id="223">
+        <label>std::vector&lt; vec3 &gt;</label>
+      </node>
+      <node id="206">
+        <label>std::vector&lt; Auris::Pool&lt; Auris::Sprite &gt; *&gt;</label>
+        <childnode refid="207" relation="usage">
+          <edgelabel>elements</edgelabel>
+        </childnode>
+      </node>
+      <node id="219">
+        <label>std::vector&lt; Auris::ParticleSystem *&gt;</label>
+        <childnode refid="220" relation="usage">
+          <edgelabel>elements</edgelabel>
+        </childnode>
+      </node>
+      <node id="224">
+        <label>std::vector&lt; float &gt;</label>
+      </node>
+      <node id="221">
+        <label>std::vector&lt; vec4 &gt;</label>
+      </node>
+      <node id="225">
+        <label>Auris::Interpolation</label>
+        <link refid="class_auris_1_1_interpolation"/>
+        <childnode refid="222" relation="usage">
+          <edgelabel>points</edgelabel>
+        </childnode>
+      </node>
+      <node id="216">
+        <label>SRE::Mesh</label>
+      </node>
+      <node id="214">
+        <label>Auris::Transform</label>
+        <link refid="class_auris_1_1_transform"/>
+        <childnode refid="209" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="205">
+        <label>Auris::DynamicPool&lt; Auris::Sprite &gt;</label>
+        <link refid="class_auris_1_1_dynamic_pool"/>
+        <childnode refid="206" relation="usage">
+          <edgelabel>pools</edgelabel>
+        </childnode>
+        <childnode refid="218" relation="usage">
+          <edgelabel>poolsFull</edgelabel>
+        </childnode>
+      </node>
+      <node id="215">
+        <label>Auris::Mesh</label>
+        <link refid="class_auris_1_1_mesh"/>
+        <childnode refid="216" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="204">
+        <label>std::vector&lt; shared_ptr&lt; Auris::Animation &gt; &gt;</label>
+      </node>
+      <node id="212">
+        <label>std::basic_string&lt; char &gt;</label>
+      </node>
+      <node id="209">
+        <label>Auris::Nugget</label>
+        <link refid="class_auris_1_1_nugget"/>
+        <childnode refid="210" relation="usage">
+          <edgelabel>entity</edgelabel>
+        </childnode>
+      </node>
+      <node id="217">
+        <label>Auris::Material</label>
+        <link refid="class_auris_1_1_material"/>
+      </node>
+      <node id="220">
+        <label>Auris::ParticleSystem</label>
+        <link refid="class_auris_1_1_particle_system"/>
+        <childnode refid="221" relation="usage">
+          <edgelabel>startColors</edgelabel>
+          <edgelabel>finalColors</edgelabel>
+          <edgelabel>endColors</edgelabel>
+        </childnode>
+        <childnode refid="222" relation="usage">
+          <edgelabel>interpolationPoints_color</edgelabel>
+          <edgelabel>interpolationPoints_angularVelocity</edgelabel>
+          <edgelabel>interpolationPoints_acceleration</edgelabel>
+          <edgelabel>interpolationPoints_size</edgelabel>
+          <edgelabel>interpolationPoints_velocity</edgelabel>
+          <edgelabel>uvs</edgelabel>
+        </childnode>
+        <childnode refid="223" relation="usage">
+          <edgelabel>velocities</edgelabel>
+          <edgelabel>finalPositions</edgelabel>
+          <edgelabel>positions</edgelabel>
+        </childnode>
+        <childnode refid="224" relation="usage">
+          <edgelabel>uvSize</edgelabel>
+          <edgelabel>angularVelocities</edgelabel>
+          <edgelabel>finalSizes</edgelabel>
+          <edgelabel>endSizes</edgelabel>
+          <edgelabel>startSizes</edgelabel>
+          <edgelabel>finalRotation</edgelabel>
+          <edgelabel>startTimes</edgelabel>
+          <edgelabel>rotations</edgelabel>
+        </childnode>
+        <childnode refid="225" relation="usage">
+          <edgelabel>interpolation_color</edgelabel>
+          <edgelabel>interpolation_velocity</edgelabel>
+          <edgelabel>interpolation_acceleration</edgelabel>
+          <edgelabel>interpolation_size</edgelabel>
+          <edgelabel>interpolation_angularVelocity</edgelabel>
+        </childnode>
+      </node>
+      <node id="207">
+        <label>Auris::Pool&lt; Auris::Sprite &gt;</label>
+        <link refid="class_auris_1_1_pool"/>
+        <childnode refid="208" relation="usage">
+          <edgelabel>objects</edgelabel>
+        </childnode>
+      </node>
+      <node id="208">
+        <label>Auris::Sprite</label>
+        <link refid="class_auris_1_1_sprite"/>
+        <childnode refid="209" relation="public-inheritance">
+        </childnode>
+        <childnode refid="215" relation="usage">
+          <edgelabel>mesh</edgelabel>
+        </childnode>
+        <childnode refid="217" relation="usage">
+          <edgelabel>material</edgelabel>
+        </childnode>
+      </node>
+      <node id="222">
+        <label>std::vector&lt; vec2 &gt;</label>
+      </node>
+      <node id="203">
+        <label>Auris::RenderSystem</label>
+        <link refid="class_auris_1_1_render_system"/>
+        <childnode refid="204" relation="usage">
+          <edgelabel>animations</edgelabel>
+        </childnode>
+        <childnode refid="205" relation="usage">
+          <edgelabel>spritePool</edgelabel>
+        </childnode>
+        <childnode refid="219" relation="usage">
+          <edgelabel>particleSystems</edgelabel>
+        </childnode>
+      </node>
+      <node id="218">
+        <label>std::vector&lt; bool &gt;</label>
+      </node>
+      <node id="210">
+        <label>Auris::Entity</label>
+        <link refid="class_auris_1_1_entity"/>
+        <childnode refid="211" relation="usage">
+          <edgelabel>type</edgelabel>
+          <edgelabel>name</edgelabel>
+        </childnode>
+        <childnode refid="213" relation="usage">
+          <edgelabel>children</edgelabel>
+        </childnode>
+        <childnode refid="210" relation="usage">
+          <edgelabel>parent</edgelabel>
+        </childnode>
+        <childnode refid="214" relation="usage">
+          <edgelabel>transform</edgelabel>
+        </childnode>
+      </node>
+      <node id="211">
+        <label>std::string</label>
+        <childnode refid="212" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="Projects/GameEngine/include/Auris/Systems/RenderSystem.hpp" line="21" column="1" bodyfile="Projects/GameEngine/include/Auris/Systems/RenderSystem.hpp" bodystart="21" bodyend="110"/>
+    <listofallmembers>
+      <member refid="class_auris_1_1_render_system_ab781a7fd761dd076a542ebe58f9e9b39_1ab781a7fd761dd076a542ebe58f9e9b39" prot="public" virt="non-virtual"><scope>Auris::RenderSystem</scope><name>animations</name></member>
+      <member refid="class_auris_1_1_render_system_a368c682e1ba774b5401350885e85f44f_1a368c682e1ba774b5401350885e85f44f" prot="public" virt="non-virtual"><scope>Auris::RenderSystem</scope><name>deleteAnim</name></member>
+      <member refid="class_auris_1_1_render_system_a6ae0f9e265d703b3838f402e88f8dcd4_1a6ae0f9e265d703b3838f402e88f8dcd4" prot="public" virt="non-virtual"><scope>Auris::RenderSystem</scope><name>deleteParticleSystem</name></member>
+      <member refid="class_auris_1_1_render_system_ab7503f64f3b9429d3eea66fb310dd5fe_1ab7503f64f3b9429d3eea66fb310dd5fe" prot="public" virt="non-virtual"><scope>Auris::RenderSystem</scope><name>deleteSprite</name></member>
+      <member refid="class_auris_1_1_render_system_aef06ebebda9dbba67d48a4560699dd13_1aef06ebebda9dbba67d48a4560699dd13" prot="public" virt="non-virtual"><scope>Auris::RenderSystem</scope><name>getAnim</name></member>
+      <member refid="class_auris_1_1_render_system_a8e09b3ffd3f5160a7c39ba53340fa284_1a8e09b3ffd3f5160a7c39ba53340fa284" prot="public" virt="non-virtual"><scope>Auris::RenderSystem</scope><name>getParticleSystem</name></member>
+      <member refid="class_auris_1_1_render_system_a65b93e5f315c78ddf2298e65f692b165_1a65b93e5f315c78ddf2298e65f692b165" prot="public" virt="non-virtual"><scope>Auris::RenderSystem</scope><name>getSprite</name></member>
+      <member refid="class_auris_1_1_render_system_adb8f7f9d42f1606a3a82badad8d77e29_1adb8f7f9d42f1606a3a82badad8d77e29" prot="public" virt="non-virtual"><scope>Auris::RenderSystem</scope><name>particleSystems</name></member>
+      <member refid="class_auris_1_1_render_system_a5dcb80404c061a53aecef2d1c5c1517e_1a5dcb80404c061a53aecef2d1c5c1517e" prot="public" virt="non-virtual"><scope>Auris::RenderSystem</scope><name>RenderSystem</name></member>
+      <member refid="class_auris_1_1_render_system_af985136f29598fd3c3d44b22a3a0a3e1_1af985136f29598fd3c3d44b22a3a0a3e1" prot="public" virt="non-virtual"><scope>Auris::RenderSystem</scope><name>shutdown</name></member>
+      <member refid="class_auris_1_1_render_system_a33dddcaba281565ebbeca3c40a89cfab_1a33dddcaba281565ebbeca3c40a89cfab" prot="public" virt="non-virtual"><scope>Auris::RenderSystem</scope><name>spritePool</name></member>
+      <member refid="class_auris_1_1_render_system_a7080c63dd102eadfed3e8a6abb275c79_1a7080c63dd102eadfed3e8a6abb275c79" prot="public" virt="non-virtual"><scope>Auris::RenderSystem</scope><name>startup</name></member>
+      <member refid="class_auris_1_1_render_system_afb009d35f665d789a68adfd22e0b4dec_1afb009d35f665d789a68adfd22e0b4dec" prot="public" virt="non-virtual"><scope>Auris::RenderSystem</scope><name>update</name></member>
+      <member refid="class_auris_1_1_render_system_adff727922bf5bc2d3c31e07f31d0473c_1adff727922bf5bc2d3c31e07f31d0473c" prot="public" virt="non-virtual"><scope>Auris::RenderSystem</scope><name>~RenderSystem</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

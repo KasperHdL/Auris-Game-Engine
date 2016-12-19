@@ -1,0 +1,418 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.12">
+  <compounddef id="_asset_manager_8hpp" kind="file" language="C++">
+    <compoundname>AssetManager.hpp</compoundname>
+    <includes local="yes">SRE/Texture.hpp</includes>
+    <includes refid="_sprite_sheet_8hpp" local="yes">Auris/Utilities/SpriteSheet.hpp</includes>
+    <includes refid="picojson_8h" local="yes">Auris/Utilities/picojson.h</includes>
+    <includes local="no">string</includes>
+    <includes local="no">map</includes>
+    <includes local="no">iostream</includes>
+    <includes local="no">fstream</includes>
+    <includes local="no">SDL.h</includes>
+    <includedby refid="_engine_8hpp" local="yes">Projects/GameEngine/include/Auris/Engine.hpp</includedby>
+    <includedby refid="_audio_player_8hpp" local="yes">Projects/GameEngine/include/Auris/Entities/AudioPlayer.hpp</includedby>
+    <includedby refid="_asset_manager_8cpp" local="yes">Projects/GameEngine/Auris/src/Auris/Utilities/AssetManager.cpp</includedby>
+    <incdepgraph>
+      <node id="1240">
+        <label>Auris/Constants.hpp</label>
+        <link refid="_constants_8hpp"/>
+      </node>
+      <node id="1253">
+        <label>limits</label>
+      </node>
+      <node id="1252">
+        <label>iterator</label>
+      </node>
+      <node id="1260">
+        <label>SDL.h</label>
+      </node>
+      <node id="1231">
+        <label>SRE/Texture.hpp</label>
+      </node>
+      <node id="1237">
+        <label>Auris/Entities/Nuggets/Sprite.hpp</label>
+        <link refid="_sprite_8hpp"/>
+        <childnode refid="1238" relation="include">
+        </childnode>
+        <childnode refid="1239" relation="include">
+        </childnode>
+        <childnode refid="1231" relation="include">
+        </childnode>
+        <childnode refid="1235" relation="include">
+        </childnode>
+        <childnode refid="1240" relation="include">
+        </childnode>
+        <childnode refid="1241" relation="include">
+        </childnode>
+        <childnode refid="1243" relation="include">
+        </childnode>
+        <childnode refid="1244" relation="include">
+        </childnode>
+        <childnode refid="1245" relation="include">
+        </childnode>
+      </node>
+      <node id="1254">
+        <label>stdexcept</label>
+      </node>
+      <node id="1236">
+        <label>SRE/Mesh.hpp</label>
+      </node>
+      <node id="1233">
+        <label>string</label>
+      </node>
+      <node id="1234">
+        <label>map</label>
+      </node>
+      <node id="1259">
+        <label>fstream</label>
+      </node>
+      <node id="1246">
+        <label>Auris/Utilities/picojson.h</label>
+        <link refid="picojson_8h"/>
+        <childnode refid="1247" relation="include">
+        </childnode>
+        <childnode refid="1248" relation="include">
+        </childnode>
+        <childnode refid="1249" relation="include">
+        </childnode>
+        <childnode refid="1250" relation="include">
+        </childnode>
+        <childnode refid="1251" relation="include">
+        </childnode>
+        <childnode refid="1245" relation="include">
+        </childnode>
+        <childnode refid="1252" relation="include">
+        </childnode>
+        <childnode refid="1253" relation="include">
+        </childnode>
+        <childnode refid="1234" relation="include">
+        </childnode>
+        <childnode refid="1254" relation="include">
+        </childnode>
+        <childnode refid="1233" relation="include">
+        </childnode>
+        <childnode refid="1255" relation="include">
+        </childnode>
+        <childnode refid="1256" relation="include">
+        </childnode>
+        <childnode refid="1257" relation="include">
+        </childnode>
+        <childnode refid="1258" relation="include">
+        </childnode>
+      </node>
+      <node id="1248">
+        <label>cstdio</label>
+      </node>
+      <node id="1242">
+        <label>SRE/Shader.hpp</label>
+      </node>
+      <node id="1255">
+        <label>vector</label>
+      </node>
+      <node id="1256">
+        <label>utility</label>
+      </node>
+      <node id="1232">
+        <label>Auris/Utilities/SpriteSheet.hpp</label>
+        <link refid="_sprite_sheet_8hpp"/>
+        <childnode refid="1233" relation="include">
+        </childnode>
+        <childnode refid="1234" relation="include">
+        </childnode>
+        <childnode refid="1231" relation="include">
+        </childnode>
+        <childnode refid="1235" relation="include">
+        </childnode>
+        <childnode refid="1237" relation="include">
+        </childnode>
+      </node>
+      <node id="1257">
+        <label>math.h</label>
+      </node>
+      <node id="1244">
+        <label>Auris/Entities/Nuggets/Material.hpp</label>
+        <link refid="_material_8hpp"/>
+        <childnode refid="1231" relation="include">
+        </childnode>
+        <childnode refid="1236" relation="include">
+        </childnode>
+        <childnode refid="1238" relation="include">
+        </childnode>
+      </node>
+      <node id="1249">
+        <label>cstdlib</label>
+      </node>
+      <node id="1241">
+        <label>Auris/Utilities/Shader.hpp</label>
+        <link refid="_shader_8hpp"/>
+        <childnode refid="1242" relation="include">
+        </childnode>
+      </node>
+      <node id="1245">
+        <label>iostream</label>
+      </node>
+      <node id="1251">
+        <label>cstddef</label>
+      </node>
+      <node id="1243">
+        <label>Auris/Entities/Nugget.hpp</label>
+        <link refid="_nugget_8hpp"/>
+      </node>
+      <node id="1230">
+        <label>Projects/GameEngine/include/Auris/Utilities/AssetManager.hpp</label>
+        <link refid="_asset_manager_8hpp"/>
+        <childnode refid="1231" relation="include">
+        </childnode>
+        <childnode refid="1232" relation="include">
+        </childnode>
+        <childnode refid="1246" relation="include">
+        </childnode>
+        <childnode refid="1233" relation="include">
+        </childnode>
+        <childnode refid="1234" relation="include">
+        </childnode>
+        <childnode refid="1245" relation="include">
+        </childnode>
+        <childnode refid="1259" relation="include">
+        </childnode>
+        <childnode refid="1260" relation="include">
+        </childnode>
+      </node>
+      <node id="1247">
+        <label>algorithm</label>
+      </node>
+      <node id="1235">
+        <label>Auris/Utilities/Mesh.hpp</label>
+        <link refid="_mesh_8hpp"/>
+        <childnode refid="1236" relation="include">
+        </childnode>
+      </node>
+      <node id="1250">
+        <label>cstring</label>
+      </node>
+      <node id="1258">
+        <label>locale.h</label>
+      </node>
+      <node id="1239">
+        <label>SRE/SimpleRenderEngine.hpp</label>
+      </node>
+      <node id="1238">
+        <label>glm/glm.hpp</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="1266">
+        <label>Projects/GameEngine/Auris/src/Auris/Entities/PhysicsEntity.cpp</label>
+        <link refid="_physics_entity_8cpp"/>
+      </node>
+      <node id="1271">
+        <label>Projects/GameEngine/include/Auris/Entities/AudioPlayer.hpp</label>
+        <link refid="_audio_player_8hpp"/>
+        <childnode refid="1262" relation="include">
+        </childnode>
+        <childnode refid="1272" relation="include">
+        </childnode>
+      </node>
+      <node id="1263">
+        <label>Projects/GameEngine/include/Auris/Entities/PhysicsEntity.hpp</label>
+        <link refid="_physics_entity_8hpp"/>
+        <childnode refid="1264" relation="include">
+        </childnode>
+        <childnode refid="1266" relation="include">
+        </childnode>
+      </node>
+      <node id="1264">
+        <label>Projects/GameEngine/include/Auris/Systems/CollisionHandler.hpp</label>
+        <link refid="_collision_handler_8hpp"/>
+        <childnode refid="1265" relation="include">
+        </childnode>
+      </node>
+      <node id="1267">
+        <label>Projects/GameEngine/include/Auris/Game.hpp</label>
+        <link refid="_game_8hpp"/>
+        <childnode refid="1262" relation="include">
+        </childnode>
+        <childnode refid="1268" relation="include">
+        </childnode>
+        <childnode refid="1269" relation="include">
+        </childnode>
+      </node>
+      <node id="1262">
+        <label>Projects/GameEngine/include/Auris/Engine.hpp</label>
+        <link refid="_engine_8hpp"/>
+        <childnode refid="1263" relation="include">
+        </childnode>
+        <childnode refid="1267" relation="include">
+        </childnode>
+        <childnode refid="1270" relation="include">
+        </childnode>
+        <childnode refid="1265" relation="include">
+        </childnode>
+      </node>
+      <node id="1270">
+        <label>Projects/GameEngine/include/Auris/Utilities/BodyStandard.hpp</label>
+        <link refid="_body_standard_8hpp"/>
+      </node>
+      <node id="1269">
+        <label>Projects/GameEngine/Auris/src/Auris/Systems/Input.cpp</label>
+        <link refid="_input_8cpp"/>
+      </node>
+      <node id="1268">
+        <label>Projects/GameEngine/Auris/src/Auris/Game.cpp</label>
+        <link refid="_game_8cpp"/>
+      </node>
+      <node id="1272">
+        <label>Projects/GameEngine/Auris/src/Auris/Entities/AudioPlayer.cpp</label>
+        <link refid="_audio_player_8cpp"/>
+      </node>
+      <node id="1273">
+        <label>Projects/GameEngine/Auris/src/Auris/Utilities/AssetManager.cpp</label>
+        <link refid="_asset_manager_8cpp"/>
+      </node>
+      <node id="1265">
+        <label>Projects/GameEngine/Auris/src/Auris/Engine.cpp</label>
+        <link refid="_engine_8cpp"/>
+      </node>
+      <node id="1261">
+        <label>Projects/GameEngine/include/Auris/Utilities/AssetManager.hpp</label>
+        <link refid="_asset_manager_8hpp"/>
+        <childnode refid="1262" relation="include">
+        </childnode>
+        <childnode refid="1271" relation="include">
+        </childnode>
+        <childnode refid="1273" relation="include">
+        </childnode>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="class_auris_1_1_asset_manager" prot="public">Auris::AssetManager</innerclass>
+    <innernamespace refid="namespace_auris">Auris</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#pragma<sp/>once</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;SRE/Texture.hpp&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="_sprite_sheet_8hpp" kindref="compound">Auris/Utilities/SpriteSheet.hpp</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="picojson_8h" kindref="compound">Auris/Utilities/picojson.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;string&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;map&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;iostream&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;fstream&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;SDL.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>_WIN32<sp/>//<sp/>Windows</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;SDL_mixer.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight><highlight class="preprocessor">#elif<sp/>__linux__<sp/>//<sp/>Linux</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;SDL2/SDL_mixer.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="19"><highlight class="comment">//!<sp/>The<sp/>Animation<sp/>class<sp/>that<sp/>extend<sp/>the<sp/>Nugget<sp/>class</highlight></codeline>
+<codeline lineno="20"><highlight class="comment"></highlight><highlight class="comment"><sp/><sp/><sp/><sp/>/*!<sp/>Used<sp/>to<sp/>make<sp/>sprite<sp/>animations</highlight></codeline>
+<codeline lineno="21"><highlight class="comment"><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespace_auris" kindref="compound">Auris</ref>{</highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="25"><highlight class="comment">//!<sp/>The<sp/>Animation<sp/>class<sp/>that<sp/>extend<sp/>the<sp/>Nugget<sp/>class</highlight></codeline>
+<codeline lineno="26"><highlight class="comment"></highlight><highlight class="comment"><sp/><sp/><sp/><sp/>/*!<sp/>Used<sp/>to<sp/>make<sp/>sprite<sp/>animations</highlight></codeline>
+<codeline lineno="27"><highlight class="comment"><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="28" refid="class_auris_1_1_asset_manager" refkind="compound"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="class_auris_1_1_asset_manager" kindref="compound">AssetManager</ref>{</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight></codeline>
+<codeline lineno="31" refid="class_auris_1_1_asset_manager_ac47cbdd59e8523b07f9671b3dbafc02a_1ac47cbdd59e8523b07f9671b3dbafc02a" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/>std::map&lt;std::string,<sp/>SRE::Texture*&gt;<sp/><ref refid="class_auris_1_1_asset_manager_ac47cbdd59e8523b07f9671b3dbafc02a_1ac47cbdd59e8523b07f9671b3dbafc02a" kindref="member">textures</ref>;<sp/></highlight><highlight class="comment">/*!&lt;<sp/>A<sp/>map<sp/>of<sp/>string<sp/>values,<sp/>and<sp/>Texture<sp/>pointers:<sp/>textures.<sp/>That<sp/>has<sp/>a<sp/>reference<sp/>to<sp/>all<sp/>textures<sp/>loaded.<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="32" refid="class_auris_1_1_asset_manager_a4000c6c36f36f65b1c482197f41428b1_1a4000c6c36f36f65b1c482197f41428b1" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/>std::map&lt;std::string,<sp/>SpriteSheet*&gt;<sp/><ref refid="class_auris_1_1_asset_manager_a4000c6c36f36f65b1c482197f41428b1_1a4000c6c36f36f65b1c482197f41428b1" kindref="member">spritesheets</ref>;<sp/></highlight><highlight class="comment">/*!&lt;<sp/>A<sp/>map<sp/>of<sp/>string<sp/>values,<sp/>and<sp/>Spritesheet<sp/>pointers:<sp/>spritesheets.<sp/>That<sp/>has<sp/>a<sp/>reference<sp/>to<sp/>all<sp/>spritesheets<sp/>loaded.<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="33"><highlight class="normal"></highlight></codeline>
+<codeline lineno="34" refid="class_auris_1_1_asset_manager_a46b740352276485cad9ba3fe45bcc883_1a46b740352276485cad9ba3fe45bcc883" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/>std::map&lt;std::string,<sp/>Mix_Music*&gt;<sp/><ref refid="class_auris_1_1_asset_manager_a46b740352276485cad9ba3fe45bcc883_1a46b740352276485cad9ba3fe45bcc883" kindref="member">music</ref>;<sp/></highlight><highlight class="comment">/*!&lt;<sp/>A<sp/>map<sp/>of<sp/>string<sp/>values,<sp/>and<sp/>Mix_Music<sp/>pointers:<sp/>music.<sp/>That<sp/>has<sp/>a<sp/>reference<sp/>to<sp/>all<sp/>music<sp/>loaded.<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="35" refid="class_auris_1_1_asset_manager_afb15d7b3bab17597791c02bb7d821003_1afb15d7b3bab17597791c02bb7d821003" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/>std::map&lt;std::string,<sp/>Mix_Chunk*&gt;<sp/><ref refid="class_auris_1_1_asset_manager_afb15d7b3bab17597791c02bb7d821003_1afb15d7b3bab17597791c02bb7d821003" kindref="member">sounds</ref>;<sp/></highlight><highlight class="comment">/*!&lt;<sp/>A<sp/>map<sp/>of<sp/>string<sp/>values,<sp/>and<sp/>Mix_Chunk<sp/>pointers:<sp/>sound.<sp/>That<sp/>has<sp/>a<sp/>reference<sp/>to<sp/>all<sp/>sound<sp/>loaded.<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="36"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="37"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>//!<sp/>A<sp/>createSheet<sp/>method,<sp/>taking<sp/>2<sp/>arguments.</highlight></codeline>
+<codeline lineno="38"><highlight class="comment"></highlight><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>/*!<sp/>Creates<sp/>a<sp/>new<sp/>spritesheet,<sp/>based<sp/>on<sp/>the<sp/>parth<sp/>to<sp/>the<sp/>json<sp/>file</highlight></codeline>
+<codeline lineno="39"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*<sp/>\param<sp/><sp/>sheet<sp/>a<sp/>SpriteSheet<sp/>pointer.<sp/>An<sp/>instance<sp/>of<sp/>the<sp/>SpriteSheet<sp/>to<sp/>create.</highlight></codeline>
+<codeline lineno="40"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*<sp/>\param<sp/>pathToJson<sp/>a<sp/>string<sp/>value.<sp/>The<sp/>string<sp/>to<sp/>the<sp/>path<sp/>of<sp/>the<sp/>json<sp/>file.</highlight></codeline>
+<codeline lineno="41"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*<sp/>\param<sp/>bool<sp/>whether<sp/>or<sp/>not<sp/>the<sp/>spritesheet<sp/>will<sp/>create<sp/>flipped<sp/>meshes<sp/>for.<sp/>(default<sp/>value<sp/>is<sp/>false)</highlight></codeline>
+<codeline lineno="42"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*<sp/>\param<sp/>bool<sp/>whether<sp/>or<sp/>not<sp/>the<sp/>texture<sp/>will<sp/>be<sp/>filtered,<sp/>default<sp/>is<sp/>false<sp/>and<sp/>results<sp/>in<sp/>point<sp/>sampling</highlight></codeline>
+<codeline lineno="43"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="44"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_auris_1_1_asset_manager_a7cfd748a5d960ef106d48be8c5c7f5fe_1a7cfd748a5d960ef106d48be8c5c7f5fe" kindref="member">createSheet</ref>(<ref refid="class_auris_1_1_sprite_sheet" kindref="compound">SpriteSheet</ref>*<sp/>sheet,<sp/>std::string<sp/>pathToJson,<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>createFlipped<sp/>=<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">,<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>filterSampling<sp/>=<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="47"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>//!<sp/>A<sp/>getTexture<sp/>method,<sp/>taking<sp/>1<sp/>arguments.</highlight></codeline>
+<codeline lineno="48"><highlight class="comment"></highlight><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>/*!<sp/>Gives<sp/>a<sp/>new<sp/>Texture<sp/>pointer<sp/>based<sp/>on<sp/>the<sp/>filename<sp/>inputted</highlight></codeline>
+<codeline lineno="49"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*<sp/>\param<sp/><sp/>filename<sp/>a<sp/>string<sp/>value.<sp/>The<sp/>name<sp/>of<sp/>the<sp/>Texture<sp/>file.</highlight></codeline>
+<codeline lineno="50"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*<sp/>\return<sp/>Texture<sp/>pointer.<sp/>An<sp/>instance<sp/>of<sp/>the<sp/>texture<sp/>loaded<sp/>from<sp/>the<sp/>file.</highlight></codeline>
+<codeline lineno="51"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="52"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/>SRE::Texture*<sp/><ref refid="class_auris_1_1_asset_manager_a595b95ace9ae5f2828edf0d981af6ba5_1a595b95ace9ae5f2828edf0d981af6ba5" kindref="member">getTexture</ref>(std::string<sp/>filename,<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>filterSampling<sp/>=<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="54"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>//!<sp/>A<sp/>getSpriteSheet<sp/>method,<sp/>taking<sp/>1<sp/>arguments.</highlight></codeline>
+<codeline lineno="55"><highlight class="comment"></highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>Gives<sp/>a<sp/>new<sp/>SpriteSheet<sp/>pointer<sp/>based<sp/>on<sp/>the<sp/>filename<sp/>inputted</highlight></codeline>
+<codeline lineno="56"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*<sp/>\param<sp/><sp/>filename<sp/>a<sp/>string<sp/>value.<sp/>The<sp/>name<sp/>of<sp/>the<sp/>SpriteSheet<sp/>file.</highlight></codeline>
+<codeline lineno="57"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*<sp/>\param<sp/>bool<sp/>whether<sp/>or<sp/>not<sp/>the<sp/>spritesheet<sp/>will<sp/>create<sp/>flipped<sp/>meshes<sp/>for.<sp/>(default<sp/>value<sp/>is<sp/>false)</highlight></codeline>
+<codeline lineno="58"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*<sp/>\param<sp/>bool<sp/>whether<sp/>or<sp/>not<sp/>the<sp/>texture<sp/>will<sp/>be<sp/>filtered,<sp/>default<sp/>is<sp/>false<sp/>and<sp/>results<sp/>in<sp/>point<sp/>sampling</highlight></codeline>
+<codeline lineno="59"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*<sp/>\return<sp/>SpriteSheet<sp/>pointer.<sp/>An<sp/>instance<sp/>of<sp/>the<sp/>spritesheet<sp/>loaded<sp/>from<sp/>the<sp/>file.</highlight></codeline>
+<codeline lineno="60"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="61"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/><ref refid="class_auris_1_1_sprite_sheet" kindref="compound">SpriteSheet</ref>*<sp/><ref refid="class_auris_1_1_asset_manager_a74d949aa60184a06851621995586fa2a_1a74d949aa60184a06851621995586fa2a" kindref="member">getSpriteSheet</ref>(std::string<sp/>jsonFilename,<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>createFlipped<sp/>=<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">,<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>filterSampling<sp/>=<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="62"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="63"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>//!<sp/>A<sp/>getSound<sp/>method,<sp/>taking<sp/>1<sp/>arguments.</highlight></codeline>
+<codeline lineno="64"><highlight class="comment"></highlight><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>/*!<sp/>Gives<sp/>a<sp/>new<sp/>sound<sp/>pointer<sp/>based<sp/>on<sp/>the<sp/>filename<sp/>inputted</highlight></codeline>
+<codeline lineno="65"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*<sp/>\param<sp/><sp/>filename<sp/>a<sp/>string<sp/>value.<sp/>The<sp/>name<sp/>of<sp/>the<sp/>sound<sp/>file.</highlight></codeline>
+<codeline lineno="66"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*<sp/>\return<sp/>Mix_Chunk<sp/>pointer.<sp/>An<sp/>instance<sp/>of<sp/>the<sp/>sound<sp/>loaded<sp/>from<sp/>the<sp/>file.</highlight></codeline>
+<codeline lineno="67"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*<sp/>\sa<sp/>getMusic(std::string<sp/>filename)</highlight></codeline>
+<codeline lineno="68"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="69"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/>Mix_Chunk*<sp/><ref refid="class_auris_1_1_asset_manager_aa417ba9bbbdf2c675e03aa51a22d5c36_1aa417ba9bbbdf2c675e03aa51a22d5c36" kindref="member">getSound</ref>(std::string<sp/>filename);</highlight></codeline>
+<codeline lineno="70"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="71"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>//!<sp/>A<sp/>getMusic<sp/>method,<sp/>taking<sp/>1<sp/>arguments.</highlight></codeline>
+<codeline lineno="72"><highlight class="comment"></highlight><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>/*!<sp/>Gives<sp/>a<sp/>new<sp/>music<sp/>pointer<sp/>based<sp/>on<sp/>the<sp/>filename<sp/>inputted</highlight></codeline>
+<codeline lineno="73"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*<sp/>\param<sp/><sp/>filename<sp/>a<sp/>string<sp/>value.<sp/>The<sp/>name<sp/>of<sp/>the<sp/>music<sp/>file.</highlight></codeline>
+<codeline lineno="74"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*<sp/>\return<sp/>Mix_Music<sp/>pointer.<sp/>An<sp/>instance<sp/>of<sp/>the<sp/>music<sp/>loaded<sp/>from<sp/>the<sp/>file.</highlight></codeline>
+<codeline lineno="75"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*<sp/>\sa<sp/>getSound(std::string<sp/>filename)</highlight></codeline>
+<codeline lineno="76"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="77"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/>Mix_Music*<sp/><ref refid="class_auris_1_1_asset_manager_a6401ef4abb8770223df38efc533bfcba_1a6401ef4abb8770223df38efc533bfcba" kindref="member">getMusic</ref>(std::string<sp/>filename);</highlight></codeline>
+<codeline lineno="78"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="79"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>//!<sp/>A<sp/>getDataPath<sp/>method,<sp/>taking<sp/>0-1<sp/>argument.</highlight></codeline>
+<codeline lineno="80"><highlight class="comment"></highlight><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>/*!<sp/>Helper<sp/>Function<sp/>to<sp/>get<sp/>the<sp/>datafolder.</highlight></codeline>
+<codeline lineno="81"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*<sp/>Returns<sp/>the<sp/>data<sp/>folder<sp/>path<sp/>and<sp/>is<sp/>windows<sp/>safe,<sp/>it<sp/>can<sp/>be<sp/>parsed<sp/>a<sp/>string<sp/>which<sp/>is<sp/>simply<sp/>appended</highlight></codeline>
+<codeline lineno="82"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*<sp/>\param<sp/><sp/>file<sp/>a<sp/>string<sp/>pointer.<sp/>String<sp/>which<sp/>will<sp/>be<sp/>appended<sp/>(default<sp/>is<sp/>&quot;&quot;).</highlight></codeline>
+<codeline lineno="83"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*<sp/>\return<sp/>string.<sp/>The<sp/>path<sp/>to<sp/>data<sp/>folder<sp/>and<sp/>file<sp/>param</highlight></codeline>
+<codeline lineno="84"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="85" refid="class_auris_1_1_asset_manager_a8bde2869efc39bb0f4a0e85004780c4c_1a8bde2869efc39bb0f4a0e85004780c4c" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/>std::string<sp/><ref refid="class_auris_1_1_asset_manager_a8bde2869efc39bb0f4a0e85004780c4c_1a8bde2869efc39bb0f4a0e85004780c4c" kindref="member">getDataPath</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string<sp/>&amp;file<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;&quot;</highlight><highlight class="normal">){</highlight></codeline>
+<codeline lineno="86"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//We<sp/>need<sp/>to<sp/>choose<sp/>the<sp/>path<sp/>separator<sp/>properly<sp/>based<sp/>on<sp/>which</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="87"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//platform<sp/>we&apos;re<sp/>running<sp/>on,<sp/>since<sp/>Windows<sp/>uses<sp/>a<sp/>different</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="88"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//separator<sp/>than<sp/>most<sp/>systems</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="89"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>_WIN32</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="90"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>PATH_SEP<sp/>=<sp/></highlight><highlight class="charliteral">&apos;\\&apos;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="91"><highlight class="normal"></highlight><highlight class="preprocessor">#else</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="92"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>PATH_SEP<sp/>=<sp/></highlight><highlight class="charliteral">&apos;/&apos;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="93"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="94"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//This<sp/>will<sp/>hold<sp/>the<sp/>base<sp/>data<sp/>path:</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="95"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//We<sp/>give<sp/>it<sp/>static<sp/>lifetime<sp/>so<sp/>that<sp/>we&apos;ll<sp/>only<sp/>need<sp/>to<sp/>call</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="96"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//SDL_GetBasePath<sp/>once<sp/>to<sp/>get<sp/>the<sp/>executable<sp/>path</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="97"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/>std::string<sp/>baseRes;</highlight></codeline>
+<codeline lineno="98"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(baseRes.empty()){</highlight></codeline>
+<codeline lineno="99"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//SDL_GetBasePath<sp/>will<sp/>return<sp/>NULL<sp/>if<sp/>something<sp/>went<sp/>wrong<sp/>in<sp/>retrieving<sp/>the<sp/>path</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="100"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*basePath<sp/>=<sp/>SDL_GetBasePath();</highlight></codeline>
+<codeline lineno="101"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(basePath){</highlight></codeline>
+<codeline lineno="102"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>baseRes<sp/>=<sp/>basePath;</highlight></codeline>
+<codeline lineno="103"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>SDL_free(basePath);</highlight></codeline>
+<codeline lineno="104"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="105"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="106"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::cerr<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;Error<sp/>getting<sp/>resource<sp/>path:<sp/>&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>SDL_GetError()<sp/>&lt;&lt;<sp/>std::endl;</highlight></codeline>
+<codeline lineno="107"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="stringliteral">&quot;&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="108"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="109"><highlight class="normal"></highlight></codeline>
+<codeline lineno="110"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>baseRes<sp/>=<sp/>baseRes<sp/>+<sp/></highlight><highlight class="stringliteral">&quot;data&quot;</highlight><highlight class="normal"><sp/>+<sp/>PATH_SEP;</highlight></codeline>
+<codeline lineno="111"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="112"><highlight class="normal"></highlight></codeline>
+<codeline lineno="113"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//If<sp/>we<sp/>want<sp/>a<sp/>specific<sp/>file<sp/>path<sp/>in<sp/>the<sp/>data<sp/>dir<sp/>or<sp/>just<sp/>the<sp/>data<sp/>dir</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="114"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>file.empty()<sp/>?<sp/>baseRes:<sp/>baseRes<sp/>+<sp/>file;</highlight></codeline>
+<codeline lineno="115"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="116"><highlight class="normal"></highlight></codeline>
+<codeline lineno="117"><highlight class="normal"></highlight></codeline>
+<codeline lineno="118"><highlight class="normal"><sp/><sp/><sp/><sp/>};</highlight></codeline>
+<codeline lineno="119"><highlight class="normal"></highlight></codeline>
+<codeline lineno="120"><highlight class="normal">}</highlight></codeline>
+    </programlisting>
+    <location file="Projects/GameEngine/include/Auris/Utilities/AssetManager.hpp"/>
+  </compounddef>
+</doxygen>

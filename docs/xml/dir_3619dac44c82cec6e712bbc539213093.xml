@@ -1,0 +1,23 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.12">
+  <compounddef id="dir_3619dac44c82cec6e712bbc539213093" kind="dir">
+    <compoundname>Projects/GameEngine/include/Auris/Utilities</compoundname>
+    <innerfile refid="_asset_manager_8hpp">AssetManager.hpp</innerfile>
+    <innerfile refid="_body_standard_8hpp">BodyStandard.hpp</innerfile>
+    <innerfile refid="_convert_8hpp">Convert.hpp</innerfile>
+    <innerfile refid="_dynamic_pool_8hpp">DynamicPool.hpp</innerfile>
+    <innerfile refid="_interpolation_8hpp">Interpolation.hpp</innerfile>
+    <innerfile refid="_memory_leak_detector_8hpp">MemoryLeakDetector.hpp</innerfile>
+    <innerfile refid="_mesh_8hpp">Mesh.hpp</innerfile>
+    <innerfile refid="picojson_8h">picojson.h</innerfile>
+    <innerfile refid="_pool_8hpp">Pool.hpp</innerfile>
+    <innerfile refid="_shader_8hpp">Shader.hpp</innerfile>
+    <innerfile refid="_sprite_sheet_8hpp">SpriteSheet.hpp</innerfile>
+    <innerfile refid="_timer_8hpp">Timer.hpp</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="Projects/GameEngine/include/Auris/Utilities/"/>
+  </compounddef>
+</doxygen>

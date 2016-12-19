@@ -1,0 +1,199 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.12">
+  <compounddef id="_debug_draw_8hpp" kind="file" language="C++">
+    <compoundname>DebugDraw.hpp</compoundname>
+    <includes local="yes">Box2D/Box2D.h</includes>
+    <includes local="yes">SRE/Debug.hpp</includes>
+    <includes local="yes">glm/glm.hpp</includes>
+    <includes local="no">glm/gtc/constants.hpp</includes>
+    <includes local="no">iostream</includes>
+    <includes refid="_constants_8hpp" local="yes">Auris/Constants.hpp</includes>
+    <includedby refid="_debug_u_i_8hpp" local="yes">Projects/GameEngine/include/Auris/Testing/DebugUI.hpp</includedby>
+    <incdepgraph>
+      <node id="1209">
+        <label>Auris/Constants.hpp</label>
+        <link refid="_constants_8hpp"/>
+      </node>
+      <node id="1205">
+        <label>SRE/Debug.hpp</label>
+      </node>
+      <node id="1207">
+        <label>glm/gtc/constants.hpp</label>
+      </node>
+      <node id="1204">
+        <label>Box2D/Box2D.h</label>
+      </node>
+      <node id="1208">
+        <label>iostream</label>
+      </node>
+      <node id="1203">
+        <label>Projects/GameEngine/include/Auris/Testing/DebugDraw.hpp</label>
+        <link refid="_debug_draw_8hpp"/>
+        <childnode refid="1204" relation="include">
+        </childnode>
+        <childnode refid="1205" relation="include">
+        </childnode>
+        <childnode refid="1206" relation="include">
+        </childnode>
+        <childnode refid="1207" relation="include">
+        </childnode>
+        <childnode refid="1208" relation="include">
+        </childnode>
+        <childnode refid="1209" relation="include">
+        </childnode>
+      </node>
+      <node id="1206">
+        <label>glm/glm.hpp</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="1211">
+        <label>Projects/GameEngine/include/Auris/Testing/DebugUI.hpp</label>
+        <link refid="_debug_u_i_8hpp"/>
+      </node>
+      <node id="1210">
+        <label>Projects/GameEngine/include/Auris/Testing/DebugDraw.hpp</label>
+        <link refid="_debug_draw_8hpp"/>
+        <childnode refid="1211" relation="include">
+        </childnode>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="class_auris_1_1_debug_draw" prot="public">Auris::DebugDraw</innerclass>
+    <innernamespace refid="namespace_auris">Auris</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#pragma<sp/>once</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;Box2D/Box2D.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;SRE/Debug.hpp&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;glm/glm.hpp&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;glm/gtc/constants.hpp&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;iostream&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="_constants_8hpp" kindref="compound">Auris/Constants.hpp</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespace_auris" kindref="compound">Auris</ref>{</highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="13"><highlight class="comment">//!<sp/>The<sp/>DebugDraw<sp/>class<sp/>that<sp/>extend<sp/>the<sp/>b2Draw<sp/>in<sp/>box2D</highlight></codeline>
+<codeline lineno="14"><highlight class="comment"></highlight><highlight class="comment"><sp/><sp/><sp/><sp/>/*!<sp/>Used<sp/>to<sp/>draw<sp/>debug<sp/>around<sp/>everything</highlight></codeline>
+<codeline lineno="15"><highlight class="comment"><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="16" refid="class_auris_1_1_debug_draw" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="class_auris_1_1_debug_draw" kindref="compound">DebugDraw</ref><sp/>:<sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/>b2Draw{</highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="19"><highlight class="comment"><sp/><sp/><sp/><sp/>//!<sp/>The<sp/>DebugDraw<sp/>constructor.</highlight></codeline>
+<codeline lineno="20"><highlight class="comment"></highlight><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>/*!</highlight></codeline>
+<codeline lineno="21"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*<sp/>Does<sp/>nothing.</highlight></codeline>
+<codeline lineno="22"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="23" refid="class_auris_1_1_debug_draw_ae3827fd7865c0ebadc73a8487dbb838a_1ae3827fd7865c0ebadc73a8487dbb838a" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_auris_1_1_debug_draw_ae3827fd7865c0ebadc73a8487dbb838a_1ae3827fd7865c0ebadc73a8487dbb838a" kindref="member">DebugDraw</ref>(){}</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="25"><highlight class="comment"><sp/><sp/><sp/><sp/>//!<sp/>A<sp/>DrawPolygon<sp/>overload<sp/>method,<sp/>taking<sp/>3<sp/>arguments.</highlight></codeline>
+<codeline lineno="26"><highlight class="comment"></highlight><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>/*!<sp/>Draws<sp/>a<sp/>polygon<sp/>on<sp/>the<sp/>screen<sp/>using<sp/>SimpleRenderEngine.</highlight></codeline>
+<codeline lineno="27"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*<sp/>\param<sp/>vertices<sp/>a<sp/>constant<sp/>b2vec2<sp/>pointer.<sp/>The<sp/>vertices<sp/>of<sp/>the<sp/>polygon.</highlight></codeline>
+<codeline lineno="28"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*<sp/>\param<sp/>vertexCount<sp/>an<sp/>int<sp/>value.<sp/>The<sp/>vertex<sp/>count<sp/>of<sp/>the<sp/>polygon.</highlight></codeline>
+<codeline lineno="29"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*<sp/>\param<sp/>color<sp/>a<sp/>constant<sp/>b2Color<sp/>value.<sp/>The<sp/>color<sp/>of<sp/>the<sp/>polygon.</highlight></codeline>
+<codeline lineno="30"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*<sp/>\overload<sp/>b2Draw::DrawPolygon()</highlight></codeline>
+<codeline lineno="31"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="32" refid="class_auris_1_1_debug_draw_ac53198cd27b6bfcde2d9fec3dcaed524_1ac53198cd27b6bfcde2d9fec3dcaed524" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_auris_1_1_debug_draw_ac53198cd27b6bfcde2d9fec3dcaed524_1ac53198cd27b6bfcde2d9fec3dcaed524" kindref="member">DrawPolygon</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>b2Vec2*<sp/>vertices,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>vertexCount,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>b2Color&amp;<sp/>color)<sp/>{</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//std::cout<sp/>&lt;&lt;<sp/>color.r<sp/>&lt;&lt;<sp/>&quot;<sp/>&quot;<sp/>&lt;&lt;<sp/>color.g<sp/>&lt;&lt;<sp/>&quot;<sp/>&quot;<sp/>&lt;&lt;<sp/>color.b<sp/>&lt;&lt;<sp/>&quot;<sp/>&quot;<sp/>&lt;&lt;<sp/>color.a<sp/>&lt;&lt;<sp/>std::endl;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="34"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="35"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>SRE::Debug::setColor(glm::vec4(color.r,<sp/>color.g,<sp/>color.b,<sp/>color.a));</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"></highlight></codeline>
+<codeline lineno="37"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal">(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i<sp/>=<sp/>0;<sp/>i<sp/>&lt;<sp/>vertexCount-1;<sp/>i++){</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>SRE::Debug::drawLine(</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>glm::vec3(</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>vertices[i].x<sp/>*<sp/><ref refid="namespace_auris_1_1_constants_a559532ed3415b8ded07cdc4069dfa91c_1a559532ed3415b8ded07cdc4069dfa91c" kindref="member">Constants::METERS_TO_PIXELS</ref>,</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>vertices[i].y<sp/>*<sp/>Constants::METERS_TO_PIXELS,0),<sp/></highlight></codeline>
+<codeline lineno="42"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>glm::vec3(</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>vertices[i+1].x<sp/>*<sp/>Constants::METERS_TO_PIXELS,</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>vertices[i+1].y<sp/>*<sp/>Constants::METERS_TO_PIXELS,0)</highlight></codeline>
+<codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>);<sp/></highlight></codeline>
+<codeline lineno="46"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="47"><highlight class="normal"></highlight></codeline>
+<codeline lineno="48"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>SRE::Debug::drawLine(glm::vec3(vertices[vertexCount-1].x<sp/>*<sp/><ref refid="namespace_auris_1_1_constants_a559532ed3415b8ded07cdc4069dfa91c_1a559532ed3415b8ded07cdc4069dfa91c" kindref="member">Constants::METERS_TO_PIXELS</ref>,vertices[vertexCount-1].y<sp/>*<sp/>Constants::METERS_TO_PIXELS,0),<sp/>glm::vec3(vertices[0].x<sp/>*<sp/>Constants::METERS_TO_PIXELS,vertices[0].y<sp/>*<sp/>Constants::METERS_TO_PIXELS,0));<sp/></highlight></codeline>
+<codeline lineno="49"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="50"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="51"><highlight class="comment"><sp/><sp/><sp/><sp/>//!<sp/>A<sp/>DrawSolidPolygon<sp/>overload<sp/>method,<sp/>taking<sp/>3<sp/>arguments.</highlight></codeline>
+<codeline lineno="52"><highlight class="comment"></highlight><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>/*!<sp/>Draws<sp/>a<sp/>polygon<sp/>using<sp/>DrawPolygon<sp/>method<sp/>on<sp/>the<sp/>screen<sp/>using<sp/>SimpleRenderEngine.</highlight></codeline>
+<codeline lineno="53"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*<sp/>\param<sp/>vertices<sp/>a<sp/>constant<sp/>b2vec2<sp/>pointer.<sp/>The<sp/>vertices<sp/>of<sp/>the<sp/>polygon.</highlight></codeline>
+<codeline lineno="54"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*<sp/>\param<sp/>vertexCount<sp/>an<sp/>int<sp/>value.<sp/>The<sp/>vertex<sp/>count<sp/>of<sp/>the<sp/>polygon.</highlight></codeline>
+<codeline lineno="55"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*<sp/>\param<sp/>color<sp/>a<sp/>constant<sp/>b2Color<sp/>value.<sp/>The<sp/>color<sp/>of<sp/>the<sp/>polygon.</highlight></codeline>
+<codeline lineno="56"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*<sp/>\overload<sp/>b2Draw::DrawSolidPolygon()</highlight></codeline>
+<codeline lineno="57"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="58" refid="class_auris_1_1_debug_draw_a9a5712b341027108f3cb5372dfae6495_1a9a5712b341027108f3cb5372dfae6495" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_auris_1_1_debug_draw_a9a5712b341027108f3cb5372dfae6495_1a9a5712b341027108f3cb5372dfae6495" kindref="member">DrawSolidPolygon</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>b2Vec2*<sp/>vertices,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>vertexCount,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>b2Color&amp;<sp/>color)<sp/>{</highlight></codeline>
+<codeline lineno="59"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_auris_1_1_debug_draw_ac53198cd27b6bfcde2d9fec3dcaed524_1ac53198cd27b6bfcde2d9fec3dcaed524" kindref="member">DrawPolygon</ref>(vertices,<sp/>vertexCount,<sp/>color);</highlight></codeline>
+<codeline lineno="60"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="61"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="62"><highlight class="comment"><sp/><sp/><sp/><sp/>//!<sp/>A<sp/>DrawCircle<sp/>overload<sp/>method,<sp/>taking<sp/>3<sp/>arguments.</highlight></codeline>
+<codeline lineno="63"><highlight class="comment"></highlight><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>/*!<sp/>Draws<sp/>a<sp/>cicle<sp/>using<sp/>DrawPolygon<sp/>method<sp/>on<sp/>the<sp/>screen<sp/>using<sp/>SimpleRenderEngine.</highlight></codeline>
+<codeline lineno="64"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*<sp/>\param<sp/>center<sp/>a<sp/>constant<sp/>b2vec2<sp/>pointer.<sp/>The<sp/>center<sp/>of<sp/>the<sp/>circle.</highlight></codeline>
+<codeline lineno="65"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*<sp/>\param<sp/>radius<sp/>a<sp/>float<sp/>value.<sp/>The<sp/>radius<sp/>of<sp/>the<sp/>circle.</highlight></codeline>
+<codeline lineno="66"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*<sp/>\param<sp/>color<sp/>a<sp/>constant<sp/>b2Color<sp/>value.<sp/>The<sp/>color<sp/>of<sp/>the<sp/>polygon.</highlight></codeline>
+<codeline lineno="67"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*<sp/>\overload<sp/>b2Draw::DrawCircle()</highlight></codeline>
+<codeline lineno="68"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="69" refid="class_auris_1_1_debug_draw_a6f6f5f1ff454b5574a6f7cc240dd1593_1a6f6f5f1ff454b5574a6f7cc240dd1593" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_auris_1_1_debug_draw_a6f6f5f1ff454b5574a6f7cc240dd1593_1a6f6f5f1ff454b5574a6f7cc240dd1593" kindref="member">DrawCircle</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>b2Vec2&amp;<sp/>center,<sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>radius,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>b2Color&amp;<sp/>color)<sp/>{</highlight></codeline>
+<codeline lineno="70"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>size<sp/>=<sp/>32;</highlight></codeline>
+<codeline lineno="71"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>b2Vec2<sp/><ref refid="namespacepicojson_ac1e72166adfe3d96dc58cddc7ebd536a_1ac1e72166adfe3d96dc58cddc7ebd536a" kindref="member">array</ref>[size];</highlight></codeline>
+<codeline lineno="72"><highlight class="normal"></highlight></codeline>
+<codeline lineno="73"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal">(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i<sp/>=<sp/>0;i<sp/>&lt;<sp/>size;i++){</highlight></codeline>
+<codeline lineno="74"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>array[i]<sp/>=<sp/>center<sp/>+<sp/>b2Vec2(glm::cos(i<sp/>*<sp/>(2<sp/>*<sp/>glm::pi&lt;float&gt;()<sp/>/<sp/>(</highlight><highlight class="keywordtype">float</highlight><highlight class="normal">)size<sp/>))<sp/>*<sp/>radius,<sp/>glm::sin(i<sp/>*<sp/>(2<sp/>*<sp/>glm::pi&lt;float&gt;()<sp/>/<sp/>(</highlight><highlight class="keywordtype">float</highlight><highlight class="normal">)size))<sp/>*<sp/>radius);</highlight></codeline>
+<codeline lineno="75"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="76"><highlight class="normal"></highlight></codeline>
+<codeline lineno="77"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_auris_1_1_debug_draw_ac53198cd27b6bfcde2d9fec3dcaed524_1ac53198cd27b6bfcde2d9fec3dcaed524" kindref="member">DrawPolygon</ref>(&amp;array[0],<sp/>size,<sp/>color);</highlight></codeline>
+<codeline lineno="78"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="79"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="80"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="81"><highlight class="comment"><sp/><sp/><sp/><sp/>//!<sp/>A<sp/>DrawSolidCircle<sp/>overload<sp/>method,<sp/>taking<sp/>3<sp/>arguments.</highlight></codeline>
+<codeline lineno="82"><highlight class="comment"></highlight><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>/*!<sp/>Draws<sp/>a<sp/>cicle<sp/>using<sp/>DrawCircle<sp/>method<sp/>on<sp/>the<sp/>screen<sp/>using<sp/>SimpleRenderEngine.</highlight></codeline>
+<codeline lineno="83"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*<sp/>\param<sp/>center<sp/>a<sp/>constant<sp/>b2vec2<sp/>pointer.<sp/>The<sp/>center<sp/>of<sp/>the<sp/>circle.</highlight></codeline>
+<codeline lineno="84"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*<sp/>\param<sp/>radius<sp/>a<sp/>float<sp/>value.<sp/>The<sp/>radius<sp/>of<sp/>the<sp/>circle.</highlight></codeline>
+<codeline lineno="85"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*<sp/>\param<sp/>axis<sp/>a<sp/>b2vec2<sp/>pointer.<sp/>Not<sp/>used<sp/>for<sp/>anything.</highlight></codeline>
+<codeline lineno="86"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*<sp/>\param<sp/>color<sp/>a<sp/>constant<sp/>b2Color<sp/>value.<sp/>The<sp/>color<sp/>of<sp/>the<sp/>polygon.</highlight></codeline>
+<codeline lineno="87"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*<sp/>\overload<sp/>b2Draw::DrawSolidCircle()</highlight></codeline>
+<codeline lineno="88"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="89" refid="class_auris_1_1_debug_draw_a49d8dda48bc78a0c110cc48ae17e1613_1a49d8dda48bc78a0c110cc48ae17e1613" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_auris_1_1_debug_draw_a49d8dda48bc78a0c110cc48ae17e1613_1a49d8dda48bc78a0c110cc48ae17e1613" kindref="member">DrawSolidCircle</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>b2Vec2&amp;<sp/>center,<sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>radius,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>b2Vec2&amp;<sp/>axis,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>b2Color&amp;<sp/>color)<sp/>{</highlight></codeline>
+<codeline lineno="90"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_auris_1_1_debug_draw_a6f6f5f1ff454b5574a6f7cc240dd1593_1a6f6f5f1ff454b5574a6f7cc240dd1593" kindref="member">DrawCircle</ref>(center,<sp/>radius,<sp/>color);</highlight></codeline>
+<codeline lineno="91"><highlight class="normal"></highlight></codeline>
+<codeline lineno="92"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="93"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="94"><highlight class="comment"><sp/><sp/><sp/><sp/>//!<sp/>A<sp/>DrawSegment<sp/>overload<sp/>method,<sp/>taking<sp/>3<sp/>arguments.</highlight></codeline>
+<codeline lineno="95"><highlight class="comment"></highlight><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>/*!<sp/>Draws<sp/>a<sp/>line<sp/>on<sp/>the<sp/>screen<sp/>using<sp/>SimpleRenderEngine.</highlight></codeline>
+<codeline lineno="96"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*<sp/>\param<sp/>p1<sp/>a<sp/>constant<sp/>b2vec2<sp/>pointer.<sp/>First<sp/>point<sp/>of<sp/>the<sp/>line.</highlight></codeline>
+<codeline lineno="97"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*<sp/>\param<sp/>p2<sp/>a<sp/>constant<sp/>b2vec2<sp/>pointer.<sp/>Second<sp/>point<sp/>of<sp/>the<sp/>line.</highlight></codeline>
+<codeline lineno="98"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*<sp/>\param<sp/>color<sp/>a<sp/>constant<sp/>b2Color<sp/>value.<sp/>The<sp/>color<sp/>of<sp/>the<sp/>line.</highlight></codeline>
+<codeline lineno="99"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*<sp/>\overload<sp/>b2Draw::DrawSegment()</highlight></codeline>
+<codeline lineno="100"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="101" refid="class_auris_1_1_debug_draw_a5f1da34de4ab565c172a7ca878712b8a_1a5f1da34de4ab565c172a7ca878712b8a" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_auris_1_1_debug_draw_a5f1da34de4ab565c172a7ca878712b8a_1a5f1da34de4ab565c172a7ca878712b8a" kindref="member">DrawSegment</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>b2Vec2&amp;<sp/>p1,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>b2Vec2&amp;<sp/>p2,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>b2Color&amp;<sp/>color)<sp/>{</highlight></codeline>
+<codeline lineno="102"><highlight class="normal"></highlight></codeline>
+<codeline lineno="103"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>SRE::Debug::setColor(glm::vec4(color.r,<sp/>color.g,<sp/>color.b,<sp/>color.a));</highlight></codeline>
+<codeline lineno="104"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>SRE::Debug::drawLine(glm::vec3(p1.x<sp/>*<sp/><ref refid="namespace_auris_1_1_constants_a559532ed3415b8ded07cdc4069dfa91c_1a559532ed3415b8ded07cdc4069dfa91c" kindref="member">Constants::METERS_TO_PIXELS</ref>,p1.y<sp/>*<sp/><ref refid="namespace_auris_1_1_constants_a559532ed3415b8ded07cdc4069dfa91c_1a559532ed3415b8ded07cdc4069dfa91c" kindref="member">Constants::METERS_TO_PIXELS</ref>,0),<sp/>glm::vec3(p2.x<sp/>*<sp/><ref refid="namespace_auris_1_1_constants_a559532ed3415b8ded07cdc4069dfa91c_1a559532ed3415b8ded07cdc4069dfa91c" kindref="member">Constants::METERS_TO_PIXELS</ref>,p2.y<sp/>*<sp/><ref refid="namespace_auris_1_1_constants_a559532ed3415b8ded07cdc4069dfa91c_1a559532ed3415b8ded07cdc4069dfa91c" kindref="member">Constants::METERS_TO_PIXELS</ref>,0));<sp/></highlight></codeline>
+<codeline lineno="105"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="106"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="107"><highlight class="comment"><sp/><sp/><sp/><sp/>//!<sp/>A<sp/>DrawTransform<sp/>overload<sp/>method,<sp/>taking<sp/>1<sp/>arguments.</highlight></codeline>
+<codeline lineno="108"><highlight class="comment"></highlight><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>/*!<sp/>Not<sp/>used<sp/>for<sp/>anything</highlight></codeline>
+<codeline lineno="109"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*<sp/>\param<sp/>xf<sp/>a<sp/>constant<sp/>b2Transform<sp/>pointer.<sp/>Not<sp/>used<sp/>for<sp/>anything.</highlight></codeline>
+<codeline lineno="110"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*<sp/>\overload<sp/>b2Draw::DrawTransform()</highlight></codeline>
+<codeline lineno="111"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="112" refid="class_auris_1_1_debug_draw_ab211401eb4ee8804fba9673e4c8a2ca5_1ab211401eb4ee8804fba9673e4c8a2ca5" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_auris_1_1_debug_draw_ab211401eb4ee8804fba9673e4c8a2ca5_1ab211401eb4ee8804fba9673e4c8a2ca5" kindref="member">DrawTransform</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>b2Transform&amp;<sp/>xf)<sp/>{}</highlight></codeline>
+<codeline lineno="113"><highlight class="normal"></highlight></codeline>
+<codeline lineno="114"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="115"><highlight class="comment"><sp/><sp/><sp/><sp/>//!<sp/>A<sp/>DrawPoint<sp/>overload<sp/>method,<sp/>taking<sp/>3<sp/>arguments.</highlight></codeline>
+<codeline lineno="116"><highlight class="comment"></highlight><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>/*!<sp/>Draws<sp/>a<sp/>point<sp/>using<sp/>the<sp/>DrawCircle<sp/>method<sp/>on<sp/>the<sp/>screen<sp/>using<sp/>SimpleRenderEngine.</highlight></codeline>
+<codeline lineno="117"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*<sp/>\param<sp/>p<sp/>a<sp/>constant<sp/>b2vec2<sp/>pointer.<sp/>The<sp/>point<sp/>to<sp/>draw.</highlight></codeline>
+<codeline lineno="118"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*<sp/>\param<sp/>size<sp/>a<sp/>float<sp/>value.<sp/>The<sp/>size<sp/>of<sp/>the<sp/>point.</highlight></codeline>
+<codeline lineno="119"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*<sp/>\param<sp/>color<sp/>a<sp/>constant<sp/>b2Color<sp/>value.<sp/>The<sp/>color<sp/>of<sp/>the<sp/>point.</highlight></codeline>
+<codeline lineno="120"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*<sp/>\overload<sp/>b2Draw::DrawPoint()</highlight></codeline>
+<codeline lineno="121"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="122" refid="class_auris_1_1_debug_draw_a0f65afa0118fe89204066c4e06c52468_1a0f65afa0118fe89204066c4e06c52468" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_auris_1_1_debug_draw_a0f65afa0118fe89204066c4e06c52468_1a0f65afa0118fe89204066c4e06c52468" kindref="member">DrawPoint</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>b2Vec2&amp;<sp/>p,<sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>size,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>b2Color&amp;<sp/>color){</highlight></codeline>
+<codeline lineno="123"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_auris_1_1_debug_draw_a6f6f5f1ff454b5574a6f7cc240dd1593_1a6f6f5f1ff454b5574a6f7cc240dd1593" kindref="member">DrawCircle</ref>(p,<sp/>size,<sp/>color);</highlight></codeline>
+<codeline lineno="124"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="125"><highlight class="normal"></highlight></codeline>
+<codeline lineno="126"><highlight class="normal"></highlight></codeline>
+<codeline lineno="127"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="128"><highlight class="normal">}</highlight></codeline>
+    </programlisting>
+    <location file="Projects/GameEngine/include/Auris/Testing/DebugDraw.hpp"/>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,92 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.12">
+  <compounddef id="class_auris_1_1_profiling_timer" kind="class" language="C++" prot="public">
+    <compoundname>Auris::ProfilingTimer</compoundname>
+    <includes refid="_profiling_timer_8hpp" local="no">ProfilingTimer.hpp</includes>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="class_auris_1_1_profiling_timer_a417e1c5465a86e3183dd1107dd552a84_1a417e1c5465a86e3183dd1107dd552a84" prot="private" static="no" mutable="no">
+        <type>Uint64</type>
+        <definition>Uint64 Auris::ProfilingTimer::startStamp</definition>
+        <argsstring></argsstring>
+        <name>startStamp</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>A Uint64 value: startStamp. The start stamp of the timer. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Projects/GameEngine/include/Auris/Testing/ProfilingTimer.hpp" line="11" column="1" bodyfile="Projects/GameEngine/include/Auris/Testing/ProfilingTimer.hpp" bodystart="11" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="class_auris_1_1_profiling_timer_ab74646ed840923b575a2b29d8043a0d8_1ab74646ed840923b575a2b29d8043a0d8" prot="public" static="no" mutable="no">
+        <type>double</type>
+        <definition>double Auris::ProfilingTimer::length</definition>
+        <argsstring></argsstring>
+        <name>length</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>A double value: length. The length of the timer. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Projects/GameEngine/include/Auris/Testing/ProfilingTimer.hpp" line="13" column="1" bodyfile="Projects/GameEngine/include/Auris/Testing/ProfilingTimer.hpp" bodystart="13" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_auris_1_1_profiling_timer_aa8113266fe7367134a6cbbcef2e10e4c_1aa8113266fe7367134a6cbbcef2e10e4c" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void Auris::ProfilingTimer::start</definition>
+        <argsstring>()</argsstring>
+        <name>start</name>
+        <briefdescription>
+<para>A start method. </para>        </briefdescription>
+        <detaileddescription>
+<para>Starts the timer, from the SDL_GetPerformanceCounter() <simplesect kind="see"><para>SDL_GetPerformanceCounter() </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Projects/GameEngine/include/Auris/Testing/ProfilingTimer.hpp" line="20" column="1" bodyfile="Projects/GameEngine/include/Auris/Testing/ProfilingTimer.hpp" bodystart="20" bodyend="22"/>
+      </memberdef>
+      <memberdef kind="function" id="class_auris_1_1_profiling_timer_a92353a7d5398022c1a6cc88c58de4fd2_1a92353a7d5398022c1a6cc88c58de4fd2" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void Auris::ProfilingTimer::stop</definition>
+        <argsstring>()</argsstring>
+        <name>stop</name>
+        <briefdescription>
+<para>A stop method. </para>        </briefdescription>
+        <detaileddescription>
+<para>Stops the timer </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Projects/GameEngine/include/Auris/Testing/ProfilingTimer.hpp" line="28" column="1" bodyfile="Projects/GameEngine/include/Auris/Testing/ProfilingTimer.hpp" bodystart="28" bodyend="31"/>
+      </memberdef>
+      <memberdef kind="function" id="class_auris_1_1_profiling_timer_ac08144f24cabdf04b31de33fbaa62a91_1ac08144f24cabdf04b31de33fbaa62a91" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>double</type>
+        <definition>double Auris::ProfilingTimer::getStartTime</definition>
+        <argsstring>()</argsstring>
+        <name>getStartTime</name>
+        <briefdescription>
+<para>A getStartTime method. </para>        </briefdescription>
+        <detaileddescription>
+<para>Used to gather the start time of the timer <simplesect kind="return"><para>double. The start time of the timer </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Projects/GameEngine/include/Auris/Testing/ProfilingTimer.hpp" line="38" column="1" bodyfile="Projects/GameEngine/include/Auris/Testing/ProfilingTimer.hpp" bodystart="38" bodyend="40"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>The Pofiling class. </para>    </briefdescription>
+    <detaileddescription>
+<para>Used to control the timer of the profiling </para>    </detaileddescription>
+    <location file="Projects/GameEngine/include/Auris/Testing/ProfilingTimer.hpp" line="9" column="1" bodyfile="Projects/GameEngine/include/Auris/Testing/ProfilingTimer.hpp" bodystart="9" bodyend="41"/>
+    <listofallmembers>
+      <member refid="class_auris_1_1_profiling_timer_ac08144f24cabdf04b31de33fbaa62a91_1ac08144f24cabdf04b31de33fbaa62a91" prot="public" virt="non-virtual"><scope>Auris::ProfilingTimer</scope><name>getStartTime</name></member>
+      <member refid="class_auris_1_1_profiling_timer_ab74646ed840923b575a2b29d8043a0d8_1ab74646ed840923b575a2b29d8043a0d8" prot="public" virt="non-virtual"><scope>Auris::ProfilingTimer</scope><name>length</name></member>
+      <member refid="class_auris_1_1_profiling_timer_aa8113266fe7367134a6cbbcef2e10e4c_1aa8113266fe7367134a6cbbcef2e10e4c" prot="public" virt="non-virtual"><scope>Auris::ProfilingTimer</scope><name>start</name></member>
+      <member refid="class_auris_1_1_profiling_timer_a417e1c5465a86e3183dd1107dd552a84_1a417e1c5465a86e3183dd1107dd552a84" prot="private" virt="non-virtual"><scope>Auris::ProfilingTimer</scope><name>startStamp</name></member>
+      <member refid="class_auris_1_1_profiling_timer_a92353a7d5398022c1a6cc88c58de4fd2_1a92353a7d5398022c1a6cc88c58de4fd2" prot="public" virt="non-virtual"><scope>Auris::ProfilingTimer</scope><name>stop</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,296 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.12">
+  <compounddef id="_pool_8hpp" kind="file" language="C++">
+    <compoundname>Pool.hpp</compoundname>
+    <includes local="no">stdlib.h</includes>
+    <includes local="no">iostream</includes>
+    <includedby refid="_dynamic_pool_8hpp" local="yes">Projects/GameEngine/include/Auris/Utilities/DynamicPool.hpp</includedby>
+    <incdepgraph>
+      <node id="1457">
+        <label>stdlib.h</label>
+      </node>
+      <node id="1456">
+        <label>Projects/GameEngine/include/Auris/Utilities/Pool.hpp</label>
+        <link refid="_pool_8hpp"/>
+        <childnode refid="1457" relation="include">
+        </childnode>
+        <childnode refid="1458" relation="include">
+        </childnode>
+      </node>
+      <node id="1458">
+        <label>iostream</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="1460">
+        <label>Projects/GameEngine/include/Auris/Utilities/DynamicPool.hpp</label>
+        <link refid="_dynamic_pool_8hpp"/>
+        <childnode refid="1461" relation="include">
+        </childnode>
+      </node>
+      <node id="1466">
+        <label>Projects/GameEngine/Auris/src/Auris/Entities/PhysicsEntity.cpp</label>
+        <link refid="_physics_entity_8cpp"/>
+      </node>
+      <node id="1463">
+        <label>Projects/GameEngine/include/Auris/Entities/PhysicsEntity.hpp</label>
+        <link refid="_physics_entity_8hpp"/>
+        <childnode refid="1464" relation="include">
+        </childnode>
+        <childnode refid="1466" relation="include">
+        </childnode>
+      </node>
+      <node id="1464">
+        <label>Projects/GameEngine/include/Auris/Systems/CollisionHandler.hpp</label>
+        <link refid="_collision_handler_8hpp"/>
+        <childnode refid="1465" relation="include">
+        </childnode>
+      </node>
+      <node id="1467">
+        <label>Projects/GameEngine/include/Auris/Game.hpp</label>
+        <link refid="_game_8hpp"/>
+        <childnode refid="1462" relation="include">
+        </childnode>
+        <childnode refid="1468" relation="include">
+        </childnode>
+        <childnode refid="1469" relation="include">
+        </childnode>
+      </node>
+      <node id="1462">
+        <label>Projects/GameEngine/include/Auris/Engine.hpp</label>
+        <link refid="_engine_8hpp"/>
+        <childnode refid="1463" relation="include">
+        </childnode>
+        <childnode refid="1467" relation="include">
+        </childnode>
+        <childnode refid="1470" relation="include">
+        </childnode>
+        <childnode refid="1465" relation="include">
+        </childnode>
+      </node>
+      <node id="1470">
+        <label>Projects/GameEngine/include/Auris/Utilities/BodyStandard.hpp</label>
+        <link refid="_body_standard_8hpp"/>
+      </node>
+      <node id="1469">
+        <label>Projects/GameEngine/Auris/src/Auris/Systems/Input.cpp</label>
+        <link refid="_input_8cpp"/>
+      </node>
+      <node id="1468">
+        <label>Projects/GameEngine/Auris/src/Auris/Game.cpp</label>
+        <link refid="_game_8cpp"/>
+      </node>
+      <node id="1459">
+        <label>Projects/GameEngine/include/Auris/Utilities/Pool.hpp</label>
+        <link refid="_pool_8hpp"/>
+        <childnode refid="1460" relation="include">
+        </childnode>
+      </node>
+      <node id="1465">
+        <label>Projects/GameEngine/Auris/src/Auris/Engine.cpp</label>
+        <link refid="_engine_8cpp"/>
+      </node>
+      <node id="1473">
+        <label>Projects/GameEngine/Auris/src/Auris/Utilities/SpriteSheet.cpp</label>
+        <link refid="_sprite_sheet_8cpp"/>
+      </node>
+      <node id="1471">
+        <label>Projects/GameEngine/Auris/src/Auris/Entities/Nuggets/Sprite.cpp</label>
+        <link refid="_sprite_8cpp"/>
+      </node>
+      <node id="1472">
+        <label>Projects/GameEngine/Auris/src/Auris/Systems/RenderSystem.cpp</label>
+        <link refid="_render_system_8cpp"/>
+      </node>
+      <node id="1461">
+        <label>Projects/GameEngine/include/Auris/Systems/RenderSystem.hpp</label>
+        <link refid="_render_system_8hpp"/>
+        <childnode refid="1462" relation="include">
+        </childnode>
+        <childnode refid="1471" relation="include">
+        </childnode>
+        <childnode refid="1472" relation="include">
+        </childnode>
+        <childnode refid="1473" relation="include">
+        </childnode>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="class_auris_1_1_pool" prot="public">Auris::Pool</innerclass>
+    <innernamespace refid="namespace_auris">Auris</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#pragma<sp/>once<sp/></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;stdlib.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;iostream&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespace_auris" kindref="compound">Auris</ref>{</highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="8"><highlight class="comment">//!<sp/>The<sp/>Pool<sp/>class<sp/>that<sp/>is<sp/>a<sp/>templete<sp/>class.</highlight></codeline>
+<codeline lineno="9"><highlight class="comment"></highlight><highlight class="comment"><sp/><sp/><sp/><sp/>/*!<sp/>Allocates<sp/>memory<sp/>in<sp/>pool.</highlight></codeline>
+<codeline lineno="10"><highlight class="comment"><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="keyword">template</highlight><highlight class="normal"><sp/>&lt;</highlight><highlight class="keyword">class</highlight><highlight class="normal"><sp/>T&gt;</highlight></codeline>
+<codeline lineno="12" refid="class_auris_1_1_pool" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="class_auris_1_1_pool" kindref="compound">Pool</ref>{</highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight></codeline>
+<codeline lineno="14" refid="class_auris_1_1_pool_a44a0d07bf46a11ff31f11ce5441a47bd_1a44a0d07bf46a11ff31f11ce5441a47bd" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/><ref refid="class_auris_1_1_pool_a44a0d07bf46a11ff31f11ce5441a47bd_1a44a0d07bf46a11ff31f11ce5441a47bd" kindref="member">objectSize</ref><sp/>=<sp/></highlight><highlight class="keyword">sizeof</highlight><highlight class="normal">(T);<sp/><sp/></highlight><highlight class="comment">/*!&lt;<sp/>A<sp/>size_t<sp/>value:<sp/>objectSize.<sp/>The<sp/>size<sp/>of<sp/>the<sp/>object.<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="15" refid="class_auris_1_1_pool_a4461fc4c6c6de88e88f8cf93b4ac91c8_1a4461fc4c6c6de88e88f8cf93b4ac91c8" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>T*<sp/><ref refid="class_auris_1_1_pool_a4461fc4c6c6de88e88f8cf93b4ac91c8_1a4461fc4c6c6de88e88f8cf93b4ac91c8" kindref="member">objects</ref>;<sp/></highlight><highlight class="comment">/*!&lt;<sp/>A<sp/>T<sp/>pointer:<sp/>objects.<sp/>The<sp/>objects.<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="16" refid="class_auris_1_1_pool_af1c9dd3d26f7b15b59411eed3170b22b_1af1c9dd3d26f7b15b59411eed3170b22b" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal">*<sp/><ref refid="class_auris_1_1_pool_af1c9dd3d26f7b15b59411eed3170b22b_1af1c9dd3d26f7b15b59411eed3170b22b" kindref="member">occupied</ref>;<sp/></highlight><highlight class="comment">/*!&lt;<sp/>A<sp/>bool<sp/>pointer:<sp/>occupied.<sp/>If<sp/>the<sp/>place<sp/>in<sp/>the<sp/>pool<sp/>is<sp/>occupied<sp/>or<sp/>not.<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="20"><highlight class="comment"><sp/><sp/><sp/><sp/>//!<sp/>A<sp/>begin<sp/>method.</highlight></codeline>
+<codeline lineno="21"><highlight class="comment"></highlight><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>/*!<sp/>Fetch<sp/>the<sp/>first<sp/>object<sp/>in<sp/><sp/>memory.</highlight></codeline>
+<codeline lineno="22"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*<sp/>\return<sp/>T<sp/>pointer.<sp/>The<sp/>pointer<sp/>to<sp/>the<sp/>first<sp/>adress<sp/>in<sp/>memory.</highlight></codeline>
+<codeline lineno="23"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="24" refid="class_auris_1_1_pool_a9b061a8bcc95f5b243d1e366f2087e81_1a9b061a8bcc95f5b243d1e366f2087e81" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>T*<sp/><ref refid="class_auris_1_1_pool_a9b061a8bcc95f5b243d1e366f2087e81_1a9b061a8bcc95f5b243d1e366f2087e81" kindref="member">begin</ref>()<sp/>{<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>&amp;objects[0];<sp/>}</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="26"><highlight class="comment"><sp/><sp/><sp/><sp/>//!<sp/>A<sp/>end<sp/>method.</highlight></codeline>
+<codeline lineno="27"><highlight class="comment"></highlight><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>/*!<sp/>Fetch<sp/>the<sp/>last<sp/>object<sp/>in<sp/><sp/>memory.</highlight></codeline>
+<codeline lineno="28"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*<sp/>\return<sp/>T<sp/>pointer.<sp/>The<sp/>pointer<sp/>to<sp/>the<sp/>last<sp/>adress<sp/>in<sp/>memory.</highlight></codeline>
+<codeline lineno="29"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="30" refid="class_auris_1_1_pool_afe700442d9b6e8a4905fe72efb2269e4_1afe700442d9b6e8a4905fe72efb2269e4" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>T*<sp/><ref refid="class_auris_1_1_pool_afe700442d9b6e8a4905fe72efb2269e4_1afe700442d9b6e8a4905fe72efb2269e4" kindref="member">end</ref>()<sp/>{<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>&amp;objects[<ref refid="class_auris_1_1_pool_a65c222f6cc33ca26cb0534a9599d85aa_1a65c222f6cc33ca26cb0534a9599d85aa" kindref="member">capacity</ref>];<sp/>}</highlight></codeline>
+<codeline lineno="31"><highlight class="normal"></highlight></codeline>
+<codeline lineno="32" refid="class_auris_1_1_pool_a859207c9a4bde5490e678e78c1fa2002_1a859207c9a4bde5490e678e78c1fa2002" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="class_auris_1_1_pool_a859207c9a4bde5490e678e78c1fa2002_1a859207c9a4bde5490e678e78c1fa2002" kindref="member">count</ref><sp/>=<sp/>0;<sp/></highlight><highlight class="comment">/*!&lt;<sp/>An<sp/>int<sp/>value:<sp/>count.<sp/>The<sp/>number<sp/>of<sp/>objects<sp/>in<sp/>the<sp/>pool.<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="33" refid="class_auris_1_1_pool_a65c222f6cc33ca26cb0534a9599d85aa_1a65c222f6cc33ca26cb0534a9599d85aa" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="class_auris_1_1_pool_a65c222f6cc33ca26cb0534a9599d85aa_1a65c222f6cc33ca26cb0534a9599d85aa" kindref="member">capacity</ref>;<sp/></highlight><highlight class="comment">/*!&lt;<sp/>An<sp/>int<sp/>value:<sp/>capacity.<sp/>The<sp/>capacity<sp/>of<sp/>the<sp/>pool.<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="34"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="35"><highlight class="comment"><sp/><sp/><sp/><sp/>//!<sp/>The<sp/>Pool<sp/>contructor.</highlight></codeline>
+<codeline lineno="36"><highlight class="comment"></highlight><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>/*!<sp/>Does<sp/>nothing,<sp/>but<sp/>does<sp/>something<sp/>anyway!</highlight></codeline>
+<codeline lineno="37"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*<sp/>\overload<sp/>Pool(capacity)</highlight></codeline>
+<codeline lineno="38"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="39" refid="class_auris_1_1_pool_afa1422b62e08d3cb166da2a145dea10a_1afa1422b62e08d3cb166da2a145dea10a" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_auris_1_1_pool_afa1422b62e08d3cb166da2a145dea10a_1afa1422b62e08d3cb166da2a145dea10a" kindref="member">Pool</ref>(){}</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="41"><highlight class="comment"><sp/><sp/><sp/><sp/>//!<sp/>The<sp/>overloaded<sp/>Pool<sp/>contructor,<sp/>taking<sp/>1<sp/>argument.</highlight></codeline>
+<codeline lineno="42"><highlight class="comment"></highlight><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>/*!<sp/>Calls<sp/>the<sp/>initializeser<sp/>of<sp/>the<sp/>Pool<sp/>class.</highlight></codeline>
+<codeline lineno="43"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*<sp/>\param<sp/>capacity<sp/>an<sp/>int.<sp/>The<sp/>capacity<sp/>the<sp/>pool<sp/>should<sp/>have.</highlight></codeline>
+<codeline lineno="44"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*<sp/>\overload<sp/>Pool()</highlight></codeline>
+<codeline lineno="45"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="46" refid="class_auris_1_1_pool_a5c4a010047bf0eeee939ee7f490cb611_1a5c4a010047bf0eeee939ee7f490cb611" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_auris_1_1_pool_a5c4a010047bf0eeee939ee7f490cb611_1a5c4a010047bf0eeee939ee7f490cb611" kindref="member">Pool</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>capacity){</highlight></codeline>
+<codeline lineno="47"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_auris_1_1_pool_ab1cbc1dede87fcfc2ff7de01f0fcdcf0_1ab1cbc1dede87fcfc2ff7de01f0fcdcf0" kindref="member">initialize</ref>(capacity);</highlight></codeline>
+<codeline lineno="48"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="49"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="50"><highlight class="comment"><sp/><sp/><sp/><sp/>//!<sp/>The<sp/>Pool<sp/>destructor.</highlight></codeline>
+<codeline lineno="51"><highlight class="comment"></highlight><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>/*!<sp/>Frees<sp/>all<sp/>the<sp/>objects<sp/>and<sp/>occupied<sp/>objects.</highlight></codeline>
+<codeline lineno="52"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="53" refid="class_auris_1_1_pool_ad73193aea203594b5e431d6587228a66_1ad73193aea203594b5e431d6587228a66" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_auris_1_1_pool_ad73193aea203594b5e431d6587228a66_1ad73193aea203594b5e431d6587228a66" kindref="member">~Pool</ref>(){</highlight></codeline>
+<codeline lineno="54"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>free(objects);</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>free(occupied);</highlight></codeline>
+<codeline lineno="56"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="57"><highlight class="normal"></highlight></codeline>
+<codeline lineno="58"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_auris_1_1_pool_afa1422b62e08d3cb166da2a145dea10a_1afa1422b62e08d3cb166da2a145dea10a" kindref="member">Pool</ref>(<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="class_auris_1_1_pool" kindref="compound">Pool</ref>&amp;<sp/>other<sp/>)<sp/>=<sp/></highlight><highlight class="keyword">delete</highlight><highlight class="normal">;<sp/></highlight><highlight class="comment">//<sp/>non<sp/>construction-copyable</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="59"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_auris_1_1_pool" kindref="compound">Pool</ref>&amp;<sp/><ref refid="class_auris_1_1_pool_abfb078167e0d4f3dc04830d2e830b01d_1abfb078167e0d4f3dc04830d2e830b01d" kindref="member">operator=</ref>(<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="class_auris_1_1_pool" kindref="compound">Pool</ref>&amp;<sp/>)<sp/>=<sp/></highlight><highlight class="keyword">delete</highlight><highlight class="normal">;<sp/></highlight><highlight class="comment">//<sp/>non<sp/>copyable</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="60"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="61"><highlight class="comment"><sp/><sp/><sp/><sp/>//!<sp/>A<sp/>initialize<sp/>method,<sp/>taking<sp/>1<sp/>argument.</highlight></codeline>
+<codeline lineno="62"><highlight class="comment"></highlight><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>/*!<sp/>Initializes<sp/>the<sp/>pool,<sp/>with<sp/>the<sp/>capacity<sp/>inputted.</highlight></codeline>
+<codeline lineno="63"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*<sp/>\param<sp/>capacity<sp/>an<sp/>int.<sp/>The<sp/>capacity<sp/>the<sp/>pool<sp/>should<sp/>have.</highlight></codeline>
+<codeline lineno="64"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="65" refid="class_auris_1_1_pool_ab1cbc1dede87fcfc2ff7de01f0fcdcf0_1ab1cbc1dede87fcfc2ff7de01f0fcdcf0" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_auris_1_1_pool_ab1cbc1dede87fcfc2ff7de01f0fcdcf0_1ab1cbc1dede87fcfc2ff7de01f0fcdcf0" kindref="member">initialize</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>capacity){</highlight></codeline>
+<codeline lineno="66"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>this-&gt;capacity<sp/>=<sp/><ref refid="class_auris_1_1_pool_a65c222f6cc33ca26cb0534a9599d85aa_1a65c222f6cc33ca26cb0534a9599d85aa" kindref="member">capacity</ref>;</highlight></codeline>
+<codeline lineno="67"><highlight class="normal"></highlight></codeline>
+<codeline lineno="68"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>objects<sp/>=<sp/>(T*)<sp/>malloc(objectSize<sp/>*<sp/>capacity);</highlight></codeline>
+<codeline lineno="69"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>occupied<sp/>=<sp/>(</highlight><highlight class="keywordtype">bool</highlight><highlight class="normal">*)<sp/>calloc(capacity,<sp/></highlight><highlight class="keyword">sizeof</highlight><highlight class="normal">(</highlight><highlight class="keywordtype">bool</highlight><highlight class="normal">));</highlight></codeline>
+<codeline lineno="70"><highlight class="normal"></highlight></codeline>
+<codeline lineno="71"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//objects<sp/>=<sp/>new<sp/>(std::nothrow)<sp/>T[capacity];</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="72"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//occupied<sp/>=<sp/>new<sp/>(std::nothrow)<sp/>bool[capacity];</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="73"><highlight class="normal"></highlight></codeline>
+<codeline lineno="74"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(objects<sp/>==<sp/></highlight><highlight class="keyword">nullptr</highlight><highlight class="normal"><sp/>||<sp/>occupied<sp/>==<sp/></highlight><highlight class="keyword">nullptr</highlight><highlight class="normal">){</highlight></codeline>
+<codeline lineno="75"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//could<sp/>not<sp/>allocate<sp/>memory</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="76"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::cout<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;Could<sp/>not<sp/>allocate<sp/>memory&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>std::endl;</highlight></codeline>
+<codeline lineno="77"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="78"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="79"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="80"><highlight class="comment"><sp/><sp/><sp/><sp/>//!<sp/>An<sp/>operator<sp/>overload<sp/>of<sp/>[],<sp/>taking<sp/>1<sp/>argument.</highlight></codeline>
+<codeline lineno="81"><highlight class="comment"></highlight><highlight class="comment"><sp/><sp/><sp/><sp/>/*!<sp/>Overload<sp/>the<sp/>[]<sp/>so<sp/>that<sp/>the<sp/>pool<sp/>can<sp/>be<sp/>indexed.</highlight></codeline>
+<codeline lineno="82"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*<sp/>\param<sp/>index<sp/>a<sp/>size_t<sp/>value.<sp/>The<sp/>index<sp/>used.</highlight></codeline>
+<codeline lineno="83"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*<sp/>\return<sp/>T<sp/>pointer.<sp/>The<sp/>object<sp/>at<sp/>that<sp/>index,<sp/>nullptr<sp/>if<sp/>there<sp/>is<sp/>no<sp/>object<sp/>with<sp/>that<sp/>index.</highlight></codeline>
+<codeline lineno="84"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*<sp/>\overload<sp/>at()</highlight></codeline>
+<codeline lineno="85"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="86" refid="class_auris_1_1_pool_a6cc5631bfc985f98a56ccf91fd5c79c0_1a6cc5631bfc985f98a56ccf91fd5c79c0" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>T*<sp/><ref refid="class_auris_1_1_pool_a6cc5631bfc985f98a56ccf91fd5c79c0_1a6cc5631bfc985f98a56ccf91fd5c79c0" kindref="member">operator [] </ref>(std::size_t<sp/>index){</highlight></codeline>
+<codeline lineno="87"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="class_auris_1_1_pool_a2d439bab0e96a5538e20fdeece3e7090_1a2d439bab0e96a5538e20fdeece3e7090" kindref="member">at</ref>(index);</highlight></codeline>
+<codeline lineno="88"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="89"><highlight class="normal"></highlight></codeline>
+<codeline lineno="90"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="91"><highlight class="comment"><sp/><sp/><sp/><sp/>//!<sp/>An<sp/>getter<sp/>of<sp/>the<sp/>pool,<sp/>taking<sp/>1<sp/>argument.</highlight></codeline>
+<codeline lineno="92"><highlight class="comment"></highlight><highlight class="comment"><sp/><sp/><sp/><sp/>/*!<sp/>a<sp/>function<sp/>version<sp/>of<sp/>the<sp/>operator<sp/>overload<sp/>[]</highlight></codeline>
+<codeline lineno="93"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*<sp/>\param<sp/>index<sp/>a<sp/>size_t<sp/>value.<sp/>The<sp/>index<sp/>used.</highlight></codeline>
+<codeline lineno="94"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*<sp/>\return<sp/>T<sp/>pointer.<sp/>The<sp/>object<sp/>at<sp/>that<sp/>index,<sp/>nullptr<sp/>if<sp/>there<sp/>is<sp/>no<sp/>object<sp/>with<sp/>that<sp/>index.</highlight></codeline>
+<codeline lineno="95"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*<sp/>\overload<sp/>[]</highlight></codeline>
+<codeline lineno="96"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="97" refid="class_auris_1_1_pool_a2d439bab0e96a5538e20fdeece3e7090_1a2d439bab0e96a5538e20fdeece3e7090" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>T*<sp/><ref refid="class_auris_1_1_pool_a2d439bab0e96a5538e20fdeece3e7090_1a2d439bab0e96a5538e20fdeece3e7090" kindref="member">at</ref>(std::size_t<sp/>index){</highlight></codeline>
+<codeline lineno="98"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(index<sp/>&lt;<sp/>0<sp/>||<sp/>index<sp/>&gt;=<sp/>capacity){</highlight></codeline>
+<codeline lineno="99"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::cout<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;Index<sp/>out<sp/>of<sp/>range,<sp/>returning<sp/>nullptr&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>std::endl;</highlight></codeline>
+<codeline lineno="100"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">nullptr</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="101"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="102"><highlight class="normal"></highlight></codeline>
+<codeline lineno="103"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(occupied[index]<sp/>==<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">){</highlight></codeline>
+<codeline lineno="104"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//std::cout<sp/>&lt;&lt;<sp/>&quot;Index<sp/>is<sp/>not<sp/>occupied,<sp/>returning<sp/>nullptr&quot;<sp/>&lt;&lt;<sp/>std::endl;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="105"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">nullptr</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="106"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="107"><highlight class="normal"></highlight></codeline>
+<codeline lineno="108"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>&amp;objects[index];</highlight></codeline>
+<codeline lineno="109"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="110"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="111"><highlight class="comment"><sp/><sp/><sp/><sp/>//!<sp/>A<sp/>create<sp/>method.</highlight></codeline>
+<codeline lineno="112"><highlight class="comment"></highlight><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>/*!<sp/>Assigns<sp/>a<sp/>new<sp/>object<sp/>to<sp/>the<sp/>pool,<sp/>and<sp/>returns<sp/>it</highlight></codeline>
+<codeline lineno="113"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*<sp/>\return<sp/>T<sp/>pointer.<sp/>The<sp/>object<sp/>created<sp/>(nullptr<sp/>if<sp/>there<sp/>is<sp/>no<sp/>more<sp/>space).</highlight></codeline>
+<codeline lineno="114"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="115" refid="class_auris_1_1_pool_a07625e57ce7547bf76a9a2da27b75f33_1a07625e57ce7547bf76a9a2da27b75f33" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>T*<sp/><ref refid="class_auris_1_1_pool_a07625e57ce7547bf76a9a2da27b75f33_1a07625e57ce7547bf76a9a2da27b75f33" kindref="member">create</ref>(){</highlight></codeline>
+<codeline lineno="116"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>index<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="117"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal">(;index<sp/>&lt;=<sp/><ref refid="class_auris_1_1_pool_a65c222f6cc33ca26cb0534a9599d85aa_1a65c222f6cc33ca26cb0534a9599d85aa" kindref="member">capacity</ref>;index++){</highlight></codeline>
+<codeline lineno="118"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(index<sp/>==<sp/>capacity){</highlight></codeline>
+<codeline lineno="119"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::cout<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;Pool<sp/>is<sp/>completely<sp/>occupied,<sp/>returning<sp/>nullptr&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>std::endl;</highlight></codeline>
+<codeline lineno="120"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">nullptr</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="121"><highlight class="normal"></highlight></codeline>
+<codeline lineno="122"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="123"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(occupied[index]<sp/>==<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">){</highlight></codeline>
+<codeline lineno="124"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>occupied[index]<sp/>=<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="125"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="126"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="127"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="128"><highlight class="normal"></highlight></codeline>
+<codeline lineno="129"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>count++;</highlight></codeline>
+<codeline lineno="130"><highlight class="normal"></highlight></codeline>
+<codeline lineno="131"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>&amp;objects[index];</highlight></codeline>
+<codeline lineno="132"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="133"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="134"><highlight class="comment"><sp/><sp/><sp/><sp/>//!<sp/>A<sp/>remove<sp/>method,<sp/>taking<sp/>1<sp/>argument.</highlight></codeline>
+<codeline lineno="135"><highlight class="comment"></highlight><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>/*!<sp/>Removes<sp/>an<sp/>object<sp/>from<sp/>the<sp/>pool,<sp/>note<sp/>that<sp/>this<sp/>function<sp/>is<sp/>O(n),<sp/>use<sp/>remove(int<sp/>index)<sp/>if<sp/>possible<sp/></highlight></codeline>
+<codeline lineno="136"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*<sp/>\param<sp/>ptr<sp/>a<sp/>T<sp/>pointer.<sp/>The<sp/>object<sp/>that<sp/>should<sp/>be<sp/>removed.</highlight></codeline>
+<codeline lineno="137"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*<sp/>\overload<sp/>remove()</highlight></codeline>
+<codeline lineno="138"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="139" refid="class_auris_1_1_pool_a7b47e50dae61ecb1d75e7f7982f7436e_1a7b47e50dae61ecb1d75e7f7982f7436e" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">remove</highlight><highlight class="normal">(T*<sp/>ptr){</highlight></codeline>
+<codeline lineno="140"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal">(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i<sp/>=<sp/>0;i<sp/>&lt;<sp/><ref refid="class_auris_1_1_pool_a65c222f6cc33ca26cb0534a9599d85aa_1a65c222f6cc33ca26cb0534a9599d85aa" kindref="member">capacity</ref>;i++){</highlight></codeline>
+<codeline lineno="141"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(occupied[i]<sp/>&amp;&amp;<sp/>ptr<sp/>==<sp/>&amp;objects[i]){</highlight></codeline>
+<codeline lineno="142"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">remove</highlight><highlight class="normal">(i);</highlight></codeline>
+<codeline lineno="143"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="144"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="145"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="146"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="147"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="148"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="149"><highlight class="comment"><sp/><sp/><sp/><sp/>//!<sp/>A<sp/>remove<sp/>overload<sp/>method,<sp/>taking<sp/>1<sp/>argument.</highlight></codeline>
+<codeline lineno="150"><highlight class="comment"></highlight><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>/*!<sp/>Removes<sp/>an<sp/>object<sp/>from<sp/>the<sp/>pool,<sp/>note<sp/>that<sp/>his<sp/>function<sp/>is<sp/>O(1)</highlight></codeline>
+<codeline lineno="151"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*<sp/>\param<sp/>index<sp/>an<sp/>int.<sp/>The<sp/>index<sp/>of<sp/>the<sp/>object<sp/>that<sp/>should<sp/>be<sp/>removed.</highlight></codeline>
+<codeline lineno="152"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*<sp/>\overload<sp/>remove()</highlight></codeline>
+<codeline lineno="153"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="154" refid="class_auris_1_1_pool_a8a9c6b78eccb3f0c067b53b6931662a7_1a8a9c6b78eccb3f0c067b53b6931662a7" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">remove</highlight><highlight class="normal">(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>index){</highlight></codeline>
+<codeline lineno="155"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(index<sp/>&lt;<sp/>0<sp/>||<sp/>index<sp/>&gt;<sp/>capacity){</highlight></codeline>
+<codeline lineno="156"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::cerr<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;Pool<sp/>remove:<sp/>index<sp/>out<sp/>of<sp/>range&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>std::endl;</highlight></codeline>
+<codeline lineno="157"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="158"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="159"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>occupied[index]<sp/>=<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="160"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>count--;</highlight></codeline>
+<codeline lineno="161"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="162"><highlight class="normal"></highlight></codeline>
+<codeline lineno="163" refid="class_auris_1_1_pool_a6ef1db8e8ba213cde0488ad26e5beebf_1a6ef1db8e8ba213cde0488ad26e5beebf" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">inline</highlight><highlight class="normal"><sp/><ref refid="class_auris_1_1_pool_a6ef1db8e8ba213cde0488ad26e5beebf_1a6ef1db8e8ba213cde0488ad26e5beebf" kindref="member">isFull</ref>(){</highlight></codeline>
+<codeline lineno="164"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>count<sp/>==<sp/><ref refid="class_auris_1_1_pool_a65c222f6cc33ca26cb0534a9599d85aa_1a65c222f6cc33ca26cb0534a9599d85aa" kindref="member">capacity</ref>;</highlight></codeline>
+<codeline lineno="165"><highlight class="normal"></highlight></codeline>
+<codeline lineno="166"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="167"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="168"><highlight class="normal">}</highlight></codeline>
+    </programlisting>
+    <location file="Projects/GameEngine/include/Auris/Utilities/Pool.hpp"/>
+  </compounddef>
+</doxygen>

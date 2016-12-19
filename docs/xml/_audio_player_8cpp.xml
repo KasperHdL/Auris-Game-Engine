@@ -1,0 +1,321 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.12">
+  <compounddef id="_audio_player_8cpp" kind="file" language="C++">
+    <compoundname>AudioPlayer.cpp</compoundname>
+    <includes refid="_audio_player_8hpp" local="yes">Auris/Entities/AudioPlayer.hpp</includes>
+    <incdepgraph>
+      <node id="71">
+        <label>Auris/Constants.hpp</label>
+        <link refid="_constants_8hpp"/>
+      </node>
+      <node id="100">
+        <label>limits</label>
+      </node>
+      <node id="99">
+        <label>iterator</label>
+      </node>
+      <node id="106">
+        <label>SDL.h</label>
+      </node>
+      <node id="67">
+        <label>Auris/Entities/AudioPlayer.hpp</label>
+        <link refid="_audio_player_8hpp"/>
+        <childnode refid="68" relation="include">
+        </childnode>
+        <childnode refid="79" relation="include">
+        </childnode>
+        <childnode refid="82" relation="include">
+        </childnode>
+        <childnode refid="107" relation="include">
+        </childnode>
+      </node>
+      <node id="76">
+        <label>SRE/Debug.hpp</label>
+      </node>
+      <node id="83">
+        <label>SRE/Texture.hpp</label>
+      </node>
+      <node id="88">
+        <label>Auris/Entities/Nuggets/Sprite.hpp</label>
+        <link refid="_sprite_8hpp"/>
+        <childnode refid="72" relation="include">
+        </childnode>
+        <childnode refid="81" relation="include">
+        </childnode>
+        <childnode refid="83" relation="include">
+        </childnode>
+        <childnode refid="86" relation="include">
+        </childnode>
+        <childnode refid="71" relation="include">
+        </childnode>
+        <childnode refid="89" relation="include">
+        </childnode>
+        <childnode refid="70" relation="include">
+        </childnode>
+        <childnode refid="91" relation="include">
+        </childnode>
+        <childnode refid="92" relation="include">
+        </childnode>
+      </node>
+      <node id="79">
+        <label>Auris/Entities/Camera.hpp</label>
+        <link refid="_camera_8hpp"/>
+        <childnode refid="80" relation="include">
+        </childnode>
+        <childnode refid="81" relation="include">
+        </childnode>
+      </node>
+      <node id="101">
+        <label>stdexcept</label>
+      </node>
+      <node id="87">
+        <label>SRE/Mesh.hpp</label>
+      </node>
+      <node id="77">
+        <label>string</label>
+      </node>
+      <node id="73">
+        <label>glm/gtx/euler_angles.hpp</label>
+      </node>
+      <node id="85">
+        <label>map</label>
+      </node>
+      <node id="105">
+        <label>fstream</label>
+      </node>
+      <node id="75">
+        <label>SRE/imgui_sre.hpp</label>
+      </node>
+      <node id="107">
+        <label>Auris/Systems/Input.hpp</label>
+        <link refid="_input_8hpp"/>
+        <childnode refid="106" relation="include">
+        </childnode>
+        <childnode refid="85" relation="include">
+        </childnode>
+        <childnode refid="75" relation="include">
+        </childnode>
+        <childnode refid="78" relation="include">
+        </childnode>
+        <childnode refid="72" relation="include">
+        </childnode>
+      </node>
+      <node id="93">
+        <label>Auris/Utilities/picojson.h</label>
+        <link refid="picojson_8h"/>
+        <childnode refid="94" relation="include">
+        </childnode>
+        <childnode refid="95" relation="include">
+        </childnode>
+        <childnode refid="96" relation="include">
+        </childnode>
+        <childnode refid="97" relation="include">
+        </childnode>
+        <childnode refid="98" relation="include">
+        </childnode>
+        <childnode refid="92" relation="include">
+        </childnode>
+        <childnode refid="99" relation="include">
+        </childnode>
+        <childnode refid="100" relation="include">
+        </childnode>
+        <childnode refid="85" relation="include">
+        </childnode>
+        <childnode refid="101" relation="include">
+        </childnode>
+        <childnode refid="77" relation="include">
+        </childnode>
+        <childnode refid="78" relation="include">
+        </childnode>
+        <childnode refid="102" relation="include">
+        </childnode>
+        <childnode refid="103" relation="include">
+        </childnode>
+        <childnode refid="104" relation="include">
+        </childnode>
+      </node>
+      <node id="95">
+        <label>cstdio</label>
+      </node>
+      <node id="90">
+        <label>SRE/Shader.hpp</label>
+      </node>
+      <node id="78">
+        <label>vector</label>
+      </node>
+      <node id="66">
+        <label>Projects/GameEngine/Auris/src/Auris/Entities/AudioPlayer.cpp</label>
+        <link refid="_audio_player_8cpp"/>
+        <childnode refid="67" relation="include">
+        </childnode>
+      </node>
+      <node id="80">
+        <label>SRE/Camera.hpp</label>
+      </node>
+      <node id="102">
+        <label>utility</label>
+      </node>
+      <node id="84">
+        <label>Auris/Utilities/SpriteSheet.hpp</label>
+        <link refid="_sprite_sheet_8hpp"/>
+        <childnode refid="77" relation="include">
+        </childnode>
+        <childnode refid="85" relation="include">
+        </childnode>
+        <childnode refid="83" relation="include">
+        </childnode>
+        <childnode refid="86" relation="include">
+        </childnode>
+        <childnode refid="88" relation="include">
+        </childnode>
+      </node>
+      <node id="103">
+        <label>math.h</label>
+      </node>
+      <node id="91">
+        <label>Auris/Entities/Nuggets/Material.hpp</label>
+        <link refid="_material_8hpp"/>
+        <childnode refid="83" relation="include">
+        </childnode>
+        <childnode refid="87" relation="include">
+        </childnode>
+        <childnode refid="72" relation="include">
+        </childnode>
+      </node>
+      <node id="96">
+        <label>cstdlib</label>
+      </node>
+      <node id="68">
+        <label>Auris/Entity.hpp</label>
+        <link refid="_entity_8hpp"/>
+        <childnode refid="69" relation="include">
+        </childnode>
+        <childnode refid="75" relation="include">
+        </childnode>
+        <childnode refid="76" relation="include">
+        </childnode>
+        <childnode refid="77" relation="include">
+        </childnode>
+        <childnode refid="78" relation="include">
+        </childnode>
+        <childnode refid="72" relation="include">
+        </childnode>
+      </node>
+      <node id="89">
+        <label>Auris/Utilities/Shader.hpp</label>
+        <link refid="_shader_8hpp"/>
+        <childnode refid="90" relation="include">
+        </childnode>
+      </node>
+      <node id="92">
+        <label>iostream</label>
+      </node>
+      <node id="74">
+        <label>glm/gtc/matrix_transform.hpp</label>
+      </node>
+      <node id="98">
+        <label>cstddef</label>
+      </node>
+      <node id="70">
+        <label>Auris/Entities/Nugget.hpp</label>
+        <link refid="_nugget_8hpp"/>
+      </node>
+      <node id="69">
+        <label>Auris/Entities/Nuggets/Transform.hpp</label>
+        <link refid="_transform_8hpp"/>
+        <childnode refid="70" relation="include">
+        </childnode>
+        <childnode refid="71" relation="include">
+        </childnode>
+        <childnode refid="72" relation="include">
+        </childnode>
+        <childnode refid="73" relation="include">
+        </childnode>
+        <childnode refid="74" relation="include">
+        </childnode>
+      </node>
+      <node id="82">
+        <label>Auris/Utilities/AssetManager.hpp</label>
+        <link refid="_asset_manager_8hpp"/>
+        <childnode refid="83" relation="include">
+        </childnode>
+        <childnode refid="84" relation="include">
+        </childnode>
+        <childnode refid="93" relation="include">
+        </childnode>
+        <childnode refid="77" relation="include">
+        </childnode>
+        <childnode refid="85" relation="include">
+        </childnode>
+        <childnode refid="92" relation="include">
+        </childnode>
+        <childnode refid="105" relation="include">
+        </childnode>
+        <childnode refid="106" relation="include">
+        </childnode>
+      </node>
+      <node id="94">
+        <label>algorithm</label>
+      </node>
+      <node id="86">
+        <label>Auris/Utilities/Mesh.hpp</label>
+        <link refid="_mesh_8hpp"/>
+        <childnode refid="87" relation="include">
+        </childnode>
+      </node>
+      <node id="97">
+        <label>cstring</label>
+      </node>
+      <node id="104">
+        <label>locale.h</label>
+      </node>
+      <node id="81">
+        <label>SRE/SimpleRenderEngine.hpp</label>
+      </node>
+      <node id="72">
+        <label>glm/glm.hpp</label>
+      </node>
+    </incdepgraph>
+    <innernamespace refid="namespace_auris">Auris</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#include<sp/>&quot;<ref refid="_audio_player_8hpp" kindref="compound">Auris/Entities/AudioPlayer.hpp</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespace_auris" kindref="compound">Auris</ref><sp/>{</highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="_audio_player_8hpp_a627c12924294173b6f8409a90e07b980_1a627c12924294173b6f8409a90e07b980" kindref="member">AudioPlayer::channelCount</ref><sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"><ref refid="_audio_player_8hpp_a4e21beefadc86b8eca7304640f0db524_1a4e21beefadc86b8eca7304640f0db524" kindref="member">AudioPlayer::AudioPlayer</ref>(<ref refid="class_auris_1_1_camera" kindref="compound">Auris::Camera</ref>*<sp/><ref refid="_audio_player_8hpp_a4a99373aca91d99b5b9ecf6f8e30b97e_1a4a99373aca91d99b5b9ecf6f8e30b97e" kindref="member">listener</ref>,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="_audio_player_8hpp_ad63cb1f4bfe9e66afdffd5ae4fc5c9f1_1ad63cb1f4bfe9e66afdffd5ae4fc5c9f1" kindref="member">channels</ref>,<sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="_audio_player_8hpp_af49b7c8f6419a65cd1024a166339a8ae_1af49b7c8f6419a65cd1024a166339a8ae" kindref="member">fadeScaleX</ref>,<sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="_audio_player_8hpp_aacfd9c51d4d11eeb7802c1b1578886ac_1aacfd9c51d4d11eeb7802c1b1578886ac" kindref="member">fadeScaleY</ref>,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="_audio_player_8hpp_a6af36b0fb7714db28486b4fbf23ca1c8_1a6af36b0fb7714db28486b4fbf23ca1c8" kindref="member">fadeDelayX</ref>,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="_audio_player_8hpp_ae2787a3be0d61dbab4ce128e623834a3_1ae2787a3be0d61dbab4ce128e623834a3" kindref="member">fadeDelayY</ref>){</highlight></codeline>
+<codeline lineno="8"><highlight class="normal"><sp/><sp/><sp/><sp/>type<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;AudioPlayer&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"><sp/><sp/><sp/><sp/>this-&gt;listener<sp/>=<sp/><ref refid="_audio_player_8hpp_a4a99373aca91d99b5b9ecf6f8e30b97e_1a4a99373aca91d99b5b9ecf6f8e30b97e" kindref="member">listener</ref>;</highlight></codeline>
+<codeline lineno="11"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(listener<sp/>!=<sp/></highlight><highlight class="keyword">nullptr</highlight><highlight class="normal">)<sp/>{</highlight></codeline>
+<codeline lineno="12"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="_audio_player_8hpp_a0bb2dfc6324d0ac2a5f9b83148d3710c_1a0bb2dfc6324d0ac2a5f9b83148d3710c" kindref="member">drawAudioRange</ref><sp/>=<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="13"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"><sp/><sp/><sp/><sp/>this-&gt;fadeScaleX<sp/>=<sp/><ref refid="_audio_player_8hpp_af49b7c8f6419a65cd1024a166339a8ae_1af49b7c8f6419a65cd1024a166339a8ae" kindref="member">fadeScaleX</ref>;</highlight></codeline>
+<codeline lineno="16"><highlight class="normal"><sp/><sp/><sp/><sp/>this-&gt;fadeScaleY<sp/>=<sp/><ref refid="_audio_player_8hpp_aacfd9c51d4d11eeb7802c1b1578886ac_1aacfd9c51d4d11eeb7802c1b1578886ac" kindref="member">fadeScaleY</ref>;</highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight></codeline>
+<codeline lineno="18"><highlight class="normal"><sp/><sp/><sp/><sp/>this-&gt;fadeDelayX<sp/>=<sp/><ref refid="_audio_player_8hpp_a6af36b0fb7714db28486b4fbf23ca1c8_1a6af36b0fb7714db28486b4fbf23ca1c8" kindref="member">fadeDelayX</ref>;</highlight></codeline>
+<codeline lineno="19"><highlight class="normal"><sp/><sp/><sp/><sp/>this-&gt;fadeDelayY<sp/>=<sp/><ref refid="_audio_player_8hpp_ae2787a3be0d61dbab4ce128e623834a3_1ae2787a3be0d61dbab4ce128e623834a3" kindref="member">fadeDelayY</ref>;</highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight></codeline>
+<codeline lineno="21"><highlight class="normal"><sp/><sp/><sp/><sp/>Mix_AllocateChannels(channels+AudioPlayer::channelCount);</highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight></codeline>
+<codeline lineno="23"><highlight class="normal"><sp/><sp/><sp/><sp/>this-&gt;channels.resize(channels);</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight></codeline>
+<codeline lineno="25"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i<sp/>=<sp/>0;<sp/>i<sp/>&lt;<sp/><ref refid="_audio_player_8hpp_ad63cb1f4bfe9e66afdffd5ae4fc5c9f1_1ad63cb1f4bfe9e66afdffd5ae4fc5c9f1" kindref="member">channels</ref>;<sp/>i++)<sp/>{</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>this-&gt;channels[i]<sp/>=<sp/>i<sp/>+<sp/><ref refid="_audio_player_8hpp_a627c12924294173b6f8409a90e07b980_1a627c12924294173b6f8409a90e07b980" kindref="member">AudioPlayer::channelCount</ref>;</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight></codeline>
+<codeline lineno="29"><highlight class="normal"><sp/><sp/><sp/><sp/>this-&gt;<ref refid="_audio_player_8hpp_acffa5a4edaa4baf1ea4341a8bd07c2ab_1acffa5a4edaa4baf1ea4341a8bd07c2ab" kindref="member">currentChannel</ref><sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight></codeline>
+<codeline lineno="31"><highlight class="normal"><sp/><sp/><sp/><sp/>AudioPlayer::channelCount<sp/>+=<sp/><ref refid="_audio_player_8hpp_ad63cb1f4bfe9e66afdffd5ae4fc5c9f1_1ad63cb1f4bfe9e66afdffd5ae4fc5c9f1" kindref="member">channels</ref>;</highlight></codeline>
+<codeline lineno="32"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="33"><highlight class="normal">}</highlight></codeline>
+    </programlisting>
+    <location file="Projects/GameEngine/Auris/src/Auris/Entities/AudioPlayer.cpp"/>
+  </compounddef>
+</doxygen>

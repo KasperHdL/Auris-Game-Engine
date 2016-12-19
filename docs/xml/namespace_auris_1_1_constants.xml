@@ -1,0 +1,97 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.12">
+  <compounddef id="namespace_auris_1_1_constants" kind="namespace" language="C++">
+    <compoundname>Auris::Constants</compoundname>
+      <sectiondef kind="var">
+      <memberdef kind="variable" id="namespace_auris_1_1_constants_a559532ed3415b8ded07cdc4069dfa91c_1a559532ed3415b8ded07cdc4069dfa91c" prot="public" static="no" mutable="no">
+        <type>const float</type>
+        <definition>const float Auris::Constants::METERS_TO_PIXELS</definition>
+        <argsstring></argsstring>
+        <name>METERS_TO_PIXELS</name>
+        <initializer>= 10.0f</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>a constant float value. METERS_TO_PIXELS. The number of pixels per meter </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Projects/GameEngine/include/Auris/Constants.hpp" line="7" column="1" bodyfile="Projects/GameEngine/include/Auris/Constants.hpp" bodystart="7" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespace_auris_1_1_constants_a60345f173d3491692e156e08321606a7_1a60345f173d3491692e156e08321606a7" prot="public" static="no" mutable="no">
+        <type>const float</type>
+        <definition>const float Auris::Constants::PIXELS_TO_METERS</definition>
+        <argsstring></argsstring>
+        <name>PIXELS_TO_METERS</name>
+        <initializer>= 1.0f / METERS_TO_PIXELS</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>a constant float value. PIXELS_TO_METERS. Meters per pixel </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Projects/GameEngine/include/Auris/Constants.hpp" line="8" column="1" bodyfile="Projects/GameEngine/include/Auris/Constants.hpp" bodystart="8" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespace_auris_1_1_constants_a63baa076c3f1435bf1cb75da6691d3e3_1a63baa076c3f1435bf1cb75da6691d3e3" prot="public" static="no" mutable="no">
+        <type>const int</type>
+        <definition>const int Auris::Constants::VELOCITY_ITERATIONS</definition>
+        <argsstring></argsstring>
+        <name>VELOCITY_ITERATIONS</name>
+        <initializer>= 16</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>A constant int value: VELOCITY_ITERATIONS. The velocity iterations of the physics world per frame </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Projects/GameEngine/include/Auris/Constants.hpp" line="9" column="1" bodyfile="Projects/GameEngine/include/Auris/Constants.hpp" bodystart="9" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespace_auris_1_1_constants_a55b0d1b116c0f6bae44efc8ade94c723_1a55b0d1b116c0f6bae44efc8ade94c723" prot="public" static="no" mutable="no">
+        <type>const int</type>
+        <definition>const int Auris::Constants::POSITION_ITERATIONS</definition>
+        <argsstring></argsstring>
+        <name>POSITION_ITERATIONS</name>
+        <initializer>= 16</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>A constant int value: POSITION_ITERATIONS. The position iterations of the physics world per frame </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Projects/GameEngine/include/Auris/Constants.hpp" line="10" column="1" bodyfile="Projects/GameEngine/include/Auris/Constants.hpp" bodystart="10" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespace_auris_1_1_constants_abb26e3b2db53291f1b7649cb92b309e5_1abb26e3b2db53291f1b7649cb92b309e5" prot="public" static="yes" mutable="no">
+        <type>int</type>
+        <definition>int Auris::Constants::width</definition>
+        <argsstring></argsstring>
+        <name>width</name>
+        <initializer>= 1280</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>An int value: width. The current width of the window </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Projects/GameEngine/include/Auris/Constants.hpp" line="11" column="1" bodyfile="Projects/GameEngine/include/Auris/Constants.hpp" bodystart="11" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespace_auris_1_1_constants_ab1f513ab0d733d7c9af6299344630187_1ab1f513ab0d733d7c9af6299344630187" prot="public" static="yes" mutable="no">
+        <type>int</type>
+        <definition>int Auris::Constants::height</definition>
+        <argsstring></argsstring>
+        <name>height</name>
+        <initializer>= 720</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>An int value: height. The current height of the window </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Projects/GameEngine/include/Auris/Constants.hpp" line="12" column="1" bodyfile="Projects/GameEngine/include/Auris/Constants.hpp" bodystart="12" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>A namespace for constants. </para>    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="Projects/GameEngine/include/Auris/Constants.hpp" line="6" column="1"/>
+  </compounddef>
+</doxygen>

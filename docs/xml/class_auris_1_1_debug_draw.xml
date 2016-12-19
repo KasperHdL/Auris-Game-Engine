@@ -1,0 +1,231 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.12">
+  <compounddef id="class_auris_1_1_debug_draw" kind="class" language="C++" prot="public">
+    <compoundname>Auris::DebugDraw</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">b2Draw</basecompoundref>
+    <includes refid="_debug_draw_8hpp" local="no">DebugDraw.hpp</includes>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_auris_1_1_debug_draw_ae3827fd7865c0ebadc73a8487dbb838a_1ae3827fd7865c0ebadc73a8487dbb838a" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>Auris::DebugDraw::DebugDraw</definition>
+        <argsstring>()</argsstring>
+        <name>DebugDraw</name>
+        <briefdescription>
+<para>The <ref refid="class_auris_1_1_debug_draw" kindref="compound">DebugDraw</ref> constructor. </para>        </briefdescription>
+        <detaileddescription>
+<para>Does nothing. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Projects/GameEngine/include/Auris/Testing/DebugDraw.hpp" line="23" column="1" bodyfile="Projects/GameEngine/include/Auris/Testing/DebugDraw.hpp" bodystart="23" bodyend="23"/>
+      </memberdef>
+      <memberdef kind="function" id="class_auris_1_1_debug_draw_ac53198cd27b6bfcde2d9fec3dcaed524_1ac53198cd27b6bfcde2d9fec3dcaed524" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void Auris::DebugDraw::DrawPolygon</definition>
+        <argsstring>(const b2Vec2 *vertices, int vertexCount, const b2Color &amp;color)</argsstring>
+        <name>DrawPolygon</name>
+        <param>
+          <type>const b2Vec2 *</type>
+          <declname>vertices</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>vertexCount</declname>
+        </param>
+        <param>
+          <type>const b2Color &amp;</type>
+          <declname>color</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Projects/GameEngine/include/Auris/Testing/DebugDraw.hpp" line="32" column="1" bodyfile="Projects/GameEngine/include/Auris/Testing/DebugDraw.hpp" bodystart="32" bodyend="49"/>
+      </memberdef>
+      <memberdef kind="function" id="class_auris_1_1_debug_draw_a9a5712b341027108f3cb5372dfae6495_1a9a5712b341027108f3cb5372dfae6495" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void Auris::DebugDraw::DrawSolidPolygon</definition>
+        <argsstring>(const b2Vec2 *vertices, int vertexCount, const b2Color &amp;color)</argsstring>
+        <name>DrawSolidPolygon</name>
+        <param>
+          <type>const b2Vec2 *</type>
+          <declname>vertices</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>vertexCount</declname>
+        </param>
+        <param>
+          <type>const b2Color &amp;</type>
+          <declname>color</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Projects/GameEngine/include/Auris/Testing/DebugDraw.hpp" line="58" column="1" bodyfile="Projects/GameEngine/include/Auris/Testing/DebugDraw.hpp" bodystart="58" bodyend="60"/>
+      </memberdef>
+      <memberdef kind="function" id="class_auris_1_1_debug_draw_a6f6f5f1ff454b5574a6f7cc240dd1593_1a6f6f5f1ff454b5574a6f7cc240dd1593" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void Auris::DebugDraw::DrawCircle</definition>
+        <argsstring>(const b2Vec2 &amp;center, float radius, const b2Color &amp;color)</argsstring>
+        <name>DrawCircle</name>
+        <param>
+          <type>const b2Vec2 &amp;</type>
+          <declname>center</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>radius</declname>
+        </param>
+        <param>
+          <type>const b2Color &amp;</type>
+          <declname>color</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Projects/GameEngine/include/Auris/Testing/DebugDraw.hpp" line="69" column="1" bodyfile="Projects/GameEngine/include/Auris/Testing/DebugDraw.hpp" bodystart="69" bodyend="79"/>
+      </memberdef>
+      <memberdef kind="function" id="class_auris_1_1_debug_draw_a49d8dda48bc78a0c110cc48ae17e1613_1a49d8dda48bc78a0c110cc48ae17e1613" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void Auris::DebugDraw::DrawSolidCircle</definition>
+        <argsstring>(const b2Vec2 &amp;center, float radius, const b2Vec2 &amp;axis, const b2Color &amp;color)</argsstring>
+        <name>DrawSolidCircle</name>
+        <param>
+          <type>const b2Vec2 &amp;</type>
+          <declname>center</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>radius</declname>
+        </param>
+        <param>
+          <type>const b2Vec2 &amp;</type>
+          <declname>axis</declname>
+        </param>
+        <param>
+          <type>const b2Color &amp;</type>
+          <declname>color</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Projects/GameEngine/include/Auris/Testing/DebugDraw.hpp" line="89" column="1" bodyfile="Projects/GameEngine/include/Auris/Testing/DebugDraw.hpp" bodystart="89" bodyend="92"/>
+      </memberdef>
+      <memberdef kind="function" id="class_auris_1_1_debug_draw_a5f1da34de4ab565c172a7ca878712b8a_1a5f1da34de4ab565c172a7ca878712b8a" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void Auris::DebugDraw::DrawSegment</definition>
+        <argsstring>(const b2Vec2 &amp;p1, const b2Vec2 &amp;p2, const b2Color &amp;color)</argsstring>
+        <name>DrawSegment</name>
+        <param>
+          <type>const b2Vec2 &amp;</type>
+          <declname>p1</declname>
+        </param>
+        <param>
+          <type>const b2Vec2 &amp;</type>
+          <declname>p2</declname>
+        </param>
+        <param>
+          <type>const b2Color &amp;</type>
+          <declname>color</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Projects/GameEngine/include/Auris/Testing/DebugDraw.hpp" line="101" column="1" bodyfile="Projects/GameEngine/include/Auris/Testing/DebugDraw.hpp" bodystart="101" bodyend="105"/>
+      </memberdef>
+      <memberdef kind="function" id="class_auris_1_1_debug_draw_ab211401eb4ee8804fba9673e4c8a2ca5_1ab211401eb4ee8804fba9673e4c8a2ca5" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void Auris::DebugDraw::DrawTransform</definition>
+        <argsstring>(const b2Transform &amp;xf)</argsstring>
+        <name>DrawTransform</name>
+        <param>
+          <type>const b2Transform &amp;</type>
+          <declname>xf</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Projects/GameEngine/include/Auris/Testing/DebugDraw.hpp" line="112" column="1" bodyfile="Projects/GameEngine/include/Auris/Testing/DebugDraw.hpp" bodystart="112" bodyend="112"/>
+      </memberdef>
+      <memberdef kind="function" id="class_auris_1_1_debug_draw_a0f65afa0118fe89204066c4e06c52468_1a0f65afa0118fe89204066c4e06c52468" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void Auris::DebugDraw::DrawPoint</definition>
+        <argsstring>(const b2Vec2 &amp;p, float size, const b2Color &amp;color)</argsstring>
+        <name>DrawPoint</name>
+        <param>
+          <type>const b2Vec2 &amp;</type>
+          <declname>p</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>size</declname>
+        </param>
+        <param>
+          <type>const b2Color &amp;</type>
+          <declname>color</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Projects/GameEngine/include/Auris/Testing/DebugDraw.hpp" line="122" column="1" bodyfile="Projects/GameEngine/include/Auris/Testing/DebugDraw.hpp" bodystart="122" bodyend="124"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>The <ref refid="class_auris_1_1_debug_draw" kindref="compound">DebugDraw</ref> class that extend the b2Draw in box2D. </para>    </briefdescription>
+    <detaileddescription>
+<para>Used to draw debug around everything </para>    </detaileddescription>
+    <inheritancegraph>
+      <node id="37">
+        <label>b2Draw</label>
+      </node>
+      <node id="36">
+        <label>Auris::DebugDraw</label>
+        <link refid="class_auris_1_1_debug_draw"/>
+        <childnode refid="37" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="39">
+        <label>b2Draw</label>
+      </node>
+      <node id="38">
+        <label>Auris::DebugDraw</label>
+        <link refid="class_auris_1_1_debug_draw"/>
+        <childnode refid="39" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="Projects/GameEngine/include/Auris/Testing/DebugDraw.hpp" line="16" column="1" bodyfile="Projects/GameEngine/include/Auris/Testing/DebugDraw.hpp" bodystart="16" bodyend="127"/>
+    <listofallmembers>
+      <member refid="class_auris_1_1_debug_draw_ae3827fd7865c0ebadc73a8487dbb838a_1ae3827fd7865c0ebadc73a8487dbb838a" prot="public" virt="non-virtual"><scope>Auris::DebugDraw</scope><name>DebugDraw</name></member>
+      <member refid="class_auris_1_1_debug_draw_a6f6f5f1ff454b5574a6f7cc240dd1593_1a6f6f5f1ff454b5574a6f7cc240dd1593" prot="public" virt="non-virtual"><scope>Auris::DebugDraw</scope><name>DrawCircle</name></member>
+      <member refid="class_auris_1_1_debug_draw_a0f65afa0118fe89204066c4e06c52468_1a0f65afa0118fe89204066c4e06c52468" prot="public" virt="non-virtual"><scope>Auris::DebugDraw</scope><name>DrawPoint</name></member>
+      <member refid="class_auris_1_1_debug_draw_ac53198cd27b6bfcde2d9fec3dcaed524_1ac53198cd27b6bfcde2d9fec3dcaed524" prot="public" virt="non-virtual"><scope>Auris::DebugDraw</scope><name>DrawPolygon</name></member>
+      <member refid="class_auris_1_1_debug_draw_a5f1da34de4ab565c172a7ca878712b8a_1a5f1da34de4ab565c172a7ca878712b8a" prot="public" virt="non-virtual"><scope>Auris::DebugDraw</scope><name>DrawSegment</name></member>
+      <member refid="class_auris_1_1_debug_draw_a49d8dda48bc78a0c110cc48ae17e1613_1a49d8dda48bc78a0c110cc48ae17e1613" prot="public" virt="non-virtual"><scope>Auris::DebugDraw</scope><name>DrawSolidCircle</name></member>
+      <member refid="class_auris_1_1_debug_draw_a9a5712b341027108f3cb5372dfae6495_1a9a5712b341027108f3cb5372dfae6495" prot="public" virt="non-virtual"><scope>Auris::DebugDraw</scope><name>DrawSolidPolygon</name></member>
+      <member refid="class_auris_1_1_debug_draw_ab211401eb4ee8804fba9673e4c8a2ca5_1ab211401eb4ee8804fba9673e4c8a2ca5" prot="public" virt="non-virtual"><scope>Auris::DebugDraw</scope><name>DrawTransform</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

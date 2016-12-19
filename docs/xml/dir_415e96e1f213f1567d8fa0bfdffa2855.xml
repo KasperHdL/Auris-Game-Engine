@@ -1,0 +1,12 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.12">
+  <compounddef id="dir_415e96e1f213f1567d8fa0bfdffa2855" kind="dir">
+    <compoundname>Projects/MergeHppCpp/include</compoundname>
+    <innerdir refid="dir_012ec9cddfac8a55944107fdb9d66ca7">Projects/MergeHppCpp/include/Auris</innerdir>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="Projects/MergeHppCpp/include/"/>
+  </compounddef>
+</doxygen>

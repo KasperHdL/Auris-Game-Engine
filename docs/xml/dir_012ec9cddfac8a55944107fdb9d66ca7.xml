@@ -1,0 +1,22 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.12">
+  <compounddef id="dir_012ec9cddfac8a55944107fdb9d66ca7" kind="dir">
+    <compoundname>Projects/MergeHppCpp/include/Auris</compoundname>
+    <innerdir refid="dir_b55baa8e3cfa341622f848b2863fff73">Projects/MergeHppCpp/include/Auris/Entities</innerdir>
+    <innerdir refid="dir_43bd2ad9e2151c04d8e20f6d20a1226d">Projects/MergeHppCpp/include/Auris/Systems</innerdir>
+    <innerdir refid="dir_5c297f99b10a64be393b1aeb4de83896">Projects/MergeHppCpp/include/Auris/Testing</innerdir>
+    <innerdir refid="dir_3ff082d89f3cb756643e144921442ce4">Projects/MergeHppCpp/include/Auris/Utilities</innerdir>
+    <innerfile refid="_action_8hpp">Action.hpp</innerfile>
+    <innerfile refid="_constants_8hpp">Constants.hpp</innerfile>
+    <innerfile refid="_engine_8cpp">Engine.cpp</innerfile>
+    <innerfile refid="_engine_8hpp">Engine.hpp</innerfile>
+    <innerfile refid="_entity_8hpp">Entity.hpp</innerfile>
+    <innerfile refid="_game_8cpp">Game.cpp</innerfile>
+    <innerfile refid="_game_8hpp">Game.hpp</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="Projects/MergeHppCpp/include/Auris/"/>
+  </compounddef>
+</doxygen>

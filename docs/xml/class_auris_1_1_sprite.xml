@@ -1,0 +1,350 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.12">
+  <compounddef id="class_auris_1_1_sprite" kind="class" language="C++" prot="public">
+    <compoundname>Auris::Sprite</compoundname>
+    <basecompoundref refid="class_auris_1_1_nugget" prot="public" virt="non-virtual">Auris::Nugget</basecompoundref>
+    <includes refid="_sprite_8hpp" local="no">Sprite.hpp</includes>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="class_auris_1_1_sprite_a58b323c473af348c1acfef452f8215c4_1a58b323c473af348c1acfef452f8215c4" prot="public" static="no" mutable="no">
+        <type><ref refid="class_auris_1_1_mesh" kindref="compound">Mesh</ref> *</type>
+        <definition>Mesh* Auris::Sprite::mesh</definition>
+        <argsstring></argsstring>
+        <name>mesh</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>A <ref refid="class_auris_1_1_mesh" kindref="compound">Mesh</ref> pointer: mesh. The mesh of the sprite. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Projects/GameEngine/include/Auris/Entities/Nuggets/Sprite.hpp" line="22" column="1" bodyfile="Projects/GameEngine/include/Auris/Entities/Nuggets/Sprite.hpp" bodystart="22" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_auris_1_1_sprite_a5c98603661d77fe739fe1a6c0fb94e47_1a5c98603661d77fe739fe1a6c0fb94e47" prot="public" static="no" mutable="no">
+        <type><ref refid="class_auris_1_1_material" kindref="compound">Material</ref></type>
+        <definition>Material Auris::Sprite::material</definition>
+        <argsstring></argsstring>
+        <name>material</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>A <ref refid="class_auris_1_1_material" kindref="compound">Material</ref> value: material. The material of the sprite. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Projects/GameEngine/include/Auris/Entities/Nuggets/Sprite.hpp" line="23" column="1" bodyfile="Projects/GameEngine/include/Auris/Entities/Nuggets/Sprite.hpp" bodystart="23" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_auris_1_1_sprite_a6d3f50c4d7b6d769cbf6c212ed868639_1a6d3f50c4d7b6d769cbf6c212ed868639" prot="public" static="no" mutable="no">
+        <type>glm::vec3</type>
+        <definition>glm::vec3 Auris::Sprite::offset</definition>
+        <argsstring></argsstring>
+        <name>offset</name>
+        <initializer>= glm::vec3(0)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>A vec3 value: offset. The offset of the sprite (default is vec3(0)). </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Projects/GameEngine/include/Auris/Entities/Nuggets/Sprite.hpp" line="25" column="1" bodyfile="Projects/GameEngine/include/Auris/Entities/Nuggets/Sprite.hpp" bodystart="25" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_auris_1_1_sprite_a564601ca4ab75681bc6d74acc8199d42_1a564601ca4ab75681bc6d74acc8199d42" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Sprite::draw</definition>
+        <argsstring>()</argsstring>
+        <name>draw</name>
+        <briefdescription>
+<para>A draw method. </para>        </briefdescription>
+        <detaileddescription>
+<para>Draws the sprite to the screen, with SimpleRenderEngine. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Projects/GameEngine/include/Auris/Entities/Nuggets/Sprite.hpp" line="31" column="1" bodyfile="Projects/GameEngine/Auris/src/Auris/Entities/Nuggets/Sprite.cpp" bodystart="11" bodyend="19"/>
+      </memberdef>
+      <memberdef kind="function" id="class_auris_1_1_sprite_a8accab430f9d90ae5117b57d67e32b84_1a8accab430f9d90ae5117b57d67e32b84" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Sprite::~Sprite</definition>
+        <argsstring>()</argsstring>
+        <name>~Sprite</name>
+        <briefdescription>
+<para>The sprite destructor. </para>        </briefdescription>
+        <detaileddescription>
+<para>Does nothing. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Projects/GameEngine/include/Auris/Entities/Nuggets/Sprite.hpp" line="37" column="1" bodyfile="Projects/GameEngine/Auris/src/Auris/Entities/Nuggets/Sprite.cpp" bodystart="8" bodyend="9"/>
+      </memberdef>
+      <memberdef kind="function" id="class_auris_1_1_sprite_afa787e7d12d14a221fe2502b7fe13064_1afa787e7d12d14a221fe2502b7fe13064" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>Auris::Sprite::Sprite</definition>
+        <argsstring>(Entity *entity, SRE::Texture *texture=nullptr, SRE::Texture *normalMap=nullptr, Mesh *mesh=nullptr)</argsstring>
+        <name>Sprite</name>
+        <param>
+          <type><ref refid="class_auris_1_1_entity" kindref="compound">Entity</ref> *</type>
+          <declname>entity</declname>
+        </param>
+        <param>
+          <type>SRE::Texture *</type>
+          <declname>texture</declname>
+          <defval>nullptr</defval>
+        </param>
+        <param>
+          <type>SRE::Texture *</type>
+          <declname>normalMap</declname>
+          <defval>nullptr</defval>
+        </param>
+        <param>
+          <type><ref refid="class_auris_1_1_mesh" kindref="compound">Mesh</ref> *</type>
+          <declname>mesh</declname>
+          <defval>nullptr</defval>
+        </param>
+        <briefdescription>
+<para>The sprite constructor, taking 1-4 arguments. </para>        </briefdescription>
+        <detaileddescription>
+<para>Initializes the mesh and the material of the sprite to values inputted. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>entity</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>an <ref refid="class_auris_1_1_entity" kindref="compound">Entity</ref> pointer, that is the entity the sprite is associated with. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>texture</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>a Texture pointer, that is the texture of the sprite (default is white). </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>normalMap</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>a Texture pointer, that is the normal map of the sprite (default is no normal map). </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>mesh</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>a <ref refid="class_auris_1_1_mesh" kindref="compound">Mesh</ref> pointer, that is the mesh of the sprite (default is quad mesh).</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts.</para><para>Initializes the mesh and the material of the sprite to values inputted. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>entity</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>an <ref refid="class_auris_1_1_entity" kindref="compound">Entity</ref> pointer, that is the entity the sprite is associated with. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>texture</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>a Texture pointer, that is the texture of the sprite (default is white). </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>mesh</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>a <ref refid="class_auris_1_1_mesh" kindref="compound">Mesh</ref> pointer, that is the mesh of the sprite (default is quad mesh). </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Projects/GameEngine/include/Auris/Entities/Nuggets/Sprite.hpp" line="47" column="1" bodyfile="Projects/GameEngine/include/Auris/Entities/Nuggets/Sprite.hpp" bodystart="47" bodyend="53"/>
+      </memberdef>
+      <memberdef kind="function" id="class_auris_1_1_sprite_adeba77ed877b893d6f582f60d06b12e2_1adeba77ed877b893d6f582f60d06b12e2" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>Auris::Sprite::Sprite</definition>
+        <argsstring>(Entity *entity, SRE::Texture *texture, Mesh *mesh=nullptr)</argsstring>
+        <name>Sprite</name>
+        <param>
+          <type><ref refid="class_auris_1_1_entity" kindref="compound">Entity</ref> *</type>
+          <declname>entity</declname>
+        </param>
+        <param>
+          <type>SRE::Texture *</type>
+          <declname>texture</declname>
+        </param>
+        <param>
+          <type><ref refid="class_auris_1_1_mesh" kindref="compound">Mesh</ref> *</type>
+          <declname>mesh</declname>
+          <defval>nullptr</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Projects/GameEngine/include/Auris/Entities/Nuggets/Sprite.hpp" line="63" column="1" bodyfile="Projects/GameEngine/include/Auris/Entities/Nuggets/Sprite.hpp" bodystart="63" bodyend="65"/>
+      </memberdef>
+      <memberdef kind="function" id="class_auris_1_1_sprite_a34694bcf2bd86e52506218b9356fae38_1a34694bcf2bd86e52506218b9356fae38" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>float</type>
+        <definition>float Auris::Sprite::getWidth</definition>
+        <argsstring>()</argsstring>
+        <name>getWidth</name>
+        <briefdescription>
+<para>A getWidth method. </para>        </briefdescription>
+        <detaileddescription>
+<para>Used to get the width of the currently assigned mesh in pixels <simplesect kind="return"><para>float, that is the width of the currently assigned mesh in pixels </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Projects/GameEngine/include/Auris/Entities/Nuggets/Sprite.hpp" line="71" column="1" bodyfile="Projects/GameEngine/include/Auris/Entities/Nuggets/Sprite.hpp" bodystart="71" bodyend="73"/>
+      </memberdef>
+      <memberdef kind="function" id="class_auris_1_1_sprite_a10edcc7d8de2940aff96eed0f94e15ea_1a10edcc7d8de2940aff96eed0f94e15ea" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>float</type>
+        <definition>float Auris::Sprite::getHeight</definition>
+        <argsstring>()</argsstring>
+        <name>getHeight</name>
+        <briefdescription>
+<para>A getHeight method. </para>        </briefdescription>
+        <detaileddescription>
+<para>Used to get the height of the currently assigned mesh in pixels <simplesect kind="return"><para>float, that is the height of the currently assigned mesh in pixels </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Projects/GameEngine/include/Auris/Entities/Nuggets/Sprite.hpp" line="79" column="1" bodyfile="Projects/GameEngine/include/Auris/Entities/Nuggets/Sprite.hpp" bodystart="79" bodyend="81"/>
+      </memberdef>
+      <memberdef kind="function" id="class_auris_1_1_sprite_a44835ec226616bf06443bb2d7c697fd6_1a44835ec226616bf06443bb2d7c697fd6" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void Auris::Sprite::setProperties</definition>
+        <argsstring>(SRE::Texture *texture, glm::vec4 color=glm::vec4(1), SRE::Texture *normalMap=nullptr, Mesh *mesh=nullptr)</argsstring>
+        <name>setProperties</name>
+        <param>
+          <type>SRE::Texture *</type>
+          <declname>texture</declname>
+        </param>
+        <param>
+          <type>glm::vec4</type>
+          <declname>color</declname>
+          <defval>glm::vec4(1)</defval>
+        </param>
+        <param>
+          <type>SRE::Texture *</type>
+          <declname>normalMap</declname>
+          <defval>nullptr</defval>
+        </param>
+        <param>
+          <type><ref refid="class_auris_1_1_mesh" kindref="compound">Mesh</ref> *</type>
+          <declname>mesh</declname>
+          <defval>nullptr</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Projects/GameEngine/include/Auris/Entities/Nuggets/Sprite.hpp" line="84" column="1" bodyfile="Projects/GameEngine/include/Auris/Entities/Nuggets/Sprite.hpp" bodystart="84" bodyend="99"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>The <ref refid="class_auris_1_1_sprite" kindref="compound">Sprite</ref> class that extend the <ref refid="class_auris_1_1_nugget" kindref="compound">Nugget</ref> class. </para>    </briefdescription>
+    <detaileddescription>
+<para>Used to give Sprites to objects </para>    </detaileddescription>
+    <inheritancegraph>
+      <node id="235">
+        <label>Auris::Nugget</label>
+        <link refid="class_auris_1_1_nugget"/>
+      </node>
+      <node id="234">
+        <label>Auris::Sprite</label>
+        <link refid="class_auris_1_1_sprite"/>
+        <childnode refid="235" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="241">
+        <label>std::vector&lt; Auris::Entity *&gt;</label>
+        <childnode refid="238" relation="usage">
+          <edgelabel>elements</edgelabel>
+        </childnode>
+      </node>
+      <node id="244">
+        <label>SRE::Mesh</label>
+      </node>
+      <node id="242">
+        <label>Auris::Transform</label>
+        <link refid="class_auris_1_1_transform"/>
+        <childnode refid="237" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="243">
+        <label>Auris::Mesh</label>
+        <link refid="class_auris_1_1_mesh"/>
+        <childnode refid="244" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="240">
+        <label>std::basic_string&lt; char &gt;</label>
+      </node>
+      <node id="237">
+        <label>Auris::Nugget</label>
+        <link refid="class_auris_1_1_nugget"/>
+        <childnode refid="238" relation="usage">
+          <edgelabel>entity</edgelabel>
+        </childnode>
+      </node>
+      <node id="245">
+        <label>Auris::Material</label>
+        <link refid="class_auris_1_1_material"/>
+      </node>
+      <node id="236">
+        <label>Auris::Sprite</label>
+        <link refid="class_auris_1_1_sprite"/>
+        <childnode refid="237" relation="public-inheritance">
+        </childnode>
+        <childnode refid="243" relation="usage">
+          <edgelabel>mesh</edgelabel>
+        </childnode>
+        <childnode refid="245" relation="usage">
+          <edgelabel>material</edgelabel>
+        </childnode>
+      </node>
+      <node id="238">
+        <label>Auris::Entity</label>
+        <link refid="class_auris_1_1_entity"/>
+        <childnode refid="239" relation="usage">
+          <edgelabel>type</edgelabel>
+          <edgelabel>name</edgelabel>
+        </childnode>
+        <childnode refid="241" relation="usage">
+          <edgelabel>children</edgelabel>
+        </childnode>
+        <childnode refid="238" relation="usage">
+          <edgelabel>parent</edgelabel>
+        </childnode>
+        <childnode refid="242" relation="usage">
+          <edgelabel>transform</edgelabel>
+        </childnode>
+      </node>
+      <node id="239">
+        <label>std::string</label>
+        <childnode refid="240" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="Projects/GameEngine/include/Auris/Entities/Nuggets/Sprite.hpp" line="20" column="1" bodyfile="Projects/GameEngine/include/Auris/Entities/Nuggets/Sprite.hpp" bodystart="20" bodyend="101"/>
+    <listofallmembers>
+      <member refid="class_auris_1_1_sprite_a564601ca4ab75681bc6d74acc8199d42_1a564601ca4ab75681bc6d74acc8199d42" prot="public" virt="non-virtual"><scope>Auris::Sprite</scope><name>draw</name></member>
+      <member refid="class_auris_1_1_nugget_ada3978459953aa06dfbf934c3c11371b_1ada3978459953aa06dfbf934c3c11371b" prot="public" virt="non-virtual"><scope>Auris::Sprite</scope><name>entity</name></member>
+      <member refid="class_auris_1_1_sprite_a10edcc7d8de2940aff96eed0f94e15ea_1a10edcc7d8de2940aff96eed0f94e15ea" prot="public" virt="non-virtual"><scope>Auris::Sprite</scope><name>getHeight</name></member>
+      <member refid="class_auris_1_1_sprite_a34694bcf2bd86e52506218b9356fae38_1a34694bcf2bd86e52506218b9356fae38" prot="public" virt="non-virtual"><scope>Auris::Sprite</scope><name>getWidth</name></member>
+      <member refid="class_auris_1_1_sprite_a5c98603661d77fe739fe1a6c0fb94e47_1a5c98603661d77fe739fe1a6c0fb94e47" prot="public" virt="non-virtual"><scope>Auris::Sprite</scope><name>material</name></member>
+      <member refid="class_auris_1_1_sprite_a58b323c473af348c1acfef452f8215c4_1a58b323c473af348c1acfef452f8215c4" prot="public" virt="non-virtual"><scope>Auris::Sprite</scope><name>mesh</name></member>
+      <member refid="class_auris_1_1_nugget_aa69f1dec0d68dc98193efd3c39e254de_1aa69f1dec0d68dc98193efd3c39e254de" prot="public" virt="non-virtual"><scope>Auris::Sprite</scope><name>Nugget</name></member>
+      <member refid="class_auris_1_1_sprite_a6d3f50c4d7b6d769cbf6c212ed868639_1a6d3f50c4d7b6d769cbf6c212ed868639" prot="public" virt="non-virtual"><scope>Auris::Sprite</scope><name>offset</name></member>
+      <member refid="class_auris_1_1_sprite_a44835ec226616bf06443bb2d7c697fd6_1a44835ec226616bf06443bb2d7c697fd6" prot="public" virt="non-virtual"><scope>Auris::Sprite</scope><name>setProperties</name></member>
+      <member refid="class_auris_1_1_sprite_afa787e7d12d14a221fe2502b7fe13064_1afa787e7d12d14a221fe2502b7fe13064" prot="public" virt="non-virtual"><scope>Auris::Sprite</scope><name>Sprite</name></member>
+      <member refid="class_auris_1_1_sprite_adeba77ed877b893d6f582f60d06b12e2_1adeba77ed877b893d6f582f60d06b12e2" prot="public" virt="non-virtual"><scope>Auris::Sprite</scope><name>Sprite</name></member>
+      <member refid="class_auris_1_1_nugget_aae7ccecfc83aebef8f15889921b69ba8_1aae7ccecfc83aebef8f15889921b69ba8" prot="public" virt="virtual"><scope>Auris::Sprite</scope><name>~Nugget</name></member>
+      <member refid="class_auris_1_1_sprite_a8accab430f9d90ae5117b57d67e32b84_1a8accab430f9d90ae5117b57d67e32b84" prot="public" virt="non-virtual"><scope>Auris::Sprite</scope><name>~Sprite</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

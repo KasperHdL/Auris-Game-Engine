@@ -1,0 +1,243 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.12">
+  <compounddef id="_constants_8hpp" kind="file" language="C++">
+    <compoundname>Constants.hpp</compoundname>
+    <includedby refid="_light_8hpp" local="yes">Projects/GameEngine/include/Auris/Entities/Light.hpp</includedby>
+    <includedby refid="_sprite_8hpp" local="yes">Projects/GameEngine/include/Auris/Entities/Nuggets/Sprite.hpp</includedby>
+    <includedby refid="_transform_8hpp" local="yes">Projects/GameEngine/include/Auris/Entities/Nuggets/Transform.hpp</includedby>
+    <includedby refid="_debug_draw_8hpp" local="yes">Projects/GameEngine/include/Auris/Testing/DebugDraw.hpp</includedby>
+    <invincdepgraph>
+      <node id="521">
+        <label>Projects/GameEngine/include/Auris/Constants.hpp</label>
+        <link refid="_constants_8hpp"/>
+        <childnode refid="522" relation="include">
+        </childnode>
+        <childnode refid="533" relation="include">
+        </childnode>
+        <childnode refid="545" relation="include">
+        </childnode>
+        <childnode refid="548" relation="include">
+        </childnode>
+      </node>
+      <node id="527">
+        <label>Projects/GameEngine/Auris/src/Auris/Entities/PhysicsEntity.cpp</label>
+        <link refid="_physics_entity_8cpp"/>
+      </node>
+      <node id="549">
+        <label>Projects/GameEngine/include/Auris/Testing/DebugUI.hpp</label>
+        <link refid="_debug_u_i_8hpp"/>
+      </node>
+      <node id="542">
+        <label>Projects/GameEngine/include/Auris/Entities/AudioPlayer.hpp</label>
+        <link refid="_audio_player_8hpp"/>
+        <childnode refid="523" relation="include">
+        </childnode>
+        <childnode refid="543" relation="include">
+        </childnode>
+      </node>
+      <node id="534">
+        <label>Projects/GameEngine/include/Auris/Entities/Nuggets/Animation.hpp</label>
+        <link refid="_animation_8hpp"/>
+        <childnode refid="535" relation="include">
+        </childnode>
+        <childnode refid="539" relation="include">
+        </childnode>
+      </node>
+      <node id="524">
+        <label>Projects/GameEngine/include/Auris/Entities/PhysicsEntity.hpp</label>
+        <link refid="_physics_entity_8hpp"/>
+        <childnode refid="525" relation="include">
+        </childnode>
+        <childnode refid="527" relation="include">
+        </childnode>
+      </node>
+      <node id="547">
+        <label>Projects/GameEngine/Auris/src/Auris/Entities/Nuggets/Transform.cpp</label>
+        <link refid="_transform_8cpp"/>
+      </node>
+      <node id="533">
+        <label>Projects/GameEngine/include/Auris/Entities/Nuggets/Sprite.hpp</label>
+        <link refid="_sprite_8hpp"/>
+        <childnode refid="534" relation="include">
+        </childnode>
+        <childnode refid="535" relation="include">
+        </childnode>
+        <childnode refid="540" relation="include">
+        </childnode>
+        <childnode refid="536" relation="include">
+        </childnode>
+      </node>
+      <node id="522">
+        <label>Projects/GameEngine/include/Auris/Entities/Light.hpp</label>
+        <link refid="_light_8hpp"/>
+        <childnode refid="523" relation="include">
+        </childnode>
+        <childnode refid="532" relation="include">
+        </childnode>
+      </node>
+      <node id="525">
+        <label>Projects/GameEngine/include/Auris/Systems/CollisionHandler.hpp</label>
+        <link refid="_collision_handler_8hpp"/>
+        <childnode refid="526" relation="include">
+        </childnode>
+      </node>
+      <node id="528">
+        <label>Projects/GameEngine/include/Auris/Game.hpp</label>
+        <link refid="_game_8hpp"/>
+        <childnode refid="523" relation="include">
+        </childnode>
+        <childnode refid="529" relation="include">
+        </childnode>
+        <childnode refid="530" relation="include">
+        </childnode>
+      </node>
+      <node id="523">
+        <label>Projects/GameEngine/include/Auris/Engine.hpp</label>
+        <link refid="_engine_8hpp"/>
+        <childnode refid="524" relation="include">
+        </childnode>
+        <childnode refid="528" relation="include">
+        </childnode>
+        <childnode refid="531" relation="include">
+        </childnode>
+        <childnode refid="526" relation="include">
+        </childnode>
+      </node>
+      <node id="539">
+        <label>Projects/GameEngine/Auris/src/Auris/Entities/Nuggets/Animation.cpp</label>
+        <link refid="_animation_8cpp"/>
+      </node>
+      <node id="531">
+        <label>Projects/GameEngine/include/Auris/Utilities/BodyStandard.hpp</label>
+        <link refid="_body_standard_8hpp"/>
+      </node>
+      <node id="530">
+        <label>Projects/GameEngine/Auris/src/Auris/Systems/Input.cpp</label>
+        <link refid="_input_8cpp"/>
+      </node>
+      <node id="529">
+        <label>Projects/GameEngine/Auris/src/Auris/Game.cpp</label>
+        <link refid="_game_8cpp"/>
+      </node>
+      <node id="543">
+        <label>Projects/GameEngine/Auris/src/Auris/Entities/AudioPlayer.cpp</label>
+        <link refid="_audio_player_8cpp"/>
+      </node>
+      <node id="544">
+        <label>Projects/GameEngine/Auris/src/Auris/Utilities/AssetManager.cpp</label>
+        <link refid="_asset_manager_8cpp"/>
+      </node>
+      <node id="526">
+        <label>Projects/GameEngine/Auris/src/Auris/Engine.cpp</label>
+        <link refid="_engine_8cpp"/>
+      </node>
+      <node id="538">
+        <label>Projects/GameEngine/Auris/src/Auris/Utilities/SpriteSheet.cpp</label>
+        <link refid="_sprite_sheet_8cpp"/>
+      </node>
+      <node id="536">
+        <label>Projects/GameEngine/Auris/src/Auris/Entities/Nuggets/Sprite.cpp</label>
+        <link refid="_sprite_8cpp"/>
+      </node>
+      <node id="540">
+        <label>Projects/GameEngine/include/Auris/Utilities/SpriteSheet.hpp</label>
+        <link refid="_sprite_sheet_8hpp"/>
+        <childnode refid="534" relation="include">
+        </childnode>
+        <childnode refid="541" relation="include">
+        </childnode>
+        <childnode refid="538" relation="include">
+        </childnode>
+      </node>
+      <node id="546">
+        <label>Projects/GameEngine/include/Auris/Entity.hpp</label>
+        <link refid="_entity_8hpp"/>
+        <childnode refid="523" relation="include">
+        </childnode>
+        <childnode refid="542" relation="include">
+        </childnode>
+        <childnode refid="522" relation="include">
+        </childnode>
+        <childnode refid="534" relation="include">
+        </childnode>
+        <childnode refid="524" relation="include">
+        </childnode>
+        <childnode refid="528" relation="include">
+        </childnode>
+        <childnode refid="535" relation="include">
+        </childnode>
+        <childnode refid="536" relation="include">
+        </childnode>
+        <childnode refid="547" relation="include">
+        </childnode>
+      </node>
+      <node id="548">
+        <label>Projects/GameEngine/include/Auris/Testing/DebugDraw.hpp</label>
+        <link refid="_debug_draw_8hpp"/>
+        <childnode refid="549" relation="include">
+        </childnode>
+      </node>
+      <node id="545">
+        <label>Projects/GameEngine/include/Auris/Entities/Nuggets/Transform.hpp</label>
+        <link refid="_transform_8hpp"/>
+        <childnode refid="546" relation="include">
+        </childnode>
+        <childnode refid="547" relation="include">
+        </childnode>
+      </node>
+      <node id="541">
+        <label>Projects/GameEngine/include/Auris/Utilities/AssetManager.hpp</label>
+        <link refid="_asset_manager_8hpp"/>
+        <childnode refid="523" relation="include">
+        </childnode>
+        <childnode refid="542" relation="include">
+        </childnode>
+        <childnode refid="544" relation="include">
+        </childnode>
+      </node>
+      <node id="532">
+        <label>Projects/GameEngine/Auris/src/Auris/Entities/Light.cpp</label>
+        <link refid="_light_8cpp"/>
+      </node>
+      <node id="537">
+        <label>Projects/GameEngine/Auris/src/Auris/Systems/RenderSystem.cpp</label>
+        <link refid="_render_system_8cpp"/>
+      </node>
+      <node id="535">
+        <label>Projects/GameEngine/include/Auris/Systems/RenderSystem.hpp</label>
+        <link refid="_render_system_8hpp"/>
+        <childnode refid="523" relation="include">
+        </childnode>
+        <childnode refid="536" relation="include">
+        </childnode>
+        <childnode refid="537" relation="include">
+        </childnode>
+        <childnode refid="538" relation="include">
+        </childnode>
+      </node>
+    </invincdepgraph>
+    <innernamespace refid="namespace_auris">Auris</innernamespace>
+    <innernamespace refid="namespace_auris_1_1_constants">Auris::Constants</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#pragma<sp/>once</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespace_auris" kindref="compound">Auris</ref>{</highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="5"><highlight class="comment">//!<sp/>A<sp/>namespace<sp/>for<sp/>constants</highlight></codeline>
+<codeline lineno="6" refid="namespace_auris_1_1_constants" refkind="compound"><highlight class="comment"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal">Constants{</highlight></codeline>
+<codeline lineno="7" refid="namespace_auris_1_1_constants_a559532ed3415b8ded07cdc4069dfa91c_1a559532ed3415b8ded07cdc4069dfa91c" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="namespace_auris_1_1_constants_a559532ed3415b8ded07cdc4069dfa91c_1a559532ed3415b8ded07cdc4069dfa91c" kindref="member">METERS_TO_PIXELS</ref><sp/>=<sp/>10.0f;<sp/></highlight><highlight class="comment">/*!&lt;<sp/>a<sp/>constant<sp/>float<sp/>value.<sp/>METERS_TO_PIXELS.<sp/>The<sp/>number<sp/>of<sp/>pixels<sp/>per<sp/>meter*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="8" refid="namespace_auris_1_1_constants_a60345f173d3491692e156e08321606a7_1a60345f173d3491692e156e08321606a7" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="namespace_auris_1_1_constants_a60345f173d3491692e156e08321606a7_1a60345f173d3491692e156e08321606a7" kindref="member">PIXELS_TO_METERS</ref><sp/>=<sp/>1.0f<sp/>/<sp/><ref refid="namespace_auris_1_1_constants_a559532ed3415b8ded07cdc4069dfa91c_1a559532ed3415b8ded07cdc4069dfa91c" kindref="member">METERS_TO_PIXELS</ref>;<sp/></highlight><highlight class="comment">/*!&lt;<sp/>a<sp/>constant<sp/>float<sp/>value.<sp/>PIXELS_TO_METERS.<sp/>Meters<sp/>per<sp/>pixel*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="9" refid="namespace_auris_1_1_constants_a63baa076c3f1435bf1cb75da6691d3e3_1a63baa076c3f1435bf1cb75da6691d3e3" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="namespace_auris_1_1_constants_a63baa076c3f1435bf1cb75da6691d3e3_1a63baa076c3f1435bf1cb75da6691d3e3" kindref="member">VELOCITY_ITERATIONS</ref><sp/>=<sp/>16;<sp/></highlight><highlight class="comment">/*!&lt;<sp/>A<sp/>constant<sp/>int<sp/>value:<sp/>VELOCITY_ITERATIONS.<sp/>The<sp/>velocity<sp/>iterations<sp/>of<sp/>the<sp/>physics<sp/>world<sp/>per<sp/>frame<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="10" refid="namespace_auris_1_1_constants_a55b0d1b116c0f6bae44efc8ade94c723_1a55b0d1b116c0f6bae44efc8ade94c723" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="namespace_auris_1_1_constants_a55b0d1b116c0f6bae44efc8ade94c723_1a55b0d1b116c0f6bae44efc8ade94c723" kindref="member">POSITION_ITERATIONS</ref><sp/>=<sp/>16;<sp/></highlight><highlight class="comment">/*!&lt;<sp/>A<sp/>constant<sp/>int<sp/>value:<sp/>POSITION_ITERATIONS.<sp/>The<sp/>position<sp/>iterations<sp/>of<sp/>the<sp/>physics<sp/>world<sp/>per<sp/>frame<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="11" refid="namespace_auris_1_1_constants_abb26e3b2db53291f1b7649cb92b309e5_1abb26e3b2db53291f1b7649cb92b309e5" refkind="member"><highlight class="normal"><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="namespace_auris_1_1_constants_abb26e3b2db53291f1b7649cb92b309e5_1abb26e3b2db53291f1b7649cb92b309e5" kindref="member">width</ref><sp/>=<sp/>1280;<sp/></highlight><highlight class="comment">/*!&lt;<sp/>An<sp/>int<sp/>value:<sp/>width.<sp/>The<sp/>current<sp/>width<sp/>of<sp/>the<sp/>window<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="12" refid="namespace_auris_1_1_constants_ab1f513ab0d733d7c9af6299344630187_1ab1f513ab0d733d7c9af6299344630187" refkind="member"><highlight class="normal"><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="namespace_auris_1_1_constants_ab1f513ab0d733d7c9af6299344630187_1ab1f513ab0d733d7c9af6299344630187" kindref="member">height</ref><sp/>=<sp/>720;<sp/></highlight><highlight class="comment">/*!&lt;<sp/>An<sp/>int<sp/>value:<sp/>height.<sp/>The<sp/>current<sp/>height<sp/>of<sp/>the<sp/>window<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="14"><highlight class="normal">}</highlight></codeline>
+    </programlisting>
+    <location file="Projects/GameEngine/include/Auris/Constants.hpp"/>
+  </compounddef>
+</doxygen>

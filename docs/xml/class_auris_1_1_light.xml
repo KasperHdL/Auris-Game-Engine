@@ -1,0 +1,354 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.12">
+  <compounddef id="class_auris_1_1_light" kind="class" language="C++" prot="public">
+    <compoundname>Auris::Light</compoundname>
+    <basecompoundref refid="class_auris_1_1_entity" prot="public" virt="non-virtual">Auris::Entity</basecompoundref>
+    <includes refid="_light_8hpp" local="no">Light.hpp</includes>
+      <sectiondef kind="public-type">
+      <memberdef kind="enum" id="class_auris_1_1_light_ab6c8c1b7b2f39af91f666a75f046a431_1ab6c8c1b7b2f39af91f666a75f046a431" prot="public" static="no">
+        <name>Type</name>
+        <enumvalue id="class_auris_1_1_light_ab6c8c1b7b2f39af91f666a75f046a431_1ab6c8c1b7b2f39af91f666a75f046a431a38687ce40230b7509ccd5f4d72e00cd0" prot="public">
+          <name>Point</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="class_auris_1_1_light_ab6c8c1b7b2f39af91f666a75f046a431_1ab6c8c1b7b2f39af91f666a75f046a431a9ada0dc3b374546103af1ee4706940a1" prot="public">
+          <name>Directional</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+<para>An enum of <ref refid="class_auris_1_1_light_ab6c8c1b7b2f39af91f666a75f046a431_1ab6c8c1b7b2f39af91f666a75f046a431" kindref="member">Light::Type</ref>. </para>        </briefdescription>
+        <detaileddescription>
+<para>That holds information about the type of light. Point and directional </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Projects/GameEngine/include/Auris/Entities/Light.hpp" line="23" column="1" bodyfile="Projects/GameEngine/include/Auris/Entities/Light.hpp" bodystart="23" bodyend="26"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="class_auris_1_1_light_a3539b3f4f273f10e1d1ede00877bed10_1a3539b3f4f273f10e1d1ede00877bed10" prot="public" static="no" mutable="no">
+        <type>vec3</type>
+        <definition>vec3 Auris::Light::direction</definition>
+        <argsstring></argsstring>
+        <name>direction</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>A vec3 value: direction. That is the direction of the light (only used on directional lights) </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Projects/GameEngine/include/Auris/Entities/Light.hpp" line="28" column="1" bodyfile="Projects/GameEngine/include/Auris/Entities/Light.hpp" bodystart="28" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_auris_1_1_light_a8a1068019b9835fd1c3046d7f9a6df10_1a8a1068019b9835fd1c3046d7f9a6df10" prot="public" static="no" mutable="no">
+        <type>vec3</type>
+        <definition>vec3 Auris::Light::color</definition>
+        <argsstring></argsstring>
+        <name>color</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>A vec3 value: color. That is the color of the light </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Projects/GameEngine/include/Auris/Entities/Light.hpp" line="29" column="1" bodyfile="Projects/GameEngine/include/Auris/Entities/Light.hpp" bodystart="29" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_auris_1_1_light_a9e6e88f02c3e4f2dcaabc598a767a307_1a9e6e88f02c3e4f2dcaabc598a767a307" prot="public" static="no" mutable="no">
+        <type>float</type>
+        <definition>float Auris::Light::range</definition>
+        <argsstring></argsstring>
+        <name>range</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>A float value: range, that is the range of the light (0 means inifinite). </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Projects/GameEngine/include/Auris/Entities/Light.hpp" line="30" column="1" bodyfile="Projects/GameEngine/include/Auris/Entities/Light.hpp" bodystart="30" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_auris_1_1_light_a230cfb13b002fd3cdd22e1c0f7a2ffb8_1a230cfb13b002fd3cdd22e1c0f7a2ffb8" prot="public" static="no" mutable="no">
+        <type>vec3</type>
+        <definition>vec3 Auris::Light::globalPosition</definition>
+        <argsstring></argsstring>
+        <name>globalPosition</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Projects/GameEngine/include/Auris/Entities/Light.hpp" line="32" column="1" bodyfile="Projects/GameEngine/include/Auris/Entities/Light.hpp" bodystart="32" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_auris_1_1_light_ae59d34b6180e50ccd99e9589ff13612f_1ae59d34b6180e50ccd99e9589ff13612f" prot="public" static="no" mutable="no">
+        <type>float</type>
+        <definition>float Auris::Light::iconScale</definition>
+        <argsstring></argsstring>
+        <name>iconScale</name>
+        <initializer>= 10</initializer>
+        <briefdescription>
+<para>A float value, that indicates the size in pixels of the icon, can be changed in the inspector. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Projects/GameEngine/include/Auris/Entities/Light.hpp" line="65" column="1" bodyfile="Projects/GameEngine/include/Auris/Entities/Light.hpp" bodystart="65" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-static-attrib">
+      <memberdef kind="variable" id="class_auris_1_1_light_a292f5384a1c147ca91c8527c0a07d7e7_1a292f5384a1c147ca91c8527c0a07d7e7" prot="public" static="yes" mutable="no">
+        <type>int</type>
+        <definition>int Auris::Light::lightCount</definition>
+        <argsstring></argsstring>
+        <name>lightCount</name>
+        <initializer>= 0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>An int value: lightCount. The total number of instances of <ref refid="class_auris_1_1_light" kindref="compound">Light</ref> </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Projects/GameEngine/include/Auris/Entities/Light.hpp" line="31" column="1" bodyfile="Projects/GameEngine/include/Auris/Entities/Light.hpp" bodystart="31" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="class_auris_1_1_light_af3367f08d55a216b65463fb8970851f8_1af3367f08d55a216b65463fb8970851f8" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int Auris::Light::lightNum</definition>
+        <argsstring></argsstring>
+        <name>lightNum</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>An int value: lightNum. That is the number of the specific light (between 0-3). </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Projects/GameEngine/include/Auris/Entities/Light.hpp" line="107" column="1" bodyfile="Projects/GameEngine/include/Auris/Entities/Light.hpp" bodystart="107" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_auris_1_1_light_a8b02097be824066f61c7a120c875b6ca_1a8b02097be824066f61c7a120c875b6ca" prot="private" static="no" mutable="no">
+        <type><ref refid="class_auris_1_1_light_ab6c8c1b7b2f39af91f666a75f046a431_1ab6c8c1b7b2f39af91f666a75f046a431" kindref="member">Type</ref></type>
+        <definition>Type Auris::Light::lightType</definition>
+        <argsstring></argsstring>
+        <name>lightType</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>A <ref refid="class_auris_1_1_light_ab6c8c1b7b2f39af91f666a75f046a431_1ab6c8c1b7b2f39af91f666a75f046a431" kindref="member">Light::Type</ref> value: type. A value to hold the type of light </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Projects/GameEngine/include/Auris/Entities/Light.hpp" line="108" column="1" bodyfile="Projects/GameEngine/include/Auris/Entities/Light.hpp" bodystart="108" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_auris_1_1_light_aac06b337febf59a402541ada7cd50402_1aac06b337febf59a402541ada7cd50402" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Auris::Light::Light</definition>
+        <argsstring>(vec2 position=vec2(0, 0), Type lightType=Point, int lightNum=-1)</argsstring>
+        <name>Light</name>
+        <param>
+          <type>vec2</type>
+          <declname>position</declname>
+          <defval>vec2(0, 0)</defval>
+        </param>
+        <param>
+          <type><ref refid="class_auris_1_1_light_ab6c8c1b7b2f39af91f666a75f046a431_1ab6c8c1b7b2f39af91f666a75f046a431" kindref="member">Type</ref></type>
+          <declname>lightType</declname>
+          <defval><ref refid="class_auris_1_1_light_ab6c8c1b7b2f39af91f666a75f046a431_1ab6c8c1b7b2f39af91f666a75f046a431a38687ce40230b7509ccd5f4d72e00cd0" kindref="member">Point</ref></defval>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>lightNum</declname>
+          <defval>-1</defval>
+        </param>
+        <briefdescription>
+<para>The light contructor taking 1-3 arguments. </para>        </briefdescription>
+        <detaileddescription>
+<para>Initializes a light with the input arguments. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>position</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>a vec2, that is the position of the light (default vec2(0,0)). </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>lightType</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>a <ref refid="class_auris_1_1_light_ab6c8c1b7b2f39af91f666a75f046a431_1ab6c8c1b7b2f39af91f666a75f046a431" kindref="member">Light::Type</ref>, that is the type of light (default Point). </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>lightNum</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>an integer, overrides the automatic numbering, There can only be 4 rendered lights. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Projects/GameEngine/include/Auris/Entities/Light.hpp" line="41" column="1" bodyfile="Projects/GameEngine/Auris/src/Auris/Entities/Light.cpp" bodystart="6" bodyend="25"/>
+      </memberdef>
+      <memberdef kind="function" id="class_auris_1_1_light_a1c824a51fbcb0a6c59f87172ee5fa705_1a1c824a51fbcb0a6c59f87172ee5fa705" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type>void</type>
+        <definition>void Auris::Light::update</definition>
+        <argsstring>(float dt)</argsstring>
+        <name>update</name>
+        <reimplements refid="class_auris_1_1_entity_a82768db86a5efc62f99e20e15d6bfe97_1a82768db86a5efc62f99e20e15d6bfe97">update</reimplements>
+        <param>
+          <type>float</type>
+          <declname>dt</declname>
+        </param>
+        <briefdescription>
+<para>An update method taking 1 argument. </para>        </briefdescription>
+        <detaileddescription>
+<para>Updates the light every frame, to be able to move the light. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>dt</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>a float, that is the delta time in seconds. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Projects/GameEngine/include/Auris/Entities/Light.hpp" line="47" column="1" bodyfile="Projects/GameEngine/include/Auris/Entities/Light.hpp" bodystart="47" bodyend="59"/>
+      </memberdef>
+      <memberdef kind="function" id="class_auris_1_1_light_a55577c72600726fd5695ed59e85ef3e9_1a55577c72600726fd5695ed59e85ef3e9" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type>void</type>
+        <definition>void Auris::Light::inspectorImGui</definition>
+        <argsstring>()</argsstring>
+        <name>inspectorImGui</name>
+        <reimplements refid="class_auris_1_1_entity_a30ccf345f74230cb9c560f5bf4794b99_1a30ccf345f74230cb9c560f5bf4794b99">inspectorImGui</reimplements>
+        <briefdescription>
+<para>The scriptable function inspectorImGui. </para>        </briefdescription>
+        <detaileddescription>
+<para>Used by the game programmer to add inspector GUI functionality to the entity. Is called every frame, when the inspector gui is open The game programmer can call <ref refid="class_auris_1_1_entity_a30ccf345f74230cb9c560f5bf4794b99_1a30ccf345f74230cb9c560f5bf4794b99" kindref="member">Entity::inspectorImGui</ref> to get <ref refid="class_auris_1_1_transform" kindref="compound">Transform</ref>, Position, Scale and Rotation inspection</para><para>This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts.</para><para>A inspectorImGui overload method. Writes sound related debug information to the inspector </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Projects/GameEngine/include/Auris/Entities/Light.hpp" line="71" column="1" bodyfile="Projects/GameEngine/include/Auris/Entities/Light.hpp" bodystart="71" bodyend="84"/>
+      </memberdef>
+      <memberdef kind="function" id="class_auris_1_1_light_a59a943d8a6d7a433a942d88270cf1231_1a59a943d8a6d7a433a942d88270cf1231" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type>void</type>
+        <definition>void Auris::Light::debugDraw</definition>
+        <argsstring>()</argsstring>
+        <name>debugDraw</name>
+        <reimplements refid="class_auris_1_1_entity_a880c5f29315d04c76453ab70ffe60737_1a880c5f29315d04c76453ab70ffe60737">debugDraw</reimplements>
+        <briefdescription>
+<para>The scriptable function debugDraw. </para>        </briefdescription>
+        <detaileddescription>
+<para>Used by the game programmer to add debugdraw functionality to the entity. Is called every frame, when the debug gui is open</para><para>This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts.</para><para>A debugDraw overload method. Draws sound related debug information to the screen </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Projects/GameEngine/include/Auris/Entities/Light.hpp" line="90" column="1" bodyfile="Projects/GameEngine/include/Auris/Entities/Light.hpp" bodystart="90" bodyend="101"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>The <ref refid="class_auris_1_1_light" kindref="compound">Light</ref> class that extend the <ref refid="class_auris_1_1_entity" kindref="compound">Entity</ref> class. </para>    </briefdescription>
+    <detaileddescription>
+<para>Used to control the lights. There can only be 4 rendered lights, if <ref refid="class_auris_1_1_light" kindref="compound">Light</ref> are constantly added only the four newest lights will be shown, unless you pass the lightNum argument which overrides the automatic numbering system. </para>    </detaileddescription>
+    <inheritancegraph>
+      <node id="151">
+        <label>Auris::Light</label>
+        <link refid="class_auris_1_1_light"/>
+        <childnode refid="152" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="152">
+        <label>Auris::Entity</label>
+        <link refid="class_auris_1_1_entity"/>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="157">
+        <label>std::vector&lt; Auris::Entity *&gt;</label>
+        <childnode refid="154" relation="usage">
+          <edgelabel>elements</edgelabel>
+        </childnode>
+      </node>
+      <node id="158">
+        <label>Auris::Transform</label>
+        <link refid="class_auris_1_1_transform"/>
+        <childnode refid="159" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="156">
+        <label>std::basic_string&lt; char &gt;</label>
+      </node>
+      <node id="159">
+        <label>Auris::Nugget</label>
+        <link refid="class_auris_1_1_nugget"/>
+        <childnode refid="154" relation="usage">
+          <edgelabel>entity</edgelabel>
+        </childnode>
+      </node>
+      <node id="153">
+        <label>Auris::Light</label>
+        <link refid="class_auris_1_1_light"/>
+        <childnode refid="154" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="154">
+        <label>Auris::Entity</label>
+        <link refid="class_auris_1_1_entity"/>
+        <childnode refid="155" relation="usage">
+          <edgelabel>type</edgelabel>
+          <edgelabel>name</edgelabel>
+        </childnode>
+        <childnode refid="157" relation="usage">
+          <edgelabel>children</edgelabel>
+        </childnode>
+        <childnode refid="154" relation="usage">
+          <edgelabel>parent</edgelabel>
+        </childnode>
+        <childnode refid="158" relation="usage">
+          <edgelabel>transform</edgelabel>
+        </childnode>
+      </node>
+      <node id="155">
+        <label>std::string</label>
+        <childnode refid="156" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="Projects/GameEngine/include/Auris/Entities/Light.hpp" line="16" column="1" bodyfile="Projects/GameEngine/include/Auris/Entities/Light.hpp" bodystart="16" bodyend="110"/>
+    <listofallmembers>
+      <member refid="class_auris_1_1_entity_a3b4c091e55b92a0b2950d35a3dcf60fd_1a3b4c091e55b92a0b2950d35a3dcf60fd" prot="public" virt="non-virtual"><scope>Auris::Light</scope><name>addChild</name></member>
+      <member refid="class_auris_1_1_entity_a5987efbb9fc7b0b8a986454424a0e003_1a5987efbb9fc7b0b8a986454424a0e003" prot="public" virt="non-virtual"><scope>Auris::Light</scope><name>children</name></member>
+      <member refid="class_auris_1_1_light_a8a1068019b9835fd1c3046d7f9a6df10_1a8a1068019b9835fd1c3046d7f9a6df10" prot="public" virt="non-virtual"><scope>Auris::Light</scope><name>color</name></member>
+      <member refid="class_auris_1_1_light_a59a943d8a6d7a433a942d88270cf1231_1a59a943d8a6d7a433a942d88270cf1231" prot="public" virt="virtual"><scope>Auris::Light</scope><name>debugDraw</name></member>
+      <member refid="class_auris_1_1_light_a3539b3f4f273f10e1d1ede00877bed10_1a3539b3f4f273f10e1d1ede00877bed10" prot="public" virt="non-virtual"><scope>Auris::Light</scope><name>direction</name></member>
+      <member refid="class_auris_1_1_light_ab6c8c1b7b2f39af91f666a75f046a431_1ab6c8c1b7b2f39af91f666a75f046a431a9ada0dc3b374546103af1ee4706940a1" prot="public" virt="non-virtual"><scope>Auris::Light</scope><name>Directional</name></member>
+      <member refid="class_auris_1_1_entity_a7164735eefd40272dae8ebe5d929fcdc_1a7164735eefd40272dae8ebe5d929fcdc" prot="public" virt="non-virtual"><scope>Auris::Light</scope><name>Entity</name></member>
+      <member refid="class_auris_1_1_entity_a7a93ca71ac6ba155796408363a198518_1a7a93ca71ac6ba155796408363a198518" prot="public" virt="non-virtual"><scope>Auris::Light</scope><name>getChildByName</name></member>
+      <member refid="class_auris_1_1_entity_a64856847ad473d4fc07f7842dcea5571_1a64856847ad473d4fc07f7842dcea5571" prot="public" virt="non-virtual"><scope>Auris::Light</scope><name>getChildByType</name></member>
+      <member refid="class_auris_1_1_entity_a60becb4bfcc5e2df9954a0487209195b_1a60becb4bfcc5e2df9954a0487209195b" prot="public" virt="non-virtual"><scope>Auris::Light</scope><name>getParent</name></member>
+      <member refid="class_auris_1_1_light_a230cfb13b002fd3cdd22e1c0f7a2ffb8_1a230cfb13b002fd3cdd22e1c0f7a2ffb8" prot="public" virt="non-virtual"><scope>Auris::Light</scope><name>globalPosition</name></member>
+      <member refid="class_auris_1_1_light_ae59d34b6180e50ccd99e9589ff13612f_1ae59d34b6180e50ccd99e9589ff13612f" prot="public" virt="non-virtual"><scope>Auris::Light</scope><name>iconScale</name></member>
+      <member refid="class_auris_1_1_entity_ab7373d13451309a5994a3737140797a4_1ab7373d13451309a5994a3737140797a4" prot="public" virt="virtual"><scope>Auris::Light</scope><name>init</name></member>
+      <member refid="class_auris_1_1_light_a55577c72600726fd5695ed59e85ef3e9_1a55577c72600726fd5695ed59e85ef3e9" prot="public" virt="virtual"><scope>Auris::Light</scope><name>inspectorImGui</name></member>
+      <member refid="class_auris_1_1_light_aac06b337febf59a402541ada7cd50402_1aac06b337febf59a402541ada7cd50402" prot="public" virt="non-virtual"><scope>Auris::Light</scope><name>Light</name></member>
+      <member refid="class_auris_1_1_light_a292f5384a1c147ca91c8527c0a07d7e7_1a292f5384a1c147ca91c8527c0a07d7e7" prot="public" virt="non-virtual"><scope>Auris::Light</scope><name>lightCount</name></member>
+      <member refid="class_auris_1_1_light_af3367f08d55a216b65463fb8970851f8_1af3367f08d55a216b65463fb8970851f8" prot="private" virt="non-virtual"><scope>Auris::Light</scope><name>lightNum</name></member>
+      <member refid="class_auris_1_1_light_a8b02097be824066f61c7a120c875b6ca_1a8b02097be824066f61c7a120c875b6ca" prot="private" virt="non-virtual"><scope>Auris::Light</scope><name>lightType</name></member>
+      <member refid="class_auris_1_1_entity_ad87e74abaab08d178904f82aa13c866c_1ad87e74abaab08d178904f82aa13c866c" prot="public" virt="non-virtual"><scope>Auris::Light</scope><name>name</name></member>
+      <member refid="class_auris_1_1_entity_a5011b41267c7ae7dcbf260e3ffb83b3b_1a5011b41267c7ae7dcbf260e3ffb83b3b" prot="public" virt="virtual"><scope>Auris::Light</scope><name>onDestruction</name></member>
+      <member refid="class_auris_1_1_entity_afec0c65e0063778ee9888e8747213504_1afec0c65e0063778ee9888e8747213504" prot="public" virt="non-virtual"><scope>Auris::Light</scope><name>parent</name></member>
+      <member refid="class_auris_1_1_light_ab6c8c1b7b2f39af91f666a75f046a431_1ab6c8c1b7b2f39af91f666a75f046a431a38687ce40230b7509ccd5f4d72e00cd0" prot="public" virt="non-virtual"><scope>Auris::Light</scope><name>Point</name></member>
+      <member refid="class_auris_1_1_light_a9e6e88f02c3e4f2dcaabc598a767a307_1a9e6e88f02c3e4f2dcaabc598a767a307" prot="public" virt="non-virtual"><scope>Auris::Light</scope><name>range</name></member>
+      <member refid="class_auris_1_1_entity_af8bfc68ec6368c9468484410ca919602_1af8bfc68ec6368c9468484410ca919602" prot="public" virt="non-virtual"><scope>Auris::Light</scope><name>setParent</name></member>
+      <member refid="class_auris_1_1_entity_aedf6a4670c5cb9e6efc5fbec2be40281_1aedf6a4670c5cb9e6efc5fbec2be40281" prot="public" virt="virtual"><scope>Auris::Light</scope><name>start</name></member>
+      <member refid="class_auris_1_1_entity_a1c0579dbb2753589668621bd3e3c187b_1a1c0579dbb2753589668621bd3e3c187b" prot="public" virt="non-virtual"><scope>Auris::Light</scope><name>transform</name></member>
+      <member refid="class_auris_1_1_light_ab6c8c1b7b2f39af91f666a75f046a431_1ab6c8c1b7b2f39af91f666a75f046a431" prot="public" virt="non-virtual"><scope>Auris::Light</scope><name>Type</name></member>
+      <member refid="class_auris_1_1_entity_a3d1c31d342f6a5ae9ccd4f81503c7876_1a3d1c31d342f6a5ae9ccd4f81503c7876" prot="public" virt="non-virtual"><scope>Auris::Light</scope><name>type</name></member>
+      <member refid="class_auris_1_1_light_a1c824a51fbcb0a6c59f87172ee5fa705_1a1c824a51fbcb0a6c59f87172ee5fa705" prot="public" virt="virtual"><scope>Auris::Light</scope><name>update</name></member>
+      <member refid="class_auris_1_1_entity_a5dd3f0c8b0c20b776989169061f4c39a_1a5dd3f0c8b0c20b776989169061f4c39a" prot="public" virt="virtual"><scope>Auris::Light</scope><name>updateTransform</name></member>
+      <member refid="class_auris_1_1_entity_a242caae0bcc5ef026a11d058a524e0fc_1a242caae0bcc5ef026a11d058a524e0fc" prot="public" virt="non-virtual"><scope>Auris::Light</scope><name>~Entity</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

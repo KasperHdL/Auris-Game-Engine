@@ -1,0 +1,18 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.12">
+  <compounddef id="dir_979b836fe2d2215fee89f3ad740c9284" kind="dir">
+    <compoundname>Projects/MergeHppCpp/include/Auris/Entities/Nuggets</compoundname>
+    <innerfile refid="_animation_8cpp">Animation.cpp</innerfile>
+    <innerfile refid="_animation_8hpp">Animation.hpp</innerfile>
+    <innerfile refid="_material_8hpp">Material.hpp</innerfile>
+    <innerfile refid="_sprite_8cpp">Sprite.cpp</innerfile>
+    <innerfile refid="_sprite_8hpp">Sprite.hpp</innerfile>
+    <innerfile refid="_transform_8cpp">Transform.cpp</innerfile>
+    <innerfile refid="_transform_8hpp">Transform.hpp</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="Projects/MergeHppCpp/include/Auris/Entities/Nuggets/"/>
+  </compounddef>
+</doxygen>

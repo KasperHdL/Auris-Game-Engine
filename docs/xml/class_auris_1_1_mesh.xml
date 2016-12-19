@@ -1,0 +1,188 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.12">
+  <compounddef id="class_auris_1_1_mesh" kind="class" language="C++" prot="public">
+    <compoundname>Auris::Mesh</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">Mesh</basecompoundref>
+    <includes refid="_mesh_8hpp" local="no">Mesh.hpp</includes>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="class_auris_1_1_mesh_a61b58c5c8f3d2f18b39080b49f3368e7_1a61b58c5c8f3d2f18b39080b49f3368e7" prot="public" static="no" mutable="no">
+        <type>float</type>
+        <definition>float Auris::Mesh::width</definition>
+        <argsstring></argsstring>
+        <name>width</name>
+        <initializer>= 1</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>A float value: width. The width of the mesh. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Projects/GameEngine/include/Auris/Utilities/Mesh.hpp" line="21" column="1" bodyfile="Projects/GameEngine/include/Auris/Utilities/Mesh.hpp" bodystart="21" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_auris_1_1_mesh_a47763cfc3787b626cda0a79e4d254a26_1a47763cfc3787b626cda0a79e4d254a26" prot="public" static="no" mutable="no">
+        <type>float</type>
+        <definition>float Auris::Mesh::height</definition>
+        <argsstring></argsstring>
+        <name>height</name>
+        <initializer>= 1</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>A float value: height. The height of the mesh. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Projects/GameEngine/include/Auris/Utilities/Mesh.hpp" line="22" column="1" bodyfile="Projects/GameEngine/include/Auris/Utilities/Mesh.hpp" bodystart="22" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_auris_1_1_mesh_a62b30f6a6641956ef2c3c28813e80d9c_1a62b30f6a6641956ef2c3c28813e80d9c" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>Auris::Mesh::Mesh</definition>
+        <argsstring>(std::vector&lt; glm::vec3 &gt; vertices, std::vector&lt; glm::vec3 &gt; normals, std::vector&lt; glm::vec2 &gt; uvs, float width, float height)</argsstring>
+        <name>Mesh</name>
+        <param>
+          <type>std::vector&lt; glm::vec3 &gt;</type>
+          <declname>vertices</declname>
+        </param>
+        <param>
+          <type>std::vector&lt; glm::vec3 &gt;</type>
+          <declname>normals</declname>
+        </param>
+        <param>
+          <type>std::vector&lt; glm::vec2 &gt;</type>
+          <declname>uvs</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>width</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>height</declname>
+        </param>
+        <briefdescription>
+<para>The mesh contructor, taking 5 arguments. </para>        </briefdescription>
+        <detaileddescription>
+<para>Initializes a mesh with the input arguments in SRE::Mesh. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>vectices</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>a vector of vec3. The vectives of the mesh. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>normals</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>a vector of vec3. The normals of the mesh. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>uvs</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>a vector of vec3. The uvs of the mesh. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>width</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>a float value. The width of the mesh. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>height</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>a float value. The height of the mesh. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Projects/GameEngine/include/Auris/Utilities/Mesh.hpp" line="20" column="1" bodyfile="Projects/GameEngine/include/Auris/Utilities/Mesh.hpp" bodystart="20" bodyend="20"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="class_auris_1_1_mesh_a149a5abcd5967b010313caf33a1678c0_1a149a5abcd5967b010313caf33a1678c0" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="class_auris_1_1_mesh" kindref="compound">Mesh</ref> *</type>
+        <definition>static Mesh* Auris::Mesh::createCube</definition>
+        <argsstring>()</argsstring>
+        <name>createCube</name>
+        <briefdescription>
+<para>A createCube method. </para>        </briefdescription>
+        <detaileddescription>
+<para>Creates a cube from SRE::Mesh and returns it. <simplesect kind="return"><para><ref refid="class_auris_1_1_mesh" kindref="compound">Mesh</ref> pointer. The mesh created. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Projects/GameEngine/include/Auris/Utilities/Mesh.hpp" line="28" column="1" bodyfile="Projects/GameEngine/include/Auris/Utilities/Mesh.hpp" bodystart="28" bodyend="30"/>
+      </memberdef>
+      <memberdef kind="function" id="class_auris_1_1_mesh_ab999d4ec93fc6a65ae4841645c16b5a9_1ab999d4ec93fc6a65ae4841645c16b5a9" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="class_auris_1_1_mesh" kindref="compound">Mesh</ref> *</type>
+        <definition>static Mesh* Auris::Mesh::createSphere</definition>
+        <argsstring>()</argsstring>
+        <name>createSphere</name>
+        <briefdescription>
+<para>A createSphere method. </para>        </briefdescription>
+        <detaileddescription>
+<para>Creates a sphere from SRE::Mesh and returns it. <simplesect kind="return"><para><ref refid="class_auris_1_1_mesh" kindref="compound">Mesh</ref> pointer. The mesh created. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Projects/GameEngine/include/Auris/Utilities/Mesh.hpp" line="36" column="1" bodyfile="Projects/GameEngine/include/Auris/Utilities/Mesh.hpp" bodystart="36" bodyend="38"/>
+      </memberdef>
+      <memberdef kind="function" id="class_auris_1_1_mesh_a05d51a915fd65bee73853fb17175a70c_1a05d51a915fd65bee73853fb17175a70c" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="class_auris_1_1_mesh" kindref="compound">Mesh</ref> *</type>
+        <definition>static Mesh* Auris::Mesh::createQuad</definition>
+        <argsstring>()</argsstring>
+        <name>createQuad</name>
+        <briefdescription>
+<para>A createQuad method. </para>        </briefdescription>
+        <detaileddescription>
+<para>Creates a quad from SRE::Mesh and returns it. <simplesect kind="return"><para><ref refid="class_auris_1_1_mesh" kindref="compound">Mesh</ref> pointer. The mesh created. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Projects/GameEngine/include/Auris/Utilities/Mesh.hpp" line="44" column="1" bodyfile="Projects/GameEngine/include/Auris/Utilities/Mesh.hpp" bodystart="44" bodyend="46"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>The <ref refid="class_auris_1_1_mesh" kindref="compound">Mesh</ref> class that extend the SRE::Mesh class. </para>    </briefdescription>
+    <detaileddescription>
+<para>Used to manipulate meshes. </para>    </detaileddescription>
+    <inheritancegraph>
+      <node id="165">
+        <label>SRE::Mesh</label>
+      </node>
+      <node id="164">
+        <label>Auris::Mesh</label>
+        <link refid="class_auris_1_1_mesh"/>
+        <childnode refid="165" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="167">
+        <label>SRE::Mesh</label>
+      </node>
+      <node id="166">
+        <label>Auris::Mesh</label>
+        <link refid="class_auris_1_1_mesh"/>
+        <childnode refid="167" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="Projects/GameEngine/include/Auris/Utilities/Mesh.hpp" line="9" column="1" bodyfile="Projects/GameEngine/include/Auris/Utilities/Mesh.hpp" bodystart="9" bodyend="49"/>
+    <listofallmembers>
+      <member refid="class_auris_1_1_mesh_a149a5abcd5967b010313caf33a1678c0_1a149a5abcd5967b010313caf33a1678c0" prot="public" virt="non-virtual"><scope>Auris::Mesh</scope><name>createCube</name></member>
+      <member refid="class_auris_1_1_mesh_a05d51a915fd65bee73853fb17175a70c_1a05d51a915fd65bee73853fb17175a70c" prot="public" virt="non-virtual"><scope>Auris::Mesh</scope><name>createQuad</name></member>
+      <member refid="class_auris_1_1_mesh_ab999d4ec93fc6a65ae4841645c16b5a9_1ab999d4ec93fc6a65ae4841645c16b5a9" prot="public" virt="non-virtual"><scope>Auris::Mesh</scope><name>createSphere</name></member>
+      <member refid="class_auris_1_1_mesh_a47763cfc3787b626cda0a79e4d254a26_1a47763cfc3787b626cda0a79e4d254a26" prot="public" virt="non-virtual"><scope>Auris::Mesh</scope><name>height</name></member>
+      <member refid="class_auris_1_1_mesh_a62b30f6a6641956ef2c3c28813e80d9c_1a62b30f6a6641956ef2c3c28813e80d9c" prot="public" virt="non-virtual"><scope>Auris::Mesh</scope><name>Mesh</name></member>
+      <member refid="class_auris_1_1_mesh_a61b58c5c8f3d2f18b39080b49f3368e7_1a61b58c5c8f3d2f18b39080b49f3368e7" prot="public" virt="non-virtual"><scope>Auris::Mesh</scope><name>width</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

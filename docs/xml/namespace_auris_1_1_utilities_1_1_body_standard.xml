@@ -1,0 +1,198 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.12">
+  <compounddef id="namespace_auris_1_1_utilities_1_1_body_standard" kind="namespace" language="C++">
+    <compoundname>Auris::Utilities::BodyStandard</compoundname>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="namespace_auris_1_1_utilities_1_1_body_standard_aa066f28f8ed7dc9b7a80d73743660953_1aa066f28f8ed7dc9b7a80d73743660953" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>b2Body *</type>
+        <definition>static b2Body* Auris::Utilities::BodyStandard::getDynamicBody</definition>
+        <argsstring>(b2Shape *shape, bool isSensor=false, float friction=1.0f, float density=20.0f, float restitution=0.0f, b2Filter *filter=nullptr)</argsstring>
+        <name>getDynamicBody</name>
+        <param>
+          <type>b2Shape *</type>
+          <declname>shape</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>isSensor</declname>
+          <defval>false</defval>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>friction</declname>
+          <defval>1.0f</defval>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>density</declname>
+          <defval>20.0f</defval>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>restitution</declname>
+          <defval>0.0f</defval>
+        </param>
+        <param>
+          <type>b2Filter *</type>
+          <declname>filter</declname>
+          <defval>nullptr</defval>
+        </param>
+        <briefdescription>
+<para>A getDynamicBody method, taking 1-5 arguments. </para>        </briefdescription>
+        <detaileddescription>
+<para>Creates a dynamic body in position (0,0) from box2D and returns it <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>shape</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>a b2Shape pointer. The shape of the body. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>isSensor</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>a bool. Whether or not the body should be a sensor. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>friction</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>a float value. The friction of the body (default is 1.0). </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>density</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>a float value. The density of the body (default is 20.0). </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>restitution</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>a float value. The restitution of the body (default is 0.0). </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>filter</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>a b2Filter pointer. The Collision filter set for the body </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>b2Body pointer. A pointer to the dynamic body created. </para></simplesect>
+<simplesect kind="see"><para><ref refid="class_auris_1_1_physics_entity_a853247c247a26a3ecb922f4907649279_1a853247c247a26a3ecb922f4907649279" kindref="member">PhysicsEntity::setPosition()</ref> </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Projects/GameEngine/include/Auris/Utilities/BodyStandard.hpp" line="29" column="1" bodyfile="Projects/GameEngine/include/Auris/Utilities/BodyStandard.hpp" bodystart="29" bodyend="55"/>
+      </memberdef>
+      <memberdef kind="function" id="namespace_auris_1_1_utilities_1_1_body_standard_a8132a4e3c83555fbc4a6bb83b7a6e9b6_1a8132a4e3c83555fbc4a6bb83b7a6e9b6" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>b2Body *</type>
+        <definition>static b2Body* Auris::Utilities::BodyStandard::getStaticBody</definition>
+        <argsstring>(b2Shape *shape, glm::vec2 position=glm::vec2(0), bool isSensor=false, float friction=1.0f, float density=20.0f, float restitution=0.0f, b2Filter *filter=nullptr)</argsstring>
+        <name>getStaticBody</name>
+        <param>
+          <type>b2Shape *</type>
+          <declname>shape</declname>
+        </param>
+        <param>
+          <type>glm::vec2</type>
+          <declname>position</declname>
+          <defval>glm::vec2(0)</defval>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>isSensor</declname>
+          <defval>false</defval>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>friction</declname>
+          <defval>1.0f</defval>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>density</declname>
+          <defval>20.0f</defval>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>restitution</declname>
+          <defval>0.0f</defval>
+        </param>
+        <param>
+          <type>b2Filter *</type>
+          <declname>filter</declname>
+          <defval>nullptr</defval>
+        </param>
+        <briefdescription>
+<para>A getStaticBody method, taking 1-5 arguments. </para>        </briefdescription>
+        <detaileddescription>
+<para>Creates a dynamic body from box2D and returns it <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>shape</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>a b2Shape pointer. The shape of the body. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>position</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>a vec2 value. The position of the body (default is in origin (vec2(0))). </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>isSensor</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>a bool. Whether or not the body should be a sensor. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>friction</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>a float value. The friction of the body (default is 1.0). </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>density</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>a float value. The density of the body (default is 20.0). </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>restitution</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>a float value. The restitution of the body (default is 0.0). </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>filter</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>a b2Filter pointer. The Collision filter set for the body </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>b2Body pointer. A pointer to the static body created. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Projects/GameEngine/include/Auris/Utilities/BodyStandard.hpp" line="69" column="1" bodyfile="Projects/GameEngine/include/Auris/Utilities/BodyStandard.hpp" bodystart="69" bodyend="92"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>A <ref refid="namespace_auris_1_1_utilities_1_1_body_standard" kindref="compound">BodyStandard</ref> namespace. </para>    </briefdescription>
+    <detaileddescription>
+<para>Controls two body standards and makes them from box2D Dynamic body and static body </para>    </detaileddescription>
+    <location file="Projects/GameEngine/include/Auris/Utilities/BodyStandard.hpp" line="14" column="1"/>
+  </compounddef>
+</doxygen>

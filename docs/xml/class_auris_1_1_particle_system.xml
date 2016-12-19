@@ -1,0 +1,835 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.12">
+  <compounddef id="class_auris_1_1_particle_system" kind="class" language="C++" prot="public">
+    <compoundname>Auris::ParticleSystem</compoundname>
+    <includes refid="_particle_system_8hpp" local="no">ParticleSystem.hpp</includes>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="class_auris_1_1_particle_system_a7925ae32f8ed70ab998fde4897813618_1a7925ae32f8ed70ab998fde4897813618" prot="private" static="no" mutable="no">
+        <type>vector&lt; vec3 &gt;</type>
+        <definition>vector&lt;vec3&gt; Auris::ParticleSystem::finalPositions</definition>
+        <argsstring></argsstring>
+        <name>finalPositions</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>A vector of vec3 values: finalPositions. The final positions of the particle. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Projects/GameEngine/include/Auris/Systems/ParticleSystem.hpp" line="24" column="1" bodyfile="Projects/GameEngine/include/Auris/Systems/ParticleSystem.hpp" bodystart="24" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_auris_1_1_particle_system_aff217c4e8f19e7c136d8bac7bea2b835_1aff217c4e8f19e7c136d8bac7bea2b835" prot="private" static="no" mutable="no">
+        <type>vector&lt; vec4 &gt;</type>
+        <definition>vector&lt;vec4&gt; Auris::ParticleSystem::finalColors</definition>
+        <argsstring></argsstring>
+        <name>finalColors</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>A vector of vec4 values: finalColors. The final colors of the particle. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Projects/GameEngine/include/Auris/Systems/ParticleSystem.hpp" line="25" column="1" bodyfile="Projects/GameEngine/include/Auris/Systems/ParticleSystem.hpp" bodystart="25" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_auris_1_1_particle_system_a109ff429108b817243f63e7f4452fe8e_1a109ff429108b817243f63e7f4452fe8e" prot="private" static="no" mutable="no">
+        <type>vector&lt; float &gt;</type>
+        <definition>vector&lt;float&gt; Auris::ParticleSystem::finalSizes</definition>
+        <argsstring></argsstring>
+        <name>finalSizes</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>A vector of float values: finalSizes. The final sizes of the particle. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Projects/GameEngine/include/Auris/Systems/ParticleSystem.hpp" line="26" column="1" bodyfile="Projects/GameEngine/include/Auris/Systems/ParticleSystem.hpp" bodystart="26" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_auris_1_1_particle_system_a05dbc021200431bf2f0bd9bf79031660_1a05dbc021200431bf2f0bd9bf79031660" prot="private" static="no" mutable="no">
+        <type>vector&lt; float &gt;</type>
+        <definition>vector&lt;float&gt; Auris::ParticleSystem::finalRotation</definition>
+        <argsstring></argsstring>
+        <name>finalRotation</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>A vector of float values: finalRotation. The final rotations of the particle. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Projects/GameEngine/include/Auris/Systems/ParticleSystem.hpp" line="27" column="1" bodyfile="Projects/GameEngine/include/Auris/Systems/ParticleSystem.hpp" bodystart="27" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_auris_1_1_particle_system_a7c82e0ac493d574ae975a7ae4acf3e73_1a7c82e0ac493d574ae975a7ae4acf3e73" prot="private" static="no" mutable="no">
+        <type>vector&lt; vec3 &gt;</type>
+        <definition>vector&lt;vec3&gt; Auris::ParticleSystem::positions</definition>
+        <argsstring></argsstring>
+        <name>positions</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>A vector of vec3 values: positions. The positions of the particles. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Projects/GameEngine/include/Auris/Systems/ParticleSystem.hpp" line="31" column="1" bodyfile="Projects/GameEngine/include/Auris/Systems/ParticleSystem.hpp" bodystart="31" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_auris_1_1_particle_system_a5973a04e7951938451b4c56afce56c9a_1a5973a04e7951938451b4c56afce56c9a" prot="private" static="no" mutable="no">
+        <type>vector&lt; vec3 &gt;</type>
+        <definition>vector&lt;vec3&gt; Auris::ParticleSystem::velocities</definition>
+        <argsstring></argsstring>
+        <name>velocities</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>A vector of vec3 values: velocities. The rotations of the particles. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Projects/GameEngine/include/Auris/Systems/ParticleSystem.hpp" line="32" column="1" bodyfile="Projects/GameEngine/include/Auris/Systems/ParticleSystem.hpp" bodystart="32" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_auris_1_1_particle_system_a67428290d2fbe9f6ea6dc35800c3bb17_1a67428290d2fbe9f6ea6dc35800c3bb17" prot="private" static="no" mutable="no">
+        <type>vector&lt; float &gt;</type>
+        <definition>vector&lt;float&gt; Auris::ParticleSystem::rotations</definition>
+        <argsstring></argsstring>
+        <name>rotations</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>A vector of float values: rotations. The rotations of the particles. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Projects/GameEngine/include/Auris/Systems/ParticleSystem.hpp" line="33" column="1" bodyfile="Projects/GameEngine/include/Auris/Systems/ParticleSystem.hpp" bodystart="33" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_auris_1_1_particle_system_a41970139473651d5c46eae87318958b5_1a41970139473651d5c46eae87318958b5" prot="private" static="no" mutable="no">
+        <type>vector&lt; float &gt;</type>
+        <definition>vector&lt;float&gt; Auris::ParticleSystem::angularVelocities</definition>
+        <argsstring></argsstring>
+        <name>angularVelocities</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>A vector of float values: AngularVelocities. The angular velocities of the particles. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Projects/GameEngine/include/Auris/Systems/ParticleSystem.hpp" line="34" column="1" bodyfile="Projects/GameEngine/include/Auris/Systems/ParticleSystem.hpp" bodystart="34" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_auris_1_1_particle_system_abc9b43cb384a0029fb24840c0869f4c3_1abc9b43cb384a0029fb24840c0869f4c3" prot="private" static="no" mutable="no">
+        <type>vector&lt; vec4 &gt;</type>
+        <definition>vector&lt;vec4&gt; Auris::ParticleSystem::startColors</definition>
+        <argsstring></argsstring>
+        <name>startColors</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>A vector of vec4 values: startColors. The start colors of the particles. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Projects/GameEngine/include/Auris/Systems/ParticleSystem.hpp" line="36" column="1" bodyfile="Projects/GameEngine/include/Auris/Systems/ParticleSystem.hpp" bodystart="36" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_auris_1_1_particle_system_a5b009b410f36311984c37524a21a7a32_1a5b009b410f36311984c37524a21a7a32" prot="private" static="no" mutable="no">
+        <type>vector&lt; float &gt;</type>
+        <definition>vector&lt;float&gt; Auris::ParticleSystem::startSizes</definition>
+        <argsstring></argsstring>
+        <name>startSizes</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>A vector of float values: startSizes. The start sizes of the particles. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Projects/GameEngine/include/Auris/Systems/ParticleSystem.hpp" line="37" column="1" bodyfile="Projects/GameEngine/include/Auris/Systems/ParticleSystem.hpp" bodystart="37" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_auris_1_1_particle_system_ac598794b9c735bcb1de1524153c4a56d_1ac598794b9c735bcb1de1524153c4a56d" prot="private" static="no" mutable="no">
+        <type>vector&lt; vec4 &gt;</type>
+        <definition>vector&lt;vec4&gt; Auris::ParticleSystem::endColors</definition>
+        <argsstring></argsstring>
+        <name>endColors</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>A vector of vec4 values: endColors. The end colors of the particles. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Projects/GameEngine/include/Auris/Systems/ParticleSystem.hpp" line="39" column="1" bodyfile="Projects/GameEngine/include/Auris/Systems/ParticleSystem.hpp" bodystart="39" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_auris_1_1_particle_system_ae68135a3faf56a015fdc569ef36cb396_1ae68135a3faf56a015fdc569ef36cb396" prot="private" static="no" mutable="no">
+        <type>vector&lt; float &gt;</type>
+        <definition>vector&lt;float&gt; Auris::ParticleSystem::endSizes</definition>
+        <argsstring></argsstring>
+        <name>endSizes</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>A vector of float values: endSizes. The end sizes of the particles. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Projects/GameEngine/include/Auris/Systems/ParticleSystem.hpp" line="40" column="1" bodyfile="Projects/GameEngine/include/Auris/Systems/ParticleSystem.hpp" bodystart="40" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_auris_1_1_particle_system_acb7cce379fdee2d5b647eeb86060fe7b_1acb7cce379fdee2d5b647eeb86060fe7b" prot="private" static="no" mutable="no">
+        <type>vector&lt; float &gt;</type>
+        <definition>vector&lt;float&gt; Auris::ParticleSystem::startTimes</definition>
+        <argsstring></argsstring>
+        <name>startTimes</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>A vector of float values: startTimes. The start times of the particles. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Projects/GameEngine/include/Auris/Systems/ParticleSystem.hpp" line="42" column="1" bodyfile="Projects/GameEngine/include/Auris/Systems/ParticleSystem.hpp" bodystart="42" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_auris_1_1_particle_system_ad5baaa06132bb8a96588abcd4fe55c04_1ad5baaa06132bb8a96588abcd4fe55c04" prot="private" static="no" mutable="no">
+        <type>float</type>
+        <definition>float Auris::ParticleSystem::currentTime</definition>
+        <argsstring></argsstring>
+        <name>currentTime</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>A float value: currentTime. The current Particle time in the particle system. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Projects/GameEngine/include/Auris/Systems/ParticleSystem.hpp" line="44" column="1" bodyfile="Projects/GameEngine/include/Auris/Systems/ParticleSystem.hpp" bodystart="44" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_auris_1_1_particle_system_a847bf70177f7886f29e1ea5db1c3b7ad_1a847bf70177f7886f29e1ea5db1c3b7ad" prot="private" static="no" mutable="no">
+        <type>float</type>
+        <definition>float Auris::ParticleSystem::particleDuration</definition>
+        <argsstring></argsstring>
+        <name>particleDuration</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>A float value: particleDuration. The duration of each particle. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Projects/GameEngine/include/Auris/Systems/ParticleSystem.hpp" line="45" column="1" bodyfile="Projects/GameEngine/include/Auris/Systems/ParticleSystem.hpp" bodystart="45" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_auris_1_1_particle_system_a5fdb71102e77ef964810afc41738f66b_1a5fdb71102e77ef964810afc41738f66b" prot="private" static="no" mutable="no">
+        <type>SRE::Texture *</type>
+        <definition>SRE::Texture* Auris::ParticleSystem::texture</definition>
+        <argsstring></argsstring>
+        <name>texture</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>A Texture pointer: texture. An instance of the texture of the particle. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Projects/GameEngine/include/Auris/Systems/ParticleSystem.hpp" line="47" column="1" bodyfile="Projects/GameEngine/include/Auris/Systems/ParticleSystem.hpp" bodystart="47" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_auris_1_1_particle_system_a81a41ed315e695e7c02fbc799a806a90_1a81a41ed315e695e7c02fbc799a806a90" prot="private" static="no" mutable="no">
+        <type>SRE::ParticleMesh *</type>
+        <definition>SRE::ParticleMesh* Auris::ParticleSystem::mesh</definition>
+        <argsstring></argsstring>
+        <name>mesh</name>
+        <initializer>= nullptr</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>A <ref refid="class_auris_1_1_mesh" kindref="compound">Mesh</ref> pointer: mesh. An instance of the mesh of the particle </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Projects/GameEngine/include/Auris/Systems/ParticleSystem.hpp" line="49" column="1" bodyfile="Projects/GameEngine/include/Auris/Systems/ParticleSystem.hpp" bodystart="49" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_auris_1_1_particle_system_a4074a1c6540ac434b3f16fe7d75a1d26_1a4074a1c6540ac434b3f16fe7d75a1d26" prot="private" static="no" mutable="no">
+        <type>SRE::Shader *</type>
+        <definition>SRE::Shader* Auris::ParticleSystem::shader</definition>
+        <argsstring></argsstring>
+        <name>shader</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>A shader pointer:shader. An instance of the shader of the particle. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Projects/GameEngine/include/Auris/Systems/ParticleSystem.hpp" line="50" column="1" bodyfile="Projects/GameEngine/include/Auris/Systems/ParticleSystem.hpp" bodystart="50" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_auris_1_1_particle_system_a5e460d7104a942ca9d8a84eb2e9e9a7b_1a5e460d7104a942ca9d8a84eb2e9e9a7b" prot="private" static="no" mutable="no">
+        <type>vector&lt; vec2 &gt;</type>
+        <definition>vector&lt;vec2&gt; Auris::ParticleSystem::uvs</definition>
+        <argsstring></argsstring>
+        <name>uvs</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>A vector of vec2: uvs. Empty, as it is not needed in 2D. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Projects/GameEngine/include/Auris/Systems/ParticleSystem.hpp" line="53" column="1" bodyfile="Projects/GameEngine/include/Auris/Systems/ParticleSystem.hpp" bodystart="53" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_auris_1_1_particle_system_a242fa5e34c0364041c8d2dc87a8c23b2_1a242fa5e34c0364041c8d2dc87a8c23b2" prot="private" static="no" mutable="no">
+        <type>vector&lt; float &gt;</type>
+        <definition>vector&lt;float&gt; Auris::ParticleSystem::uvSize</definition>
+        <argsstring></argsstring>
+        <name>uvSize</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>A vector of float: uvSize. Empty, as it is not needed in 2D. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Projects/GameEngine/include/Auris/Systems/ParticleSystem.hpp" line="54" column="1" bodyfile="Projects/GameEngine/include/Auris/Systems/ParticleSystem.hpp" bodystart="54" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="class_auris_1_1_particle_system_a861dcdabfe81654abedac8e5bac2cb03_1a861dcdabfe81654abedac8e5bac2cb03" prot="public" static="no" mutable="no">
+        <type>float</type>
+        <definition>float Auris::ParticleSystem::timeScale</definition>
+        <argsstring></argsstring>
+        <name>timeScale</name>
+        <initializer>= 1</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>A float value: timeScale. The time scale of the particle (default is 1). </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Projects/GameEngine/include/Auris/Systems/ParticleSystem.hpp" line="74" column="1" bodyfile="Projects/GameEngine/include/Auris/Systems/ParticleSystem.hpp" bodystart="74" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_auris_1_1_particle_system_a8834c94ffd24406aa0faa7dec3ee7407_1a8834c94ffd24406aa0faa7dec3ee7407" prot="public" static="no" mutable="no">
+        <type>vec3</type>
+        <definition>vec3 Auris::ParticleSystem::acceleration</definition>
+        <argsstring></argsstring>
+        <name>acceleration</name>
+        <initializer>= vec3(0,0,0)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>A vec3 value: acceleration. The acceleration of the particle (default is vec3(0)). </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Projects/GameEngine/include/Auris/Systems/ParticleSystem.hpp" line="75" column="1" bodyfile="Projects/GameEngine/include/Auris/Systems/ParticleSystem.hpp" bodystart="75" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_auris_1_1_particle_system_a29ace4c3a64d72977a28bc0d4b45ab71_1a29ace4c3a64d72977a28bc0d4b45ab71" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int Auris::ParticleSystem::particleIndex</definition>
+        <argsstring></argsstring>
+        <name>particleIndex</name>
+        <initializer>= 0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>An int value: particleIndex. The index of the particle </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Projects/GameEngine/include/Auris/Systems/ParticleSystem.hpp" line="76" column="1" bodyfile="Projects/GameEngine/include/Auris/Systems/ParticleSystem.hpp" bodystart="76" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_auris_1_1_particle_system_a69b2c0beb11d55f53af67a8afdb5c554_1a69b2c0beb11d55f53af67a8afdb5c554" prot="public" static="no" mutable="no">
+        <type>vector&lt; vec2 &gt;</type>
+        <definition>vector&lt;vec2&gt; Auris::ParticleSystem::interpolationPoints_acceleration</definition>
+        <argsstring></argsstring>
+        <name>interpolationPoints_acceleration</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>A vector of vec2 values: interpolationPoints_acceleration. The acceleration points to interpolate between </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Projects/GameEngine/include/Auris/Systems/ParticleSystem.hpp" line="81" column="1" bodyfile="Projects/GameEngine/include/Auris/Systems/ParticleSystem.hpp" bodystart="81" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_auris_1_1_particle_system_af902ef3b0bdfb07e663ae0e7971cefac_1af902ef3b0bdfb07e663ae0e7971cefac" prot="public" static="no" mutable="no">
+        <type>vector&lt; vec2 &gt;</type>
+        <definition>vector&lt;vec2&gt; Auris::ParticleSystem::interpolationPoints_velocity</definition>
+        <argsstring></argsstring>
+        <name>interpolationPoints_velocity</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>A vector of vec2 values: interpolationPoints_velocity. The velocity points to interpolate between </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Projects/GameEngine/include/Auris/Systems/ParticleSystem.hpp" line="82" column="1" bodyfile="Projects/GameEngine/include/Auris/Systems/ParticleSystem.hpp" bodystart="82" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_auris_1_1_particle_system_accb3daadb767315a1b0688ecc4c655eb_1accb3daadb767315a1b0688ecc4c655eb" prot="public" static="no" mutable="no">
+        <type>vector&lt; vec2 &gt;</type>
+        <definition>vector&lt;vec2&gt; Auris::ParticleSystem::interpolationPoints_angularVelocity</definition>
+        <argsstring></argsstring>
+        <name>interpolationPoints_angularVelocity</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>A vector of vec2 values: interpolationPoints_angularVelocity. The angular velocity points to interpolate between </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Projects/GameEngine/include/Auris/Systems/ParticleSystem.hpp" line="83" column="1" bodyfile="Projects/GameEngine/include/Auris/Systems/ParticleSystem.hpp" bodystart="83" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_auris_1_1_particle_system_ad8c36499df4bb77aa9a12e6c1768b34d_1ad8c36499df4bb77aa9a12e6c1768b34d" prot="public" static="no" mutable="no">
+        <type>vector&lt; vec2 &gt;</type>
+        <definition>vector&lt;vec2&gt; Auris::ParticleSystem::interpolationPoints_color</definition>
+        <argsstring></argsstring>
+        <name>interpolationPoints_color</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>A vector of vec2 values: interpolationPoints_color. The color points to interpolate between </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Projects/GameEngine/include/Auris/Systems/ParticleSystem.hpp" line="84" column="1" bodyfile="Projects/GameEngine/include/Auris/Systems/ParticleSystem.hpp" bodystart="84" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_auris_1_1_particle_system_ad918a58749226268c585107f8c0b4079_1ad918a58749226268c585107f8c0b4079" prot="public" static="no" mutable="no">
+        <type>vector&lt; vec2 &gt;</type>
+        <definition>vector&lt;vec2&gt; Auris::ParticleSystem::interpolationPoints_size</definition>
+        <argsstring></argsstring>
+        <name>interpolationPoints_size</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>A vector of vec2 values: interpolationPoints_size. The size points to interpolate between </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Projects/GameEngine/include/Auris/Systems/ParticleSystem.hpp" line="85" column="1" bodyfile="Projects/GameEngine/include/Auris/Systems/ParticleSystem.hpp" bodystart="85" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_auris_1_1_particle_system_a1527299187453700ebca254c95f1b119_1a1527299187453700ebca254c95f1b119" prot="public" static="no" mutable="no">
+        <type><ref refid="class_auris_1_1_interpolation" kindref="compound">Interpolation</ref></type>
+        <definition>Interpolation Auris::ParticleSystem::interpolation_acceleration</definition>
+        <argsstring></argsstring>
+        <name>interpolation_acceleration</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>An <ref refid="class_auris_1_1_interpolation" kindref="compound">Interpolation</ref> value: interpolation_acceleration. The acceleration interpolation. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Projects/GameEngine/include/Auris/Systems/ParticleSystem.hpp" line="87" column="1" bodyfile="Projects/GameEngine/include/Auris/Systems/ParticleSystem.hpp" bodystart="87" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_auris_1_1_particle_system_a68f280a7dcab9843baa124330777e3a9_1a68f280a7dcab9843baa124330777e3a9" prot="public" static="no" mutable="no">
+        <type><ref refid="class_auris_1_1_interpolation" kindref="compound">Interpolation</ref></type>
+        <definition>Interpolation Auris::ParticleSystem::interpolation_velocity</definition>
+        <argsstring></argsstring>
+        <name>interpolation_velocity</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>An <ref refid="class_auris_1_1_interpolation" kindref="compound">Interpolation</ref> value: interpolation_velocity. The velocity interpolation. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Projects/GameEngine/include/Auris/Systems/ParticleSystem.hpp" line="88" column="1" bodyfile="Projects/GameEngine/include/Auris/Systems/ParticleSystem.hpp" bodystart="88" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_auris_1_1_particle_system_ac263b655f0e8be2e182fe9b3b54ea3ab_1ac263b655f0e8be2e182fe9b3b54ea3ab" prot="public" static="no" mutable="no">
+        <type><ref refid="class_auris_1_1_interpolation" kindref="compound">Interpolation</ref></type>
+        <definition>Interpolation Auris::ParticleSystem::interpolation_angularVelocity</definition>
+        <argsstring></argsstring>
+        <name>interpolation_angularVelocity</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>An <ref refid="class_auris_1_1_interpolation" kindref="compound">Interpolation</ref> value: interpolation_angularVelocity. The angular velocity acceleration interpolation. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Projects/GameEngine/include/Auris/Systems/ParticleSystem.hpp" line="89" column="1" bodyfile="Projects/GameEngine/include/Auris/Systems/ParticleSystem.hpp" bodystart="89" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_auris_1_1_particle_system_a8155f9adb89fdf10fb4dfaf1fed59e08_1a8155f9adb89fdf10fb4dfaf1fed59e08" prot="public" static="no" mutable="no">
+        <type><ref refid="class_auris_1_1_interpolation" kindref="compound">Interpolation</ref></type>
+        <definition>Interpolation Auris::ParticleSystem::interpolation_color</definition>
+        <argsstring></argsstring>
+        <name>interpolation_color</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>An <ref refid="class_auris_1_1_interpolation" kindref="compound">Interpolation</ref> value: interpolation_color. The color interpolation. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Projects/GameEngine/include/Auris/Systems/ParticleSystem.hpp" line="90" column="1" bodyfile="Projects/GameEngine/include/Auris/Systems/ParticleSystem.hpp" bodystart="90" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_auris_1_1_particle_system_a569937091c61617631f2e733cf72caa3_1a569937091c61617631f2e733cf72caa3" prot="public" static="no" mutable="no">
+        <type><ref refid="class_auris_1_1_interpolation" kindref="compound">Interpolation</ref></type>
+        <definition>Interpolation Auris::ParticleSystem::interpolation_size</definition>
+        <argsstring></argsstring>
+        <name>interpolation_size</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>An <ref refid="class_auris_1_1_interpolation" kindref="compound">Interpolation</ref> value: interpolation_size. The size interpolation. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Projects/GameEngine/include/Auris/Systems/ParticleSystem.hpp" line="91" column="1" bodyfile="Projects/GameEngine/include/Auris/Systems/ParticleSystem.hpp" bodystart="91" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="class_auris_1_1_particle_system_af3fb2bfb6e0e8a0394976c1bbe5349ab_1af3fb2bfb6e0e8a0394976c1bbe5349ab" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>vec4</type>
+        <definition>vec4 Auris::ParticleSystem::lerpColor</definition>
+        <argsstring>(vec4 start, vec4 end, float t)</argsstring>
+        <name>lerpColor</name>
+        <param>
+          <type>vec4</type>
+          <declname>start</declname>
+        </param>
+        <param>
+          <type>vec4</type>
+          <declname>end</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>t</declname>
+        </param>
+        <briefdescription>
+<para>A lerpColor method, taking 3 arguments. </para>        </briefdescription>
+        <detaileddescription>
+<para>Lerps from one color to the other, based on the float <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>start</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>a vec4 value, that is the start color </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>end</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>a vec4 value, that is the end color </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>t</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>a float value, that is the current lerp differentiater (between 0-1) </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>vec4, as the color between the two colors </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Projects/GameEngine/include/Auris/Systems/ParticleSystem.hpp" line="64" column="1" bodyfile="Projects/GameEngine/include/Auris/Systems/ParticleSystem.hpp" bodystart="64" bodyend="71"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_auris_1_1_particle_system_a08c95e7d1396020e7d003d1792e88dba_1a08c95e7d1396020e7d003d1792e88dba" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>Auris::ParticleSystem::ParticleSystem</definition>
+        <argsstring>()</argsstring>
+        <name>ParticleSystem</name>
+        <briefdescription>
+<para>The <ref refid="class_auris_1_1_particle_system" kindref="compound">ParticleSystem</ref> constructor. </para>        </briefdescription>
+        <detaileddescription>
+<para>Reserves space in all the arrays, and creates all the initial values <simplesect kind="see"><para><ref refid="class_auris_1_1_particle_system_a1ba4c47dde45b65221f6d7de62dd0528_1a1ba4c47dde45b65221f6d7de62dd0528" kindref="member">startup()</ref> </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Projects/GameEngine/include/Auris/Systems/ParticleSystem.hpp" line="98" column="1" bodyfile="Projects/GameEngine/include/Auris/Systems/ParticleSystem.hpp" bodystart="98" bodyend="127"/>
+      </memberdef>
+      <memberdef kind="function" id="class_auris_1_1_particle_system_a7cfd960a7b0fb5f1d5b6c7978a334325_1a7cfd960a7b0fb5f1d5b6c7978a334325" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>Auris::ParticleSystem::~ParticleSystem</definition>
+        <argsstring>()</argsstring>
+        <name>~ParticleSystem</name>
+        <briefdescription>
+<para>The <ref refid="class_auris_1_1_particle_system" kindref="compound">ParticleSystem</ref> destructor. </para>        </briefdescription>
+        <detaileddescription>
+<para>Shuts down the particle system, and deletes all the mesh and texture pointers <simplesect kind="see"><para><ref refid="class_auris_1_1_particle_system_aa8ce8db22d3bf700cb8d5e295ef83814_1aa8ce8db22d3bf700cb8d5e295ef83814" kindref="member">shutdown()</ref> </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Projects/GameEngine/include/Auris/Systems/ParticleSystem.hpp" line="134" column="1" bodyfile="Projects/GameEngine/include/Auris/Systems/ParticleSystem.hpp" bodystart="134" bodyend="138"/>
+      </memberdef>
+      <memberdef kind="function" id="class_auris_1_1_particle_system_a1ba4c47dde45b65221f6d7de62dd0528_1a1ba4c47dde45b65221f6d7de62dd0528" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void Auris::ParticleSystem::startup</definition>
+        <argsstring>(int numParticles, float particleDuration, Texture *texture=Texture::getWhiteTexture())</argsstring>
+        <name>startup</name>
+        <param>
+          <type>int</type>
+          <declname>numParticles</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>particleDuration</declname>
+        </param>
+        <param>
+          <type>Texture *</type>
+          <declname>texture</declname>
+          <defval>Texture::getWhiteTexture()</defval>
+        </param>
+        <briefdescription>
+<para>A startup method, taking 2-3 arguments. </para>        </briefdescription>
+        <detaileddescription>
+<para>Starts the particle system, and initializes all the particles to their initial position <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>numParticles</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>an int value. The number of particles in the particle system. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>particleDuration</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>a float value. Each particles duration. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>texture</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>a Texture pointer. The texture of the particle (default is a white texture). </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Projects/GameEngine/include/Auris/Systems/ParticleSystem.hpp" line="147" column="1" bodyfile="Projects/GameEngine/include/Auris/Systems/ParticleSystem.hpp" bodystart="147" bodyend="193"/>
+      </memberdef>
+      <memberdef kind="function" id="class_auris_1_1_particle_system_aa8ce8db22d3bf700cb8d5e295ef83814_1aa8ce8db22d3bf700cb8d5e295ef83814" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void Auris::ParticleSystem::shutdown</definition>
+        <argsstring>()</argsstring>
+        <name>shutdown</name>
+        <briefdescription>
+<para>A shutdown method. </para>        </briefdescription>
+        <detaileddescription>
+<para>Shuts down the particle system, meaning that it clears all the values and paremeters of each particle </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Projects/GameEngine/include/Auris/Systems/ParticleSystem.hpp" line="199" column="1" bodyfile="Projects/GameEngine/include/Auris/Systems/ParticleSystem.hpp" bodystart="199" bodyend="216"/>
+      </memberdef>
+      <memberdef kind="function" id="class_auris_1_1_particle_system_ae4fcf7b09a7f76f539e879c53dad562d_1ae4fcf7b09a7f76f539e879c53dad562d" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void Auris::ParticleSystem::emit</definition>
+        <argsstring>(vec3 position, vec3 velocity, float angle, float angularRotation, vec4 color, float size, vec4 endColor, float endSize)</argsstring>
+        <name>emit</name>
+        <param>
+          <type>vec3</type>
+          <declname>position</declname>
+        </param>
+        <param>
+          <type>vec3</type>
+          <declname>velocity</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>angle</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>angularRotation</declname>
+        </param>
+        <param>
+          <type>vec4</type>
+          <declname>color</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>size</declname>
+        </param>
+        <param>
+          <type>vec4</type>
+          <declname>endColor</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>endSize</declname>
+        </param>
+        <briefdescription>
+<para>An emit method, taking 8 arguments. </para>        </briefdescription>
+        <detaileddescription>
+<para>Emits one particle with the properties inputted, has to be called multiple times, if more than one particle is neeeded. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>position</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>a vec3 value. The position of the particle. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>velocity</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>a vec3 value. The velocity of the particle. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>angle</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>a float value. The angle of the particle. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>angularRotation</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>a float value. The angular rotation of the particle. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>color</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>a vec4 value. The start color of the particle. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>size</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>a float value. The start size of the particle. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>endColor</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>a vec4 value. The end color of the particle. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>endSize</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>a float value. The end size of the particle </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Projects/GameEngine/include/Auris/Systems/ParticleSystem.hpp" line="231" column="1" bodyfile="Projects/GameEngine/include/Auris/Systems/ParticleSystem.hpp" bodystart="231" bodyend="245"/>
+      </memberdef>
+      <memberdef kind="function" id="class_auris_1_1_particle_system_a99219cac5f067fb6a7d6bba434b1703f_1a99219cac5f067fb6a7d6bba434b1703f" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void Auris::ParticleSystem::update</definition>
+        <argsstring>(float dt)</argsstring>
+        <name>update</name>
+        <param>
+          <type>float</type>
+          <declname>dt</declname>
+        </param>
+        <briefdescription>
+<para>An update method, taking 1 argument. </para>        </briefdescription>
+        <detaileddescription>
+<para>Updates all particles in the particle system, called once per frame. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>dt</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>a float value. The delta time in seconds. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="see"><para><ref refid="class_auris_1_1_particle_system_af4860e3dac197f53fdb835d8c60b4321_1af4860e3dac197f53fdb835d8c60b4321" kindref="member">draw()</ref> </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Projects/GameEngine/include/Auris/Systems/ParticleSystem.hpp" line="253" column="1" bodyfile="Projects/GameEngine/include/Auris/Systems/ParticleSystem.hpp" bodystart="253" bodyend="283"/>
+      </memberdef>
+      <memberdef kind="function" id="class_auris_1_1_particle_system_af4860e3dac197f53fdb835d8c60b4321_1af4860e3dac197f53fdb835d8c60b4321" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void Auris::ParticleSystem::draw</definition>
+        <argsstring>()</argsstring>
+        <name>draw</name>
+        <briefdescription>
+<para>A draw method. </para>        </briefdescription>
+        <detaileddescription>
+<para>Draws all particles in the particle system, called once per frame, after update <simplesect kind="see"><para><ref refid="class_auris_1_1_particle_system_a99219cac5f067fb6a7d6bba434b1703f_1a99219cac5f067fb6a7d6bba434b1703f" kindref="member">update()</ref> </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Projects/GameEngine/include/Auris/Systems/ParticleSystem.hpp" line="290" column="1" bodyfile="Projects/GameEngine/include/Auris/Systems/ParticleSystem.hpp" bodystart="290" bodyend="294"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>The <ref refid="class_auris_1_1_particle_system" kindref="compound">ParticleSystem</ref> class. </para>    </briefdescription>
+    <detaileddescription>
+<para>Handles all particles </para>    </detaileddescription>
+    <collaborationgraph>
+      <node id="186">
+        <label>std::vector&lt; vec3 &gt;</label>
+      </node>
+      <node id="187">
+        <label>std::vector&lt; float &gt;</label>
+      </node>
+      <node id="184">
+        <label>std::vector&lt; vec4 &gt;</label>
+      </node>
+      <node id="188">
+        <label>Auris::Interpolation</label>
+        <link refid="class_auris_1_1_interpolation"/>
+        <childnode refid="185" relation="usage">
+          <edgelabel>points</edgelabel>
+        </childnode>
+      </node>
+      <node id="183">
+        <label>Auris::ParticleSystem</label>
+        <link refid="class_auris_1_1_particle_system"/>
+        <childnode refid="184" relation="usage">
+          <edgelabel>startColors</edgelabel>
+          <edgelabel>finalColors</edgelabel>
+          <edgelabel>endColors</edgelabel>
+        </childnode>
+        <childnode refid="185" relation="usage">
+          <edgelabel>interpolationPoints_color</edgelabel>
+          <edgelabel>interpolationPoints_angularVelocity</edgelabel>
+          <edgelabel>interpolationPoints_acceleration</edgelabel>
+          <edgelabel>interpolationPoints_size</edgelabel>
+          <edgelabel>interpolationPoints_velocity</edgelabel>
+          <edgelabel>uvs</edgelabel>
+        </childnode>
+        <childnode refid="186" relation="usage">
+          <edgelabel>velocities</edgelabel>
+          <edgelabel>finalPositions</edgelabel>
+          <edgelabel>positions</edgelabel>
+        </childnode>
+        <childnode refid="187" relation="usage">
+          <edgelabel>uvSize</edgelabel>
+          <edgelabel>angularVelocities</edgelabel>
+          <edgelabel>finalSizes</edgelabel>
+          <edgelabel>endSizes</edgelabel>
+          <edgelabel>startSizes</edgelabel>
+          <edgelabel>finalRotation</edgelabel>
+          <edgelabel>startTimes</edgelabel>
+          <edgelabel>rotations</edgelabel>
+        </childnode>
+        <childnode refid="188" relation="usage">
+          <edgelabel>interpolation_color</edgelabel>
+          <edgelabel>interpolation_velocity</edgelabel>
+          <edgelabel>interpolation_acceleration</edgelabel>
+          <edgelabel>interpolation_size</edgelabel>
+          <edgelabel>interpolation_angularVelocity</edgelabel>
+        </childnode>
+      </node>
+      <node id="185">
+        <label>std::vector&lt; vec2 &gt;</label>
+      </node>
+    </collaborationgraph>
+    <location file="Projects/GameEngine/include/Auris/Systems/ParticleSystem.hpp" line="22" column="1" bodyfile="Projects/GameEngine/include/Auris/Systems/ParticleSystem.hpp" bodystart="22" bodyend="298"/>
+    <listofallmembers>
+      <member refid="class_auris_1_1_particle_system_a8834c94ffd24406aa0faa7dec3ee7407_1a8834c94ffd24406aa0faa7dec3ee7407" prot="public" virt="non-virtual"><scope>Auris::ParticleSystem</scope><name>acceleration</name></member>
+      <member refid="class_auris_1_1_particle_system_a41970139473651d5c46eae87318958b5_1a41970139473651d5c46eae87318958b5" prot="private" virt="non-virtual"><scope>Auris::ParticleSystem</scope><name>angularVelocities</name></member>
+      <member refid="class_auris_1_1_particle_system_ad5baaa06132bb8a96588abcd4fe55c04_1ad5baaa06132bb8a96588abcd4fe55c04" prot="private" virt="non-virtual"><scope>Auris::ParticleSystem</scope><name>currentTime</name></member>
+      <member refid="class_auris_1_1_particle_system_af4860e3dac197f53fdb835d8c60b4321_1af4860e3dac197f53fdb835d8c60b4321" prot="public" virt="non-virtual"><scope>Auris::ParticleSystem</scope><name>draw</name></member>
+      <member refid="class_auris_1_1_particle_system_ae4fcf7b09a7f76f539e879c53dad562d_1ae4fcf7b09a7f76f539e879c53dad562d" prot="public" virt="non-virtual"><scope>Auris::ParticleSystem</scope><name>emit</name></member>
+      <member refid="class_auris_1_1_particle_system_ac598794b9c735bcb1de1524153c4a56d_1ac598794b9c735bcb1de1524153c4a56d" prot="private" virt="non-virtual"><scope>Auris::ParticleSystem</scope><name>endColors</name></member>
+      <member refid="class_auris_1_1_particle_system_ae68135a3faf56a015fdc569ef36cb396_1ae68135a3faf56a015fdc569ef36cb396" prot="private" virt="non-virtual"><scope>Auris::ParticleSystem</scope><name>endSizes</name></member>
+      <member refid="class_auris_1_1_particle_system_aff217c4e8f19e7c136d8bac7bea2b835_1aff217c4e8f19e7c136d8bac7bea2b835" prot="private" virt="non-virtual"><scope>Auris::ParticleSystem</scope><name>finalColors</name></member>
+      <member refid="class_auris_1_1_particle_system_a7925ae32f8ed70ab998fde4897813618_1a7925ae32f8ed70ab998fde4897813618" prot="private" virt="non-virtual"><scope>Auris::ParticleSystem</scope><name>finalPositions</name></member>
+      <member refid="class_auris_1_1_particle_system_a05dbc021200431bf2f0bd9bf79031660_1a05dbc021200431bf2f0bd9bf79031660" prot="private" virt="non-virtual"><scope>Auris::ParticleSystem</scope><name>finalRotation</name></member>
+      <member refid="class_auris_1_1_particle_system_a109ff429108b817243f63e7f4452fe8e_1a109ff429108b817243f63e7f4452fe8e" prot="private" virt="non-virtual"><scope>Auris::ParticleSystem</scope><name>finalSizes</name></member>
+      <member refid="class_auris_1_1_particle_system_a1527299187453700ebca254c95f1b119_1a1527299187453700ebca254c95f1b119" prot="public" virt="non-virtual"><scope>Auris::ParticleSystem</scope><name>interpolation_acceleration</name></member>
+      <member refid="class_auris_1_1_particle_system_ac263b655f0e8be2e182fe9b3b54ea3ab_1ac263b655f0e8be2e182fe9b3b54ea3ab" prot="public" virt="non-virtual"><scope>Auris::ParticleSystem</scope><name>interpolation_angularVelocity</name></member>
+      <member refid="class_auris_1_1_particle_system_a8155f9adb89fdf10fb4dfaf1fed59e08_1a8155f9adb89fdf10fb4dfaf1fed59e08" prot="public" virt="non-virtual"><scope>Auris::ParticleSystem</scope><name>interpolation_color</name></member>
+      <member refid="class_auris_1_1_particle_system_a569937091c61617631f2e733cf72caa3_1a569937091c61617631f2e733cf72caa3" prot="public" virt="non-virtual"><scope>Auris::ParticleSystem</scope><name>interpolation_size</name></member>
+      <member refid="class_auris_1_1_particle_system_a68f280a7dcab9843baa124330777e3a9_1a68f280a7dcab9843baa124330777e3a9" prot="public" virt="non-virtual"><scope>Auris::ParticleSystem</scope><name>interpolation_velocity</name></member>
+      <member refid="class_auris_1_1_particle_system_a69b2c0beb11d55f53af67a8afdb5c554_1a69b2c0beb11d55f53af67a8afdb5c554" prot="public" virt="non-virtual"><scope>Auris::ParticleSystem</scope><name>interpolationPoints_acceleration</name></member>
+      <member refid="class_auris_1_1_particle_system_accb3daadb767315a1b0688ecc4c655eb_1accb3daadb767315a1b0688ecc4c655eb" prot="public" virt="non-virtual"><scope>Auris::ParticleSystem</scope><name>interpolationPoints_angularVelocity</name></member>
+      <member refid="class_auris_1_1_particle_system_ad8c36499df4bb77aa9a12e6c1768b34d_1ad8c36499df4bb77aa9a12e6c1768b34d" prot="public" virt="non-virtual"><scope>Auris::ParticleSystem</scope><name>interpolationPoints_color</name></member>
+      <member refid="class_auris_1_1_particle_system_ad918a58749226268c585107f8c0b4079_1ad918a58749226268c585107f8c0b4079" prot="public" virt="non-virtual"><scope>Auris::ParticleSystem</scope><name>interpolationPoints_size</name></member>
+      <member refid="class_auris_1_1_particle_system_af902ef3b0bdfb07e663ae0e7971cefac_1af902ef3b0bdfb07e663ae0e7971cefac" prot="public" virt="non-virtual"><scope>Auris::ParticleSystem</scope><name>interpolationPoints_velocity</name></member>
+      <member refid="class_auris_1_1_particle_system_af3fb2bfb6e0e8a0394976c1bbe5349ab_1af3fb2bfb6e0e8a0394976c1bbe5349ab" prot="private" virt="non-virtual"><scope>Auris::ParticleSystem</scope><name>lerpColor</name></member>
+      <member refid="class_auris_1_1_particle_system_a81a41ed315e695e7c02fbc799a806a90_1a81a41ed315e695e7c02fbc799a806a90" prot="private" virt="non-virtual"><scope>Auris::ParticleSystem</scope><name>mesh</name></member>
+      <member refid="class_auris_1_1_particle_system_a847bf70177f7886f29e1ea5db1c3b7ad_1a847bf70177f7886f29e1ea5db1c3b7ad" prot="private" virt="non-virtual"><scope>Auris::ParticleSystem</scope><name>particleDuration</name></member>
+      <member refid="class_auris_1_1_particle_system_a29ace4c3a64d72977a28bc0d4b45ab71_1a29ace4c3a64d72977a28bc0d4b45ab71" prot="public" virt="non-virtual"><scope>Auris::ParticleSystem</scope><name>particleIndex</name></member>
+      <member refid="class_auris_1_1_particle_system_a08c95e7d1396020e7d003d1792e88dba_1a08c95e7d1396020e7d003d1792e88dba" prot="public" virt="non-virtual"><scope>Auris::ParticleSystem</scope><name>ParticleSystem</name></member>
+      <member refid="class_auris_1_1_particle_system_a7c82e0ac493d574ae975a7ae4acf3e73_1a7c82e0ac493d574ae975a7ae4acf3e73" prot="private" virt="non-virtual"><scope>Auris::ParticleSystem</scope><name>positions</name></member>
+      <member refid="class_auris_1_1_particle_system_a67428290d2fbe9f6ea6dc35800c3bb17_1a67428290d2fbe9f6ea6dc35800c3bb17" prot="private" virt="non-virtual"><scope>Auris::ParticleSystem</scope><name>rotations</name></member>
+      <member refid="class_auris_1_1_particle_system_a4074a1c6540ac434b3f16fe7d75a1d26_1a4074a1c6540ac434b3f16fe7d75a1d26" prot="private" virt="non-virtual"><scope>Auris::ParticleSystem</scope><name>shader</name></member>
+      <member refid="class_auris_1_1_particle_system_aa8ce8db22d3bf700cb8d5e295ef83814_1aa8ce8db22d3bf700cb8d5e295ef83814" prot="public" virt="non-virtual"><scope>Auris::ParticleSystem</scope><name>shutdown</name></member>
+      <member refid="class_auris_1_1_particle_system_abc9b43cb384a0029fb24840c0869f4c3_1abc9b43cb384a0029fb24840c0869f4c3" prot="private" virt="non-virtual"><scope>Auris::ParticleSystem</scope><name>startColors</name></member>
+      <member refid="class_auris_1_1_particle_system_a5b009b410f36311984c37524a21a7a32_1a5b009b410f36311984c37524a21a7a32" prot="private" virt="non-virtual"><scope>Auris::ParticleSystem</scope><name>startSizes</name></member>
+      <member refid="class_auris_1_1_particle_system_acb7cce379fdee2d5b647eeb86060fe7b_1acb7cce379fdee2d5b647eeb86060fe7b" prot="private" virt="non-virtual"><scope>Auris::ParticleSystem</scope><name>startTimes</name></member>
+      <member refid="class_auris_1_1_particle_system_a1ba4c47dde45b65221f6d7de62dd0528_1a1ba4c47dde45b65221f6d7de62dd0528" prot="public" virt="non-virtual"><scope>Auris::ParticleSystem</scope><name>startup</name></member>
+      <member refid="class_auris_1_1_particle_system_a5fdb71102e77ef964810afc41738f66b_1a5fdb71102e77ef964810afc41738f66b" prot="private" virt="non-virtual"><scope>Auris::ParticleSystem</scope><name>texture</name></member>
+      <member refid="class_auris_1_1_particle_system_a861dcdabfe81654abedac8e5bac2cb03_1a861dcdabfe81654abedac8e5bac2cb03" prot="public" virt="non-virtual"><scope>Auris::ParticleSystem</scope><name>timeScale</name></member>
+      <member refid="class_auris_1_1_particle_system_a99219cac5f067fb6a7d6bba434b1703f_1a99219cac5f067fb6a7d6bba434b1703f" prot="public" virt="non-virtual"><scope>Auris::ParticleSystem</scope><name>update</name></member>
+      <member refid="class_auris_1_1_particle_system_a5e460d7104a942ca9d8a84eb2e9e9a7b_1a5e460d7104a942ca9d8a84eb2e9e9a7b" prot="private" virt="non-virtual"><scope>Auris::ParticleSystem</scope><name>uvs</name></member>
+      <member refid="class_auris_1_1_particle_system_a242fa5e34c0364041c8d2dc87a8c23b2_1a242fa5e34c0364041c8d2dc87a8c23b2" prot="private" virt="non-virtual"><scope>Auris::ParticleSystem</scope><name>uvSize</name></member>
+      <member refid="class_auris_1_1_particle_system_a5973a04e7951938451b4c56afce56c9a_1a5973a04e7951938451b4c56afce56c9a" prot="private" virt="non-virtual"><scope>Auris::ParticleSystem</scope><name>velocities</name></member>
+      <member refid="class_auris_1_1_particle_system_a7cfd960a7b0fb5f1d5b6c7978a334325_1a7cfd960a7b0fb5f1d5b6c7978a334325" prot="public" virt="non-virtual"><scope>Auris::ParticleSystem</scope><name>~ParticleSystem</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

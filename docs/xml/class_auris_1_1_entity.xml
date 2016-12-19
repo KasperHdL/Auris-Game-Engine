@@ -1,0 +1,421 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.12">
+  <compounddef id="class_auris_1_1_entity" kind="class" language="C++" prot="public">
+    <compoundname>Auris::Entity</compoundname>
+    <derivedcompoundref refid="class_auris_1_1_light" prot="public" virt="non-virtual">Auris::Light</derivedcompoundref>
+    <derivedcompoundref refid="class_auris_1_1_physics_entity" prot="public" virt="non-virtual">Auris::PhysicsEntity</derivedcompoundref>
+    <includes refid="_entity_8hpp" local="no">Entity.hpp</includes>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="class_auris_1_1_entity_a3d1c31d342f6a5ae9ccd4f81503c7876_1a3d1c31d342f6a5ae9ccd4f81503c7876" prot="public" static="no" mutable="no">
+        <type>std::string</type>
+        <definition>std::string Auris::Entity::type</definition>
+        <argsstring></argsstring>
+        <name>type</name>
+        <initializer>= &quot;&quot;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>A string value: type. The type of the entity. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Projects/GameEngine/include/Auris/Entity.hpp" line="18" column="1" bodyfile="Projects/GameEngine/include/Auris/Entity.hpp" bodystart="18" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_auris_1_1_entity_ad87e74abaab08d178904f82aa13c866c_1ad87e74abaab08d178904f82aa13c866c" prot="public" static="no" mutable="no">
+        <type>std::string</type>
+        <definition>std::string Auris::Entity::name</definition>
+        <argsstring></argsstring>
+        <name>name</name>
+        <initializer>= &quot;&quot;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>A string value: name. The name of the entity. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Projects/GameEngine/include/Auris/Entity.hpp" line="19" column="1" bodyfile="Projects/GameEngine/include/Auris/Entity.hpp" bodystart="19" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_auris_1_1_entity_afec0c65e0063778ee9888e8747213504_1afec0c65e0063778ee9888e8747213504" prot="public" static="no" mutable="no">
+        <type><ref refid="class_auris_1_1_entity" kindref="compound">Entity</ref> *</type>
+        <definition>Entity* Auris::Entity::parent</definition>
+        <argsstring></argsstring>
+        <name>parent</name>
+        <initializer>= nullptr</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>An <ref refid="class_auris_1_1_entity" kindref="compound">Entity</ref> pointer: parent. An pointer to the parent entity of this entity. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Projects/GameEngine/include/Auris/Entity.hpp" line="20" column="1" bodyfile="Projects/GameEngine/include/Auris/Entity.hpp" bodystart="20" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_auris_1_1_entity_a5987efbb9fc7b0b8a986454424a0e003_1a5987efbb9fc7b0b8a986454424a0e003" prot="public" static="no" mutable="no">
+        <type>std::vector&lt; <ref refid="class_auris_1_1_entity" kindref="compound">Entity</ref> * &gt;</type>
+        <definition>std::vector&lt;Entity*&gt; Auris::Entity::children</definition>
+        <argsstring></argsstring>
+        <name>children</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>A vector of <ref refid="class_auris_1_1_entity" kindref="compound">Entity</ref> pointer: childen. A pointer to the parent entity of this entity. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Projects/GameEngine/include/Auris/Entity.hpp" line="21" column="1" bodyfile="Projects/GameEngine/include/Auris/Entity.hpp" bodystart="21" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_auris_1_1_entity_a1c0579dbb2753589668621bd3e3c187b_1a1c0579dbb2753589668621bd3e3c187b" prot="public" static="no" mutable="no">
+        <type><ref refid="class_auris_1_1_transform" kindref="compound">Transform</ref> *</type>
+        <definition>Transform* Auris::Entity::transform</definition>
+        <argsstring></argsstring>
+        <name>transform</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>A <ref refid="class_auris_1_1_transform" kindref="compound">Transform</ref> pointer: transform. An instance of the transform. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Projects/GameEngine/include/Auris/Entity.hpp" line="22" column="1" bodyfile="Projects/GameEngine/include/Auris/Entity.hpp" bodystart="22" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_auris_1_1_entity_a7164735eefd40272dae8ebe5d929fcdc_1a7164735eefd40272dae8ebe5d929fcdc" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>Auris::Entity::Entity</definition>
+        <argsstring>()</argsstring>
+        <name>Entity</name>
+        <briefdescription>
+<para>The entity contructor. </para>        </briefdescription>
+        <detaileddescription>
+<para>Declares a new <ref refid="class_auris_1_1_transform" kindref="compound">Transform</ref>. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Projects/GameEngine/include/Auris/Entity.hpp" line="28" column="1" bodyfile="Projects/GameEngine/include/Auris/Entity.hpp" bodystart="28" bodyend="30"/>
+      </memberdef>
+      <memberdef kind="function" id="class_auris_1_1_entity_a242caae0bcc5ef026a11d058a524e0fc_1a242caae0bcc5ef026a11d058a524e0fc" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>Auris::Entity::~Entity</definition>
+        <argsstring>()</argsstring>
+        <name>~Entity</name>
+        <briefdescription>
+<para>The entity destructor. </para>        </briefdescription>
+        <detaileddescription>
+<para>Deletes the <ref refid="class_auris_1_1_transform" kindref="compound">Transform</ref> pointer. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Projects/GameEngine/include/Auris/Entity.hpp" line="36" column="1" bodyfile="Projects/GameEngine/include/Auris/Entity.hpp" bodystart="36" bodyend="38"/>
+      </memberdef>
+      <memberdef kind="function" id="class_auris_1_1_entity_af8bfc68ec6368c9468484410ca919602_1af8bfc68ec6368c9468484410ca919602" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void Auris::Entity::setParent</definition>
+        <argsstring>(Entity *parent)</argsstring>
+        <name>setParent</name>
+        <param>
+          <type><ref refid="class_auris_1_1_entity" kindref="compound">Entity</ref> *</type>
+          <declname>parent</declname>
+        </param>
+        <briefdescription>
+<para>Sets the parent of this entity. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>parent</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>an <ref refid="class_auris_1_1_entity" kindref="compound">Entity</ref> pointer. The parent to set. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Projects/GameEngine/include/Auris/Entity.hpp" line="44" column="1" bodyfile="Projects/GameEngine/include/Auris/Entity.hpp" bodystart="44" bodyend="46"/>
+      </memberdef>
+      <memberdef kind="function" id="class_auris_1_1_entity_a3b4c091e55b92a0b2950d35a3dcf60fd_1a3b4c091e55b92a0b2950d35a3dcf60fd" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void Auris::Entity::addChild</definition>
+        <argsstring>(Entity *child)</argsstring>
+        <name>addChild</name>
+        <param>
+          <type><ref refid="class_auris_1_1_entity" kindref="compound">Entity</ref> *</type>
+          <declname>child</declname>
+        </param>
+        <briefdescription>
+<para>Adds a child to this entity. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>child</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>an <ref refid="class_auris_1_1_entity" kindref="compound">Entity</ref> pointer. The child to add. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Projects/GameEngine/include/Auris/Entity.hpp" line="52" column="1" bodyfile="Projects/GameEngine/include/Auris/Entity.hpp" bodystart="52" bodyend="55"/>
+      </memberdef>
+      <memberdef kind="function" id="class_auris_1_1_entity_a60becb4bfcc5e2df9954a0487209195b_1a60becb4bfcc5e2df9954a0487209195b" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="class_auris_1_1_entity" kindref="compound">Entity</ref> *</type>
+        <definition>Entity* Auris::Entity::getParent</definition>
+        <argsstring>()</argsstring>
+        <name>getParent</name>
+        <briefdescription>
+<para>Get the parent of this entity. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>parent, that is the parent of this entity. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Projects/GameEngine/include/Auris/Entity.hpp" line="61" column="1" bodyfile="Projects/GameEngine/include/Auris/Entity.hpp" bodystart="61" bodyend="63"/>
+      </memberdef>
+      <memberdef kind="function" id="class_auris_1_1_entity_a64856847ad473d4fc07f7842dcea5571_1a64856847ad473d4fc07f7842dcea5571" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="class_auris_1_1_entity" kindref="compound">Entity</ref> *</type>
+        <definition>Entity* Auris::Entity::getChildByType</definition>
+        <argsstring>(std::string type)</argsstring>
+        <name>getChildByType</name>
+        <param>
+          <type>std::string</type>
+          <declname>type</declname>
+        </param>
+        <briefdescription>
+<para>Get a child of this entity by type. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>type</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>a string value, that is the type of child. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para><ref refid="class_auris_1_1_entity" kindref="compound">Entity</ref> pointer. The first child of this entity that matches the string parameter. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Projects/GameEngine/include/Auris/Entity.hpp" line="70" column="1" bodyfile="Projects/GameEngine/include/Auris/Entity.hpp" bodystart="70" bodyend="75"/>
+      </memberdef>
+      <memberdef kind="function" id="class_auris_1_1_entity_a7a93ca71ac6ba155796408363a198518_1a7a93ca71ac6ba155796408363a198518" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="class_auris_1_1_entity" kindref="compound">Entity</ref> *</type>
+        <definition>Entity* Auris::Entity::getChildByName</definition>
+        <argsstring>(std::string name)</argsstring>
+        <name>getChildByName</name>
+        <param>
+          <type>std::string</type>
+          <declname>name</declname>
+        </param>
+        <briefdescription>
+<para>Get a child of this entity by type. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>name</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>a string value, that is the name of the child. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para><ref refid="class_auris_1_1_entity" kindref="compound">Entity</ref> pointer. The child of this entity that matches the string parameter. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Projects/GameEngine/include/Auris/Entity.hpp" line="82" column="1" bodyfile="Projects/GameEngine/include/Auris/Entity.hpp" bodystart="82" bodyend="87"/>
+      </memberdef>
+      <memberdef kind="function" id="class_auris_1_1_entity_a5dd3f0c8b0c20b776989169061f4c39a_1a5dd3f0c8b0c20b776989169061f4c39a" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type>void</type>
+        <definition>virtual void Auris::Entity::updateTransform</definition>
+        <argsstring>()</argsstring>
+        <name>updateTransform</name>
+        <reimplementedby refid="class_auris_1_1_physics_entity_a4e4cd72f2cee82f8b108b845f202b311_1a4e4cd72f2cee82f8b108b845f202b311">updateTransform</reimplementedby>
+        <briefdescription>
+<para>The scriptable function updateTransform. </para>        </briefdescription>
+        <detaileddescription>
+<para>Updates the entities transform according to the physics body. Should not be used by the game programmer. Called every frame. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Projects/GameEngine/include/Auris/Entity.hpp" line="96" column="1" bodyfile="Projects/GameEngine/include/Auris/Entity.hpp" bodystart="96" bodyend="96"/>
+      </memberdef>
+      <memberdef kind="function" id="class_auris_1_1_entity_ab7373d13451309a5994a3737140797a4_1ab7373d13451309a5994a3737140797a4" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type>void</type>
+        <definition>virtual void Auris::Entity::init</definition>
+        <argsstring>()</argsstring>
+        <name>init</name>
+        <briefdescription>
+<para>The scriptable function init. </para>        </briefdescription>
+        <detaileddescription>
+<para>Used by the game programmer to add initial functionality to the entity. Called upon initialization. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Projects/GameEngine/include/Auris/Entity.hpp" line="103" column="1" bodyfile="Projects/GameEngine/include/Auris/Entity.hpp" bodystart="103" bodyend="103"/>
+      </memberdef>
+      <memberdef kind="function" id="class_auris_1_1_entity_aedf6a4670c5cb9e6efc5fbec2be40281_1aedf6a4670c5cb9e6efc5fbec2be40281" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type>void</type>
+        <definition>virtual void Auris::Entity::start</definition>
+        <argsstring>()</argsstring>
+        <name>start</name>
+        <briefdescription>
+<para>The scriptable function start. </para>        </briefdescription>
+        <detaileddescription>
+<para>Used by the game programmer to add start functionality to the entity. Called just before first update. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Projects/GameEngine/include/Auris/Entity.hpp" line="110" column="1" bodyfile="Projects/GameEngine/include/Auris/Entity.hpp" bodystart="110" bodyend="110"/>
+      </memberdef>
+      <memberdef kind="function" id="class_auris_1_1_entity_a82768db86a5efc62f99e20e15d6bfe97_1a82768db86a5efc62f99e20e15d6bfe97" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type>void</type>
+        <definition>virtual void Auris::Entity::update</definition>
+        <argsstring>(float deltaTime)</argsstring>
+        <name>update</name>
+        <reimplementedby refid="class_auris_1_1_light_a1c824a51fbcb0a6c59f87172ee5fa705_1a1c824a51fbcb0a6c59f87172ee5fa705">update</reimplementedby>
+        <param>
+          <type>float</type>
+          <declname>deltaTime</declname>
+        </param>
+        <briefdescription>
+<para>The scriptable function update, taking 1 argument. </para>        </briefdescription>
+        <detaileddescription>
+<para>Used by the game programmer to add update functionality to the entity. Called every frame. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>deltaTime</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>a float value. The current delta time in seconds. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Projects/GameEngine/include/Auris/Entity.hpp" line="118" column="1" bodyfile="Projects/GameEngine/include/Auris/Entity.hpp" bodystart="118" bodyend="118"/>
+      </memberdef>
+      <memberdef kind="function" id="class_auris_1_1_entity_a5011b41267c7ae7dcbf260e3ffb83b3b_1a5011b41267c7ae7dcbf260e3ffb83b3b" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type>void</type>
+        <definition>virtual void Auris::Entity::onDestruction</definition>
+        <argsstring>()</argsstring>
+        <name>onDestruction</name>
+        <briefdescription>
+<para>The scriptable function onDestruction. </para>        </briefdescription>
+        <detaileddescription>
+<para>Used by the game programmer to add on destruction functionality to the entity. Called when the object is destroyed. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Projects/GameEngine/include/Auris/Entity.hpp" line="125" column="1" bodyfile="Projects/GameEngine/include/Auris/Entity.hpp" bodystart="125" bodyend="125"/>
+      </memberdef>
+      <memberdef kind="function" id="class_auris_1_1_entity_a880c5f29315d04c76453ab70ffe60737_1a880c5f29315d04c76453ab70ffe60737" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type>void</type>
+        <definition>Entity::debugDraw</definition>
+        <argsstring>()</argsstring>
+        <name>debugDraw</name>
+        <reimplementedby refid="class_auris_1_1_light_a59a943d8a6d7a433a942d88270cf1231_1a59a943d8a6d7a433a942d88270cf1231">debugDraw</reimplementedby>
+        <briefdescription>
+<para>The scriptable function debugDraw. </para>        </briefdescription>
+        <detaileddescription>
+<para>Used by the game programmer to add debugdraw functionality to the entity. Is called every frame, when the debug gui is open</para><para>This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts.</para><para>A debugDraw overload method. Draws sound related debug information to the screen </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Projects/GameEngine/include/Auris/Entity.hpp" line="132" column="1" bodyfile="Projects/GameEngine/include/Auris/Entity.hpp" bodystart="132" bodyend="132"/>
+      </memberdef>
+      <memberdef kind="function" id="class_auris_1_1_entity_a30ccf345f74230cb9c560f5bf4794b99_1a30ccf345f74230cb9c560f5bf4794b99" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type>void</type>
+        <definition>Entity::inspectorImGui</definition>
+        <argsstring>()</argsstring>
+        <name>inspectorImGui</name>
+        <reimplementedby refid="class_auris_1_1_light_a55577c72600726fd5695ed59e85ef3e9_1a55577c72600726fd5695ed59e85ef3e9">inspectorImGui</reimplementedby>
+        <reimplementedby refid="class_auris_1_1_physics_entity_a3f554aeefdd19e1b985110d6003d18e2_1a3f554aeefdd19e1b985110d6003d18e2">inspectorImGui</reimplementedby>
+        <briefdescription>
+<para>The scriptable function inspectorImGui. </para>        </briefdescription>
+        <detaileddescription>
+<para>Used by the game programmer to add inspector GUI functionality to the entity. Is called every frame, when the inspector gui is open The game programmer can call <ref refid="class_auris_1_1_entity_a30ccf345f74230cb9c560f5bf4794b99_1a30ccf345f74230cb9c560f5bf4794b99" kindref="member">Entity::inspectorImGui</ref> to get <ref refid="class_auris_1_1_transform" kindref="compound">Transform</ref>, Position, Scale and Rotation inspection</para><para>This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts.</para><para>A inspectorImGui overload method. Writes sound related debug information to the inspector </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Projects/GameEngine/include/Auris/Entity.hpp" line="140" column="1" bodyfile="Projects/GameEngine/include/Auris/Entity.hpp" bodystart="140" bodyend="158"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>The entity class. </para>    </briefdescription>
+    <detaileddescription>
+<para>Have basic information about entities, every entity except the camera inherents from this class </para>    </detaileddescription>
+    <inheritancegraph>
+      <node id="122">
+        <label>Auris::PhysicsEntity</label>
+        <link refid="class_auris_1_1_physics_entity"/>
+        <childnode refid="120" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="121">
+        <label>Auris::Light</label>
+        <link refid="class_auris_1_1_light"/>
+        <childnode refid="120" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="120">
+        <label>Auris::Entity</label>
+        <link refid="class_auris_1_1_entity"/>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="126">
+        <label>std::vector&lt; Auris::Entity *&gt;</label>
+        <childnode refid="123" relation="usage">
+          <edgelabel>elements</edgelabel>
+        </childnode>
+      </node>
+      <node id="127">
+        <label>Auris::Transform</label>
+        <link refid="class_auris_1_1_transform"/>
+        <childnode refid="128" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="125">
+        <label>std::basic_string&lt; char &gt;</label>
+      </node>
+      <node id="128">
+        <label>Auris::Nugget</label>
+        <link refid="class_auris_1_1_nugget"/>
+        <childnode refid="123" relation="usage">
+          <edgelabel>entity</edgelabel>
+        </childnode>
+      </node>
+      <node id="123">
+        <label>Auris::Entity</label>
+        <link refid="class_auris_1_1_entity"/>
+        <childnode refid="124" relation="usage">
+          <edgelabel>type</edgelabel>
+          <edgelabel>name</edgelabel>
+        </childnode>
+        <childnode refid="126" relation="usage">
+          <edgelabel>children</edgelabel>
+        </childnode>
+        <childnode refid="123" relation="usage">
+          <edgelabel>parent</edgelabel>
+        </childnode>
+        <childnode refid="127" relation="usage">
+          <edgelabel>transform</edgelabel>
+        </childnode>
+      </node>
+      <node id="124">
+        <label>std::string</label>
+        <childnode refid="125" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="Projects/GameEngine/include/Auris/Entity.hpp" line="16" column="1" bodyfile="Projects/GameEngine/include/Auris/Entity.hpp" bodystart="16" bodyend="160"/>
+    <listofallmembers>
+      <member refid="class_auris_1_1_entity_a3b4c091e55b92a0b2950d35a3dcf60fd_1a3b4c091e55b92a0b2950d35a3dcf60fd" prot="public" virt="non-virtual"><scope>Auris::Entity</scope><name>addChild</name></member>
+      <member refid="class_auris_1_1_entity_a5987efbb9fc7b0b8a986454424a0e003_1a5987efbb9fc7b0b8a986454424a0e003" prot="public" virt="non-virtual"><scope>Auris::Entity</scope><name>children</name></member>
+      <member refid="class_auris_1_1_entity_a880c5f29315d04c76453ab70ffe60737_1a880c5f29315d04c76453ab70ffe60737" prot="public" virt="virtual"><scope>Auris::Entity</scope><name>debugDraw</name></member>
+      <member refid="class_auris_1_1_entity_a7164735eefd40272dae8ebe5d929fcdc_1a7164735eefd40272dae8ebe5d929fcdc" prot="public" virt="non-virtual"><scope>Auris::Entity</scope><name>Entity</name></member>
+      <member refid="class_auris_1_1_entity_a7a93ca71ac6ba155796408363a198518_1a7a93ca71ac6ba155796408363a198518" prot="public" virt="non-virtual"><scope>Auris::Entity</scope><name>getChildByName</name></member>
+      <member refid="class_auris_1_1_entity_a64856847ad473d4fc07f7842dcea5571_1a64856847ad473d4fc07f7842dcea5571" prot="public" virt="non-virtual"><scope>Auris::Entity</scope><name>getChildByType</name></member>
+      <member refid="class_auris_1_1_entity_a60becb4bfcc5e2df9954a0487209195b_1a60becb4bfcc5e2df9954a0487209195b" prot="public" virt="non-virtual"><scope>Auris::Entity</scope><name>getParent</name></member>
+      <member refid="class_auris_1_1_entity_ab7373d13451309a5994a3737140797a4_1ab7373d13451309a5994a3737140797a4" prot="public" virt="virtual"><scope>Auris::Entity</scope><name>init</name></member>
+      <member refid="class_auris_1_1_entity_a30ccf345f74230cb9c560f5bf4794b99_1a30ccf345f74230cb9c560f5bf4794b99" prot="public" virt="virtual"><scope>Auris::Entity</scope><name>inspectorImGui</name></member>
+      <member refid="class_auris_1_1_entity_ad87e74abaab08d178904f82aa13c866c_1ad87e74abaab08d178904f82aa13c866c" prot="public" virt="non-virtual"><scope>Auris::Entity</scope><name>name</name></member>
+      <member refid="class_auris_1_1_entity_a5011b41267c7ae7dcbf260e3ffb83b3b_1a5011b41267c7ae7dcbf260e3ffb83b3b" prot="public" virt="virtual"><scope>Auris::Entity</scope><name>onDestruction</name></member>
+      <member refid="class_auris_1_1_entity_afec0c65e0063778ee9888e8747213504_1afec0c65e0063778ee9888e8747213504" prot="public" virt="non-virtual"><scope>Auris::Entity</scope><name>parent</name></member>
+      <member refid="class_auris_1_1_entity_af8bfc68ec6368c9468484410ca919602_1af8bfc68ec6368c9468484410ca919602" prot="public" virt="non-virtual"><scope>Auris::Entity</scope><name>setParent</name></member>
+      <member refid="class_auris_1_1_entity_aedf6a4670c5cb9e6efc5fbec2be40281_1aedf6a4670c5cb9e6efc5fbec2be40281" prot="public" virt="virtual"><scope>Auris::Entity</scope><name>start</name></member>
+      <member refid="class_auris_1_1_entity_a1c0579dbb2753589668621bd3e3c187b_1a1c0579dbb2753589668621bd3e3c187b" prot="public" virt="non-virtual"><scope>Auris::Entity</scope><name>transform</name></member>
+      <member refid="class_auris_1_1_entity_a3d1c31d342f6a5ae9ccd4f81503c7876_1a3d1c31d342f6a5ae9ccd4f81503c7876" prot="public" virt="non-virtual"><scope>Auris::Entity</scope><name>type</name></member>
+      <member refid="class_auris_1_1_entity_a82768db86a5efc62f99e20e15d6bfe97_1a82768db86a5efc62f99e20e15d6bfe97" prot="public" virt="virtual"><scope>Auris::Entity</scope><name>update</name></member>
+      <member refid="class_auris_1_1_entity_a5dd3f0c8b0c20b776989169061f4c39a_1a5dd3f0c8b0c20b776989169061f4c39a" prot="public" virt="virtual"><scope>Auris::Entity</scope><name>updateTransform</name></member>
+      <member refid="class_auris_1_1_entity_a242caae0bcc5ef026a11d058a524e0fc_1a242caae0bcc5ef026a11d058a524e0fc" prot="public" virt="non-virtual"><scope>Auris::Entity</scope><name>~Entity</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

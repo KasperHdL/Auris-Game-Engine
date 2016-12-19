@@ -1,0 +1,13 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.12">
+  <compounddef id="dir_25df0ae62c74710d906db1eaa22d6bf3" kind="dir">
+    <compoundname>Projects/GameEngine/Auris/src/Auris/Systems</compoundname>
+    <innerfile refid="_input_8cpp">Input.cpp</innerfile>
+    <innerfile refid="_render_system_8cpp">RenderSystem.cpp</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="Projects/GameEngine/Auris/src/Auris/Systems/"/>
+  </compounddef>
+</doxygen>

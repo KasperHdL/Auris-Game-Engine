@@ -1,0 +1,587 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.12">
+  <compounddef id="class_auris_1_1_transform" kind="class" language="C++" prot="public">
+    <compoundname>Auris::Transform</compoundname>
+    <basecompoundref refid="class_auris_1_1_nugget" prot="public" virt="non-virtual">Auris::Nugget</basecompoundref>
+    <includes refid="_transform_8hpp" local="no">Transform.hpp</includes>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="class_auris_1_1_transform_af1ea5e2815d6bad804563c73d4b38562_1af1ea5e2815d6bad804563c73d4b38562" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool Auris::Transform::dirty</definition>
+        <argsstring></argsstring>
+        <name>dirty</name>
+        <initializer>= true</initializer>
+        <briefdescription>
+<para>a bool value: dirty. whether or not it will recalculate global-local transforms when getLocal or getGlobal is called </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Projects/GameEngine/include/Auris/Entities/Nuggets/Transform.hpp" line="197" column="1" bodyfile="Projects/GameEngine/include/Auris/Entities/Nuggets/Transform.hpp" bodystart="197" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_auris_1_1_transform_a6184bd4398d0c901af426a4e7093f91b_1a6184bd4398d0c901af426a4e7093f91b" prot="private" static="no" mutable="no">
+        <type>vec3</type>
+        <definition>vec3 Auris::Transform::position</definition>
+        <argsstring></argsstring>
+        <name>position</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>A vec3 value: position. The position of the transform. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Projects/GameEngine/include/Auris/Entities/Nuggets/Transform.hpp" line="199" column="1" bodyfile="Projects/GameEngine/include/Auris/Entities/Nuggets/Transform.hpp" bodystart="199" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_auris_1_1_transform_a3520d5ee263cb3082a99625437fa252f_1a3520d5ee263cb3082a99625437fa252f" prot="private" static="no" mutable="no">
+        <type>vec2</type>
+        <definition>vec2 Auris::Transform::scale</definition>
+        <argsstring></argsstring>
+        <name>scale</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>A vec2 value: scale. The scale of the transform. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Projects/GameEngine/include/Auris/Entities/Nuggets/Transform.hpp" line="200" column="1" bodyfile="Projects/GameEngine/include/Auris/Entities/Nuggets/Transform.hpp" bodystart="200" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_auris_1_1_transform_af92006823e5d417afabc2a6c736062ac_1af92006823e5d417afabc2a6c736062ac" prot="private" static="no" mutable="no">
+        <type>float</type>
+        <definition>float Auris::Transform::rotation</definition>
+        <argsstring></argsstring>
+        <name>rotation</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>A float value: rotation. The rotation of the transform. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Projects/GameEngine/include/Auris/Entities/Nuggets/Transform.hpp" line="201" column="1" bodyfile="Projects/GameEngine/include/Auris/Entities/Nuggets/Transform.hpp" bodystart="201" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_auris_1_1_transform_a32b9e8ff70cf19cf65029b240baa2771_1a32b9e8ff70cf19cf65029b240baa2771" prot="private" static="no" mutable="no">
+        <type>mat4</type>
+        <definition>mat4 Auris::Transform::localTransform</definition>
+        <argsstring></argsstring>
+        <name>localTransform</name>
+        <briefdescription>
+<para>A mat4 value localTransform, for optimization caching. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Projects/GameEngine/include/Auris/Entities/Nuggets/Transform.hpp" line="203" column="1" bodyfile="Projects/GameEngine/include/Auris/Entities/Nuggets/Transform.hpp" bodystart="203" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_auris_1_1_transform_a41303baa3af436b3283f3c636cc21f0b_1a41303baa3af436b3283f3c636cc21f0b" prot="private" static="no" mutable="no">
+        <type>vec3</type>
+        <definition>vec3 Auris::Transform::lastOffset</definition>
+        <argsstring></argsstring>
+        <name>lastOffset</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Projects/GameEngine/include/Auris/Entities/Nuggets/Transform.hpp" line="204" column="1" bodyfile="Projects/GameEngine/include/Auris/Entities/Nuggets/Transform.hpp" bodystart="204" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_auris_1_1_transform_ad90a1b7dfc003b686f1570ebfae0a6e8_1ad90a1b7dfc003b686f1570ebfae0a6e8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>vec3</type>
+        <definition>glm::vec3 Auris::Transform::getGlobalPosition</definition>
+        <argsstring>()</argsstring>
+        <name>getGlobalPosition</name>
+        <briefdescription>
+<para>A getGlobalPosition method. </para>        </briefdescription>
+        <detaileddescription>
+<para>Gets the global position of the transform, reduce the amount of getGlobalPosition calls, since it will traverse the hierarchy and get matrix transforms for parent recursively <simplesect kind="return"><para>vec3, that is the position of the global transform </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Projects/GameEngine/include/Auris/Entities/Nuggets/Transform.hpp" line="25" column="1" bodyfile="Projects/GameEngine/Auris/src/Auris/Entities/Nuggets/Transform.cpp" bodystart="27" bodyend="32"/>
+      </memberdef>
+      <memberdef kind="function" id="class_auris_1_1_transform_ab83f0a40c1e123c7491d668039d75099_1ab83f0a40c1e123c7491d668039d75099" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>vec2</type>
+        <definition>vec2 Auris::Transform::getPosition</definition>
+        <argsstring>()</argsstring>
+        <name>getPosition</name>
+        <briefdescription>
+<para>Getter for position. </para>        </briefdescription>
+        <detaileddescription>
+<para>Get the local position as a vector2 <simplesect kind="return"><para>vec2, position </para></simplesect>
+<simplesect kind="see"><para><ref refid="class_auris_1_1_transform_ad90a1b7dfc003b686f1570ebfae0a6e8_1ad90a1b7dfc003b686f1570ebfae0a6e8" kindref="member">getGlobalPosition()</ref> </para></simplesect>
+<simplesect kind="see"><para><ref refid="class_auris_1_1_transform_a956da9550bb39eba038d9a313bd06abb_1a956da9550bb39eba038d9a313bd06abb" kindref="member">getPositionVec3()</ref> </para></simplesect>
+<simplesect kind="see"><para><ref refid="class_auris_1_1_transform_ae3431c39df7cb9fcd828ace5305eb196_1ae3431c39df7cb9fcd828ace5305eb196" kindref="member">getZ()</ref> </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Projects/GameEngine/include/Auris/Entities/Nuggets/Transform.hpp" line="35" column="1" bodyfile="Projects/GameEngine/include/Auris/Entities/Nuggets/Transform.hpp" bodystart="35" bodyend="35"/>
+      </memberdef>
+      <memberdef kind="function" id="class_auris_1_1_transform_a956da9550bb39eba038d9a313bd06abb_1a956da9550bb39eba038d9a313bd06abb" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>vec3</type>
+        <definition>vec3 Auris::Transform::getPositionVec3</definition>
+        <argsstring>()</argsstring>
+        <name>getPositionVec3</name>
+        <briefdescription>
+<para>Getter for position as a vector3. </para>        </briefdescription>
+        <detaileddescription>
+<para>Get the position as a vector3 <simplesect kind="return"><para>vec3, position </para></simplesect>
+<simplesect kind="see"><para><ref refid="class_auris_1_1_transform_ad90a1b7dfc003b686f1570ebfae0a6e8_1ad90a1b7dfc003b686f1570ebfae0a6e8" kindref="member">getGlobalPosition()</ref> </para></simplesect>
+<simplesect kind="see"><para><ref refid="class_auris_1_1_transform_ab83f0a40c1e123c7491d668039d75099_1ab83f0a40c1e123c7491d668039d75099" kindref="member">getPosition()</ref> </para></simplesect>
+<simplesect kind="see"><para><ref refid="class_auris_1_1_transform_ae3431c39df7cb9fcd828ace5305eb196_1ae3431c39df7cb9fcd828ace5305eb196" kindref="member">getZ()</ref> </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Projects/GameEngine/include/Auris/Entities/Nuggets/Transform.hpp" line="45" column="1" bodyfile="Projects/GameEngine/include/Auris/Entities/Nuggets/Transform.hpp" bodystart="45" bodyend="45"/>
+      </memberdef>
+      <memberdef kind="function" id="class_auris_1_1_transform_ae3431c39df7cb9fcd828ace5305eb196_1ae3431c39df7cb9fcd828ace5305eb196" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>float</type>
+        <definition>float Auris::Transform::getZ</definition>
+        <argsstring>()</argsstring>
+        <name>getZ</name>
+        <briefdescription>
+<para>Getter for Z of the position. </para>        </briefdescription>
+        <detaileddescription>
+<para>Get the z position as a float <simplesect kind="return"><para>float, z of the position </para></simplesect>
+<simplesect kind="see"><para><ref refid="class_auris_1_1_transform_ab83f0a40c1e123c7491d668039d75099_1ab83f0a40c1e123c7491d668039d75099" kindref="member">getPosition()</ref> </para></simplesect>
+<simplesect kind="see"><para><ref refid="class_auris_1_1_transform_a956da9550bb39eba038d9a313bd06abb_1a956da9550bb39eba038d9a313bd06abb" kindref="member">getPositionVec3()</ref> </para></simplesect>
+<simplesect kind="see"><para><ref refid="class_auris_1_1_transform_ad90a1b7dfc003b686f1570ebfae0a6e8_1ad90a1b7dfc003b686f1570ebfae0a6e8" kindref="member">getGlobalPosition()</ref> </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Projects/GameEngine/include/Auris/Entities/Nuggets/Transform.hpp" line="55" column="1" bodyfile="Projects/GameEngine/include/Auris/Entities/Nuggets/Transform.hpp" bodystart="55" bodyend="55"/>
+      </memberdef>
+      <memberdef kind="function" id="class_auris_1_1_transform_aef846b158dca091db191885972850448_1aef846b158dca091db191885972850448" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>Auris::Transform::addToPosition</definition>
+        <argsstring>(vec2 value)</argsstring>
+        <name>addToPosition</name>
+        <param>
+          <type>vec2</type>
+          <declname>value</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts.</para><para>Add the value to the position <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>a</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>vec3 value, the amount to be added to the position </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Projects/GameEngine/include/Auris/Entities/Nuggets/Transform.hpp" line="63" column="1" bodyfile="Projects/GameEngine/include/Auris/Entities/Nuggets/Transform.hpp" bodystart="63" bodyend="63"/>
+      </memberdef>
+      <memberdef kind="function" id="class_auris_1_1_transform_a64f7d06f0650a44479e2f370ed532f23_1a64f7d06f0650a44479e2f370ed532f23" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>Auris::Transform::addToPosition</definition>
+        <argsstring>(vec3 value)</argsstring>
+        <name>addToPosition</name>
+        <param>
+          <type>vec3</type>
+          <declname>value</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts.</para><para>Add the value to the position <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>a</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>vec2 value, the amount to be added to the position </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Projects/GameEngine/include/Auris/Entities/Nuggets/Transform.hpp" line="71" column="1" bodyfile="Projects/GameEngine/include/Auris/Entities/Nuggets/Transform.hpp" bodystart="71" bodyend="74"/>
+      </memberdef>
+      <memberdef kind="function" id="class_auris_1_1_transform_a5b53f8e89541daaade4923cc9b91d0cd_1a5b53f8e89541daaade4923cc9b91d0cd" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void Auris::Transform::setPosition</definition>
+        <argsstring>(vec2 value)</argsstring>
+        <name>setPosition</name>
+        <param>
+          <type>vec2</type>
+          <declname>value</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Projects/GameEngine/include/Auris/Entities/Nuggets/Transform.hpp" line="82" column="1" bodyfile="Projects/GameEngine/include/Auris/Entities/Nuggets/Transform.hpp" bodystart="82" bodyend="82"/>
+      </memberdef>
+      <memberdef kind="function" id="class_auris_1_1_transform_ad432898272377ba217dd21e14cf20463_1ad432898272377ba217dd21e14cf20463" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>Auris::Transform::setPosition</definition>
+        <argsstring>(vec3 value)</argsstring>
+        <name>setPosition</name>
+        <param>
+          <type>vec3</type>
+          <declname>value</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts.</para><para>Set the position with a vec2 value <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>a</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>vec2 value, the new position (the z value if set will remain the same)</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts.</para><para>Set the position with a vec3 value <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>a</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>vec3 value, the new position </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Projects/GameEngine/include/Auris/Entities/Nuggets/Transform.hpp" line="90" column="1" bodyfile="Projects/GameEngine/include/Auris/Entities/Nuggets/Transform.hpp" bodystart="90" bodyend="93"/>
+      </memberdef>
+      <memberdef kind="function" id="class_auris_1_1_transform_af41b59913ff2c8c989e9fd7be02c80e5_1af41b59913ff2c8c989e9fd7be02c80e5" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void Auris::Transform::addToScale</definition>
+        <argsstring>(vec2 value)</argsstring>
+        <name>addToScale</name>
+        <param>
+          <type>vec2</type>
+          <declname>value</declname>
+        </param>
+        <briefdescription>
+<para>add to scale </para>        </briefdescription>
+        <detaileddescription>
+<para>add an vec2 to the scale <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>a</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>vec2 value, the amount to add to scale </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="see"><para><ref refid="class_auris_1_1_transform_a70dd0ef78e9e168173dbbcb752939105_1a70dd0ef78e9e168173dbbcb752939105" kindref="member">setScale(vec2 value)</ref> </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Projects/GameEngine/include/Auris/Entities/Nuggets/Transform.hpp" line="101" column="1" bodyfile="Projects/GameEngine/include/Auris/Entities/Nuggets/Transform.hpp" bodystart="101" bodyend="104"/>
+      </memberdef>
+      <memberdef kind="function" id="class_auris_1_1_transform_a70dd0ef78e9e168173dbbcb752939105_1a70dd0ef78e9e168173dbbcb752939105" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>Auris::Transform::setScale</definition>
+        <argsstring>(vec2 value)</argsstring>
+        <name>setScale</name>
+        <param>
+          <type>vec2</type>
+          <declname>value</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts.</para><para>set scale to the given value in both x and y <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>a</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>float value, the value to set scale in both axis </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Projects/GameEngine/include/Auris/Entities/Nuggets/Transform.hpp" line="113" column="1" bodyfile="Projects/GameEngine/include/Auris/Entities/Nuggets/Transform.hpp" bodystart="113" bodyend="116"/>
+      </memberdef>
+      <memberdef kind="function" id="class_auris_1_1_transform_af66bf1e011435be50a2321764b617616_1af66bf1e011435be50a2321764b617616" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>Auris::Transform::setScale</definition>
+        <argsstring>(float value)</argsstring>
+        <name>setScale</name>
+        <param>
+          <type>float</type>
+          <declname>value</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts.</para><para>set scale to the given value <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>a</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>vec2 value, the value to set scale </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="see"><para><ref refid="class_auris_1_1_transform_af41b59913ff2c8c989e9fd7be02c80e5_1af41b59913ff2c8c989e9fd7be02c80e5" kindref="member">addToScale(vec2 value)</ref> </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Projects/GameEngine/include/Auris/Entities/Nuggets/Transform.hpp" line="124" column="1" bodyfile="Projects/GameEngine/include/Auris/Entities/Nuggets/Transform.hpp" bodystart="124" bodyend="127"/>
+      </memberdef>
+      <memberdef kind="function" id="class_auris_1_1_transform_a4d4308b3f4bd6b1a8a8bcdaff58d12f3_1a4d4308b3f4bd6b1a8a8bcdaff58d12f3" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>vec2</type>
+        <definition>vec2 Auris::Transform::getScale</definition>
+        <argsstring>()</argsstring>
+        <name>getScale</name>
+        <briefdescription>
+<para>Getter for scale. </para>        </briefdescription>
+        <detaileddescription>
+<para>get scale <simplesect kind="return"><para>a vec2 value, the scale </para></simplesect>
+<simplesect kind="see"><para><ref refid="class_auris_1_1_transform_a70dd0ef78e9e168173dbbcb752939105_1a70dd0ef78e9e168173dbbcb752939105" kindref="member">setScale(vec2 value)</ref> </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Projects/GameEngine/include/Auris/Entities/Nuggets/Transform.hpp" line="135" column="1" bodyfile="Projects/GameEngine/include/Auris/Entities/Nuggets/Transform.hpp" bodystart="135" bodyend="135"/>
+      </memberdef>
+      <memberdef kind="function" id="class_auris_1_1_transform_a23daf4d628ebc05618e00ae9dd257cbe_1a23daf4d628ebc05618e00ae9dd257cbe" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void Auris::Transform::addToRotation</definition>
+        <argsstring>(float value)</argsstring>
+        <name>addToRotation</name>
+        <param>
+          <type>float</type>
+          <declname>value</declname>
+        </param>
+        <briefdescription>
+<para>add to rotation </para>        </briefdescription>
+        <detaileddescription>
+<para>add an float to the rotation <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>float</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>value, the amount to add to rotation </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="see"><para><ref refid="class_auris_1_1_transform_a419adc467c63de962b24d2cabf1a30e3_1a419adc467c63de962b24d2cabf1a30e3" kindref="member">setRotation(float value)</ref> </para></simplesect>
+<simplesect kind="see"><para><ref refid="class_auris_1_1_transform_ab502fca53ae3f8186f06de4625df015b_1ab502fca53ae3f8186f06de4625df015b" kindref="member">getRotation()</ref> </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Projects/GameEngine/include/Auris/Entities/Nuggets/Transform.hpp" line="144" column="1" bodyfile="Projects/GameEngine/include/Auris/Entities/Nuggets/Transform.hpp" bodystart="144" bodyend="147"/>
+      </memberdef>
+      <memberdef kind="function" id="class_auris_1_1_transform_a419adc467c63de962b24d2cabf1a30e3_1a419adc467c63de962b24d2cabf1a30e3" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void Auris::Transform::setRotation</definition>
+        <argsstring>(float value)</argsstring>
+        <name>setRotation</name>
+        <param>
+          <type>float</type>
+          <declname>value</declname>
+        </param>
+        <briefdescription>
+<para>set rotation </para>        </briefdescription>
+        <detaileddescription>
+<para>set the rotation of the transform <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>float</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>value, the value to set rotation to </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="see"><para><ref refid="class_auris_1_1_transform_a23daf4d628ebc05618e00ae9dd257cbe_1a23daf4d628ebc05618e00ae9dd257cbe" kindref="member">addToRotation(float value)</ref> </para></simplesect>
+<simplesect kind="see"><para><ref refid="class_auris_1_1_transform_ab502fca53ae3f8186f06de4625df015b_1ab502fca53ae3f8186f06de4625df015b" kindref="member">getRotation()</ref> </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Projects/GameEngine/include/Auris/Entities/Nuggets/Transform.hpp" line="156" column="1" bodyfile="Projects/GameEngine/include/Auris/Entities/Nuggets/Transform.hpp" bodystart="156" bodyend="159"/>
+      </memberdef>
+      <memberdef kind="function" id="class_auris_1_1_transform_ab502fca53ae3f8186f06de4625df015b_1ab502fca53ae3f8186f06de4625df015b" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>float</type>
+        <definition>float Auris::Transform::getRotation</definition>
+        <argsstring>()</argsstring>
+        <name>getRotation</name>
+        <briefdescription>
+<para>get rotation </para>        </briefdescription>
+        <detaileddescription>
+<para>getter for rotation of the transform <simplesect kind="return"><para>An float value, the rotation of the transform </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Projects/GameEngine/include/Auris/Entities/Nuggets/Transform.hpp" line="166" column="1" bodyfile="Projects/GameEngine/include/Auris/Entities/Nuggets/Transform.hpp" bodystart="166" bodyend="166"/>
+      </memberdef>
+      <memberdef kind="function" id="class_auris_1_1_transform_a570777d3bdad87fedf2250980d2951f7_1a570777d3bdad87fedf2250980d2951f7" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>Auris::Transform::Transform</definition>
+        <argsstring>(Entity *entity)</argsstring>
+        <name>Transform</name>
+        <param>
+          <type><ref refid="class_auris_1_1_entity" kindref="compound">Entity</ref> *</type>
+          <declname>entity</declname>
+        </param>
+        <briefdescription>
+<para>The <ref refid="class_auris_1_1_transform" kindref="compound">Transform</ref> constructor, taking 1 argument. </para>        </briefdescription>
+        <detaileddescription>
+<para>Initializes the position, scale and rotation of the transform to default values. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>entity</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>an <ref refid="class_auris_1_1_entity" kindref="compound">Entity</ref> pointer, that is the entity the transform is associated with. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Projects/GameEngine/include/Auris/Entities/Nuggets/Transform.hpp" line="173" column="1" bodyfile="Projects/GameEngine/include/Auris/Entities/Nuggets/Transform.hpp" bodystart="173" bodyend="178"/>
+      </memberdef>
+      <memberdef kind="function" id="class_auris_1_1_transform_acb3bc690af90c65eed3b368b33764d32_1acb3bc690af90c65eed3b368b33764d32" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>mat4</type>
+        <definition>glm::mat4 Auris::Transform::getLocal</definition>
+        <argsstring>(vec3 offset=vec3(0))</argsstring>
+        <name>getLocal</name>
+        <param>
+          <type>vec3</type>
+          <declname>offset</declname>
+          <defval>vec3(0)</defval>
+        </param>
+        <briefdescription>
+<para>A getLocal method, taking 0-1 argument. </para>        </briefdescription>
+        <detaileddescription>
+<para>Gets the local matrix of the transform <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>offset</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>an vec3 value, that is the offset of the local transform (default is vec3(0)). </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>mat4, that is the matrix of the local transform </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Projects/GameEngine/include/Auris/Entities/Nuggets/Transform.hpp" line="186" column="1" bodyfile="Projects/GameEngine/Auris/src/Auris/Entities/Nuggets/Transform.cpp" bodystart="6" bodyend="17"/>
+      </memberdef>
+      <memberdef kind="function" id="class_auris_1_1_transform_a32ca00b2df1d13bbf2e6057470f9ae19_1a32ca00b2df1d13bbf2e6057470f9ae19" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>mat4</type>
+        <definition>glm::mat4 Auris::Transform::getGlobal</definition>
+        <argsstring>(vec3 offset=vec3(0))</argsstring>
+        <name>getGlobal</name>
+        <param>
+          <type>vec3</type>
+          <declname>offset</declname>
+          <defval>vec3(0)</defval>
+        </param>
+        <briefdescription>
+<para>A getGlobal method, taking 0-1 argument. </para>        </briefdescription>
+        <detaileddescription>
+<para>Gets the global matrix of the transform from the local <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>offset</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>an vec3 value, that is the offset of the global transform (default is vec3(0)). </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>mat4, that is the matrix of the global transform </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Projects/GameEngine/include/Auris/Entities/Nuggets/Transform.hpp" line="194" column="1" bodyfile="Projects/GameEngine/Auris/src/Auris/Entities/Nuggets/Transform.cpp" bodystart="19" bodyend="25"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>The <ref refid="class_auris_1_1_transform" kindref="compound">Transform</ref> class that extend the <ref refid="class_auris_1_1_nugget" kindref="compound">Nugget</ref> class. </para>    </briefdescription>
+    <detaileddescription>
+<para>Used as the transform of objects </para>    </detaileddescription>
+    <inheritancegraph>
+      <node id="253">
+        <label>Auris::Transform</label>
+        <link refid="class_auris_1_1_transform"/>
+        <childnode refid="254" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="254">
+        <label>Auris::Nugget</label>
+        <link refid="class_auris_1_1_nugget"/>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="260">
+        <label>std::vector&lt; Auris::Entity *&gt;</label>
+        <childnode refid="257" relation="usage">
+          <edgelabel>elements</edgelabel>
+        </childnode>
+      </node>
+      <node id="255">
+        <label>Auris::Transform</label>
+        <link refid="class_auris_1_1_transform"/>
+        <childnode refid="256" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="259">
+        <label>std::basic_string&lt; char &gt;</label>
+      </node>
+      <node id="256">
+        <label>Auris::Nugget</label>
+        <link refid="class_auris_1_1_nugget"/>
+        <childnode refid="257" relation="usage">
+          <edgelabel>entity</edgelabel>
+        </childnode>
+      </node>
+      <node id="257">
+        <label>Auris::Entity</label>
+        <link refid="class_auris_1_1_entity"/>
+        <childnode refid="258" relation="usage">
+          <edgelabel>type</edgelabel>
+          <edgelabel>name</edgelabel>
+        </childnode>
+        <childnode refid="260" relation="usage">
+          <edgelabel>children</edgelabel>
+        </childnode>
+        <childnode refid="257" relation="usage">
+          <edgelabel>parent</edgelabel>
+        </childnode>
+        <childnode refid="255" relation="usage">
+          <edgelabel>transform</edgelabel>
+        </childnode>
+      </node>
+      <node id="258">
+        <label>std::string</label>
+        <childnode refid="259" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="Projects/GameEngine/include/Auris/Entities/Nuggets/Transform.hpp" line="16" column="1" bodyfile="Projects/GameEngine/include/Auris/Entities/Nuggets/Transform.hpp" bodystart="16" bodyend="205"/>
+    <listofallmembers>
+      <member refid="class_auris_1_1_transform_aef846b158dca091db191885972850448_1aef846b158dca091db191885972850448" prot="public" virt="non-virtual"><scope>Auris::Transform</scope><name>addToPosition</name></member>
+      <member refid="class_auris_1_1_transform_a64f7d06f0650a44479e2f370ed532f23_1a64f7d06f0650a44479e2f370ed532f23" prot="public" virt="non-virtual"><scope>Auris::Transform</scope><name>addToPosition</name></member>
+      <member refid="class_auris_1_1_transform_a23daf4d628ebc05618e00ae9dd257cbe_1a23daf4d628ebc05618e00ae9dd257cbe" prot="public" virt="non-virtual"><scope>Auris::Transform</scope><name>addToRotation</name></member>
+      <member refid="class_auris_1_1_transform_af41b59913ff2c8c989e9fd7be02c80e5_1af41b59913ff2c8c989e9fd7be02c80e5" prot="public" virt="non-virtual"><scope>Auris::Transform</scope><name>addToScale</name></member>
+      <member refid="class_auris_1_1_transform_af1ea5e2815d6bad804563c73d4b38562_1af1ea5e2815d6bad804563c73d4b38562" prot="private" virt="non-virtual"><scope>Auris::Transform</scope><name>dirty</name></member>
+      <member refid="class_auris_1_1_nugget_ada3978459953aa06dfbf934c3c11371b_1ada3978459953aa06dfbf934c3c11371b" prot="public" virt="non-virtual"><scope>Auris::Transform</scope><name>entity</name></member>
+      <member refid="class_auris_1_1_transform_a32ca00b2df1d13bbf2e6057470f9ae19_1a32ca00b2df1d13bbf2e6057470f9ae19" prot="public" virt="non-virtual"><scope>Auris::Transform</scope><name>getGlobal</name></member>
+      <member refid="class_auris_1_1_transform_ad90a1b7dfc003b686f1570ebfae0a6e8_1ad90a1b7dfc003b686f1570ebfae0a6e8" prot="public" virt="non-virtual"><scope>Auris::Transform</scope><name>getGlobalPosition</name></member>
+      <member refid="class_auris_1_1_transform_acb3bc690af90c65eed3b368b33764d32_1acb3bc690af90c65eed3b368b33764d32" prot="public" virt="non-virtual"><scope>Auris::Transform</scope><name>getLocal</name></member>
+      <member refid="class_auris_1_1_transform_ab83f0a40c1e123c7491d668039d75099_1ab83f0a40c1e123c7491d668039d75099" prot="public" virt="non-virtual"><scope>Auris::Transform</scope><name>getPosition</name></member>
+      <member refid="class_auris_1_1_transform_a956da9550bb39eba038d9a313bd06abb_1a956da9550bb39eba038d9a313bd06abb" prot="public" virt="non-virtual"><scope>Auris::Transform</scope><name>getPositionVec3</name></member>
+      <member refid="class_auris_1_1_transform_ab502fca53ae3f8186f06de4625df015b_1ab502fca53ae3f8186f06de4625df015b" prot="public" virt="non-virtual"><scope>Auris::Transform</scope><name>getRotation</name></member>
+      <member refid="class_auris_1_1_transform_a4d4308b3f4bd6b1a8a8bcdaff58d12f3_1a4d4308b3f4bd6b1a8a8bcdaff58d12f3" prot="public" virt="non-virtual"><scope>Auris::Transform</scope><name>getScale</name></member>
+      <member refid="class_auris_1_1_transform_ae3431c39df7cb9fcd828ace5305eb196_1ae3431c39df7cb9fcd828ace5305eb196" prot="public" virt="non-virtual"><scope>Auris::Transform</scope><name>getZ</name></member>
+      <member refid="class_auris_1_1_transform_a41303baa3af436b3283f3c636cc21f0b_1a41303baa3af436b3283f3c636cc21f0b" prot="private" virt="non-virtual"><scope>Auris::Transform</scope><name>lastOffset</name></member>
+      <member refid="class_auris_1_1_transform_a32b9e8ff70cf19cf65029b240baa2771_1a32b9e8ff70cf19cf65029b240baa2771" prot="private" virt="non-virtual"><scope>Auris::Transform</scope><name>localTransform</name></member>
+      <member refid="class_auris_1_1_nugget_aa69f1dec0d68dc98193efd3c39e254de_1aa69f1dec0d68dc98193efd3c39e254de" prot="public" virt="non-virtual"><scope>Auris::Transform</scope><name>Nugget</name></member>
+      <member refid="class_auris_1_1_transform_a6184bd4398d0c901af426a4e7093f91b_1a6184bd4398d0c901af426a4e7093f91b" prot="private" virt="non-virtual"><scope>Auris::Transform</scope><name>position</name></member>
+      <member refid="class_auris_1_1_transform_af92006823e5d417afabc2a6c736062ac_1af92006823e5d417afabc2a6c736062ac" prot="private" virt="non-virtual"><scope>Auris::Transform</scope><name>rotation</name></member>
+      <member refid="class_auris_1_1_transform_a3520d5ee263cb3082a99625437fa252f_1a3520d5ee263cb3082a99625437fa252f" prot="private" virt="non-virtual"><scope>Auris::Transform</scope><name>scale</name></member>
+      <member refid="class_auris_1_1_transform_a5b53f8e89541daaade4923cc9b91d0cd_1a5b53f8e89541daaade4923cc9b91d0cd" prot="public" virt="non-virtual"><scope>Auris::Transform</scope><name>setPosition</name></member>
+      <member refid="class_auris_1_1_transform_ad432898272377ba217dd21e14cf20463_1ad432898272377ba217dd21e14cf20463" prot="public" virt="non-virtual"><scope>Auris::Transform</scope><name>setPosition</name></member>
+      <member refid="class_auris_1_1_transform_a419adc467c63de962b24d2cabf1a30e3_1a419adc467c63de962b24d2cabf1a30e3" prot="public" virt="non-virtual"><scope>Auris::Transform</scope><name>setRotation</name></member>
+      <member refid="class_auris_1_1_transform_a70dd0ef78e9e168173dbbcb752939105_1a70dd0ef78e9e168173dbbcb752939105" prot="public" virt="non-virtual"><scope>Auris::Transform</scope><name>setScale</name></member>
+      <member refid="class_auris_1_1_transform_af66bf1e011435be50a2321764b617616_1af66bf1e011435be50a2321764b617616" prot="public" virt="non-virtual"><scope>Auris::Transform</scope><name>setScale</name></member>
+      <member refid="class_auris_1_1_transform_a570777d3bdad87fedf2250980d2951f7_1a570777d3bdad87fedf2250980d2951f7" prot="public" virt="non-virtual"><scope>Auris::Transform</scope><name>Transform</name></member>
+      <member refid="class_auris_1_1_nugget_aae7ccecfc83aebef8f15889921b69ba8_1aae7ccecfc83aebef8f15889921b69ba8" prot="public" virt="virtual"><scope>Auris::Transform</scope><name>~Nugget</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

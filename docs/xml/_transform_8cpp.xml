@@ -1,0 +1,122 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.12">
+  <compounddef id="_transform_8cpp" kind="file" language="C++">
+    <compoundname>Transform.cpp</compoundname>
+    <includes refid="_transform_8hpp" local="yes">Auris/Entities/Nuggets/Transform.hpp</includes>
+    <includes refid="_entity_8hpp" local="yes">Auris/Entity.hpp</includes>
+    <incdepgraph>
+      <node id="194">
+        <label>Auris/Constants.hpp</label>
+        <link refid="_constants_8hpp"/>
+      </node>
+      <node id="200">
+        <label>SRE/Debug.hpp</label>
+      </node>
+      <node id="191">
+        <label>Projects/GameEngine/Auris/src/Auris/Entities/Nuggets/Transform.cpp</label>
+        <link refid="_transform_8cpp"/>
+        <childnode refid="192" relation="include">
+        </childnode>
+        <childnode refid="198" relation="include">
+        </childnode>
+      </node>
+      <node id="201">
+        <label>string</label>
+      </node>
+      <node id="196">
+        <label>glm/gtx/euler_angles.hpp</label>
+      </node>
+      <node id="199">
+        <label>SRE/imgui_sre.hpp</label>
+      </node>
+      <node id="202">
+        <label>vector</label>
+      </node>
+      <node id="198">
+        <label>Auris/Entity.hpp</label>
+        <link refid="_entity_8hpp"/>
+        <childnode refid="192" relation="include">
+        </childnode>
+        <childnode refid="199" relation="include">
+        </childnode>
+        <childnode refid="200" relation="include">
+        </childnode>
+        <childnode refid="201" relation="include">
+        </childnode>
+        <childnode refid="202" relation="include">
+        </childnode>
+        <childnode refid="195" relation="include">
+        </childnode>
+      </node>
+      <node id="197">
+        <label>glm/gtc/matrix_transform.hpp</label>
+      </node>
+      <node id="193">
+        <label>Auris/Entities/Nugget.hpp</label>
+        <link refid="_nugget_8hpp"/>
+      </node>
+      <node id="192">
+        <label>Auris/Entities/Nuggets/Transform.hpp</label>
+        <link refid="_transform_8hpp"/>
+        <childnode refid="193" relation="include">
+        </childnode>
+        <childnode refid="194" relation="include">
+        </childnode>
+        <childnode refid="195" relation="include">
+        </childnode>
+        <childnode refid="196" relation="include">
+        </childnode>
+        <childnode refid="197" relation="include">
+        </childnode>
+      </node>
+      <node id="195">
+        <label>glm/glm.hpp</label>
+      </node>
+    </incdepgraph>
+    <innernamespace refid="namespace_auris">Auris</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#include<sp/>&quot;<ref refid="_transform_8hpp" kindref="compound">Auris/Entities/Nuggets/Transform.hpp</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="_entity_8hpp" kindref="compound">Auris/Entity.hpp</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespace_auris" kindref="compound">Auris</ref>{</highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight></codeline>
+<codeline lineno="6" refid="class_auris_1_1_transform_acb3bc690af90c65eed3b368b33764d32_1acb3bc690af90c65eed3b368b33764d32" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>glm::mat4<sp/><ref refid="class_auris_1_1_transform_acb3bc690af90c65eed3b368b33764d32_1acb3bc690af90c65eed3b368b33764d32" kindref="member">Transform::getLocal</ref>(vec3<sp/>offset)<sp/>{</highlight></codeline>
+<codeline lineno="7"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(!<ref refid="class_auris_1_1_transform_af1ea5e2815d6bad804563c73d4b38562_1af1ea5e2815d6bad804563c73d4b38562" kindref="member">dirty</ref><sp/>&amp;&amp;<sp/><ref refid="class_auris_1_1_transform_a41303baa3af436b3283f3c636cc21f0b_1a41303baa3af436b3283f3c636cc21f0b" kindref="member">lastOffset</ref><sp/>==<sp/>offset)<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="class_auris_1_1_transform_a32b9e8ff70cf19cf65029b240baa2771_1a32b9e8ff70cf19cf65029b240baa2771" kindref="member">localTransform</ref>;</highlight></codeline>
+<codeline lineno="8"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_auris_1_1_transform_a41303baa3af436b3283f3c636cc21f0b_1a41303baa3af436b3283f3c636cc21f0b" kindref="member">lastOffset</ref><sp/>=<sp/>offset;</highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>mat4<sp/>rz<sp/>=<sp/>glm::eulerAngleZ(<ref refid="class_auris_1_1_transform_af92006823e5d417afabc2a6c736062ac_1af92006823e5d417afabc2a6c736062ac" kindref="member">rotation</ref>);</highlight></codeline>
+<codeline lineno="11"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>mat4<sp/>t<sp/>=<sp/>glm::translate(glm::mat4(1),<sp/>(offset<sp/>+<sp/><ref refid="class_auris_1_1_transform_a6184bd4398d0c901af426a4e7093f91b_1a6184bd4398d0c901af426a4e7093f91b" kindref="member">position</ref>)<sp/>*<sp/><ref refid="namespace_auris_1_1_constants_a559532ed3415b8ded07cdc4069dfa91c_1a559532ed3415b8ded07cdc4069dfa91c" kindref="member">Constants::METERS_TO_PIXELS</ref>);</highlight></codeline>
+<codeline lineno="12"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>mat4<sp/><ref refid="namespace_auris_1_1_action_afbe1cd6358dcb3cf41253731310f79df_1afbe1cd6358dcb3cf41253731310f79df" kindref="member">s</ref><sp/>=<sp/>glm::scale(glm::mat4(1),<sp/>vec3(<ref refid="class_auris_1_1_transform_a3520d5ee263cb3082a99625437fa252f_1a3520d5ee263cb3082a99625437fa252f" kindref="member">scale</ref>,<sp/>1));</highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_auris_1_1_transform_a32b9e8ff70cf19cf65029b240baa2771_1a32b9e8ff70cf19cf65029b240baa2771" kindref="member">localTransform</ref><sp/>=<sp/>t<sp/>*<sp/>rz<sp/>*<sp/><ref refid="namespace_auris_1_1_action_afbe1cd6358dcb3cf41253731310f79df_1afbe1cd6358dcb3cf41253731310f79df" kindref="member">s</ref>;</highlight></codeline>
+<codeline lineno="15"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_auris_1_1_transform_af1ea5e2815d6bad804563c73d4b38562_1af1ea5e2815d6bad804563c73d4b38562" kindref="member">dirty</ref><sp/>=<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="16"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="class_auris_1_1_transform_a32b9e8ff70cf19cf65029b240baa2771_1a32b9e8ff70cf19cf65029b240baa2771" kindref="member">localTransform</ref>;</highlight></codeline>
+<codeline lineno="17"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight></codeline>
+<codeline lineno="19" refid="class_auris_1_1_transform_a32ca00b2df1d13bbf2e6057470f9ae19_1a32ca00b2df1d13bbf2e6057470f9ae19" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>glm::mat4<sp/><ref refid="class_auris_1_1_transform_a32ca00b2df1d13bbf2e6057470f9ae19_1a32ca00b2df1d13bbf2e6057470f9ae19" kindref="member">Transform::getGlobal</ref>(vec3<sp/>offset)<sp/>{</highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight></codeline>
+<codeline lineno="21"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(<ref refid="class_auris_1_1_nugget_ada3978459953aa06dfbf934c3c11371b_1ada3978459953aa06dfbf934c3c11371b" kindref="member">entity</ref>-&gt;<ref refid="class_auris_1_1_entity_afec0c65e0063778ee9888e8747213504_1afec0c65e0063778ee9888e8747213504" kindref="member">parent</ref><sp/>==<sp/></highlight><highlight class="keyword">nullptr</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="22"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="class_auris_1_1_transform_acb3bc690af90c65eed3b368b33764d32_1acb3bc690af90c65eed3b368b33764d32" kindref="member">getLocal</ref>(offset);</highlight></codeline>
+<codeline lineno="23"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="24"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="class_auris_1_1_nugget_ada3978459953aa06dfbf934c3c11371b_1ada3978459953aa06dfbf934c3c11371b" kindref="member">entity</ref>-&gt;<ref refid="class_auris_1_1_entity_afec0c65e0063778ee9888e8747213504_1afec0c65e0063778ee9888e8747213504" kindref="member">parent</ref>-&gt;<ref refid="class_auris_1_1_entity_a1c0579dbb2753589668621bd3e3c187b_1a1c0579dbb2753589668621bd3e3c187b" kindref="member">transform</ref>-&gt;<ref refid="class_auris_1_1_transform_a32ca00b2df1d13bbf2e6057470f9ae19_1a32ca00b2df1d13bbf2e6057470f9ae19" kindref="member">getGlobal</ref>()<sp/>*<sp/><ref refid="class_auris_1_1_transform_acb3bc690af90c65eed3b368b33764d32_1acb3bc690af90c65eed3b368b33764d32" kindref="member">getLocal</ref>(offset);</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight></codeline>
+<codeline lineno="27" refid="class_auris_1_1_transform_ad90a1b7dfc003b686f1570ebfae0a6e8_1ad90a1b7dfc003b686f1570ebfae0a6e8" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>glm::vec3<sp/><ref refid="class_auris_1_1_transform_ad90a1b7dfc003b686f1570ebfae0a6e8_1ad90a1b7dfc003b686f1570ebfae0a6e8" kindref="member">Transform::getGlobalPosition</ref>(){</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(<ref refid="class_auris_1_1_nugget_ada3978459953aa06dfbf934c3c11371b_1ada3978459953aa06dfbf934c3c11371b" kindref="member">entity</ref>-&gt;<ref refid="class_auris_1_1_entity_afec0c65e0063778ee9888e8747213504_1afec0c65e0063778ee9888e8747213504" kindref="member">parent</ref><sp/>==<sp/></highlight><highlight class="keyword">nullptr</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="class_auris_1_1_transform_a6184bd4398d0c901af426a4e7093f91b_1a6184bd4398d0c901af426a4e7093f91b" kindref="member">position</ref>;</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight></codeline>
+<codeline lineno="31"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="class_auris_1_1_nugget_ada3978459953aa06dfbf934c3c11371b_1ada3978459953aa06dfbf934c3c11371b" kindref="member">entity</ref>-&gt;<ref refid="class_auris_1_1_entity_afec0c65e0063778ee9888e8747213504_1afec0c65e0063778ee9888e8747213504" kindref="member">parent</ref>-&gt;<ref refid="class_auris_1_1_entity_a1c0579dbb2753589668621bd3e3c187b_1a1c0579dbb2753589668621bd3e3c187b" kindref="member">transform</ref>-&gt;<ref refid="class_auris_1_1_transform_ad90a1b7dfc003b686f1570ebfae0a6e8_1ad90a1b7dfc003b686f1570ebfae0a6e8" kindref="member">getGlobalPosition</ref>()<sp/>+<sp/><ref refid="class_auris_1_1_transform_a6184bd4398d0c901af426a4e7093f91b_1a6184bd4398d0c901af426a4e7093f91b" kindref="member">position</ref>;</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"></highlight></codeline>
+<codeline lineno="34"><highlight class="normal"></highlight></codeline>
+<codeline lineno="35"><highlight class="normal"></highlight></codeline>
+<codeline lineno="36"><highlight class="normal"></highlight></codeline>
+<codeline lineno="37"><highlight class="normal">}</highlight></codeline>
+    </programlisting>
+    <location file="Projects/GameEngine/Auris/src/Auris/Entities/Nuggets/Transform.cpp"/>
+  </compounddef>
+</doxygen>

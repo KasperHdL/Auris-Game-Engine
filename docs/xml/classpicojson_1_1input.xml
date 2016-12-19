@@ -1,0 +1,207 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.12">
+  <compounddef id="classpicojson_1_1input" kind="class" language="C++" prot="public">
+    <compoundname>picojson::input</compoundname>
+    <includes refid="picojson_8h" local="no">picojson.h</includes>
+    <templateparamlist>
+      <param>
+        <type>typename Iter</type>
+      </param>
+    </templateparamlist>
+      <sectiondef kind="protected-attrib">
+      <memberdef kind="variable" id="classpicojson_1_1input_afb97b3422a91d0f3388527a5999c8174_1afb97b3422a91d0f3388527a5999c8174" prot="protected" static="no" mutable="no">
+        <type>Iter</type>
+        <definition>Iter picojson::input&lt; Iter &gt;::cur_</definition>
+        <argsstring></argsstring>
+        <name>cur_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Projects/GameEngine/include/Auris/Utilities/picojson.h" line="599" column="1" bodyfile="Projects/GameEngine/include/Auris/Utilities/picojson.h" bodystart="599" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classpicojson_1_1input_acb4fd4c90d1b0db37bc32ccae16361ab_1acb4fd4c90d1b0db37bc32ccae16361ab" prot="protected" static="no" mutable="no">
+        <type>Iter</type>
+        <definition>Iter picojson::input&lt; Iter &gt;::end_</definition>
+        <argsstring></argsstring>
+        <name>end_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Projects/GameEngine/include/Auris/Utilities/picojson.h" line="599" column="1" bodyfile="Projects/GameEngine/include/Auris/Utilities/picojson.h" bodystart="599" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classpicojson_1_1input_af07464e7d4f25b902d65d8f8ee79b8a6_1af07464e7d4f25b902d65d8f8ee79b8a6" prot="protected" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool picojson::input&lt; Iter &gt;::consumed_</definition>
+        <argsstring></argsstring>
+        <name>consumed_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Projects/GameEngine/include/Auris/Utilities/picojson.h" line="600" column="1" bodyfile="Projects/GameEngine/include/Auris/Utilities/picojson.h" bodystart="600" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classpicojson_1_1input_a7bbb41c7f78ffc19d3219e38c2858b74_1a7bbb41c7f78ffc19d3219e38c2858b74" prot="protected" static="no" mutable="no">
+        <type>int</type>
+        <definition>int picojson::input&lt; Iter &gt;::line_</definition>
+        <argsstring></argsstring>
+        <name>line_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Projects/GameEngine/include/Auris/Utilities/picojson.h" line="601" column="1" bodyfile="Projects/GameEngine/include/Auris/Utilities/picojson.h" bodystart="601" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classpicojson_1_1input_ab1ca217622d921118707de9e9011a62f_1ab1ca217622d921118707de9e9011a62f" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>picojson::input&lt; Iter &gt;::input</definition>
+        <argsstring>(const Iter &amp;first, const Iter &amp;last)</argsstring>
+        <name>input</name>
+        <param>
+          <type>const Iter &amp;</type>
+          <declname>first</declname>
+        </param>
+        <param>
+          <type>const Iter &amp;</type>
+          <declname>last</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Projects/GameEngine/include/Auris/Utilities/picojson.h" line="603" column="1" bodyfile="Projects/GameEngine/include/Auris/Utilities/picojson.h" bodystart="603" bodyend="603"/>
+      </memberdef>
+      <memberdef kind="function" id="classpicojson_1_1input_a3e8ba0b09a989efa0dc583096984ea8e_1a3e8ba0b09a989efa0dc583096984ea8e" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>int</type>
+        <definition>int picojson::input&lt; Iter &gt;::getc</definition>
+        <argsstring>()</argsstring>
+        <name>getc</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Projects/GameEngine/include/Auris/Utilities/picojson.h" line="604" column="1" bodyfile="Projects/GameEngine/include/Auris/Utilities/picojson.h" bodystart="604" bodyend="617"/>
+      </memberdef>
+      <memberdef kind="function" id="classpicojson_1_1input_a96ccc244e73b2ab87ded38c98e98d573_1a96ccc244e73b2ab87ded38c98e98d573" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void picojson::input&lt; Iter &gt;::ungetc</definition>
+        <argsstring>()</argsstring>
+        <name>ungetc</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Projects/GameEngine/include/Auris/Utilities/picojson.h" line="618" column="1" bodyfile="Projects/GameEngine/include/Auris/Utilities/picojson.h" bodystart="618" bodyend="620"/>
+      </memberdef>
+      <memberdef kind="function" id="classpicojson_1_1input_ab2933aa5b68e73877fd331b925f4bf40_1ab2933aa5b68e73877fd331b925f4bf40" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>Iter</type>
+        <definition>Iter picojson::input&lt; Iter &gt;::cur</definition>
+        <argsstring>() const</argsstring>
+        <name>cur</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Projects/GameEngine/include/Auris/Utilities/picojson.h" line="621" column="1" bodyfile="Projects/GameEngine/include/Auris/Utilities/picojson.h" bodystart="621" bodyend="628"/>
+      </memberdef>
+      <memberdef kind="function" id="classpicojson_1_1input_a5852aded6d48e28542f23fe0083a51fa_1a5852aded6d48e28542f23fe0083a51fa" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>int</type>
+        <definition>int picojson::input&lt; Iter &gt;::line</definition>
+        <argsstring>() const</argsstring>
+        <name>line</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Projects/GameEngine/include/Auris/Utilities/picojson.h" line="629" column="1" bodyfile="Projects/GameEngine/include/Auris/Utilities/picojson.h" bodystart="629" bodyend="629"/>
+      </memberdef>
+      <memberdef kind="function" id="classpicojson_1_1input_aa83aefe87374a5e24ab8c8e80fef4aa4_1aa83aefe87374a5e24ab8c8e80fef4aa4" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void picojson::input&lt; Iter &gt;::skip_ws</definition>
+        <argsstring>()</argsstring>
+        <name>skip_ws</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Projects/GameEngine/include/Auris/Utilities/picojson.h" line="630" column="1" bodyfile="Projects/GameEngine/include/Auris/Utilities/picojson.h" bodystart="630" bodyend="638"/>
+      </memberdef>
+      <memberdef kind="function" id="classpicojson_1_1input_a14c29e99d9c9aa8cdbb46178c434d663_1a14c29e99d9c9aa8cdbb46178c434d663" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool picojson::input&lt; Iter &gt;::expect</definition>
+        <argsstring>(int expect)</argsstring>
+        <name>expect</name>
+        <param>
+          <type>int</type>
+          <declname>expect</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Projects/GameEngine/include/Auris/Utilities/picojson.h" line="639" column="1" bodyfile="Projects/GameEngine/include/Auris/Utilities/picojson.h" bodystart="639" bodyend="646"/>
+      </memberdef>
+      <memberdef kind="function" id="classpicojson_1_1input_ad15f360122daf49ddf7a2a8591fa4364_1ad15f360122daf49ddf7a2a8591fa4364" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool picojson::input&lt; Iter &gt;::match</definition>
+        <argsstring>(const std::string &amp;pattern)</argsstring>
+        <name>match</name>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>pattern</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Projects/GameEngine/include/Auris/Utilities/picojson.h" line="647" column="1" bodyfile="Projects/GameEngine/include/Auris/Utilities/picojson.h" bodystart="647" bodyend="657"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="Projects/GameEngine/include/Auris/Utilities/picojson.h" line="597" column="1" bodyfile="Projects/GameEngine/include/Auris/Utilities/picojson.h" bodystart="597" bodyend="658"/>
+    <listofallmembers>
+      <member refid="classpicojson_1_1input_af07464e7d4f25b902d65d8f8ee79b8a6_1af07464e7d4f25b902d65d8f8ee79b8a6" prot="protected" virt="non-virtual"><scope>picojson::input</scope><name>consumed_</name></member>
+      <member refid="classpicojson_1_1input_ab2933aa5b68e73877fd331b925f4bf40_1ab2933aa5b68e73877fd331b925f4bf40" prot="public" virt="non-virtual"><scope>picojson::input</scope><name>cur</name></member>
+      <member refid="classpicojson_1_1input_afb97b3422a91d0f3388527a5999c8174_1afb97b3422a91d0f3388527a5999c8174" prot="protected" virt="non-virtual"><scope>picojson::input</scope><name>cur_</name></member>
+      <member refid="classpicojson_1_1input_acb4fd4c90d1b0db37bc32ccae16361ab_1acb4fd4c90d1b0db37bc32ccae16361ab" prot="protected" virt="non-virtual"><scope>picojson::input</scope><name>end_</name></member>
+      <member refid="classpicojson_1_1input_a14c29e99d9c9aa8cdbb46178c434d663_1a14c29e99d9c9aa8cdbb46178c434d663" prot="public" virt="non-virtual"><scope>picojson::input</scope><name>expect</name></member>
+      <member refid="classpicojson_1_1input_a3e8ba0b09a989efa0dc583096984ea8e_1a3e8ba0b09a989efa0dc583096984ea8e" prot="public" virt="non-virtual"><scope>picojson::input</scope><name>getc</name></member>
+      <member refid="classpicojson_1_1input_ab1ca217622d921118707de9e9011a62f_1ab1ca217622d921118707de9e9011a62f" prot="public" virt="non-virtual"><scope>picojson::input</scope><name>input</name></member>
+      <member refid="classpicojson_1_1input_a5852aded6d48e28542f23fe0083a51fa_1a5852aded6d48e28542f23fe0083a51fa" prot="public" virt="non-virtual"><scope>picojson::input</scope><name>line</name></member>
+      <member refid="classpicojson_1_1input_a7bbb41c7f78ffc19d3219e38c2858b74_1a7bbb41c7f78ffc19d3219e38c2858b74" prot="protected" virt="non-virtual"><scope>picojson::input</scope><name>line_</name></member>
+      <member refid="classpicojson_1_1input_ad15f360122daf49ddf7a2a8591fa4364_1ad15f360122daf49ddf7a2a8591fa4364" prot="public" virt="non-virtual"><scope>picojson::input</scope><name>match</name></member>
+      <member refid="classpicojson_1_1input_aa83aefe87374a5e24ab8c8e80fef4aa4_1aa83aefe87374a5e24ab8c8e80fef4aa4" prot="public" virt="non-virtual"><scope>picojson::input</scope><name>skip_ws</name></member>
+      <member refid="classpicojson_1_1input_a96ccc244e73b2ab87ded38c98e98d573_1a96ccc244e73b2ab87ded38c98e98d573" prot="public" virt="non-virtual"><scope>picojson::input</scope><name>ungetc</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

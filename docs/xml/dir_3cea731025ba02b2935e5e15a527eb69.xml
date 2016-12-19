@@ -1,0 +1,13 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.12">
+  <compounddef id="dir_3cea731025ba02b2935e5e15a527eb69" kind="dir">
+    <compoundname>Projects/GameEngine</compoundname>
+    <innerdir refid="dir_510c3edf8fb208e766c8207df66c8983">Projects/GameEngine/Auris</innerdir>
+    <innerdir refid="dir_ad4183b49321eaaf4186adc499cef52e">Projects/GameEngine/include</innerdir>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="Projects/GameEngine/"/>
+  </compounddef>
+</doxygen>

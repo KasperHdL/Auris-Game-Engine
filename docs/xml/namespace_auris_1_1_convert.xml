@@ -1,0 +1,65 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.12">
+  <compounddef id="namespace_auris_1_1_convert" kind="namespace" language="C++">
+    <compoundname>Auris::Convert</compoundname>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="namespace_auris_1_1_convert_aac4203b20ae9e01d44d93feb9210327e_1aac4203b20ae9e01d44d93feb9210327e" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>glm::vec2</type>
+        <definition>glm::vec2 Auris::Convert::toGlm</definition>
+        <argsstring>(const b2Vec2 &amp;v)</argsstring>
+        <name>toGlm</name>
+        <param>
+          <type>const b2Vec2 &amp;</type>
+          <declname>v</declname>
+        </param>
+        <briefdescription>
+<para>An inline toGlm method, taking 1 arguments. </para>        </briefdescription>
+        <detaileddescription>
+<para>Converts from b2Vec to vec2 <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>v</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>a constant b2Vec2 pointer. The b2Vec2 value to be converted to vec2. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>vec2. The vec2 that the b2Vec2 has been converted to. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Projects/GameEngine/include/Auris/Utilities/Convert.hpp" line="19" column="1" bodyfile="Projects/GameEngine/include/Auris/Utilities/Convert.hpp" bodystart="19" bodyend="21"/>
+      </memberdef>
+      <memberdef kind="function" id="namespace_auris_1_1_convert_af926368a18838264e46dc3c29d738a68_1af926368a18838264e46dc3c29d738a68" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>b2Vec2</type>
+        <definition>b2Vec2 Auris::Convert::toB2</definition>
+        <argsstring>(const glm::vec2 v)</argsstring>
+        <name>toB2</name>
+        <param>
+          <type>const glm::vec2</type>
+          <declname>v</declname>
+        </param>
+        <briefdescription>
+<para>An inline toB2 method, taking 1 arguments. </para>        </briefdescription>
+        <detaileddescription>
+<para>Converts from vec2 to b2Vec2 <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>v</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>a constant vec2 value. The vec2 value to be converted to b2Vec2. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>b2Vec2. The b2Vec2 that the vec2 has been converted to. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Projects/GameEngine/include/Auris/Utilities/Convert.hpp" line="28" column="1" bodyfile="Projects/GameEngine/include/Auris/Utilities/Convert.hpp" bodystart="28" bodyend="30"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>A <ref refid="namespace_auris_1_1_convert" kindref="compound">Convert</ref> namespace. </para>    </briefdescription>
+    <detaileddescription>
+<para>Used for converting between glm and box2D vec2 to b2Vec2 and vice versa </para>    </detaileddescription>
+    <location file="Projects/GameEngine/include/Auris/Utilities/Convert.hpp" line="12" column="1"/>
+  </compounddef>
+</doxygen>

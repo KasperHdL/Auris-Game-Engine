@@ -1,0 +1,161 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.12">
+  <compounddef id="class_auris_1_1_nugget" kind="class" language="C++" prot="public">
+    <compoundname>Auris::Nugget</compoundname>
+    <derivedcompoundref refid="class_auris_1_1_animation" prot="public" virt="non-virtual">Auris::Animation</derivedcompoundref>
+    <derivedcompoundref refid="class_auris_1_1_sprite" prot="public" virt="non-virtual">Auris::Sprite</derivedcompoundref>
+    <derivedcompoundref refid="class_auris_1_1_transform" prot="public" virt="non-virtual">Auris::Transform</derivedcompoundref>
+    <includes refid="_nugget_8hpp" local="no">Nugget.hpp</includes>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="class_auris_1_1_nugget_ada3978459953aa06dfbf934c3c11371b_1ada3978459953aa06dfbf934c3c11371b" prot="public" static="no" mutable="no">
+        <type><ref refid="class_auris_1_1_entity" kindref="compound">Entity</ref> *</type>
+        <definition>Entity* Auris::Nugget::entity</definition>
+        <argsstring></argsstring>
+        <name>entity</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>A <ref refid="class_auris_1_1_entity" kindref="compound">Entity</ref> pointer: entity. A reference to the <ref refid="class_auris_1_1_entity" kindref="compound">Entity</ref> that the nugget is associated with </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Projects/GameEngine/include/Auris/Entities/Nugget.hpp" line="26" column="1" bodyfile="Projects/GameEngine/include/Auris/Entities/Nugget.hpp" bodystart="26" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="friend">
+      <memberdef kind="friend" id="class_auris_1_1_nugget_a0518e0da58247f838fb20065adcbbcbb_1a0518e0da58247f838fb20065adcbbcbb" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>friend class</type>
+        <definition>friend class entity</definition>
+        <argsstring></argsstring>
+        <name>entity</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Projects/GameEngine/include/Auris/Entities/Nugget.hpp" line="27" column="1" bodyfile="Projects/GameEngine/include/Auris/Entities/Nugget.hpp" bodystart="27" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_auris_1_1_nugget_aa69f1dec0d68dc98193efd3c39e254de_1aa69f1dec0d68dc98193efd3c39e254de" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>Auris::Nugget::Nugget</definition>
+        <argsstring>(Entity *entity)</argsstring>
+        <name>Nugget</name>
+        <param>
+          <type><ref refid="class_auris_1_1_entity" kindref="compound">Entity</ref> *</type>
+          <declname>entity</declname>
+        </param>
+        <briefdescription>
+<para>The nugget contructor taking 1 arguments. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>entity</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>an <ref refid="class_auris_1_1_entity" kindref="compound">Entity</ref>. A reference to the <ref refid="class_auris_1_1_entity" kindref="compound">Entity</ref> the nugget is associated with. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Projects/GameEngine/include/Auris/Entities/Nugget.hpp" line="17" column="1" bodyfile="Projects/GameEngine/include/Auris/Entities/Nugget.hpp" bodystart="17" bodyend="17"/>
+      </memberdef>
+      <memberdef kind="function" id="class_auris_1_1_nugget_aae7ccecfc83aebef8f15889921b69ba8_1aae7ccecfc83aebef8f15889921b69ba8" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type></type>
+        <definition>virtual Auris::Nugget::~Nugget</definition>
+        <argsstring>()</argsstring>
+        <name>~Nugget</name>
+        <briefdescription>
+<para>The nugget destructor. </para>        </briefdescription>
+        <detaileddescription>
+<para>The destructor null points the <ref refid="class_auris_1_1_entity" kindref="compound">Entity</ref> pointer, can be overwritten by the nuggets that inherents from this </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Projects/GameEngine/include/Auris/Entities/Nugget.hpp" line="22" column="1" bodyfile="Projects/GameEngine/include/Auris/Entities/Nugget.hpp" bodystart="22" bodyend="24"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>The <ref refid="class_auris_1_1_nugget" kindref="compound">Nugget</ref> class. </para>    </briefdescription>
+    <detaileddescription>
+<para>Nuggets are sort of the components of the system. Every other nugget inherents from this base nugget </para>    </detaileddescription>
+    <inheritancegraph>
+      <node id="171">
+        <label>Auris::Transform</label>
+        <link refid="class_auris_1_1_transform"/>
+        <childnode refid="168" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="168">
+        <label>Auris::Nugget</label>
+        <link refid="class_auris_1_1_nugget"/>
+      </node>
+      <node id="170">
+        <label>Auris::Sprite</label>
+        <link refid="class_auris_1_1_sprite"/>
+        <childnode refid="168" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="169">
+        <label>Auris::Animation</label>
+        <link refid="class_auris_1_1_animation"/>
+        <childnode refid="168" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="176">
+        <label>std::vector&lt; Auris::Entity *&gt;</label>
+        <childnode refid="173" relation="usage">
+          <edgelabel>elements</edgelabel>
+        </childnode>
+      </node>
+      <node id="177">
+        <label>Auris::Transform</label>
+        <link refid="class_auris_1_1_transform"/>
+        <childnode refid="172" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="175">
+        <label>std::basic_string&lt; char &gt;</label>
+      </node>
+      <node id="172">
+        <label>Auris::Nugget</label>
+        <link refid="class_auris_1_1_nugget"/>
+        <childnode refid="173" relation="usage">
+          <edgelabel>entity</edgelabel>
+        </childnode>
+      </node>
+      <node id="173">
+        <label>Auris::Entity</label>
+        <link refid="class_auris_1_1_entity"/>
+        <childnode refid="174" relation="usage">
+          <edgelabel>type</edgelabel>
+          <edgelabel>name</edgelabel>
+        </childnode>
+        <childnode refid="176" relation="usage">
+          <edgelabel>children</edgelabel>
+        </childnode>
+        <childnode refid="173" relation="usage">
+          <edgelabel>parent</edgelabel>
+        </childnode>
+        <childnode refid="177" relation="usage">
+          <edgelabel>transform</edgelabel>
+        </childnode>
+      </node>
+      <node id="174">
+        <label>std::string</label>
+        <childnode refid="175" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="Projects/GameEngine/include/Auris/Entities/Nugget.hpp" line="10" column="1" bodyfile="Projects/GameEngine/include/Auris/Entities/Nugget.hpp" bodystart="10" bodyend="29"/>
+    <listofallmembers>
+      <member refid="class_auris_1_1_nugget_ada3978459953aa06dfbf934c3c11371b_1ada3978459953aa06dfbf934c3c11371b" prot="public" virt="non-virtual"><scope>Auris::Nugget</scope><name>entity</name></member>
+      <member refid="class_auris_1_1_nugget_a0518e0da58247f838fb20065adcbbcbb_1a0518e0da58247f838fb20065adcbbcbb" prot="public" virt="non-virtual"><scope>Auris::Nugget</scope><name>entity</name></member>
+      <member refid="class_auris_1_1_nugget_aa69f1dec0d68dc98193efd3c39e254de_1aa69f1dec0d68dc98193efd3c39e254de" prot="public" virt="non-virtual"><scope>Auris::Nugget</scope><name>Nugget</name></member>
+      <member refid="class_auris_1_1_nugget_aae7ccecfc83aebef8f15889921b69ba8_1aae7ccecfc83aebef8f15889921b69ba8" prot="public" virt="virtual"><scope>Auris::Nugget</scope><name>~Nugget</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

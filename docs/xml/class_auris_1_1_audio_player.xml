@@ -1,0 +1,874 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.12">
+  <compounddef id="class_auris_1_1_audio_player" kind="class" language="C++" prot="public">
+    <compoundname>Auris::AudioPlayer</compoundname>
+    <basecompoundref refid="class_auris_1_1_entity" prot="public" virt="non-virtual">Auris::Entity</basecompoundref>
+    <includes refid="_utilities_2_audio_player_8hpp" local="no">AudioPlayer.hpp</includes>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="class_auris_1_1_audio_player_a5e7ce165085ef8c9fc9c052a9c4490d6_1a5e7ce165085ef8c9fc9c052a9c4490d6" prot="private" static="no" mutable="no">
+        <type>std::vector&lt; int &gt;</type>
+        <definition>std::vector&lt;int&gt; Auris::AudioPlayer::channels</definition>
+        <argsstring></argsstring>
+        <name>channels</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Projects/GameEngine/include/Auris/Utilities/AudioPlayer.hpp" line="23" column="1" bodyfile="Projects/GameEngine/include/Auris/Utilities/AudioPlayer.hpp" bodystart="23" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_auris_1_1_audio_player_a3b551119c5c73725e55264cb64fe9564_1a3b551119c5c73725e55264cb64fe9564" prot="private" static="no" mutable="no">
+        <type>std::vector&lt; Mix_Music * &gt;</type>
+        <definition>std::vector&lt;Mix_Music*&gt; Auris::AudioPlayer::music</definition>
+        <argsstring></argsstring>
+        <name>music</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>A vector of Mix_Music pointers: music. Instance of the music in the audioplayer. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Projects/GameEngine/include/Auris/Utilities/AudioPlayer.hpp" line="25" column="1" bodyfile="Projects/GameEngine/include/Auris/Utilities/AudioPlayer.hpp" bodystart="25" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_auris_1_1_audio_player_a4f2d463e9c7905b548dd0b32d61364fa_1a4f2d463e9c7905b548dd0b32d61364fa" prot="private" static="no" mutable="no">
+        <type>std::vector&lt; Mix_Chunk * &gt;</type>
+        <definition>std::vector&lt;Mix_Chunk*&gt; Auris::AudioPlayer::sounds</definition>
+        <argsstring></argsstring>
+        <name>sounds</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>A vector of Mix_Chunk pointers: sounds. Instance of the sound in the audioplayer. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Projects/GameEngine/include/Auris/Utilities/AudioPlayer.hpp" line="26" column="1" bodyfile="Projects/GameEngine/include/Auris/Utilities/AudioPlayer.hpp" bodystart="26" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_auris_1_1_audio_player_a9a0afca7e007c289ca94db3791b18b79_1a9a0afca7e007c289ca94db3791b18b79" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int Auris::AudioPlayer::currentChannel</definition>
+        <argsstring></argsstring>
+        <name>currentChannel</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>An int value: currentChannel. This is the current channel this <ref refid="class_auris_1_1_audio_player" kindref="compound">AudioPlayer</ref> is playing on. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Projects/GameEngine/include/Auris/Utilities/AudioPlayer.hpp" line="30" column="1" bodyfile="Projects/GameEngine/include/Auris/Utilities/AudioPlayer.hpp" bodystart="30" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_auris_1_1_audio_player_afd56c1d616cd4a99506becb6b5db84b0_1afd56c1d616cd4a99506becb6b5db84b0" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int Auris::AudioPlayer::deltaDistanceX</definition>
+        <argsstring></argsstring>
+        <name>deltaDistanceX</name>
+        <initializer>= 0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>An int value: deltaDistanceX. The relative distance between the audio and the audio listener on the x axis. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Projects/GameEngine/include/Auris/Utilities/AudioPlayer.hpp" line="31" column="1" bodyfile="Projects/GameEngine/include/Auris/Utilities/AudioPlayer.hpp" bodystart="31" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_auris_1_1_audio_player_a959a92c1c431b871488a62d7e58b5478_1a959a92c1c431b871488a62d7e58b5478" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int Auris::AudioPlayer::deltaDistanceY</definition>
+        <argsstring></argsstring>
+        <name>deltaDistanceY</name>
+        <initializer>= 0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>An int value: deltaDistanceY. The relative distance between the audio and the audio listener on the y axis. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Projects/GameEngine/include/Auris/Utilities/AudioPlayer.hpp" line="32" column="1" bodyfile="Projects/GameEngine/include/Auris/Utilities/AudioPlayer.hpp" bodystart="32" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_auris_1_1_audio_player_a11d27eb6142f26090b13880dac810202_1a11d27eb6142f26090b13880dac810202" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int Auris::AudioPlayer::pan</definition>
+        <argsstring></argsstring>
+        <name>pan</name>
+        <initializer>= 127</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>An int value: pan. How much pan the channel the audio is playing at should have. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Projects/GameEngine/include/Auris/Utilities/AudioPlayer.hpp" line="33" column="1" bodyfile="Projects/GameEngine/include/Auris/Utilities/AudioPlayer.hpp" bodystart="33" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_auris_1_1_audio_player_adbdd62f382fee79c467a9c5d4186942d_1adbdd62f382fee79c467a9c5d4186942d" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int Auris::AudioPlayer::fade</definition>
+        <argsstring></argsstring>
+        <name>fade</name>
+        <initializer>= 0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>An int value: fade. How much fade the channel the audio is playing at should have. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Projects/GameEngine/include/Auris/Utilities/AudioPlayer.hpp" line="34" column="1" bodyfile="Projects/GameEngine/include/Auris/Utilities/AudioPlayer.hpp" bodystart="34" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_auris_1_1_audio_player_aaeea71fb5b725ea1e7d5ec26f281e104_1aaeea71fb5b725ea1e7d5ec26f281e104" prot="private" static="no" mutable="no">
+        <type>float</type>
+        <definition>float Auris::AudioPlayer::fadeScaleX</definition>
+        <argsstring></argsstring>
+        <name>fadeScaleX</name>
+        <initializer>= 1.0f</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>A float value: faceScaleX. The scaling on the fade on the x axis. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Projects/GameEngine/include/Auris/Utilities/AudioPlayer.hpp" line="36" column="1" bodyfile="Projects/GameEngine/include/Auris/Utilities/AudioPlayer.hpp" bodystart="36" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_auris_1_1_audio_player_afd8664847907f5bef07feb0a257fa175_1afd8664847907f5bef07feb0a257fa175" prot="private" static="no" mutable="no">
+        <type>float</type>
+        <definition>float Auris::AudioPlayer::fadeScaleY</definition>
+        <argsstring></argsstring>
+        <name>fadeScaleY</name>
+        <initializer>= 1.0f</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>A float value: faceScaleY. The scaling on the fade on the y axis. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Projects/GameEngine/include/Auris/Utilities/AudioPlayer.hpp" line="37" column="1" bodyfile="Projects/GameEngine/include/Auris/Utilities/AudioPlayer.hpp" bodystart="37" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_auris_1_1_audio_player_a649c07f1550f26bf38deb6fd28f358db_1a649c07f1550f26bf38deb6fd28f358db" prot="private" static="no" mutable="no">
+        <type>float</type>
+        <definition>float Auris::AudioPlayer::fadeDelayX</definition>
+        <argsstring></argsstring>
+        <name>fadeDelayX</name>
+        <initializer>= 1.0f</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>A float value: faceDelayX. The delay of the fade on the x axis. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Projects/GameEngine/include/Auris/Utilities/AudioPlayer.hpp" line="38" column="1" bodyfile="Projects/GameEngine/include/Auris/Utilities/AudioPlayer.hpp" bodystart="38" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_auris_1_1_audio_player_a321ed63521aa16330616261a46278aac_1a321ed63521aa16330616261a46278aac" prot="private" static="no" mutable="no">
+        <type>float</type>
+        <definition>float Auris::AudioPlayer::fadeDelayY</definition>
+        <argsstring></argsstring>
+        <name>fadeDelayY</name>
+        <initializer>= 1.0f</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>A float value: faceDelayY. The delay of the fade on the y axis. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Projects/GameEngine/include/Auris/Utilities/AudioPlayer.hpp" line="39" column="1" bodyfile="Projects/GameEngine/include/Auris/Utilities/AudioPlayer.hpp" bodystart="39" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_auris_1_1_audio_player_acd67c7992cb6399862ebdb9788c6307b_1acd67c7992cb6399862ebdb9788c6307b" prot="private" static="no" mutable="no">
+        <type><ref refid="class_auris_1_1_camera" kindref="compound">Auris::Camera</ref> *</type>
+        <definition>Auris::Camera* Auris::AudioPlayer::listener</definition>
+        <argsstring></argsstring>
+        <name>listener</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>A Camera* pointer: listener. The camera that should listen for the audio. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Projects/GameEngine/include/Auris/Utilities/AudioPlayer.hpp" line="41" column="1" bodyfile="Projects/GameEngine/include/Auris/Utilities/AudioPlayer.hpp" bodystart="41" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-static-attrib">
+      <memberdef kind="variable" id="class_auris_1_1_audio_player_a6801b55993242e06ed1d094c40ffea5d_1a6801b55993242e06ed1d094c40ffea5d" prot="private" static="yes" mutable="no">
+        <type>int</type>
+        <definition>int Auris::AudioPlayer::channelCount</definition>
+        <argsstring></argsstring>
+        <name>channelCount</name>
+        <initializer>= 0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>A static int value: channelCount. This is the total amount of allocated channels by SDL_mixer. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Projects/GameEngine/include/Auris/Utilities/AudioPlayer.hpp" line="28" column="1" bodyfile="Projects/GameEngine/include/Auris/Utilities/AudioPlayer.hpp" bodystart="28" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="class_auris_1_1_audio_player_a76f2cce039293eede8fd10038ddd6934_1a76f2cce039293eede8fd10038ddd6934" prot="public" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool Auris::AudioPlayer::drawAudioRange</definition>
+        <argsstring></argsstring>
+        <name>drawAudioRange</name>
+        <initializer>= false</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>A bool value: drawAudioRange. If the audio debug range should be draw. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Projects/GameEngine/include/Auris/Utilities/AudioPlayer.hpp" line="234" column="1" bodyfile="Projects/GameEngine/include/Auris/Utilities/AudioPlayer.hpp" bodystart="234" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_auris_1_1_audio_player_a97ccf8b50ea9900edba64eaf5f09694a_1a97ccf8b50ea9900edba64eaf5f09694a" prot="public" static="no" mutable="no">
+        <type>float</type>
+        <definition>float Auris::AudioPlayer::audioIconScale</definition>
+        <argsstring></argsstring>
+        <name>audioIconScale</name>
+        <initializer>= 10</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>A float value: audioIconScale. The scale of the debug audio icon (default is 10). </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Projects/GameEngine/include/Auris/Utilities/AudioPlayer.hpp" line="235" column="1" bodyfile="Projects/GameEngine/include/Auris/Utilities/AudioPlayer.hpp" bodystart="235" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_auris_1_1_audio_player_a5ae6710cd367579dbce099599c989d32_1a5ae6710cd367579dbce099599c989d32" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Auris::AudioPlayer::AudioPlayer</definition>
+        <argsstring>(Auris::Camera *listener=nullptr, int channels=1, float fadeScaleX=1.0f, float fadeScaleY=1.0f, int fadeDelayX=0, int fadeDelayY=0)</argsstring>
+        <name>AudioPlayer</name>
+        <param>
+          <type><ref refid="class_auris_1_1_camera" kindref="compound">Auris::Camera</ref> *</type>
+          <declname>listener</declname>
+          <defval>nullptr</defval>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>channels</declname>
+          <defval>1</defval>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>fadeScaleX</declname>
+          <defval>1.0f</defval>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>fadeScaleY</declname>
+          <defval>1.0f</defval>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>fadeDelayX</declname>
+          <defval>0</defval>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>fadeDelayY</declname>
+          <defval>0</defval>
+        </param>
+        <briefdescription>
+<para>The <ref refid="class_auris_1_1_audio_player" kindref="compound">AudioPlayer</ref> constructor, taking 0-6 arguments. </para>        </briefdescription>
+        <detaileddescription>
+<para>Initializes <ref refid="class_auris_1_1_audio_player" kindref="compound">AudioPlayer</ref> to the values inputted. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>listener</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>a <ref refid="class_auris_1_1_camera" kindref="compound">Camera</ref> pointer. The camera that should be the listener (default no listener, meaning global audio). </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>channels</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>an int value. The amount of channels this <ref refid="class_auris_1_1_audio_player" kindref="compound">AudioPlayer</ref> should allocate for its use. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>fadeScaleX</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>a float value. The scale which to face by on the x axis (default is 1.0). </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>fadeScaleY</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>a float value. The scale which to face by on the y axis (default is 1.0). </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>fadeDelayX</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>a float value. The delay of the fade on the x axis (default is 0). </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>fadeDelayY</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>a float value. The delay of the fade on the y axis (default is 0). </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Projects/GameEngine/include/Auris/Utilities/AudioPlayer.hpp" line="55" column="1" bodyfile="Projects/GameEngine/Auris/src/Auris/Entities/AudioPlayer.cpp" bodystart="7" bodyend="32"/>
+      </memberdef>
+      <memberdef kind="function" id="class_auris_1_1_audio_player_a664d181c07d0237803f6fad7e27eed33_1a664d181c07d0237803f6fad7e27eed33" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type>void</type>
+        <definition>void Auris::AudioPlayer::update</definition>
+        <argsstring>(float deltaTime)</argsstring>
+        <name>update</name>
+        <reimplements refid="class_auris_1_1_entity_a82768db86a5efc62f99e20e15d6bfe97_1a82768db86a5efc62f99e20e15d6bfe97">update</reimplements>
+        <param>
+          <type>float</type>
+          <declname>deltaTime</declname>
+        </param>
+        <briefdescription>
+<para>An update method, taking 1 argument. </para>        </briefdescription>
+        <detaileddescription>
+<para>Sets the pan and master volume according to the relative distance between this <ref refid="class_auris_1_1_audio_player" kindref="compound">AudioPlayer</ref> and its listener <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>deltaTime</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>a float value. The delta time in seconds. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Projects/GameEngine/include/Auris/Utilities/AudioPlayer.hpp" line="61" column="1" bodyfile="Projects/GameEngine/include/Auris/Utilities/AudioPlayer.hpp" bodystart="61" bodyend="86"/>
+      </memberdef>
+      <memberdef kind="function" id="class_auris_1_1_audio_player_a04d35bc3b48d1762f4a556890cf35fe6_1a04d35bc3b48d1762f4a556890cf35fe6" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>int</type>
+        <definition>int Auris::AudioPlayer::addMusic</definition>
+        <argsstring>(Mix_Music *mixMusic, int volume=128)</argsstring>
+        <name>addMusic</name>
+        <param>
+          <type>Mix_Music *</type>
+          <declname>mixMusic</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>volume</declname>
+          <defval>128</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>An addMusic method, taking 1-2 arguemnts. Adds music to this <ref refid="class_auris_1_1_audio_player" kindref="compound">AudioPlayer</ref>. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>mixMusic</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>a Mix_Music pointer. The music to add to the audioplayer. Use <ref refid="class_auris_1_1_asset_manager_a6401ef4abb8770223df38efc533bfcba_1a6401ef4abb8770223df38efc533bfcba" kindref="member">AssetManager::getMusic()</ref> to get the pointer. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>volume</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>an int value. The initial volume of that music (0-128) (default is 128). </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>int. The index of the music. Returns -1 on load error. </para></simplesect>
+<simplesect kind="see"><para><ref refid="class_auris_1_1_audio_player_afc04010437a1609163097a414c0683e9_1afc04010437a1609163097a414c0683e9" kindref="member">addSound()</ref> </para></simplesect>
+<simplesect kind="see"><para><ref refid="class_auris_1_1_asset_manager_a6401ef4abb8770223df38efc533bfcba_1a6401ef4abb8770223df38efc533bfcba" kindref="member">AssetManager::getMusic()</ref> </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Projects/GameEngine/include/Auris/Utilities/AudioPlayer.hpp" line="96" column="1" bodyfile="Projects/GameEngine/include/Auris/Utilities/AudioPlayer.hpp" bodystart="96" bodyend="102"/>
+      </memberdef>
+      <memberdef kind="function" id="class_auris_1_1_audio_player_afc04010437a1609163097a414c0683e9_1afc04010437a1609163097a414c0683e9" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>int</type>
+        <definition>int Auris::AudioPlayer::addSound</definition>
+        <argsstring>(Mix_Chunk *mixChunk, int volume=128)</argsstring>
+        <name>addSound</name>
+        <param>
+          <type>Mix_Chunk *</type>
+          <declname>mixChunk</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>volume</declname>
+          <defval>128</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>An addSound method. taking 1-2 arguments. Adds a sound to this <ref refid="class_auris_1_1_audio_player" kindref="compound">AudioPlayer</ref>. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>mixChunk</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>a Mix_Chunk pointer. The sound to add to the audioplayer. Use <ref refid="class_auris_1_1_asset_manager_aa417ba9bbbdf2c675e03aa51a22d5c36_1aa417ba9bbbdf2c675e03aa51a22d5c36" kindref="member">AssetManager::getSound()</ref> to get the pointer </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>volume</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>an int value. The initial volume of that sound (0-128) (default is 128). </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>int The index of the sound. Returns -1 on load error. </para></simplesect>
+<simplesect kind="see"><para><ref refid="class_auris_1_1_audio_player_a04d35bc3b48d1762f4a556890cf35fe6_1a04d35bc3b48d1762f4a556890cf35fe6" kindref="member">addMusic()</ref> </para></simplesect>
+<simplesect kind="see"><para><ref refid="class_auris_1_1_asset_manager_aa417ba9bbbdf2c675e03aa51a22d5c36_1aa417ba9bbbdf2c675e03aa51a22d5c36" kindref="member">AssetManager::getSound()</ref> </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Projects/GameEngine/include/Auris/Utilities/AudioPlayer.hpp" line="111" column="1" bodyfile="Projects/GameEngine/include/Auris/Utilities/AudioPlayer.hpp" bodystart="111" bodyend="117"/>
+      </memberdef>
+      <memberdef kind="function" id="class_auris_1_1_audio_player_a21fa4db1dad82901c5d70cc3250a6546_1a21fa4db1dad82901c5d70cc3250a6546" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void Auris::AudioPlayer::playMusic</definition>
+        <argsstring>(int index, int loops=-1)</argsstring>
+        <name>playMusic</name>
+        <param>
+          <type>int</type>
+          <declname>index</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>loops</declname>
+          <defval>-1</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>A playMusic method, taking 1 argument. Plays the music of the <ref refid="class_auris_1_1_audio_player" kindref="compound">AudioPlayer</ref> <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>index</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>an int value. The index of the music. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Projects/GameEngine/include/Auris/Utilities/AudioPlayer.hpp" line="122" column="1" bodyfile="Projects/GameEngine/include/Auris/Utilities/AudioPlayer.hpp" bodystart="122" bodyend="135"/>
+      </memberdef>
+      <memberdef kind="function" id="class_auris_1_1_audio_player_a43f13a131cd50948600b10c8272e24b6_1a43f13a131cd50948600b10c8272e24b6" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void Auris::AudioPlayer::playSound</definition>
+        <argsstring>(int index, int loops=0)</argsstring>
+        <name>playSound</name>
+        <param>
+          <type>int</type>
+          <declname>index</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>loops</declname>
+          <defval>0</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>A playSound method, taking 1 argument. Plays the sound of the <ref refid="class_auris_1_1_audio_player" kindref="compound">AudioPlayer</ref> at the current channel. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>index</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>an int value. The index of the sound. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Projects/GameEngine/include/Auris/Utilities/AudioPlayer.hpp" line="140" column="1" bodyfile="Projects/GameEngine/include/Auris/Utilities/AudioPlayer.hpp" bodystart="140" bodyend="147"/>
+      </memberdef>
+      <memberdef kind="function" id="class_auris_1_1_audio_player_afa46b37e86f2486df5ba56e0e5a2dd85_1afa46b37e86f2486df5ba56e0e5a2dd85" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void Auris::AudioPlayer::pauseMusic</definition>
+        <argsstring>()</argsstring>
+        <name>pauseMusic</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>A pauseMusic method. Pauses music if music is playing </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Projects/GameEngine/include/Auris/Utilities/AudioPlayer.hpp" line="152" column="1" bodyfile="Projects/GameEngine/include/Auris/Utilities/AudioPlayer.hpp" bodystart="152" bodyend="155"/>
+      </memberdef>
+      <memberdef kind="function" id="class_auris_1_1_audio_player_a069208abdb395c5c53bf26a644bc36de_1a069208abdb395c5c53bf26a644bc36de" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void Auris::AudioPlayer::resumeMusic</definition>
+        <argsstring>()</argsstring>
+        <name>resumeMusic</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>A resumeMusic method. Resumes playing music if music is paused </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Projects/GameEngine/include/Auris/Utilities/AudioPlayer.hpp" line="160" column="1" bodyfile="Projects/GameEngine/include/Auris/Utilities/AudioPlayer.hpp" bodystart="160" bodyend="163"/>
+      </memberdef>
+      <memberdef kind="function" id="class_auris_1_1_audio_player_a2a0a054bf0143e727f4514be7ae2bf47_1a2a0a054bf0143e727f4514be7ae2bf47" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void Auris::AudioPlayer::stopMusic</definition>
+        <argsstring>()</argsstring>
+        <name>stopMusic</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>A stopMusic method. Stops all music playing or paused. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Projects/GameEngine/include/Auris/Utilities/AudioPlayer.hpp" line="168" column="1" bodyfile="Projects/GameEngine/include/Auris/Utilities/AudioPlayer.hpp" bodystart="168" bodyend="171"/>
+      </memberdef>
+      <memberdef kind="function" id="class_auris_1_1_audio_player_a1c956893fd48092a632347445a9cba0e_1a1c956893fd48092a632347445a9cba0e" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void Auris::AudioPlayer::setMusicVolume</definition>
+        <argsstring>(int volume)</argsstring>
+        <name>setMusicVolume</name>
+        <param>
+          <type>int</type>
+          <declname>volume</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>A setMusicVolume method, taking 1 argument. Sets volume of currently playing music. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>volume</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>an int value. The volume to set the music to. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Projects/GameEngine/include/Auris/Utilities/AudioPlayer.hpp" line="176" column="1" bodyfile="Projects/GameEngine/include/Auris/Utilities/AudioPlayer.hpp" bodystart="176" bodyend="178"/>
+      </memberdef>
+      <memberdef kind="function" id="class_auris_1_1_audio_player_a0aa098c528e1bbca96dd788b448c5dfd_1a0aa098c528e1bbca96dd788b448c5dfd" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void Auris::AudioPlayer::setSoundVolume</definition>
+        <argsstring>(int index, int volume)</argsstring>
+        <name>setSoundVolume</name>
+        <param>
+          <type>int</type>
+          <declname>index</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>volume</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>A setSoundVolume method, taking 2 arguments. Sets volume of a sound <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>index</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>an int value. The index of that sound </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>volume</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>an int value. The volume to set it to. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Projects/GameEngine/include/Auris/Utilities/AudioPlayer.hpp" line="184" column="1" bodyfile="Projects/GameEngine/include/Auris/Utilities/AudioPlayer.hpp" bodystart="184" bodyend="190"/>
+      </memberdef>
+      <memberdef kind="function" id="class_auris_1_1_audio_player_a71ef262f75fba7adf04e568d982bbfee_1a71ef262f75fba7adf04e568d982bbfee" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void Auris::AudioPlayer::setFadeScaleX</definition>
+        <argsstring>(float scale)</argsstring>
+        <name>setFadeScaleX</name>
+        <param>
+          <type>float</type>
+          <declname>scale</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>A setFadeScaleX method, taking 1 argument. Sets the fade scale on the x-axis. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>scale</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>a float value. The scale to set. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Projects/GameEngine/include/Auris/Utilities/AudioPlayer.hpp" line="195" column="1" bodyfile="Projects/GameEngine/include/Auris/Utilities/AudioPlayer.hpp" bodystart="195" bodyend="197"/>
+      </memberdef>
+      <memberdef kind="function" id="class_auris_1_1_audio_player_a4544fb691ee766b699d37e3e423a4230_1a4544fb691ee766b699d37e3e423a4230" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void Auris::AudioPlayer::setFadeScaleY</definition>
+        <argsstring>(float scale)</argsstring>
+        <name>setFadeScaleY</name>
+        <param>
+          <type>float</type>
+          <declname>scale</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>A setFadeScaleY method, taking 1 argument. Sets the fade scale on the y-axis. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>scale</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>a float value. The scale to set. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Projects/GameEngine/include/Auris/Utilities/AudioPlayer.hpp" line="202" column="1" bodyfile="Projects/GameEngine/include/Auris/Utilities/AudioPlayer.hpp" bodystart="202" bodyend="204"/>
+      </memberdef>
+      <memberdef kind="function" id="class_auris_1_1_audio_player_a06208dd572cb09591ca3c44818b75a7e_1a06208dd572cb09591ca3c44818b75a7e" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void Auris::AudioPlayer::setFadeDelayX</definition>
+        <argsstring>(float delay)</argsstring>
+        <name>setFadeDelayX</name>
+        <param>
+          <type>float</type>
+          <declname>delay</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>A setFadeDelayX method, taking 1 argument. Sets the fade delay on the x-axis. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>delay</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>a float value. The delay to set. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Projects/GameEngine/include/Auris/Utilities/AudioPlayer.hpp" line="209" column="1" bodyfile="Projects/GameEngine/include/Auris/Utilities/AudioPlayer.hpp" bodystart="209" bodyend="211"/>
+      </memberdef>
+      <memberdef kind="function" id="class_auris_1_1_audio_player_a018f9b273d6705365dcbd24516019906_1a018f9b273d6705365dcbd24516019906" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void Auris::AudioPlayer::setFadeDelayY</definition>
+        <argsstring>(float delay)</argsstring>
+        <name>setFadeDelayY</name>
+        <param>
+          <type>float</type>
+          <declname>delay</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>A setFadeDelayY method, taking 1 argument. Sets the fade delay on the y-axis. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>delay</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>a float value. The delay to set. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Projects/GameEngine/include/Auris/Utilities/AudioPlayer.hpp" line="216" column="1" bodyfile="Projects/GameEngine/include/Auris/Utilities/AudioPlayer.hpp" bodystart="216" bodyend="218"/>
+      </memberdef>
+      <memberdef kind="function" id="class_auris_1_1_audio_player_aedb51bfbb1bc29bd8482f9705bfc11ba_1aedb51bfbb1bc29bd8482f9705bfc11ba" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>Auris::AudioPlayer::~AudioPlayer</definition>
+        <argsstring>()</argsstring>
+        <name>~AudioPlayer</name>
+        <briefdescription>
+<para>The <ref refid="class_auris_1_1_audio_player" kindref="compound">AudioPlayer</ref> destructor. </para>        </briefdescription>
+        <detaileddescription>
+<para>Clears all music and sounds. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Projects/GameEngine/include/Auris/Utilities/AudioPlayer.hpp" line="224" column="1" bodyfile="Projects/GameEngine/include/Auris/Utilities/AudioPlayer.hpp" bodystart="224" bodyend="227"/>
+      </memberdef>
+      <memberdef kind="function" id="class_auris_1_1_audio_player_ac006a0972512120a74f188dde0e00b6d_1ac006a0972512120a74f188dde0e00b6d" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type>void</type>
+        <definition>void Auris::AudioPlayer::debugDraw</definition>
+        <argsstring>()</argsstring>
+        <name>debugDraw</name>
+        <reimplements refid="class_auris_1_1_entity_a880c5f29315d04c76453ab70ffe60737_1a880c5f29315d04c76453ab70ffe60737">debugDraw</reimplements>
+        <briefdescription>
+<para>The scriptable function debugDraw. </para>        </briefdescription>
+        <detaileddescription>
+<para>Used by the game programmer to add debugdraw functionality to the entity. Is called every frame, when the debug gui is open</para><para>This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts.</para><para>A debugDraw overload method. Draws sound related debug information to the screen </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Projects/GameEngine/include/Auris/Utilities/AudioPlayer.hpp" line="241" column="1" bodyfile="Projects/GameEngine/include/Auris/Utilities/AudioPlayer.hpp" bodystart="241" bodyend="274"/>
+      </memberdef>
+      <memberdef kind="function" id="class_auris_1_1_audio_player_a66285ec5a748b33926b38c4f05bd3f95_1a66285ec5a748b33926b38c4f05bd3f95" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type>void</type>
+        <definition>void Auris::AudioPlayer::inspectorImGui</definition>
+        <argsstring>()</argsstring>
+        <name>inspectorImGui</name>
+        <reimplements refid="class_auris_1_1_entity_a30ccf345f74230cb9c560f5bf4794b99_1a30ccf345f74230cb9c560f5bf4794b99">inspectorImGui</reimplements>
+        <briefdescription>
+<para>The scriptable function inspectorImGui. </para>        </briefdescription>
+        <detaileddescription>
+<para>Used by the game programmer to add inspector GUI functionality to the entity. Is called every frame, when the inspector gui is open The game programmer can call <ref refid="class_auris_1_1_entity_a30ccf345f74230cb9c560f5bf4794b99_1a30ccf345f74230cb9c560f5bf4794b99" kindref="member">Entity::inspectorImGui</ref> to get <ref refid="class_auris_1_1_transform" kindref="compound">Transform</ref>, Position, Scale and Rotation inspection</para><para>This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts.</para><para>A inspectorImGui overload method. Writes sound related debug information to the inspector </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Projects/GameEngine/include/Auris/Utilities/AudioPlayer.hpp" line="281" column="1" bodyfile="Projects/GameEngine/include/Auris/Utilities/AudioPlayer.hpp" bodystart="281" bodyend="294"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>The <ref refid="class_auris_1_1_audio_player" kindref="compound">AudioPlayer</ref> class that extend the <ref refid="class_auris_1_1_entity" kindref="compound">Entity</ref> class. </para>    </briefdescription>
+    <detaileddescription>
+<para>Used to create audio entities, so that audio can be used in a game </para>    </detaileddescription>
+    <inheritancegraph>
+      <node id="30">
+        <label>Auris::AudioPlayer</label>
+        <link refid="class_auris_1_1_audio_player"/>
+        <childnode refid="31" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="31">
+        <label>Auris::Entity</label>
+        <link refid="class_auris_1_1_entity"/>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="36">
+        <label>std::vector&lt; Auris::Entity *&gt;</label>
+        <childnode refid="33" relation="usage">
+          <edgelabel>elements</edgelabel>
+        </childnode>
+      </node>
+      <node id="39">
+        <label>std::vector&lt; Mix_Chunk *&gt;</label>
+      </node>
+      <node id="32">
+        <label>Auris::AudioPlayer</label>
+        <link refid="class_auris_1_1_audio_player"/>
+        <childnode refid="33" relation="public-inheritance">
+        </childnode>
+        <childnode refid="39" relation="usage">
+          <edgelabel>sounds</edgelabel>
+        </childnode>
+        <childnode refid="40" relation="usage">
+          <edgelabel>listener</edgelabel>
+        </childnode>
+        <childnode refid="41" relation="usage">
+          <edgelabel>music</edgelabel>
+        </childnode>
+        <childnode refid="42" relation="usage">
+          <edgelabel>channels</edgelabel>
+        </childnode>
+      </node>
+      <node id="37">
+        <label>Auris::Transform</label>
+        <link refid="class_auris_1_1_transform"/>
+        <childnode refid="38" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="41">
+        <label>std::vector&lt; Mix_Music *&gt;</label>
+      </node>
+      <node id="35">
+        <label>std::basic_string&lt; char &gt;</label>
+      </node>
+      <node id="40">
+        <label>Auris::Camera</label>
+        <link refid="class_auris_1_1_camera"/>
+      </node>
+      <node id="38">
+        <label>Auris::Nugget</label>
+        <link refid="class_auris_1_1_nugget"/>
+        <childnode refid="33" relation="usage">
+          <edgelabel>entity</edgelabel>
+        </childnode>
+      </node>
+      <node id="33">
+        <label>Auris::Entity</label>
+        <link refid="class_auris_1_1_entity"/>
+        <childnode refid="34" relation="usage">
+          <edgelabel>type</edgelabel>
+          <edgelabel>name</edgelabel>
+        </childnode>
+        <childnode refid="36" relation="usage">
+          <edgelabel>children</edgelabel>
+        </childnode>
+        <childnode refid="33" relation="usage">
+          <edgelabel>parent</edgelabel>
+        </childnode>
+        <childnode refid="37" relation="usage">
+          <edgelabel>transform</edgelabel>
+        </childnode>
+      </node>
+      <node id="42">
+        <label>std::vector&lt; int &gt;</label>
+      </node>
+      <node id="34">
+        <label>std::string</label>
+        <childnode refid="35" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="Projects/GameEngine/include/Auris/Utilities/AudioPlayer.hpp" line="21" column="1" bodyfile="Projects/GameEngine/include/Auris/Utilities/AudioPlayer.hpp" bodystart="21" bodyend="295"/>
+    <listofallmembers>
+      <member refid="class_auris_1_1_entity_a3b4c091e55b92a0b2950d35a3dcf60fd_1a3b4c091e55b92a0b2950d35a3dcf60fd" prot="public" virt="non-virtual"><scope>Auris::AudioPlayer</scope><name>addChild</name></member>
+      <member refid="class_auris_1_1_audio_player_a04d35bc3b48d1762f4a556890cf35fe6_1a04d35bc3b48d1762f4a556890cf35fe6" prot="public" virt="non-virtual"><scope>Auris::AudioPlayer</scope><name>addMusic</name></member>
+      <member refid="class_auris_1_1_audio_player_afc04010437a1609163097a414c0683e9_1afc04010437a1609163097a414c0683e9" prot="public" virt="non-virtual"><scope>Auris::AudioPlayer</scope><name>addSound</name></member>
+      <member refid="class_auris_1_1_audio_player_a97ccf8b50ea9900edba64eaf5f09694a_1a97ccf8b50ea9900edba64eaf5f09694a" prot="public" virt="non-virtual"><scope>Auris::AudioPlayer</scope><name>audioIconScale</name></member>
+      <member refid="class_auris_1_1_audio_player_a5ae6710cd367579dbce099599c989d32_1a5ae6710cd367579dbce099599c989d32" prot="public" virt="non-virtual"><scope>Auris::AudioPlayer</scope><name>AudioPlayer</name></member>
+      <member refid="class_auris_1_1_audio_player_a6801b55993242e06ed1d094c40ffea5d_1a6801b55993242e06ed1d094c40ffea5d" prot="private" virt="non-virtual"><scope>Auris::AudioPlayer</scope><name>channelCount</name></member>
+      <member refid="class_auris_1_1_audio_player_a5e7ce165085ef8c9fc9c052a9c4490d6_1a5e7ce165085ef8c9fc9c052a9c4490d6" prot="private" virt="non-virtual"><scope>Auris::AudioPlayer</scope><name>channels</name></member>
+      <member refid="class_auris_1_1_entity_a5987efbb9fc7b0b8a986454424a0e003_1a5987efbb9fc7b0b8a986454424a0e003" prot="public" virt="non-virtual"><scope>Auris::AudioPlayer</scope><name>children</name></member>
+      <member refid="class_auris_1_1_audio_player_a9a0afca7e007c289ca94db3791b18b79_1a9a0afca7e007c289ca94db3791b18b79" prot="private" virt="non-virtual"><scope>Auris::AudioPlayer</scope><name>currentChannel</name></member>
+      <member refid="class_auris_1_1_audio_player_ac006a0972512120a74f188dde0e00b6d_1ac006a0972512120a74f188dde0e00b6d" prot="public" virt="virtual"><scope>Auris::AudioPlayer</scope><name>debugDraw</name></member>
+      <member refid="class_auris_1_1_audio_player_afd56c1d616cd4a99506becb6b5db84b0_1afd56c1d616cd4a99506becb6b5db84b0" prot="private" virt="non-virtual"><scope>Auris::AudioPlayer</scope><name>deltaDistanceX</name></member>
+      <member refid="class_auris_1_1_audio_player_a959a92c1c431b871488a62d7e58b5478_1a959a92c1c431b871488a62d7e58b5478" prot="private" virt="non-virtual"><scope>Auris::AudioPlayer</scope><name>deltaDistanceY</name></member>
+      <member refid="class_auris_1_1_audio_player_a76f2cce039293eede8fd10038ddd6934_1a76f2cce039293eede8fd10038ddd6934" prot="public" virt="non-virtual"><scope>Auris::AudioPlayer</scope><name>drawAudioRange</name></member>
+      <member refid="class_auris_1_1_entity_a7164735eefd40272dae8ebe5d929fcdc_1a7164735eefd40272dae8ebe5d929fcdc" prot="public" virt="non-virtual"><scope>Auris::AudioPlayer</scope><name>Entity</name></member>
+      <member refid="class_auris_1_1_audio_player_adbdd62f382fee79c467a9c5d4186942d_1adbdd62f382fee79c467a9c5d4186942d" prot="private" virt="non-virtual"><scope>Auris::AudioPlayer</scope><name>fade</name></member>
+      <member refid="class_auris_1_1_audio_player_a649c07f1550f26bf38deb6fd28f358db_1a649c07f1550f26bf38deb6fd28f358db" prot="private" virt="non-virtual"><scope>Auris::AudioPlayer</scope><name>fadeDelayX</name></member>
+      <member refid="class_auris_1_1_audio_player_a321ed63521aa16330616261a46278aac_1a321ed63521aa16330616261a46278aac" prot="private" virt="non-virtual"><scope>Auris::AudioPlayer</scope><name>fadeDelayY</name></member>
+      <member refid="class_auris_1_1_audio_player_aaeea71fb5b725ea1e7d5ec26f281e104_1aaeea71fb5b725ea1e7d5ec26f281e104" prot="private" virt="non-virtual"><scope>Auris::AudioPlayer</scope><name>fadeScaleX</name></member>
+      <member refid="class_auris_1_1_audio_player_afd8664847907f5bef07feb0a257fa175_1afd8664847907f5bef07feb0a257fa175" prot="private" virt="non-virtual"><scope>Auris::AudioPlayer</scope><name>fadeScaleY</name></member>
+      <member refid="class_auris_1_1_entity_a7a93ca71ac6ba155796408363a198518_1a7a93ca71ac6ba155796408363a198518" prot="public" virt="non-virtual"><scope>Auris::AudioPlayer</scope><name>getChildByName</name></member>
+      <member refid="class_auris_1_1_entity_a64856847ad473d4fc07f7842dcea5571_1a64856847ad473d4fc07f7842dcea5571" prot="public" virt="non-virtual"><scope>Auris::AudioPlayer</scope><name>getChildByType</name></member>
+      <member refid="class_auris_1_1_entity_a60becb4bfcc5e2df9954a0487209195b_1a60becb4bfcc5e2df9954a0487209195b" prot="public" virt="non-virtual"><scope>Auris::AudioPlayer</scope><name>getParent</name></member>
+      <member refid="class_auris_1_1_entity_ab7373d13451309a5994a3737140797a4_1ab7373d13451309a5994a3737140797a4" prot="public" virt="virtual"><scope>Auris::AudioPlayer</scope><name>init</name></member>
+      <member refid="class_auris_1_1_audio_player_a66285ec5a748b33926b38c4f05bd3f95_1a66285ec5a748b33926b38c4f05bd3f95" prot="public" virt="virtual"><scope>Auris::AudioPlayer</scope><name>inspectorImGui</name></member>
+      <member refid="class_auris_1_1_audio_player_acd67c7992cb6399862ebdb9788c6307b_1acd67c7992cb6399862ebdb9788c6307b" prot="private" virt="non-virtual"><scope>Auris::AudioPlayer</scope><name>listener</name></member>
+      <member refid="class_auris_1_1_audio_player_a3b551119c5c73725e55264cb64fe9564_1a3b551119c5c73725e55264cb64fe9564" prot="private" virt="non-virtual"><scope>Auris::AudioPlayer</scope><name>music</name></member>
+      <member refid="class_auris_1_1_entity_ad87e74abaab08d178904f82aa13c866c_1ad87e74abaab08d178904f82aa13c866c" prot="public" virt="non-virtual"><scope>Auris::AudioPlayer</scope><name>name</name></member>
+      <member refid="class_auris_1_1_entity_a5011b41267c7ae7dcbf260e3ffb83b3b_1a5011b41267c7ae7dcbf260e3ffb83b3b" prot="public" virt="virtual"><scope>Auris::AudioPlayer</scope><name>onDestruction</name></member>
+      <member refid="class_auris_1_1_audio_player_a11d27eb6142f26090b13880dac810202_1a11d27eb6142f26090b13880dac810202" prot="private" virt="non-virtual"><scope>Auris::AudioPlayer</scope><name>pan</name></member>
+      <member refid="class_auris_1_1_entity_afec0c65e0063778ee9888e8747213504_1afec0c65e0063778ee9888e8747213504" prot="public" virt="non-virtual"><scope>Auris::AudioPlayer</scope><name>parent</name></member>
+      <member refid="class_auris_1_1_audio_player_afa46b37e86f2486df5ba56e0e5a2dd85_1afa46b37e86f2486df5ba56e0e5a2dd85" prot="public" virt="non-virtual"><scope>Auris::AudioPlayer</scope><name>pauseMusic</name></member>
+      <member refid="class_auris_1_1_audio_player_a21fa4db1dad82901c5d70cc3250a6546_1a21fa4db1dad82901c5d70cc3250a6546" prot="public" virt="non-virtual"><scope>Auris::AudioPlayer</scope><name>playMusic</name></member>
+      <member refid="class_auris_1_1_audio_player_a43f13a131cd50948600b10c8272e24b6_1a43f13a131cd50948600b10c8272e24b6" prot="public" virt="non-virtual"><scope>Auris::AudioPlayer</scope><name>playSound</name></member>
+      <member refid="class_auris_1_1_audio_player_a069208abdb395c5c53bf26a644bc36de_1a069208abdb395c5c53bf26a644bc36de" prot="public" virt="non-virtual"><scope>Auris::AudioPlayer</scope><name>resumeMusic</name></member>
+      <member refid="class_auris_1_1_audio_player_a06208dd572cb09591ca3c44818b75a7e_1a06208dd572cb09591ca3c44818b75a7e" prot="public" virt="non-virtual"><scope>Auris::AudioPlayer</scope><name>setFadeDelayX</name></member>
+      <member refid="class_auris_1_1_audio_player_a018f9b273d6705365dcbd24516019906_1a018f9b273d6705365dcbd24516019906" prot="public" virt="non-virtual"><scope>Auris::AudioPlayer</scope><name>setFadeDelayY</name></member>
+      <member refid="class_auris_1_1_audio_player_a71ef262f75fba7adf04e568d982bbfee_1a71ef262f75fba7adf04e568d982bbfee" prot="public" virt="non-virtual"><scope>Auris::AudioPlayer</scope><name>setFadeScaleX</name></member>
+      <member refid="class_auris_1_1_audio_player_a4544fb691ee766b699d37e3e423a4230_1a4544fb691ee766b699d37e3e423a4230" prot="public" virt="non-virtual"><scope>Auris::AudioPlayer</scope><name>setFadeScaleY</name></member>
+      <member refid="class_auris_1_1_audio_player_a1c956893fd48092a632347445a9cba0e_1a1c956893fd48092a632347445a9cba0e" prot="public" virt="non-virtual"><scope>Auris::AudioPlayer</scope><name>setMusicVolume</name></member>
+      <member refid="class_auris_1_1_entity_af8bfc68ec6368c9468484410ca919602_1af8bfc68ec6368c9468484410ca919602" prot="public" virt="non-virtual"><scope>Auris::AudioPlayer</scope><name>setParent</name></member>
+      <member refid="class_auris_1_1_audio_player_a0aa098c528e1bbca96dd788b448c5dfd_1a0aa098c528e1bbca96dd788b448c5dfd" prot="public" virt="non-virtual"><scope>Auris::AudioPlayer</scope><name>setSoundVolume</name></member>
+      <member refid="class_auris_1_1_audio_player_a4f2d463e9c7905b548dd0b32d61364fa_1a4f2d463e9c7905b548dd0b32d61364fa" prot="private" virt="non-virtual"><scope>Auris::AudioPlayer</scope><name>sounds</name></member>
+      <member refid="class_auris_1_1_entity_aedf6a4670c5cb9e6efc5fbec2be40281_1aedf6a4670c5cb9e6efc5fbec2be40281" prot="public" virt="virtual"><scope>Auris::AudioPlayer</scope><name>start</name></member>
+      <member refid="class_auris_1_1_audio_player_a2a0a054bf0143e727f4514be7ae2bf47_1a2a0a054bf0143e727f4514be7ae2bf47" prot="public" virt="non-virtual"><scope>Auris::AudioPlayer</scope><name>stopMusic</name></member>
+      <member refid="class_auris_1_1_entity_a1c0579dbb2753589668621bd3e3c187b_1a1c0579dbb2753589668621bd3e3c187b" prot="public" virt="non-virtual"><scope>Auris::AudioPlayer</scope><name>transform</name></member>
+      <member refid="class_auris_1_1_entity_a3d1c31d342f6a5ae9ccd4f81503c7876_1a3d1c31d342f6a5ae9ccd4f81503c7876" prot="public" virt="non-virtual"><scope>Auris::AudioPlayer</scope><name>type</name></member>
+      <member refid="class_auris_1_1_audio_player_a664d181c07d0237803f6fad7e27eed33_1a664d181c07d0237803f6fad7e27eed33" prot="public" virt="virtual"><scope>Auris::AudioPlayer</scope><name>update</name></member>
+      <member refid="class_auris_1_1_entity_a5dd3f0c8b0c20b776989169061f4c39a_1a5dd3f0c8b0c20b776989169061f4c39a" prot="public" virt="virtual"><scope>Auris::AudioPlayer</scope><name>updateTransform</name></member>
+      <member refid="class_auris_1_1_audio_player_aedb51bfbb1bc29bd8482f9705bfc11ba_1aedb51bfbb1bc29bd8482f9705bfc11ba" prot="public" virt="non-virtual"><scope>Auris::AudioPlayer</scope><name>~AudioPlayer</name></member>
+      <member refid="class_auris_1_1_entity_a242caae0bcc5ef026a11d058a524e0fc_1a242caae0bcc5ef026a11d058a524e0fc" prot="public" virt="non-virtual"><scope>Auris::AudioPlayer</scope><name>~Entity</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

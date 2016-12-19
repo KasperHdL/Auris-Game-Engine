@@ -1,0 +1,52 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.12">
+  <compounddef id="structpicojson_1_1last__error__t" kind="struct" language="C++" prot="public">
+    <compoundname>picojson::last_error_t</compoundname>
+    <includes refid="picojson_8h" local="no">picojson.h</includes>
+    <templateparamlist>
+      <param>
+        <type>typename T</type>
+      </param>
+    </templateparamlist>
+      <sectiondef kind="public-static-attrib">
+      <memberdef kind="variable" id="structpicojson_1_1last__error__t_a270361f4321424bfd800c36607bf0411_1a270361f4321424bfd800c36607bf0411" prot="public" static="yes" mutable="no">
+        <type>std::string</type>
+        <definition>std::string picojson::last_error_t&lt; T &gt;::s</definition>
+        <argsstring></argsstring>
+        <name>s</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Projects/GameEngine/include/Auris/Utilities/picojson.h" line="1021" column="1" bodyfile="Projects/GameEngine/include/Auris/Utilities/picojson.h" bodystart="1021" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="150">
+        <label>std::basic_string&lt; char &gt;</label>
+      </node>
+      <node id="148">
+        <label>picojson::last_error_t&lt; T &gt;</label>
+        <link refid="structpicojson_1_1last__error__t"/>
+        <childnode refid="149" relation="usage">
+          <edgelabel>s</edgelabel>
+        </childnode>
+      </node>
+      <node id="149">
+        <label>std::string</label>
+        <childnode refid="150" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="Projects/GameEngine/include/Auris/Utilities/picojson.h" line="1020" column="1" bodyfile="Projects/GameEngine/include/Auris/Utilities/picojson.h" bodystart="1020" bodyend="1022"/>
+    <listofallmembers>
+      <member refid="structpicojson_1_1last__error__t_a270361f4321424bfd800c36607bf0411_1a270361f4321424bfd800c36607bf0411" prot="public" virt="non-virtual"><scope>picojson::last_error_t</scope><name>s</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,457 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.12">
+  <compounddef id="_particle_system_8hpp" kind="file" language="C++">
+    <compoundname>ParticleSystem.hpp</compoundname>
+    <includes local="yes">glm/glm.hpp</includes>
+    <includes local="no">vector</includes>
+    <includes local="yes">SRE/ParticleMesh.hpp</includes>
+    <includes local="yes">SRE/SimpleRenderEngine.hpp</includes>
+    <includes local="no">SRE/Shader.hpp</includes>
+    <includes local="no">SRE/Texture.hpp</includes>
+    <includes refid="_interpolation_8hpp" local="yes">Auris/Utilities/Interpolation.hpp</includes>
+    <includedby refid="_render_system_8hpp" local="yes">Projects/GameEngine/include/Auris/Systems/RenderSystem.hpp</includedby>
+    <incdepgraph>
+      <node id="1132">
+        <label>SRE/Texture.hpp</label>
+      </node>
+      <node id="1126">
+        <label>Projects/GameEngine/include/Auris/Systems/ParticleSystem.hpp</label>
+        <link refid="_particle_system_8hpp"/>
+        <childnode refid="1127" relation="include">
+        </childnode>
+        <childnode refid="1128" relation="include">
+        </childnode>
+        <childnode refid="1129" relation="include">
+        </childnode>
+        <childnode refid="1130" relation="include">
+        </childnode>
+        <childnode refid="1131" relation="include">
+        </childnode>
+        <childnode refid="1132" relation="include">
+        </childnode>
+        <childnode refid="1133" relation="include">
+        </childnode>
+      </node>
+      <node id="1129">
+        <label>SRE/ParticleMesh.hpp</label>
+      </node>
+      <node id="1133">
+        <label>Auris/Utilities/Interpolation.hpp</label>
+        <link refid="_interpolation_8hpp"/>
+        <childnode refid="1128" relation="include">
+        </childnode>
+        <childnode refid="1127" relation="include">
+        </childnode>
+      </node>
+      <node id="1131">
+        <label>SRE/Shader.hpp</label>
+      </node>
+      <node id="1128">
+        <label>vector</label>
+      </node>
+      <node id="1130">
+        <label>SRE/SimpleRenderEngine.hpp</label>
+      </node>
+      <node id="1127">
+        <label>glm/glm.hpp</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="1140">
+        <label>Projects/GameEngine/Auris/src/Auris/Entities/PhysicsEntity.cpp</label>
+        <link refid="_physics_entity_8cpp"/>
+      </node>
+      <node id="1137">
+        <label>Projects/GameEngine/include/Auris/Entities/PhysicsEntity.hpp</label>
+        <link refid="_physics_entity_8hpp"/>
+        <childnode refid="1138" relation="include">
+        </childnode>
+        <childnode refid="1140" relation="include">
+        </childnode>
+      </node>
+      <node id="1138">
+        <label>Projects/GameEngine/include/Auris/Systems/CollisionHandler.hpp</label>
+        <link refid="_collision_handler_8hpp"/>
+        <childnode refid="1139" relation="include">
+        </childnode>
+      </node>
+      <node id="1141">
+        <label>Projects/GameEngine/include/Auris/Game.hpp</label>
+        <link refid="_game_8hpp"/>
+        <childnode refid="1136" relation="include">
+        </childnode>
+        <childnode refid="1142" relation="include">
+        </childnode>
+        <childnode refid="1143" relation="include">
+        </childnode>
+      </node>
+      <node id="1136">
+        <label>Projects/GameEngine/include/Auris/Engine.hpp</label>
+        <link refid="_engine_8hpp"/>
+        <childnode refid="1137" relation="include">
+        </childnode>
+        <childnode refid="1141" relation="include">
+        </childnode>
+        <childnode refid="1144" relation="include">
+        </childnode>
+        <childnode refid="1139" relation="include">
+        </childnode>
+      </node>
+      <node id="1134">
+        <label>Projects/GameEngine/include/Auris/Systems/ParticleSystem.hpp</label>
+        <link refid="_particle_system_8hpp"/>
+        <childnode refid="1135" relation="include">
+        </childnode>
+      </node>
+      <node id="1144">
+        <label>Projects/GameEngine/include/Auris/Utilities/BodyStandard.hpp</label>
+        <link refid="_body_standard_8hpp"/>
+      </node>
+      <node id="1143">
+        <label>Projects/GameEngine/Auris/src/Auris/Systems/Input.cpp</label>
+        <link refid="_input_8cpp"/>
+      </node>
+      <node id="1142">
+        <label>Projects/GameEngine/Auris/src/Auris/Game.cpp</label>
+        <link refid="_game_8cpp"/>
+      </node>
+      <node id="1139">
+        <label>Projects/GameEngine/Auris/src/Auris/Engine.cpp</label>
+        <link refid="_engine_8cpp"/>
+      </node>
+      <node id="1147">
+        <label>Projects/GameEngine/Auris/src/Auris/Utilities/SpriteSheet.cpp</label>
+        <link refid="_sprite_sheet_8cpp"/>
+      </node>
+      <node id="1145">
+        <label>Projects/GameEngine/Auris/src/Auris/Entities/Nuggets/Sprite.cpp</label>
+        <link refid="_sprite_8cpp"/>
+      </node>
+      <node id="1146">
+        <label>Projects/GameEngine/Auris/src/Auris/Systems/RenderSystem.cpp</label>
+        <link refid="_render_system_8cpp"/>
+      </node>
+      <node id="1135">
+        <label>Projects/GameEngine/include/Auris/Systems/RenderSystem.hpp</label>
+        <link refid="_render_system_8hpp"/>
+        <childnode refid="1136" relation="include">
+        </childnode>
+        <childnode refid="1145" relation="include">
+        </childnode>
+        <childnode refid="1146" relation="include">
+        </childnode>
+        <childnode refid="1147" relation="include">
+        </childnode>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="class_auris_1_1_particle_system" prot="public">Auris::ParticleSystem</innerclass>
+    <innernamespace refid="namespace_auris">Auris</innernamespace>
+    <innernamespace refid="namespace_s_r_e">SRE</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#pragma<sp/>once</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;glm/glm.hpp&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;vector&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;SRE/ParticleMesh.hpp&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;SRE/SimpleRenderEngine.hpp&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;SRE/Shader.hpp&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;SRE/Texture.hpp&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="_interpolation_8hpp" kindref="compound">Auris/Utilities/Interpolation.hpp</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespace_auris" kindref="compound">Auris</ref>{</highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight><highlight class="keyword">using<sp/>namespace<sp/></highlight><highlight class="normal"><ref refid="namespacestd" kindref="compound">std</ref>;</highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight><highlight class="keyword">using<sp/>namespace<sp/></highlight><highlight class="normal"><ref refid="namespaceglm" kindref="compound">glm</ref>;</highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight><highlight class="keyword">using<sp/>namespace<sp/></highlight><highlight class="normal"><ref refid="namespace_s_r_e" kindref="compound">SRE</ref>;</highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="19"><highlight class="comment">//!<sp/>The<sp/>ParticleSystem<sp/>class</highlight></codeline>
+<codeline lineno="20"><highlight class="comment"></highlight><highlight class="comment"><sp/><sp/><sp/><sp/>/*!<sp/>Handles<sp/>all<sp/>particles</highlight></codeline>
+<codeline lineno="21"><highlight class="comment"><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="22" refid="class_auris_1_1_particle_system" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="class_auris_1_1_particle_system" kindref="compound">ParticleSystem</ref>{</highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight></codeline>
+<codeline lineno="24" refid="class_auris_1_1_particle_system_a7925ae32f8ed70ab998fde4897813618_1a7925ae32f8ed70ab998fde4897813618" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>vector&lt;vec3&gt;<sp/><ref refid="class_auris_1_1_particle_system_a7925ae32f8ed70ab998fde4897813618_1a7925ae32f8ed70ab998fde4897813618" kindref="member">finalPositions</ref>;<sp/></highlight><highlight class="comment">/*!&lt;<sp/>A<sp/>vector<sp/>of<sp/>vec3<sp/>values:<sp/>finalPositions.<sp/>The<sp/>final<sp/>positions<sp/>of<sp/>the<sp/>particle.<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="25" refid="class_auris_1_1_particle_system_aff217c4e8f19e7c136d8bac7bea2b835_1aff217c4e8f19e7c136d8bac7bea2b835" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>vector&lt;vec4&gt;<sp/><ref refid="class_auris_1_1_particle_system_aff217c4e8f19e7c136d8bac7bea2b835_1aff217c4e8f19e7c136d8bac7bea2b835" kindref="member">finalColors</ref>;<sp/></highlight><highlight class="comment">/*!&lt;<sp/>A<sp/>vector<sp/>of<sp/>vec4<sp/>values:<sp/>finalColors.<sp/>The<sp/>final<sp/>colors<sp/>of<sp/>the<sp/>particle.<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="26" refid="class_auris_1_1_particle_system_a109ff429108b817243f63e7f4452fe8e_1a109ff429108b817243f63e7f4452fe8e" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>vector&lt;float&gt;<sp/><ref refid="class_auris_1_1_particle_system_a109ff429108b817243f63e7f4452fe8e_1a109ff429108b817243f63e7f4452fe8e" kindref="member">finalSizes</ref>;<sp/></highlight><highlight class="comment">/*!&lt;<sp/>A<sp/>vector<sp/>of<sp/>float<sp/>values:<sp/>finalSizes.<sp/>The<sp/>final<sp/>sizes<sp/>of<sp/>the<sp/>particle.<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="27" refid="class_auris_1_1_particle_system_a05dbc021200431bf2f0bd9bf79031660_1a05dbc021200431bf2f0bd9bf79031660" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>vector&lt;float&gt;<sp/><ref refid="class_auris_1_1_particle_system_a05dbc021200431bf2f0bd9bf79031660_1a05dbc021200431bf2f0bd9bf79031660" kindref="member">finalRotation</ref>;<sp/></highlight><highlight class="comment">/*!&lt;<sp/>A<sp/>vector<sp/>of<sp/>float<sp/>values:<sp/>finalRotation.<sp/>The<sp/>final<sp/>rotations<sp/>of<sp/>the<sp/>particle.<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="28"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight></codeline>
+<codeline lineno="30"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//particle<sp/>properties</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="31" refid="class_auris_1_1_particle_system_a7c82e0ac493d574ae975a7ae4acf3e73_1a7c82e0ac493d574ae975a7ae4acf3e73" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>vector&lt;vec3&gt;<sp/><ref refid="class_auris_1_1_particle_system_a7c82e0ac493d574ae975a7ae4acf3e73_1a7c82e0ac493d574ae975a7ae4acf3e73" kindref="member">positions</ref>;<sp/><sp/></highlight><highlight class="comment">/*!&lt;<sp/>A<sp/>vector<sp/>of<sp/>vec3<sp/>values:<sp/>positions.<sp/>The<sp/>positions<sp/>of<sp/>the<sp/>particles.<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="32" refid="class_auris_1_1_particle_system_a5973a04e7951938451b4c56afce56c9a_1a5973a04e7951938451b4c56afce56c9a" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>vector&lt;vec3&gt;<sp/><ref refid="class_auris_1_1_particle_system_a5973a04e7951938451b4c56afce56c9a_1a5973a04e7951938451b4c56afce56c9a" kindref="member">velocities</ref>;<sp/></highlight><highlight class="comment">/*!&lt;<sp/>A<sp/>vector<sp/>of<sp/>vec3<sp/>values:<sp/>velocities.<sp/>The<sp/>rotations<sp/>of<sp/>the<sp/>particles.<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="33" refid="class_auris_1_1_particle_system_a67428290d2fbe9f6ea6dc35800c3bb17_1a67428290d2fbe9f6ea6dc35800c3bb17" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>vector&lt;float&gt;<sp/><ref refid="class_auris_1_1_particle_system_a67428290d2fbe9f6ea6dc35800c3bb17_1a67428290d2fbe9f6ea6dc35800c3bb17" kindref="member">rotations</ref>;<sp/></highlight><highlight class="comment">/*!&lt;<sp/>A<sp/>vector<sp/>of<sp/>float<sp/>values:<sp/>rotations.<sp/>The<sp/>rotations<sp/>of<sp/>the<sp/>particles.<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="34" refid="class_auris_1_1_particle_system_a41970139473651d5c46eae87318958b5_1a41970139473651d5c46eae87318958b5" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>vector&lt;float&gt;<sp/><ref refid="class_auris_1_1_particle_system_a41970139473651d5c46eae87318958b5_1a41970139473651d5c46eae87318958b5" kindref="member">angularVelocities</ref>;<sp/></highlight><highlight class="comment">/*!&lt;<sp/>A<sp/>vector<sp/>of<sp/>float<sp/>values:<sp/>AngularVelocities.<sp/>The<sp/>angular<sp/>velocities<sp/>of<sp/>the<sp/>particles.<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="35"><highlight class="normal"></highlight></codeline>
+<codeline lineno="36" refid="class_auris_1_1_particle_system_abc9b43cb384a0029fb24840c0869f4c3_1abc9b43cb384a0029fb24840c0869f4c3" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>vector&lt;vec4&gt;<sp/><ref refid="class_auris_1_1_particle_system_abc9b43cb384a0029fb24840c0869f4c3_1abc9b43cb384a0029fb24840c0869f4c3" kindref="member">startColors</ref>;<sp/></highlight><highlight class="comment">/*!&lt;<sp/>A<sp/>vector<sp/>of<sp/>vec4<sp/>values:<sp/>startColors.<sp/>The<sp/>start<sp/>colors<sp/>of<sp/>the<sp/>particles.<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="37" refid="class_auris_1_1_particle_system_a5b009b410f36311984c37524a21a7a32_1a5b009b410f36311984c37524a21a7a32" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>vector&lt;float&gt;<sp/><ref refid="class_auris_1_1_particle_system_a5b009b410f36311984c37524a21a7a32_1a5b009b410f36311984c37524a21a7a32" kindref="member">startSizes</ref>;<sp/></highlight><highlight class="comment">/*!&lt;<sp/>A<sp/>vector<sp/>of<sp/>float<sp/>values:<sp/>startSizes.<sp/>The<sp/>start<sp/>sizes<sp/>of<sp/>the<sp/>particles.<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="38"><highlight class="normal"></highlight></codeline>
+<codeline lineno="39" refid="class_auris_1_1_particle_system_ac598794b9c735bcb1de1524153c4a56d_1ac598794b9c735bcb1de1524153c4a56d" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>vector&lt;vec4&gt;<sp/><ref refid="class_auris_1_1_particle_system_ac598794b9c735bcb1de1524153c4a56d_1ac598794b9c735bcb1de1524153c4a56d" kindref="member">endColors</ref>;<sp/></highlight><highlight class="comment">/*!&lt;<sp/>A<sp/>vector<sp/>of<sp/>vec4<sp/>values:<sp/>endColors.<sp/>The<sp/>end<sp/>colors<sp/>of<sp/>the<sp/>particles.<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="40" refid="class_auris_1_1_particle_system_ae68135a3faf56a015fdc569ef36cb396_1ae68135a3faf56a015fdc569ef36cb396" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>vector&lt;float&gt;<sp/><ref refid="class_auris_1_1_particle_system_ae68135a3faf56a015fdc569ef36cb396_1ae68135a3faf56a015fdc569ef36cb396" kindref="member">endSizes</ref>;<sp/></highlight><highlight class="comment">/*!&lt;<sp/>A<sp/>vector<sp/>of<sp/>float<sp/>values:<sp/>endSizes.<sp/>The<sp/>end<sp/>sizes<sp/>of<sp/>the<sp/>particles.<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="41"><highlight class="normal"></highlight></codeline>
+<codeline lineno="42" refid="class_auris_1_1_particle_system_acb7cce379fdee2d5b647eeb86060fe7b_1acb7cce379fdee2d5b647eeb86060fe7b" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>vector&lt;float&gt;<sp/><ref refid="class_auris_1_1_particle_system_acb7cce379fdee2d5b647eeb86060fe7b_1acb7cce379fdee2d5b647eeb86060fe7b" kindref="member">startTimes</ref>;<sp/></highlight><highlight class="comment">/*!&lt;<sp/>A<sp/>vector<sp/>of<sp/>float<sp/>values:<sp/>startTimes.<sp/>The<sp/>start<sp/>times<sp/>of<sp/>the<sp/>particles.<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="43"><highlight class="normal"></highlight></codeline>
+<codeline lineno="44" refid="class_auris_1_1_particle_system_ad5baaa06132bb8a96588abcd4fe55c04_1ad5baaa06132bb8a96588abcd4fe55c04" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="class_auris_1_1_particle_system_ad5baaa06132bb8a96588abcd4fe55c04_1ad5baaa06132bb8a96588abcd4fe55c04" kindref="member">currentTime</ref>;<sp/></highlight><highlight class="comment">/*!&lt;<sp/>A<sp/>float<sp/>value:<sp/>currentTime.<sp/>The<sp/>current<sp/>Particle<sp/>time<sp/>in<sp/>the<sp/>particle<sp/>system.<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="45" refid="class_auris_1_1_particle_system_a847bf70177f7886f29e1ea5db1c3b7ad_1a847bf70177f7886f29e1ea5db1c3b7ad" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="class_auris_1_1_particle_system_a847bf70177f7886f29e1ea5db1c3b7ad_1a847bf70177f7886f29e1ea5db1c3b7ad" kindref="member">particleDuration</ref>;<sp/></highlight><highlight class="comment">/*!&lt;<sp/>A<sp/>float<sp/>value:<sp/>particleDuration.<sp/>The<sp/>duration<sp/>of<sp/>each<sp/>particle.<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="46"><highlight class="normal"></highlight></codeline>
+<codeline lineno="47" refid="class_auris_1_1_particle_system_a5fdb71102e77ef964810afc41738f66b_1a5fdb71102e77ef964810afc41738f66b" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>SRE::Texture*<sp/><ref refid="class_auris_1_1_particle_system_a5fdb71102e77ef964810afc41738f66b_1a5fdb71102e77ef964810afc41738f66b" kindref="member">texture</ref>;<sp/></highlight><highlight class="comment">/*!&lt;<sp/>A<sp/>Texture<sp/>pointer:<sp/>texture.<sp/>An<sp/>instance<sp/>of<sp/>the<sp/>texture<sp/>of<sp/>the<sp/>particle.<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="48"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="49" refid="class_auris_1_1_particle_system_a81a41ed315e695e7c02fbc799a806a90_1a81a41ed315e695e7c02fbc799a806a90" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>SRE::ParticleMesh*<sp/>mesh<sp/>=<sp/></highlight><highlight class="keyword">nullptr</highlight><highlight class="normal">;<sp/></highlight><highlight class="comment">/*!&lt;<sp/>A<sp/>Mesh<sp/>pointer:<sp/>mesh.<sp/>An<sp/>instance<sp/>of<sp/>the<sp/>mesh<sp/>of<sp/>the<sp/>particle<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="50" refid="class_auris_1_1_particle_system_a4074a1c6540ac434b3f16fe7d75a1d26_1a4074a1c6540ac434b3f16fe7d75a1d26" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>SRE::Shader*<sp/><ref refid="class_auris_1_1_particle_system_a4074a1c6540ac434b3f16fe7d75a1d26_1a4074a1c6540ac434b3f16fe7d75a1d26" kindref="member">shader</ref>;<sp/></highlight><highlight class="comment">/*!&lt;<sp/>A<sp/>shader<sp/>pointer:shader.<sp/>An<sp/>instance<sp/>of<sp/>the<sp/>shader<sp/>of<sp/>the<sp/>particle.<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="51"><highlight class="normal"></highlight></codeline>
+<codeline lineno="52"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//empty</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="53" refid="class_auris_1_1_particle_system_a5e460d7104a942ca9d8a84eb2e9e9a7b_1a5e460d7104a942ca9d8a84eb2e9e9a7b" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>vector&lt;vec2&gt;<sp/><ref refid="class_auris_1_1_particle_system_a5e460d7104a942ca9d8a84eb2e9e9a7b_1a5e460d7104a942ca9d8a84eb2e9e9a7b" kindref="member">uvs</ref>;<sp/></highlight><highlight class="comment">/*!&lt;<sp/>A<sp/>vector<sp/>of<sp/>vec2:<sp/>uvs.<sp/>Empty,<sp/>as<sp/>it<sp/>is<sp/>not<sp/>needed<sp/>in<sp/>2D.<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="54" refid="class_auris_1_1_particle_system_a242fa5e34c0364041c8d2dc87a8c23b2_1a242fa5e34c0364041c8d2dc87a8c23b2" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>vector&lt;float&gt;<sp/><ref refid="class_auris_1_1_particle_system_a242fa5e34c0364041c8d2dc87a8c23b2_1a242fa5e34c0364041c8d2dc87a8c23b2" kindref="member">uvSize</ref>;<sp/></highlight><highlight class="comment">/*!&lt;<sp/>A<sp/>vector<sp/>of<sp/>float:<sp/>uvSize.<sp/>Empty,<sp/>as<sp/>it<sp/>is<sp/>not<sp/>needed<sp/>in<sp/>2D.<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="55"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="56"><highlight class="comment"><sp/><sp/><sp/><sp/>//!<sp/>A<sp/>lerpColor<sp/>method,<sp/>taking<sp/>3<sp/>arguments.</highlight></codeline>
+<codeline lineno="57"><highlight class="comment"></highlight><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>/*!</highlight></codeline>
+<codeline lineno="58"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*<sp/>Lerps<sp/>from<sp/>one<sp/>color<sp/>to<sp/>the<sp/>other,<sp/>based<sp/>on<sp/>the<sp/>float</highlight></codeline>
+<codeline lineno="59"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*<sp/>\param<sp/>start<sp/>a<sp/>vec4<sp/>value,<sp/>that<sp/>is<sp/>the<sp/>start<sp/>color</highlight></codeline>
+<codeline lineno="60"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*<sp/>\param<sp/>end<sp/>a<sp/>vec4<sp/>value,<sp/>that<sp/>is<sp/>the<sp/>end<sp/>color</highlight></codeline>
+<codeline lineno="61"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*<sp/>\param<sp/>t<sp/>a<sp/>float<sp/>value,<sp/>that<sp/>is<sp/>the<sp/>current<sp/>lerp<sp/>differentiater<sp/>(between<sp/>0-1)</highlight></codeline>
+<codeline lineno="62"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*<sp/>\return<sp/>vec4,<sp/>as<sp/>the<sp/>color<sp/>between<sp/>the<sp/>two<sp/>colors</highlight></codeline>
+<codeline lineno="63"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="64" refid="class_auris_1_1_particle_system_af3fb2bfb6e0e8a0394976c1bbe5349ab_1af3fb2bfb6e0e8a0394976c1bbe5349ab" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>vec4<sp/><ref refid="class_auris_1_1_particle_system_af3fb2bfb6e0e8a0394976c1bbe5349ab_1af3fb2bfb6e0e8a0394976c1bbe5349ab" kindref="member">lerpColor</ref>(vec4<sp/>start,<sp/>vec4<sp/>end,<sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>t){</highlight></codeline>
+<codeline lineno="65"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>vec4(</highlight></codeline>
+<codeline lineno="66"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>mix&lt;float&gt;(start[0],<sp/>end[0],<sp/>t),</highlight></codeline>
+<codeline lineno="67"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>mix&lt;float&gt;(start[1],<sp/>end[1],<sp/>t),</highlight></codeline>
+<codeline lineno="68"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>mix&lt;float&gt;(start[2],<sp/>end[2],<sp/>t),</highlight></codeline>
+<codeline lineno="69"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>mix&lt;float&gt;(start[3],<sp/>end[3],<sp/>t)</highlight></codeline>
+<codeline lineno="70"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>);</highlight></codeline>
+<codeline lineno="71"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="72"><highlight class="normal"></highlight></codeline>
+<codeline lineno="73"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="74" refid="class_auris_1_1_particle_system_a861dcdabfe81654abedac8e5bac2cb03_1a861dcdabfe81654abedac8e5bac2cb03" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>timeScale<sp/>=<sp/>1;<sp/></highlight><highlight class="comment">/*!&lt;<sp/>A<sp/>float<sp/>value:<sp/>timeScale.<sp/>The<sp/>time<sp/>scale<sp/>of<sp/>the<sp/>particle<sp/>(default<sp/>is<sp/>1).<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="75" refid="class_auris_1_1_particle_system_a8834c94ffd24406aa0faa7dec3ee7407_1a8834c94ffd24406aa0faa7dec3ee7407" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>vec3<sp/>acceleration<sp/>=<sp/>vec3(0,0,0);<sp/></highlight><highlight class="comment">/*!&lt;<sp/>A<sp/>vec3<sp/>value:<sp/>acceleration.<sp/>The<sp/>acceleration<sp/>of<sp/>the<sp/>particle<sp/>(default<sp/>is<sp/>vec3(0)).<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="76" refid="class_auris_1_1_particle_system_a29ace4c3a64d72977a28bc0d4b45ab71_1a29ace4c3a64d72977a28bc0d4b45ab71" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>particleIndex<sp/>=<sp/>0;<sp/></highlight><highlight class="comment">/*!&lt;<sp/>An<sp/>int<sp/>value:<sp/>particleIndex.<sp/>The<sp/>index<sp/>of<sp/>the<sp/>particle<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="77"><highlight class="normal"></highlight></codeline>
+<codeline lineno="78"><highlight class="normal"></highlight></codeline>
+<codeline lineno="79"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//interpolation</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="80"><highlight class="normal"><sp/></highlight></codeline>
+<codeline lineno="81" refid="class_auris_1_1_particle_system_a69b2c0beb11d55f53af67a8afdb5c554_1a69b2c0beb11d55f53af67a8afdb5c554" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>vector&lt;vec2&gt;<sp/><ref refid="class_auris_1_1_particle_system_a69b2c0beb11d55f53af67a8afdb5c554_1a69b2c0beb11d55f53af67a8afdb5c554" kindref="member">interpolationPoints_acceleration</ref>;<sp/></highlight><highlight class="comment">/*!&lt;<sp/>A<sp/>vector<sp/>of<sp/>vec2<sp/>values:<sp/>interpolationPoints_acceleration.<sp/>The<sp/>acceleration<sp/>points<sp/>to<sp/>interpolate<sp/>between<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="82" refid="class_auris_1_1_particle_system_af902ef3b0bdfb07e663ae0e7971cefac_1af902ef3b0bdfb07e663ae0e7971cefac" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>vector&lt;vec2&gt;<sp/><ref refid="class_auris_1_1_particle_system_af902ef3b0bdfb07e663ae0e7971cefac_1af902ef3b0bdfb07e663ae0e7971cefac" kindref="member">interpolationPoints_velocity</ref>;<sp/></highlight><highlight class="comment">/*!&lt;<sp/>A<sp/>vector<sp/>of<sp/>vec2<sp/>values:<sp/>interpolationPoints_velocity.<sp/>The<sp/>velocity<sp/>points<sp/>to<sp/>interpolate<sp/>between<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="83" refid="class_auris_1_1_particle_system_accb3daadb767315a1b0688ecc4c655eb_1accb3daadb767315a1b0688ecc4c655eb" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>vector&lt;vec2&gt;<sp/><ref refid="class_auris_1_1_particle_system_accb3daadb767315a1b0688ecc4c655eb_1accb3daadb767315a1b0688ecc4c655eb" kindref="member">interpolationPoints_angularVelocity</ref>;<sp/></highlight><highlight class="comment">/*!&lt;<sp/>A<sp/>vector<sp/>of<sp/>vec2<sp/>values:<sp/>interpolationPoints_angularVelocity.<sp/>The<sp/>angular<sp/>velocity<sp/>points<sp/>to<sp/>interpolate<sp/>between<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="84" refid="class_auris_1_1_particle_system_ad8c36499df4bb77aa9a12e6c1768b34d_1ad8c36499df4bb77aa9a12e6c1768b34d" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>vector&lt;vec2&gt;<sp/><ref refid="class_auris_1_1_particle_system_ad8c36499df4bb77aa9a12e6c1768b34d_1ad8c36499df4bb77aa9a12e6c1768b34d" kindref="member">interpolationPoints_color</ref>;<sp/></highlight><highlight class="comment">/*!&lt;<sp/>A<sp/>vector<sp/>of<sp/>vec2<sp/>values:<sp/>interpolationPoints_color.<sp/>The<sp/>color<sp/>points<sp/>to<sp/>interpolate<sp/>between<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="85" refid="class_auris_1_1_particle_system_ad918a58749226268c585107f8c0b4079_1ad918a58749226268c585107f8c0b4079" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>vector&lt;vec2&gt;<sp/><ref refid="class_auris_1_1_particle_system_ad918a58749226268c585107f8c0b4079_1ad918a58749226268c585107f8c0b4079" kindref="member">interpolationPoints_size</ref>;<sp/></highlight><highlight class="comment">/*!&lt;<sp/>A<sp/>vector<sp/>of<sp/>vec2<sp/>values:<sp/>interpolationPoints_size.<sp/>The<sp/>size<sp/>points<sp/>to<sp/>interpolate<sp/>between<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="86"><highlight class="normal"><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="87" refid="class_auris_1_1_particle_system_a1527299187453700ebca254c95f1b119_1a1527299187453700ebca254c95f1b119" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_auris_1_1_interpolation" kindref="compound">Interpolation</ref><sp/><sp/><ref refid="class_auris_1_1_particle_system_a1527299187453700ebca254c95f1b119_1a1527299187453700ebca254c95f1b119" kindref="member">interpolation_acceleration</ref>;<sp/></highlight><highlight class="comment">/*!&lt;<sp/>An<sp/>Interpolation<sp/>value:<sp/>interpolation_acceleration.<sp/>The<sp/>acceleration<sp/>interpolation.<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="88" refid="class_auris_1_1_particle_system_a68f280a7dcab9843baa124330777e3a9_1a68f280a7dcab9843baa124330777e3a9" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_auris_1_1_interpolation" kindref="compound">Interpolation</ref><sp/><sp/><ref refid="class_auris_1_1_particle_system_a68f280a7dcab9843baa124330777e3a9_1a68f280a7dcab9843baa124330777e3a9" kindref="member">interpolation_velocity</ref>;<sp/></highlight><highlight class="comment">/*!&lt;<sp/>An<sp/>Interpolation<sp/>value:<sp/>interpolation_velocity.<sp/>The<sp/>velocity<sp/>interpolation.<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="89" refid="class_auris_1_1_particle_system_ac263b655f0e8be2e182fe9b3b54ea3ab_1ac263b655f0e8be2e182fe9b3b54ea3ab" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_auris_1_1_interpolation" kindref="compound">Interpolation</ref><sp/><sp/><ref refid="class_auris_1_1_particle_system_ac263b655f0e8be2e182fe9b3b54ea3ab_1ac263b655f0e8be2e182fe9b3b54ea3ab" kindref="member">interpolation_angularVelocity</ref>;<sp/></highlight><highlight class="comment">/*!&lt;<sp/>An<sp/>Interpolation<sp/>value:<sp/>interpolation_angularVelocity.<sp/>The<sp/>angular<sp/>velocity<sp/>acceleration<sp/>interpolation.<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="90" refid="class_auris_1_1_particle_system_a8155f9adb89fdf10fb4dfaf1fed59e08_1a8155f9adb89fdf10fb4dfaf1fed59e08" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_auris_1_1_interpolation" kindref="compound">Interpolation</ref><sp/><sp/><ref refid="class_auris_1_1_particle_system_a8155f9adb89fdf10fb4dfaf1fed59e08_1a8155f9adb89fdf10fb4dfaf1fed59e08" kindref="member">interpolation_color</ref>;<sp/></highlight><highlight class="comment">/*!&lt;<sp/>An<sp/>Interpolation<sp/>value:<sp/>interpolation_color.<sp/>The<sp/>color<sp/>interpolation.<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="91" refid="class_auris_1_1_particle_system_a569937091c61617631f2e733cf72caa3_1a569937091c61617631f2e733cf72caa3" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_auris_1_1_interpolation" kindref="compound">Interpolation</ref><sp/><sp/><ref refid="class_auris_1_1_particle_system_a569937091c61617631f2e733cf72caa3_1a569937091c61617631f2e733cf72caa3" kindref="member">interpolation_size</ref>;<sp/></highlight><highlight class="comment">/*!&lt;<sp/>An<sp/>Interpolation<sp/>value:<sp/>interpolation_size.<sp/>The<sp/>size<sp/>interpolation.<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="92"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="93"><highlight class="comment"><sp/><sp/><sp/><sp/>//!<sp/>The<sp/>ParticleSystem<sp/>constructor.</highlight></codeline>
+<codeline lineno="94"><highlight class="comment"></highlight><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>/*!</highlight></codeline>
+<codeline lineno="95"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*<sp/>Reserves<sp/>space<sp/>in<sp/>all<sp/>the<sp/>arrays,<sp/>and<sp/>creates<sp/>all<sp/>the<sp/>initial<sp/>values</highlight></codeline>
+<codeline lineno="96"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*<sp/>\sa<sp/>startup()</highlight></codeline>
+<codeline lineno="97"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="98" refid="class_auris_1_1_particle_system_a08c95e7d1396020e7d003d1792e88dba_1a08c95e7d1396020e7d003d1792e88dba" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_auris_1_1_particle_system_a08c95e7d1396020e7d003d1792e88dba_1a08c95e7d1396020e7d003d1792e88dba" kindref="member">ParticleSystem</ref>()</highlight></codeline>
+<codeline lineno="99"><highlight class="normal"><sp/><sp/><sp/><sp/>:</highlight></codeline>
+<codeline lineno="100"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>interpolation_acceleration(&amp;interpolationPoints_acceleration),<sp/></highlight></codeline>
+<codeline lineno="101"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>interpolation_velocity(&amp;interpolationPoints_velocity),</highlight></codeline>
+<codeline lineno="102"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>interpolation_angularVelocity(&amp;interpolationPoints_angularVelocity),</highlight></codeline>
+<codeline lineno="103"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>interpolation_color(&amp;interpolationPoints_color),</highlight></codeline>
+<codeline lineno="104"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>interpolation_size(&amp;interpolationPoints_size)</highlight></codeline>
+<codeline lineno="105"><highlight class="normal"></highlight></codeline>
+<codeline lineno="106"><highlight class="normal"></highlight></codeline>
+<codeline lineno="107"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="108"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>interpolationPoints_acceleration.reserve(4);</highlight></codeline>
+<codeline lineno="109"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>interpolationPoints_velocity.reserve(4);</highlight></codeline>
+<codeline lineno="110"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>interpolationPoints_angularVelocity.reserve(4);</highlight></codeline>
+<codeline lineno="111"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>interpolationPoints_color.reserve(4);</highlight></codeline>
+<codeline lineno="112"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>interpolationPoints_size.reserve(4);</highlight></codeline>
+<codeline lineno="113"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="114"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>interpolationPoints_acceleration.push_back(vec2(0,0));</highlight></codeline>
+<codeline lineno="115"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>interpolationPoints_velocity.push_back(vec2(0,0));</highlight></codeline>
+<codeline lineno="116"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>interpolationPoints_angularVelocity.push_back(vec2(0,0));</highlight></codeline>
+<codeline lineno="117"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>interpolationPoints_color.push_back(vec2(0,0));</highlight></codeline>
+<codeline lineno="118"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>interpolationPoints_size.push_back(vec2(0,0));</highlight></codeline>
+<codeline lineno="119"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="120"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal">(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i<sp/>=<sp/>0;i&lt;3;i++){</highlight></codeline>
+<codeline lineno="121"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>interpolationPoints_acceleration.push_back(vec2(1,1));</highlight></codeline>
+<codeline lineno="122"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>interpolationPoints_velocity.push_back(vec2(1,1));</highlight></codeline>
+<codeline lineno="123"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>interpolationPoints_angularVelocity.push_back(vec2(1,1));</highlight></codeline>
+<codeline lineno="124"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>interpolationPoints_color.push_back(vec2(1,1));</highlight></codeline>
+<codeline lineno="125"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>interpolationPoints_size.push_back(vec2(1,1));</highlight></codeline>
+<codeline lineno="126"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="127"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="128"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="129"><highlight class="comment"><sp/><sp/><sp/><sp/>//!<sp/>The<sp/>ParticleSystem<sp/>destructor.</highlight></codeline>
+<codeline lineno="130"><highlight class="comment"></highlight><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>/*!</highlight></codeline>
+<codeline lineno="131"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*<sp/>Shuts<sp/>down<sp/>the<sp/>particle<sp/>system,<sp/>and<sp/>deletes<sp/>all<sp/>the<sp/>mesh<sp/>and<sp/>texture<sp/>pointers</highlight></codeline>
+<codeline lineno="132"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*<sp/>\sa<sp/>shutdown()</highlight></codeline>
+<codeline lineno="133"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="134" refid="class_auris_1_1_particle_system_a7cfd960a7b0fb5f1d5b6c7978a334325_1a7cfd960a7b0fb5f1d5b6c7978a334325" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_auris_1_1_particle_system_a7cfd960a7b0fb5f1d5b6c7978a334325_1a7cfd960a7b0fb5f1d5b6c7978a334325" kindref="member">~ParticleSystem</ref>(){</highlight></codeline>
+<codeline lineno="135"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>shutdown();</highlight></codeline>
+<codeline lineno="136"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">delete</highlight><highlight class="normal"><sp/>mesh;</highlight></codeline>
+<codeline lineno="137"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>mesh<sp/>=<sp/></highlight><highlight class="keyword">nullptr</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="138"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="139"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="140"><highlight class="comment"><sp/><sp/><sp/><sp/>//!<sp/>A<sp/>startup<sp/>method,<sp/>taking<sp/>2-3<sp/>arguments.</highlight></codeline>
+<codeline lineno="141"><highlight class="comment"></highlight><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>/*!</highlight></codeline>
+<codeline lineno="142"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*<sp/>Starts<sp/>the<sp/>particle<sp/>system,<sp/>and<sp/>initializes<sp/>all<sp/>the<sp/>particles<sp/>to<sp/>their<sp/>initial<sp/>position</highlight></codeline>
+<codeline lineno="143"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*<sp/>\param<sp/>numParticles<sp/>an<sp/>int<sp/>value.<sp/>The<sp/>number<sp/>of<sp/>particles<sp/>in<sp/>the<sp/>particle<sp/>system.</highlight></codeline>
+<codeline lineno="144"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*<sp/>\param<sp/>particleDuration<sp/>a<sp/>float<sp/>value.<sp/>Each<sp/>particles<sp/>duration.</highlight></codeline>
+<codeline lineno="145"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*<sp/>\param<sp/>texture<sp/>a<sp/>Texture<sp/>pointer.<sp/>The<sp/>texture<sp/>of<sp/>the<sp/>particle<sp/>(default<sp/>is<sp/>a<sp/>white<sp/>texture).</highlight></codeline>
+<codeline lineno="146"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="147" refid="class_auris_1_1_particle_system_a1ba4c47dde45b65221f6d7de62dd0528_1a1ba4c47dde45b65221f6d7de62dd0528" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_auris_1_1_particle_system_a1ba4c47dde45b65221f6d7de62dd0528_1a1ba4c47dde45b65221f6d7de62dd0528" kindref="member">startup</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>numParticles,<sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>particleDuration,<sp/>Texture*<sp/>texture<sp/>=<sp/>Texture::getWhiteTexture()){</highlight></codeline>
+<codeline lineno="148"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>currentTime<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="149"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>this-&gt;particleDuration<sp/>=<sp/>particleDuration;</highlight></codeline>
+<codeline lineno="150"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>this-&gt;texture<sp/>=<sp/>texture;</highlight></codeline>
+<codeline lineno="151"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="152"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>shader<sp/>=<sp/>SRE::Shader::getStandardParticles();</highlight></codeline>
+<codeline lineno="153"><highlight class="normal"></highlight></codeline>
+<codeline lineno="154"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>finalPositions.reserve(numParticles);</highlight></codeline>
+<codeline lineno="155"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>finalColors.reserve(numParticles);</highlight></codeline>
+<codeline lineno="156"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>finalSizes.reserve(numParticles);</highlight></codeline>
+<codeline lineno="157"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>finalRotation.reserve(numParticles);</highlight></codeline>
+<codeline lineno="158"><highlight class="normal"></highlight></codeline>
+<codeline lineno="159"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>positions.reserve(numParticles);</highlight></codeline>
+<codeline lineno="160"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>velocities.reserve(numParticles);</highlight></codeline>
+<codeline lineno="161"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>rotations.reserve(numParticles);</highlight></codeline>
+<codeline lineno="162"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>angularVelocities.reserve(numParticles);</highlight></codeline>
+<codeline lineno="163"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>startColors.reserve(numParticles);</highlight></codeline>
+<codeline lineno="164"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>endColors.reserve(numParticles);</highlight></codeline>
+<codeline lineno="165"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>startSizes.reserve(numParticles);</highlight></codeline>
+<codeline lineno="166"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>endSizes.reserve(numParticles);</highlight></codeline>
+<codeline lineno="167"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>startTimes.reserve(numParticles);</highlight></codeline>
+<codeline lineno="168"><highlight class="normal"></highlight></codeline>
+<codeline lineno="169"><highlight class="normal"></highlight></codeline>
+<codeline lineno="170"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//zero<sp/>arrays</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="171"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal">(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i<sp/>=<sp/>0;<sp/>i<sp/>&lt;<sp/>numParticles;<sp/>i++){</highlight></codeline>
+<codeline lineno="172"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>finalPositions.push_back(vec3(0,0,-1000));</highlight></codeline>
+<codeline lineno="173"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>finalColors.push_back(vec4(0));</highlight></codeline>
+<codeline lineno="174"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>finalSizes.push_back(0);</highlight></codeline>
+<codeline lineno="175"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>finalRotation.push_back(0);</highlight></codeline>
+<codeline lineno="176"><highlight class="normal"></highlight></codeline>
+<codeline lineno="177"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>positions.push_back(vec3(0));</highlight></codeline>
+<codeline lineno="178"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>velocities.push_back(vec3(0));</highlight></codeline>
+<codeline lineno="179"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>rotations.push_back(0);</highlight></codeline>
+<codeline lineno="180"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>angularVelocities.push_back(0);</highlight></codeline>
+<codeline lineno="181"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>startColors.push_back(vec4(0));</highlight></codeline>
+<codeline lineno="182"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>endColors.push_back(vec4(0));</highlight></codeline>
+<codeline lineno="183"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>startSizes.push_back(0);</highlight></codeline>
+<codeline lineno="184"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>endSizes.push_back(0);</highlight></codeline>
+<codeline lineno="185"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>startTimes.push_back(-999);</highlight></codeline>
+<codeline lineno="186"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="187"><highlight class="normal"></highlight></codeline>
+<codeline lineno="188"><highlight class="normal"></highlight></codeline>
+<codeline lineno="189"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(mesh<sp/>==<sp/></highlight><highlight class="keyword">nullptr</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="190"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>mesh<sp/>=<sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/>SRE::ParticleMesh(finalPositions,<sp/>startColors,<sp/>uvs,<sp/>uvSize,<sp/>finalRotation,<sp/>startSizes);</highlight></codeline>
+<codeline lineno="191"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="192"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>mesh-&gt;update(finalPositions,<sp/>finalColors,<sp/>uvs,<sp/>uvSize,<sp/>finalRotation,<sp/>finalSizes);</highlight></codeline>
+<codeline lineno="193"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="194"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="195"><highlight class="comment"><sp/><sp/><sp/><sp/>//!<sp/>A<sp/>shutdown<sp/>method.</highlight></codeline>
+<codeline lineno="196"><highlight class="comment"></highlight><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>/*!</highlight></codeline>
+<codeline lineno="197"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*<sp/>Shuts<sp/>down<sp/>the<sp/>particle<sp/>system,<sp/>meaning<sp/>that<sp/>it<sp/>clears<sp/>all<sp/>the<sp/>values<sp/>and<sp/>paremeters<sp/>of<sp/>each<sp/>particle</highlight></codeline>
+<codeline lineno="198"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="199" refid="class_auris_1_1_particle_system_aa8ce8db22d3bf700cb8d5e295ef83814_1aa8ce8db22d3bf700cb8d5e295ef83814" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_auris_1_1_particle_system_aa8ce8db22d3bf700cb8d5e295ef83814_1aa8ce8db22d3bf700cb8d5e295ef83814" kindref="member">shutdown</ref>(){</highlight></codeline>
+<codeline lineno="200"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>finalPositions.clear();</highlight></codeline>
+<codeline lineno="201"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>finalColors.clear();</highlight></codeline>
+<codeline lineno="202"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>finalSizes.clear();</highlight></codeline>
+<codeline lineno="203"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>finalRotation.clear();</highlight></codeline>
+<codeline lineno="204"><highlight class="normal"></highlight></codeline>
+<codeline lineno="205"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>positions.clear();</highlight></codeline>
+<codeline lineno="206"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>velocities.clear();</highlight></codeline>
+<codeline lineno="207"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>rotations.clear();</highlight></codeline>
+<codeline lineno="208"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>angularVelocities.clear();</highlight></codeline>
+<codeline lineno="209"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>startColors.clear();</highlight></codeline>
+<codeline lineno="210"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>endColors.clear();</highlight></codeline>
+<codeline lineno="211"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>startSizes.clear();</highlight></codeline>
+<codeline lineno="212"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>endSizes.clear();</highlight></codeline>
+<codeline lineno="213"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>startTimes.clear();</highlight></codeline>
+<codeline lineno="214"><highlight class="normal"></highlight></codeline>
+<codeline lineno="215"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="_audio_player_8hpp_ac52ac34d9f452d759ea1ce3f8df9f682_1ac52ac34d9f452d759ea1ce3f8df9f682" kindref="member">update</ref>(0);</highlight></codeline>
+<codeline lineno="216"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="217"><highlight class="normal"></highlight></codeline>
+<codeline lineno="218"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="219"><highlight class="comment"><sp/><sp/><sp/><sp/>//!<sp/>An<sp/>emit<sp/>method,<sp/>taking<sp/>8<sp/>arguments.</highlight></codeline>
+<codeline lineno="220"><highlight class="comment"></highlight><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>/*!</highlight></codeline>
+<codeline lineno="221"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*<sp/>Emits<sp/>one<sp/>particle<sp/>with<sp/>the<sp/>properties<sp/>inputted,<sp/>has<sp/>to<sp/>be<sp/>called<sp/>multiple<sp/>times,<sp/>if<sp/>more<sp/>than<sp/>one<sp/>particle<sp/>is<sp/>neeeded.</highlight></codeline>
+<codeline lineno="222"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*<sp/>\param<sp/>position<sp/>a<sp/>vec3<sp/>value.<sp/>The<sp/>position<sp/>of<sp/>the<sp/>particle.</highlight></codeline>
+<codeline lineno="223"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*<sp/>\param<sp/>velocity<sp/>a<sp/>vec3<sp/>value.<sp/>The<sp/>velocity<sp/>of<sp/>the<sp/>particle.</highlight></codeline>
+<codeline lineno="224"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*<sp/>\param<sp/>angle<sp/>a<sp/>float<sp/>value.<sp/>The<sp/>angle<sp/>of<sp/>the<sp/>particle.</highlight></codeline>
+<codeline lineno="225"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*<sp/>\param<sp/>angularRotation<sp/>a<sp/>float<sp/>value.<sp/>The<sp/>angular<sp/>rotation<sp/>of<sp/>the<sp/>particle.</highlight></codeline>
+<codeline lineno="226"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*<sp/>\param<sp/>color<sp/>a<sp/>vec4<sp/>value.<sp/>The<sp/>start<sp/>color<sp/>of<sp/>the<sp/>particle.</highlight></codeline>
+<codeline lineno="227"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*<sp/>\param<sp/>size<sp/>a<sp/>float<sp/>value.<sp/>The<sp/>start<sp/>size<sp/>of<sp/>the<sp/>particle.</highlight></codeline>
+<codeline lineno="228"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*<sp/>\param<sp/>endColor<sp/>a<sp/>vec4<sp/>value.<sp/>The<sp/>end<sp/>color<sp/>of<sp/>the<sp/>particle.</highlight></codeline>
+<codeline lineno="229"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*<sp/>\param<sp/>endSize<sp/>a<sp/>float<sp/>value.<sp/>The<sp/>end<sp/>size<sp/>of<sp/>the<sp/>particle</highlight></codeline>
+<codeline lineno="230"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="231" refid="class_auris_1_1_particle_system_ae4fcf7b09a7f76f539e879c53dad562d_1ae4fcf7b09a7f76f539e879c53dad562d" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_auris_1_1_particle_system_ae4fcf7b09a7f76f539e879c53dad562d_1ae4fcf7b09a7f76f539e879c53dad562d" kindref="member">emit</ref>(vec3<sp/>position,<sp/>vec3<sp/>velocity,<sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>angle,<sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>angularRotation,<sp/>vec4<sp/>color,<sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>size,<sp/>vec4<sp/>endColor,<sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>endSize){</highlight></codeline>
+<codeline lineno="232"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(startTimes[particleIndex]<sp/>+<sp/>particleDuration<sp/>&lt;<sp/>currentTime){</highlight></codeline>
+<codeline lineno="233"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>startTimes[particleIndex]<sp/>=<sp/>currentTime;</highlight></codeline>
+<codeline lineno="234"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>positions[particleIndex]<sp/>=<sp/>position<sp/>*<sp/><ref refid="namespace_auris_1_1_constants_a559532ed3415b8ded07cdc4069dfa91c_1a559532ed3415b8ded07cdc4069dfa91c" kindref="member">Constants::METERS_TO_PIXELS</ref>;</highlight></codeline>
+<codeline lineno="235"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>rotations[particleIndex]<sp/>=<sp/>angle;</highlight></codeline>
+<codeline lineno="236"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>angularVelocities[particleIndex]<sp/>=<sp/>angularRotation;</highlight></codeline>
+<codeline lineno="237"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>velocities[particleIndex]<sp/>=<sp/>velocity<sp/>*<sp/><ref refid="namespace_auris_1_1_constants_a559532ed3415b8ded07cdc4069dfa91c_1a559532ed3415b8ded07cdc4069dfa91c" kindref="member">Constants::METERS_TO_PIXELS</ref>;</highlight></codeline>
+<codeline lineno="238"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>startColors[particleIndex]<sp/>=<sp/>color;</highlight></codeline>
+<codeline lineno="239"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>startSizes[particleIndex]<sp/>=<sp/>size;</highlight></codeline>
+<codeline lineno="240"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>endColors[particleIndex]<sp/>=<sp/>endColor;</highlight></codeline>
+<codeline lineno="241"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>endSizes[particleIndex]<sp/>=<sp/>endSize;</highlight></codeline>
+<codeline lineno="242"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="243"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>particleIndex<sp/>=<sp/>(particleIndex<sp/>+<sp/>1)<sp/>%<sp/>positions.size();</highlight></codeline>
+<codeline lineno="244"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="245"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="246"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="247"><highlight class="comment"><sp/><sp/><sp/><sp/>//!<sp/>An<sp/>update<sp/>method,<sp/>taking<sp/>1<sp/>argument.</highlight></codeline>
+<codeline lineno="248"><highlight class="comment"></highlight><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>/*!</highlight></codeline>
+<codeline lineno="249"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*<sp/>Updates<sp/>all<sp/>particles<sp/>in<sp/>the<sp/>particle<sp/>system,<sp/>called<sp/>once<sp/>per<sp/>frame.</highlight></codeline>
+<codeline lineno="250"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*<sp/>\param<sp/>dt<sp/>a<sp/>float<sp/>value.<sp/>The<sp/>delta<sp/>time<sp/>in<sp/>seconds.</highlight></codeline>
+<codeline lineno="251"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*<sp/>\sa<sp/>draw()</highlight></codeline>
+<codeline lineno="252"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="253" refid="class_auris_1_1_particle_system_a99219cac5f067fb6a7d6bba434b1703f_1a99219cac5f067fb6a7d6bba434b1703f" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_auris_1_1_particle_system_a99219cac5f067fb6a7d6bba434b1703f_1a99219cac5f067fb6a7d6bba434b1703f" kindref="member">update</ref>(</highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>dt){</highlight></codeline>
+<codeline lineno="254"><highlight class="normal"></highlight></codeline>
+<codeline lineno="255"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i<sp/>=<sp/>0;<sp/>i<sp/>&lt;<sp/>positions.size();<sp/>i++){</highlight></codeline>
+<codeline lineno="256"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>t<sp/>=<sp/>(currentTime<sp/>-<sp/>startTimes[i])<sp/>*<sp/>timeScale;</highlight></codeline>
+<codeline lineno="257"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(t<sp/>&gt;<sp/>particleDuration){</highlight></codeline>
+<codeline lineno="258"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>finalPositions[i]<sp/>=<sp/>vec3(0,0,-1000);</highlight></codeline>
+<codeline lineno="259"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">continue</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="260"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="261"><highlight class="normal"></highlight></codeline>
+<codeline lineno="262"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>p<sp/>=<sp/>t<sp/>/<sp/>particleDuration;</highlight></codeline>
+<codeline lineno="263"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>it<sp/>=<sp/>interpolation_acceleration.<ref refid="class_auris_1_1_interpolation_ad02e8e3d94a5210fac89071e848d0f3d_1ad02e8e3d94a5210fac89071e848d0f3d" kindref="member">interpolate</ref>(p).y;</highlight></codeline>
+<codeline lineno="264"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/><ref refid="namespace_auris_1_1_action_aa9f830168ef21bb79153b3ea1b6e536a_1aa9f830168ef21bb79153b3ea1b6e536a" kindref="member">a</ref><sp/>=<sp/>acceleration<sp/>*<sp/><ref refid="namespace_auris_1_1_constants_a559532ed3415b8ded07cdc4069dfa91c_1a559532ed3415b8ded07cdc4069dfa91c" kindref="member">Constants::METERS_TO_PIXELS</ref><sp/>*<sp/>it*it;</highlight></codeline>
+<codeline lineno="265"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>it<sp/>=<sp/>interpolation_velocity.<ref refid="class_auris_1_1_interpolation_ad02e8e3d94a5210fac89071e848d0f3d_1ad02e8e3d94a5210fac89071e848d0f3d" kindref="member">interpolate</ref>(p).y<sp/>*<sp/>particleDuration;</highlight></codeline>
+<codeline lineno="266"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>v<sp/>=<sp/>velocities[i]<sp/>*<sp/>it;</highlight></codeline>
+<codeline lineno="267"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>p0<sp/>=<sp/>positions[i];</highlight></codeline>
+<codeline lineno="268"><highlight class="normal"></highlight></codeline>
+<codeline lineno="269"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>finalPositions[i]<sp/>=<sp/><ref refid="namespace_auris_1_1_action_aa9f830168ef21bb79153b3ea1b6e536a_1aa9f830168ef21bb79153b3ea1b6e536a" kindref="member">a</ref><sp/>+<sp/>v<sp/>+<sp/>p0;</highlight></codeline>
+<codeline lineno="270"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>finalRotation[i]<sp/>=<sp/>rotations[i]<sp/>+<sp/>angularVelocities[i]<sp/>*<sp/>it;</highlight></codeline>
+<codeline lineno="271"><highlight class="normal"></highlight></codeline>
+<codeline lineno="272"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>it<sp/>=<sp/>interpolation_color.<ref refid="class_auris_1_1_interpolation_ad02e8e3d94a5210fac89071e848d0f3d_1ad02e8e3d94a5210fac89071e848d0f3d" kindref="member">interpolate</ref>(p).y;</highlight></codeline>
+<codeline lineno="273"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>finalColors[i]<sp/>=<sp/>lerpColor(startColors[i],<sp/>endColors[i],<sp/>it);<sp/></highlight></codeline>
+<codeline lineno="274"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>it<sp/>=<sp/>interpolation_size.<ref refid="class_auris_1_1_interpolation_ad02e8e3d94a5210fac89071e848d0f3d_1ad02e8e3d94a5210fac89071e848d0f3d" kindref="member">interpolate</ref>(p).y;</highlight></codeline>
+<codeline lineno="275"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>finalSizes[i]<sp/>=<sp/>glm::mix&lt;float&gt;(startSizes[i],<sp/>endSizes[i],<sp/>it);</highlight></codeline>
+<codeline lineno="276"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="277"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="278"><highlight class="normal"></highlight></codeline>
+<codeline lineno="279"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>mesh-&gt;update(finalPositions,<sp/>finalColors,<sp/>uvs,<sp/>uvSize,<sp/>finalRotation,<sp/>finalSizes);</highlight></codeline>
+<codeline lineno="280"><highlight class="normal"></highlight></codeline>
+<codeline lineno="281"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>currentTime<sp/>+=<sp/>dt;</highlight></codeline>
+<codeline lineno="282"><highlight class="normal"></highlight></codeline>
+<codeline lineno="283"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="284"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="285"><highlight class="comment"><sp/><sp/><sp/><sp/>//!<sp/>A<sp/>draw<sp/>method.</highlight></codeline>
+<codeline lineno="286"><highlight class="comment"></highlight><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>/*!</highlight></codeline>
+<codeline lineno="287"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*<sp/>Draws<sp/>all<sp/>particles<sp/>in<sp/>the<sp/>particle<sp/>system,<sp/>called<sp/>once<sp/>per<sp/>frame,<sp/>after<sp/>update</highlight></codeline>
+<codeline lineno="288"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*<sp/>\sa<sp/>update()</highlight></codeline>
+<codeline lineno="289"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="290" refid="class_auris_1_1_particle_system_af4860e3dac197f53fdb835d8c60b4321_1af4860e3dac197f53fdb835d8c60b4321" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_auris_1_1_particle_system_af4860e3dac197f53fdb835d8c60b4321_1af4860e3dac197f53fdb835d8c60b4321" kindref="member">draw</ref>(){</highlight></codeline>
+<codeline lineno="291"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>shader-&gt;set(</highlight><highlight class="stringliteral">&quot;tex&quot;</highlight><highlight class="normal">,<sp/>texture);</highlight></codeline>
+<codeline lineno="292"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>SRE::SimpleRenderEngine::instance-&gt;draw(mesh,<sp/>glm::mat4(1),<sp/>shader);</highlight></codeline>
+<codeline lineno="293"><highlight class="normal"></highlight></codeline>
+<codeline lineno="294"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="295"><highlight class="normal"></highlight></codeline>
+<codeline lineno="296"><highlight class="normal"></highlight></codeline>
+<codeline lineno="297"><highlight class="normal"></highlight></codeline>
+<codeline lineno="298"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="299"><highlight class="normal">}</highlight></codeline>
+    </programlisting>
+    <location file="Projects/GameEngine/include/Auris/Systems/ParticleSystem.hpp"/>
+  </compounddef>
+</doxygen>

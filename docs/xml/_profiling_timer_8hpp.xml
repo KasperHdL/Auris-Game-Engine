@@ -1,0 +1,69 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.12">
+  <compounddef id="_profiling_timer_8hpp" kind="file" language="C++">
+    <compoundname>ProfilingTimer.hpp</compoundname>
+    <includes local="no">SDL.h</includes>
+    <incdepgraph>
+      <node id="1228">
+        <label>SDL.h</label>
+      </node>
+      <node id="1227">
+        <label>Projects/GameEngine/include/Auris/Testing/ProfilingTimer.hpp</label>
+        <link refid="_profiling_timer_8hpp"/>
+        <childnode refid="1228" relation="include">
+        </childnode>
+      </node>
+    </incdepgraph>
+    <innerclass refid="class_auris_1_1_profiling_timer" prot="public">Auris::ProfilingTimer</innerclass>
+    <innernamespace refid="namespace_auris">Auris</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#pragma<sp/>once</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;SDL.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespace_auris" kindref="compound">Auris</ref>{</highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="6"><highlight class="comment">//!<sp/>The<sp/>Pofiling<sp/>class</highlight></codeline>
+<codeline lineno="7"><highlight class="comment"></highlight><highlight class="comment"><sp/><sp/><sp/><sp/>/*!<sp/>Used<sp/>to<sp/>control<sp/>the<sp/>timer<sp/>of<sp/>the<sp/>profiling</highlight></codeline>
+<codeline lineno="8"><highlight class="comment"><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="9" refid="class_auris_1_1_profiling_timer" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="class_auris_1_1_profiling_timer" kindref="compound">ProfilingTimer</ref>{</highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="11" refid="class_auris_1_1_profiling_timer_a417e1c5465a86e3183dd1107dd552a84_1a417e1c5465a86e3183dd1107dd552a84" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>Uint64<sp/><ref refid="class_auris_1_1_profiling_timer_a417e1c5465a86e3183dd1107dd552a84_1a417e1c5465a86e3183dd1107dd552a84" kindref="member">startStamp</ref>;<sp/></highlight><highlight class="comment">/*!&lt;<sp/>A<sp/>Uint64<sp/>value:<sp/>startStamp.<sp/>The<sp/>start<sp/>stamp<sp/>of<sp/>the<sp/>timer.<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="13" refid="class_auris_1_1_profiling_timer_ab74646ed840923b575a2b29d8043a0d8_1ab74646ed840923b575a2b29d8043a0d8" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/><ref refid="class_auris_1_1_profiling_timer_ab74646ed840923b575a2b29d8043a0d8_1ab74646ed840923b575a2b29d8043a0d8" kindref="member">length</ref>;<sp/></highlight><highlight class="comment">/*!&lt;<sp/>A<sp/>double<sp/>value:<sp/>length.<sp/>The<sp/>length<sp/>of<sp/>the<sp/>timer.<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="15"><highlight class="comment"><sp/><sp/><sp/><sp/>//!<sp/>A<sp/>start<sp/>method.</highlight></codeline>
+<codeline lineno="16"><highlight class="comment"></highlight><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>/*!</highlight></codeline>
+<codeline lineno="17"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*<sp/>Starts<sp/>the<sp/>timer,<sp/>from<sp/>the<sp/>SDL_GetPerformanceCounter()</highlight></codeline>
+<codeline lineno="18"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*<sp/>\sa<sp/>SDL_GetPerformanceCounter()</highlight></codeline>
+<codeline lineno="19"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="20" refid="class_auris_1_1_profiling_timer_aa8113266fe7367134a6cbbcef2e10e4c_1aa8113266fe7367134a6cbbcef2e10e4c" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_auris_1_1_profiling_timer_aa8113266fe7367134a6cbbcef2e10e4c_1aa8113266fe7367134a6cbbcef2e10e4c" kindref="member">start</ref>(){</highlight></codeline>
+<codeline lineno="21"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>startStamp<sp/>=<sp/>SDL_GetPerformanceCounter();</highlight></codeline>
+<codeline lineno="22"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="24"><highlight class="comment"><sp/><sp/><sp/><sp/>//!<sp/>A<sp/>stop<sp/>method.</highlight></codeline>
+<codeline lineno="25"><highlight class="comment"></highlight><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>/*!</highlight></codeline>
+<codeline lineno="26"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*<sp/>Stops<sp/>the<sp/>timer</highlight></codeline>
+<codeline lineno="27"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="28" refid="class_auris_1_1_profiling_timer_a92353a7d5398022c1a6cc88c58de4fd2_1a92353a7d5398022c1a6cc88c58de4fd2" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_auris_1_1_profiling_timer_a92353a7d5398022c1a6cc88c58de4fd2_1a92353a7d5398022c1a6cc88c58de4fd2" kindref="member">stop</ref>(){</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>length<sp/>=<sp/>SDL_GetPerformanceCounter()<sp/>-<sp/><ref refid="class_auris_1_1_profiling_timer_a417e1c5465a86e3183dd1107dd552a84_1a417e1c5465a86e3183dd1107dd552a84" kindref="member">startStamp</ref>;</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>length<sp/>/=<sp/>(double)SDL_GetPerformanceFrequency();</highlight></codeline>
+<codeline lineno="31"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="33"><highlight class="comment"><sp/><sp/><sp/><sp/>//!<sp/>A<sp/>getStartTime<sp/>method.</highlight></codeline>
+<codeline lineno="34"><highlight class="comment"></highlight><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>/*!</highlight></codeline>
+<codeline lineno="35"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*<sp/>Used<sp/>to<sp/>gather<sp/>the<sp/>start<sp/>time<sp/>of<sp/>the<sp/>timer</highlight></codeline>
+<codeline lineno="36"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*<sp/>\return<sp/>double.<sp/>The<sp/>start<sp/>time<sp/>of<sp/>the<sp/>timer</highlight></codeline>
+<codeline lineno="37"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="38" refid="class_auris_1_1_profiling_timer_ac08144f24cabdf04b31de33fbaa62a91_1ac08144f24cabdf04b31de33fbaa62a91" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/><ref refid="class_auris_1_1_profiling_timer_ac08144f24cabdf04b31de33fbaa62a91_1ac08144f24cabdf04b31de33fbaa62a91" kindref="member">getStartTime</ref>(){</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">double</highlight><highlight class="normal">)startStamp<sp/>/<sp/>SDL_GetPerformanceFrequency();</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="41"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="42"><highlight class="normal">}</highlight></codeline>
+    </programlisting>
+    <location file="Projects/GameEngine/include/Auris/Testing/ProfilingTimer.hpp"/>
+  </compounddef>
+</doxygen>

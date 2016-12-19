@@ -1,0 +1,347 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.12">
+  <compounddef id="class_auris_1_1_asset_manager" kind="class" language="C++" prot="public">
+    <compoundname>Auris::AssetManager</compoundname>
+    <includes refid="_asset_manager_8hpp" local="no">AssetManager.hpp</includes>
+      <sectiondef kind="private-static-attrib">
+      <memberdef kind="variable" id="class_auris_1_1_asset_manager_ac47cbdd59e8523b07f9671b3dbafc02a_1ac47cbdd59e8523b07f9671b3dbafc02a" prot="private" static="yes" mutable="no">
+        <type>std::map&lt; std::string, SRE::Texture * &gt;</type>
+        <definition>std::map&lt; std::string, SRE::Texture * &gt; Auris::AssetManager::textures</definition>
+        <argsstring></argsstring>
+        <name>textures</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>A map of string values, and Texture pointers: textures. That has a reference to all textures loaded. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Projects/GameEngine/include/Auris/Utilities/AssetManager.hpp" line="31" column="1" bodyfile="Projects/GameEngine/include/Auris/Utilities/AssetManager.hpp" bodystart="31" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_auris_1_1_asset_manager_a4000c6c36f36f65b1c482197f41428b1_1a4000c6c36f36f65b1c482197f41428b1" prot="private" static="yes" mutable="no">
+        <type>std::map&lt; std::string, <ref refid="class_auris_1_1_sprite_sheet" kindref="compound">SpriteSheet</ref> * &gt;</type>
+        <definition>std::map&lt; std::string, SpriteSheet * &gt; Auris::AssetManager::spritesheets</definition>
+        <argsstring></argsstring>
+        <name>spritesheets</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>A map of string values, and Spritesheet pointers: spritesheets. That has a reference to all spritesheets loaded. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Projects/GameEngine/include/Auris/Utilities/AssetManager.hpp" line="32" column="1" bodyfile="Projects/GameEngine/include/Auris/Utilities/AssetManager.hpp" bodystart="32" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_auris_1_1_asset_manager_a46b740352276485cad9ba3fe45bcc883_1a46b740352276485cad9ba3fe45bcc883" prot="private" static="yes" mutable="no">
+        <type>std::map&lt; std::string, Mix_Music * &gt;</type>
+        <definition>std::map&lt; std::string, Mix_Music * &gt; Auris::AssetManager::music</definition>
+        <argsstring></argsstring>
+        <name>music</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>A map of string values, and Mix_Music pointers: music. That has a reference to all music loaded. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Projects/GameEngine/include/Auris/Utilities/AssetManager.hpp" line="34" column="1" bodyfile="Projects/GameEngine/include/Auris/Utilities/AssetManager.hpp" bodystart="34" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_auris_1_1_asset_manager_afb15d7b3bab17597791c02bb7d821003_1afb15d7b3bab17597791c02bb7d821003" prot="private" static="yes" mutable="no">
+        <type>std::map&lt; std::string, Mix_Chunk * &gt;</type>
+        <definition>std::map&lt; std::string, Mix_Chunk * &gt; Auris::AssetManager::sounds</definition>
+        <argsstring></argsstring>
+        <name>sounds</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>A map of string values, and Mix_Chunk pointers: sound. That has a reference to all sound loaded. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Projects/GameEngine/include/Auris/Utilities/AssetManager.hpp" line="35" column="1" bodyfile="Projects/GameEngine/include/Auris/Utilities/AssetManager.hpp" bodystart="35" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-static-func">
+      <memberdef kind="function" id="class_auris_1_1_asset_manager_a7cfd748a5d960ef106d48be8c5c7f5fe_1a7cfd748a5d960ef106d48be8c5c7f5fe" prot="private" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Auris::AssetManager::createSheet</definition>
+        <argsstring>(SpriteSheet *sheet, std::string pathToJson, bool createFlipped=false, bool filterSampling=false)</argsstring>
+        <name>createSheet</name>
+        <param>
+          <type><ref refid="class_auris_1_1_sprite_sheet" kindref="compound">SpriteSheet</ref> *</type>
+          <declname>sheet</declname>
+        </param>
+        <param>
+          <type>std::string</type>
+          <declname>pathToJson</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>createFlipped</declname>
+          <defval>false</defval>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>filterSampling</declname>
+          <defval>false</defval>
+        </param>
+        <briefdescription>
+<para>A createSheet method, taking 2 arguments. </para>        </briefdescription>
+        <detaileddescription>
+<para>Creates a new spritesheet, based on the parth to the json file <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>sheet</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>a <ref refid="class_auris_1_1_sprite_sheet" kindref="compound">SpriteSheet</ref> pointer. An instance of the <ref refid="class_auris_1_1_sprite_sheet" kindref="compound">SpriteSheet</ref> to create. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>pathToJson</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>a string value. The string to the path of the json file. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>bool</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>whether or not the spritesheet will create flipped meshes for. (default value is false) </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>bool</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>whether or not the texture will be filtered, default is false and results in point sampling </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Projects/GameEngine/include/Auris/Utilities/AssetManager.hpp" line="44" column="1" bodyfile="Projects/GameEngine/Auris/src/Auris/Utilities/AssetManager.cpp" bodystart="62" bodyend="133"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="class_auris_1_1_asset_manager_a595b95ace9ae5f2828edf0d981af6ba5_1a595b95ace9ae5f2828edf0d981af6ba5" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>SRE::Texture *</type>
+        <definition>SRE::Texture * Auris::AssetManager::getTexture</definition>
+        <argsstring>(std::string filename, bool filterSampling=false)</argsstring>
+        <name>getTexture</name>
+        <param>
+          <type>std::string</type>
+          <declname>filename</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>filterSampling</declname>
+          <defval>false</defval>
+        </param>
+        <briefdescription>
+<para>A getTexture method, taking 1 arguments. </para>        </briefdescription>
+        <detaileddescription>
+<para>Gives a new Texture pointer based on the filename inputted <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>filename</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>a string value. The name of the Texture file. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Texture pointer. An instance of the texture loaded from the file. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Projects/GameEngine/include/Auris/Utilities/AssetManager.hpp" line="52" column="1" bodyfile="Projects/GameEngine/Auris/src/Auris/Utilities/AssetManager.cpp" bodystart="14" bodyend="20"/>
+      </memberdef>
+      <memberdef kind="function" id="class_auris_1_1_asset_manager_a74d949aa60184a06851621995586fa2a_1a74d949aa60184a06851621995586fa2a" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="class_auris_1_1_sprite_sheet" kindref="compound">SpriteSheet</ref> *</type>
+        <definition>SpriteSheet * Auris::AssetManager::getSpriteSheet</definition>
+        <argsstring>(std::string jsonFilename, bool createFlipped=false, bool filterSampling=false)</argsstring>
+        <name>getSpriteSheet</name>
+        <param>
+          <type>std::string</type>
+          <declname>jsonFilename</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>createFlipped</declname>
+          <defval>false</defval>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>filterSampling</declname>
+          <defval>false</defval>
+        </param>
+        <briefdescription>
+<para>A getSpriteSheet method, taking 1 arguments. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Projects/GameEngine/include/Auris/Utilities/AssetManager.hpp" line="61" column="1" bodyfile="Projects/GameEngine/Auris/src/Auris/Utilities/AssetManager.cpp" bodystart="23" bodyend="32"/>
+      </memberdef>
+      <memberdef kind="function" id="class_auris_1_1_asset_manager_aa417ba9bbbdf2c675e03aa51a22d5c36_1aa417ba9bbbdf2c675e03aa51a22d5c36" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>Mix_Chunk *</type>
+        <definition>Mix_Chunk * Auris::AssetManager::getSound</definition>
+        <argsstring>(std::string filename)</argsstring>
+        <name>getSound</name>
+        <param>
+          <type>std::string</type>
+          <declname>filename</declname>
+        </param>
+        <briefdescription>
+<para>A getSound method, taking 1 arguments. </para>        </briefdescription>
+        <detaileddescription>
+<para>Gives a new sound pointer based on the filename inputted <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>filename</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>a string value. The name of the sound file. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Mix_Chunk pointer. An instance of the sound loaded from the file. </para></simplesect>
+<simplesect kind="see"><para><ref refid="class_auris_1_1_asset_manager_a6401ef4abb8770223df38efc533bfcba_1a6401ef4abb8770223df38efc533bfcba" kindref="member">getMusic(std::string filename)</ref> </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Projects/GameEngine/include/Auris/Utilities/AssetManager.hpp" line="69" column="1" bodyfile="Projects/GameEngine/Auris/src/Auris/Utilities/AssetManager.cpp" bodystart="45" bodyend="56"/>
+      </memberdef>
+      <memberdef kind="function" id="class_auris_1_1_asset_manager_a6401ef4abb8770223df38efc533bfcba_1a6401ef4abb8770223df38efc533bfcba" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>Mix_Music *</type>
+        <definition>Mix_Music * Auris::AssetManager::getMusic</definition>
+        <argsstring>(std::string filename)</argsstring>
+        <name>getMusic</name>
+        <param>
+          <type>std::string</type>
+          <declname>filename</declname>
+        </param>
+        <briefdescription>
+<para>A getMusic method, taking 1 arguments. </para>        </briefdescription>
+        <detaileddescription>
+<para>Gives a new music pointer based on the filename inputted <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>filename</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>a string value. The name of the music file. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Mix_Music pointer. An instance of the music loaded from the file. </para></simplesect>
+<simplesect kind="see"><para><ref refid="class_auris_1_1_asset_manager_aa417ba9bbbdf2c675e03aa51a22d5c36_1aa417ba9bbbdf2c675e03aa51a22d5c36" kindref="member">getSound(std::string filename)</ref> </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Projects/GameEngine/include/Auris/Utilities/AssetManager.hpp" line="77" column="1" bodyfile="Projects/GameEngine/Auris/src/Auris/Utilities/AssetManager.cpp" bodystart="34" bodyend="43"/>
+      </memberdef>
+      <memberdef kind="function" id="class_auris_1_1_asset_manager_a8bde2869efc39bb0f4a0e85004780c4c_1a8bde2869efc39bb0f4a0e85004780c4c" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>std::string</type>
+        <definition>static std::string Auris::AssetManager::getDataPath</definition>
+        <argsstring>(const std::string &amp;file=&quot;&quot;)</argsstring>
+        <name>getDataPath</name>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>file</declname>
+          <defval>&quot;&quot;</defval>
+        </param>
+        <briefdescription>
+<para>A getDataPath method, taking 0-1 argument. </para>        </briefdescription>
+        <detaileddescription>
+<para>Helper Function to get the datafolder. Returns the data folder path and is windows safe, it can be parsed a string which is simply appended <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>file</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>a string pointer. String which will be appended (default is &quot;&quot;). </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>string. The path to data folder and file param </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Projects/GameEngine/include/Auris/Utilities/AssetManager.hpp" line="85" column="1" bodyfile="Projects/GameEngine/include/Auris/Utilities/AssetManager.hpp" bodystart="85" bodyend="115"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>The <ref refid="class_auris_1_1_animation" kindref="compound">Animation</ref> class that extend the <ref refid="class_auris_1_1_nugget" kindref="compound">Nugget</ref> class. </para>    </briefdescription>
+    <detaileddescription>
+<para>Used to make sprite animations </para>    </detaileddescription>
+    <collaborationgraph>
+      <node id="28">
+        <label>std::map&lt; std::string, Mix_Music *&gt;</label>
+        <childnode refid="25" relation="usage">
+          <edgelabel>keys</edgelabel>
+        </childnode>
+      </node>
+      <node id="21">
+        <label>Auris::AssetManager</label>
+        <link refid="class_auris_1_1_asset_manager"/>
+        <childnode refid="22" relation="usage">
+          <edgelabel>spritesheets</edgelabel>
+        </childnode>
+        <childnode refid="27" relation="usage">
+          <edgelabel>textures</edgelabel>
+        </childnode>
+        <childnode refid="28" relation="usage">
+          <edgelabel>music</edgelabel>
+        </childnode>
+        <childnode refid="29" relation="usage">
+          <edgelabel>sounds</edgelabel>
+        </childnode>
+      </node>
+      <node id="29">
+        <label>std::map&lt; std::string, Mix_Chunk *&gt;</label>
+        <childnode refid="25" relation="usage">
+          <edgelabel>keys</edgelabel>
+        </childnode>
+      </node>
+      <node id="22">
+        <label>std::map&lt; std::string, Auris::SpriteSheet *&gt;</label>
+        <childnode refid="23" relation="usage">
+          <edgelabel>elements</edgelabel>
+        </childnode>
+        <childnode refid="25" relation="usage">
+          <edgelabel>keys</edgelabel>
+        </childnode>
+      </node>
+      <node id="27">
+        <label>std::map&lt; std::string, SRE::Texture *&gt;</label>
+        <childnode refid="25" relation="usage">
+          <edgelabel>keys</edgelabel>
+        </childnode>
+      </node>
+      <node id="24">
+        <label>std::map&lt; std::string, Auris::Auris::Mesh *&gt;</label>
+        <childnode refid="25" relation="usage">
+          <edgelabel>keys</edgelabel>
+        </childnode>
+      </node>
+      <node id="26">
+        <label>std::basic_string&lt; char &gt;</label>
+      </node>
+      <node id="23">
+        <label>Auris::SpriteSheet</label>
+        <link refid="class_auris_1_1_sprite_sheet"/>
+        <childnode refid="24" relation="usage">
+          <edgelabel>meshes</edgelabel>
+        </childnode>
+      </node>
+      <node id="25">
+        <label>std::string</label>
+        <childnode refid="26" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="Projects/GameEngine/include/Auris/Utilities/AssetManager.hpp" line="28" column="1" bodyfile="Projects/GameEngine/include/Auris/Utilities/AssetManager.hpp" bodystart="28" bodyend="118"/>
+    <listofallmembers>
+      <member refid="class_auris_1_1_asset_manager_a7cfd748a5d960ef106d48be8c5c7f5fe_1a7cfd748a5d960ef106d48be8c5c7f5fe" prot="private" virt="non-virtual"><scope>Auris::AssetManager</scope><name>createSheet</name></member>
+      <member refid="class_auris_1_1_asset_manager_a8bde2869efc39bb0f4a0e85004780c4c_1a8bde2869efc39bb0f4a0e85004780c4c" prot="public" virt="non-virtual"><scope>Auris::AssetManager</scope><name>getDataPath</name></member>
+      <member refid="class_auris_1_1_asset_manager_a6401ef4abb8770223df38efc533bfcba_1a6401ef4abb8770223df38efc533bfcba" prot="public" virt="non-virtual"><scope>Auris::AssetManager</scope><name>getMusic</name></member>
+      <member refid="class_auris_1_1_asset_manager_aa417ba9bbbdf2c675e03aa51a22d5c36_1aa417ba9bbbdf2c675e03aa51a22d5c36" prot="public" virt="non-virtual"><scope>Auris::AssetManager</scope><name>getSound</name></member>
+      <member refid="class_auris_1_1_asset_manager_a74d949aa60184a06851621995586fa2a_1a74d949aa60184a06851621995586fa2a" prot="public" virt="non-virtual"><scope>Auris::AssetManager</scope><name>getSpriteSheet</name></member>
+      <member refid="class_auris_1_1_asset_manager_a595b95ace9ae5f2828edf0d981af6ba5_1a595b95ace9ae5f2828edf0d981af6ba5" prot="public" virt="non-virtual"><scope>Auris::AssetManager</scope><name>getTexture</name></member>
+      <member refid="class_auris_1_1_asset_manager_a46b740352276485cad9ba3fe45bcc883_1a46b740352276485cad9ba3fe45bcc883" prot="private" virt="non-virtual"><scope>Auris::AssetManager</scope><name>music</name></member>
+      <member refid="class_auris_1_1_asset_manager_afb15d7b3bab17597791c02bb7d821003_1afb15d7b3bab17597791c02bb7d821003" prot="private" virt="non-virtual"><scope>Auris::AssetManager</scope><name>sounds</name></member>
+      <member refid="class_auris_1_1_asset_manager_a4000c6c36f36f65b1c482197f41428b1_1a4000c6c36f36f65b1c482197f41428b1" prot="private" virt="non-virtual"><scope>Auris::AssetManager</scope><name>spritesheets</name></member>
+      <member refid="class_auris_1_1_asset_manager_ac47cbdd59e8523b07f9671b3dbafc02a_1ac47cbdd59e8523b07f9671b3dbafc02a" prot="private" virt="non-virtual"><scope>Auris::AssetManager</scope><name>textures</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>
