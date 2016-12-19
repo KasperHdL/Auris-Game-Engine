@@ -120,7 +120,8 @@ public:
 
     /*! A playMusic method, taking 1 argument.
      * Plays the music of the AudioPlayer
-     * \param index an int value. The index of the music.*/
+     * \param index an int value. The index of the music.
+     * \param loops an int value. The number of loops this music should play before ending. -1 is infinite.*/
     void playMusic(int index, int loops = -1){
         if (music.size()-1 >= index){
             //If there is no music playing

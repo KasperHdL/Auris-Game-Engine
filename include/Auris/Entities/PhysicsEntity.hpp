@@ -124,7 +124,7 @@ namespace Auris{
 
         //! The setBullet method, taking 1 argument.
             /*! Set the body to bullet physics, meaning that if the entity is moving fast it will still not clip through stuff
-             * \param awake a bool value, that is if the box2D body is a bullet.
+             * \param flag a bool value, that is if the box2D body is a bullet.
             */
         void setBullet(bool flag){
             body->SetBullet(flag);
