@@ -9,8 +9,6 @@
 #include <SDL_mixer.h>
 #elif __linux__ // Linux
 #include <SDL2/SDL_mixer.h>
-#else
-std::cerr << "Error: Unsupported OS" << std::endl;
 #endif
 
 namespace Auris {
