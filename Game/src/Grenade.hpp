@@ -5,7 +5,7 @@
 #include "Auris/Systems/ParticleSystem.hpp"
 #include "Auris/Utilities/BodyStandard.hpp"
 #include "Auris/Utilities/Timer.hpp"
-#include "Auris/Utilities/AudioPlayer.hpp"
+#include "Auris/Entities/AudioPlayer.hpp"
 #include <glm/gtc/random.hpp>
 
 using namespace Auris;

@@ -18,9 +18,11 @@ namespace BodyStandard{
     /*!
      * Creates a dynamic body in position (0,0) from box2D and returns it
      * \param shape a b2Shape pointer. The shape of the body.
+     * \param isSensor a bool. Whether or not the body should be a sensor.
      * \param friction a float value. The friction of the body (default is 1.0).
      * \param density a float value. The density of the body (default is 20.0).
      * \param restitution a float value. The restitution of the body (default is 0.0).
+     * \param filter a b2Filter pointer. The Collision filter set for the body
      * \return b2Body pointer. A pointer to the dynamic body created.
      * \sa PhysicsEntity::setPosition()
     */
@@ -57,9 +59,11 @@ namespace BodyStandard{
          * Creates a dynamic body from box2D and returns it
          * \param shape a b2Shape pointer. The shape of the body.
          * \param position a vec2 value. The position of the body (default is in origin (vec2(0))).
+         * \param isSensor a bool. Whether or not the body should be a sensor.
          * \param friction a float value. The friction of the body (default is 1.0).
          * \param density a float value. The density of the body (default is 20.0).
          * \param restitution a float value. The restitution of the body (default is 0.0).
+         * \param filter a b2Filter pointer. The Collision filter set for the body
          * \return b2Body pointer. A pointer to the static body created.
         */
     static b2Body* getStaticBody(b2Shape* shape, glm::vec2 position = glm::vec2(0), bool isSensor = false, float friction = 1.0f, float density = 20.0f, float restitution = 0.0f, b2Filter* filter = nullptr){

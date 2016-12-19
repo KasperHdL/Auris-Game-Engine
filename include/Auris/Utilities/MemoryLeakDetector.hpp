@@ -28,8 +28,6 @@
 #include <mach/mach_init.h>
 #include <mach/mach_host.h>
 
-#else
-cout << "Error: Unsupported OS" << endl;
 #endif
 
 

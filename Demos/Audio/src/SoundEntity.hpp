@@ -4,7 +4,7 @@
 #include "Auris/Utilities/Timer.hpp"
 #include "Auris/Utilities/BodyStandard.hpp"
 #include "Auris/Utilities/AssetManager.hpp"
-#include "Auris/Utilities/AudioPlayer.hpp"
+#include "Auris/Entities/AudioPlayer.hpp"
 
 #include <glm/gtc/random.hpp>
 
@@ -28,7 +28,8 @@ public:
         vec2 position = circularRand<float>(100);
         float speed = linearRand<float>(0.5f, 1);
 
-        body = Utilities::BodyStandard::getDynamicBody(&shape, position);
+        body = Utilities::BodyStandard::getDynamicBody(&shape);
+        setPosition(position);
         applyForce(-position*speed, true);
         destroyTimer.start(4);
 

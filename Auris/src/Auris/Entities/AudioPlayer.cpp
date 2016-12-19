@@ -1,4 +1,4 @@
-#include "Auris/Utilities/AudioPlayer.hpp"
+#include "Auris/Entities/AudioPlayer.hpp"
 
 namespace Auris {
 

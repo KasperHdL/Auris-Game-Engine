@@ -34,6 +34,7 @@ public:
 
     //! The Pool contructor.
         /*! Does nothing, but does something anyway!
+         * \overload Pool(capacity)
         */
     Pool(){}
 
@@ -80,12 +81,19 @@ public:
     /*! Overload the [] so that the pool can be indexed.
      * \param index a size_t value. The index used.
      * \return T pointer. The object at that index, nullptr if there is no object with that index.
-     * \overload []
+     * \overload at()
      */
     T* operator [] (std::size_t index){
         return at(index);
     }
 
+
+    //! An getter of the pool, taking 1 argument.
+    /*! a function version of the operator overload []
+     * \param index a size_t value. The index used.
+     * \return T pointer. The object at that index, nullptr if there is no object with that index.
+     * \overload []
+     */
     T* at(std::size_t index){
         if(index < 0 || index >= capacity){
             std::cout << "Index out of range, returning nullptr" << std::endl;
@@ -126,7 +134,7 @@ public:
     //! A remove method, taking 1 argument.
         /*! Removes an object from the pool, note that this function is O(n), use remove(int index) if possible 
          * \param ptr a T pointer. The object that should be removed.
-         * \overload remove(int index)
+         * \overload remove()
         */
     bool remove(T* ptr){
         for(int i = 0;i < capacity;i++){
@@ -141,7 +149,7 @@ public:
     //! A remove overload method, taking 1 argument.
         /*! Removes an object from the pool, note that his function is O(1)
          * \param index an int. The index of the object that should be removed.
-         * \overload remove(T* ptr)
+         * \overload remove()
         */
     void remove(int index){
         if(index < 0 || index > capacity){

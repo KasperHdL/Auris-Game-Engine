@@ -1,7 +1,7 @@
 #pragma once
 
 #include "Auris/Engine.hpp"
-#include "Auris/Utilities/AudioPlayer.hpp"
+#include "Auris/Entities/AudioPlayer.hpp"
 #include "Auris/Utilities/AssetManager.hpp"
 #include "Auris/Testing/DebugUI.hpp"
 #include "SoundEntity.hpp"
@@ -32,6 +32,9 @@ public:
     float fadeScaleY = 1.0f;
     float fadeDelayX = 1.0f;
     float fadeDelayY = 1.0f;
+
+
+    bool showPlay = true;
 
     void init() {
         #ifdef DEBUG
@@ -146,36 +149,50 @@ public:
 
         if (ImGui::Button("electronicMusic.wav")) {
             musicPlayer->playMusic(music[0]);
+            showPlay = false;
         }
 
         if (ImGui::Button("introLoop.wav")) {
             musicPlayer->playMusic(music[1]);
+            showPlay = false;
         }
 
         if (ImGui::Button("drumLoop.wav")) {
             musicPlayer->playMusic(music[2]);
+            showPlay = false;
         }
 
         if (ImGui::Button("time.wav")) {
             musicPlayer->playMusic(music[3]);
+            showPlay = false;
         }
 
         ImGui::Separator();
 
-        if(ImGui::Button("Play")){
-            musicPlayer->resumeMusic();
-        }
-
-        ImGui::SameLine();
-
-        if(ImGui::Button("Pause")){
-            musicPlayer->pauseMusic();
+        if(showPlay){
+            if(Mix_PlayingMusic()){
+                if(ImGui::Button("Resume")){
+                    musicPlayer->resumeMusic();
+                    showPlay = false;
+                }
+            }else{
+                if(ImGui::Button("Play Random")){
+                    musicPlayer->playMusic(music[glm::linearRand<int>(0,3)]);
+                    showPlay = false;
+                }
+            }
+        }else{
+            if(ImGui::Button("Pause")){
+                musicPlayer->pauseMusic();
+                showPlay = true;
+            }
         }
 
         ImGui::SameLine();
 
         if(ImGui::Button("Stop")){
             musicPlayer->stopMusic();
+            showPlay = true;
         }
 
         ImGui::Separator();
@@ -189,6 +206,24 @@ public:
         ImGui::TextColored(ImVec4(1,0,0,1), "Sounds");
 
         ImGui::Separator();
+
+        ImGui::Text("Play sound:");
+
+        if (ImGui::Button("Pistol shot")) {
+            soundPlayers[selectedPlayer]->playSound(sounds[selectedPlayer][0]);
+        }
+
+        ImGui::SameLine();
+
+        if (ImGui::Button("Explosion")) {
+            soundPlayers[selectedPlayer]->playSound(sounds[selectedPlayer][1]);
+        }
+
+        ImGui::SameLine();
+
+        if (ImGui::Button("Fizzle")) {
+            soundPlayers[selectedPlayer]->playSound(sounds[selectedPlayer][2]);
+        }
 
         ImGui::Text("Select sound location: ");
 
@@ -227,26 +262,6 @@ public:
         ImGui::DragFloat("X-axis fade delay", &fadeDelayX, 0.05f, 0.1f, 20.0f);
         ImGui::DragFloat("Y-axis fade delay", &fadeDelayY, 0.05f, 0.1f, 20.0f);
         }
-
-        ImGui::Text("Play sound:");
-
-        if (ImGui::Button("Pistol shot")) {
-            soundPlayers[selectedPlayer]->playSound(sounds[selectedPlayer][0]);
-        }
-
-        ImGui::SameLine();
-
-        if (ImGui::Button("Explosion")) {
-            soundPlayers[selectedPlayer]->playSound(sounds[selectedPlayer][1]);
-        }
-
-        ImGui::SameLine();
-
-        if (ImGui::Button("Fizzle")) {
-            soundPlayers[selectedPlayer]->playSound(sounds[selectedPlayer][2]);
-        }
-
-
         ImGui::Separator();
 
         ImGui::End();

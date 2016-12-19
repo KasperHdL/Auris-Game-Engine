@@ -2,7 +2,7 @@
  
 #include "Auris/Engine.hpp"
 #include "Auris/Entities/Light.hpp"
-#include "Auris/Utilities/AudioPlayer.hpp"
+#include "Auris/Entities/AudioPlayer.hpp"
 
 #include "../Player.hpp"
 #include "../Wall.hpp"

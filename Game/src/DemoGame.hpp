@@ -5,7 +5,7 @@
 
 #include "Scenes/Scene1.hpp"
 #include "Scenes/Scene2.hpp"
-#include "Auris/Utilities/AudioPlayer.hpp"
+#include "Auris/Entities/AudioPlayer.hpp"
 #include "Crosshair.hpp"
 #include <vector>
 

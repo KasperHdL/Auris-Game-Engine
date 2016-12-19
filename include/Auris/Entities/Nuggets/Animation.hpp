@@ -12,8 +12,6 @@
 #include "Auris/Entity.hpp"
 #include "Auris/Entities/Nuggets/Sprite.hpp"
 
-using namespace SRE;
-
 namespace Auris{
 
 //! The Animation class that extend the Nugget class

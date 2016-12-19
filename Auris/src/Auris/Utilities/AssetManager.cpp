@@ -55,10 +55,6 @@ Mix_Chunk* AssetManager::getSound(std::string filename) {
     return AssetManager::sounds[filename];
 }
 
-/////////
-// Free 
-
-
 ///////////////////
 // Private Methods
 ///////////////////

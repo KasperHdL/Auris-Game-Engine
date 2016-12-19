@@ -4,8 +4,6 @@
 #include <SDL_mixer.h>
 #elif __linux__ // Linux
 #include <SDL2/SDL_mixer.h>
-#else
-cout << "Error: Unsupported OS" << endl;
 #endif
 
 #include <SDL.h>
@@ -33,7 +31,6 @@ cout << "Error: Unsupported OS" << endl;
 #include <fstream>
 #include <sstream>
 
-//Engine
 #include "Auris/Game.hpp"
 #include "Auris/Entity.hpp"
 
@@ -44,6 +41,11 @@ cout << "Error: Unsupported OS" << endl;
 #include "Auris/Systems/RenderSystem.hpp"
 
 #include "Auris/Action.hpp"
+#include "Auris/Entities/AudioPlayer.hpp"
+#include "Auris/Entities/Light.hpp"
+#include "Auris/Utilities/AssetManager.hpp"
+#include "Auris/Utilities/MemoryLeakDetector.hpp"
+#include "Auris/Utilities/Timer.hpp"
 
 #ifdef DEBUG
 #include "Auris/Testing/ProfilingTimer.hpp"
@@ -53,6 +55,7 @@ cout << "Error: Unsupported OS" << endl;
 
 
 namespace Auris{
+
 #ifdef DEBUG
 class DebugUI;
 #endif

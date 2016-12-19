@@ -13,11 +13,18 @@
 #include <SDL_mixer.h>
 #elif __linux__ // Linux
 #include <SDL2/SDL_mixer.h>
-#else
-cout << "Error: Unsupported OS" << endl;
 #endif
 
+
+//! The Animation class that extend the Nugget class
+    /*! Used to make sprite animations
+    */
 namespace Auris{
+
+
+//! The Animation class that extend the Nugget class
+    /*! Used to make sprite animations
+    */
     class AssetManager{
     private:
 
@@ -31,6 +38,8 @@ namespace Auris{
         /*! Creates a new spritesheet, based on the parth to the json file
          * \param  sheet a SpriteSheet pointer. An instance of the SpriteSheet to create.
          * \param pathToJson a string value. The string to the path of the json file.
+         * \param bool whether or not the spritesheet will create flipped meshes for. (default value is false)
+         * \param bool whether or not the texture will be filtered, default is false and results in point sampling
          */
         static void createSheet(SpriteSheet* sheet, std::string pathToJson, bool createFlipped = false, bool filterSampling = false);
     public:
@@ -42,9 +51,11 @@ namespace Auris{
          */
         static SRE::Texture* getTexture(std::string filename, bool filterSampling = false);
 
-        /*! A getSpriteSheet method, taking 1 arguments.
+        //! A getSpriteSheet method, taking 1 arguments.
         /* Gives a new SpriteSheet pointer based on the filename inputted
          * \param  filename a string value. The name of the SpriteSheet file.
+         * \param bool whether or not the spritesheet will create flipped meshes for. (default value is false)
+         * \param bool whether or not the texture will be filtered, default is false and results in point sampling
          * \return SpriteSheet pointer. An instance of the spritesheet loaded from the file.
          */
         static SpriteSheet* getSpriteSheet(std::string jsonFilename, bool createFlipped = false, bool filterSampling = false);

@@ -13,7 +13,7 @@
 #include "Auris/Entities/PhysicsEntity.hpp"
 #include "Auris/Action.hpp"
 #include "Crosshair.hpp"
-#include "Auris/Utilities/AudioPlayer.hpp"
+#include "Auris/Entities/AudioPlayer.hpp"
 #include "Auris/Utilities/Timer.hpp"
 #include "Bullet.hpp"
 #include "Grenade.hpp"
