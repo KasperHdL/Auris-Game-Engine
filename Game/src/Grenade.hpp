@@ -22,17 +22,17 @@ public:
 
     vec2 direction;
 
-    int damage = 50;
+    int damage = 100;
     int explosionSound;
-    int explosionRadius = 18;
+    int explosionRadius = 30;
 
     float explosionTime = 3;
-    float destroyTime = 1;
+    float destroyTime = .5f;
     float speed = 20;
 
     bool hasExploded = false;
 
-    Grenade(vec2 position = vec2(0, 0), vec2 direction = vec2(1,0), float force = 1){
+    Grenade(vec2 position = vec2(0, 0), vec2 direction = vec2(1,0), float force = 1, int groupIndex = 0){
         type = "Grenade";
         name = "Grenade";
 
@@ -42,9 +42,12 @@ public:
 
         b2CircleShape shape;
         shape.m_p.Set(0, 0);
-        shape.m_radius = 0.1;
+        shape.m_radius = 1;
 
-        body = Utilities::BodyStandard::getDynamicBody(&shape);
+        b2Filter filter;
+        filter.groupIndex = groupIndex;
+
+        body = Auris::Utilities::BodyStandard::getDynamicBody(&shape, false, 3.0f, 20.0f, 0.0f, &filter);
         explodeTimer.start(explosionTime);
         destroyTimer.start(destroyTime);
 

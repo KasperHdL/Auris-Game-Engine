@@ -140,7 +140,7 @@ class DemoGame : public Auris::Game {
                    i == 3 ? vec4(1,0,1,1) :
                    vec4(1,1,1,1);
 
-        auto player = (Player*) Game::instance->addEntity(make_shared<Player>(pos,col));
+        auto player = (Player*) Game::instance->addEntity(make_shared<Player>(pos,col,i));
         player->setController(controllerID);
         player->name = player->type + to_string(controllerID);
 

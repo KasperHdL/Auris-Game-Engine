@@ -17,7 +17,7 @@ public:
     Player* player;
     Sprite* sprite;
 
-    Bullet(vec2 position = vec2(0, 0), float rotation = 0, vec2 direction = vec2(0,0), Player* player = nullptr) : PhysicsEntity(){
+    Bullet(vec2 position = vec2(0, 0), float rotation = 0, vec2 direction = vec2(0,0), Player* player = nullptr, int groupIndex = 0) : PhysicsEntity(){
         type = "Bullet";
         name = "Bullet";
 
@@ -26,7 +26,10 @@ public:
         b2PolygonShape shape;
         shape.SetAsBox(0.5f * Constants::PIXELS_TO_METERS, 0.1f * Constants::PIXELS_TO_METERS);
 
-        body = Auris::Utilities::BodyStandard::getDynamicBody(&shape);
+        b2Filter filter;
+        filter.groupIndex = groupIndex;
+
+        body = Auris::Utilities::BodyStandard::getDynamicBody(&shape, false, 1.0f, 20.0f, 0.0f, &filter);
 
         this->direction = direction;
         this->player = player;

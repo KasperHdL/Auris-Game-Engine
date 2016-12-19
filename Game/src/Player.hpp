@@ -127,11 +127,13 @@ public:
     int healthPoints = 100;
     int pistolShot;
     int controller;
+    int groupIndex;
 
     vec4 playerColor;
-    Player(vec2 position = vec2(0,0), vec4 color = vec4(1,1,1,1)) : PhysicsEntity(){
+    Player(vec2 position = vec2(0,0), vec4 color = vec4(1,1,1,1), int index = 0) : PhysicsEntity(){
         type = "Player";
         playerColor = color;
+        groupIndex = -(index+1);
 
         spriteSheet = AssetManager::getSpriteSheet("player.json", true);
 
@@ -169,7 +171,10 @@ public:
         //shape.m_radius = 2;
         shape.SetAsBox(((lower->getWidth()/3) * Constants::PIXELS_TO_METERS),(upper->getHeight() + lower->getHeight()-9)/3 * Constants::PIXELS_TO_METERS);
 
-        body = Auris::Utilities::BodyStandard::getDynamicBody(&shape);
+        b2Filter filter;
+        filter.groupIndex = groupIndex;
+
+        body = Auris::Utilities::BodyStandard::getDynamicBody(&shape, false, 1.0f, 20.0f, 0.0f, &filter);
 
         // Physics properties
         setCollisionEvents(true);
@@ -253,12 +258,14 @@ public:
     }
 
     void fireBullet(float rotation, vec2 direction) {
-        auto bullet = (Bullet*) Game::instance->addEntity(make_shared<Bullet>(vec2(transform->getPosition().x+direction.x*bulletOffset, transform->getPosition().y-direction.y*bulletOffset), rotation, vec2(direction.x, -direction.y), this));
+        vec2 pos = transform->getPosition();
+        auto bullet = (Bullet*) Game::instance->addEntity(make_shared<Bullet>(pos + vec2(3,6)*Constants::PIXELS_TO_METERS, rotation, vec2(direction.x, -direction.y), this, groupIndex));
         bullet->player = this;
     }
 
     void throwGrenade(vec2 direction) {
-        auto grenade = (Grenade*) Game::instance->addEntity(make_shared<Grenade>(vec2(transform->getPosition().x+direction.x*grenadeOffset, transform->getPosition().y-direction.y*grenadeOffset), vec2(direction.x, -direction.y), grenadeForce));
+        vec2 pos = transform->getPosition();
+        auto grenade = (Grenade*) Game::instance->addEntity(make_shared<Grenade>(pos + vec2(3,6)*Constants::PIXELS_TO_METERS, vec2(direction.x,-direction.y), grenadeForce, groupIndex));
         grenadeForce = 1;
     }
 
@@ -409,10 +416,12 @@ public:
         if (other->type == "Explosion") {
             Grenade* grenade = (Grenade*) other;
             vec2 delta = transform->getGlobalPosition() - grenade->transform->getGlobalPosition();
-            float distance = abs(delta.x + delta.y)/grenade->explosionRadius;
+            float absDelta = abs(delta.x + delta.y);
+            float distance = grenade->explosionRadius / (absDelta/4);
 
-            healthPoints -= (int)grenade->damage*(1-distance);
-            applyForce(delta*jumpHeight*distance, true);
+            if(absDelta < 25)
+                healthPoints -= (int)grenade->damage*((25.0f-absDelta)/25.0f);
+            applyForce(normalize(delta) * distance * jumpHeight, true);
         }
     }
 
