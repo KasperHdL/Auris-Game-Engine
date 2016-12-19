@@ -306,4 +306,8 @@ void DebugUI::draw(){
 
 
 }
+
+void DebugUI::enableDebug(){
+    drawDebug = true;
+}
 #endif

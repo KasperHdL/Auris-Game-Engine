@@ -10,7 +10,7 @@
 #elif __linux__ // Linux
 #include <SDL2/SDL_mixer.h>
 #else
-cout << "Error: Unsupported OS" << endl;
+std::cerr << "Error: Unsupported OS" << std::endl;
 #endif
 
 using namespace Auris;
@@ -127,6 +127,10 @@ public:
             if( Mix_PlayingMusic() == 0 ){
                 Mix_PlayMusic( music[index], loops);
             }
+            else {
+                Mix_HaltMusic();
+                Mix_PlayMusic( music[index], loops);
+            }
         }else{
             std::cerr << "Nullptr: No music at this index (" << index << ")." << std::endl;
         }
@@ -187,6 +191,34 @@ public:
             std::cerr << "Nullptr: No sound at this index (" << index << ")." << std::endl;
     }
 
+    /*! A setFadeScaleX method, taking 1 argument.
+     * Sets the fade scale on the x-axis.
+     * \param scale a float value. The scale to set.*/
+    void setFadeScaleX(float scale) {
+        fadeScaleX = scale;
+    }
+
+    /*! A setFadeScaleY method, taking 1 argument.
+     * Sets the fade scale on the y-axis.
+     * \param scale a float value. The scale to set.*/
+    void setFadeScaleY(float scale) {
+        fadeScaleY = scale;
+    }
+
+    /*! A setFadeDelayX method, taking 1 argument.
+     * Sets the fade delay on the x-axis.
+     * \param delay a float value. The delay to set.*/
+    void setFadeDelayX(float delay) {
+        fadeDelayX = delay;
+    }
+
+    /*! A setFadeDelayY method, taking 1 argument.
+     * Sets the fade delay on the y-axis.
+     * \param delay a float value. The delay to set.*/
+    void setFadeDelayY(float delay) {
+        fadeDelayY = delay;
+    }
+
     //! The AudioPlayer destructor.
         /*!
          * Clears all music and sounds.
@@ -225,10 +257,10 @@ public:
 
         if (drawAudioRange) {
             // Range
-            float minX = p.x - (fadeScaleX * listener->getWidth()/2) - fadeDelayX*Constants::METERS_TO_PIXELS/2;
-            float maxX = p.x + (fadeScaleX * listener->getWidth()/2) + fadeDelayX*Constants::METERS_TO_PIXELS/2;
-            float minY = p.y - (fadeScaleY * listener->getHeight()/2) - fadeDelayY*Constants::METERS_TO_PIXELS/2;
-            float maxY = p.y + (fadeScaleY * listener->getHeight()/2) + fadeDelayY*Constants::METERS_TO_PIXELS/2;
+            float minX = p.x - (listener->getWidth()/2/fadeScaleX);
+            float maxX = p.x + (listener->getWidth()/2/fadeScaleX);
+            float minY = p.y - (listener->getHeight()/2/fadeScaleY);
+            float maxY = p.y + (listener->getHeight()/2/fadeScaleY);
 
             float line_len = 30;
 

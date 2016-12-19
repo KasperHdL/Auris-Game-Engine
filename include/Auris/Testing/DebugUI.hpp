@@ -116,6 +116,11 @@ public:
         /*!  calls debugdraw on entities and draws box2d debug if drawdebug and draw colliders is enabled respectively.
         */
     void draw();
+
+    //! A method for enabling debug drawing from outside this class.
+        /*!  sets drawDebug to true;
+        */
+    void enableDebug();
 };
 }
 #endif
