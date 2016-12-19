@@ -30,6 +30,7 @@ class SpriteSheet{
             /*! Sets the sprite mesh to the one corresponding with the name given, if name does not exist then it prints an error
              * \param sprite an Sprite pointer, which mesh will change to correspond with the given name of the spritesheet frame 
              * \param name a String value, that is the name of the sprite
+             * \param getFlipped a bool value. Set the sprite to be flipped or not
              * \sa RenderSystem::getSprite()
             */
         void setSpriteTo(Sprite* sprite, std::string name, bool getFlipped = false);

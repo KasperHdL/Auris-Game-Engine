@@ -33,7 +33,7 @@ public:
     //! The Animation contructor, taking 2 arguments.
         /*! Which saves the length of the animation and also have a reference to the entity it is associated with
           \param entity an Entity pointer, that is a reference to the entity the animation is associated with.
-          \param height an interger, that is the height of the window.
+          \param length a float. The length of the animation.
         */
     Animation(Entity* entity, float length);
 
@@ -51,11 +51,12 @@ public:
         */
     void setSheet(SpriteSheet* spritesheet);
 
-    //! The method makeSequence, taking 2 arguments.
+    //! The method makeSequence, taking 2-3 arguments.
         /*!
          * Make the animation use a sequence of sprites in a spritesheet
          * \param spritesheet a SpriteSheet pointer. The spritesheet to add
          * \param name a string. The name of the sequence in the spritesheet
+         * \param createFlipped a bool. If the sprite should be flipped or not.
         */
     void makeSequence(SpriteSheet* spritesheet, std::string name, bool createFlipped = false);
 
@@ -63,6 +64,7 @@ public:
         /*! Makes the animation execute
          * \param sprite a Sprite pointer, that is the sprite to add the animation to
          * \param dt a float, that is the delta time
+         * \param getFlipped a bool. If the sprite is flipped or not.
         */
     void run(Sprite* sprite, float dt, bool getFlipped = false);
 

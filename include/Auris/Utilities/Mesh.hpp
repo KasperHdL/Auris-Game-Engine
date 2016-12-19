@@ -11,7 +11,7 @@ class Mesh : public SRE::Mesh{
 
     //! The mesh contructor, taking 5 arguments.
         /*! Initializes a mesh with the input arguments in SRE::Mesh.
-         * \param vectives a vector of vec3. The vectives of the mesh.
+         * \param vectices a vector of vec3. The vectives of the mesh.
          * \param normals a vector of vec3. The normals of the mesh.
          * \param uvs a vector of vec3. The uvs of the mesh.
          * \param width a float value. The width of the mesh.
