@@ -39,6 +39,9 @@ class DemoGame : public Auris::Game {
         for (auto & element : controllers) {
             element = -1;
         }
+
+        Engine::instance->setBackgroundColor(vec4(0.1f,0.01f,0.01f,1));
+
     }
 
     void earlyUpdate(float dt){
