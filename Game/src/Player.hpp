@@ -1,20 +1,10 @@
 #pragma once
 
 #include "SRE/Texture.hpp"
-#include "Auris/Entities/Nuggets/Sprite.hpp"
-#include "Auris/Entities/Nuggets/Animation.hpp"
-#include "Auris/Systems/RenderSystem.hpp"
-#include "Auris/Constants.hpp"
-#include "Auris/Systems/Input.hpp"
-#include "Auris/Entities/Nuggets/Material.hpp"
-#include "Auris/Utilities/SpriteSheet.hpp"
-#include "Auris/Utilities/BodyStandard.hpp"
-#include "Auris/Utilities/AssetManager.hpp"
-#include "Auris/Entities/PhysicsEntity.hpp"
-#include "Auris/Action.hpp"
+
+#include "Auris/Auris.hpp"
+
 #include "Crosshair.hpp"
-#include "Auris/Entities/AudioPlayer.hpp"
-#include "Auris/Utilities/Timer.hpp"
 #include "Bullet.hpp"
 #include "Grenade.hpp"
 

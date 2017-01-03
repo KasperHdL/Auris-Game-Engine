@@ -1,11 +1,6 @@
 #pragma once
 
-#include "Auris/Engine.hpp"
-#include "Auris/Entities/PhysicsEntity.hpp"
-#include "Auris/Systems/ParticleSystem.hpp"
-#include "Auris/Utilities/BodyStandard.hpp"
-#include "Auris/Utilities/Timer.hpp"
-#include "Auris/Entities/AudioPlayer.hpp"
+#include "Auris/Auris.hpp"
 #include <glm/gtc/random.hpp>
 
 using namespace Auris;

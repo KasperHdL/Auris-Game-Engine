@@ -1,10 +1,6 @@
 #pragma once
 
-#include "Auris/Entities/PhysicsEntity.hpp"
-#include "Auris/Entities/Nuggets/Sprite.hpp"
-#include "Auris/Utilities/SpriteSheet.hpp"
-#include "Auris/Constants.hpp"
-#include "Auris/Utilities/BodyStandard.hpp"
+#include "Auris/Auris.hpp"
 
 using namespace Auris;
 using namespace Constants;
