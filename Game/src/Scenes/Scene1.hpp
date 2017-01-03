@@ -1,8 +1,5 @@
 #pragma once
- 
-#include "Auris/Engine.hpp"
-#include "Auris/Entities/Light.hpp"
-#include "Auris/Entities/AudioPlayer.hpp"
+#include "Auris/Auris.hpp"
 
 #include "../Player.hpp"
 #include "../Wall.hpp"

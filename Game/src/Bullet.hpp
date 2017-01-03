@@ -1,6 +1,5 @@
 #pragma once
-#include "Auris/Engine.hpp"
-#include "Auris/Entities/PhysicsEntity.hpp"
+#include "Auris/Auris.hpp"
 
 using namespace std;
 using namespace Auris;

@@ -1,7 +1,7 @@
 #pragma once 
  
-#include "Auris/Engine.hpp"
-#include "Auris/Systems/Scene.hpp"
+#include "Auris/Auris.hpp"
+
 #include "../Player.hpp"
 #include "../Wall.hpp"
  

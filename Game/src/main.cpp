@@ -1,4 +1,4 @@
-#include "Auris/Engine.hpp"
+#include "Auris/Auris.hpp"
 #include "DemoGame.hpp"
 #include <SDL.h>
 

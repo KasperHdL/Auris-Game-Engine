@@ -1,11 +1,8 @@
 #pragma once
-
-#include "Auris/Engine.hpp"
-#include "Auris/Entities/Camera.hpp"
+#include "Auris/Auris.hpp"
 
 #include "Scenes/Scene1.hpp"
 #include "Scenes/Scene2.hpp"
-#include "Auris/Entities/AudioPlayer.hpp"
 #include "Crosshair.hpp"
 #include <vector>
 
