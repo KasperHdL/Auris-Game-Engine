@@ -40,7 +40,7 @@ class DemoGame : public Auris::Game {
             element = -1;
         }
 
-        Engine::instance->setBackgroundColor(vec4(0.1f,0.01f,0.01f,1));
+        Engine::instance->setBackgroundColor(vec4(0.25f,0.25f,0.45f,1));
 
     }
 

@@ -2,7 +2,7 @@ cmake_minimum_required(VERSION 3.6)
 project(AurisProject CXX)
 
 IF(UNIX)
-    set(CMAKE_BUILD_TYPE Release)
+    set(CMAKE_BUILD_TYPE Debug)
 
     IF(CMAKE_BUILD_TYPE MATCHES Debug)
         set(CMAKE_EXPORT_COMPILE_COMMANDS 1)

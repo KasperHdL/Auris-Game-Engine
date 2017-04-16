@@ -268,6 +268,7 @@ public:
         pistolReload.update(deltaTime);
         grenadeReload.update(deltaTime);
         respawnTime = respawnTimer.getCurrentTime();
+
         if (alive){
             healthFrontBar->setScale((float)healthPoints/100);
             fuelFrontBar->setScale(map(fuel,0,2,0,1));
@@ -366,25 +367,28 @@ public:
             }
 
             crosshair->transform->setPosition(vec2(normalized.x*crosshairOffset, -normalized.y*crosshairOffset));
+
+
+            if (pistolReload.time())
+                canFire = true;
+
+            if (grenadeReload.time()){
+                grenadeUI->setScale(1);
+                canThrow = true;
+            }else{
+                grenadeUI->setScale(0);
+            }
+
         }else{
             healthPoints = 0;
             respawnTimer.update(deltaTime);
             respawnBar->setScale(map((float)respawnTimer.getCurrentTime(),0,10,1,0));
+
+            if(respawnTimer.time()){
+                respawn();
+            }
         }
 
-        if(respawnTimer.time()){
-            respawn();
-        }
-
-        if (pistolReload.time())
-            canFire = true;
-
-        if (grenadeReload.time()){
-            grenadeUI->setScale(1);
-            canThrow = true;
-        }else{
-            grenadeUI->setScale(0);
-        }
     }
 
     void OnCollisionEnter(PhysicsEntity* other) {
